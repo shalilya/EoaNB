@@ -35,7 +35,7 @@ country_event = {
             desc = "POLITICS_NIKOLA_I_PETROVIC_DESC"
             picture = "Portrait_MNT_Nikola_I.dds"
             expire = "1980.1.1"
-            ideology = despotism
+            ideology = absolutism
             traits = {
 		
             }
