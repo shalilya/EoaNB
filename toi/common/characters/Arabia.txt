@@ -8,11 +8,11 @@ characters={
 		}
 		country_leader={
 			desc="POLITICS_GENERIC_EOANB_DESC"
-			ideology=despotism
+			ideology=absolutism
 			expire="1900.1.1.1"
 		}
 	} 
-	OMA_Ali_bin_Said_al-Said={
+	OMA_Ali_bin_Said_al_Said={
 		name="Ali bin Said al-Said"
 		portraits={
 			civilian={
@@ -46,7 +46,7 @@ characters={
 		country_leader={
 			desc="POLITICS_GENERIC_EOANB_DESC"
 			expire = "1891.12.31.1"
-			ideology = despotism
+			ideology = absolutism
 		}
 	}
 	NJD_Abdallah_ibn_Faisal_ibn_Turki_Al_Saud={

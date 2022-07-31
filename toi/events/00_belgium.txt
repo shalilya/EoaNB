@@ -657,7 +657,7 @@ country_event = { # Leopold I's death
 					country_leader = {
 						expire = "1909.12.7"
 						desc = "POLITICS_TEMP_DESC"
-						ideology = despotism
+						ideology = absolutism
 						traits = {
 							#
 						}
@@ -671,14 +671,14 @@ country_event = { # Leopold I's death
 					country_leader = {
 						expire = "1909.12.7"
 						desc = "POLITICS_TEMP_DESC"
-						ideology = despotism
+						ideology = absolutism
 						traits = {
 							#
 						}
 					}
 				}
 				promote_character = yes
-				promote_character = despotism
+				promote_character = absolutism
 			}
 		}
 		retire_character = BEL_leopold_i

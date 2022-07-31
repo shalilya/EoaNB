@@ -13,7 +13,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_MAXIMILIAN_II_DESC"
-			ideology = despotism
+			ideology = absolutism
 			expire = "1864.3.10.1"
 			#id = -1
 		}

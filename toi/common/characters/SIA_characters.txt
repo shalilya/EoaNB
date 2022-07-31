@@ -13,7 +13,7 @@ characters = {
 		country_leader = {
 			desc = "SIA_character_rama_chakri_iv_desc"
 			expire = "1870.10.1"
-			ideology = despotism
+			ideology = absolutism
 		}
 		field_marshal = {
 			skill = 4

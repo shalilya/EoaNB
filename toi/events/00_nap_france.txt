@@ -1344,7 +1344,7 @@ country_event = { # The French Empire crowns Napoleon-Giuseppe as our King
       create_country_leader = {
         name = "Napoleone-Giuseppe I"
         picture = "Portrait_CBI_Napoleone_Giuseppe_I.dds"
-        ideology = despotism
+        ideology = absolutism
       }
     }
   }
@@ -1373,7 +1373,7 @@ country_event = { # EPD : Randon to Mac-Mahon
     create_country_leader = {
       name = "Patrice de Mac-Mahon"
       picture = "Portrait_ALG_Patrice_de_Mac_Mahon.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1397,7 +1397,7 @@ country_event = { # ALG : Mac-Mahon to Gues-Viller
     create_country_leader = {
       name = "Philippe Antoine Guesviller"
       picture = "Portrait_ALG_Philippe_Antoine_Guesviller.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1421,7 +1421,7 @@ country_event = { # ALG : Gues-Viller to de Martimprey
     create_country_leader = {
       name = "Edmond Charles de Martimprey"
       picture = "Portrait_ALG_Edmond_Charles_de_Martimprey.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1445,7 +1445,7 @@ country_event = { # ALG : de Martimprey to Pélissier
     create_country_leader = {
       name = "Aimable Pélissier"
       picture = "Portrait_ALG_Aimable_Pelissier.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1469,7 +1469,7 @@ country_event = { # ALG : Pélissier to Mac-Mahon
     create_country_leader = {
       name = "Patrice de Mac-Mahon"
       picture = "Portrait_ALG_Patrice_de_Mac_Mahon.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1497,7 +1497,7 @@ country_event = { # SNG : Faidherbe to Jauréguiberry
     create_country_leader = {
       name = "Jean Bernard Jauréguiberry"
       picture = "Portrait_SNG_Jean_Bernard_Jaureguiberry.dds"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1521,7 +1521,7 @@ country_event = { # SNG : Jauréguiberry to Faidherbe
     create_country_leader = {
       name = "Louis Faidherbe"
       picture = "Portrait_SNG_Louis_Faidherbe.dds"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1545,7 +1545,7 @@ country_event = { # SNG : Faidherbe to Pinet-Laprade
     create_country_leader = {
       name = "Jean Émile Pinet-Laprade"
       picture = "Portrait_SNG_Jean_Emile_Pinet_Laprade.dds"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -1619,7 +1619,7 @@ country_event = { # The French Empire reforms us into a Consitutional Monarchy
       create_country_leader = {
         name = "French Regency Council"
         picture = "Portrait_CBI_French_Regency_Council.dds"
-        ideology = despotism
+        ideology = absolutism
       }
     }
   }
@@ -2017,7 +2017,7 @@ country_event = { # CCH : Bonard to La Grandière
     create_country_leader = {
       name = "Pierre-Paul de La Grandiere"
       picture = "Portrait_CCH_Pierre-Paul_de_La_Grandiere.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2042,7 +2042,7 @@ country_event = { # CCH : La Grandière to Ohier
     create_country_leader = {
       name = "Marie Gustave Hector Ohier"
       picture = "Portrait_CCH_Marie_Gustave_Hector_Ohier.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2067,7 +2067,7 @@ country_event = { # CCH : Ohier to Cornulier
     create_country_leader = {
       name = "René de Cornulier"
       picture = "Portrait_CCH_Rene_de_Cornulier.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2092,7 +2092,7 @@ country_event = { # CCH : Cornulier to Dupré
     create_country_leader = {
       name = "Marie Jules Dupré"
       picture = "Portrait_CCH_Marie_Jules_Dupre.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2117,7 +2117,7 @@ country_event = { # CCH : Dupré to Duperré
     create_country_leader = {
       name = "Victor Duperré"
       picture = "Portrait_CCH_Victor_Duperre.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2142,7 +2142,7 @@ country_event = { # CCH : Duperré to Lafont
     create_country_leader = {
       name = "Louis Charles Georges Jules Lafont"
       picture = "Portrait_CCH_Louis_Charles_Georges_Jules_Lafont.png"
-      ideology = despotism
+      ideology = absolutism
     }
   }
 }
@@ -2167,14 +2167,14 @@ country_event = { # The Regency of Jérôme Bonaparte
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
 				}
 			}
 			promote_character = yes
-			promote_character = despotism
+			promote_character = absolutism
 		}
 	}
 }
@@ -2208,14 +2208,14 @@ country_event = { # Officialization of the Jerome-Napoleon Bonaparte regency
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
 				}
 			}
 			promote_character = yes
-			promote_character = despotism
+			promote_character = absolutism
 		}
 	}
 }
@@ -2235,14 +2235,14 @@ country_event = { # Give the crown to Napoléon IV
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
 				}
 			}
 			promote_character = yes
-			promote_character = despotism
+			promote_character = absolutism
 		}
     if = {
       limit = {
@@ -2280,14 +2280,14 @@ country_event = { # Crown Jérôme as Napoléon IV
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
 				}
 			}
 			promote_character = yes
-			promote_character = despotism
+			promote_character = absolutism
 		}
     if = {
       limit = {
@@ -3971,7 +3971,7 @@ country_event = { # Orsini Affair
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
@@ -4015,7 +4015,7 @@ country_event = { # Orsini Affair
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
@@ -4061,7 +4061,7 @@ country_event = { # Death of Napoleon III
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}
@@ -4121,7 +4121,7 @@ country_event = { # Empire is collapsing
 				country_leader = {
 					expire = "1900.1.1"
 					desc = "POLITICS_TEMP_DESC"
-					ideology = despotism
+					ideology = absolutism
 					traits = {
 						#
 					}

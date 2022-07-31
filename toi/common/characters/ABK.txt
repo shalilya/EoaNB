@@ -8,7 +8,7 @@ characters={
 		}
 		country_leader={
 			desc = "POLITICS_GEO_MINORS_DESC"
-			ideology = despotism
+			ideology = absolutism
 			expire = "1891.12.31"
 			#id= -1
 		}

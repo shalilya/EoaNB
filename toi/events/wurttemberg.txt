@@ -33,11 +33,11 @@ country_event = {
 						country_leader = {
 							expire = "1900.1.1"
 							desc = "POLITICS_GENERIC_EOANB_DESC"
-							ideology = despotism
+							ideology = absolutism
 						}
 					}
 					promote_character = yes
-					promote_character = despotism
+					promote_character = absolutism
 					add_country_leader_role = {
 						country_leader = {
 							expire = "1900.1.1"
@@ -96,11 +96,11 @@ country_event = {
 						country_leader = {
 							expire = "1900.1.1"
 							desc = "POLITICS_GENERIC_EOANB_DESC"
-							ideology = despotism
+							ideology = absolutism
 						}
 					}
 					promote_character = yes
-					promote_character = despotism
+					promote_character = absolutism
 					add_country_leader_role = {
 						country_leader = {
 							expire = "1900.1.1"

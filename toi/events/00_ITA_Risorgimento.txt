@@ -3373,7 +3373,7 @@ country_event = {
 				name = "Ferdinand IV"
 				picture = "Portrait_TUS_Ferdinand_IV.dds"
 				expire = "1965.1.1"
-				ideology = despotism
+				ideology = absolutism
 				traits = {
 				}
 			}
@@ -8683,7 +8683,7 @@ country_event = {
 		NSC_francis_ii = {
 			add_country_leader_role = {
 				country_leader = {
-					ideology = despotism
+					ideology = absolutism
 					expire = "1862.11.7.1"
 					#id=-1
 				}

@@ -366,7 +366,7 @@ add_namespace = russiasiberiancolonization
 	                desc = ""
 	                picture = "gfx/leaders/FIN/Portrait_Finland_Platon_Rokasovsky.png"
 	                expire = "1965.1.1"
-	                ideology = despotism
+	                ideology = absolutism
                 }
                 add_stability = 0.03
                 add_popularity = {
@@ -412,7 +412,7 @@ add_namespace = russiasiberiancolonization
 	                desc = ""
 	                picture = "gfx/leaders/FIN/Portrait_Finland_Platon_Rokasovsky.png"
 	                expire = "1965.1.1"
-	                ideology = despotism
+	                ideology = absolutism
                 }
                 add_stability = 0.03
                 add_popularity = {
@@ -1536,7 +1536,7 @@ add_namespace = russiasiberiancolonization
 					country_leader = {
 						expire = "1900.1.1"
 						desc = "POLITICS_GENERIC_EOANB_DESC"
-						ideology = despotism
+						ideology = absolutism
 						traits = {
 							RUS_trait_Staunch_Authoritarian
 							RUS_trait_Iron_Fist
@@ -1894,7 +1894,7 @@ add_namespace = russiasiberiancolonization
 								promote_leader = yes
 								country_leader={
 									desc="POLITICS_TEMP_DESC"
-									ideology=despotism
+									ideology=absolutism
 									expire="1900.1.1.1"
 									#id=-1
 								}
@@ -1908,7 +1908,7 @@ add_namespace = russiasiberiancolonization
 								promote_leader = yes
 								country_leader={
 									desc="POLITICS_TEMP_DESC"
-									ideology=despotism
+									ideology=absolutism
 									expire="1929.2.11"
 									#id=-1
 								}
@@ -2434,7 +2434,7 @@ country_event = {	# The sale of alaska, USA responds
 					country_leader = {
 						expire = "1900.1.1"
 						desc = "POLITICS_GENERIC_EOANB_DESC"
-						ideology = despotism
+						ideology = absolutism
 						traits = {
 							RUS_trait_Staunch_Authoritarian
 							RUS_trait_Iron_Fist

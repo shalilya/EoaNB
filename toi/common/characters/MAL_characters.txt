@@ -177,7 +177,7 @@ characters = {
 			}
 			country_leader = {
 				desc = "KTN_character_muhammad_temenggong_patani_ii_desc"
-				ideology = despotism
+				ideology = absolutism
 				expire = "1888.1.1"
 			}
 			corps_commander = {
@@ -377,7 +377,7 @@ characters = {
 			}
 			country_leader = {
 				desc = "TGG_character_omar_riayat_shah_bendahara_desc"
-				ideology = despotism
+				ideology = absolutism
 				expire = "1878.1.1"
 			}
 			corps_commander = {
@@ -542,7 +542,7 @@ characters = {
 			}
 			country_leader = {
 				desc = "KDH_character_ahmad_tajuddin_mukarram_shah_mahawangsa_desc"
-				ideology = despotism
+				ideology = absolutism
 				expire = "1881.1.1"
 			}
 		}
@@ -766,7 +766,7 @@ characters = {
 			}
 			country_leader = {
 				desc = "PRK_character_jaafar_safiuddin_muazzam_shah_bendahara_desc"
-				ideology = despotism
+				ideology = absolutism
 				expire = "1867.1.1"
 			}
 		}
@@ -951,7 +951,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "SLG_character_abdul_samad_shah_opu_daeng_celak_desc"
-			ideology = despotism
+			ideology = absolutism
 			expire = "1900.1.1"
 		}
 	}

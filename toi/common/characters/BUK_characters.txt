@@ -10,7 +10,7 @@ characters = {
 		country_leader = {
 			desc = "BUK_character_nasr_allah_khan_manghit_desc"
 			expire = "1862.1.1"
-			ideology = despotism
+			ideology = absolutism
 		}
 	}
 	BUK_character_muzaffar_manghit = {

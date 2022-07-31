@@ -6,9 +6,9 @@ characters={
 				large="gfx/leaders/SPR/Portrait_SPR_Isabella_II.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_ISABELLA_II_DESC"
-			ideology=despotism
+		country_leader = {
+			desc = "POLITICS_ISABELLA_II_DESC"
+			ideology = constit_monarch
 			expire="1904.4.9.1"
 		}
 	}

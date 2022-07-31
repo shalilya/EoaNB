@@ -46,7 +46,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_TEMP_DESC"
-			ideology = despotism
+			ideology = absolutism
 			expire = "1870.11.9.1"
 			#id = -1
 		}

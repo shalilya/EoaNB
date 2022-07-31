@@ -7,7 +7,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = despotism
+			ideology = absolutism
 			expire = "1862.11.7.1"
 			traits = {
 				ITA_trait_Popular_Leader

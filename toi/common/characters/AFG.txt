@@ -8,7 +8,7 @@ characters={
 		}
 		country_leader={
 			desc="POLITICS_DOST_MUHAMMAD_KHAN_DESC"
-			ideology=despotism
+			ideology=absolutism
 			expire="1863.8.3.1"
 		}
 	}

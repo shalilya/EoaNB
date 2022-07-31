@@ -198,7 +198,7 @@ characters = {
 			country_leader = {
 				desc = "BTR_character_bhiram_deo_desc"
 				expire = "1873.2.13"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -216,7 +216,7 @@ characters = {
 			country_leader = {
 				desc = "BIK_character_sardar_singh_desc"
 				expire = "1872.5.16"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -308,7 +308,7 @@ characters = {
 			country_leader = {
 				desc = "JPR_character_ram_singh_ii_desc"
 				expire = "1875.3.27"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -325,7 +325,7 @@ characters = {
 			country_leader = {
 				desc = "MPR_character_chandrakirti_singh_desc"
 				expire = "1875.3.27"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -342,7 +342,7 @@ characters = {
 			country_leader = {
 				desc = "MYS_character_krishnaraja_wadiyar_iii_desc"
 				expire = "1868.3.27"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -359,7 +359,7 @@ characters = {
 			country_leader = {
 				desc = "RJP_character_maharaja_sir_takht_singh_desc"
 				expire = "1873.2.13"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }
@@ -376,7 +376,7 @@ characters = {
 			country_leader = {
 				desc = "SND_character_nasir_khan_talpur_desc"
 				expire = "1870.4.2"
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 }

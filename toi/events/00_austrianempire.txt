@@ -5384,7 +5384,7 @@ country_event = {
 				desc = "POLITICS_FRIEDRICH_FERDINAND_VON_BEUST_DESC"
 				picture = "GFX_Portrait_AUS_Friedrich_von_Beust"
 				expire = 2000.09.10
-				ideology = despotism
+				ideology = absolutism
 			}
 		}
 		custom_effect_tooltip = AUS_tt_appoint_von_beust
@@ -8430,7 +8430,7 @@ country_event = {
 						promote_leader = yes
 						country_leader = {
 							desc = "POLITICS_GENERIC_EOANB_DESC"
-							ideology = despotism
+							ideology = absolutism
 							expire = "1896.5.19"
 							#id=-1
 						}
@@ -10314,7 +10314,7 @@ country_event = {
 				desc = "POLITICS_TEMP_DESC"
 				picture = "GFX_Portrait_AUS_Franz_Joseph_I"
 				expire = 1920.8.3
-				ideology = despotism
+				ideology = absolutism
 			}
 			set_country_flag = AUS_flag_hun_dual_monarchy
 			set_country_flag = AUS_flag_karl_auesperg_aus_mp

@@ -365,7 +365,7 @@ focus_tree = {
 						promote_leader = yes
 						country_leader={
 							desc="POLITICS_TEMP_DESC"
-							ideology=despotism
+							ideology=absolutism
 							expire="1929.2.11"
 							#id=-1
 						}
