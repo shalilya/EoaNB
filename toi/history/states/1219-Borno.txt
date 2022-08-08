@@ -14,9 +14,9 @@ state = {
 
 
 	provinces = {
-		4997 13497 14376 14377
+		4997 13138
 	}
-	manpower = 2101030
+	manpower =2101030
 
 	history = {
 		buildings = {

@@ -15,8 +15,7 @@ state = {
 	}
 
 	history = {
-		#owner = CPA
-		controller = USA
+		owner = CPA
 
 		buildings = {
 			infrastructure = 1

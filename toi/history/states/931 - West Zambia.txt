@@ -4,11 +4,7 @@ state = {
 
 
 	local_supplies=0.0 
-	state_category = rural
-	resources = {
-		iron =5
-                  wood =3
-	}
+	state_category = pastoral
 	
 
 	provinces = {

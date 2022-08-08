@@ -240,6 +240,12 @@ country_event = {
 			}
 			#Annex all tags
 			AFR = {
+				KAA = {
+					every_owned_state = {
+						remove_core_of = PREV
+						transfer_state_to = PREV.PREV
+					}
+				}
 				IJW = {
 					every_owned_state = {
 						remove_core_of = PREV
@@ -472,12 +478,6 @@ country_event = {
 						transfer_state_to = PREV.PREV
 					}
 				}
-				KBG = {
-					every_owned_state = {
-						remove_core_of = PREV
-						transfer_state_to = PREV.PREV
-					}
-				}
 				KTK = {
 					every_owned_state = {
 						remove_core_of = PREV
@@ -616,7 +616,19 @@ country_event = {
 						transfer_state_to = PREV.PREV
 					}
 				}
+				NGY = {
+					every_owned_state = {
+						remove_core_of = PREV
+						transfer_state_to = PREV.PREV
+					}
+				}
 				TYO = {
+					every_owned_state = {
+						remove_core_of = PREV
+						transfer_state_to = PREV.PREV
+					}
+				}
+				HLO = {
 					every_owned_state = {
 						remove_core_of = PREV
 						transfer_state_to = PREV.PREV
@@ -652,13 +664,13 @@ country_event = {
 						transfer_state_to = PREV.PREV
 					}
 				}
-				KBD = {
+				KND = {
 					every_owned_state = {
 						remove_core_of = PREV
 						transfer_state_to = PREV.PREV
 					}
 				}
-				MLW = {
+				KBD = {
 					every_owned_state = {
 						remove_core_of = PREV
 						transfer_state_to = PREV.PREV
@@ -719,6 +731,12 @@ country_event = {
 					}
 				}
 				OOR = {
+					every_owned_state = {
+						remove_core_of = PREV
+						transfer_state_to = PREV.PREV
+					}
+				}
+				TOB = {
 					every_owned_state = {
 						remove_core_of = PREV
 						transfer_state_to = PREV.PREV

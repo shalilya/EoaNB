@@ -28,7 +28,7 @@ state = {
 		}
 	}
 	
-	manpower = 5000
+	manpower = 22400
 	state_category = wasteland
 	
 }

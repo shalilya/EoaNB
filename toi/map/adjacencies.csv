@@ -4,7 +4,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 10141;1419;sea;5267;-1;-1;-1;-1;;Moluccas
 480;9431;sea;8621;-1;-1;-1;-1;;Netherlands outlier
 8857;2284;sea;7617;1560;1009;1556;1016;PANAMA_CANAL;Panama
-2382;2729;sea;6389;2949;1598;2962;1612;KIEL_CANAL;Kiel
+2729;2408;sea;6257;2949;1598;2962;1612;KIEL_CANAL;Kiel
 5388;803;sea;1155;-1;-1;-1;-1;SUEZ_CANAL;Suez
 299;211;sea;2282;-1;-1;-1;-1;;Småland-Öland
 6345;6287;sea;2382;-1;-1;-1;-1;;Skåne-Sjaelland
@@ -17,7 +17,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 83;6201;sea;1660;-1;-1;-1;-1;;Dagö-Estonia
 6891;3838;sea;5579;-1;-1;-1;-1;;Sardinia-Corsica
 9990;4159;sea;5681;-1;-1;-1;-1;;Calabria-Sicily
-13526;11833;sea;5579;-1;-1;-1;-1;;Tuscany
 9793;9845;sea;8871;-1;-1;-1;-1;;Menorca-Mallorca
 12299;12113;sea;5539;-1;-1;-1;-1;;Singapore-Batam
 7396;1401;sea;5615;-1;-1;-1;-1;;Bangka Belitung-Sumatra

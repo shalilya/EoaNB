@@ -14,8 +14,7 @@ state = {
 	}
 
 	history = {
-		#owner = CPA
-		controller = USA
+		owner = CPA
 		set_state_flag = NA_B_Disregardable_State
 
 		buildings = {

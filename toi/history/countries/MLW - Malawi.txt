@@ -1,35 +1,31 @@
 ﻿#GENERIC, NOT FINITE
 1857.1.1 = {
-	capital = 928
+	capital = 1
 
-	oob = "Africa_1857"
+	oob = "" #No OOB for 1857
 
-	set_convoys = 0
+	set_convoys = 0 #No Convoys in 1857
 	
-	set_research_slots = 1
+	set_research_slots = 1 #Placeholder for 1857
 
 	add_ideas = { 
-		#POLITICS 
-			
+		#POLITICS
 		hos_is_leader
 		pre_industrial_era
 		agrarian
 		no_heir
 		absolute_monarchy
-	religion_animist
-	law_army_tribal_basic
-	
+
 		civilian_economy
-		closed_economy
-		one_percent
-		very_low_taxes
+		export_focus
+		two_percent
+		normal_taxes
 	cl_legal
-	lp_tribal_communalism
 
 		stagnation_growth
-		no_borders
-	manpower_tribal_warriors
-		tribal_slavery
+		closed_borders
+	volunteer_only
+		limited_equality
 		absolutism
 
 		no_constitution
@@ -40,16 +36,13 @@
 	religion_animist
 
 	 hc_no_healthcare
-		law_mercenary_groups
+		law_police_force
 		inframain_no_subsidies_infrastructure
 		navinfra_no_naval_infrastructure
 		sfund_private_ventures_only
-
-				 #NATIONAL SPIRITS
+	
+		#NATIONAL SPIRITS
 		
-	AF_T_small_kingdom
-
-
 	}
 
 	set_politics = {
@@ -69,22 +62,16 @@ set_popularities = {
 		fundamentalism = 0
 }
 
-set_technology = {
-	tribaltech = 1
-	tribal_society = 1
-	tribal_natral_economics = 1
-	tribal_crop_planting = 1
-	tribal_weapons = 1
-	tribal_tatics = 1
-	tribal_artisan = 1
-	tribal_forging = 1
-	tribal_guilds_trade = 1
-	tribal_healing_herbs = 1
-	tribal_steel_tools = 1
+	set_technology = {
+	infantry_weapons = 1 traditional_mixed_arms = 1
+	tech_infantry_napoleonic_uniform = 1
+	tech_naval_mtg_simple_corvette_hull = 1
+		tech_naval_mtg_24_pounder_battery = 1
+		tech_naval_mtg_sails = 1
+		tech_naval_mtg_crows_nest = 1
 	start_build_tech = 1
 	}
 
-
 	# POLITICAL LEADERS
-	recruit_character = MLW_Sosola_Kalimakudzulu
+
 }

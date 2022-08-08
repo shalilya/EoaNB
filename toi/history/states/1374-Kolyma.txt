@@ -23,7 +23,7 @@ state = {
 			add_to_array = { state_culture_array_num = 0.02 }
 	}
 	
-	manpower = 4000
+	manpower = 29700
 	state_category = wasteland
 	
 }

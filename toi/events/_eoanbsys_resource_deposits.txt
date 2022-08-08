@@ -1,17 +1,14 @@
 add_namespace = eoanb_deposit
+add_namespace = eoanb_deposit_debug
 
-#eoanb_deposit.1-400	Resource Spawns
-#eoanb_deposit.401-500	Debug Events
-
-##### Resource Spawns (eoanb_deposit.1-400) #####
-
+##resource spawns
 country_event = {#Branobel founded 1873
 	id = eoanb_deposit.1
 	title = eoanb_deposit.1.t
 	desc = eoanb_deposit.1.d
 
 	#is_triggered_only = yes
-	trigger = {
+	trigger ={
 		date > 1873.1.1
 		owns_state = 229
 		has_tech = early_oil_refining
@@ -38,7 +35,7 @@ country_event = {#Zorritos District strike
 	desc = eoanb_deposit.2.d
 
 	#is_triggered_only = yes
-	trigger = {
+	trigger ={
 		date > 1863.1.1
 		owns_state = 303
 		has_tech = early_oil_refining
@@ -65,7 +62,7 @@ country_event = {#sumatra deposits
 
 	#is_triggered_only = yes
 	fire_only_once = yes
-	trigger = {
+	trigger ={
 		date > 1885.1.1
 		owns_state = 1184
 		has_tech = early_oil_refining
@@ -86,18 +83,16 @@ country_event = {#sumatra deposits
 	}
 }
 
-##### Debug Events (eoanb_deposit.401-500) #####
-
 # Oil Debug
 country_event = {
-	id = eoanb_deposit.401
-	title = eoanb_deposit.401.t
-	desc = eoanb_deposit.401.d
+	id = eoanb_deposit_debug.1
+	title = eoanb_deposit_debug.1.t
+	desc = eoanb_deposit_debug.1.d
 
 	is_triggered_only = yes
 
 	option = {
-		name = eoanb_deposit.401.a
+		name = eoanb_deposit_debug.1.a
 		add_political_power = -20
 		random_owned_controlled_state = {
 			add_resource = {
@@ -107,7 +102,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = eoanb_deposit.401.b
+		name = eoanb_deposit_debug.1.b
 		trigger = { has_political_power > 80 }
 		add_political_power = -80
 		random_owned_controlled_state = {
@@ -118,7 +113,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = eoanb_deposit.401.c
+		name = eoanb_deposit_debug_1.c
 		trigger = { has_political_power > 160 }
 		add_political_power = -160
 		random_owned_controlled_state = {
@@ -131,14 +126,14 @@ country_event = {
 }
 # Aluminum Debug
 country_event = {
-  id = eoanb_deposit.402
-  title = eoanb_deposit.402.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.2
+  title = eoanb_deposit_debug.2.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -148,7 +143,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -159,7 +154,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -172,14 +167,14 @@ country_event = {
 }
 # Rubber Debug
 country_event = {
-  id = eoanb_deposit.403
-  title = eoanb_deposit.403.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.3
+  title = eoanb_deposit_debug.3.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -189,7 +184,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -200,7 +195,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -213,14 +208,14 @@ country_event = {
 }
 # Tungsten Debug
 country_event = {
-  id = eoanb_deposit.404
-  title = eoanb_deposit.404.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.4
+  title = eoanb_deposit_debug.4.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -230,7 +225,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -241,7 +236,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -254,14 +249,14 @@ country_event = {
 }
 # Steel Debug
 country_event = {
-  id = eoanb_deposit.405
-  title = eoanb_deposit.405.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.5
+  title = eoanb_deposit_debug.5.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -271,7 +266,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -282,7 +277,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -295,14 +290,14 @@ country_event = {
 }
 # Chromium
 country_event = {
-  id = eoanb_deposit.406
-  title = eoanb_deposit.406.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.6
+  title = eoanb_deposit_debug.6.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -312,7 +307,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -323,7 +318,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -336,14 +331,14 @@ country_event = {
 }
 # Coal Debug
 country_event = {
-  id = eoanb_deposit.407
-  title = eoanb_deposit.407.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.7
+  title = eoanb_deposit_debug.7.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -353,7 +348,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -364,7 +359,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -377,14 +372,14 @@ country_event = {
 }
 # Wood Debug
 country_event = {
-  id = eoanb_deposit.408
-  title = eoanb_deposit.408.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.8
+  title = eoanb_deposit_debug.8.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -394,7 +389,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -405,7 +400,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -418,14 +413,14 @@ country_event = {
 }
 # Fabric Debug
 country_event = {
-  id = eoanb_deposit.409
-  title = eoanb_deposit.409.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.9
+  title = eoanb_deposit_debug.9.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -435,7 +430,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -446,7 +441,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -459,14 +454,14 @@ country_event = {
 }
 # Machine Parts Debug
 country_event = {
-  id = eoanb_deposit.410
-  title = eoanb_deposit.410.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.10
+  title = eoanb_deposit_debug.10.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -476,7 +471,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -487,7 +482,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -500,14 +495,14 @@ country_event = {
 }
 # Electronics Debug
 country_event = {
-  id = eoanb_deposit.411
-  title = eoanb_deposit.411.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.11
+  title = eoanb_deposit_debug.11.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -517,7 +512,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -528,7 +523,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -541,14 +536,14 @@ country_event = {
 }
 # Plastics Debug
 country_event = {
-  id = eoanb_deposit.412
-  title = eoanb_deposit.412.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.12
+  title = eoanb_deposit_debug.12.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -558,7 +553,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -569,7 +564,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -582,14 +577,14 @@ country_event = {
 }
 # Ceramics Debug
 country_event = {
-  id = eoanb_deposit.413
-  title = eoanb_deposit.413.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.13
+  title = eoanb_deposit_debug.13.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -599,7 +594,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -610,7 +605,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -623,14 +618,14 @@ country_event = {
 }
 # Battery Debug
 country_event = {
-  id = eoanb_deposit.414
-  title = eoanb_deposit.414.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.14
+  title = eoanb_deposit_debug.14.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -640,7 +635,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -651,7 +646,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -664,14 +659,14 @@ country_event = {
 }
 # Titanium Debug
 country_event = {
-  id = eoanb_deposit.415
-  title = eoanb_deposit.415.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.15
+  title = eoanb_deposit_debug.15.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -681,7 +676,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -692,7 +687,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -705,14 +700,14 @@ country_event = {
 }
 # Iron Debug
 country_event = {
-  id = eoanb_deposit.416
-  title = eoanb_deposit.416.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.16
+  title = eoanb_deposit_debug.16.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -722,7 +717,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -733,7 +728,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -746,14 +741,14 @@ country_event = {
 }
 # Cotton Debug
 country_event = {
-  id = eoanb_deposit.417
-  title = eoanb_deposit.417.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.17
+  title = eoanb_deposit_debug.17.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -20
     random_owned_controlled_state = {
       add_resource = {
@@ -763,7 +758,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 80 }
     add_political_power = -80
     random_owned_controlled_state = {
@@ -774,7 +769,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 160 }
     add_political_power = -160
     random_owned_controlled_state = {
@@ -787,14 +782,14 @@ country_event = {
 }
 # Silicates Debug
 country_event = {
-  id = eoanb_deposit.418
-  title = eoanb_deposit.418.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.18
+  title = eoanb_deposit_debug.18.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -804,7 +799,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -815,7 +810,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {
@@ -828,14 +823,14 @@ country_event = {
 }
 # Rare Metals
 country_event = {
-  id = eoanb_deposit.419
-  title = eoanb_deposit.419.t
-  desc = eoanb_deposit.401.d
+  id = eoanb_deposit_debug.19
+  title = eoanb_deposit_debug.19.t
+  desc = eoanb_deposit_debug.1.d
 
   is_triggered_only = yes
 
   option = {
-    name = eoanb_deposit.401.a
+    name = eoanb_deposit_debug.1.a
     add_political_power = -25
     random_owned_controlled_state = {
       add_resource = {
@@ -845,7 +840,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.b
+    name = eoanb_deposit_debug.1.b
     trigger = { has_political_power > 100 }
     add_political_power = -100
     random_owned_controlled_state = {
@@ -856,7 +851,7 @@ country_event = {
     }
   }
   option = {
-    name = eoanb_deposit.401.c
+    name = eoanb_deposit_debug_1.c
     trigger = { has_political_power > 200 }
     add_political_power = -200
     random_owned_controlled_state = {

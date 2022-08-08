@@ -39,7 +39,7 @@ state = {
 	provinces = {
 		11599 672 772
 	}
-	manpower = 130000
+	manpower = 192835
 	
 	state_category =town
 }

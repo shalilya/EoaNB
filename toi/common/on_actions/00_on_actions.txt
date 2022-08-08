@@ -51,6 +51,7 @@ on_actions = {
 				}
 				AUS = { country_event = { id = austria.1 } } #German Renaming
 				AUS = { country_event = { id = austria.2 } } #Starting Situation
+				HOL = { country_event = { id = holland_oog.1 } } #Starting Situation
 				PRS = { country_event = { id = prussia.29 } } #German Renaming
 				PIE = { country_event = { id = sardinia.11 } }
 				LVN = { country_event = { id = sardinia.11 } }
@@ -310,29 +311,29 @@ on_actions = {
 	#ROOT is winner #FROM is loser
 	on_peaceconference_ended = {
 		effect = {
-			#if = {
-			#	limit = {
-			#		FROM = { has_country_flag = containment_target } #containment target defeated
-			#		FROM = {
-			#			NOT = {
-			#				has_country_flag = containment_reperations
-			#			}
-			#		}
-			#	}
-			#	FROM = { set_country_flag = containment_reperations }
-			#	FROM = { country_event = { id = contain.1 days = 0 } }
-			#	ROOT = { clr_country_flag = containment_starter }
-			#}
-			#if = {
-			#	limit = {
-			#		ROOT = { has_country_flag = containment_target } #containment defeated
-			#		ROOT = { has_defensive_war = no }
-			#	}
-			#	ROOT = { set_country_flag = containment_target_won }
-			#	FROM = { clr_country_flag = containment_starter }
-			#	ROOT = { country_event = { id = contain.3 days = 0 } }
-			#	ROOT = { clr_country_flag = containment_target }
-			#}
+			if = {
+				limit = {
+					FROM = { has_country_flag = containment_target } #containment target defeated
+					FROM = {
+						NOT = {
+							has_country_flag = containment_reperations
+						}
+					}
+				}
+				FROM = { set_country_flag = containment_reperations }
+				FROM = { country_event = { id = contain.1 days = 0 } }
+				ROOT = { clr_country_flag = containment_starter }
+			}
+			if = {
+				limit = {
+					ROOT = { has_country_flag = containment_target } #containment defeated
+					ROOT = { has_defensive_war = no }
+				}
+				ROOT = { set_country_flag = containment_target_won }
+				FROM = { clr_country_flag = containment_starter }
+				ROOT = { country_event = { id = contain.3 days = 0 } }
+				ROOT = { clr_country_flag = containment_target }
+			}
 			if = {
 				limit = {
 					tag = NEG

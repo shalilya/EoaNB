@@ -129,16 +129,8 @@ focus_tree = {
 			FOCUS_FILTER_INTERNAL_AFFAIRS
 			FOCUS_FILTER_HISTORICAL
 		}
-
-		available = {
-			date > 1858.10.01
-		}
-		
 		completion_reward = {
-			country_event = {
-				id = SER_politics.1
-				days = 1
-			}
+
 		}
 	}
 

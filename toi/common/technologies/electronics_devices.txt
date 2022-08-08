@@ -19,6 +19,7 @@ technologies = {
 		dependencies = {
 			tribal_chemistry = 1
 		}
+		
 		ai_will_do = {
 			factor = 100
 			modifier = {
@@ -55,6 +56,10 @@ technologies = {
 		local_resources_factor = 0.05
 		category_front_line = {
 			soft_attack = 0.1
+		}
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_20
+			custom_effect_tooltip = increase_valuable_goods_output_20
 		}
 		
 		research_cost = 0.15
@@ -101,6 +106,10 @@ technologies = {
 		local_resources_factor = 0.05
 		category_front_line = {
 			soft_attack = 0.05
+		}
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_20
+			custom_effect_tooltip = increase_valuable_goods_output_20
 		}
 		
 		research_cost = 0.15
@@ -4371,8 +4380,7 @@ technologies = {
 		start_year = 1885
 		folder = {
 			name = electronics_devices_folder
-			position = { x = -2 y = 20
-		 }
+			position = { x = -2 y = 18 }
 		}
 		
 		path = {
@@ -4404,7 +4412,7 @@ technologies = {
 		start_year = 1885
 		folder = {
 			name = electronics_devices_folder
-			position = { x = 0 y = 20 }
+			position = { x = 0 y = 18 }
 		}
 		
 		path = {
@@ -4756,7 +4764,7 @@ technologies = {
 		start_year = 1890
 		folder = {
 			name = electronics_devices_folder
-			position = { x = -2 y = 22 }
+			position = { x = -2 y = 20 }
 		}
 		
 		ai_will_do = {
@@ -4787,7 +4795,7 @@ technologies = {
 		start_year = 1890
 		folder = {
 			name = electronics_devices_folder
-			position = { x = 2 y = 22 }
+			position = { x = 2 y = 20 }
 		}
 		
 		ai_will_do = {
@@ -4814,7 +4822,7 @@ technologies = {
 		start_year = 1895
 		folder = {
 			name = electronics_devices_folder
-			position = { x = 0 y = 24 }
+			position = { x = 0 y = 22 }
 		}
 		path = {
 			leads_to_tech = power_station_3

@@ -4,10 +4,9 @@ state = {
 
 
 	local_supplies=0.0 
-	state_category = rural
+	state_category = pastoral
 	resources = {
 		wood = 3
-		iron = 2
 	}
 		
 
@@ -17,13 +16,10 @@ state = {
 	manpower = 123875
 	
 	history = {
-		victory_points = {
-			12795 1
-		}
 		buildings = {
 		}
-		owner = LUN
-		add_core_of = LUN
+		owner = CKW
+		add_core_of = CKW
 
 								add_to_array = { state_culture_array = 310 } 
 				 	add_to_array = { state_culture_array_num = 1.00 }

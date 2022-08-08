@@ -522,9 +522,6 @@ characters = {
 				army = {
 					small = GFX_Portrait_TSH_Andre_Cazeneuve_Small
 				}
-				civilian = {
-					small = GFX_Portrait_TSH_Andre_Cazeneuve_Small
-				}
 			}
 		}
 		TSH_character_bouffier_francoise = {
@@ -532,9 +529,6 @@ characters = {
 			#
 			portraits = {
 				army = {
-					small = GFX_Portrait_TSH_Bouffier_Francoise_Small
-				}
-				civilian = {
 					small = GFX_Portrait_TSH_Bouffier_Francoise_Small
 				}
 			}
@@ -557,21 +551,13 @@ characters = {
 				}
 			}
 		}
-		TSH_character_matsudaira_tsuneo = {
+
+		TSH_matsudaira_tsuneo = {
 			name = "Matsudaira Tsuneo"
 			# https://en.wikipedia.org/wiki/Tsuneo_Matsudaira
 			portraits = {
 				civilian = {
 					small = GFX_Portrait_TSH_Matsudaira_Tsuneo_Small
-				}
-			}
-		}
-		TSH_character_philip_franz_von_siebold = {
-			name = "Philipp Franz von Siebold"
-			# https://de.wikipedia.org/wiki/Philipp_Franz_von_Siebold
-			portraits = {
-				civilian = {
-					small = GFX_Portrait_TSH_Philip_Franz_von_Siebold
 				}
 			}
 		}
@@ -1116,15 +1102,7 @@ characters = {
 		# https://en.wikipedia.org/wiki/Matsukata_Masayoshi
 		# https://en.wikipedia.org/wiki/%C5%8Ckuma_Shigenobu
 		# https://en.wikipedia.org/wiki/Katsura_Tar%C5%8D
-		JAP_character_saionji_inmochi = {
-			# https://en.wikipedia.org/wiki/Saionji_Kinmochi
-			name = "Saionji Kinmochi"
-			portraits = {
-				army = {
-					large = GFX_Portrait_JAP_Saionji_Kinmochi
-				}
-			}
-		}
+		# https://en.wikipedia.org/wiki/Saionji_Kinmochi
 		JAP_character_kuroda_kiyotaka = {
 			name = "Kuroda Kiyotaka"
 			portraits = {

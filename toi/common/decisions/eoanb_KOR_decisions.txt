@@ -72,7 +72,7 @@ KOR_decisions_category_wars_and_conflicts = {
 				}
 				FRA = {
 					country_event = {
-						id = KOR_joseon_dynasty.25
+						id = korea.25
 					}
 				}
 			}
@@ -94,13 +94,13 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = KOR
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.22
+						id = korea.22
 						days = 10
 					}
 				}
 				KOR = {
 					country_event = {
-						id = KOR_joseon_dynasty.24
+						id = korea.24
 					}
 				}
             }
@@ -121,7 +121,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = KOR
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.22
+						id = korea.22
 						days = 10
 					}
 				} # Stalemate if it is lasting too long
@@ -185,7 +185,7 @@ KOR_decisions_category_wars_and_conflicts = {
 					}
 					FRA = {
 						country_event = {
-							id = KOR_joseon_dynasty.35
+							id = korea.35
 						}
 					}
 			}
@@ -206,7 +206,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = FRA
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.39
+						id = korea.39
 					}
 				}
 				KOR = {
@@ -232,7 +232,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						}
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.40
+						id = korea.40
 					}
 				}
 			}
@@ -252,7 +252,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = FRA
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.39
+						id = korea.39
 					}
 				} # Stalemate if it is lasting too long
 				KOR = {
@@ -274,7 +274,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						}
 					}
 					country_event = {
-						id = KOR_joseon_dynasty.40
+						id = korea.40
 					}
 				}
 			}
@@ -375,7 +375,7 @@ KOR_decisions_category_wars_and_conflicts = {
 				###USA event for losing 
 				USA = {
 					country_event = {
-						id = KOR_joseon_dynasty.41
+						id = korea.41
 					}
 				}
 			}
@@ -413,13 +413,13 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = KOR
 					}
 					#country_event = {
-					##	id = KOR_joseon_dynasty.22
+					##	id = korea.22
 					#	days = 10
 					#}
 				}
 				#KOR = {
 				#	country_event = {
-				#		id = KOR_joseon_dynasty.24
+				#		id = korea.24
 				#	}
 				#}
 			}
@@ -440,7 +440,7 @@ KOR_decisions_category_wars_and_conflicts = {
 						#remove_core_of = KOR
 					}
 					#country_event = {
-					#	id = KOR_joseon_dynasty.22
+					#	id = korea.22
 					#	days = 10
 					#}
 				} # Stalemate if it is lasting too long

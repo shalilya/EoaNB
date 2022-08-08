@@ -1,8 +1,10 @@
 ﻿add_namespace = hispaniola
-add_namespace = haiti
+add_namespace = haiti_coup
+add_namespace = haiti_republic
+add_namespace = HAI_coup_is_original_tag_event
 
 country_event = {
-    id = haiti.1
+    id = haiti_republic.1
     hidden = yes
     is_triggered_only = yes
 
@@ -16,7 +18,7 @@ country_event = {
 					}
 					HAI = { has_completed_focus = HAI_create_the_republic }
 				}
-				HAI = { country_event = { id = haiti.2 }}
+				HAI = { country_event = { id = haiti_republic.2 }}
 			}
 		}
 		
@@ -24,36 +26,33 @@ country_event = {
 }
 
 country_event = {
-    id = haiti.2
-    title = haiti.2.t
-    desc = haiti.2.desc
+    id = haiti_republic.2
+    title = haiti_republic.2.t
+    desc = haiti_republic.2.desc
 
     fire_only_once = yes
     is_triggered_only = yes
 
     immediate = {
+        HAI = { retire_country_leader = yes }
         set_politics = { ruling_party = radical_democracy }
-		promote_character = HAI_Sylvain_Salnave
 		hidden_effect = {
 			complete_national_focus = HAI_geffrard_escapes
-			HAI = { country_event = { id = haiti.3 days = 1 }} # marker 968
+			HAI = { country_event = { id = haiti_republic.3 days = 1 }} # marker 968
 		}
     }
-	option = {
-		name = haiti.2.a
-	}
 }
 
 country_event = {
-    id = haiti.3
-    title = haiti.3.t
-    desc = haiti.3.desc
+    id = haiti_republic.3
+    title = haiti_republic.3.t
+    desc = haiti_republic.3.desc
 
     fire_only_once = yes
     is_triggered_only = yes
 	# Saget
 	option = {
-		name = haiti.3.a
+		name = haiti_republic.3.a
 		set_capital = { state = 790 }
 		start_civil_war = {
 			ruling_party = autocracy
@@ -63,17 +62,16 @@ country_event = {
 			states = { 
 				318
 			}
-			keep_political_leader = no
+			keep_political_leader = yes
 		}
 		hidden_effect = { HAI = { 
-			complete_national_focus = HAI_sagets_republic
-			country_event = { id = haiti.4 } 
-			country_event = { id = haiti.5 days = 1 } # marker 1598
+			country_event = { id = haiti_republic.4 } 
+			country_event = { id = haiti_republic.5 days = 1 } # marker 1598
 		} }
 	}	
 	# Salnave
 	option = {
-		name = haiti.3.b
+		name = haiti_republic.3.b
 		ai_chance = { 
 			factor = 10 
 			modifier = {
@@ -89,18 +87,18 @@ country_event = {
 			states = { 
 				790
 			}
-			keep_political_leader = no
+			keep_political_leader = yes
 		}
 		hidden_effect = {
-			HAI = { 
-				country_event = { id = haiti.4 } 
-			} 
-		}
+			 HAI = { 
+				 	country_event = { id = haiti_republic.4 } 
+				 } 
+			 }
 	}
 }
 
 country_event = {
-	id = haiti.4
+	id = haiti_republic.4
 	hidden = yes
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -128,64 +126,11 @@ country_event = {
 					retire_ideology_leader = traditional_conservatism
 					retire_ideology_leader = centrism
 					retire_ideology_leader = radical_democracy
-					set_politics = { ruling_party = centrism}
-					## // characters
-					generate_character = {
-						token_base = HAI_Jean_Nicolas_Nissage_Saget
-						name = "Jean-Nicolas Nissage Saget"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-							}
-						}
-					}
-					## characters //
-					#add_country_leader_role = {
-					#	character = HAI_Jean_Nicolas_Nissage_Saget
-					#	promote_leader = yes
-					#	country_leader = {
-					#		ideology = conserv_liberal
-					#		expire = "1965.1.1"
-					#	}
-					#}
-					add_corps_commander_role = {
-						character = HAI_Jean_Nicolas_Nissage_Saget
-						skill = 2
-						attack_skill = 2
-						defense_skill = 2
-						planning_skill = 2
-						logistics_skill = 5
-					}
+					set_politics = { ruling_party = traditional_conservatism}
+					recruit_character = HAI_Jean_Nicolas_Nissage_Saget
+					recruit_character = HAI_Michel_Domingue
 					promote_character = HAI_Jean_Nicolas_Nissage_Saget
-					generate_character = {
-						token_base = HAI_Michel_Domingue
-						name = "Michel Domingue"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds" ## update portrait
-							}
-						}
-					}
-					add_country_leader_role = {
-						character = HAI_Michel_Domingue
-						promote_leader = yes
-						country_leader = {
-							ideology = conserv
-							expire = "1965.1.1"
-						}
-					}
 					promote_character = HAI_Michel_Domingue
-					promote_character = {
-						character = HAI_Michel_Domingue
-						ideology = conserv
-					}
-					## // characters
 					set_popularities = {
 						anarchism = 0
 						vanguard_communism = 0
@@ -195,10 +140,18 @@ country_event = {
 						traditional_conservatism = 25
 						radical_democracy = 0
 						chauvinist_populism = 5
-						autocracy = 25
+						autocracy = 15
 						fundamentalism = 0
 					}
-					# // characters
+					every_unit_leader = {
+						limit = { has_id = 318001 }
+						set_nationality = PREV
+					}
+					every_unit_leader = {
+						limit = { has_id = 318002 }
+						set_nationality = PREV
+					}
+					# KYAN REMINDER TO ADD OTHER LEADERS APPROPRIATELY OR SOMETHING (PROBABLY PIERRE & DOMINGUE):
 					#POLITICS 
 						  
 					add_ideas = {
@@ -271,57 +224,22 @@ country_event = {
 						autocracy = 20
 						fundamentalism = 0
 					}
-					## characters //
-					generate_character = {
-						token_base = HAI_Fabre_Geffrard 
-						name = "Guillaume Fabre Nicolas Geffrard"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Fabre_Geffrard.dds"
-							}
-						}
-					}
-					add_country_leader_role = {
-						character = HAI_Fabre_Geffrard
-						promote_leader = yes
-						country_leader = {
-							ideology = conserv
-							expire = "1965.1.1"
-						}
-					}
+					recruit_character = HAI_Fabre_Geffrard
+					recruit_character = HAI_Jean_Nicolas_Nissage_Saget
+					recruit_character = HAI_Sylvain_Salnave
 					promote_character = HAI_Fabre_Geffrard
-					generate_character = {
-						token_base = HAI_Sylvain_Salnave 
-						name="Sylvain Salvane"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-						}
+					promote_character = HAI_Jean_Nicolas_Nissage_Saget
+					recruit_character = HAI_Sylvain_Salnave
+					every_unit_leader = {
+						limit = { has_id = 318001 }
+						set_nationality = PREV
 					}
-					add_country_leader_role = {
-						character = HAI_Sylvain_Salnave
-						promote_leader = yes
-						country_leader = {
-							ideology = reactionary
-							expire = "1965.1.1"
-						}
+					every_unit_leader = {
+						limit = { has_id = 318002 }
+						set_nationality = PREV
 					}
-					add_corps_commander_role = {
-						character = HAI_Sylvain_Salnave
-						skill = 2
-						attack_skill = 5
-						defense_skill = 2
-						planning_skill = 2
-						logistics_skill = 2
-					}
-					promote_character = HAI_Sylvain_Salnave
-					## // characters
-					# KYAN REMINDER TO ADD OTHER LEADERS APPROPRIATELY OR SOMETHING (PROBABLY PIERRE & DOMINGUE):
 					#POLITICS 
+						  
 					add_ideas = {
 
 						hos_is_leader
@@ -361,114 +279,56 @@ country_event = {
 }
 
 country_event = {
-	id = haiti.5
-	title = haiti.5.t
-	desc = haiti.5.desc
-	is_triggered_only = yes
-	
-	immediate = {
-		HAI = {
-			set_politics = { ruling_party = traditional_conservatism }
-			hidden_effect = {
-				set_country_flag = HAI_michel_domingue_elected
-				complete_national_focus = HAI_michel_domingue_presidency
-				country_event = { id = haiti.6 days = 5 } # marker 671
-			}
-		}
-	}
-	option = {
-		name = haiti.5.a
-	}
-}
-
-
-country_event = {
-	id = haiti.6
-	title = haiti.6.t
-	desc = haiti.6.desc
+	id = haiti_republic.5
+	title = haiti_republic.5.t
+	desc = haiti_republic.5.desc
 	is_triggered_only = yes
 	
 	immediate = {
 		HAI = {
 			set_politics = { ruling_party = centrism }
 			hidden_effect = {
-				generate_character = {
-					token_base = HAI_Pierre_Theoma_Boisrond
-					name = "Pierre Théoma Boisrond-Canal"
-					portraits={
-						civilian={
-							large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-						}
-						army={
-							large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-						} # update portrait
-					}
-				}
-				add_country_leader_role = {
-					character = HAI_Pierre_Theoma_Boisrond
-					promote_leader = yes
-					country_leader = {
-						ideology = conserv_liberal
-						expire = "1965.1.1"
-					}
-				}
-				promote_character = HAI_Pierre_Theoma_Boisrond
-				complete_national_focus = HAI_michel_domingue_resigns
-				complete_national_focus = HAI_treaty_with_the_dominicans
-				country_event = { id = haiti.7 days = 5} # marker 1180
+				recruit_character = HAI_Michel_Domingue
+				promote_character = HAI_Michel_Domingue
+				set_country_flag = HAI_michel_domingue_elected
+				country_event = { id = haiti_republic.6 days = 1 } # marker 671
 			}
-			
 		}
-	}
-	option = {
-		name = haiti.6.a
 	}
 }
 
+
 country_event = {
-	id = haiti.7
-	title = haiti.7.t
-	desc = haiti.7.desc
+	id = haiti_republic.6
+	title = haiti_republic.6.t
+	desc = haiti_republic.6.desc
 	is_triggered_only = yes
 	
 	immediate = {
 		HAI = {
-			retire_ideology_leader = centrism
 			hidden_effect = {
-				generate_character = {
-					token_base = HAI_Lysius_salomon
-					name = "Louis Étienne Félicité Lysius Salomon"
-					portraits={
-						civilian={
-							large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-						}
-						army={
-							large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-						} # update portrait
+				retire_ideology_leader = centrism
+				create_country_leader = {
+					name = "Pierre Théoma Boisrond-Canal"
+					desc = "POLITICS_TEMP_DESC"
+					picture = "Portrait_HAI_Sylvain_Salnave.dds" # todo: update
+					expire = "1965.2.1"
+					ideology = conserv_liberal
+					traits = {
 					}
-				}
-				add_country_leader_role = {
-					character = HAI_Lysius_salomon
-					promote_leader = yes
-					country_leader = {
-						ideology = conserv_liberal
-						expire = "1965.1.1"
-					}
-				}
-				promote_character = HAI_Lysius_salomon
-				complete_national_focus = HAI_salomon_presidency
-				set_politics = { ruling_party = centrism }
+				} # todo create character and recruit
+				complete_national_focus = HAI_michel_domingue_resigns
+				complete_national_focus = HAI_the_1867_constitution
+				complete_national_focus = HAI_treaty_with_the_dominicans
 			}
-			
+			set_politics = { ruling_party = centrism }
 		}
-	}
-	option = {
-		name = haiti.7.a
 	}
 }
 
+
 country_event = {
-	id = haiti.14
+	id = HAI_coup_is_original_tag_event.1
 	hidden = yes
 	is_triggered_only = yes
 	
@@ -498,15 +358,15 @@ country_event = {
 
 #Geffrard's Arrest
 country_event = {
-	id = haiti.8
-	title = haiti.8.t
-	desc = haiti.8.desc
+	id = haiti_coup.1
+	title = haiti_coup.1.t
+	desc = haiti_coup.1.desc
 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = haiti.8.a
+		name = haiti_coup.1.a
 		ai_chance = { 
 			factor = 90 
 		}
@@ -515,11 +375,11 @@ country_event = {
 			ideology = autocracy
 			popularity = 0.03
 		}
-		hidden_effect = { HAI = { country_event = { id = haiti.11 days = 5 } } }
+		hidden_effect = { HAI = { country_event = { id = haiti_coup.4 days = 5 } } }
 	}	
 	
 	option = {
-		name = haiti.8.b
+		name = haiti_coup.1.b
 		ai_chance = { 
 			factor = 10 
 			modifier = {
@@ -528,22 +388,22 @@ country_event = {
 			}
 		}
 		add_stability = -0.03
-		hidden_effect = { HAI = { country_event = { id = haiti.9 days = 1 } } } # marker 330
+		hidden_effect = { HAI = { country_event = { id = haiti_coup.2 days = 1 } } } # marker 330
 	}
 }
 
 #Geffrard's Monarch Coup
 country_event = {
-	id = haiti.9
-	title = haiti.9.t
-	desc = haiti.9.desc
+	id = haiti_coup.2
+	title = haiti_coup.2.t
+	desc = haiti_coup.2.desc
 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	#Geffrard
 	option = {
-		name = haiti.9.a
+		name = haiti_coup.2.a
 		ai_chance = { 
 			factor = 50 
 		}
@@ -562,14 +422,14 @@ country_event = {
 				#}
 				keep_political_leader = yes
 			}
-			country_event = { id = haiti.10 }
+			country_event = { id = haiti_coup.3 }
 			ROOT = { set_country_flag = HAI_coup_is_original_tag }
 		}
 	}	
 	
 	#Faustin
 	option = {
-		name = haiti.9.b
+		name = haiti_coup.2.b
 		ai_chance = { 
 			factor = 50 
 			modifier = {
@@ -591,7 +451,7 @@ country_event = {
 				#}
 				keep_political_leader = yes
 			}
-			country_event = { id = haiti.10 }
+			country_event = { id = haiti_coup.3 }
 			ROOT = { set_country_flag = HAI_coup_is_original_tag }
 			HAI = { complete_national_focus = HAI_strenghten_the_empire }
 		}
@@ -599,7 +459,7 @@ country_event = {
 }
 
 country_event = {
-	id = haiti.10
+	id = haiti_coup.3
 	hidden = yes
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -657,84 +517,9 @@ country_event = {
 						limit = { has_id = 318002 }
 						set_nationality = PREV
 					}
-					## characters //
-					generate_character = {
-						token_base = HAI_King_Fabre_Geffrard
-						name="Geffrard 1"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Faustin_Soulouque.dds"
-							}
-						}
-					}
-					promote_character = HAI_King_Fabre_Geffrard
-					add_country_leader_role = {
-						character = HAI_King_Fabre_Geffrard
-						promote_leader = yes
-						country_leader = {
-							ideology = despotism
-							expire = "1965.1.1"
-						}
-					}
-					generate_character = {
-						token_base = HAI_Jean_Nicolas_Nissage_Saget
-						name = "Jean-Nicolas Nissage Saget"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-							}
-						}
-					}
-					promote_character = HAI_Jean_Nicolas_Nissage_Saget
-					add_country_leader_role = {
-						character = HAI_Jean_Nicolas_Nissage_Saget
-						promote_leader = yes
-						country_leader = {
-							ideology = conserv_liberal
-							expire = "1965.1.1"
-						}
-					}
-					add_corps_commander_role = {
-						character = HAI_Jean_Nicolas_Nissage_Saget
-						skill = 2
-						attack_skill = 2
-						defense_skill = 2
-						planning_skill = 2
-						logistics_skill = 5
-					}
-					generate_character = {
-						token_base = HAI_Sylvain_Salnave 
-						name="Sylvain Salvane"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-						}
-					}
-					promote_character = HAI_Sylvain_Salnave
-					add_country_leader_role = {
-						character = HAI_Sylvain_Salnave
-						promote_leader = yes
-						country_leader = {
-							ideology = reactionary
-							expire = "1965.1.1"
-						}
-					}
-					add_corps_commander_role = {
-						character = HAI_Sylvain_Salnave
-						skill = 2
-						attack_skill = 5
-						defense_skill = 2
-						planning_skill = 2
-						logistics_skill = 2
-					}
-					## // characters
+					recruit_character = HAI_King_Fabre_Geffrard
+					recruit_character = HAI_Jean_Nicolas_Nissage_Saget
+					recruit_character = HAI_Sylvain_Salnave
 					#POLITICS 
 						  
 					add_ideas = {				
@@ -797,32 +582,12 @@ country_event = {
 						}
 					#}
 					set_country_flag = geffrard_monarchy_coup_2_flag
+					retire_ideology_leader = autocracy
 					retire_ideology_leader = traditional_conservatism
 					retire_ideology_leader = centrism
 					retire_ideology_leader = radical_democracy
 					set_politics = { ruling_party = autocracy }
-					generate_character = {
-						token_base = HAI_Faustin_Soulouque
-						name="Faustin I"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Faustin_Soulouque.dds"
-							}
-						}
-					}
-					add_country_leader_role = {
-						character = HAI_Faustin_Soulouque
-						promote_leader = yes
-						country_leader = {
-							ideology = despotism
-							expire = "1965.1.1"
-						}
-					}
-					promote_character = HAI_Faustin_Soulouque
-					promote_character = {
-						character = HAI_Faustin_Soulouque
-						ideology = despotism
-					}
+					recruit_character = HAI_Faustin_Soulouque
 					set_popularities = {
 						anarchism = 0
 						vanguard_communism = 0
@@ -877,38 +642,38 @@ country_event = {
 
 #Geffrard's Arrest Escape
 country_event = {
-	id = haiti.11
-	title = haiti.11.t
-	desc = haiti.11.desc
+	id = haiti_coup.4
+	title = haiti_coup.4.t
+	desc = haiti_coup.4.desc
 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = haiti.11.a
+		name = haiti_coup.4.a
 		add_stability = -0.01
-		hidden_effect = { HAI = { country_event = { id = haiti.12 days = 1 } } } # marker 325
+		hidden_effect = { HAI = { country_event = { id = haiti_coup.5 days = 1 } } } # marker 325
 	}
 }
 
 #Geffrard's Presidential Coup
 country_event = {
-	id = haiti.12
-	title = haiti.12.t
-	desc = haiti.12.desc
+	id = haiti_coup.5
+	title = haiti_coup.5.t
+	desc = haiti_coup.5.desc
 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	#Geffrard
 	option = {
-		name = haiti.12.a
+		name = haiti_coup.5.a
 		ai_chance = { factor = 90 }
 		hidden_effect = {
 			set_capital = { state = 790 }
 			start_civil_war = {
-				ruling_party = centrism
-				ideology = autocracy
+				ruling_party = autocracy
+				ideology = traditional_conservatism
 				size = 0
 				capital = 318
 				states = { 
@@ -917,20 +682,17 @@ country_event = {
 				#keep_unit_leaders = {
 				#
 				#}
-				keep_political_leader = no
+				keep_political_leader = yes
 			}
-			USA = { country_event = { id = haiti.13 } }
+			HAI = { country_event = { id = haiti_coup.6 } }
 			ROOT = { set_country_flag = HAI_coup_is_original_tag }
-			HAI = { 
-				complete_national_focus = HAI_create_the_republic 
-				country_event = { id = haiti.1 days = 10 } # marker 2970
-			}
+			HAI = { complete_national_focus = HAI_create_the_republic }
 		}
 	}	
 	
 	#Faustin
 	option = {
-		name = haiti.12.b
+		name = haiti_coup.5.b
 		ai_chance = { 
 			factor = 10 
 			modifier = {
@@ -941,7 +703,7 @@ country_event = {
 		hidden_effect = { 
 			start_civil_war = {
 				ruling_party = autocracy
-				ideology = centrism
+				ideology = traditional_conservatism
 				size = 0
 				capital = 790
 				states = { 
@@ -950,8 +712,9 @@ country_event = {
 				#keep_unit_leaders = {
 				#	
 				#}
+				keep_political_leader = yes
 			}
-			USA = { country_event = { id = haiti.13 } }
+			HAI = { country_event = { id = haiti_coup.6 } }
 			ROOT = { set_country_flag = HAI_coup_is_original_tag }
 			HAI = { complete_national_focus = HAI_strenghten_the_empire }
 		}
@@ -959,13 +722,15 @@ country_event = {
 }
 
 country_event = {
-	id = haiti.13
+	id = haiti_coup.6
 	hidden = yes
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {
-
+		HAI = {
+			country_event = { id = haiti_republic.1 days = 10 } # marker 2970
+		}
 		hidden_effect = {
 			#Geffrard
 			790 = { 
@@ -997,98 +762,22 @@ country_event = {
 					retire_ideology_leader = traditional_conservatism
 					retire_ideology_leader = centrism
 					retire_ideology_leader = radical_democracy
-					set_politics = { ruling_party = centrism }
-					## characters //
-					generate_character = {
-						token_base = HAI_Fabre_Geffrard
-						name = "Guillaume Fabre Nicolas Geffrard"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Fabre_Geffrard.dds"
-							}
-						}
-					}
-					add_country_leader_role = {
-						character = HAI_Fabre_Geffrard
-						promote_leader = yes
-						country_leader = {
-							ideology = conserv_liberal
-							expire = "1965.1.1"
-						}
-					}
-					promote_character = {
-						character = HAI_Fabre_Geffrard
-						ideology = conserv_liberal
-					}
-					generate_character = {
-						token_base = HAI_Sylvain_Salnave 
-						name="Sylvain Salvane"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-							army={
-								large="gfx/leaders/HAI/Portrait_HAI_Sylvain_Salnave.dds"
-							}
-						}
-					}
-					#add_country_leader_role = {
-					#	character = HAI_Sylvain_Salnave
-					#	promote_leader = yes
-					#	country_leader = {
-					#		ideology = reactionary
-					#		expire = "1965.1.1"
-					#	}
-					#}
-					add_corps_commander_role = {
-						character = HAI_Sylvain_Salnave
-						skill = 2
-						attack_skill = 5
-						defense_skill = 2
-						planning_skill = 2
-						logistics_skill = 2
-					}
+					set_politics = { ruling_party = traditional_conservatism }
+					recruit_character = HAI_Fabre_Geffrard
+					promote_character = HAI_Fabre_Geffrard
+					recruit_character = HAI_Jean_Nicolas_Nissage_Saget
+					recruit_character = HAI_Sylvain_Salnave
 					promote_character = HAI_Sylvain_Salnave
-					#generate_character = {
-					#	token_base = HAI_Jean_Nicolas_Nissage_Saget
-					#	name = "Jean-Nicolas Nissage Saget"
-					#	portraits={
-					#		civilian={
-					#			large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-					#		}
-					#		army={
-					#			large="gfx/leaders/HAI/Portrait_Jean_Nicolas_Nissage_Saget.dds"
-					#		}
-					#	}
-					#}
-					#add_country_leader_role = {
-					#	character = HAI_Jean_Nicolas_Nissage_Saget
-					#	promote_leader = yes
-					#	country_leader = {
-					#		ideology = conserv_liberal
-					#		expire = "1965.1.1"
-					#	}
-					#}
-					#promote_character = HAI_Jean_Nicolas_Nissage_Saget
-					#add_corps_commander_role = {
-					#	character = HAI_Jean_Nicolas_Nissage_Saget
-					#	skill = 2
-					#	attack_skill = 2
-					#	defense_skill = 2
-					#	planning_skill = 2
-					#	logistics_skill = 5
-					#}
-					## // characters 
 					set_popularities = {
 						anarchism = 0
 						vanguard_communism = 0
 						collectivist_socialism = 0
 						social_egalitarianism = 0
-						centrism = 50
+						centrism = 20
 						traditional_conservatism = 35
 						radical_democracy = 0
 						chauvinist_populism = 5
-						autocracy = 10
+						autocracy = 40
 						fundamentalism = 0
 					}
 					every_unit_leader = {
@@ -1133,7 +822,6 @@ country_event = {
 						navinfra_no_naval_infrastructure
 						sfund_private_ventures_only
 					}
-				}
 			}
 			#Faustin
 			318 = {
@@ -1161,56 +849,23 @@ country_event = {
 						}
 					#}
 					set_country_flag = geffrard_presidential_coup_2_flag
-					set_politics = { ruling_party = autocracy }
 					retire_ideology_leader = autocracy
 					retire_ideology_leader = traditional_conservatism
 					retire_ideology_leader = centrism
 					retire_ideology_leader = radical_democracy
-					## characters //
-					generate_character = {
-						token_base = HAI_Faustin_Soulouque
-						name="Faustin I"
-						portraits={
-							civilian={
-								large="gfx/leaders/HAI/Portrait_HAI_Faustin_Soulouque.dds"
-							}
-						}
-					}
-					
-					#add_country_leader_role = {
-					#	character = HAI_Faustin_Soulouque
-					#	promote_leader = yes
-					#	country_leader = {
-					#		ideology = despotism
-					#		expire = "1965.1.1"
-					#	}
-					#}
+					set_politics = { ruling_party = autocracy }
+					recruit_character = HAI_Faustin_Soulouque
 					promote_character = HAI_Faustin_Soulouque
-					promote_character = {
-						character = HAI_Faustin_Soulouque
-						ideology = despotism
-					}
-					if = {
-						limit = {
-							has_country_leader = {
-								character = HAI_Faustin_Soulouque
-								ruling_only = yes
-							}
-						}
-						set_politics = { ruling_party = centrism }
-						set_politics = { ruling_party = autocracy }
-					}
-					## // characters
 					set_popularities = {
 						anarchism = 0
 						vanguard_communism = 0
 						collectivist_socialism = 0
 						social_egalitarianism = 0
-						centrism = 30
-						traditional_conservatism = 45
+						centrism = 20
+						traditional_conservatism = 35
 						radical_democracy = 0
 						chauvinist_populism = 5
-						autocracy = 20
+						autocracy = 40
 						fundamentalism = 0
 					}
 					#POLITICS 
@@ -1255,9 +910,9 @@ country_event = {
 
 
 country_event = {
-	id = haiti.15
-	title = haiti.15.t
-	desc = haiti.15.d
+	id = hispaniola.10
+	title = hispaniola.10.t
+	desc = hispaniola.10.d
 
 	fire_only_once = yes
 	
@@ -1271,7 +926,7 @@ country_event = {
 	#}
 	
 	option = {
-		name = haiti.15.a
+		name = hispaniola.10.a
 		add_political_power = -10
 		set_politics = { 
 			ruling_party = radical_democracy
@@ -1285,9 +940,9 @@ country_event = {
 }
 
 country_event = {
-	id = haiti.16
-	title = haiti.16.t
-	desc = haiti.16.d
+	id = hispaniola.11
+	title = hispaniola.11.t
+	desc = hispaniola.11.d
 
 	fire_only_once = yes
 	
@@ -1301,7 +956,7 @@ country_event = {
 	#}
 	
 	option = {
-		name = haiti.16.a
+		name = hispaniola.11.a
 		set_politics = {
 			ruling_party = centrism
 		}
@@ -1317,60 +972,4 @@ country_event = {
 			}
 		}
 	}	
-}
-
-country_event = { 
-	id = haiti.15
-	title = haiti.17.t
-	desc = haiti.17.d
-
-	is_triggered_only = yes
-	
-	option = {
-		name = haiti.17.a
-		ai_chance = { base = 100 }
-		add_tech_bonus = {
-			bonus = 0.50
-			uses = 1
-			category = trains_tech
-		}
-		add_tech_bonus = {
-			bonus = 0.25
-			uses = 2
-			category = transport_tech
-		}
-		FROM = { country_event = { id = haiti.18 days = 3 } }
-	}
-}
-
-country_event = { 
-	id = haiti.18
-	title = haiti.18.t
-	desc = haiti.18.d
-
-	is_triggered_only = yes
-	
-	option = {
-		name = haiti.18.a
-		ai_chance = { base = 100 }
-		add_tech_bonus = {
-			bonus = 0.50
-			uses = 1
-			category = trains_tech
-		}
-		add_tech_bonus = {
-			bonus = 0.25
-			uses = 2
-			category = transport_tech
-		}
-		SPR = { 
-			create_production_license = {
-				target = DOM
-				equipment = {
-					type = train_equipment_1
-				}
-				cost_factor = 0
-			}
-		}
-	}
 }

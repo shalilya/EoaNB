@@ -32,7 +32,7 @@ state = {
 	provinces = {
 		6997
 	}
-	manpower = 50000
+	manpower =67789
 	
 	state_category =town
 }

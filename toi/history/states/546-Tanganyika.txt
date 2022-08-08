@@ -19,10 +19,6 @@ state = {
 	history = {
 		buildings = {
 		}
-		victory_points = {
-			5180 3
-		}
-
 		owner = NYW
 		add_core_of = NYW
 

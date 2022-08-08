@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = siam
+add_namespace = siam_china_negotiations
 
 #----------------------------------------------------------------------------------------------
 # FOCUS TREE EVENTS 
@@ -184,15 +185,15 @@ country_event = {
 }
 
 country_event = {
-	id = siam.11
-	title = siam.11.t
-	desc = siam.11.d
+	id = siam_china_negotiations.1
+	title = siam_china_negotiations.1.t
+	desc = siam_china_negotiations.1.d
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = siam.11.a
+		name = siam_china_negotiations.1.a
 		CHI = {
 			add_opinion_modifier = {
 				target = SIA
@@ -203,7 +204,7 @@ country_event = {
 	}
 	
 	option = {
-		name = siam.11.b
+		name = siam_china_negotiations.1.b
 		CHI = {
 			add_opinion_modifier = {
 				target = SIA

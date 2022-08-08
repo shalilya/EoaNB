@@ -15,11 +15,8 @@ state = {
 	history = {
 		buildings = {
 		}
-		victory_points = {
-                        13442 1
-                }
-		owner = MLW
-		add_core_of = MLW
+		owner = WYO
+		add_core_of = WYO
 
 		add_to_array = { state_culture_array = 322 } 
 		add_to_array = { state_culture_array = 537 } 

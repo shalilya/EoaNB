@@ -34,13 +34,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_stability = 0.1
-			hidden_effect = {
-				country_event = {
-					id = JAP_tokugawa_shogunate.162
-					days = 12
-				}
-			}
+			add_stability = .1
 		}
 	}
 
@@ -191,11 +185,6 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = { add_idea = raise_imperial_banner_2 remove_idea = raise_imperial_banner_1 }
-			hidden_effect = {
-				country_event = {
-					id = JAP_tokugawa_shogunate.163
-				}
-			}
 		}
 	}
 

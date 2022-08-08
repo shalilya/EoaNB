@@ -82,7 +82,4 @@ opinion_modifiers = {
 		value = -10
 	}
 
-	VEN_civil_war = {
-		value = 30
-	}
 }

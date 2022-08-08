@@ -7,21 +7,15 @@ state = {
 	manpower = 442400
 
 	state_category = rural
-		resources = {
-                  wood =6
-	}
 
 	
 
 	provinces = {
-		2159 2180 2217 10972
+		2159 2180 2217 5155 10972 12950 14279 14280
 	}
 	history = {
-		owner = WYO
-		add_core_of = WYO
-		victory_points = {
-			10972 1
-		}	
+		owner = KND
+		add_core_of = KND
 
 		add_to_array = { state_culture_array = 537 } 
 		add_to_array = { state_culture_array = 543 } 

@@ -190,7 +190,6 @@
 	recruit_character = JAP_character_arisugawa_taruhito
 	recruit_character = JAP_character_edmund_morel
 	recruit_character = JAP_character_hermann_rumschottel
-	recruit_character = JAP_character_saionji_inmochi
 }
 
 	#How to set up initial debt_level
@@ -445,7 +444,7 @@
 		tech_naval_mtg_merchant_ship_requisitioning = 1 #Merchant Requisitioning
 
 		###Flight Technology
-		early_balloon = 1 #Early Recon Balloon
+		balloon_equipment_0 = 1 #Early Recon Balloon
 
 		###Mechanical Engineering
 		#Railroad

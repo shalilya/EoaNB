@@ -1256,6 +1256,10 @@ technologies = {
 		}
 		
 		path = {
+			leads_to_tech = railway_gun
+			research_cost_coeff = 1
+		}
+		path = {
 			leads_to_tech = siege_gun_2_tech
 			research_cost_coeff = 1
 		}
@@ -1306,10 +1310,6 @@ technologies = {
 			artillery
 		}
 		
-		path = {
-			leads_to_tech = railway_gun
-			research_cost_coeff = 1
-		}
 		path = {
 			leads_to_tech = siege_gun_3_tech
 			research_cost_coeff = 1
@@ -1365,10 +1365,6 @@ technologies = {
 			leads_to_tech = siege_gun_4_tech
 			research_cost_coeff = 1
 		}
-		path {
-			leads_to_tech = railway_gun_2
-			research_cost_coeff = 1
-		}
 
 		ai_will_do = {
 			factor = 20 
@@ -1418,10 +1414,6 @@ technologies = {
 		
 		path = {
 			leads_to_tech = siege_gun_5_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = railway_gun_3
 			research_cost_coeff = 1
 		}
 
@@ -1475,10 +1467,6 @@ technologies = {
 			leads_to_tech = siege_gun_6_tech
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = advanced_railway_gun
-			research_cost_coeff = 1
-		}
 
 		ai_will_do = {
 			factor = 20 
@@ -1525,10 +1513,6 @@ technologies = {
 		categories = {
 			artillery
 		}
-		path = {
-			leads_to_tech = advanced_railway_gun_2
-			research_cost_coeff = 1
-		}
 		
 		# path = {
 			# leads_to_tech = siege_gun_3
@@ -1564,17 +1548,16 @@ technologies = {
 			}
 		}
 	}
-	
 	railway_gun = {
 		enable_equipments = {
-			railway_gun_equipment
+			railway_gun_equipment_1
 		}
 
 		research_cost = 0.15
-		start_year = 1885
+		start_year = 1890
 		folder = {
 			name = artillery_folder
-			position = { x = 10 y = 14 }
+			position = { x = 10 y = 12 }
 		}
 		dependencies = {
 			train_1855 = 1
@@ -1585,177 +1568,6 @@ technologies = {
 			artillery
 		}
 		
-		path = {
-			leads_to_tech = railway_gun_2
-			research_cost_coeff = 1
-		}
-
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-
-			modifier = {
-				OR = {
-					TAG = PRS
-					tag = SOV
-				}
-				factor = 1.5
-			}
-		}
-	}
-
-	railway_gun_2 = {
-		enable_equipments = {
-			railway_gun_equipment_1
-		}
-
-		research_cost = 0.175
-		start_year = 1900
-		folder = {
-			name = artillery_folder
-			position = { x = 10 y = 20 }
-		}
-		dependencies = {
-			train_1890 = 1
-			railway_gun = 1
-		}
-		
-		categories = {
-			trains_tech
-			artillery
-		}
-		
-		path = {
-			leads_to_tech = railway_gun_3
-			research_cost_coeff = 1
-		}
-
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-
-			modifier = {
-				OR = {
-					TAG = PRS
-					tag = SOV
-				}
-				factor = 1.5
-			}
-		}
-	}
-	railway_gun_3 = {
-		enable_equipments = {
-			railway_gun_equipment_2
-		}
-
-		research_cost = 0.175
-		start_year = 1910
-		folder = {
-			name = artillery_folder
-			position = { x = 10 y = 24 }
-		}
-		dependencies = {
-			train_1890 = 1
-			railway_gun_2 = 1
-		}
-		
-		categories = {
-			trains_tech
-			artillery
-		}
-		
-		path = {
-			leads_to_tech = advanced_railway_gun
-			research_cost_coeff = 1
-		}
-
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-
-			modifier = {
-				OR = {
-					TAG = PRS
-					tag = SOV
-				}
-				factor = 1.5
-			}
-		}
-	}
-	advanced_railway_gun = {
-		enable_equipments = {
-			advanced_railway_gun_equipment_1
-		}
-
-		research_cost = 0.15
-		start_year = 1918
-		folder = {
-			name = artillery_folder
-			position = { x = 10 y = 28 }
-		}
-		dependencies = {
-			railway_gun = 1
-			train_1890 = 1
-		}
-		
-		categories = {
-			trains_tech
-			artillery
-		}
-		path = {
-			leads_to_tech = advanced_railway_gun_2
-			research_cost_coeff = 1
-		}
-
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-
-			modifier = {
-				OR = {
-					TAG = PRS
-					tag = SOV
-				}
-				factor = 1.5
-			}
-		}
-	}
-	advanced_railway_gun_2 = {
-		enable_equipments = {
-			advanced_railway_gun_equipment_2
-		}
-
-		research_cost = 0.15
-		start_year = 1935
-		folder = {
-			name = artillery_folder
-			position = { x = 10 y = 34 }
-		}
-		dependencies = {
-			advanced_railway_gun = 1
-		}
-		
-		categories = {
-			trains_tech
-			artillery
-		}
-
 		ai_will_do = {
 			factor = 1
 			
