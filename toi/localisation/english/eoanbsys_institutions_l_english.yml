@@ -84,6 +84,7 @@
  EOANBSYS_institutions_innovative_change_tt:0 "Gain [?EOANBSYS_innovative_change|G%] [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
  EOANBSYS_institutions_innovative_add_one_tt:0 "Gain §G1%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
  EOANBSYS_institutions_innovative_add_two_tt:0 "Gain §G2%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
+ EOANBSYS_institutions_innovative_add_three_tt:0 "Gain §G3%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
  EOANBSYS_institutions_innovative_add_five_tt:0 "Gain §G5%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
  EOANBSYS_institutions_innovative_add_ten_tt:0 "Gain §G10%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
  EOANBSYS_institutions_innovative_sub_one_tt:0 "Lose §R1%§! [EOANBSYS_institutions_innovative_icon_scripted]  §b[EOANBSYS_institutions_innovative_name_scripted]§!\n"
