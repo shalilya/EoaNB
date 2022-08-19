@@ -477,7 +477,7 @@ guiTypes = {
 						}
 
 						instantTextBoxType = {
-							name = "industrial_capacity"
+							name = "industrial_capacity_value"
 							position = { x = -1 y = 28 }
 							font = "hoi_16mbs"
 							text = "999"

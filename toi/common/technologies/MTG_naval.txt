@@ -14496,45 +14496,6 @@ ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 } mo
 			naval_equipment
 		}
 	}
-	
-	nuclear_warheads = {
-		
-		xp_research_type = navy
-		xp_boost_cost = 50
-		xp_research_bonus = 1.50
-		research_cost = 0.5
-
-		start_year = 1960
-
-		dependencies = {		
-			tech_projects_atomic_refineries = 1			
-		}						
-
-		folder = {
-			name = mtgnavalfolder
-			position = { x = 66 y = @1960 }
-		}
-		
-ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
-			factor = 1
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 5
-			}
-			modifier = {
-				factor = 0
-				date < 1960.1.1
-				NOT = { 
-					has_tech_bonus = { category = naval_equipment } 
-					has_tech_bonus = { category = naval_mtg_module_torpedoes_tech }
-				}
-			}
-		}
-		
-		categories = {
-			naval_equipment
-		}
-	}	
 
 	pump_jet_torpedos = {
 		

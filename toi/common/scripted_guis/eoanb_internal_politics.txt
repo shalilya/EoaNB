@@ -24,6 +24,8 @@ scripted_gui = {
 		}
 	}
 
+	
+
 	internal_politics_reform_civ_lib_religion_screen = {
 		context_type = player_context
 

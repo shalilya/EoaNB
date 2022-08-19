@@ -79,8 +79,6 @@
  EFFECT_ADD_AIR_EXPERIENCE: "Air Experience: $VAL|=+0$."
  POLITICS_SET_POLITICAL_POWER: "Sets Legislative Power to $VAL|0Y$."
  POLITICS_ADD_POLITICAL_POWER: "Legislative Power: $VAL|=+0$."
- EFFECT_ADD_NUKE: "Add Nuke: $VAL|=+0$."
- EFFECT_LAUNCH_NUKE_ON: "Launch Nuke on: $STATE|H$."
  EFFECT_SET_FUEL: "Sets Fuel to $VAL|0Y$."
  POLITICS_ADD_FUEL: "Fuel: $VAL|=+0$."
  EFFECT_TECH_BONUS_USES: "§Y$USES$x§! "
