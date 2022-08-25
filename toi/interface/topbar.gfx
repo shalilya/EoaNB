@@ -485,10 +485,6 @@ spriteTypes = {
 		noOfFrames = 2
 	}
 
-	spriteType = {
-		name = "GFX_topbar_nuke"
-		texturefile = "gfx//interface//topbar//nuke_icon.dds"
-	}
 
 	progressbartype = {
 		name = "GFX_topbar_fuel_bar"
@@ -511,14 +507,7 @@ spriteTypes = {
 		alwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
-	spriteType = {
-		name = "GFX_topbar_nuclear_missile"
-		texturefile = "gfx//interface//topbar//toolbar//nuclear_missile_button.dds"
-	}
-	spriteType = {
-		name = "GFX_topbar_space"
-		texturefile = "gfx//interface//topbar//toolbar//space_button.dds"
-	}
+
 	spriteType = {
 		name = "GFX_unique_government_icon"
 		texturefile = "gfx//interface//unique_government_icon.dds"

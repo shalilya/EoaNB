@@ -1600,10 +1600,10 @@ spriteTypes = {
 
 	### engineering TECH ###
 
-	SpriteType = {
-		name = "GFX_nukes_medium"
-		texturefile = "gfx/interface/technologies/nukes.dds"
-	}	
+	#SpriteType = {
+	#	name = "GFX_nukes_medium"
+	#	texturefile = "gfx/interface/technologies/nukes.dds"
+	#}	
 	
 	SpriteType = {
 		name = "GFX_jet_engines_medium"

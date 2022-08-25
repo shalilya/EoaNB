@@ -337,35 +337,34 @@ spriteTypes = {
 		name = "GFX_country_missile_shield_bg"
 		texturefile = "gfx/interface/NMC_SP/shield_bg.dds"
 	}
-	spriteType = {
-		name = "GFX_prod_deployment_nukes_1_bg"
-		texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_1.dds"
-	}
-	spriteType = {
-		name = "GFX_prod_deployment_nukes_2_bg"
-		texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_2.dds"
-	}
-	spriteType = {
-		name = "GFX_prod_deployment_nukes_3_bg"
-		texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3.dds"
-	}
-	spriteType = {
-		name = "GFX_prod_deployment_nukes_3_red_bg"
-		texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3_red.dds"
-	}
-	spriteType = {
-		name = "GFX_prod_deployment_nukes_3_red_bg"
-		texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3_red.dds"
-	}
-	spriteType = {
-		name = "GFX_icon_build_nuclear_missile_btn"
-		texturefile = "gfx/interface/NMC_SP/icon_party_plus_btn.dds"
-	}
-
-	spriteType = {
-		name = "GFX_nuke_production_bg"
-		texturefile = "gfx/interface/NMC_SP/nuke_production_bg.dds"
-	}
+	#spriteType = {
+	#	name = "GFX_prod_deployment_nukes_1_bg"
+	#	texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_1.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_prod_deployment_nukes_2_bg"
+	#	texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_2.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_prod_deployment_nukes_3_bg"
+	#	texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_prod_deployment_nukes_3_red_bg"
+	#	texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3_red.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_prod_deployment_nukes_3_red_bg"
+	#	texturefile = "gfx/interface/NMC_SP/prod_deployment_nukes_3_red.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_icon_build_nuclear_missile_btn"
+	#	texturefile = "gfx/interface/NMC_SP/icon_party_plus_btn.dds"
+	#}
+	#spriteType = {
+	#	name = "GFX_nuke_production_bg"
+	#	texturefile = "gfx/interface/NMC_SP/nuke_production_bg.dds"
+	#}
 
 	spriteType = {
 		name = "GFX_production_display_screen_bg"
