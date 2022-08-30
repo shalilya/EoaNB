@@ -1,5 +1,5 @@
 state_categories = {
-	enclave = {
+	enclave_ind = {
 		local_building_slots = 0
 		production_speed_buildings_factor = -0.25
 		color = { 40 40 40 }

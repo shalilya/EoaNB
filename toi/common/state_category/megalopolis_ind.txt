@@ -1,5 +1,5 @@
 state_categories = {
-	megalopolis = {
+	megalopolis_ind = {
 		local_building_slots = 15
 		production_speed_buildings_factor = 0.2
 			color = { 0 240 240 }

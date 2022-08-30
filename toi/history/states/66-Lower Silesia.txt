@@ -2,7 +2,7 @@ state = {
 	id = 66
 	name = "STATE_66" # Lower Silesia
 	manpower = 2176203 # 75% of RB Liegnitz + RB Breslau
-	state_category = large_town
+	state_category = large_town_ind
 
 	resources = {
 		fabric = 3

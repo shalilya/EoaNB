@@ -2,7 +2,7 @@ state = {
 	id = 132
 	name = "STATE_132" # Lancashire
 	manpower = 2574331
-	state_category = metropolis
+	state_category = metropolis_ind
 
 	resources = {
 		iron = 32

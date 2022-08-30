@@ -1,5 +1,5 @@
 state_categories = {
-	metropolis = {
+	metropolis_ind = {
 		local_building_slots = 12
 		production_speed_buildings_factor = 0.2
 		

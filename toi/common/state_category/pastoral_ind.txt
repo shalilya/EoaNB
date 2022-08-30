@@ -1,5 +1,5 @@
 state_categories = {
-	pastoral = {
+	pastoral_ind = {
 		local_building_slots = 2
 		production_speed_buildings_factor = -0.1
 		color = { 160 160 0 }

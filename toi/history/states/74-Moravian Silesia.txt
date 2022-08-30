@@ -2,7 +2,7 @@ state = {
 	id = 74
 	name = "STATE_74" # Moravian Silesia
 	manpower = 415000
-	state_category = rural
+	state_category = rural_ind
 
 	resources = {
 		coal = 3

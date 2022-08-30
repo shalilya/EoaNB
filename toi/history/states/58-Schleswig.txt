@@ -2,7 +2,7 @@ state = {
 	id = 58
 	name = "STATE_58" # Schleswig
 	manpower = 238933 # 60% of total pop of 398,221
-	state_category = rural
+	state_category = rural_ind
 
 	provinces = {
 		317 11366

@@ -1,5 +1,5 @@
 state_categories = {
-	large_town = {
+	large_town_ind = {
 		local_building_slots = 8
 		production_speed_buildings_factor = 0.1
 		color = { 240 240 0 }
