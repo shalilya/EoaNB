@@ -2,7 +2,7 @@ state = {
 	id = 124
 	name = "STATE_124" # Gotland
 	manpower = 48200
-	state_category = small_island_ind
+	state_category = small_island
 
 	resources = {
 		wood = 1

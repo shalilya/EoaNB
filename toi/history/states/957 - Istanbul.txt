@@ -57,5 +57,5 @@ state = {
 	}
 	manpower =404509
 	
-	state_category =megalopolis_ind
+	state_category =megalopolis
 }

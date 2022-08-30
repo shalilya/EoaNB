@@ -36,5 +36,5 @@ state = {
 	}
 	manpower = 48000 #49430
 	
-	state_category = wasteland_ind
+	state_category = wasteland
 }

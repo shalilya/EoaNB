@@ -10,7 +10,7 @@ state = {
 		iron=2
 	}
 	
-	state_category = wasteland_ind
+	state_category = wasteland
 
 	history = {
 		owner = VEN

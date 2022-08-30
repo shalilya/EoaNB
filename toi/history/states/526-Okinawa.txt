@@ -5,7 +5,7 @@ state = {
 	local_supplies=0.0 
 	manpower = 238000
 	
-	state_category = small_island_ind
+	state_category = small_island
 
 	resources = {
 		cotton = 4

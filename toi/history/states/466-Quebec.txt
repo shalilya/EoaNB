@@ -5,7 +5,7 @@ state = {
 		coal = 10
 	}
 
-	state_category = pastoral_ind
+	state_category = pastoral
 
 	history = {
 		owner = HBC

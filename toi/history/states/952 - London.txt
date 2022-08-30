@@ -2,7 +2,7 @@ state = {
 	id = 952
 	name = "STATE_952" # London
 	manpower = 2712955 # 23,612,371 for all UK w/o later RoI
-	state_category = metropolis_ind
+	state_category = metropolis
 
 	provinces = {
 		6103 9239 11333 11374

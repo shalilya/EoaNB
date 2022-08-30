@@ -28,6 +28,6 @@ state = {
 		add_to_array = { state_religion_array_num = 0.26 }
 	}
 	manpower = 24620
-	state_category = pastoral_ind
+	state_category = pastoral
 	
 }
