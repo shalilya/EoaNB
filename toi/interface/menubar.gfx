@@ -168,7 +168,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_show_dismissed_alerts_icon"
-		texturefile = "gfx//interface//topbar//show_dismissed_alerts_icon.tga"
+		texturefile = "gfx//interface//topbar//show_dismissed_alerts_icon.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	
@@ -180,12 +180,12 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_help_button"
-		texturefile = "gfx//interface//topbar//button_help.tga"
+		texturefile = "gfx//interface//topbar//button_help.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 	}	
 	spriteType = {
 		name = "GFX_button_ledger"
-		texturefile = "gfx//interface//topbar//button_ledger.tga"
+		texturefile = "gfx//interface//topbar//button_ledger.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 	}	
 	spriteType = {
@@ -203,7 +203,7 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_settings_tab"
-		texturefile = "gfx//interface//tab_settings.tga"
+		texturefile = "gfx//interface//topbar//tab_settings.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
