@@ -874,7 +874,7 @@ buttonType = {
 
 	instantTextBoxType = {
 		name ="threat_value"
-		position = { x= -101 y=44 }
+		position = { x= -105 y=44 }
 		font = "hoi_18mbs"
 		text = "50%"
 		format = center

@@ -108,7 +108,7 @@ scripted_gui = {
 				}
 			}
 			
-			open_internal_politics_click = {
+			eoanb_internal_politics_open_container_click = {
 				if = {
 					limit = { NOT = { has_country_flag = TTT_opened } }
 					set_country_flag = TTT_opened
