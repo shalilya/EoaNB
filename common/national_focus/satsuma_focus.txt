@@ -1,0 +1,11 @@
+#focus_tree = {
+#	id = satsuma_vic_ft
+#	country = {
+#		factor = 0
+#		modifier = {
+#			add = 10
+#			tag = SAT
+#		}
+#	}
+#	default = no
+#}

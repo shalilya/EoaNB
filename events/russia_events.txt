@@ -1,0 +1,5331 @@
+﻿add_namespace = rossiya
+
+#rossiya.1-200		Succession, Assassination, Starting, General Information and Flavour Events
+#rossiya.201-500	Political and War Events
+#rossiya.501-700	Economy and Trade Events
+#rossiya.701-999	Military Events
+
+##### SUCCESSION, STARTING, ASSASSINATION, GENERAL INFO AND FLAVOUR EVENTS (rossiya.1-200) #####
+
+### SUCCESSION AND FAMILY EVENTS (rossiya.1-10) ###
+
+#Crown Prince Nicholas Dies (24.05.1865)
+country_event = {
+	id = rossiya.1
+	title = rossiya.1.t
+	desc = rossiya.1.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.1.a
+	}
+}
+
+#Alexander II and His Mistress (16.08.1880)
+country_event = {
+	id = rossiya.2
+	title = rossiya.2.t
+	desc = rossiya.2.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.2.a
+		add_stability = -0.05
+	}
+}
+
+#Alexander III Marries Maria Feodorovna (05.12.1866)
+country_event = {
+	id = rossiya.3
+	title = rossiya.3.t
+	desc = rossiya.3.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.3.a
+		add_political_power = 25
+	}
+}
+
+#The Emperor's Safety (Alexander II Abdication event)
+country_event = {
+	id = rossiya.4
+	title = rossiya.4.t
+	desc = rossiya.4.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#The Tsar must hold on!
+	option = {
+		name = rossiya.4.a
+		add_stability = 0.05
+		add_popularity = {
+			ideology = autocracy
+			popularity = 0.05
+		}
+	}
+
+	#The Tsar should abdicate in favor of his on.
+	option = {
+		name = rossiya.4.b
+		set_country_flag = rus_flag_alexander_ii_abdicated	
+		RUS_alexander_iii = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1900.1.1"
+					desc = "POLITICS_GENERIC_EOANB_DESC"
+					ideology = despotism
+					traits = {
+						RUS_trait_Staunch_Authoritarian
+						RUS_trait_Iron_Fist
+					}
+				}
+			}
+		}
+		retire_character = RUS_alexander_ii
+		swap_ideas = { 
+			remove_idea = RUS_Alexander_II
+			add_idea = RUS_Alexander_III
+		}
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = 0.02
+		}		
+		add_popularity = {
+			ideology = anarchism
+			popularity = 0.01
+		}
+	}
+}
+
+### STARTING EVENTS (rossiya.11-15) ###
+
+#Russian Starting Event
+country_event = {
+	id = rossiya.11
+	title = rossiya.11.t
+	desc = rossiya.11.d
+	picture = GFX_report_event_crimean_war
+		
+	is_triggered_only = yes
+	hidden = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			# Starting Compliance
+			1127 = { set_compliance = 85 }
+			791 = { set_compliance = 85 }
+			78 = { set_compliance = 85 }
+			12 = { set_compliance = 90 }
+			13 = { set_compliance = 90 }
+			190 = { set_compliance = 90 }
+			191 = { set_compliance = 90 }
+			191 = { set_compliance = 90 }
+			1134 = { set_compliance = 90 }
+			
+			add_ai_strategy = {
+				type = front_control
+
+				tag = CIR
+				state = 233
+				strategic_region = 134
+				country_trigger = { RUS = { has_war_with = CIR } }
+
+				ratio = 0.0
+
+				priority = 20000
+				ordertype = invasion
+				execution_type = careful
+				execute_order = yes
+				manual_attack = yes
+			}
+			
+			add_ai_strategy = {
+				type = invasion_unit_request
+
+				tag = CIR
+				state = 233
+				strategic_region = 134
+				country_trigger = { RUS = { has_war_with = CIR } }
+
+				value = 40000
+			}
+			
+			add_ai_strategy = {
+				type = front_control
+
+				tag = CAU
+				state = 232
+				strategic_region = 135
+				country_trigger = { RUS = { has_war_with = CAU } }
+
+				ratio = 0.0
+
+				priority = 30000
+				ordertype = invasion
+				execution_type = careful
+				execute_order = yes
+				manual_attack = yes
+			}
+			
+			add_ai_strategy = {
+				type = invasion_unit_request
+
+				tag = CAU
+				state = 232
+				strategic_region = 135
+				country_trigger = { RUS = { has_war_with = CAU } }
+
+				value = 60000
+			}
+			
+			CIR = {
+				add_ai_strategy = {
+					type = front_control
+
+					tag = RUS
+					state = 233
+					strategic_region = 134
+					country_trigger = { CIR = { has_war_with = RUS } }
+
+					ratio = 0.0
+
+					priority = 20000
+					ordertype = front
+					execution_type = careful
+					execute_order = no
+					manual_attack = yes
+				}
+			}
+			
+			CAU = {
+				add_ai_strategy = {
+					type = front_control
+
+					tag = RUS
+					state = 232
+					strategic_region = 135
+					country_trigger = { CAU = { has_war_with = RUS } }
+
+					ratio = 0.0
+
+					priority = 20000
+					ordertype = front
+					execution_type = careful
+					execute_order = no
+					manual_attack = yes
+				}
+			}
+		}
+	}
+		
+	option = {
+		name = rossiya.11.a
+	}
+}
+
+#The Caucasian War
+country_event = {
+	id = rossiya.12
+	title = rossiya.12.t
+	desc = rossiya.12.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+		
+	option = {
+		name = rossiya.12.a
+	}
+}
+
+### ASSASSINATION EVENTS (rossiya.16-50) ###
+
+#A shot in the summer garden (04.04.1866)
+country_event = {
+	id = rossiya.16
+	title = rossiya.16.t
+	desc = rossiya.16.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+
+	#It can't be! - Historical
+	option = {
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		name = rossiya.16.a
+		hidden_effect = {
+			country_event = { id = rossiya.17 hours = 6 }
+		}
+	}
+	
+	#It can't be! - Chance of Alt-history
+	option = {
+		name = rossiya.16.b
+		trigger = {
+			is_historical_focus_on = no
+		}
+		hidden_effect = {
+			random_list = {
+				1 = { 
+					country_event = { id = rossiya.18 hours = 6 }
+					set_country_flag = rus_flag_alexander_ii_dead_summer_garden
+				}
+				99 = {
+					country_event = { id = rossiya.17 hours = 6 }
+				}
+			}
+		}
+	}
+}
+
+#Attempt on the Emperor's Life - Summer Garden - Survival
+country_event = {
+	id = rossiya.17
+	title = rossiya.17.t
+	desc = rossiya.17.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.17.a
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = 0.01
+		}
+	}
+}
+
+#Alexander II is Dead
+country_event = {
+	id = rossiya.18
+	title = rossiya.18.t
+	desc = {	#Dead at the first attempt, 1866.04.04	[Death of Alexander II - Summer Garden]
+		text = rossiya.18.d_1
+		trigger = {
+			has_country_flag = rus_flag_alexander_ii_dead_summer_garden
+		}
+	}
+	desc = {	#Dead at the second attempt, 1867.05.25	[Death of Alexander II - Paris]
+		text = rossiya.18.d_2
+		trigger = {
+			has_country_flag = rus_flag_alexander_ii_dead_paris
+		}
+	}
+	desc = {	#Dead at the third attempt, 1879.04.14	[Death of Alexander II - Winter Palace]
+		text = rossiya.18.d_3
+		trigger = {
+			has_country_flag = rus_flag_alexander_ii_dead_winter_palace1
+		}
+	}
+	desc = {	#Dead at the fifth attempt, 1880.02.17	[Death of Alexander II - Winter Palace Bombing]
+		text = rossiya.18.d_4
+		trigger = {
+			has_country_flag = rus_flag_alexander_ii_dead_winter_palace2
+		}
+	}
+	desc = {	#Dead at the seventh attempt, 1881.03.01 [Death of Alexander II - Ekaterininskiy Canal]
+		text = rossiya.18.d_5
+		trigger = {
+			has_country_flag = rus_flag_alexander_ii_dead_historical
+		}
+	}
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.18.a
+		add_timed_idea = {
+			idea = RUS_idea_assassination_of_alexander
+			days = 180
+		}
+		set_country_flag = rus_flag_alexander_ii_dead	
+		RUS_alexander_iii = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1900.1.1"
+					desc = "POLITICS_GENERIC_EOANB_DESC"
+					ideology = despotism
+					traits = {
+						RUS_trait_Staunch_Authoritarian
+						RUS_trait_Iron_Fist
+					}
+				}
+			}
+		}
+		retire_character = RUS_alexander_ii
+		swap_ideas = { 
+			remove_idea = RUS_Alexander_II
+			add_idea = RUS_Alexander_III
+		}
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = anarchism
+			popularity = 0.03
+		}
+	}
+}
+
+#Shot in Paris (25.05.1867)
+country_event = {
+	id = rossiya.19
+	title = rossiya.19.t
+	desc = rossiya.19.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+	
+	#How did this happen in Paris?!	- Historical
+	option = {
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		name = rossiya.19.a
+		hidden_effect = {
+			country_event = { id = rossiya.20 hours = 6 }
+		}
+	}
+	
+	#How did this happen in Paris?! - Chance of Alt-history	
+	option = {
+		trigger = {
+			is_historical_focus_on = no
+		}
+		name = rossiya.19.b
+		hidden_effect = {
+			random_list = {
+				30 = { 
+					country_event = { id = rossiya.18 hours = 6 }
+					set_country_flag = rus_flag_alexander_ii_dead_paris
+				}
+				70 = {
+					country_event = { id = rossiya.20 hours = 6 }
+				}
+			}
+		}
+	}
+}
+
+#Attempt on the Emperor's life - Paris - Survival
+country_event = {
+	id = rossiya.20
+	title = rossiya.20.t
+	desc = rossiya.20.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.20.a
+		add_popularity = {
+			ideology = anarchism
+			popularity = 0.01
+		}		
+	}
+}
+
+#Shots at the Winter Palace (14.04.1879)
+country_event = {
+	id = rossiya.21
+	title = rossiya.21.t
+	desc = rossiya.21.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+
+	#Catch that assassin! - Historical
+	option = {
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		name = rossiya.21.a
+		hidden_effect = {
+			country_event = { id = rossiya.22 hours = 6 }
+		}
+	}
+	
+	#Catch that assassin! - Chance of Alt-history
+	option = {
+		trigger = {
+			is_historical_focus_on = no
+		}
+		name = rossiya.21.b
+		hidden_effect = {
+			random_list = {
+				30 = { 
+					country_event = { id = rossiya.18 hours = 6 }
+					set_country_flag = rus_flag_alexander_ii_dead_zimnyi_palace1
+				}
+				70 = {
+					country_event = { id = rossiya.22 hours = 6 }
+				}
+			}
+		}
+	}
+}
+
+#Attempt on the Emperor's life - Attack at the Winter Palace - Survival
+country_event = {
+	id = rossiya.22
+	title = rossiya.22.t
+	desc = rossiya.22.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Arrest the assassin
+	option = {
+		name = rossiya.22.a
+		ai_chance = { factor = 90 }
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = 0.01
+		}
+	}
+
+	#We should be concerned about the Emperor's safety
+	option = {
+		name = rossiya.22.b
+		ai_chance = { factor = 10 }
+		country_event = { id = rossiya.4 days = 5 }
+	}
+}
+
+#Train Bombing (01.12.1879)
+country_event = {
+	id = rossiya.23
+	title = rossiya.23.t
+	desc = rossiya.23.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+
+	option = {
+		name = rossiya.23.a
+		add_popularity = {
+			ideology = collectivist_socialism 
+			popularity = 0.02
+		}
+	}
+}
+
+#Winter Palace Bombing (17.02.1880)
+country_event = {
+	id = rossiya.24
+	title = rossiya.24.t
+	desc = rossiya.24.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+
+	#Explosion? In the Winter Palace?! - Historical
+	option = {
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		name = rossiya.24.a
+		hidden_effect = {
+			country_event = { id = rossiya.25 hours = 6 }
+		}
+	}
+	
+	#Explosion? In the Winter Palace?! - Chance of Alt-history
+	option = {
+		trigger = {
+			is_historical_focus_on = no
+		}
+		name = rossiya.24.b
+		hidden_effect = {
+			random_list = {
+				30 = { 
+					country_event = { id = rossiya.18 hours = 6 }
+					set_country_flag = rus_flag_alexander_ii_dead_winter_palace2
+				}
+				70 = {
+					country_event = { id = rossiya.25 hours = 6 }
+				}
+			}
+		}
+	}
+}
+
+#Attempt on the Emperor's life - Winter Palace Bombing - Survival
+country_event = {
+	id = rossiya.25
+	title = rossiya.25.t
+	desc = rossiya.25.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.25.a
+		add_popularity = {
+			ideology = social_egalitarianism
+			popularity = 0.01
+		}
+	}
+}
+
+#Ekaterininskiy Canal Incident (13.03.1881)
+country_event = {
+	id = rossiya.26
+	title = rossiya.26.t
+	desc = rossiya.26.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = rus_flag_alexander_ii_dead
+				has_country_flag = rus_flag_alexander_ii_abdicated
+			}
+		}
+	}
+
+	option = {
+		name = rossiya.26.a
+		set_country_flag = rus_flag_alexander_ii_dead_historical
+		hidden_effect = {
+			country_event = { id = rossiya.18 hours = 6 }
+			country_event = { id = rossiya.27 days = 2 }
+		}
+	}
+}
+
+#Investigation of Alexander's Assassination
+country_event = {
+	id = rossiya.27
+	title = rossiya.27.t
+	desc = rossiya.27.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#If we find them, we can put an end to them!
+	option = {
+		name = rossiya.27.a
+		add_political_power = -50
+		custom_effect_tooltip = historical_option
+		hidden_effect = {
+			random_list = {
+				70 = {
+					country_event = { id = rossiya.28 days = 45 }
+				}
+				30 = {
+					country_event = { id = rossiya.29 days = 35 }
+				}
+			}
+		}
+	}
+
+	#We can't afford hunting all of them down
+	option = {
+		name = rossiya.27.b
+		add_stability = -0.02
+	}
+}
+
+#Successful Investigation
+country_event = {
+	id = rossiya.28
+	title = rossiya.28.t
+	desc = rossiya.28.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.28.a
+		add_stability = 0.05
+		add_popularity = {
+			ideology = anarchism 
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = social_egalitarianism 
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = collectivist_socialism 
+			popularity = -0.05
+		}
+	}
+}
+
+#Failed Investigation
+country_event = {
+	id = rossiya.29
+	title = rossiya.29.t
+	desc = rossiya.29.desc
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.29.a
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+### GENERAL INFO AND FLAVOUR EVENTS (rossiya.51-200) ###
+
+#Crimean War historical background
+country_event = {
+	id = rossiya.51
+	title = rossiya.51.t
+	desc = rossiya.51.d
+	picture = GFX_report_event_crimean_war
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.51.a
+	}
+}
+
+#Second Italian War of Independence (NOT FIRED?)
+country_event = {
+	id = rossiya.52
+	title = rossiya.52.t
+	desc = rossiya.52.d
+	picture = GFX_report_event_alex_II
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.52.a
+	}
+}
+
+#Gorky Library (28.06.1858)
+country_event = {
+	id = rossiya.53
+	title = rossiya.53.t
+	desc = rossiya.53.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.53.a
+		add_political_power = 25
+	}
+}
+
+#Kiev Police Department (01.09.1858)
+country_event = {
+	id = rossiya.54
+	title = rossiya.54.t
+	desc = rossiya.54.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.54.a
+		add_stability = 0.01
+	}
+}
+
+#St Isaac's Cathedral (24.07.1858)
+country_event = {
+	id = rossiya.55
+	title = rossiya.55.t
+	desc = rossiya.55.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.55.a
+	}
+}
+    
+#Red Cross (25.11.1863)
+country_event = {
+	id = rossiya.56
+	title = rossiya.56.t
+	desc = rossiya.56.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.56.a
+	}
+}
+   
+#Moscow Zoo (30.06.1864)
+country_event = {
+	id = rossiya.57
+	title = rossiya.57.t
+	desc = rossiya.57.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.57.a
+	}
+}
+
+#Epoch Magazine (01.04.1864)
+country_event = {
+	id = rossiya.58
+	title = rossiya.58.t
+	desc = rossiya.58.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.58.a
+	}
+}
+    
+#Michael Place
+country_event = {
+	id = rossiya.59
+	title = rossiya.59.t
+	desc = rossiya.59.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.59.a
+	}
+}
+
+##### POLITICAL AND WAR EVENTS (rossiya.201-500) #####
+
+### DOMESTIC POLITICS EVENTS (rossiya.201-300) ###
+
+#German Immigration to the Volga Region
+country_event = {
+	id = rossiya.201
+	title = rossiya.201.t
+	desc = rossiya.201.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.201.a
+		activate_mission_tooltip = RUS_mission_vic_German_Volga_Immigration_1
+		activate_mission_tooltip = RUS_mission_vic_German_Volga_Immigration_2
+	}
+}
+
+#New Minister of War Appointed (14.06.1861)
+country_event = {
+	id = rossiya.202
+	title = rossiya.202.t
+	desc = rossiya.202.d	
+	picture = GFX_report_event_milyutin
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.202.a
+		complete_national_focus = RUS_vic_milyutin_military_reforms
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			NOT = { has_completed_focus = RUS_vic_crimean_war_outcome }
+		#		}
+		#		complete_national_focus = RUS_vic_milyutin_military_reforms
+		#	}
+		#}
+	}
+}
+
+#Reign of Alexander II
+country_event = {
+	id = rossiya.203
+	title = rossiya.203.t
+	desc = rossiya.203.d
+	picture = GFX_report_event_alex_II
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.203.a
+	}
+}
+
+#Michael von Reutern
+country_event = {
+	id = rossiya.204
+	title = rossiya.204.t
+	desc = rossiya.204.d
+	picture = GFX_report_event_von_reutern
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.204.a
+	}
+}
+
+#Alexander Gorchakov
+country_event = {
+	id = rossiya.205
+	title = rossiya.205.t
+	desc = rossiya.205.d
+	picture = GFX_report_event_alexander_gorchakov
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.205.a
+	}
+}
+
+#Viktor Panin
+country_event = {
+	id = rossiya.206
+	title = rossiya.206.t
+	desc = rossiya.206.d
+	picture = GFX_report_event_panin
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.206.a
+	}
+}
+
+#Okhrana
+country_event = {
+	id = rossiya.207
+	title = rossiya.207.t
+	desc = rossiya.207.d
+	picture = GFX_report_event_okhrana
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.207.a
+	}
+}
+
+#ISS - Imperial Security Service
+country_event = {
+	id = rossiya.208
+	title = rossiya.208.t
+	desc = rossiya.208.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.208.a
+	}
+}
+
+#Russian European Empire
+country_event = {
+	id = rossiya.209
+	title = rossiya.209.t
+	desc = rossiya.209.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.209.a
+	}
+}
+
+#End of Russification in Western Russia
+country_event = {
+	id = rossiya.210
+	title = rossiya.210.t
+	desc = rossiya.210.d
+	picture = GFX_report_event_end_of_russification
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.210.a
+		swap_ideas = {
+			remove_idea = foa_restricted_attendance
+			add_idea = foa_non_socialist
+		}
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.05
+		}
+	}
+}
+
+#Socialist Magazine Iskra (26.06.1868)
+country_event = {
+	id = rossiya.211
+	title = rossiya.211.t
+	desc = rossiya.211.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.211.a
+		add_popularity = { ideology = collectivist_socialism popularity = 0.03 }
+	}
+}
+
+#Mahtra Estate Revolt (08.05.1858)
+country_event = {
+	id = rossiya.212
+	title = rossiya.212.t
+	desc = rossiya.212.d
+	picture = GFX_report_event_mahtra_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	trigger = {
+		has_idea = lp_serfdom
+		13 = { is_owned_and_controlled_by = RUS }
+	}
+		
+	option = {
+		name = rossiya.212.a
+		add_stability = -0.01
+		hidden_effect = {
+			country_event = { id = rossiya.213 days = 45 random = 16 } 
+		}
+	}
+}
+	
+#Mahtra Revolt Ends
+country_event = {
+	id = rossiya.213
+	title = rossiya.213.t
+	desc = rossiya.213.d
+	picture = GFX_report_event_mahtra_war
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+		
+	option = {
+		name = rossiya.213.a 
+		add_manpower = -14
+		13 = { add_manpower = -45 }
+		565 = { add_manpower = 35 }
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.02
+		}
+	}
+}
+
+#Bezdna Uprising (30.04.1861)
+country_event = {
+	id = rossiya.214
+	title = rossiya.214.t
+	desc = rossiya.214.d
+	picture = GFX_report_event_bezdna_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	trigger = {
+		249 = { is_controlled_by = RUS }
+	}		
+	
+	option = {
+		name = rossiya.214.a
+		add_stability = -0.01
+		249 = { add_manpower = -91 }
+	}
+}
+
+#Les Miserables (02.03.1863)
+country_event = {
+	id = rossiya.215
+	title = rossiya.215.t
+	desc = rossiya.215.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.215.a
+		add_timed_idea = { idea = RUS_idea_les_miserables days = 365 }
+	}
+}
+
+#'What is to be done' (02.01.1864)
+country_event = {
+	id = rossiya.216
+	title = rossiya.216.t
+	desc = rossiya.216.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.216.a
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = 0.01 
+		}
+		add_stability = -0.01
+	}
+}
+
+#Young Russia (27.11.1862)
+country_event = {
+	id = rossiya.217
+	title = rossiya.217.t
+	desc = rossiya.217.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.217.a
+		add_stability = -0.01
+	}
+}
+
+#Publishing of 'Fathers and Sons' (14.08.1862)
+country_event = {
+	id = rossiya.218
+	title = rossiya.218.t
+	desc = rossiya.218.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	#Mild censorship (cosmetic things)
+	option = {
+		name = rossiya.218.a
+		ai_chance = { factor = 90 }
+		add_popularity = {
+			ideology = anarchism
+			popularity = 0.01
+		}
+		add_timed_idea = {
+			idea = RUS_idea_successful_book
+			days = 120
+		}
+	}
+
+	#Harsh censorship (Nihilism banned)
+	option = {
+		name = rossiya.218.b
+		ai_chance = { factor = 10 }
+		add_popularity = {
+			ideology = autocracy 
+			popularity = -0.03
+		}
+		add_political_power = 20
+		hidden_effect = {
+			set_country_flag = RUS_harsh_censorship_flag
+			random_list = {
+				50 = { 
+					country_event = { id = rossiya.219 days = 7 random_days = 7 }
+				}
+				50 = {
+					#
+				}
+			}
+		}
+	}
+}
+
+#Censorship of 'Fathers and Sons' Revealed
+country_event = {
+	id = rossiya.219
+	title = rossiya.219.t
+	desc = rossiya.219.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	trigger = {
+		has_country_flag = RUS_harsh_censorship_flag
+		NOT = {
+			OR = {
+				has_idea = state_controlled_press
+				has_idea = censored_press
+			}
+		}
+	}
+		
+	option = {
+		name = rossiya.219.a
+		add_popularity = {
+			ideology = anarchism
+			popularity = 0.02
+		}
+		add_political_power = -20
+		add_timed_idea = {
+			idea = RUS_idea_censor_broke_FaS
+			days = 60
+		}
+	}
+}
+
+#Publishment of 'Crime and Punishment' (31.01.1866)
+country_event = {
+	id = rossiya.220
+	title = rossiya.220.t
+	desc = rossiya.220.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.220.a
+		add_political_power = 10
+	}
+}
+
+### FOREIGN POLITICS, COLONIAL, AND WAR EVENTS (rossiya.301-500) ###
+
+#Russian involvement in ACW
+country_event = {
+	id = rossiya.301
+	title = rossiya.301.t
+	desc = rossiya.301.d
+	picture = GFX_report_event_russian_sailors_1860
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RUS
+		CSA = { exists = yes }
+		USA = { has_war_with = CSA }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	#Support the Union
+	option = {
+		name = rossiya.301.a
+		ai_chance = { factor = 70 }
+		reverse_add_opinion_modifier = { target = USA modifier = large_increase }
+		reverse_add_opinion_modifier = { target = CSA modifier = medium_decrease }
+		USA = { country_event = { id = rossiya.302 days = 4 } }
+		activate_mission = RUS_mission_vic_Support_USA
+		navy_experience = 5
+		set_country_flag = RUS_vic_ACW_Supported_USA
+		diplomatic_relation = {
+			country = USA
+			relation = docking_rights
+			active = yes
+		}
+	}
+	
+	#Support the Confederates
+	option = {
+		name = rossiya.301.b
+		trigger = {
+			OR = {
+				RUS = { has_completed_focus = RUS_vic_Anglo_Russian_Alliance }
+				AND = {
+					ENG = {
+						has_opinion = {
+							target = RUS
+							value > 50
+						}
+					}
+					RUS = {
+						has_opinion = {
+							target = ENG
+							value > 25
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		reverse_add_opinion_modifier = { target = CSA modifier = large_increase }
+		reverse_add_opinion_modifier = { target = USA modifier = medium_decrease }
+		RUS = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -500
+			}
+		}
+		CSA = { country_event = { id = rossiya.303 days = 15 } }
+	}
+
+	#Stay neutral
+	option = {
+		name = rossiya.301.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+#USA - Russian Support
+country_event = {
+	id = rossiya.302
+	title = rossiya.302.t
+	desc = rossiya.302.d
+	picture = GFX_report_event_russian_sailors_1860
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.302.a
+		reverse_add_opinion_modifier = { target = RUS modifier = medium_increase }
+		RUS = {
+			diplomatic_relation = {
+				country = USA
+				relation = docking_rights
+				active = yes
+			}
+		}
+	}
+}
+
+#CSA - Russian Support
+country_event = {
+	id = rossiya.303
+	title = rossiya.303.t
+	desc = rossiya.303.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = rossiya.303.a
+		reverse_add_opinion_modifier = { target = RUS modifier = medium_increase }
+		CSA = {
+			division_template = {
+				name = "Russian-Equipped Infantry"
+				is_locked = yes
+				regiments = {
+					line_infantry = { x = 0 y = 0 }
+					line_infantry = { x = 0 y = 1 }
+					line_infantry = { x = 1 y = 0 }
+					line_infantry = { x = 1 y = 1 }
+					line_infantry = { x = 2 y = 0 }
+				}
+				support = {
+					#
+				}
+			}
+			367 = {
+				create_unit = {
+					division = "name = \"Russian-Equipped Infantry\" division_template = \"Russian-Equipped Infantry\" start_experience_factor = 0.4"
+					owner = CSA
+				}
+			}
+		}
+	}
+}
+
+#US-Russia Telegraph Line
+country_event = {
+	id = rossiya.304
+	title = rossiya.304.t
+	desc = rossiya.304.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Reject the offer
+	option = {
+		name = rossiya.304.a
+		ai_chance = {
+			factor = 50
+		}
+		RUS = { country_event = { id = rossiya.305 days = 5 } }
+	}
+	
+	#Accept the offer
+	option = {
+		name = rossiya.304.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		RUS = { add_tech_bonus = { bonus = 1 uses = 1 category = electronics_devices_tech } }
+		add_tech_bonus = { bonus = 1 uses = 1 category = electronics_devices_tech }
+		reverse_add_opinion_modifier = { target = RUS modifier = eoanb_om_ENG_sea_cable }
+		RUS = { country_event = { id = rossiya.306 days = 5 } }
+	}
+}
+
+#The US Rejects
+country_event = {
+	id = rossiya.305
+	title = rossiya.305.t
+	desc = rossiya.305.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.305.a
+	}
+}
+
+#The US Agrees
+country_event = {
+	id = rossiya.306
+	title = rossiya.306.t
+	desc = rossiya.306.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.306.a
+		reverse_add_opinion_modifier = { target = USA modifier = eoanb_om_ENG_sea_cable }
+		add_tech_bonus = { bonus = 1 uses = 1 category = electronics_devices_tech }
+	}
+}
+	
+#The Sale of Alaska
+country_event = {
+	id = rossiya.307
+	title = rossiya.307.t
+	desc = rossiya.307.d
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Approach the Americans
+	option = {
+		name = rossiya.307.a
+		ai_chance = { factor = 90 }
+		USA = { country_event = { id = rossiya.310 days = 7 } }
+	}
+	
+	#Approach our friends in Liechtenstein first
+	option = {
+		name = rossiya.307.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		LIE = { country_event = { id = rossiya.308 days = 7 } }
+	}
+}
+
+#LIE - The Sale of Alaska
+country_event = {
+	id = rossiya.308
+	title = rossiya.308.t
+	desc = rossiya.308.d
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Alaska, really?
+	option = {
+		name = rossiya.308.a
+		ai_chance = { factor = 90 }
+		RUS = { country_event = { id = rossiya.309 days = 7 } }
+	}
+	
+	#We can afford it
+	option = {
+		name = rossiya.308.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		RUS = { country_event = { id = rossiya.309 days = 7 } }
+		set_global_flag = LIE_Alaska_Purchased_flag
+		add_timed_idea = { idea = USA_idea_alaska_purchase days = 365 }
+		custom_effect_tooltip = RUS_vic_Russian_Alaska_tooltip
+		hidden_effect = {
+			463 = { add_core_of = ALK }
+			transfer_state = 463
+			release_puppet = ALK
+			ALK = {
+				set_cosmetic_tag = ALK_LIE_company
+				swap_ideas = {
+					remove_idea = RUS_Alexander_II
+					add_idea = hos_is_leader
+				}
+				#swap_ideas = {
+				#	remove_idea = religion_orthodox
+				#	add_idea = religion_catholic
+				#}
+				if = {
+					limit = {
+						PREV = { has_country_leader = { name = "Aloys II" ruling_only = yes } }
+					}
+					ALK_aloys_ii = {
+						add_country_leader_role = {
+							promote_leader = yes
+							country_leader = {
+								desc = "POLITICS_TEMP_DESC"
+								ideology = despotism
+								expire = "1900.1.1.1"
+								#id = -1
+							}
+						}
+					}
+					retire_character = ALK_grand_duke_konstantin
+				}
+				else = {
+					ALK_johann_ii = {
+						add_country_leader_role = {
+							promote_leader = yes
+							country_leader = {
+								desc = "POLITICS_TEMP_DESC"
+								ideology = despotism
+								expire = "1929.2.11"
+								#id = -1
+							}
+						}
+					}
+					retire_character = ALK_grand_duke_konstantin
+				}
+				#load_oob = "ALK_Licthenstien_Troops" ##LIE has 80 troops historically, where would it get a army?
+			}
+		}
+	}
+}
+
+#The Sale of Alaska - Liechtenstein's Response
+country_event = {
+	id = rossiya.309
+	title = rossiya.309.t
+	desc = {
+		text = rossiya.309.d
+		trigger = { has_global_flag = LIE_Alaska_Purchased_flag }
+	}
+	desc = {
+		text = rossiya.309.d_a
+		trigger = { NOT = { has_global_flag = LIE_Alaska_Purchased_flag } }
+	}
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Approach the Americans then
+	option = {
+		name = rossiya.309.a
+		trigger = {
+			NOT = { has_global_flag = LIE_Alaska_Purchased_flag }
+		}
+		USA = { country_event = { id = rossiya.310 days = 7 } }
+	}
+	
+	#We will keep Alaska then
+	option = {
+		trigger = {
+			NOT = { has_global_flag = LIE_Alaska_Purchased_flag }
+		}
+		name = rossiya.309.b
+	}
+	
+	#Great news from our friends
+	option = {
+		trigger = {
+			has_global_flag = LIE_Alaska_Purchased_flag
+		}
+		name = rossiya.309.c
+		add_timed_idea = { idea = USA_idea_alaska_sale days = 365 }
+	}
+}
+	
+#USA - The Sale of Alaska
+country_event = {
+	id = rossiya.310
+	title = rossiya.310.t
+	desc = rossiya.310.d
+	picture = GFX_report_event_german_reichstag_gathering
+		
+	is_triggered_only = yes
+	
+	#Accept their offer
+	option = {
+		name = rossiya.310.a
+		USA = { add_timed_idea = { idea = USA_idea_alaska_purchase days = 365 } }
+		USA = { transfer_state = 463 }
+		set_global_flag = USA_Alaska_Purchased_flag
+		news_event = { id = usa_news.17 }
+		RUS = { country_event = { id = rossiya.311 } }
+	}
+	
+	#Decline their offer
+	option = {
+		name = rossiya.310.b
+		RUS = { country_event = { id = rossiya.311 } }
+	}
+}
+
+#The Sale of Alaska - The Americans' Response
+country_event = {
+	id = rossiya.311
+	title = rossiya.311.t
+	desc = {
+		text = rossiya.311.d
+		trigger = { has_global_flag = USA_Alaska_Purchased_flag }
+	}
+	desc = {
+		text = rossiya.311.d_a
+		trigger = { NOT ={ has_global_flag = USA_Alaska_Purchased_flag } }
+	}
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	#The Americans decline (this will NOT disable the USA focus)
+	option = {
+		name = rossiya.311.a
+		trigger = {
+			NOT = { has_global_flag = USA_Alaska_Purchased_flag }
+		}
+	}
+	
+	#The Americans accept
+	option = {
+		trigger = {
+			has_global_flag = USA_Alaska_Purchased_flag
+		}
+		name = rossiya.311.b
+		news_event = { id = usa_news.17 }
+		add_timed_idea = { idea = USA_idea_alaska_sale days = 365 }
+	}
+}
+
+##Georgian Events
+
+#GEO - Rebels occupy Mingrelia's capital
+country_event = {
+	id = rossiya.312
+	title = rossiya.312.t
+	desc = rossiya.312.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = rossiya.312.a
+		add_stability = -0.1 
+		decrease_ps_by_one = yes 
+		RUS = { country_event = { id = rossiya.313 days = 10 } }
+	}
+}
+	
+#RUS - Russian Intervention in Mingrelian Revolt 
+country_event = {
+	id = rossiya.313
+	title = rossiya.313.t
+	desc = rossiya.313.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = rossiya.313.a
+		add_political_power = -50 
+		GEO = { 
+			add_stability = -0.05 
+			country_event = { id = rossiya.314 days = 10 }
+		}
+	}
+}
+	
+#GEO - Russians enter Mingrelia  
+country_event = {
+	id = rossiya.314
+	title = rossiya.314.t
+	desc = rossiya.314.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = rossiya.314.a
+		add_political_power = -50 
+		add_stability = 0.15 
+		increase_ps_by_one = yes 
+		country_event = { id = rossiya.315 days = 120 }
+	}
+}
+
+#GEO - Rebellion Reignites
+country_event = {
+	id = rossiya.315
+	title = rossiya.315.t
+	desc = rossiya.315.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	#We need Russia's help, again
+	option = {
+		name = rossiya.315.a
+		add_political_power = -50 
+		RUS = { country_event = { id = rossiya.316 days = 1 } }
+	}
+	
+	#We shall fight on our own!
+	option = {
+		name = rossiya.315.b
+		add_political_power = 50 
+		add_stability = -0.15 
+		decrease_ps_by_one = yes 
+		RUS = { country_event = { id = rossiya.317 days = 70 } }
+		random_list = {
+			40 = {
+				country_event = { id = rossiya.319 days = 100 }
+			}
+			60 = {
+				country_event = { id = rossiya.320 days = 100 }
+			}
+		}
+	}
+}
+
+#RUS - Russian intervention in Georgia, again    
+country_event = {
+	id = rossiya.316
+	title = rossiya.316.t
+	desc = rossiya.316.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = rossiya.316.a
+		add_political_power = -50
+		GEO = { country_event = { id = rossiya.318 days = 1 } }
+		custom_effect_tooltip = eoanb_tt_RUS_Mingrelia_Annexation
+	}
+}
+
+#RUS - Russia is Informed that Mingrelia Denies their Aid
+country_event = {
+	id = rossiya.317
+	title = rossiya.317.t
+	desc = rossiya.317.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	#Let them live
+	option = {
+		name = rossiya.317.a
+		add_political_power = -100
+	}
+	
+	#Intervene anyway - declare war
+	option = {
+		name = rossiya.317.b
+		set_temp_variable = { eoanb_prestige_change = 10 }
+		eoanb_change_prestige_score = yes
+		end_puppet = GEO
+		declare_war_on = {
+			target = GEO
+			type = annex_everything
+		}
+		hidden_effect = {
+			increase_ps_by_one = yes
+		}
+	}
+}
+
+#GEO - Georgia effectively gets annexed
+country_event = {
+	id = rossiya.318
+	title = rossiya.318.t
+	desc = rossiya.318.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = rossiya.318.a
+		every_owned_state = {
+			remove_core_of = GEO 
+			add_core_of = RUS 
+		}
+		RUS = {
+			annex_country = {
+				target = GEO 
+				transfer_troops = yes
+			} 
+		}
+		drop_cosmetic_tag = yes 
+	}
+}
+
+#GEO - Rebel Victory
+country_event = {
+	id = rossiya.319
+	title = rossiya.319.t
+	desc = rossiya.319.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		country_exists = GEO 
+	}
+	
+	option = {
+		name = rossiya.319.a
+		retire_country_leader = yes
+		set_politics = {
+			ruling_party = radical_democracy 
+		}
+		create_country_leader = {
+			name = "Utu Todua"
+			desc = "POLITICS_UTU_TODUA_DESC"
+			picture = "Portrait_GEO_Utudu_Todua"
+			expire = "1965.1.1"
+			ideology = revolutionary 
+			traits = {
+				#
+			}
+		}
+		increase_ps_by_one = yes 
+		add_stability = 0.1  
+		add_war_support	= 0.25 			
+		RUS = { country_event = { id = rossiya.321 days = 20 } }
+	}
+}
+	
+#GEO - Government Victory
+country_event = {
+	id = rossiya.320
+	title = rossiya.320.t
+	desc = rossiya.320.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		country_exists = GEO
+	}
+	
+	option = {
+		name = rossiya.320.a
+		increase_ps_by_two = yes 
+		add_stability = 0.2 
+		add_war_support	= 0.2 			
+	}
+}
+
+#RUS - Rebel Victory in Mingrelia
+country_event = {
+	id = rossiya.321
+	title = rossiya.321.t
+	desc = rossiya.321.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		country_exists = GEO
+	}
+	
+	option = {
+		name = rossiya.321.a
+		end_puppet = GEO
+		declare_war_on = {
+			target = GEO
+			type = annex_everything
+		}
+		hidden_effect = {
+			increase_ps_by_one = yes
+		}
+	}
+}
+
+#RUS - Russia annexes Abkhazia after the war with Circassia ends
+country_event = {
+	id = rossiya.322
+	title = rossiya.322.t
+	desc = rossiya.322.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes 
+		
+	trigger = {
+		tag = RUS
+		country_exists = ABK
+		NOT = { country_exists = CIR }
+	}
+	
+	option = {
+		name = rossiya.322.a
+		add_political_power = -50
+		ABK = { country_event = { id = rossiya.323 days = 20 } }
+		custom_effect_tooltip = eoanb_tt_RUS_Abkhazia_Annexation
+	}
+}
+	
+#ABK - The Russians are Invading
+country_event = {
+	id = rossiya.323
+	title = rossiya.323.t
+	desc = rossiya.323.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	#Accept our fate
+	option = {	 
+		name = rossiya.323.a
+		every_owned_state = {
+			remove_core_of = ABK
+			add_core_of = RUS
+		}
+		RUS = {
+			annex_country = {
+				target = ABK
+				transfer_troops = yes
+			}
+		}	
+	}
+	
+	#Abkhazia fights back 
+	option = {	 
+		name = rossiya.323.b
+		hidden_effect = {
+			increase_ps_by_one = yes
+		}
+		add_stability = 0.1 
+		add_war_support	= 0.25 			
+		end_puppet = ABK 
+		RUS = {
+			declare_war_on = {
+				target = ABK
+				type = annex_everything
+			} 
+		}
+	}
+}
+
+## Caucasus War (rossiya.331 onward)
+	
+#The Imamate Defeated - Trigger should be moved to a mission
+country_event = {
+	id = rossiya.331
+	title = rossiya.331.t
+	desc = rossiya.331.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	fire_only_once = yes
+		
+	trigger = {
+		tag = RUS
+		has_country_flag = RUS_flag_war_with_caucasus
+		OR = {
+			NOT = { country_exists = CAU }
+			CAU = { is_subject_of = RUS }
+		}			
+	}
+
+	immediate = {
+		hidden_effect = {
+			CAU = { 
+				remove_ideas = { 
+					CAU_fighters
+					CAU_fierce_resistance
+					CAU_fierce_resistance_weak
+				}
+			}
+			retire_character = CAU_teofil_lapinski
+		}
+	}
+		
+	option = {
+		name = rossiya.331.a
+		add_political_power = 100
+		add_stability = 0.05
+		hidden_effect = { country_event = { id = imamate.3 days = 400 } }
+	}
+}
+
+#Caucasian War Ends - Trigger should be moved to a mission
+country_event = {
+	id = rossiya.332
+	title = rossiya.332.t
+	desc = rossiya.332.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	fire_only_once = yes
+		
+	trigger = {
+		tag = RUS 
+		has_country_flag = RUS_flag_war_with_caucasus
+		#Shouldn't these conditions both be fulfilled, respectively?
+		OR = {
+			NOT = {
+				country_exists = CAU
+				country_exists = CIR
+			}
+			CAU = { is_subject_of = RUS }
+			CIR = { is_subject_of = RUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { 
+					country_exists = CAU
+				}
+				annex_country = {
+    				target = CAU
+    				transfer_troops = no
+				}
+			}
+			if = {
+			    limit = { 
+	    			country_exists = CIR
+	    			CIR = {	### This is a check to see if CIR decided to become a puppet of RUS
+	    				has_idea = CAU_fighters
+	    				has_idea = CAU_fierce_resistance
+	    				has_idea = CAU_fierce_resistance_weak
+	    			}
+	    		}
+	    		annex_country = {
+    				target = CIR
+    				transfer_troops = no
+				}
+			}
+			CIR = { 
+				remove_ideas = { 
+					CAU_fighters
+					CAU_fierce_resistance
+					CAU_fierce_resistance_weak
+				}
+			}
+			clr_country_flag = RUS_flag_war_with_caucasus
+		}
+	}
+		
+	option = {
+		name = rossiya.332.a
+		increase_ps_by_one = yes
+		add_political_power = 200
+		custom_effect_tooltip = eoanb_tt_RUS_Caucasian_War_Ends
+		RUS = {
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Waking the Tiger"
+						has_dlc = "Death or Dishonor"
+					}
+				}
+				set_autonomy = {
+					target = GEO
+					autonomous_state = autonomy_dominion
+					freedom_level = 0.2
+				}
+			}
+			else = { puppet = GEO }
+		}
+		RUS = {
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Waking the Tiger"
+						has_dlc = "Death or Dishonor"
+					}
+				}
+				set_autonomy = {
+					target = ABK
+					autonomous_state = autonomy_dominion
+					freedom_level = 0.2
+				}
+			}
+			else = { puppet = ABK }
+		}
+	}
+}
+
+#CIR/CAU - Russians Attack Our Villages
+country_event = {
+	id = rossiya.333
+	title = rossiya.333.t
+	desc = rossiya.333.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	is_triggered_only = yes
+		
+	option = {  
+		name = rossiya.333.a
+		swap_ideas = {
+			remove_idea = CAU_fierce_resistance
+			add_idea = CAU_fierce_resistance_weak
+		}
+		effect_tooltip = {
+			capital_scope = { add_manpower = -30000 }
+		}
+	}
+}
+
+#RUS - Poles Defect From The Caucasian Army
+country_event = {
+	id = rossiya.334
+	title = rossiya.334.t
+	desc = rossiya.334.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+		
+	option = {
+		name = rossiya.334.a
+		hidden_effect = {
+			add_manpower = -9748
+			CIR = { add_manpower = 3228 }
+			CAU = { add_manpower = 3753 }
+		}
+	}
+}
+
+#RUS - Ship Chesapeake Brings Polish Legionaries To Circassia
+country_event = {
+	id = rossiya.335
+	title = rossiya.335.t
+	desc = rossiya.335.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+		
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = rossiya.335.a
+		hidden_effect = {
+			CIR = {
+				add_manpower = 87
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_rifle_1
+					amount = 200
+					producer = ENG
+				}
+				add_equipment_to_stockpile = {
+					type = uniform_equipment_1
+					amount = 200
+					producer = ENG
+				}
+			}
+		}
+	}
+}
+
+## Siberian Colonization (rossiya.351 onward)
+
+#Yearly: New colonists arriving in Siberia
+country_event = {
+	id = rossiya.351
+	title = rossiya.351.t
+	desc = rossiya.351.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.351.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = eoanb_tt_RUS_siberian_colonization
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 1500
+			}
+			### ADD CULTURE/RELIGION EFFECTS
+		}
+	}
+}
+
+#Yearly: New colonists arriving in Siberia (Increased Growth)
+country_event = {
+	id = rossiya.352
+	title = rossiya.352.t
+	desc = rossiya.352.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.352.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = eoanb_tt_RUS_siberian_colonization_intensified
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = no
+					is_island_state = no
+					is_in_home_area = yes
+				}
+				add_manpower = -5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_siberia = yes
+				}
+				add_manpower = 5000
+			}
+			### ADD CULTURE/RELIGION EFFECTS
+		}
+	}
+}
+
+#RUS - Initialize Siberian Secession (hidden event)
+country_event = {
+	id = rossiya.353
+	title = rossiya.353.t
+	desc = rossiya.353.d
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		every_owned_state = {
+    		limit = {
+				is_in_siberia = yes
+			}
+			SIB = { 
+				transfer_state = PREV
+				add_state_core = PREV
+			}
+		}
+		SIB = { load_oob = SIB_oob_uprising }
+		country_event = { id = rossiya.354 days = 1 }
+	}
+	
+	option = {
+		name = rossiya.353.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+#RUS - Russian Reaction to Secession
+country_event = {
+	id = rossiya.354
+	title = rossiya.354.t
+	desc = rossiya.354.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.354.a
+		ai_chance = { factor = 99 }
+		declare_war_on = { target = SIB type = annex_everything }
+	}
+	
+	option = {
+		name = rossiya.354.b
+		ai_chance = { factor = 1 }
+		add_opinion_modifier = { target = SIB modifier = eoanb_om_RUS_SIB_friendly }
+		reverse_add_opinion_modifier = { target = SIB modifier = eoanb_om_RUS_SIB_friendly }
+	}
+	
+	option = {
+		name = rossiya.354.c
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		custom_effect_tooltip = eoanb_tt_RUS_siberian_colonization_switch_sides
+		hidden_effect = {
+			SIB = { change_tag_from = ROOT }
+			RUS = { declare_war_on = { target = SIB type = annex_everything } }
+		}
+	}
+}
+
+#Some Siberian separatists being wacky # 01.06.1865
+country_event = {
+	id = rossiya.355
+	title = rossiya.355.t
+	desc = rossiya.355.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.355.a
+		every_owned_state = {
+			limit = { is_in_siberia = yes }
+			add_dynamic_modifier = { modifier = oblastnik_tensions }
+		}
+	}
+}
+
+#Lena Goldfields
+country_event = {
+	id = rossiya.356
+	title = rossiya.356.t
+	desc = rossiya.356.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.356.a
+		add_timed_idea = { idea = RUS_idea_lena_goldfields days = 720 }
+	}
+}
+
+## Foreign Politics (rossiya.401-500)
+
+#OTO - Russian Support for Balkan Separatists 1
+country_event = {
+	id = rossiya.401
+	title = rossiya.401.t
+	desc = rossiya.401.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = rossiya.401.a
+		add_stability = -0.04 
+		add_war_support = -0.02
+	}
+}
+
+#OTO - Russian Support for Balkan Separatists 2
+country_event = {
+	id = rossiya.402
+	title = rossiya.402.t
+	desc = rossiya.402.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = rossiya.402.a
+		add_stability = -0.04 
+		add_political_power = -40
+	}
+}
+
+#ENG - Support for Irish Separatists
+country_event = {
+	id = rossiya.403
+	title = rossiya.403.t
+	desc = rossiya.403.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = rossiya.403.a
+		add_stability = -0.03
+		add_war_support = -0.02
+	}
+}
+
+#Finland Annexed
+country_event = {
+	id = rossiya.404
+	title = rossiya.404.t
+	desc = rossiya.404.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.404.a
+	}
+}
+
+#Finland Loses Autonomy
+country_event = {
+	id = rossiya.405
+	title = rossiya.405.t
+	desc = rossiya.405.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.405.a
+	}
+}
+
+#RUS - The Governor of Finland
+country_event = {
+	id = rossiya.406
+	title = rossiya.406.t
+	desc = rossiya.406.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Replace him
+	option = {
+		name = rossiya.406.a
+		ai_chance = { base = 90 }
+		FIN = {
+			country_event = { id = rossiya.407 days = 1 }
+		}
+	}
+
+	#Keep him
+	option = {
+		name = rossiya.406.b
+		ai_chance = { 
+			base = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		hidden_effect = {
+			FIN = { set_country_flag = FIN_Berg_governor_flag }
+		}
+	}
+}
+
+#FIN - Rokassowski is the Governor
+country_event = {
+	id = rossiya.407
+	title = rossiya.407.t
+	desc = rossiya.407.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.407.a
+		FIN_platon_ivanovich_rokasovsky = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					desc = "POLITICS_GENERIC_EOANB_DESC"
+					ideology = despotism
+					traits = {
+						#
+					}
+				}
+			}
+		}
+		FIN_friedrich_wilhelm_rembert_von_berg = {
+			remove_country_leader_role = {
+				ideology = despotism
+			}
+		}
+		add_stability = 0.03
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.12
+		}
+		hidden_effect = {
+			set_country_flag = FIN_Rokassowski_governor_flag
+		}
+	}
+}
+
+#FIN - Russia Demands our Integration
+country_event = {
+	id = rossiya.408
+	title = rossiya.408.t
+	desc = rossiya.408.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Accept
+	option = {
+		name = rossiya.408.a
+		ai_chance = { base = 90 }
+		RUS = {
+			country_event = { id = rossiya.409 }
+		}
+	}
+
+	#Refuse
+	option = {
+		name = rossiya.408.b
+		RUS = {
+			country_event = { id = rossiya.410 }
+			end_puppet = FIN
+		}
+		declare_war_on = {
+			target = RUS
+			type = independence_wargoal
+		}
+	}
+}
+
+#RUS - Finland Accepts Integration
+country_event = {
+	id = rossiya.409
+	title = rossiya.409.t
+	desc = rossiya.409.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.409.a
+		ai_chance = { base = 90 }
+		add_stability = -0.07
+		add_political_power = -20
+		activate_decision = RUS_decision_annex_finland
+	}
+}
+
+#RUS - Finland Refuses Integration
+country_event = {
+	id = rossiya.410
+	title = rossiya.410.t
+	desc = rossiya.410.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.410.a
+		ai_chance = { base = 90 }
+		add_stability = -0.03
+	}
+}
+
+#Switch to Poland
+country_event = {
+	id = rossiya.411
+	title = rossiya.411.t
+	desc = rossiya.411.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Keep playing Russia
+	option = {
+		name = rossiya.411.a # Keep playing Russia
+	}
+
+	#Switch to Poland
+	option = {
+		name = rossiya.411.b # Switch To Poland
+		POL = { change_tag_from = ROOT }
+	}
+}
+	
+#Lithuanian Press Ban
+country_event = {
+	id = rossiya.412
+	title = rossiya.412.t
+	desc = rossiya.412.d
+	picture = GFX_GEO_report_event_Dadiani_Palace
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Go ahead
+	option = {
+		name = rossiya.412.a
+		ai_chance = { base = 70 }
+		11 = {
+			custom_effect_tooltip = "RUS_vic_NA_tooltip"
+			hidden_effect = {
+				add_compliance = -10
+				add_resistance = 10
+			}
+		}
+		189 = {
+			custom_effect_tooltip = "RUS_vic_NA_tooltip"
+			hidden_effect = {
+				add_compliance = -10
+				add_resistance = 10
+			}
+		}
+		940 = {
+			custom_effect_tooltip = "RUS_vic_NA_tooltip"
+			hidden_effect = {
+				add_compliance = -10
+				add_resistance = 10
+			}
+		}
+	}
+
+	#Leave the Lithuanians alone
+	option = {
+		name = rossiya.412.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+#Tsushima Incident (13.04.1861)
+country_event = {
+	id = rossiya.413
+	title = rossiya.413.t
+	desc = rossiya.413.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.413.a
+	}
+}
+
+#Tsushima Incident - Russian Sailors and Tsushima Samurai Clash (20.06.1861)
+country_event = {
+	id = rossiya.414
+	title = rossiya.414.t
+	desc = rossiya.414.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+
+	option = {
+		name = rossiya.414.a
+	}
+}
+
+#Geneva Convention
+country_event = {
+	id = rossiya.415
+	title = rossiya.415.t
+	desc = rossiya.415.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Sign it
+	option = {
+		name = rossiya.415.a
+		add_stability = 0.03
+		add_timed_idea = { idea = RUS_idea_geneva_signed days = 180 }
+	}
+
+	#Don't sign it
+	option = {
+		name = rossiya.415.b
+		add_stability = 0.01
+		add_timed_idea = { idea = RUS_idea_geneva_notsigned days = 180 }
+	}
+	
+	#Don't attend the conference
+	option = {
+		name = rossiya.415.c
+		custom_effect_tooltip = eoanb_tt_RUS_genevaconv
+		add_timed_idea = { idea = RUS_idea_geneva_notattended days = 180 }
+		hidden_effect = {
+			SWI = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			BAD = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			BEL = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			DEN = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			FRA = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			HES = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			ITA = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			HOL = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			POR = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			PRS = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			SPR = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			WUR = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			ENG = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+			SWE = { add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_genevanotattended } }
+		}
+	}
+}
+
+#Demand Karachi (NOT FIRED)
+#country_event = {
+#	id = rossiya.416
+#	title = rossiya.416.t
+#	desc = rossiya.416.d
+#	picture = GFX_report_event_krenholm_manufacture
+#
+#	fire_only_once = yes
+#	is_triggered_only = yes
+#
+#	#Let them have it
+#	option = {
+#		name = rossiya.416.a
+#		RUS = { transfer_state = 1000 }
+#	}
+#	
+#	#Ignore it
+#	option = {
+#		name = rossiya.416.b
+#		1000 = { add_claim_by = RUS }
+#	}
+#}
+    
+#DEN - Russia Demands Military Access
+country_event = {
+	id = rossiya.417
+	title = rossiya.417.t
+	desc = rossiya.417.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.417.a
+		ai_chance = { factor = 25 }
+		DEN = { give_military_access = RUS }
+	}
+
+	option = {
+		name = rossiya.417.b
+		ai_chance = { factor = 75 }
+		RUS = { add_opinion_modifier = { target = DEN modifier = eoanb_om_RUS_denmarkdeniedaccess } }
+	}
+}
+
+##### ECONOMY AND TRADE EVENTS (rossiya.501-700) #####
+
+#Krenholm Manufacturing Company
+country_event = {
+	id = rossiya.501
+	title = rossiya.501.t
+	desc = rossiya.501.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.501.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+	}
+}
+
+#Vodka Protests (10.10.1858)
+country_event = {
+	id = rossiya.502
+	title = rossiya.502.t
+	desc = rossiya.502.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.502.a
+		add_timed_idea = {
+			idea = RUS_idea_vodka_protests
+			days = 365
+		}
+	}
+}
+
+#Konstantin Rudski & Co. Ltd. (06.12.1858)
+country_event = {
+	id = rossiya.503
+	title = rossiya.503.t
+	desc = rossiya.503.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.503.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = process_engineering_tech }
+	}
+}
+
+#St. Petersburg - Warsaw Railway Opens
+country_event = {
+	id = rossiya.504
+	title = rossiya.504.t
+	desc = rossiya.504.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = rossiya.504.a
+		add_political_power = 60
+	}
+}
+    
+#Federal Customs (27.02.1867)
+country_event = {
+	id = rossiya.505
+	title = rossiya.505.t
+	desc = rossiya.505.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.505.a
+		division_template = {
+			name = "Border Customs Regiment"
+			regiments = {
+				light_infantry = { x = 0 y = 0 }
+				light_infantry = { x = 0 y = 1 }
+				light_infantry = { x = 0 y = 2 }
+			}
+			support = { 
+				military_police = { x = 0 y = 0 }
+			} 
+		}
+		230 = {
+			create_unit = {
+				division = "name = \"1st Border Customs Regiment\" division_template = \"Border Customs Regiment\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = RUS
+			}
+			create_unit = {
+				division = "name = \"2nd Border Customs Regiment\" division_template = \"Border Customs Regiment\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = RUS
+			}
+		}
+	}
+}
+    
+#Kalinin Machine Plant (28.09.1866)
+country_event = {
+	id = rossiya.506
+	title = rossiya.506.t
+	desc = rossiya.506.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.506.a
+		add_timed_idea = { idea = RUS_idea_kalinin_machine days = 365 }
+		add_political_power = -80
+	}
+}
+
+#Tax Debates (01.04.1871)
+country_event = {
+	id = rossiya.507
+	title = rossiya.507.t
+	desc = rossiya.507.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.507.a
+		add_ideas = RUS_idea_inefficient_taxes
+		add_political_power = 10
+	}
+	
+	option = {
+		name = rossiya.507.b
+		add_ideas = RUS_idea_progressive_taxes
+		add_political_power = -30
+	}
+	
+	option = {
+		name = rossiya.507.c
+		add_ideas = RUS_idea_property_taxes
+		add_political_power = -50
+	}
+}
+	
+#Russian Technical Society
+country_event = {
+	id = rossiya.508
+	title = rossiya.508.t
+	desc = rossiya.508.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+				
+	option = {
+		name = rossiya.508.a
+		add_ideas = RUS_idea_russian_technical_society
+		swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship } 
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Russian State Bank (12.06.1860)
+country_event = {
+	id = rossiya.509
+	title = rossiya.509.t
+	desc = rossiya.509.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.509.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+		add_ideas = RUS_idea_state_bank_russian_empire
+	}
+}
+
+#Agriculture Society - Congress Poland (22.12.1857)
+country_event = {
+	id = rossiya.510
+	title = rossiya.510.t
+	desc = rossiya.510.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.510.a
+		unlock_decision_tooltip = RUS_decision_polish_agriculture_society
+		activate_decision = RUS_decision_polish_agriculture_society
+	}
+	
+	option = {
+		name = rossiya.510.b
+		add_political_power = -50
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech category = farming_tech }
+		1134 = {
+			add_compliance = 5
+		}
+	}
+	
+	option = {
+		name = rossiya.510.c
+		add_political_power = 75
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		1134 = {
+			add_compliance = -5
+			add_resistance = 5
+		}
+	}
+}
+
+#The Warsaw Main School (5.06.1862)
+country_event = {
+	id = rossiya.511
+	title = rossiya.511.t
+	desc = rossiya.511.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.511.a
+		add_political_power = -75
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		add_tech_bonus = { 
+			bonus = 1
+			uses = 2 
+			category = mechanical_engineering_tech 
+			category = humanities_tech
+			category = biochemistry_tech
+		}
+	}
+	
+	option = {
+		name = rossiya.511.b
+		add_political_power = -50
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		add_tech_bonus = { 
+			bonus = 0.5
+			uses = 1 
+			category = mechanical_engineering_tech 
+			category = humanities_tech
+			category = biochemistry_tech
+		}
+	}
+	
+	option = {
+		name = rossiya.511.c
+		add_political_power = 100
+		add_stability = -0.01
+		1134 = {
+			add_compliance = -5
+			add_resistance = 5
+		}
+	}
+}
+
+##### MILITARY EVENTS (rossiya.701-999) #####
+
+### GENERAL AND ADMIRAL EVENTS (rossiya.701-800) ###
+
+#Death of Ivane Amilakhvari (27.08.1905)
+country_event = {
+	id = rossiya.701
+	title = rossiya.701.t
+	desc = rossiya.701.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.701.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_ivane_amilakhvari
+	}
+		
+	option = {
+		name = rossiya.701.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_ivane_amilakhvari
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Baryatinsky (09.03.1879)
+country_event = {
+	id = rossiya.702
+	title = rossiya.702.t
+	desc = rossiya.702.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.702.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_baryatinsky
+	}
+        
+	option = {
+		name = rossiya.702.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_baryatinsky
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Aleksey Kuropatkin (16.01.1925)
+country_event = {
+	id = rossiya.703
+	title = rossiya.703.t
+	desc = rossiya.703.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.703.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_aleksey_kuropatkin
+	}
+        
+	option = {
+		name = rossiya.703.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_aleksey_kuropatkin
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Konstantin Petrovich von Kaufmann (16.05.1882)
+country_event = {
+	id = rossiya.704
+	title = rossiya.704.t
+	desc = rossiya.704.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.704.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_konstantin_petrovich_von_kaufmann
+	}
+		
+	option = {
+		name = rossiya.704.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_konstantin_petrovich_von_kaufmann
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Skobelev (07.07.1882)
+country_event = {
+	id = rossiya.705
+	title = rossiya.705.t
+	desc = rossiya.705.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.705.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_skobelev
+	}
+        
+	option = {
+		name = rossiya.705.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_skobelev
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Konstantinovich Abramov (25.10.1886)
+country_event = {
+	id = rossiya.706
+	title = rossiya.706.t
+	desc = rossiya.706.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.706.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_konstantinovich_abramov
+	}
+		
+	option = {
+		name = rossiya.706.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_konstantinovich_abramov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Nikolaevich Manvelov (02.04.1906)
+country_event = {
+	id = rossiya.707
+	title = rossiya.707.t
+	desc = rossiya.707.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+			
+	option = {
+		name = rossiya.707.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_nikolaevich_manvelov
+	}
+		
+	option = {
+		name = rossiya.707.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_nikolaevich_manvelov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Annenkov (21.01.1899)
+country_event = {
+	id = rossiya.708
+	title = rossiya.708.t
+	desc = rossiya.708.d
+	picture = GFX_event_quistorp_funeral
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.708.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_annenkov
+	}
+        
+	option = {
+		name = rossiya.708.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_annenkov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Ivane Bagration of Mukhrani (11.03.1895)
+country_event = {
+	id = rossiya.709
+	title = rossiya.709.t
+	desc = rossiya.709.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.709.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_ivane_bagration_of_mukhrani
+	}
+		
+	option = {
+		name = rossiya.709.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_ivane_bagration_of_mukhrani
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Batyanov (05.12.1916)
+country_event = {
+	id = rossiya.710
+	title = rossiya.710.t
+	desc = rossiya.710.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.710.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_batyanov
+	}
+		
+	option = {
+		name = rossiya.710.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_batyanov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolai Demidov-Lopukhin (18.12.1910)
+country_event = {
+	id = rossiya.711
+	title = rossiya.711.t
+	desc = rossiya.711.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.711.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolai_demidovlopukhin
+	}
+	
+	option = {
+		name = rossiya.711.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolai_demidovlopukhin
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Johan Casimir Ehrnrooth (05.02.1913)
+country_event = {
+	id = rossiya.712
+	title = rossiya.712.t
+	desc = rossiya.712.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.712.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_johan_casimir_ehrnrooth
+	}
+    
+	option = {
+		name = rossiya.712.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_johan_casimir_ehrnrooth
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Otto Wilhelm Furuhjelm (24.05.1883)
+country_event = {
+	id = rossiya.713
+	title = rossiya.713.t
+	desc = rossiya.713.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.713.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_otto_wilhelm_furuhjelm
+	}
+	
+	option = {
+		name = rossiya.713.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_otto_wilhelm_furuhjelm
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Oskar Gripenburg (25.12.1915)
+country_event = {
+	id = rossiya.714
+	title = rossiya.714.t
+	desc = rossiya.714.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.714.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_oskar_gripenburg
+	}
+	
+	option = {
+		name = rossiya.714.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_oskar_gripenburg
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Bagration-Imeretinsky (17.11.1900)
+country_event = {
+	id = rossiya.715
+	title = rossiya.715.t
+	desc = rossiya.715.d
+	picture = GFX_event_quistorp_funeral
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.715.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_bagration_imeretinsky
+	}
+	
+	option = {
+		name = rossiya.715.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_bagration_imeretinsky
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Von Kaulbars (25.01.1925)
+country_event = {
+	id = rossiya.716
+	title = rossiya.716.t
+	desc = rossiya.716.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.716.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_von_kaulbars
+	}
+	
+	option = {
+		name = rossiya.716.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_von_kaulbars
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Chernyayev (16.08.1898)
+country_event = {
+	id = rossiya.717
+	title = rossiya.717.t
+	desc = rossiya.717.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.717.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_chernyayev
+	}
+	
+	option = {
+		name = rossiya.717.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_chernyayev
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolay Krasnov (15.09.1900)
+country_event = {
+	id = rossiya.718
+	title = rossiya.718.t
+	desc = rossiya.718.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.718.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolay_krasnov
+	}
+	
+	option = {
+		name = rossiya.718.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolay_krasnov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Ivan Krasnov (14.04.1871)
+country_event = {
+	id = rossiya.719
+	title = rossiya.719.t
+	desc = rossiya.719.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.719.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_ivan_krasnov
+	}
+	
+	option = {
+		name = rossiya.719.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_ivan_krasnov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Ivan Davidovich Lazarev (14.08.1879)
+country_event = {
+	id = rossiya.720
+	title = rossiya.720.t
+	desc = rossiya.720.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.720.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_ivan_davidovich_lazarev
+	}
+	
+	option = {
+		name = rossiya.720.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_ivan_davidovich_lazarev
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Vladislav Romishevskiy (20.08.1907)
+country_event = {
+	id = rossiya.721
+	title = rossiya.721.t
+	desc = rossiya.721.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.721.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_vladislav_romishevskiy
+	}
+	
+	option = {
+		name = rossiya.721.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_vladislav_romishevskiy
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Dragomirov (28.10.1905)
+country_event = {
+	id = rossiya.722
+	title = rossiya.722.t
+	desc = rossiya.722.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.722.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_dragomirov
+	}
+	
+	option = {
+		name = rossiya.722.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_dragomirov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Boris Shelkovnikov (10.02.1878)
+country_event = {
+	id = rossiya.723
+	title = rossiya.723.t
+	desc = rossiya.723.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.723.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_boris_shelkovnikov
+	}
+	
+	option = {
+		name = rossiya.723.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_boris_shelkovnikov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Pavel Andreevich Shuvalov (20.04.1908)
+country_event = {
+	id = rossiya.724
+	title = rossiya.724.t
+	desc = rossiya.724.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.724.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_pavel_andreevich_shuvalov
+	}
+	
+	option = {
+		name = rossiya.724.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_pavel_andreevich_shuvalov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Arshak Artemievich Ter-Gukasov (20.01.1881)
+country_event = {
+	id = rossiya.725
+	title = rossiya.725.t
+	desc = rossiya.725.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.725.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_arshak_artemievich_ter_gukasov
+	}
+	
+	option = {
+		name = rossiya.725.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_arshak_artemievich_ter_gukasov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Eduard von Totleben (01.07.1884)
+country_event = {
+	id = rossiya.726
+	title = rossiya.726.t
+	desc = rossiya.726.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.726.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_eduard_von_totleben
+	}
+	
+	option = {
+		name = rossiya.726.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_eduard_von_totleben
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexandr Alexandrovich Bilderling (26.07.1912)
+country_event = {
+	id = rossiya.727
+	title = rossiya.727.t
+	desc = rossiya.727.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.727.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexandr_alexandrovich_bilderling
+	}
+	
+	option = {
+		name = rossiya.727.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexandr_alexandrovich_bilderling
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Georgiy Evseevich Eristov (18.11.1863)
+country_event = {
+	id = rossiya.728
+	title = rossiya.728.t
+	desc = rossiya.728.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.728.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_georgiy_evseevich_eristov
+	}
+
+	option = {
+		name = rossiya.728.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_georgiy_evseevich_eristov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Grigoriy Dmitrievich of Jambakur-Orbeliani (21.03.1883)
+country_event = {
+	id = rossiya.729
+	title = rossiya.729.t
+	desc = rossiya.729.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.729.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_grigoriy_dmitrievich_of_jambakur_orbeliani
+	}
+	
+	option = {
+		name = rossiya.729.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_grigoriy_dmitrievich_of_jambakur_orbeliani
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Joseph Carl von Anrep (28.06.1860)
+country_event = {
+	id = rossiya.730
+	title = rossiya.730.t
+	desc = rossiya.730.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.730.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_joseph_carl_von_anrep
+	}
+	
+	option = {
+		name = rossiya.730.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_joseph_carl_von_anrep
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Mikhail Muravyov-Vilenskiy (12.09.1866)
+country_event = {
+	id = rossiya.731
+	title = rossiya.731.t
+	desc = rossiya.731.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.731.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_mikhail_muravyov_vilenskiy
+	}
+	
+	option = {
+		name = rossiya.731.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_mikhail_muravyov_vilenskiy
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolay Petrovich Annenkov (26.03.1865)
+country_event = {
+	id = rossiya.732
+	title = rossiya.732.t
+	desc = rossiya.732.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.732.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolay_petrovich_annenkov
+	}
+	
+	option = {
+		name = rossiya.732.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolay_petrovich_annenkov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolay Sukhozanet (22.07.1871)
+country_event = {
+	id = rossiya.733
+	title = rossiya.733.t
+	desc = rossiya.733.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.733.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolay_sukhozanet
+	}
+	
+	option = {
+		name = rossiya.733.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolay_sukhozanet
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolay Muravyov-Karskiy (23.10.1866)
+country_event = {
+	id = rossiya.734
+	title = rossiya.734.t
+	desc = rossiya.734.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.734.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolay_muravyov_karskiy
+	}
+	
+	option = {
+		name = rossiya.734.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolay_muravyov_karskiy
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Vasiliy Osipovich Bebutov (22.03.1858)
+country_event = {
+	id = rossiya.735
+	title = rossiya.735.t
+	desc = rossiya.735.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.735.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_vasiliy_osipovich_bebutov
+	}
+	
+	option = {
+		name = rossiya.735.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_vasiliy_osipovich_bebutov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Nikolay Karlovich Krabbe (03.01.1876)
+country_event = {
+	id = rossiya.736
+	title = rossiya.736.t
+	desc = rossiya.736.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.736.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_nikolay_karlovich_krabbe
+	}
+	
+	option = {
+		name = rossiya.736.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_nikolay_karlovich_krabbe
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Grand Duke Konstantin Nikolayevich (25.01.1892)
+country_event = {
+	id = rossiya.737
+	title = rossiya.737.t
+	desc = rossiya.737.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.737.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_grand_duke_konstantin_nikolayevich
+	}
+	
+	option = {
+		name = rossiya.737.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_grand_duke_konstantin_nikolayevich
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Alexander Sergeyevich Menshikov (02.05.1869)
+country_event = {
+	id = rossiya.738
+	title = rossiya.738.t
+	desc = rossiya.738.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.738.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_alexander_sergeyevich_menshikov
+	}
+	
+	option = {
+		name = rossiya.738.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_alexander_sergeyevich_menshikov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Lazar Serebryakov (28.02.1862)
+country_event = {
+	id = rossiya.739
+	title = rossiya.739.t
+	desc = rossiya.739.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.739.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_lazar_serebryakov
+	}
+	
+	option = {
+		name = rossiya.739.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_lazar_serebryakov
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Michael Reinecke (16.04.1859)
+country_event = {
+	id = rossiya.740
+	title = rossiya.740.t
+	desc = rossiya.740.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.740.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_michael_reinecke
+	}
+	
+	option = {
+		name = rossiya.740.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_michael_reinecke
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Stepan Stepanovich Lesovskiy (28.10.1884)
+country_event = {
+	id = rossiya.741
+	title = rossiya.741.t
+	desc = rossiya.741.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.741.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_stepan_stepanovich_lesovskiy
+	}
+	
+	option = {
+		name = rossiya.741.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_stepan_stepanovich_lesovskiy
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+#Death of Vasiliy Zavoyko (16.02.1898)
+country_event = {
+	id = rossiya.742
+	title = rossiya.742.t
+	desc = rossiya.742.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.742.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_vasiliy_zavoyko
+	}
+	
+	option = {
+		name = rossiya.742.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_vasiliy_zavoyko
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+	
+#Death of Yevfimiy Putyatin (16.10.1883)
+country_event = {
+	id = rossiya.743
+	title = rossiya.743.t
+	desc = rossiya.743.d
+	picture = GFX_event_quistorp_funeral
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.743.a
+		ai_chance = { factor = 40 }
+		retire_character = RUS_yevfimiy_putyatin
+	}
+	
+	option = {
+		name = rossiya.743.b
+		ai_chance = { factor = 60 }
+		retire_character = RUS_yevfimiy_putyatin
+		add_timed_idea = {
+			idea = idea_national_funeral
+			days = 8
+		}
+	}
+}
+
+### ARMY EVENTS (rossiya.801-900) ###
+
+## Milytuin Army Reform
+	
+#Pedagogicheskii Sbomik
+country_event = {
+	id = rossiya.801
+	title = rossiya.801.t
+	desc = rossiya.801.d
+	picture = GFX_report_event_alex_II
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.801.a
+	}
+}
+	
+#Russian Machine Guns
+country_event = {
+	id = rossiya.802
+	title = rossiya.802.t
+	desc = rossiya.802.d
+	picture = GFX_report_event_alex_II
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.802.a
+	}
+}
+
+
+#Invest in Special Training for Military Railway Department?
+country_event = {
+	id = rossiya.803
+	title = rossiya.803.t
+	desc = rossiya.803.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = rossiya.803.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -75
+				OR = {
+					has_political_power < 25
+					command_power < 10
+				}
+			}
+			modifier = {
+				add = -25
+				OR = {
+					has_political_power < 5
+					command_power < 5
+				}
+			}
+		}
+		add_political_power = -10
+		add_command_power = -10
+		hidden_effect = {
+			random_list = {
+				60 = {
+					country_event = { id = rossiya.804 days = 180 }
+				}
+				40 = {
+					country_event = { id = rossiya.805 days = 180 }
+				}
+			}
+		}
+	}
+	
+	#No
+	option = {
+		name = rossiya.803.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 75
+				OR = {
+					has_political_power < 25
+					command_power < 10
+				}
+			}
+			modifier = {
+				add = 25
+				OR = {
+					has_political_power < 5
+					command_power < 5
+				}
+			}
+		}
+	}
+}
+
+#Training for Military Railway Department Finished - Failure
+country_event = {
+	id = rossiya.804
+	title = rossiya.804.t
+	desc = rossiya.804.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = rossiya.804.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -75
+				OR = {
+					has_political_power < 25
+					command_power < 10
+				}
+			}
+			modifier = {
+				add = -25
+				OR = {
+					has_political_power < 5
+					command_power < 5
+				}
+			}
+		}
+		add_political_power = -10
+		add_command_power = -10
+		hidden_effect = {
+			random_list = {
+				60 = {
+					country_event = { id = rossiya.804 days = 180 }
+				}
+				40 = {
+					country_event = { id = rossiya.805 days = 180 }
+				}
+			}
+		}
+	}
+	
+	#No
+	option = {
+		name = rossiya.804.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 75
+				OR = {
+					has_political_power < 25
+					command_power < 10
+				}
+			}
+			modifier = {
+				add = 25
+				OR = {
+					has_political_power < 5
+					command_power < 5
+				}
+			}
+		}
+	}
+}
+
+#Training for Military Railway Department Finished - Success
+country_event = {
+	id = rossiya.805
+	title = rossiya.805.t
+	desc = rossiya.805.d
+	picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.805.a
+		ai_chance = { base = 100 }
+		army_experience = 50
+		add_tech_bonus = { bonus = 0.5 uses = 2 category = trains_tech }
+	}
+}
+	
+#The Ballon Commision
+country_event = {
+	id = rossiya.806
+	title = rossiya.806.t
+	desc = rossiya.806.d
+	picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.806.a
+		ai_chance = { base = 100 }
+		army_experience = 25
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = balloons_tech }
+	}
+}
+	
+#The Conscription Statute 
+country_event = {
+	id = rossiya.807
+	title = rossiya.807.t
+	desc = rossiya.807.d
+	picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.807.a
+		ai_chance = { base = 100 }
+		if = {
+			limit = { has_idea = scraping_the_barrel }
+			swap_ideas = {
+				remove_idea = scraping_the_barrel
+				add_idea = limited_conscription
+			}
+		}
+		else_if = {
+			limit = { has_idea = all_adults_serve }
+			swap_ideas = {
+				remove_idea = all_adults_serve
+				add_idea = limited_conscription
+			}
+		}
+		else_if = {
+			limit = { has_idea = service_by_requirement }
+			swap_ideas = {
+				remove_idea = service_by_requirement
+				add_idea = limited_conscription
+			}
+		}
+		else_if = {
+			limit = { has_idea = extensive_conscription }
+			swap_ideas = {
+				remove_idea = extensive_conscription
+				add_idea = limited_conscription
+			}
+		}
+		else_if = {
+			limit = { has_idea = limited_conscription }
+			add_political_power = 60
+		}
+		else_if = {
+			limit = { has_idea = volunteer_only }
+			swap_ideas = {
+				remove_idea = volunteer_only
+				add_idea = limited_conscription
+			}
+		}
+		else_if = {
+			limit = { has_idea = disarmed_nation }
+			swap_ideas = {
+				remove_idea = disarmed_nation
+				add_idea = limited_conscription
+			}
+		}
+	}
+}
+	
+#Berdan Rifle No.2 Development Successful
+country_event = {
+	id = rossiya.808
+	title = rossiya.808.t
+	desc = rossiya.808.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = RUS_breechloader_prototype_developed_flag
+		}
+	}
+	
+	option = {
+		name = rossiya.808.a
+		ai_chance = { base = 100 }
+		army_experience = 25
+	}
+}
+	
+#Milyutin Appointed Army Chief (NOT FIRED?)
+country_event = {
+	id = rossiya.809
+	title = rossiya.809.t
+	desc = rossiya.809.d
+	picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.809.a
+		ai_chance = { base = 100 }
+		add_war_support = 0.05
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						has_tech = doctrine_victorian_artillery
+						has_tech = doctrine_victorian_industry
+						has_tech = doctrine_victorian_innovation
+					}
+				}
+			}
+			set_technology = {
+				doctrine_victorian_tradition = 1
+			}
+		}
+		RUS_dmitry_milyutin = {
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief
+					idea_token = RUS_army_commander_dmitry_milyutin
+					allowed = {
+						original_tag = RUS
+					}
+					traits = {
+						army_chief_reform_2
+					}
+				}
+				activate = yes
+			}
+		}
+	}
+}
+
+#Native Guard Corps
+country_event = {
+	id = rossiya.810
+	title = rossiya.810.t
+	desc = rossiya.810.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Disband them
+	option = {
+		name = rossiya.810.a
+		ai_chance = { base = 100 }
+	}
+	
+	#Keep them
+	option = {
+		name = rossiya.810.b
+		ai_chance = { base = 0 }
+	}
+}
+
+#Maykop Fort
+country_event = {
+	id = rossiya.811
+	title = rossiya.811.t
+	desc = rossiya.811.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		234 = { is_controlled_by = RUS }
+		CIR = { exists = yes }
+	}
+
+	option = {
+		name = rossiya.811.a
+		add_war_support = 0.01
+		234 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 3720
+			}
+		}
+	}
+}
+
+#Pavel Military School (31.01.1864)
+country_event = {
+	id = rossiya.812
+	title = rossiya.812.t
+	desc = rossiya.812.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.812.a
+		add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
+		army_experience = 5
+	}
+}
+
+#Siberian Military District (11.12.1864)
+country_event = {
+	id = rossiya.813
+	title = rossiya.813.t
+	desc = rossiya.813.d	
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.813.a
+		army_experience = 5
+	}
+}
+
+### NAVY EVENTS (rossiya.901-999) ###
+
+#ENG - Russia Seeks Naval Cooperation
+country_event = {
+	id = rossiya.901
+	title = rossiya.901.t
+	desc = rossiya.901.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Accept
+	option = {
+		name = rossiya.901.a
+		navy_experience = 5
+		add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_equipment }
+		hidden_effect = {
+			RUS = {
+				country_event = { id = rossiya.902 days = 3 }
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = rossiya.901.b
+		hidden_effect = {
+			RUS = {
+				country_event = { id = rossiya.903 days = 3 }
+			}
+		}
+	}
+}
+
+#RUS - ENG Accepts Naval Cooperation
+country_event = {
+	id = rossiya.902
+	title = rossiya.902.t
+	desc = rossiya.902.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = rossiya.902.a
+		add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_increase_small }
+		reverse_add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_increase_small }
+		navy_experience = 10
+		add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 2 category = naval_doctrine }
+	}
+}
+
+#RUS - ENG Refuses Naval Cooperation
+country_event = {
+	id = rossiya.903
+	title = rossiya.903.t
+	desc = rossiya.903.d
+	picture = GFX_report_event_krenholm_manufacture
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = rossiya.903.a
+		add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_decrease_very_small }
+		reverse_add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_decrease_very_small }
+	}
+}
+
+#The Horrors of Crimean War - Navy
+country_event = {
+	id = rossiya.904
+	title = rossiya.904.t
+	desc = rossiya.904.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.904.a
+		ai_chance = { base = 100 }
+		add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = naval_doctrine }
+		custom_effect_tooltip = AUS_naval_reform_effect_tt
+		add_to_variable = { RUS_naval_reform_cgf = 0.01 tooltip = consumer_goods_factor_tooltip }
+		add_to_variable = { RUS_naval_reform_ppf = 0.01 tooltip = political_power_factor_tooltip }
+		add_to_variable = { RUS_naval_reform_egn = 0.01 tooltip = experience_gain_navy_tooltip }
+		add_to_variable = { RUS_naval_reform_ndcf = 0.05 tooltip = naval_doctrine_cost_factor_tooltip }
+	}
+}
+	
+#The Vladivostok Port
+country_event = {
+	id = rossiya.905
+	title = rossiya.905.t
+	desc = rossiya.905.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.905.a
+		ai_chance = { base = 100 }
+		408 = {
+			add_extra_state_shared_building_slots = 1
+		}
+		add_victory_points = {
+			province = 957
+			value = 3
+		}
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+}
+	
+#Siberian Fleet Gunboats
+country_event = {
+	id = rossiya.906
+	title = rossiya.906.t
+	desc = rossiya.906.d
+	picture = GFX_report_event_sms_drache
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.906.a
+		ai_chance = { base = 100 }
+		custom_effect_tooltip = AUS_screw_gunboat_first_series_effect_tt
+		navy_experience = 5
+		if = {
+			limit = { has_dlc = "Man the Guns" }
+			unlock_decision_tooltip = AUS_decision_order_screw_gunboats_2
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Siberian Flotilla Gunboat"
+					type = ship_hull_gunboat_2
+					#name_group = GER_CA_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_1
+						mid_1_custom_slot = ship_cannon_battery_1
+						mid_2_custom_slot = ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+				create_equipment_variant = {
+					name = "Siberian Flotilla Schooner"
+					type = ship_hull_gunboat_2
+					name_group = GER_CA_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
+						fixed_ship_secondaries_slot = empty
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_0
+						mid_1_custom_slot = empty
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = empty
+					}
+					#obsolete = no
+				}
+			}
+		}
+	}
+}
+	
+#St. Petersburg Navy Schools
+country_event = {
+	id = rossiya.907
+	title = rossiya.907.t
+	desc = rossiya.907.d
+	#picture = GFX_report_event_austrian_army_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.907.a
+		ai_chance = { base = 100 }
+		add_war_support = 0.01
+		add_command_power = 25
+		custom_effect_tooltip = AUS_naval_reform_effect_tt
+		add_to_variable = { RUS_naval_reform_ppf = 0.01 tooltip = political_power_factor_tooltip }
+		add_to_variable = { RUS_naval_reform_egn = 0.03 tooltip = experience_gain_navy_tooltip }
+		add_to_variable = { RUS_naval_reform_ndcf = -0.05 tooltip = naval_doctrine_cost_factor_tooltip }
+		195 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+				province = 3151
+			}
+		}
+		add_victory_points = {
+			province = 3151
+			value = 3
+		}
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+}
+	
+#PIE/FRA - Villafranca Maritime Contract
+country_event = {
+	id = rossiya.908
+	title = rossiya.908.t
+	desc = rossiya.908.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Sign the contract
+	option = {
+		name = rossiya.908.a
+		ai_chance = { base = 100 }
+		RUS = { country_event = { id = rossiya.909 } }
+	}
+	
+	#Refuse to sign the contract
+	option = {
+		name = rossiya.908.b
+		ai_chance = { base = 0 }
+		RUS = { country_event = { id = rossiya.910 } }
+	}
+}
+
+#Russia – Sardinia/France Agrees to Villafranca Maritime Contract
+country_event = {
+	id = rossiya.909
+	title = rossiya.909.t
+	desc = rossiya.909.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.909.a
+		ai_chance = { base = 100 }
+		if = {
+			limit = {
+				FROM = { tag = PIE }
+			}
+			#add_ideas = 
+		}
+		if = {
+			limit = {
+				FROM = { tag = FRA }
+			}
+			#add_ideas = 
+		}
+		#unlock_decision_tooltip = 
+	}
+}
+
+#Russia – Sardinia/France Rejects to Villafranca Maritime Contract
+country_event = {
+	id = rossiya.910
+	title = rossiya.910.t
+	desc = rossiya.910.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.910.a
+		ai_chance = { base = 100 }
+		add_political_power = -25
+		add_stability = -0.03
+	}
+}
+
+#Petropavlovsk Class Ships
+country_event = {
+	id = rossiya.911
+	title = rossiya.911.t
+	desc = rossiya.911.d
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.911.a
+		#custom_effect_tooltip = DEN_event_refit_dannebrog_tt
+		navy_experience = 5
+		hidden_effect = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Petropavlovsk Class"
+					type = ship_hull_ironclad_0
+					name_group = RUS_IRC_HISTORICAL_0
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_1
+						mid_1_custom_slot = ship_cannon_battery_1
+						mid_2_custom_slot = ship_cannon_battery_1
+						front_1_custom_slot = ship_cannon_battery_1
+						rear_1_custom_slot = ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+				load_oob = RUS_petropavlovsk_class_mtg
+			}
+		}
+	}
+}
+	
+#General-Admiral Ships
+country_event = {
+	id = rossiya.912
+	title = rossiya.912.t
+	desc = rossiya.912.d
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.912.a
+		#custom_effect_tooltip = DEN_event_refit_dannebrog_tt
+		navy_experience = 5
+		hidden_effect = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "General-Admiral Class"
+					type = ship_hull_ironclad_0
+					name_group = RUS_IRC_HISTORICAL_0
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_1
+						mid_1_custom_slot = ship_cannon_battery_1
+						mid_2_custom_slot = ship_cannon_battery_1
+						front_1_custom_slot = ship_cannon_battery_1
+						rear_1_custom_slot = ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+				#load_oob = RUS_petropavlovsk_class_mtg
+			}
+		}
+	}
+}

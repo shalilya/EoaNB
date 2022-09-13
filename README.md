@@ -1,20 +1,15 @@
-<hr>
-
 # Official Repository of the End of a New Beginning Mod ![github-size]  ![github-stars]
 
-### Media      [![Patreon][patreon-badge]][patreon-link]   [![Youtube][youtube-badge]][youtube-link]   [![Steam][steam-badge]][steam-link]   [![Discord][discord-badge]][discord-link]
+### Media      [![Patreon][patreon-badge]][patreon-link]   [![Steam][steam-badge]][steam-link]   [![Discord][discord-badge]][discord-link]
 
-[github-size]: https://img.shields.io/github/languages/code-size/team-eoanb/EoaNB
-[github-stars]: https://img.shields.io/github/stars/team-eoanb/EoaNB?style=social
+[github-size]: https://img.shields.io/github/languages/code-size/EoaNB-Team/EoaNB
+[github-stars]: https://img.shields.io/github/stars/EoaNB-Team/EoaNB?style=social
 
 [patreon-badge]: https://img.shields.io/static/v1?label=Patreon&message=Donate&color=orange&logo=patreon
 [patreon-link]: https://www.patreon.com/mod_eoanb
 
 [steam-badge]: https://img.shields.io/static/v1?label=Steam&message=Download&color=lightgrey&logo=steam	
-[steam-link]: https://steamcommunity.com/sharedfiles/filedetails/?id=2114093692
-
-[youtube-badge]: https://img.shields.io/static/v1?label=Youtube&message=Videos&color=red&logo=youtube
-[youtube-link]: https://www.youtube.com/channel/UCR6n-pjZ4ain9hhUESuhZNw
+[steam-link]: https://steamcommunity.com/sharedfiles/filedetails/?id=2856963714
 
 [discord-badge]: https://img.shields.io/static/v1?label=Discord&message=Chat&color=blue&logo=discord
 [discord-link]: https://discord.gg/VgufEME
@@ -41,13 +36,13 @@ This site is the official respository (cloud) for sharing and cooperating in the
 ## Installing the Mod (currently being reworked)
 
 Get easy access to our open-source development, with just a few quick steps!
-Here's a useful installation video by one of our lead developers: 
+Here's a useful installation video by one of our former lead developers: 
 
 <a href="https://youtu.be/Qr6l2DEneNY">Video Link: https://youtu.be/Qr6l2DEneNY</a>
 
 ### Links from the Video 
 * <a href="https://desktop.github.com/">Github Desktop App: https://desktop.github.com/</a>
-* <a href="https://github.com/team-eoanb/EoaNB">Github Repo URL: https://github.com/team-eoanb/EoaNB</a>
+* <a href="https://github.com/EoaNB-Team/EoaNB">Github Repo URL: https://github.com/EoaNB-Team/EoaNB</a>
 
 <hr>
 
@@ -83,7 +78,7 @@ Have more questions, comments or feedback? You can contact us by joining our dis
 
 ## Join the Team
 
-If you wish to contribute to the development of the mod, supprt us on Patreon or join the team. The links to support/apply can be found in our `#faq` channel on Discord. Donators will be given the special Auxillaires role on Discord which gives backdoor access to most of our development process/work and given special personalized easter eggs in our mod. Applicant Developers will be given the `Curia` Team Member Role and the `Disciplio` Trial Role. After passing the Trial Period, members will be fully accepted into the team and be given GitHub write access if applicable.
+If you wish to contribute to the development of the mod, support us on Patreon or join the team. The links to support/apply can be found in our `#faq` channel on Discord. Donators will be given the special Auxillaires role on Discord which gives backdoor access to most of our development process/work and given special personalized easter eggs in our mod. Applicant Developers will be given the `Curia` Team Member Role and the `Disciplio` Trial Role. After passing the Trial Period, members will be fully accepted into the team and be given GitHub write access if applicable.
 
 ### Rules for Developers
 - Current General Development for EoaNB shall be pushed onto the `(0.3)-Ars-Bellica` branch.

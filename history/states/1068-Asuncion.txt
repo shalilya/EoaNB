@@ -1,0 +1,33 @@
+state = {
+	id = 1068
+	name = "STATE_1068"
+	
+
+	local_supplies=0.0 
+	state_category = town
+
+	history = {
+		owner = PAR
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		add_core_of = PAR
+		victory_points = {
+			13567 5 
+		}
+		add_to_array = { state_culture_array = 558 } #Paraguayan
+		add_to_array = { state_culture_array_num = 0.96 }
+		add_to_array = { state_culture_array = 438 } #Guarani
+		add_to_array = { state_culture_array_num = 0.04 }
+		add_to_array = { state_religion_array = 2 } #Catholic
+		add_to_array = { state_religion_array_num = 1.0 }
+	}
+
+	provinces = {
+		13567 13694
+	}
+	manpower =223237
+	
+}

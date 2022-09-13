@@ -1,0 +1,39 @@
+
+state = {
+	id = 187
+	name = "STATE_187"
+
+	local_supplies=0.0 
+	manpower = 93150
+	
+	state_category = small_island
+	
+	resources = {
+		chromium = 5
+	}
+
+	history = {
+		owner = OTO
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			13774 1
+		}
+		add_core_of = OTO
+		add_core_of = GRE
+
+		add_to_array = { state_culture_array = 55 } #Greek
+		add_to_array = { state_culture_array_num = 0.92 }
+		add_to_array = { state_culture_array = 104 } #Turkish
+		add_to_array = { state_culture_array_num = 0.08 }
+		add_to_array = { state_religion_array = 1 } #Orthodox
+		add_to_array = { state_religion_array_num = 0.92 }
+		add_to_array = { state_religion_array = 8 } #Sunni
+		add_to_array = { state_religion_array_num = 0.08 }
+	}
+
+	provinces = {
+		6550 8435 13774
+	}
+}

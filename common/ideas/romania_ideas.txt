@@ -1,0 +1,818 @@
+ideas = {
+	country = {
+
+		######################
+		### ION CUZA IDEAS ### 
+		######################
+
+		ROM_idea_Unification_process = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_gain = -0.8
+			}
+		}
+
+		ROM_idea_focsani_central_commission = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				autonomy_gain = -0.5
+				stability_factor = 0.05
+			}
+		}
+
+		ROM_idea_covert_independence = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				autonomy_gain = 0.5
+			}
+		}
+
+		ROM_idea_rule_by_decree = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_gain = 0.5
+			}
+		}
+
+		######################
+		### MILITARY IDEAS ###
+		######################
+
+		ROM_idea_wallachian_moldavian_army = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				command_power_gain = -0.2
+				conscription_factor = 0.4
+				army_org_regain = -0.2
+				army_morale_factor = -0.4
+                		supply_consumption_factor = -0.2
+				army_core_attack_factor = -0.2
+				army_core_defence_factor = 0.2
+				army_org_factor = -0.2
+			}
+		}
+		
+		ROM_idea_united_army = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				command_power_gain = 0.1
+				conscription_factor = 0.15
+				army_org_regain = 0.15
+				army_morale_factor = 0.1
+                		supply_consumption_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.2
+				army_org_factor = 0.05
+				dig_in_speed = 5
+			}
+		}
+
+		ROM_idea_wallachian_moldavian_navy = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				navy_org_factor = -0.4
+				naval_morale_factor = -0.3
+				naval_speed_factor = -0.5
+				naval_attrition = 0.5
+			}
+		}
+
+		ROM_idea_united_navy = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				navy_org_factor = -0.2
+				naval_morale_factor = 0.05
+				naval_speed_factor = -0.2
+				naval_attrition = 0.4	
+			}
+		}
+
+		ROM_idea_romanian_navy = {
+			
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				navy_org_factor = 0.1
+				naval_morale_factor = 0.2
+				naval_speed_factor = 0.25
+				naval_attrition = 0.15
+			}
+		}
+		
+		ROM_idea_failed_army_reform = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				offence = -0.1
+				defence = -0.1
+				army_org_factor = -0.2
+				army_org_regain = -0.1
+				army_morale = -0.15
+				training_time_army_factor = 0.5
+			}
+		}
+		
+		ROM_idea_successful_army_reform = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				offence = 0.1
+				defence = 0.1
+				army_org_factor = 0.15
+				army_org_regain = 0.1
+				army_morale = 0.2
+				attrition = -0.1
+				training_time_army_factor = -0.5
+			}
+		}
+		
+		ROM_idea_belgian_help = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				
+			}
+			
+			research_bonus = {
+				process_engineering_tech = 0.02
+				mechanical_engineering_tech = 0.02
+			}
+		}
+				
+		ROM_idea_corrupted_army = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				command_power_gain = -0.4
+				army_org_factor = -0.4
+                army_org_regain = -0.45
+                supply_consumption_factor = 0.5
+				conscription_factor = -0.5
+			}
+		}
+		
+		ROM_idea_corrupted_army2 = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				command_power_gain = -0.2
+				army_org_factor = -0.3
+                army_org_regain = -0.3
+                supply_consumption_factor = 0.4
+				conscription_factor = -0.45
+			}
+		}
+		
+		ROM_idea_corrupted_army3 = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = { 
+				command_power_gain = -0.15
+				army_org_factor = -0.25
+                army_org_regain = -0.25
+                supply_consumption_factor = 0.34
+				conscription_factor = -0.4
+			}
+		}
+		
+		ROM_idea_french_military_mission = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				land_doctrine_cost_factor = -0.25
+				planning_speed = 0.05
+				experience_gain_factor = 0.05
+			}
+		}
+		
+		ROM_idea_french_military_mission2 = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				land_doctrine_cost_factor = -0.5
+				planning_speed = 0.1
+				experience_gain_factor = 0.1
+			}
+		}
+		
+		ROM_idea_french_military_mission3 = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				land_doctrine_cost_factor = -1
+				planning_speed = 0.15
+				experience_gain_factor = 0.15
+			}
+		}
+		
+		ROM_idea_french_military_mission_costs = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_factor = -0.1
+				war_support_factor = -0.05
+			}
+		}
+		
+		ROM_idea_french_military_mission2_costs = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_factor = -0.15
+				war_support_factor = -0.1
+			}
+		}
+		
+		ROM_idea_french_military_mission3_costs = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_factor = -0.2
+				war_support_factor = -0.15
+			}
+		}
+
+		####################
+		### AGRICULTURE? ###
+		####################
+
+		ROM_failed_to_fix_agriculture = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = failed_to_fix_agriculture
+			
+			modifier = {
+				centrism_drift = 0.1
+                                consumer_goods_factor = 0.5
+				political_power_gain = -0.3
+				production_speed_buildings_factor = -0.45 
+				stability_factor = -0.35
+			}
+		}
+
+		ROM_a_perfect_mess_idea = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_a_perfect_mess
+			
+			modifier = {
+                                consumer_goods_factor = -0.05
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.1 
+			}
+		}
+
+		ROM_idea_sentiment_of_unity = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_unity
+			
+			modifier = {
+				centrism_drift = 0.1
+				drift_defence_factor = 0.15
+				war_support_factor = 0.05
+				autonomy_gain = 1
+				stability_factor = 0.20
+			}
+		}
+		
+		ROM_idea_sentiment_of_unity1 = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_unity
+			
+			modifier = {
+				centrism_drift = 0.15
+				drift_defence_factor = 0.15
+				war_support_factor = 0.05
+				autonomy_gain = 2
+				stability_factor = 0.20
+			}
+		}
+		
+		ROM_battleground = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_battlegroundgfx
+			
+			modifier = {
+				war_support_factor = -1
+				autonomy_gain = -1
+				stability_factor = -0.10
+				justify_war_goal_time = 1
+				army_leader_start_level = 2
+				army_org = -10
+				army_defence_factor = 0.5
+				army_attack_factor = -0.5
+			}
+		}
+		
+		ROM_mass_illiteracy = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_illteracy
+
+			modifier = {
+                research_speed_factor = -0.25
+			}
+		}
+		
+		ROM_mass_illiteracy1 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_illteracy
+
+			modifier = {
+                research_speed_factor = -0.20
+			}
+		}
+		
+		ROM_mass_illiteracy2 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_illteracy
+
+			modifier = {
+                research_speed_factor = -0.20
+			}
+		}
+		
+		ROM_ruined_agriculture = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.4
+				political_power_gain = -0.2
+				production_speed_buildings_factor = -0.2 
+			}
+		}
+		
+		ROM_ruined_agriculture1 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.35
+				political_power_gain = -0.2
+				production_speed_buildings_factor = -0.2
+			}
+		}
+		
+		ROM_ruined_agriculture2 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.35
+				political_power_gain = -0.2
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		ROM_ruined_agriculture3 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.30
+				political_power_gain = -0.2
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		ROM_ruined_agriculture4 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.2
+				political_power_gain = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		ROM_ruined_agriculture5 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.15
+				political_power_gain = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		ROM_ruined_agriculture6 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.1
+				political_power_gain = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		
+		ROM_ruined_agriculture7 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_ruined_agriculture
+
+			modifier = {
+                consumer_goods_factor = 0.1
+				political_power_gain = -0.06
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		
+		ROM_preparing_industralization = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+                consumer_goods_factor = -0.15
+				political_power_gain = -0.15
+				local_building_slots_factor = -0.1
+                production_speed_buildings_factor = -0.25 				
+			}
+		}
+		
+		ROM_preparing_industralization1 = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+                consumer_goods_factor = -0.1
+				political_power_gain = -0.1
+				local_building_slots_factor = -0.1
+                production_speed_buildings_factor = -0.20				
+			}
+		}
+		
+		ROM_preparing_industralization2 = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+                consumer_goods_factor = -0.05
+				political_power_gain = -0.05
+				local_building_slots_factor = -0.1
+                production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		ROM_compensating_landowners = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+                consumer_goods_factor = 0.1
+			}
+		}
+		
+		ROM_incompetent_officers = {
+
+	         picture = SWE_Inept_Army
+
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+                army_attack_factor = -0.1
+				army_defence_factor = -0.1
+			}
+		}
+		
+		ROM_romanul_newspaper = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_idea_Romanul_Newspaper
+
+			modifier = {
+                autonomy_gain = 0.1
+				stability_factor = 0.05
+				political_power_gain = -0.05
+			}
+		}
+		
+		ROM_bulgarian_refugees = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_idea_bulgarian_refugee_in_romania
+
+			modifier = {
+				monthly_population	 = 0.05
+				political_power_gain = -0.05
+			}
+		}
+		
+		ROM_romanian_merchant_navy = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_five_year_plan_industry
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				production_speed_dockyard_factor = 0.05
+				trade_opinion_factor = 0.03
+				faction_trade_opinion_factor = 0.03
+				autonomy_gain_trade = 0.05
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+
+		designer = yes
+
+		galati_naval_arsenal = {
+
+			allowed = {
+				original_tag = ROM
+			}
+			
+			available = {
+				always = no
+			}
+
+			cost = 150
+			removal_cost = 10
+
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+
+			traits = { eoanb_naval_manufacturer_light }
+		}
+	}
+	
+	materiel_manufacturer = {
+
+		designer = yes
+
+		the_army_arsenal = {
+
+			allowed = {
+				original_tag = ROM
+			}
+			
+			available = {
+				always = no
+			}
+
+			cost = 150
+			removal_cost = 10
+
+			research_bonus = {
+				infantry_weapons = 0.03
+				tech_category_uniforms = 0.03
+			}
+
+			traits = {  }
+		}
+	}
+}
