@@ -162,6 +162,36 @@ guiTypes = {
 			size = { width=100%% height=30 }
 
 			buttonType = {
+				name = "army_button"
+				position = { x = -265 y = 34 }
+				quadTextureSprite ="GFX_armyoverview_button"
+				Orientation = "UPPER_right"
+				shortcut = "o"
+				clicksound = click_close
+				oversound = ui_menu_over
+			}
+
+			buttonType = {
+				name = "navy_button"
+				position = { x = -217 y = 34 }
+				quadTextureSprite ="GFX_navyoverview_button"
+				Orientation = "UPPER_right"
+				shortcut = "p"
+				clicksound = click_close
+				oversound = ui_menu_over
+			}
+
+			buttonType = {
+				name = "air_button"
+				position = { x = -169 y = 34 }
+				quadTextureSprite ="GFX_airoverview_button"
+				Orientation = "UPPER_right"
+				shortcut = "l"
+				clicksound = click_close
+				oversound = ui_menu_over
+			}
+
+			buttonType = {
 				name = "decisionview_button"
 				quadTextureSprite ="GFX_topbar_decisionview_button"
 				position = { x= -203 y = 43 }
@@ -979,16 +1009,6 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 		}
 
-		buttonType = {
-			name = "army_button"
-			position = { x = -265 y = 65 }
-			quadTextureSprite ="GFX_armyoverview_button"
-			Orientation = "UPPER_right"
-			shortcut = "o"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
-
 		# NAVY
 
 		iconType = {
@@ -1010,16 +1030,6 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 		}
 
-		buttonType = {
-			name = "navy_button"
-			position = { x = -217 y = 65 }
-			quadTextureSprite ="GFX_navyoverview_button"
-			Orientation = "UPPER_right"
-			shortcut = "p"
-			clicksound = click_close
-			oversound = ui_menu_over
-		}
-
 		# AIR FORCE
 
 		iconType = {
@@ -1039,16 +1049,6 @@ guiTypes = {
 			maxHeight = 24
 			fixedsize = yes
 			Orientation = "UPPER_RIGHT"
-		}
-
-		buttonType = {
-			name = "air_button"
-			position = { x = -169 y = 65 }
-			quadTextureSprite ="GFX_airoverview_button"
-			Orientation = "UPPER_right"
-			shortcut = "l"
-			clicksound = click_close
-			oversound = ui_menu_over
 		}
 	}
 
