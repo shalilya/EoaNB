@@ -72,9 +72,7 @@
  industry_folder_desc: "Industry and production."
  electronics_folder: "Engineering"
  electronics_folder_desc: "Engineering, radar, encryption, and advanced tech research."
- secret_weapons_folder: "Secret Weapons"
- secret_weapons_folder_desc: "Wonder weapons, the product of mad science."
- 
+
  infantry_weapons2: "Improved Infantry Equipment I"
  infantry_weapons2_desc: "Personal and crew served weapons for infantry as well as the various other bits of kit a soldier needs. Improved weapon models and more specialized equipment."
  improved_infantry_weapons_2: "Improved Infantry Equipment II"

@@ -42,7 +42,7 @@ defined_text = {
 		}
 		localization_key = "Noticing"
 	}
-	text = {	
+	text = {
 		localization_key = "Uninterested"
 	}
 }
@@ -90,7 +90,7 @@ defined_text = {
 		}
 		localization_key = "Noticing"
 	}
-	text = {	
+	text = {
 		localization_key = "Uninterested"
 	}
 }
@@ -98,7 +98,6 @@ defined_text = {
 	name = GETFLINTLOCKREQS
 	text = {
 		trigger={
-			#always = yes
 			afr_is_tribal = yes
 			NOT={
 				has_idea = afr_reforming_kingdom
@@ -112,7 +111,6 @@ defined_text = {
 	}
 	text = {
 		trigger={
-			#always = yes
 			OR={
 				has_idea = afr_reforming_kingdom
 				has_country_flag = Oceania_industrializing
@@ -550,7 +548,7 @@ defined_text = {
 			check_variable = {super_event_displayed = 42}
 		}
 		localization_key = "GFX_fra_orsini_attack_event"
-	}	
+	}
 	###Easter Egg Super Events
 	text = {
 		trigger={
@@ -1088,7 +1086,7 @@ defined_text = {
 			check_variable = {super_event_displayed = 42}
 		}
 		localization_key = "Catastrophe!"
-	}	
+	}
 
 
 	###Easter Egg Super Events

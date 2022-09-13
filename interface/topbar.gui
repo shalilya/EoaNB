@@ -934,6 +934,17 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
+		# Nukes aren't used for the time being, but removing this creates errors.
+		iconType = {
+			name ="nuke_text_bg"
+		}
+		iconType = {
+			name ="nuke_icon"
+		}
+		instantTextBoxType = {
+			name = "nuke_count"
+		}
+
 		###########################################################
 		# MENU BUTTONS
 		###########################################################
