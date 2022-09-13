@@ -27,9 +27,9 @@ guiTypes = {
 		position = { x = -4 y = 0 }
 		size = { width = 100%% height = 100%% }
 
-	###########################################################
-	# LEFT BACKGROUNDS
-	###########################################################
+		###########################################################
+		# LEFT BACKGROUNDS
+		###########################################################
 		iconType = {
 			name = "background"
 			spriteType = "GFX_topbar_background"
@@ -276,18 +276,7 @@ guiTypes = {
 				oversound = ui_menu_over
 			}
 
-			buttonType = {
-				name = "eoanb_internal_politics_open_container"
-				quadTextureSprite ="GFX_internal_politic_button"
-				position = { x = -91 y = 43 }
-				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "INT_POL_TOOLTIP"
-				shortcut = "ctrl+r"
-				clicksound = click_close
-				oversound = ui_menu_over
-				pdx_tooltip = internal_politics_tooltip
-				pdx_tooltip_delayed = internal_politics_tooltip_delayed
-			}
+			#OPEN INTERNAL POLITIC BUTTON IN CUSTOM TABVIEW AROUND LINE 1050
 
 			buttonType = {
 				name = "diplomacy_button"
@@ -1042,13 +1031,27 @@ buttonType = {
 		name = "custom_tabview_buttons_container"
 		position = { x = 128 y = -1 }
 
-		iconType = {
+		buttonType = {
 			name = "open_internal_politics"
+			quadTextureSprite ="GFX_internal_politic_button"
+			position = { x = 89 y = 76 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "INT_POL_TOOLTIP"
+			shortcut = "ctrl+r"
+			clicksound = click_close
+			oversound = ui_menu_over
+			pdx_tooltip = internal_politics_tooltip
+			pdx_tooltip_delayed = internal_politics_tooltip_delayed
+		}
+
+		iconType = {
+			name = "eoanb_internal_politics_open_container"
 			quadTextureSprite = "GFX_internal_politics_open"
 			position = { x= 0 y = 0 }
 			pdx_tooltip = "INT_POL_TOOLTIP"
 			pdx_tooltip = internal_politics_tooltip
 			pdx_tooltip_delayed = internal_politics_tooltip_delayed
+			#alwaystransparent = yes
 		}
 
 		instantTextBoxType = {

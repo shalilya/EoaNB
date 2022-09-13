@@ -55,8 +55,6 @@ scripted_gui = {
 
 
 
-
-
 	custom_tabview_container_topbar = {
 		context_type = player_context
 		parent_window_token = top_bar
@@ -108,7 +106,7 @@ scripted_gui = {
 				}
 			}
 			
-			eoanb_internal_politics_open_container_click = {
+			open_internal_politics_click = {
 				if = {
 					limit = { NOT = { has_country_flag = TTT_opened } }
 					set_country_flag = TTT_opened
