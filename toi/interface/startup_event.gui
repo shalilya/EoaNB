@@ -133,6 +133,30 @@ guiTypes = {
 			web_link = "https://discord.gg/VgufEME"
 		}
 
+		buttonType = {
+			name = "startup_event_button_discord_2"
+			position = { x = 0 y = 120 }
+			quadTextureSprite = "GFX_eoanb_logo_discord"
+			frame = 1
+			orientation = center
+			buttonFont = "hoi_18mbs"
+			clicksound = click_default
+			pdx_tooltip = "STARTUP_EVENT_DISCORD"
+			web_link = "https://discord.gg/VgufEME"
+		}
+
+		buttonType = {
+			name = "startup_event_button_steam"
+			position = { x = 180 y = 120 }
+			quadTextureSprite = "GFX_eoanb_logo_steam"
+			frame = 1
+			orientation = center
+			buttonFont = "hoi_18mbs"
+			clicksound = click_default
+			pdx_tooltip = "STARTUP_EVENT_STEAM"
+			web_link = "https://steamcommunity.com/sharedfiles/filedetails/?id=2856963714"
+		}
+
 		# Game Settings
 
 		buttonType = {
