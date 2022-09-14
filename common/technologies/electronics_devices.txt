@@ -1592,10 +1592,7 @@ technologies = {
 			name = electronics_devices_folder
 			position = { x = 16 y = 36 }
 		}
-		path = {
-			leads_to_tech = military_band_radios
-			research_cost_coeff = 1
-		}
+		
 		
 		ai_will_do = {
 			factor = 1

@@ -801,7 +801,6 @@ branch_crypto = {
 		
 		available = {
 			has_done_agency_upgrade = upgrade_decryption_boost
-			has_tech = eniac
 		}
 		
 		modifiers_during_progress = {
@@ -879,7 +878,6 @@ branch_crypto = {
 		
 		available = {
 			has_done_agency_upgrade = upgrade_crypto_strength
-			has_tech = eniac
 		}
 		
 		modifiers_during_progress = {
@@ -939,7 +937,6 @@ branch_communications={
 	
 		available = {
 			has_done_agency_upgrade = upgrade_rnd_deparment
-			has_tech = military_band_radios
 			
 		}
 

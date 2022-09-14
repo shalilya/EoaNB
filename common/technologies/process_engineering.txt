@@ -704,10 +704,6 @@ technologies = {
 		
 		fuel_gain_factor = 0.2
 		
-		path = {
-			leads_to_tech = fuel_storage
-			research_cost_coeff = 1
-		}
 		
 		research_cost = 0.14
 		start_year = 1920
@@ -815,10 +811,6 @@ technologies = {
 		folder = {
 			name = process_engineering_folder
 			position = { x = 12 y = 32 }
-		}
-		path = {
-			leads_to_tech = fuel_storage
-			research_cost_coeff = 1
 		}
 		
 		ai_will_do = {
