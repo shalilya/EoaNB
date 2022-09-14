@@ -22,38 +22,6 @@ scripted_gui = {
 		}
 	}
 
-	###########################################################
-	# POLITICAL POWER
-	###########################################################
-
-	pol_power_container_topbar = {
-		context_type = player_context
-		parent_window_token = top_bar
-
-		window_name = "pol_power_container"
-		
-		visible = {
-			always = yes
-		}
-
-		effects = {
-		}
-	}
-
-	###########################################################
-	# FIRST UPPER CATEGORY "CONSTRUCTION"
-	###########################################################
-
-
-
-
-
-
-
-
-
-
-
 
 	custom_tabview_container_topbar = {
 		context_type = player_context

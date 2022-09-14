@@ -944,6 +944,15 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "nuke_count"
 		}
+		containerWindowType = {
+			name = "eoanb_strata_container"
+		}
+		containerWindowType = {
+			name = "eoanb_strata_open_container"
+		}
+		containerWindowType = {
+			name = "eoanb_internal_politics_open_container"
+		}
 
 		###########################################################
 		# MENU BUTTONS

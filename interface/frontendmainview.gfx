@@ -12,7 +12,7 @@ spriteTypes = {
 		name = "GFX_main_lobby_button_highlight"
 		textureFile = "gfx/interface/main_lobby_button_transparent.dds"
 
-		animation = {
+		animation = {	
 			animationmaskfile = "gfx/interface/main_lobby_button_white.dds"
 			animationtexturefile = "gfx/interface/main_lobby_button_highlight.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
