@@ -13,7 +13,7 @@ scripted_gui = {
 		parent_window_token = top_bar
 
 		window_name = "population_information_container"
-		
+
 		visible = {
 			always = yes
 		}
@@ -31,9 +31,8 @@ scripted_gui = {
 		visible = {
 			always = yes
 		}
-		
-		triggers = {
 
+		triggers = {
 			mhc_button_click_enabled = {
 				mhc_system_active_trigger = yes
 			}
@@ -41,9 +40,8 @@ scripted_gui = {
 				has_country_flag = enable_econ
 			}
 		}
-		
+
 		effects = {
-			
 			mhc_button_click = {
 				if = {
 					limit = {
@@ -101,7 +99,7 @@ scripted_gui = {
 					clr_country_flag = NMC_opened
 				}
 			}
-			
+
 			open_strata_screen_click = {
 				if = {
 					limit = { NOT = { has_global_flag = strata_screen_opened } }

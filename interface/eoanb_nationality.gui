@@ -1,87 +1,4 @@
 guiTypes = {
-#	containerWindowType = {
-#		name = "eoanb_nationality_state_container"
-#		position = { x = 950 y = 150 }
-#		size = { width = 270 height = 280 }
-#
-#		fade_time = 300
-#		fade_type = linear
-#		moveable = yes
-#
-#		background = {
-#			name = "Background"
-#			spriteType = "GFX_nationality_window_bg"
-#		}
-#
-#		instantTextboxType = {
-#			name = "title"
-#			position = { x = 14 y = 6 }
-#			font = "hoi_18mbs"
-#			text = "[?This.GetName]"
-#			maxWidth = 340
-#			maxHeight = 23
-#			format = left
-#		}
-#
-#		instantTextboxType = {
-#			name = "nationality_group"
-#			position = { x = 14 y = 30 }
-#			font = "hoi_18mbs"
-#			text = "Culture Group : [?This.GetNationalityGroup]"
-#			maxWidth = 340
-#			maxHeight = 23
-#			format = left
-#		}
-#
-#		instantTextboxType = {
-#			name = "nationality"
-#			position = { x = 14 y = 48 }
-#			font = "hoi_18mbs"
-#			text = "Nationality : [?This.GetNationality]"
-#			maxWidth = 340
-#			maxHeight = 23
-#			format = left
-#		}
-#
-#		instantTextboxType = {
-#			name = "dissent_level"
-#			position = { x = 14 y = 66 }
-#			font = "hoi_18mbs"
-#			text = "Dissent Level : [??This.nationality_dissent_level] ([?This.GetDissentLevel])"
-#			maxWidth = 340
-#			maxHeight = 23
-#			format = left
-#		}
-#	}
-
-	#containerWindowType = {
-	#	name = "eoanb_legitimacy_container"
-	#	position = { x = 800 y = 450 }
-	#	size = { width = 583 height = 492 }
-	#
-	#	background = {
-	#		name = "Background"
-	#		spriteType = "GFX_generic_box_smallest"
-	#	}
-	#
-	#	iconType = {
-	#		name = "legitimacy_icon"
-	#		spriteType = "GFX_legitimacy_icon"
-	#		position = { x = 0 y = 0 }
-	#		Orientation = "UPPER_LEFT"
-	#	}
-	#
-	#	instantTextboxType = {
-	#		name = "eoanb_legitimacy_score_text"
-	#		position = { x = 0 y = 0 }
-	#		font = "hoi_18mbs"
-	#		text = "EOANB_LEGITIMACY_SCORE"
-	#		maxWidth = 60
-	#		maxHeight = 23
-	#		format = right
-	#	}
-	#}
-
 	containerWindowType = {
 		name = "eoanb_internal_politics_container"
 		position = { x = -606 y = 138 }
@@ -1580,7 +1497,7 @@ guiTypes = {
 					format = center
 				}
 
-				
+
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_disarmed_nation_icon"

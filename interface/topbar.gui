@@ -201,7 +201,7 @@ guiTypes = {
 				oversound = ui_menu_over
 			}
 
-			#OPEN INTERNAL POLITICs BUTTON IN CUSTOM TABVIEW AROUND LINE 1050
+			#OPEN INTERNAL POLITICS BUTTON IN CUSTOM TABVIEW AROUND LINE 1050
 			buttonType = {
 				name = "diplomacy_button"
 				quadTextureSprite ="GFX_topbar_diplomacy"
@@ -330,18 +330,7 @@ guiTypes = {
 					oversound = ui_menu_over
 				}
 
-				buttonType = {
-					name = "eoanb_internal_politics_open_container"
-					quadTextureSprite ="GFX_internal_politic_button"
-					position = { x = -91 y = 43 }
-					Orientation = "UPPER_LEFT"
-					pdx_tooltip = "INT_POL_TOOLTIP"
-					shortcut = "ctrl+r"
-					clicksound = click_close
-					oversound = ui_menu_over
-					pdx_tooltip = internal_politics_tooltip
-					pdx_tooltip_delayed = internal_politics_tooltip_delayed
-				}
+				# The internal politics button is defined in custom_tabview_buttons_container.
 
 				buttonType = {
 					name = "diplomacy_button"
@@ -440,13 +429,14 @@ guiTypes = {
 		###########################################################
 		# FIRST UPPER CATEGORY "CONSTRUCTION"
 		###########################################################
-
 		iconType = {
-			name = "open_construction"
+			name = "construction_box"
 			quadTextureSprite = "GFX_internal_politics_open"
-			position = { x= 4 y = 0 }
+			position = { x = 4 y = 0 }
+			pdx_tooltip = "INT_POL_TOOLTIP"
 			pdx_tooltip = construction_tooltip
 			pdx_tooltip_delayed = construction_tooltip_delayed
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
@@ -544,11 +534,11 @@ guiTypes = {
 		###########################################################
 		# FOURTH UPPER CATEGORY "DEPLOYMENT"
 		###########################################################
-		buttonType = {
-			name = "deployment_button"
+		iconType = {
+			name = "deployment_box"
+			quadTextureSprite = "GFX_deployment_button"
 			position = { x = 375 y = 0 }
-			quadTextureSprite ="GFX_deployment_button"
-			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "INT_POL_TOOLTIP"
 			alwaystransparent = yes
 		}
 
@@ -604,9 +594,9 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		###########################################################
-		# FIFTH UPPER CATEGORY "LOGISTICS"
-		###########################################################
+		####################################
+		# FIFTH UPPER CATEGORY "LOGISTICS" #
+		####################################
 		buttonType = {
 			name = "logistics_button"
 			position = { x = 499 y = 0 }
@@ -615,11 +605,11 @@ guiTypes = {
 			shortcut = "i"
 			clicksound = click_close
 			oversound = ui_menu_over
-			alwaystransparent = yes
+			#alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name ="log_title"
+			name = "log_title"
 			position = { x= 500 y = 1 }
 			font = "vic_18_grey"
 			text = "Logistics"
@@ -944,15 +934,6 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "nuke_count"
 		}
-		containerWindowType = {
-			name = "eoanb_strata_container"
-		}
-		containerWindowType = {
-			name = "eoanb_strata_open_container"
-		}
-		containerWindowType = {
-			name = "eoanb_internal_politics_open_container"
-		}
 
 		###########################################################
 		# MENU BUTTONS
@@ -1053,14 +1034,14 @@ guiTypes = {
 		# AIR FORCE
 
 		iconType = {
-			name ="air_experience_icon"
+			name = "air_experience_icon"
 			spriteType = "GFX_air_experience"
 			position = { x= -169 y = 43 }
 			Orientation = "UPPER_RIGHT"
 		}
 
 		instantTextBoxType = {
-			name ="air_experience_value"
+			name = "air_experience_value"
 			position = { x= -168 y = 42 }
 			font = "hoi_16mbs"
 			text = "999"
@@ -1072,16 +1053,16 @@ guiTypes = {
 		}
 	}
 
-	###########################################################
-	# SECOND LEFT UPPER CATEGORY "INTERNAL POLITIC"
-	###########################################################
+	##################################################
+	# SECOND LEFT UPPER CATEGORY "INTERNAL POLITICS" #
+	##################################################
 	containerWindowType = {
 		name = "custom_tabview_buttons_container"
 		position = { x = 128 y = -1 }
 
 		buttonType = {
 			name = "open_internal_politics"
-			quadTextureSprite ="GFX_internal_politic_button"
+			quadTextureSprite = "GFX_internal_politics_button"
 			position = { x = 89 y = 76 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = "INT_POL_TOOLTIP"
@@ -1093,17 +1074,17 @@ guiTypes = {
 		}
 
 		iconType = {
-			name = "eoanb_internal_politics_open_container"
+			name = "internal_politics_box"
 			quadTextureSprite = "GFX_internal_politics_open"
 			position = { x= 0 y = 0 }
 			pdx_tooltip = "INT_POL_TOOLTIP"
 			pdx_tooltip = internal_politics_tooltip
 			pdx_tooltip_delayed = internal_politics_tooltip_delayed
-			#alwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name ="intpol_title"
+			name = "intpol_title"
 			position = { x= 2 y = 2 }
 			font = "vic_18_grey"
 			text = "Internal Politics"
@@ -1115,7 +1096,7 @@ guiTypes = {
 		}
 
 		iconType ={
-			name ="stability_icon"
+			name = "stability_icon"
 			spriteType = "GFX_stability_icon"
 			position = { x= 1 y = 17 }
 			Orientation = "UPPER_LEFT"
@@ -1123,7 +1104,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name ="stability"
+			name = "stability"
 			position = { x= 14 y = 22 }
 			font = "hoi_16mbs"
 			text = stab_backup_loc
@@ -1136,7 +1117,7 @@ guiTypes = {
 
 
 		iconType ={
-			name ="war_support_icon"
+			name = "war_support_icon"
 			spriteType = "GFX_war_support_icon"
 			position = { x= 60 y = 18 }
 			Orientation = "UPPER_LEFT"
@@ -1144,7 +1125,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name ="war_support"
+			name = "war_support"
 			position = { x= 74 y = 22 }
 			font = "hoi_16mbs"
 			text = sp_backup_loc
@@ -1188,7 +1169,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name ="pol_stability"
+			name = "pol_stability"
 			position = { x= 74 y = 47 }
 			font = "hoi_16mbs"
 			text = "[?ROOT.pol_stability]%"
@@ -1198,7 +1179,6 @@ guiTypes = {
 			fixedsize = yes
 			pdx_tooltip = PS_tooltip
 			pdx_tooltip_delayed = PS_tooltip_delayed
-
 		}
 	}
 }

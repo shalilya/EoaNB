@@ -335,7 +335,7 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_internal_politic_button"
+		name = "GFX_internal_politics_button"
 		texturefile = "gfx//interface//topbar//toolbar//internal_politic_button.dds"
 		noOfFrames = 2
 	}

@@ -5,25 +5,6 @@
 # Based on Yard1's Tic-Tac-Toe
 
 scripted_gui = {
-	internal_politics_open = {
-		context_type = player_context
-
-		window_name = "eoanb_internal_politics_open_container"
-
-		visible = {
-			always = yes
-		}
-
-		effects = {
-			#moved to scripted_gui > custom_tabview_buttons
-		}
-		triggers = {
-			open_TTT_click_enabled = {
-				NOT = { has_country_flag = TTT_daily_refresh }
-			}
-		}
-	}
-
 	internal_politics_reform_civ_lib_religion_screen = {
 		context_type = player_context
 
