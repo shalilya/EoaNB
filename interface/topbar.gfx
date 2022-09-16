@@ -425,11 +425,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_ledger_button"
-		texturefile = "gfx//interface//topbar//toolbar//ledger_button.dds"
-		noOfFrames = 2
-	}
-	spriteType = {
 		name = "GFX_staff_office_button"
 		texturefile = "gfx//interface//topbar//toolbar//staff_office_button.dds"
 		noOfFrames = 2

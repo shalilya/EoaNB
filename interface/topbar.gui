@@ -429,16 +429,6 @@ guiTypes = {
 		###########################################################
 		# FIRST UPPER CATEGORY "CONSTRUCTION"
 		###########################################################
-		iconType = {
-			name = "construction_box"
-			quadTextureSprite = "GFX_internal_politics_open"
-			position = { x = 4 y = 0 }
-			pdx_tooltip = "INT_POL_TOOLTIP"
-			pdx_tooltip = construction_tooltip
-			pdx_tooltip_delayed = construction_tooltip_delayed
-			alwaystransparent = yes
-		}
-
 		instantTextBoxType = {
 			name ="ind_title"
 			position = { x= 4 y = 2 }
@@ -534,14 +524,6 @@ guiTypes = {
 		###########################################################
 		# FOURTH UPPER CATEGORY "DEPLOYMENT"
 		###########################################################
-		iconType = {
-			name = "deployment_box"
-			quadTextureSprite = "GFX_deployment_button"
-			position = { x = 375 y = 0 }
-			pdx_tooltip = "INT_POL_TOOLTIP"
-			alwaystransparent = yes
-		}
-
 		instantTextBoxType = {
 			name ="deployment_title"
 			position = { x= 377 y = 2 }
@@ -597,17 +579,6 @@ guiTypes = {
 		####################################
 		# FIFTH UPPER CATEGORY "LOGISTICS" #
 		####################################
-		buttonType = {
-			name = "logistics_button"
-			position = { x = 499 y = 0 }
-			quadTextureSprite ="GFX_ledger_button"
-			Orientation = "UPPER_LEFT"
-			shortcut = "i"
-			clicksound = click_close
-			oversound = ui_menu_over
-			#alwaystransparent = yes
-		}
-
 		instantTextBoxType = {
 			name = "log_title"
 			position = { x= 500 y = 1 }
@@ -1053,9 +1024,6 @@ guiTypes = {
 		}
 	}
 
-	##################################################
-	# SECOND LEFT UPPER CATEGORY "INTERNAL POLITICS" #
-	##################################################
 	containerWindowType = {
 		name = "custom_tabview_buttons_container"
 		position = { x = 128 y = -1 }
@@ -1073,16 +1041,9 @@ guiTypes = {
 			pdx_tooltip_delayed = internal_politics_tooltip_delayed
 		}
 
-		iconType = {
-			name = "internal_politics_box"
-			quadTextureSprite = "GFX_internal_politics_open"
-			position = { x= 0 y = 0 }
-			pdx_tooltip = "INT_POL_TOOLTIP"
-			pdx_tooltip = internal_politics_tooltip
-			pdx_tooltip_delayed = internal_politics_tooltip_delayed
-			alwaystransparent = yes
-		}
-
+		##################################################
+		# SECOND LEFT UPPER CATEGORY "INTERNAL POLITICS" #
+		##################################################
 		instantTextBoxType = {
 			name = "intpol_title"
 			position = { x= 2 y = 2 }
