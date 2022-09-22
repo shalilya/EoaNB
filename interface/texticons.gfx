@@ -6,8 +6,14 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	spriteType = {
-		name = "GFX_money_texticon"
+		name = "GFX_dollar_texticon"
 		texturefile = "gfx/texticons/dollar.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_euro_texticon"
+		texturefile = "gfx/texticons/euro.png"
 		legacy_lazy_load = no
 	}
 
