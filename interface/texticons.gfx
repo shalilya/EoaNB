@@ -5,6 +5,11 @@ spriteTypes = {
 		texturefile = "gfx/texticons/autonomy_texticon.dds"
 		legacy_lazy_load = no
 	}
+	spriteType = {
+		name = "GFX_money_texticon"
+		texturefile = "gfx/texticons/dollar.png"
+		legacy_lazy_load = no
+	}
 
 	SpriteType = {
 		name = "GFX_FRA_liberal_text_icon"
@@ -260,6 +265,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_spotting"
 		texturefile = "gfx/texticons/spotting.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_gold"
+		texturefile = "gfx/texticons/gold.png"
 		legacy_lazy_load = no
 	}
 
@@ -1546,4 +1556,5 @@ spriteTypes = {
 		texturefile = "gfx/interface/institutions/institutions_humanitive_icon_9.dds"
 		legacy_lazy_load = no
 	}
+	
 }

@@ -1,0 +1,33 @@
+guiTypes = {
+	containerWindowType = {
+		name = "eoanb_state_production_gui"
+
+		iconType = {
+			name = "state_category_icon"
+			spriteType = "GFX_production_output_icon"
+			position = { x = 7 y = -5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = eoanb_economy_state_production
+		}
+
+		instantTextboxType = {
+			name = "state_production_text"
+			position = { x = 25 y = 0 }
+			textureFile = ""
+			text = "[?state_modifier@state_production|1Y]"
+			font = "hoi_18mbs"
+			maxWidth = 80
+			maxHeight = 30
+			format = right
+			#pdx_tooltip = eoanb_economy_state_production
+		}
+
+		iconType = {
+			name = "state_money_icon"
+			spriteType = "GFX_money_texticon"
+			position = { x = 105 y = 3 }
+			Orientation = "UPPER_RIGHT"
+			#pdx_tooltip = eoanb_economy_state_production
+		}
+	}
+}

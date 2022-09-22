@@ -1,0 +1,15 @@
+country_production = {
+    color_type = good
+	value_type = number
+	precision = 1
+	
+	category = country
+}
+
+state_production = {
+	color_type = good
+	value_type = number
+	precision = 1
+	
+	category = state
+}

@@ -1,0 +1,7 @@
+defined_text = {
+	name = eoanb_economy_state_production
+
+	text = {
+		localization_key = "State Production"
+	}
+}

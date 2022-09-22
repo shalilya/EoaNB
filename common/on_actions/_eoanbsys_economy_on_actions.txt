@@ -1,0 +1,143 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+
+                set_variable = { modifier@country_production = 0 }
+                every_owned_state = {
+                    ###Calculate Production Based on Existing Resources ###
+                    set_variable = { resources_amount = 0 }
+
+                    ### Raw Materials ###
+                    add_to_variable = { resources_amount = THIS.resource@Wood }
+                    add_to_variable = { resources_amount = THIS.resource@Cotton }
+                    add_to_variable = { resources_amount = THIS.resource@Iron }
+                    add_to_variable = { resources_amount = THIS.resource@Coal }
+                    add_to_variable = { resources_amount = THIS.resource@Rubber }
+                    add_to_variable = { resources_amount = THIS.resource@Oil }
+                    add_to_variable = { resources_amount = THIS.resource@Aluminium }
+                    add_to_variable = { resources_amount = THIS.resource@Tungsten }
+                    add_to_variable = { resources_amount = THIS.resource@Chromium }
+                    add_to_variable = { resources_amount = THIS.resource@Titanium }
+                    add_to_variable = { resources_amount = THIS.resource@Silicates }
+                    add_to_variable = { resources_amount = THIS.resource@Rare_earth_metals }
+
+                    ### Refined Resources ###
+                    add_to_variable = { resources_amount = THIS.resource@Fabric }
+                    add_to_variable = { resources_amount = THIS.resource@Steel }
+                    add_to_variable = { resources_amount = THIS.resource@Plastics }
+                    add_to_variable = { resources_amount = THIS.resource@Ceramics }
+
+                    ### Manufactured Goods ###
+                    add_to_variable = { resources_amount = THIS.resource@Machine_parts }
+                    add_to_variable = { resources_amount = THIS.resource@Electronics }
+                    add_to_variable = { resources_amount = THIS.resource@Portable_power }
+
+                    ### Add Infrastructure Bonus ### ( +10% for every level )
+                    set_temp_variable = { total_infrastructure_bonus = 1 }
+                    set_temp_variable = { infrastructure_bonus_per_level = 0.1 }
+                    multiply_temp_variable = { infrastructure_bonus_per_level = THIS.infrastructure_level }
+                    add_to_temp_variable = { total_infrastructure_bonus = infrastructure_bonus_per_level }
+
+                    ### Add Bonus from Population ### (At least 1k population for province to have production)
+                    ### Don't use state_population as it may overflow.
+                    set_temp_variable = { state_pop = THIS.state_population_k }
+                    if = { 
+                        limit = {
+                            check_variable = { state_pop < 1 }
+                        }
+                        set_temp_variable = { state_pop = 0 }
+                    }
+
+                    ### Production Formula ###
+                    set_variable = { state_modifier@state_production = resources_amount }
+                    multiply_variable = { state_modifier@state_production = total_infrastructure_bonus }
+                    ### TODO: Add state Category modifier 
+                    multiply_variable = { state_modifier@state_production = state_pop }
+
+                    ### TODO: Calculate for strategic bombing effects
+                    ### TODO: 
+
+                    ### Reduce the Number (Testing) ###
+                    divide_variable = { state_modifier@state_production = 10 }
+
+                    add_to_variable = { country_modifier@country_production = state_modifier@state_production }
+                    
+                    set_temp_variable = { state_prod = state_modifier@state_production } 
+                
+                }
+            }
+        }
+    }
+
+
+    on_daily = {
+        effect = {
+            set_variable = { modifier@country_production = 0 }
+
+            every_owned_state = {
+
+                ###Calculate Production Based on Existing Resources ###
+                set_variable = { resources_amount = 0 }
+
+                ### Raw Materials ###
+                add_to_variable = { resources_amount = THIS.resource@Wood }
+                add_to_variable = { resources_amount = THIS.resource@Cotton }
+                add_to_variable = { resources_amount = THIS.resource@Iron }
+                add_to_variable = { resources_amount = THIS.resource@Coal }
+                add_to_variable = { resources_amount = THIS.resource@Rubber }
+                add_to_variable = { resources_amount = THIS.resource@Oil }
+                add_to_variable = { resources_amount = THIS.resource@Aluminium }
+                add_to_variable = { resources_amount = THIS.resource@Tungsten }
+                add_to_variable = { resources_amount = THIS.resource@Chromium }
+                add_to_variable = { resources_amount = THIS.resource@Titanium }
+                add_to_variable = { resources_amount = THIS.resource@Silicates }
+                add_to_variable = { resources_amount = THIS.resource@Rare_earth_metals }
+
+                ### Refined Resources ###
+                add_to_variable = { resources_amount = THIS.resource@Fabric }
+                add_to_variable = { resources_amount = THIS.resource@Steel }
+                add_to_variable = { resources_amount = THIS.resource@Plastics }
+                add_to_variable = { resources_amount = THIS.resource@Ceramics }
+
+                ### Manufactured Goods ###
+                add_to_variable = { resources_amount = THIS.resource@Machine_parts }
+                add_to_variable = { resources_amount = THIS.resource@Electronics }
+                add_to_variable = { resources_amount = THIS.resource@Portable_power }
+
+                ### Add Infrastructure Bonus ### ( +10% for every level )
+                set_temp_variable = { total_infrastructure_bonus = 1 }
+                set_temp_variable = { infrastructure_bonus_per_level = 0.1 }
+                multiply_temp_variable = { infrastructure_bonus_per_level = THIS.infrastructure_level }
+                add_to_temp_variable = { total_infrastructure_bonus = infrastructure_bonus_per_level }
+
+                ### Add Bonus from Population ### (At least 1k population for province to have production)
+                ### Don't use state_population as it may overflow.
+                set_temp_variable = { state_pop = THIS.state_population_k }
+                if = { 
+                    limit = {
+                        check_variable = { state_pop < 1 }
+                    }
+                    set_temp_variable = { state_pop = 0 }
+                }
+
+                ### Production Formula ###
+                set_variable = { state_modifier@state_production = resources_amount }
+                multiply_variable = { state_modifier@state_production = total_infrastructure_bonus }
+                ### TODO: Add state Category modifier 
+                multiply_variable = { state_modifier@state_production = state_pop }
+
+                ### TODO: Calculate for strategic bombing effects
+                ### TODO: 
+
+                ### Reduce the Number (Testing) ###
+                divide_variable = { state_modifier@state_production = 10 }
+
+                add_to_variable = { country_modifier@country_production = state_modifier@state_production }
+                
+                set_temp_variable = { state_prod = state_modifier@state_production } 
+            }
+        }
+    }
+
+}
