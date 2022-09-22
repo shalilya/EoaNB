@@ -25,7 +25,7 @@ guiTypes = {
 		iconType = {
 			name = "state_money_icon"
 			spriteType = "GFX_euro_texticon"
-			position = { x = 105 y = 3 }
+			position = { x = 106 y = 2 }
 			Orientation = "UPPER_RIGHT"
 			#pdx_tooltip = eoanb_economy_state_production
 		}
