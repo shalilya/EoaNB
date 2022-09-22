@@ -1,0 +1,38 @@
+state = {
+	id = 1058
+	name = "STATE_1058"
+	manpower = 727169
+
+	local_supplies=0.0 
+	resources = {
+		wood =2
+		iron=6
+		cotton = 10
+	}
+	
+	state_category = rural
+
+	history = {
+		owner = ARG
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+		}
+				victory_points = {
+			1449 10
+		}
+		add_core_of = ARG
+		add_core_of = ETR
+		add_to_array = { state_culture_array = 428 } #Guaranitico
+		add_to_array = { state_culture_array_num = 0.525 }
+		add_to_array = { state_culture_array = 429 } #Platine
+		add_to_array = { state_culture_array_num = 0.475 }
+		add_to_array = { state_religion_array = 2 } #Catholic
+		add_to_array = { state_religion_array_num = 1.0 }
+	}
+
+	provinces = {
+		1449 8187 8238 10515 10943 12453 12964
+	}
+}

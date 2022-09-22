@@ -1,0 +1,35 @@
+state = {
+	id = 1129
+	name = "STATE_1129"
+	resources = {
+		coal =7
+	}
+	
+	state_category = pastoral
+
+	history = {
+		owner = PRU
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = PRU
+		
+		add_to_array = { state_culture_array = 443 } #Quecha
+		add_to_array = { state_culture_array_num = 0.72 }
+		add_to_array = { state_culture_array = 473 } #Peruvian
+		add_to_array = { state_culture_array_num = 0.22 }
+		add_to_array = { state_culture_array = 445 } #Amazonian
+		add_to_array = { state_culture_array_num = 0.06 }
+		add_to_array = { state_religion_array = 2 } #Catholic
+		add_to_array = { state_religion_array_num = 0.94 }
+		add_to_array = { state_religion_array = 20 } #Animist
+		add_to_array = { state_religion_array_num = 0.06 }
+
+	}
+
+	provinces = {
+		12983 2162 13684 13685 2212
+	}
+	manpower =208174
+	local_supplies=0.0 
+}

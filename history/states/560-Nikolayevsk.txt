@@ -1,0 +1,50 @@
+
+state = {
+	id =560
+	name = "STATE_560" # Nikolayevsk
+
+	local_supplies=0.0 
+	manpower = 37673
+	
+	state_category = rural
+	resources = {
+		iron= 12
+		wood =2
+	}
+
+	history = {
+		owner = QNG
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = QNG
+		# Blood and Iron
+		1870.1.1 = {
+			owner = RUS
+			add_core_of = RUS
+			remove_core_of = QNG
+		}
+
+		add_to_array = { state_culture_array = 282 } #Manchu
+		add_to_array = { state_culture_array_num = 0.34 }
+		add_to_array = { state_culture_array = 511 } #Han
+		add_to_array = { state_culture_array_num = 0.24 }
+		add_to_array = { state_culture_array = 90 } #Malorossy Russian
+		add_to_array = { state_culture_array_num = 0.22 }
+		add_to_array = { state_culture_array = 89 } #Velikorossy Russian
+		add_to_array = { state_culture_array_num = 0.2 }
+
+		add_to_array = { state_religion_array = 1 } #Orthodoxy
+		add_to_array = { state_religion_array_num = 0.42 }
+		add_to_array = { state_religion_array = 22 } #Shamanism
+		add_to_array = { state_religion_array_num = 0.23 }
+		add_to_array = { state_religion_array = 14 } #Confucian
+		add_to_array = { state_religion_array_num = 0.19 }
+		add_to_array = { state_religion_array = 50 } #Shenism
+		add_to_array = { state_religion_array_num = 0.16 }
+	}
+
+	provinces = {
+		1724 1807 1842 4844 7871 10577 10590 12559 4829 4779 7754 4847 1739 4731
+	}
+}

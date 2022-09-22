@@ -1,0 +1,49 @@
+state = {
+	id = 1375
+	name = "STATE_1375"
+	local_supplies=0.0 
+	provinces = {
+		675 1802 4246 4701 4725 7616 7801 10655 12192 12263 12654 7748 12261 13809 13804
+	}
+
+	resources = {
+		wood = 1
+		iron = 3
+	}
+	
+	history = {
+		owner = QNG
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = QNG
+		# Blood and Iron
+		1870.1.1= {
+			owner = RUS
+			add_core_of = RUS
+			remove_core_of = QNG
+		}
+
+		add_to_array = { state_culture_array = 282 } #Manchu
+		add_to_array = { state_culture_array_num = 0.33 }
+		add_to_array = { state_culture_array = 511 } #Han
+		add_to_array = { state_culture_array_num = 0.24 }
+		add_to_array = { state_culture_array = 90 } #Malorossy Russian
+		add_to_array = { state_culture_array_num = 0.23 }
+		add_to_array = { state_culture_array = 89 } #Velikorossy Russian
+		add_to_array = { state_culture_array_num = 0.2 }
+
+		add_to_array = { state_religion_array = 1 } #Orthodoxy
+		add_to_array = { state_religion_array_num = 0.395 }
+		add_to_array = { state_religion_array = 50 } #Shenism
+		add_to_array = { state_religion_array_num = 0.245 }
+		add_to_array = { state_religion_array = 14 } #Confucian
+		add_to_array = { state_religion_array_num = 0.205 }
+		add_to_array = { state_religion_array = 22 } #Shamanism
+		add_to_array = { state_religion_array_num = 0.155 }
+	}
+	
+	manpower = 182694
+	state_category = pastoral
+	
+}

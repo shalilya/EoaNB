@@ -1,0 +1,44 @@
+
+state = {
+	id =228
+	name = "STATE_228" # Voroshilovgrad
+
+	local_supplies=0.0 
+	manpower = 1430491
+	
+	state_category = town
+
+	resources = {
+		wood = 8
+		coal = 4
+	}
+
+	history = {
+		owner = RUS
+		victory_points = {
+			9461 1 # Luganskiy Zavod
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = RUS
+
+		add_to_array = { state_culture_array = 91 } # Ukrainian
+		add_to_array = { state_culture_array_num = 0.35 }
+		add_to_array = { state_culture_array = 114 } # Crimean Tatar
+		add_to_array = { state_culture_array_num = 0.27 }
+		add_to_array = { state_culture_array = 89 } # Velikorossy Russian
+		add_to_array = { state_culture_array_num = 0.25 }
+		add_to_array = { state_culture_array = 90 } # Malorossy Russian
+		add_to_array = { state_culture_array_num = 0.13 }
+
+		add_to_array = { state_religion_array = 1 } # Orthodox
+		add_to_array = { state_religion_array_num = 0.978 }
+		add_to_array = { state_religion_array = 8 } # Sunni
+		add_to_array = { state_religion_array_num = 0.022 }
+	}
+
+	provinces = {
+		523 547 570 6505 6519 9446 9461 9476 11487 11513 
+	}
+}

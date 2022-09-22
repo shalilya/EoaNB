@@ -1,0 +1,34 @@
+
+state = {
+	id =308
+	name = "STATE_308"
+
+	local_supplies=0.0 
+	manpower =	25678
+	state_category = tiny_island
+
+	history = {
+		owner = ENG
+		buildings = {
+			infrastructure = 4
+			4450 = {
+				naval_base = 1
+			}
+			7123 = {
+				naval_base = 1
+			}
+		}
+
+		add_to_array = { state_culture_array = 418 } # Afro-Caribbean
+		add_to_array = { state_culture_array_num = 0.95 }
+		add_to_array = { state_culture_array = 16 } # English
+		add_to_array = { state_culture_array_num = 0.05 }
+			
+		add_to_array = { state_religion_array = 25 } # Anglican-Protestant
+		add_to_array = { state_religion_array_num = 1 }
+	}
+
+	provinces = {
+		4450 7123 
+	}
+}

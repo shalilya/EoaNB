@@ -1,0 +1,61 @@
+
+state = {
+	id =408
+	name = "STATE_408"
+
+	local_supplies=0.0 
+	manpower = 155366
+	resources = {
+		chromium =8
+		iron= 10
+	}
+	
+	state_category = town
+
+	history = {
+		owner = QNG
+		victory_points = {
+			957 2
+		}
+		buildings = {
+			infrastructure = 2 
+			dockyard = 1
+			
+			957 = {
+				naval_base = 8
+				coastal_bunker = 3
+			}
+		}
+		add_core_of = QNG
+		# Blood and Iron
+		1870.1.1= {
+			owner = RUS
+			add_core_of = RUS
+			remove_core_of = QNG
+		}
+
+		add_to_array = { state_culture_array = 282 } #Manchu
+		add_to_array = { state_culture_array_num = 0.25 }
+		add_to_array = { state_culture_array = 89 } #Velikorossy Russian
+		add_to_array = { state_culture_array_num = 0.21 }
+		add_to_array = { state_culture_array = 90 } #Malorossy Russian
+		add_to_array = { state_culture_array_num = 0.2 }
+		add_to_array = { state_culture_array = 511 } #Han
+		add_to_array = { state_culture_array_num = 0.18 }
+		add_to_array = { state_culture_array = 284 } #Korean
+		add_to_array = { state_culture_array_num = 0.16 }
+
+		add_to_array = { state_religion_array = 1 } #Orthodoxy
+		add_to_array = { state_religion_array_num = 0.41 }
+		add_to_array = { state_religion_array = 50 } #Shenism
+		add_to_array = { state_religion_array_num = 0.4 }
+		add_to_array = { state_religion_array = 14 } #Confucian
+		add_to_array = { state_religion_array_num = 0.16 }
+		add_to_array = { state_religion_array = 22 } #Shamanism
+		add_to_array = { state_religion_array_num = 0.03 }
+	}
+
+	provinces = {
+		664 681 837 957 3695 3723 3739 3753 3787 3811 3977 6684 6686 6715 6833 6838 6961 6989 9639 9641 9762 9895 9926 11624 11626 11629 11643 11745 11750 11765 11777 11879 11904 
+	}
+}

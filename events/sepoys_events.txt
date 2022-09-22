@@ -1,0 +1,289 @@
+﻿add_namespace = sepoy
+
+#Sepoy Rebellion Intro
+country_event = {
+		id = sepoy.1
+		title = sepoy.1.t
+		desc = sepoy.1.d
+		picture = GFX_event_sepoy_1
+		
+		is_triggered_only = yes
+		
+		option = {
+				name = sepoy.1.a
+				hidden_effect = {
+					OUD = { country_event = { id = sepoy.2 } }
+					GWA = { country_event = { id = sepoy.2 } }
+					#country_event = { days = 180 id = sepoy.21 } Doesn't exist so commented out
+					set_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag 
+				}
+				add_timed_idea = {
+					idea = SRS_idea_sepoy_spirit
+					days = 90
+				}
+		}
+}
+
+#Oudh and Gwalior get asked to join the rebellion
+country_event = {
+	id = sepoy.2
+	title = sepoy.2.t
+	desc = sepoy.2.d
+	picture = GFX_event_sepoy_2
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.2.a
+		ai_chance = { factor = 80 }
+		add_political_power = 50
+		add_to_war = { targeted_alliance = SRS enemy = ENG }
+		SRS={add_to_faction = ROOT}
+		hidden_effect = { set_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag }
+	}
+		
+	option = {
+		name = sepoy.2.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -50
+		hidden_effect = { clr_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag }
+	}
+}
+
+#Civilians build Forts in Delhi and Lucknow
+country_event = {
+	id = sepoy.3
+	title = sepoy.3.t
+	desc = sepoy.3.d
+	picture = GFX_event_sepoy_3
+		
+	fire_only_once = yes
+		
+	trigger = {
+		TAG = SRS
+		SRS = { has_war_with = ENG }
+		SRS = { controls_state = 438 }
+		SRS = { controls_state = 439 }
+		date > 1857.6.1
+	}
+		
+	option = {
+		name = sepoy.3.a
+		438 = { add_building_construction = { type = bunker province = 2086 level = 1 instant_build = yes } }
+		439 = { add_building_construction = { type = bunker province = 12137 level = 1 instant_build = yes } }
+	}
+}
+
+#The Threat from the south
+country_event = {
+	id = sepoy.4
+	title = sepoy.4.t
+	desc = sepoy.4.d
+		
+	is_triggered_only = yes
+		
+	option = {#Rebuild the empire
+		name = sepoy.4.a
+		ai_chance = { factor = 90 }
+		set_cosmetic_tag = SKH_empire
+		add_state_core = 441
+		add_state_core = 1317
+		add_state_core = 1246
+		hidden_effect = {
+			KAS = {
+				country_event = sepoy.5
+			}
+		}
+	}
+}
+
+#The Threat from the south and west
+country_event = {
+	id = sepoy.5
+	title = sepoy.5.t
+	desc = sepoy.5.d
+		
+	is_triggered_only = yes
+		
+	option = {#Join the Sikhs
+		name = sepoy.5.a
+		ai_chance = { factor = 40}
+		KAR = {
+			annex_country = {
+				target = KAS
+				transfer_troops = yes
+			}
+		}
+		SRS = {
+			country_event = sepoy.6
+		}
+	}
+
+	option = {#War
+		name = sepoy.5.a
+		ai_chance = { factor = 60}
+		KAR = {
+			declare_war_on = {
+				target = KAS
+				type = annex_everything
+			}
+		}
+	}
+}
+
+#The Threat from the North
+country_event = {
+	id = sepoy.6
+	title = sepoy.6.t
+	desc = sepoy.6.d
+		
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.6.a
+		ai_chance = { factor = 90 }
+		
+	}
+}
+
+#Meet the Princes
+country_event = {
+	id = sepoy.7
+	title = sepoy.7.t
+	desc = sepoy.7.d
+		
+	is_triggered_only = yes
+	
+	#Bribe the Princes
+	option = {
+		name = sepoy.7.a
+		ai_chance = { factor = 50 }
+		add_political_power = -150
+		add_stability = -0.35
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+				}
+			}
+			set_autonomy = {
+				target = OUD
+				autonomy_state = autonomy_princely_state
+			}
+			set_autonomy = {
+				target = GWA
+				autonomy_state = autonomy_princely_state
+			}
+		}
+		else = {
+			puppet = OUD
+			puppet = GWA
+		}
+		country_event = sepoy.8
+	}
+
+	#Persuade the Princes
+	option = {
+		name = sepoy.7.b
+		ai_chance = { factor = 50 }
+		add_political_power = -500
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+				}
+			}
+			set_autonomy = {
+				target = OUD
+				autonomy_state = autonomy_confederation_member
+			}
+			set_autonomy = {
+				target = GWA
+				autonomy_state = autonomy_confederation_member
+			}
+		}
+		else = {
+			puppet = OUD
+			puppet = GWA
+		}
+		country_event = sepoy.8
+	}
+}
+
+#Hyderabad
+country_event = {
+	id = sepoy.8
+	title = sepoy.8.t
+	desc = sepoy.8.d
+		
+	is_triggered_only = yes
+	
+	#Bribe the Princes
+	option = {
+		name = sepoy.8.a
+		ai_chance = { factor = 25 }
+		add_political_power = -200
+		add_stability = -0.20
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+				}
+			}
+			set_autonomy = {
+				target = HYD
+				autonomy_state = autonomy_princely_state
+			}
+		}
+		else = {
+			puppet = HYD
+		}
+	}
+
+	#Persuade the Princes
+	option = {
+		name = sepoy.8.b
+		ai_chance = { factor = 50 }
+		add_political_power = -400
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+				}
+			}
+			set_autonomy = {
+				target = HYD
+				autonomy_state = autonomy_confederation_member
+			}
+		}
+		else = {
+			puppet = HYD
+		}
+	}
+
+	#Use Force
+	option = {
+		name = sepoy.8.c
+		ai_chance = { factor = 25 }
+		add_war_support = -0.05
+		add_stability = -0.25
+		declare_war_on = {
+			target = HYD
+			type = annex_everything
+		}
+	}
+}
