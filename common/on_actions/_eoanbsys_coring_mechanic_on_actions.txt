@@ -1,0 +1,120 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_variable = { global.time_to_core_state = 5 }
+			every_country = {
+				every_owned_state = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = PREV
+							}
+						}
+						set_variable = { total_coring_progress = 0 }
+						set_variable = { total_coring_percentage = 0 }
+					}
+				}
+			}
+		}
+	}
+
+	on_yearly = {
+		effect = {
+			set_temp_variable = { temp_national_religion = national_religion_array^0 }
+			set_temp_variable = { temp_national_culture = national_culture_array^0 }
+
+			every_owned_state = {
+				if = {
+					limit = {
+						AND = {
+							NOT = {
+								is_core_of = PREV
+							}
+							any_neighbor_state = {
+								is_core_of = PREV
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							NOT = {
+								has_variable = total_coring_progress 
+							}
+						}
+						set_variable = { total_coring_progress = 0 }
+						set_variable = { total_coring_percentage = 0 }
+					}
+
+					set_temp_variable = { yearly_coring_progress = 0 }
+
+					#Add 0.1 for each neighbouring core
+					set_temp_variable = { neighbour_cores = 0 }
+					every_neighbor_state = {
+						if = { 
+							limit = {
+								is_core_of = ROOT
+							}
+							add_to_temp_variable = { neighbour_cores = 0.1 }
+						}
+					}
+					add_to_temp_variable = { yearly_coring_progress = neighbour_cores }
+					
+					#Add 0.3 coring progress when state religion is same with national
+					if = {
+						limit = {
+							check_variable = { state_religion_array^0 = temp_national_religion }
+						}
+
+						add_to_temp_variable = { yearly_coring_progress = 0.5 }
+					}
+
+					#Add 0.5 coring progress when state culture is same with national
+					if = {
+						limit = {
+							check_variable = { state_culture_array^0 = temp_national_culture }
+						}
+						add_to_temp_variable = { yearly_coring_progress = 0.8 }
+					}
+
+					#Other core countries progress (-0.1 for each country having a core)
+					set_temp_variable = { other_core_countries = -0.1 }
+					multiply_temp_variable = { other_core_countries = core_countries }
+
+					add_to_temp_variable = { yearly_coring_progress = other_core_countries }
+
+					#Add coring progress to state variable
+					if = {
+						limit = {
+							check_variable = { yearly_coring_progress > 0 }
+						}
+						add_to_variable = { total_coring_progress = yearly_coring_progress }
+
+						#Calculate new coring percentage
+						set_temp_variable = { progress_percentage = total_coring_progress }
+						divide_temp_variable = { progress_percentage = global.time_to_core_state }
+
+						#Set state coring percentage variable
+						set_variable = { total_coring_percentage = progress_percentage }
+					}
+
+					
+
+					if = {
+						limit = {
+							check_variable = { total_coring_progress > global.time_to_core_state }
+						}
+						add_core_of = PREV
+						state_event = {
+							id = eoanb_coring.1
+							days = 1
+							trigger_for = PREV
+						}
+					
+					}
+				}
+			}			
+		}
+	}
+
+}

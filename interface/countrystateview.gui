@@ -226,6 +226,12 @@ guiTypes = {
 					format = right
 				}
 
+				containerWindowType = {
+					name = "eoanb_coring_gui_container"
+					position = { x = 155 y = 85 }
+					size = { width = 125 height = 30 }
+				}
+
 				# iconType = {
 					# name = "gdp_icon"
 					# spriteType = "GFX_producing_icon"

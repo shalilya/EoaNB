@@ -1,0 +1,5 @@
+﻿l_english: 
+ coring_progress: "Coring Progress"
+ eoanb_coring.1.t: "Core Completed"
+ eoanb_coring.1.d: "The state of [THIS.GetName] has finally become a core state of our country."
+ eoanb_coring.1.a: "That's great!"

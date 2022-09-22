@@ -1,0 +1,25 @@
+guiTypes = {
+	containerWindowType = {
+		name = "eoanb_coring_gui"
+
+		iconType = {
+			name = "coring_icon"
+			spriteType = "GFX_coring_icon"
+			position = { x = 10 y = 3 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = coring_progress
+		}
+		
+		instantTextboxType = {
+			name = "coring_progress"
+			position = { x = 35 y = 5 }
+			textureFile = ""
+			text = "[?this.total_coring_percentage|%]"
+			font = "hoi_18mbs"
+			maxWidth = 80
+			maxHeight = 30
+			format = right
+			pdx_tooltip = coring_progress
+		}
+	}
+}

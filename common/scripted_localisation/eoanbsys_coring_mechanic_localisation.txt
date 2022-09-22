@@ -1,0 +1,10 @@
+defined_text = {
+	name = coring_progress
+	
+	text = {
+		trigger = {
+			check_variable = { this.time_spent_coring < 51}
+		}
+		localization_key = "Coring Progress"
+	}
+}

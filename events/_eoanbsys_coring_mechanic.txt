@@ -1,0 +1,15 @@
+add_namespace = eoanb_coring
+
+### NOTIFY COUNTRY OF STATE BEING A CORE ###
+state_event = {
+	id = eoanb_coring.1
+	title = eoanb_coring.1.t
+	desc = eoanb_coring.1.d
+	picture = GFX_report_wittelsbachs
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = eoanb_coring.1.a
+	}
+}

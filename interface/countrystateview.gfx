@@ -49,6 +49,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_coring_icon"
+		textureFile = "gfx/interface/dci_small.dds"
+	}
+
+	spriteType = {
 		name = "GFX_province_header"
 		textureFile = "gfx/interface/province_header.dds"
 	}

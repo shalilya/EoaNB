@@ -1,0 +1,40 @@
+scripted_gui = {
+    eoanb_coring_scripted_gui = {
+    
+        #context type is now selected_state_context, which means that this gui will be only visible if you select a state
+        #and the scope of every effect/trigger/localization of this gui will be the selected state
+        #and the root will be the player
+		#another similar context is selected_country_context, which pops up when you right click a country to open its diplomacy screen
+        context_type = selected_state_context
+        parent_window_name = eoanb_coring_gui_container
+		
+		window_name = "eoanb_coring_gui"
+
+        visible = {
+            always = yes
+        }
+			
+		effects = {
+
+		}
+
+		triggers = {
+
+            coring_icon_visible = {
+                is_owned_by = ROOT
+                NOT = {
+                    is_core_of = ROOT
+                }
+                check_variable = { total_coring_progress < global.time_to_core_state }
+            }
+
+            coring_progress_visible = {
+                is_owned_by = ROOT 
+                NOT = {
+                    is_core_of = ROOT
+                }
+                check_variable = { total_coring_progress < global.time_to_core_state }
+            }
+        }
+    }
+}
