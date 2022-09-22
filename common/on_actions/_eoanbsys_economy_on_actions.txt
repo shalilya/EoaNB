@@ -55,8 +55,6 @@ on_actions = {
                     ### TODO: Add state Category modifier 
                     multiply_variable = { state_modifier@state_production = state_pop }
 
-                    ### TODO: Calculate for strategic bombing effects
-                    ### TODO: 
 
                     ### Reduce the Number (Testing) ###
                     divide_variable = { state_modifier@state_production = 10 }
@@ -127,8 +125,37 @@ on_actions = {
                 ### TODO: Add state Category modifier 
                 multiply_variable = { state_modifier@state_production = state_pop }
 
-                ### TODO: Calculate for strategic bombing effects
-                ### TODO: 
+                ### Strategic bombing effects
+				if = {
+					limit = {
+						check_variable = { days_since_last_strategic_bombing < 30 }
+					}
+					set_temp_variable = { state_production_penalty = 0.1 }
+
+					### TODO: Mitigate penalties based on (prod_growth or disperse industry?)
+					#add_to_temp_variable = { state_production_penalty = }
+					multiply_variable = { state_modifier@state_production = state_production_penalty }
+				}
+				else_if = {
+					limit = {
+						check_variable = { days_since_last_strategic_bombing < 60 }
+					}
+					set_temp_variable = { state_production_penalty = 0.1 }
+
+					### TODO: Mitigate penalties based on (prod_growth or disperse industry?)
+					#add_to_temp_variable = { state_production_penalty = }
+					multiply_variable = { state_modifier@state_production = state_production_penalty }
+				}
+				else_if = {
+					limit = {
+						check_variable = { days_since_last_strategic_bombing < 90 }
+					}
+					set_temp_variable = { state_production_penalty = 0.7 }
+
+					### TODO: Mitigate penalties based on (prod_growth or disperse industry?)
+					#add_to_temp_variable = { state_production_penalty = }
+					multiply_variable = { state_modifier@state_production = state_production_penalty }
+				} 
 
                 ### Reduce the Number (Testing) ###
                 divide_variable = { state_modifier@state_production = 10 }
