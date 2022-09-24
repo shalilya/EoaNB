@@ -29,13 +29,6 @@ on_actions = {
 					}
 					set_state_flag = NA_N_gave_resource_rights_flag
 				}
-				SEM = {
-					complete_national_focus = NA_N_the_frontier
-					complete_national_focus = NA_N_the_encroachment_of_the_east
-					complete_national_focus = NA_N_prepare_for_the_invaders
-					complete_national_focus = NA_N_manufacture_weapons
-					country_event = { id = sem.3 days = 10 }
-				}
 				KNS = {
 					country_event = { id = kansas_election.12 days = 1644 random_days = 61 }
 				}
