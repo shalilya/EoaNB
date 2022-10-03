@@ -33,14 +33,4 @@ spriteTypes = {
 		name = "GFX_social_icon_discord"
 		texturefile = "gfx/interface/topbar/button_discord.dds"
 	}
-
-	spriteType = {
-		name = "GFX_eoanb_logo_steam"
-		texturefile = "gfx/interface/startup_event/eoanb_logo_steam.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_eoanb_logo_discord"
-		texturefile = "gfx/interface/startup_event/eoanb_logo_discord.dds"
-	}
 }
