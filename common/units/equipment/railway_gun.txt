@@ -7,11 +7,11 @@ equipments = {
 		visual_level = 0
 		
 		#Defensive Abilities
-		defense = 20
+		defense = 10
 		breakthrough = 6.0
 		
 		#Offensive Abilities
-		soft_attack = 60
+		soft_attack = 15
 		hard_attack = 7
 		ap_attack = 6
 		air_attack = 0
@@ -33,13 +33,13 @@ equipments = {
 		visual_level = 0
 		
 		#Defensive Abilities
-		defense = 23
-		breakthrough = 10.0
+		defense = 12
+		breakthrough = 8
 		
 		#Offensive Abilities
-		soft_attack = 90
-		hard_attack = 10
-		ap_attack = 8
+		soft_attack = 18
+		hard_attack = 7
+		ap_attack = 6
 		air_attack = 0
 		
 		#Space taken in convoy
@@ -58,13 +58,13 @@ equipments = {
 		visual_level = 0
 		
 		#Defensive Abilities
-		defense = 26
-		breakthrough = 12.0
+		defense = 14
+		breakthrough = 10
 		
 		#Offensive Abilities
-		soft_attack = 100
-		hard_attack = 12
-		ap_attack = 9
+		soft_attack = 21
+		hard_attack = 7
+		ap_attack = 6
 		air_attack = 0
 		
 		#Space taken in convoy
@@ -83,13 +83,13 @@ equipments = {
 		visual_level = 0
 		
 		#Defensive Abilities
-		defense = 26
-		breakthrough = 12.0
+		defense = 16
+		breakthrough = 10
 		
 		#Offensive Abilities
-		soft_attack = 110
-		hard_attack = 20
-		ap_attack = 14
+		soft_attack = 26
+		hard_attack = 7
+		ap_attack = 6
 		air_attack = 0
 		
 		#Space taken in convoy
@@ -108,13 +108,13 @@ equipments = {
 		visual_level = 0
 			
 		#Defensive Abilities
-		defense = 31
-		breakthrough = 15.0
-			
+		defense = 18
+		breakthrough = 10
+		
 		#Offensive Abilities
-		soft_attack = 125
-		hard_attack = 25
-		ap_attack = 17
+		soft_attack = 30
+		hard_attack = 8
+		ap_attack = 6
 		air_attack = 0
 		
 		#Space taken in convoy
