@@ -1,13 +1,13 @@
 focus_tree = {
 	id = montenegro
 	continuous_focus_position = {x = 200 y = 1200 }
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = MNT
-		}
-	}
+	#country = {
+		#factor = 0
+		#modifier = {
+			#add = 10
+			#tag = MNT
+		#}
+	#}
 	default = no
 
 	## POLITICAL BRANCH
