@@ -392,139 +392,139 @@ JAP_industrialization_category = {
 #	}
 #}
 
-JAP_raid_decisions = {
-	icon = generic_construction
+# JAP_raid_decisions = {
+# 	icon = generic_construction
 
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_political_decisions = {
-	icon = generic_construction
+# JAP_political_decisions = {
+# 	icon = generic_construction
 
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_refurbish_army_decisions = {
-	icon = generic_construction
+# JAP_refurbish_army_decisions = {
+# 	icon = generic_construction
 	
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_study_fpwar_decisions = {
-	icon = generic_construction
+# JAP_study_fpwar_decisions = {
+# 	icon = generic_construction
 	
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_recovering_boshinwar_decisions = {
-	icon = generic_construction
+# JAP_recovering_boshinwar_decisions = {
+# 	icon = generic_construction
 	
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_founding_new_banks_descions = {
-	icon = generic_construction
+# JAP_founding_new_banks_descions = {
+# 	icon = generic_construction
 
-	picture = GFX_decision_jap_banks
+# 	picture = GFX_decision_jap_banks
 	
-	priority = 100
+# 	priority = 100
 
-	allowed = {
-		tag = JAP
-	}
-}
+# 	allowed = {
+# 		tag = JAP
+# 	}
+# }
 
-JAP_riot_of_rights_decisions = {
-	icon = power_struggle
+# JAP_riot_of_rights_decisions = {
+# 	icon = power_struggle
 
-	priority = 80
+# 	priority = 80
 
-	allowed = { tag = JAP }
+# 	allowed = { tag = JAP }
 
-	scripted_gui = riot_of_rights_gui
+# 	scripted_gui = riot_of_rights_gui
 
-	visible_when_empty = yes
-}
+# 	visible_when_empty = yes
+# }
 
-JAP_taiwan_expedition_decisions = {
-	icon = power_struggle
+# JAP_taiwan_expedition_decisions = {
+# 	icon = power_struggle
 
-	priority = 80
+# 	priority = 80
 
-	allowed = {
-		tag = JAP
-	}
+# 	allowed = {
+# 		tag = JAP
+# 	}
 
-	available = {
-		has_idea = JAP_taiwan_exp
-	}
+# 	available = {
+# 		has_idea = JAP_taiwan_exp
+# 	}
 
-	scripted_gui = formosa_campaign_gui
+# 	scripted_gui = formosa_campaign_gui
 
-	visible_when_empty = yes
-}
+# 	visible_when_empty = yes
+# }
 
-JAP_annexation_of_the_domains = {
-	icon = power_struggle
-	priority = 80
+# JAP_annexation_of_the_domains = {
+# 	icon = power_struggle
+# 	priority = 80
 
-	visible_when_empty = no
+# 	visible_when_empty = no
 
-	allowed = { tag = JAP }
-}
+# 	allowed = { tag = JAP }
+# }
 
-DMY_decision_navy = {
-	icon = navy_reform
-	priority = 100
+# DMY_decision_navy = {
+# 	icon = navy_reform
+# 	priority = 100
 
-	picture = GFX_decision_category_bakumatsu_modernization
+# 	picture = GFX_decision_category_bakumatsu_modernization
 
-	allowed = { 
-		OR = {
-			tag = SAT
-			tag = SAG
-			tag = TOS
-			tag = TSU
-			tag = MIT
-			tag = DTE
-			tag = SHI
-		}
-	}
-}
+# 	allowed = { 
+# 		OR = {
+# 			tag = SAT
+# 			tag = SAG
+# 			tag = TOS
+# 			tag = TSU
+# 			tag = MIT
+# 			tag = DTE
+# 			tag = SHI
+# 		}
+# 	}
+# }
 
-DMY_decision_daimyo_tactics = {
-	icon = power_struggle
-	priority = 100
+# DMY_decision_daimyo_tactics = {
+# 	icon = power_struggle
+# 	priority = 100
 
-	allowed = { 
-		OR = {
-			tag = SAT
-			tag = SAG
-			tag = TOS
-			tag = TSU
-			tag = MIT
-			tag = DTE
-			tag = SHI
-		}
-	}
-}
+# 	allowed = { 
+# 		OR = {
+# 			tag = SAT
+# 			tag = SAG
+# 			tag = TOS
+# 			tag = TSU
+# 			tag = MIT
+# 			tag = DTE
+# 			tag = SHI
+# 		}
+# 	}
+# }
