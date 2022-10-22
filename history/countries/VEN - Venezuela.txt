@@ -65,10 +65,10 @@
 		VEN_illiteracy
 		VEN_famine
 	}
-	add_timed_idea = {
-		idea = VEN_economic_crisis
-		days = 600
-	}
+	# add_timed_idea = {
+	# 	idea = VEN_economic_crisis
+	# 	days = 600
+	# }
 	set_politics = {
 		ruling_party = centrism
 		elections_allowed = yes
