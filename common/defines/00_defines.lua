@@ -4,7 +4,7 @@ NDefines = {
 		START_DATE = "1857.5.10.24",
 		END_DATE = "2100.1.1.1",
 		MAP_SCALE_PIXEL_TO_KM = 7.114,					-- Yes, we did the math
-		SAVE_VERSION = 7,
+		SAVE_VERSION = 15,
 		CHECKSUM_SALT = "zwOdv5d9wm9uDSOT",				-- Data to modify generated checksum when game binaries have changed but not any content files.
 		LAG_DAYS_FOR_LOWER_SPEED = 10,					-- Days of client lag for decrease of gamespeed
 		LAG_DAYS_FOR_PAUSE = 25,						-- Days of client lag for pause of gamespeed.
@@ -42,7 +42,45 @@ NDefines = {
 		BASE_PEACE_TAKE_UNCONTROLLED_STATE_FACTOR = 10.0, -- Base factor for taking state you do not control
 		BASE_PEACE_TAKE_FACTION_CONTROLLED_STATE_FACTOR = 0.5, -- Base factor for taking state you do not control, but someone in faction does
 		BASE_PEACE_FORCE_GOVERNMENT_COST = 100, 		-- Base cost for forcing a country to change government.
-		BASE_IMPROVE_RELATION_COST = 25,                -- Political power cost to initiate relation improvement
+	-- In peace conference, cost is factored based on how many times the state has been contested and for how long it has been uncontested (for everyone else)
+	PEACE_COST_FACTOR_CONTESTED_MAX = 15,           -- To prevent overflows due to the exponential increase, cap the contested factor to this
+	PEACE_COST_FACTOR_UNCONTESTED_MAX = 15,         -- To prevent overflows due to the exponential increase, cap the uncontested factor to this
+	PEACE_COST_FACTOR_CONTESTED_BID = 1.20,         -- Cost factor for each contested bid on the state.
+	PEACE_COST_FACTOR_UNCONTESTED_BID_MIN = 1.15,   -- Minimum cost factor for each turn a bid has been uncontested on the state.
+	PEACE_COST_FACTOR_UNCONTESTED_BID_MAX = 1.60,   -- Maximum cost factor for each turn a bid has been uncontested on the state.
+	PEACE_COST_FACTOR_UNCONTESTED_BID_STEP = 0.15,  -- Uncontested cost factor will increase by this much each turn.
+	PEACE_COST_FACTOR_CAPITAL_SHIP_IC = 0.005,				-- In peace conference, cost for taking one capital ship per IC
+	PEACE_COST_FACTOR_SCREENING_SHIP_IC = 0.005,			-- In peace conference, cost for taking a part of the screening ships per IC
+	PEACE_INCREASE_COST_FACTOR_PER_MISSING_PERCENT_FOR_CAPITULATION = 0.01, 	-- increase factor if loser has not capitulated, for every percent between surrender level and BASE_SURRENDER_LEVEL
+	-- peace action taker has a discount if they occupy the state depending on compliance
+	-- it's a table where first value is the compliance level, and the second the factor
+	PEACE_COST_FACTOR_COMPLIANCE_STEPS = {
+		0,   1.0, -- between 0%  and 30% compliance, factor is 1.0
+		30,  0.9, -- between 30% and 70%
+		70,  0.8, -- above 70%
+	},
+	-- In peace conference, adding a stackable to a peace action, increment the cost by a percentage
+	PEACE_COST_FACTOR_STACK_DEMILITARIZED_ZONE = 0.25,
+	PEACE_COST_FACTOR_STACK_WAR_REPARATION = 0.25,
+	PEACE_COST_FACTOR_STACK_RESOURCE_RIGHTS = 0.25,
+	PEACE_COST_FACTOR_STACK_DISMANTLE_INDUSTRY = 0.25,
+	-- peace conference can set timed effect, set length in days
+	PEACE_TIMED_EFFECT_LENGTH_DEMILITARIZED_ZONE = 1825, -- 5 years
+	PEACE_TIMED_EFFECT_LENGTH_WAR_REPARATION = 1825,
+	PEACE_TIMED_EFFECT_LENGTH_RESOURCE_RIGHTS = 1825,
+	PEACE_TIMED_EFFECT_RATIO_CIVILIAN_FACTORY_WAR_REPARATION = 0.5, 	-- ratio of civilian factories taken via stackable war reparation
+
+	-- The Influence cost modifier is computed by starting at 100 % influence and reducing that based on the distance values down to a minimum of 0 %. Then factored by INFLUENCE_MAX_DISCOUNT before applied to the cost of peace actions.
+	INFLUENCE_RATIO_CAPITAL = 0.3,                  -- Ratio of influence based on distance to capital
+	INFLUENCE_RATIO_CORE = 0.3,                     -- Ratio of influence based on distance to nearest core territory
+	INFLUENCE_RATIO_CONTROLLED = 0.4,               -- Ratio of influence based on distance to neared controlled territory (including uncontested peace conference bids)
+    INFLUENCE_REDUCTION_PER_CAPITAL_DIST = 0.05,    -- Reduce influence with this much per distance_to_capital
+    INFLUENCE_REDUCTION_PER_CORE_DIST = 0.05,       -- Reduce influence with this much per distance_to_core
+    INFLUENCE_REDUCTION_PER_CONTROLLED_DIST = 0.10, -- Reduce influence with this much per distance_to_controlled
+    INFLUENCE_MAX_DISCOUNT = 0.25,                  -- At 100 % influence, reduce the cost this much
+	INFLUENCE_DISTANCE_DIVISOR = 30.0,              -- Divide pixel distance with this when determining distance to capital / core / controlled states. Resulting "distance" metric is rounded to nearest integer.
+
+	BASE_IMPROVE_RELATION_COST = 25,                -- Political power cost to initiate relation improvement
 		BASE_IMPROVE_RELATION_SAME_IDEOLOGY_GROUP_MAINTAIN_COST = 0.2, -- Political power cost each update when boosting relations with nation of same ideology
 		BASE_IMPROVE_RELATION_DIFFERENT_IDEOLOGY_GROUP_MAINTAIN_COST = 0.4,    -- Political power cost each update when boosting relations with nation of different ideology
 		BASE_SEND_ATTACHE_COST = 100,					-- Political power cost to send attache
@@ -93,11 +131,15 @@ NDefines = {
 		TENSION_JOIN_ATTACKER = 0,						-- scale of the amount of tension added when country joins attacker side
 		TENSION_PEACE_FACTOR = 0,					-- scale of the amount of tension (from war declaration) reduced when peace is completed.
 		TENSION_LIBERATE = 0,							-- Amount of tension generated by liberating a country. 
+		ENSION_LIBERATE = -1,							-- Amount of tension generated by liberating a country.
+		TENSION_TAKE_ONE_CAPITAL_SHIP = 0.25,			-- Amount of tension generated by 1 take navy peace action
+		TENSION_DEMILITARIZE_ZONE = 0.25,				-- Amount of tension generated by stacking demilitarize zone on 1 state, multiplied with the state base threat
+		TENSION_WAR_REPARATION = 0.25,					-- Amount of tension generated by stacking war reparation on 1 state, multiplied with the state base threat
+		TENSION_RESOURCE_RIGHTS = 0.25,					-- Amount of tension generated by stacking resource rights on 1 state, multiplied with the state base threat
+		TENSION_DISMANTLE_INDUSTRY = 0.25,				-- Amount of tension generated by stacking dismantle military industry on 1 state, multiplied with the state base threat
 		TENSION_CAPITULATE = 0,						-- Scale of the amount of tension created by a countries capitulation.
 		GUARANTEE_COST = 50,							-- Scale with the number of already guaranteed countries.
 		REVOKE_GUARANTEE_COST = 50,
-		MP_NUM_WINNERS_FOR_PEACE_PAUSE = 0,				-- Number of human players as winners needed for peace conference to pause and open for everyone in multiplayer, needs to fullfill MP_NUM_LOSERS_FOR_PEACE_PAUSE as well.
-		MP_NUM_LOSERS_FOR_PEACE_PAUSE = 0,				-- Number of human players as losers needed for peace conference to pause and open for everyone in multiplayer, needs to fullfill MP_NUM_WINNERS_FOR_PEACE_PAUSE as well.
 		BASE_CONDITIONAL_PEACE_WARESCORE_RATIO = 0.5, 	-- Warscore ratio needed for the losing side to able to surrender.
 		BASE_CONDITIONAL_PEACE_MONTHS = 6,				-- War length must be this before a surrender is possible.
 		JOINING_NAP_WAR_PENALTY = 0.2,					-- War support penalty for breaking non-breakable NAP
@@ -243,7 +285,9 @@ NDefines = {
 		BASE_TENSION_MAJOR_COUNTRY_INDEX = 1,			-- Which major country should be considered the base country when scaling generated world tension. 0 is the country with the most factories, 1 is the second most-factories country etc. This number has to be lower than MIN_MAJOR_COUNTRIES
 		MIN_NAVAL_SUPPLY_EFFICIENCY = 0.1,				-- Min ratio when supplies will be considered delivered from the capital by naval path
 		PARADROP_AIR_SUPERIORITY_RATIO = 0.7,			-- Min ratio of air superiority for paradropping
+		STATE_VALUE_BASE = 10.0,                        -- Base value of a state (value is used to determine costs in e.g. peace conferences)
 		STATE_VALUE_BUILDING_SLOTS_MULT = 4.0,			-- The Value of each building slot in a state ( Value is used to determine costs in peace conference and PP cost to occupy )
+		STATE_VALUE_MANPOWER_FACTOR = 0.1,              -- State cost increases with this for every 10k population (so 3.1M becomes 310 and then multiplied by this)
 		STATE_OCCUPATION_COST_MULTIPLIER = 0.01,		-- Multiplier for state value to PP cost for occupation
 		STATE_VALUE_NON_CORE_STATE_FRACTION = 0.5,		-- If a state is not a core we assume we will get 50% of the factory slots
 		INVASION_REPORT_EXPERATION_DAYS = 30,			-- Invasion experation days
@@ -487,6 +531,7 @@ NDefines = {
 		BASE_FACTORY_EFFICIENCY_ARCHETYPE_CHANGE_FACTOR = 20, 	-- Base factor for changing production with same archetype in %.
 		EQUIPMENT_BASE_LEND_LEASE_WEIGHT = 1.0, -- Base equipment lend lease weight
 		EQUIPMENT_LEND_LEASE_WEIGHT_FACTOR = 0.01, -- Base equipment lend lease factor
+		LEND_LEASE_DELIVERY_TOTAL_DAYS = 30,                    -- Nr of days between lend lease deliveries
 		ANNEX_STOCKPILES_RATIO = 1.0,		-- How much stockpiled equipment will be transferred on annexation
 		ANNEX_FIELD_EQUIPMENT_RATIO = 0.25,	-- How much equipment from deployed divisions will be transferred on annexation
 		ANNEX_FUEL_RATIO = 0.25,	-- How much fuel will be transferred on annexation
@@ -812,7 +857,7 @@ NDefines = {
 		PLAN_EXECUTE_RUSH = -200,						-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
 		PLAN_EXECUTE_CAREFUL_MAX_FORT = 5,				-- If execution mode is set to careful, units will not attack provinces with fort levels greater than or equal to this
 
-		-- order by EExecutionType: careful, balanced, rush, <skip>, weak rush
+	-- order by EExecutionType: careful, balanced, rush, <skip>, rush_weak
 		PLAN_EXECUTE_SUPPLY_CHECK = { 1.0, 0.0, 0.0, 1.0, 0.0 }, -- for each execution mode how careful should we be with supply (1.0 means full required supply available, zero is no limit).
 		
 		PLAN_MAX_PROGRESS_TO_JOIN = 0.50,				-- If Lower progress than this, probably needs support
@@ -995,11 +1040,12 @@ NDefines = {
 		AIR_WING_MAX_STATS_BOMBING = 100,
 		AIR_WING_MAX_SIZE = 1000, 							-- Max amount of airplanes in wing
 		AIR_WING_BOMB_DAMAGE_FACTOR = 2,					-- Used to balance the damage done while bombing.
-		COMBAT_STAT_IMPORTANCE_SPEED = 1, 				-- How important is speed when comparing stats.
-		COMBAT_STAT_IMPORTANCE_AGILITY = 1, 				-- How important is agility when comparing stats.
-		BIGGEST_AGILITY_FACTOR_DIFF = 2.5,					-- biggest factor difference in agility for doing damage (caps to this)
-		COMBAT_DAMAGE_STATS_MULTILIER = 0.3,
-		COMBAT_BETTER_AGILITY_DAMAGE_REDUCTION = 0.45, 		-- How much the better agility (then opponent's) can reduce their damage to us.
+		BIGGEST_AGILITY_FACTOR_DIFF = 3.0,					-- biggest factor difference in agility for doing damage (caps to this)
+		BIGGEST_SPEED_FACTOR_DIFF = 2.5,					-- biggest factor difference in speed for doing damage (caps to this)
+		TOP_SPEED_DAMAGE_BONUS_FACTOR = 0.02,				-- A factor for scaling the top speed of a plane into damage buff
+		COMBAT_DAMAGE_STATS_MULTILPIER = 0.2,
+		COMBAT_BETTER_AGILITY_DAMAGE_REDUCTION = 0.30, 		-- How much the better agility (than opponent's) can reduce their damage to us.
+		COMBAT_BETTER_SPEED_DAMAGE_INCREASE = 0.45, 		-- How much the better Speed (than opponent's) can reduce increase our damage to them.
 		COMBAT_MAX_WINGS_AT_ONCE = 10000, 						-- Max amount of air wings in one combat simulation. The higher value, the quicker countries may loose their wings. It's a gameplay balance value.
 		COMBAT_MAX_WINGS_AT_GROUND_ATTACK = 10000,	        	-- we can really pounce a land strike and escalate
 		COMBAT_MAX_WINGS_AT_ONCE_PORT_STRIKE = 10000,        -- we can really pounce a naval strike and escalate
@@ -1188,7 +1234,14 @@ NDefines = {
 		NAVAL_MINES_SWEEPING_SPEED_MULT = 0.025,						-- Value used to overall balance of the speed of sweeping naval mines
 		NON_CORE_STRATEGIC_IMPACT = 0.5,                                -- multiplier for strategic impact of non-core bombing	
 		RECON_LAND_SPOT_CHANCE = 0.02,                     				-- scale factor on spotting lan
-	},
+
+		REINFORCEMENT_DISABLING_DURATION_IN_LAND_CARRIER_TRANSFER = 48,	-- The reinforcement disabling duration in hours when transfering from land to carrier and vice versa
+
+		THRUST_WEIGHT_SPEED_FACTOR = 10,								-- For plane designs, additive Km/h max speed bonus per point of thrust exceeding weight
+		MAX_QUICK_WING_SELECTION = 3,									-- Max possible selection for airwing quick deploy
+
+		USE_SINGLE_NAVAL_ARMAMENT_CATEGORY = true,						-- If true, only the armament module category that inflicts the greatest damage to naval targets will contribute naval strike and port strike mission specific stats. Only modules with both naval_strike_attack and naval_strike_targetting are considered. This is used to prevent torpedo_mounting and bomb_locks stats from stacking.
+		},
 
 	NNavy = {
 		-- Convoy Priorities START
@@ -1881,7 +1934,7 @@ NDefines = {
 		DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 7;       -- Recalculate desired best template to upgrade with this many days inbetween.
 		DAYS_BETWEEN_CHECK_BEST_EQUIPMENT = 7;      -- Recalculate desired best equipment to upgrade with this many days inbetween.
 
-	FOCUS_TREE_CONTINUE_FACTOR = 1.5,			-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
+		FOCUS_TREE_CONTINUE_FACTOR = 1.5,			-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
 		PLAN_VALUE_TO_EXECUTE = -0.5,				-- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 		DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25,		-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
 		CALL_ALLY_BASE_DESIRE = 20,					-- exactly what it says
@@ -1919,7 +1972,7 @@ NDefines = {
 		MIN_AI_SCORE_TO_TRADE_LAW_OVERRIDE_HARD_CODED_SCORE = 1000.0,
 		MIN_AI_SCORE_TO_ALL_LAWS_OVERRIDE_HARD_CODED_SCORE = 0.0,
 
-			AT_WAR_THREAT_FACTOR = 2.0,					-- How much increase in threat does AI feel for being in war against osmeone
+		AT_WAR_THREAT_FACTOR = 2.0,					-- How much increase in threat does AI feel for being in war against osmeone
 		NEIGHBOUR_WAR_THREAT_FACTOR = 1.10, 		-- How much increase in threat does AI feel against neighbours who are at war
 		POTENTIAL_ALLY_JOIN_WAR_FACTOR = 100, 		-- How much increase in threat does AI feel against neighbours who are allied against one of our enemies
 		POTENTIAL_FUTURE_ENEMY_FACTOR = 100, 		-- How much increase in threat does AI feel against neighbours who at war with our allies
@@ -2110,8 +2163,10 @@ NDefines = {
 		WANTED_UNITS_MANPOWER_DIVISOR = 500000,                     -- Normalizing divisor for AI manpower. (below this they will be careful making more divisions, above they want more)
 		-- End of calculating wanted nr of divisions
 
-		START_TRAINING_EQUIPMENT_LEVEL = 0.9,               -- ai will not start to train if equipment drops below this level
-		STOP_TRAINING_EQUIPMENT_LEVEL = 0.8,                -- ai will not train if equipment drops below this level
+		WANTED_UNITS_MAX_WANTED_CAP = 500,	-- Maximum wanted divisions for a country. This can be exceeded by certain hardcoded multipliers, but not by base calculation logic.
+
+		START_TRAINING_EQUIPMENT_LEVEL = 0.95,               -- ai will not start to train if equipment drops below this level
+		STOP_TRAINING_EQUIPMENT_LEVEL = 0.90,                -- ai will not train if equipment drops below this level
 		BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.003,	-- How much lack of resources are worth when evaluating what to build.
 		DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 			-- Army Values
@@ -2439,6 +2494,7 @@ NDefines = {
 		LOW_PRIO_TEMPLATE_BONUS_FOR_GARRISONS = 10000,		-- bonus to make ai more likely to assign low prio units to garrisons
 		LOW_PRIO_TEMPLATE_PENALTY_FOR_FRONTS = 10000,		-- penalty to make ai less likely to assign low prio units to fronts
 		
+
 		DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_WARTIME = 0.3, 				-- deployment will try to buffer a ratio of deployed manpower (for reinforcements) during war time
 		DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_PEACETIME = 0.1,     		-- deployment will try to buffer a ratio of deployed manpower (for reinforcements) during peace time
 		
@@ -2623,6 +2679,7 @@ NDefines = {
 		EXTRA_NAVY_INTEL_FOR_CONVOY_RAIDING = 0.0,                   -- this amount of intel is added to navy intel while ai is assigning convoy raiding mission 
 		INTEL_NEEDED_TO_NEGATVE_CONVOY_COUNT_REDUCTION = 80.0,       -- navy intel is divided by this ratio to negate NAVAL_CONVOY_COUNT_INTEL_DROPOFF_DUE_TO_LOW_DECYPTION
 		NAVAL_CONVOY_COUNT_INTEL_DROPOFF_DUE_TO_LOW_DECYPTION = 200, -- on lowest navy intel, ai won't be able to see enemy convoys lower than this ratio
+
 			CONVOY_RAID_SCORE_FROM_CONVOY_INTELLIGENCE = 2.5,			 -- each convoy intelligenge will incease raid score by this
 
 		AIR_AI_ENEMY_PROV_RATIO_FOR_COMBAT_REGION = 0.15,			 -- if a region has more than this ratio of provinces controlled by enemy, AI will consider it as a combat zone while assigning planes
@@ -2774,7 +2831,10 @@ NDefines = {
 		AREA_DEFENSE_MINCAP_DESIRED_HOME_AREA = 3,                  -- DesiredUnits for home area is at least this.
 
 		COMMAND_POWER_BEFORE_SPEND_ON_TRAITS = 30.0,	
-	},
+
+		PEACE_BID_FOLD_AGAINST_PLAYER_CHANCE = 0.5,                 -- Likelihood that AI will fold in a bidding contest against human player.
+		PEACE_AI_GROUP_PEACE_ACTIONS = true,                        -- Whether AI should group peace actions or greedily just select the most-desired peace actions
+		},
 
 	NFocus = {
 		FOCUS_POINT_DAYS = 1,						-- Each point takes a day
@@ -2850,7 +2910,7 @@ NDefines = {
 			0.5, 	50.0, -- 0.5 operative for >= 50
 		},
 
-			INTEL_NETWORK_STATE_MODIFIER_STRENGTH_THRESHOLD = 10,			-- Minimum amount of strength required in a state for the intel network related modifiers to start being applied
+		INTEL_NETWORK_STATE_MODIFIER_STRENGTH_THRESHOLD = 10,			-- Minimum amount of strength required in a state for the intel network related modifiers to start being applied
 
 		INTEL_NETWORK_MIN_DEFAULT_FOR_SHOWING = 25,              -- default min level for networks used to filter operation requirements if not overriden
 
@@ -3400,6 +3460,7 @@ NDefines = {
 	NCharacter = {
 		OFFICER_CORP_ADVISOR_ENTRIES_IN_MENU = { "high_command", "theorist", "army_chief", "air_chief", "navy_chief" },
 		OFFICER_CORP_HIGH_COMMAND_SLOTS_IN_MENU = 3, --For Alert manager to count the number of High Command Slots in the UI
+		POLITICAL_ADVISOR_SLOTS_IN_MENU = 3, --For Alert manager to count the number of Political Advisor Slots in the UI
 
 		DEFAULT_PP_COST_FOR_MILITARY_ADVISOR = 50,	-- When an advisor does not have cost assigned this is the default used
 		DEFAULT_PP_COST_FOR_POLITICAL_ADVISOR = 150,
@@ -3554,8 +3615,6 @@ NDefines = {
 		DAYS_TO_START_GIVING_FULL_SUPPLY_AFTER_MOVING_SUPPLY_CAPITAL =  21, -- the country will reach max supply after this many days moving its capital
 
 		MIN_DIFF_FOR_AUTO_UPDATING_EXISTING_RAILWAYS = 5, -- while building railways, the system will prefer updating existing railway if new railway is close enough to existing one
-
-		LOCAL_SUPPLY_PER_AIR_MISSION = 0.2, -- each assigned plane gives this much supply at full efficiency
 
 		-- reinforcements depends on distance to capital and following defines are used for calculating reinforcement time
 		SUPPLY_PATH_MAX_DISTANCE = 15,	-- max time it can take
