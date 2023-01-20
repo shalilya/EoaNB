@@ -29,7 +29,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_dog"
-		texturefile = "gfx/interface/thisisdog.dds"
+		texturefile = "gfx/interface/error_log_doggo.dds"
 	}
 
 	spriteType = {
