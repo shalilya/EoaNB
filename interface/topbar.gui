@@ -11,7 +11,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="topbar_power_ranking"
-			position = { x= 87 y = 127 }
+			position = { x= 84 y = 127 }
 			font = "hoi_18mbs"
 			text = "[?ROOT.score_array_position_var]"
 			format = center
@@ -262,14 +262,14 @@ guiTypes = {
 			iconType = {
 				name = "decisionview_amount_to_take_bg"
 				spriteType = "GFX_topbar_alert_bg"
-				position = { x = -93 y = 17}
+				position = { x = -163 y = 63}
 				alwaystransparent = yes
 				frame = 1
 			}
 
 			instantTextBoxType = {
 				name ="decisionview_amount_to_take_items"
-				position = { x= -170 y = 57 }
+				position = { x= -163 y = 63 }
 				font = "hoi_18mbs"
 				text = "999"
 				format = center
@@ -1034,6 +1034,7 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 		}
 	}
+	
 
 	containerWindowType = {
 		name = "custom_tabview_buttons_container"
@@ -1134,7 +1135,7 @@ guiTypes = {
 		iconType = {
 			name = "pol_stability_icon"
 			spriteType = "GFX_pol_stab_3"
-			position = { x= 64 y = 44 }
+			position = { x= 64 y = 45 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = PS_tooltip
 			pdx_tooltip_delayed = PS_tooltip_delayed
