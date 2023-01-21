@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "aggressive_expansion_view_window"
-		position = { x = -93 y = 43 }
+		position = { x = -103 y = 46 }
 		orientation = UPPER_RIGHT
 		size = { width = 30 height = 100 }
 		
