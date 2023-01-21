@@ -442,7 +442,7 @@ guiTypes = {
 		###########################################################
 		instantTextBoxType = {
 			name ="ind_title"
-			position = { x= 4 y = 2 }
+			position = { x= 3 y = 0 }
 			font = "vic_18_grey"
 			text = "Industry"
 			format = center
@@ -462,7 +462,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="industrial_capacity"
-			position = { x= 15 y = 22 }
+			position = { x= 15 y = 21 }
 			font = "hoi_16mbs"
 			text = ""
 			format = center
@@ -482,7 +482,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="estimated_naval_industry_size"
-			position = { x= 75 y = 22 }
+			position = { x= 75 y = 21 }
 			font = "hoi_16mbs"
 			text = "WIP"
 			format = center
@@ -537,7 +537,7 @@ guiTypes = {
 		###########################################################
 		instantTextBoxType = {
 			name ="deployment_title"
-			position = { x= 377 y = 2 }
+			position = { x= 375 y = 0 }
 			font = "vic_18_grey"
 			text = "Deployment"
 			format = center
@@ -1058,7 +1058,7 @@ guiTypes = {
 		##################################################
 		instantTextBoxType = {
 			name = "intpol_title"
-			position = { x= 2 y = 2 }
+			position = { x= 0 y = 2 }
 			font = "vic_18_grey"
 			text = "Internal Politics"
 			format = center
@@ -1119,7 +1119,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "eoanb_legitimacy_score_text"
-			position = { x= 13 y = 47 }
+			position = { x= 13 y = 49 }
 			font = "hoi_16mbs"
 			text = "EOANB_LEGITIMACY_SCORE"
 			maxWidth = 60
@@ -1143,7 +1143,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "pol_stability"
-			position = { x= 74 y = 47 }
+			position = { x= 74 y = 49 }
 			font = "hoi_16mbs"
 			text = "[?ROOT.pol_stability]%"
 			format = center
