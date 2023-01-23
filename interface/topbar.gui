@@ -42,11 +42,11 @@ guiTypes = {
 		###########################################################
 		containerWindowType = {
 			name = "toggle_music_commands_win"
-			position = { x= -268 y = 39}
-			show_position = { x= -480 y = 39 }
+			position = { x= -268 y = 44}
+			show_position = { x= -500 y = 44 }
 			show_animation_type = decelerated
 			hide_animation_type = accelerated
-			animation_time = 450
+			animation_time = 500
 			Orientation = upper_right
 			clipping = no
 			size = { width = 228 height = 42 }
@@ -59,14 +59,14 @@ guiTypes = {
 			buttonType = {
 				name = "music_pause_button"
 				quadTextureSprite = "GFX_music_pause_button"
-				position = { x = -195 y = 6 }
+				position = { x = -195 y = 5 }
 				Orientation = "UPPER_RIGHT"
 			}
 
 			buttonType = {
 				name = "music_next_button"
 				quadTextureSprite = "GFX_music_next_button"
-				position = { x = -165 y = 6 }
+				position = { x = -154 y = 5 }
 				Orientation = "UPPER_RIGHT"
 				pdx_tooltip = "MUSICPLAYER_NEXT"
 			}
@@ -74,7 +74,7 @@ guiTypes = {
 			buttonType = {
 				name = "musicplayer_button"
 				quadTextureSprite = "GFX_musicplayer_button"
-				position = { x = -130 y = 6 }
+				position = { x = -113 y = 5 }
 				Orientation = "UPPER_RIGHT"
 				pdx_tooltip = "MUSICPLAYER_OPEN_PLAYER"
 			}
