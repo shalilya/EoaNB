@@ -1,6 +1,15 @@
 spriteTypes = {
 
-	
+	spriteType = {
+		name = "GFX_musicplayer_bg"
+		textureFile = "gfx/interface/topbar/musicplayer/musicplayer_bg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_empty"
+		textureFile = "gfx/interface/topbar/musicplayer/empty.dds"
+	}
+
 	spriteType = {
 		name = "GFX_musicplayer_entry_bg"
 		textureFile = "gfx/interface/topbar/musicplayer/music_player_entry_bg.dds"

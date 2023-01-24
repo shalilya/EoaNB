@@ -12,28 +12,16 @@ guiTypes = {
 
 		background = {
 			name = "Background"
-			quadTextureSprite = "GFX_tiled_bg"
+			quadTextureSprite = "GFX_musicplayer_bg"
 		}
 		containerWindowType = {
-			name = "radio_decoration"
+			name = "Stations text"
 			position = { x = -1 y = 2 }
 			size = { width = 190 height = 122 }
 
-			background = {
-				name = "Background"
-				quadTextureSprite = "GFX_tiled_paper_w_frame_one_border"
-			}
-
-			iconType = {
-				name = "radio_icon"
-				position = { x = 58 y = 25 }
-				quadTextureSprite = "GFX_radio_detection_medium"
-				alwaystransparent = yes
-			}
-
 			instantTextboxType = {
-				name = "cake"
-				position = { x = 54 y = 84 }
+				name = "Stations text"
+				position = { x = 70 y = 35 }
 				textureFile = ""
 				font = "hoi4_typewriter22"
 				borderSize = { x = 0 y = 0 }
@@ -58,12 +46,11 @@ guiTypes = {
 			size = { width = 600 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 15 left = 13 bottom = 13 right = 0 }
-
+			
 			background = {
 				name = "Background"
-				quadTextureSprite = "GFX_tiled_paper_w_frame_one_border"
+				quadTextureSprite = "GFX_empty"
 			}
-
 			gridBoxType = {
 				name = "tracks_grid"
 				position = { x = 5 y = 0 }
@@ -84,7 +71,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite = "GFX_tiled_bg_1_scrollbar"
+				quadTextureSprite = "GFX_empty"
 			}
 			gridBoxType = {
 				name = "stations_grid"
