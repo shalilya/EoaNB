@@ -15,7 +15,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "header_desc"
-			position = { x = -177 y = 23 }
+			position = { x = -177 y = 15 }
 			font = "hoi_24header"
 			text = "We forgot what this was about"
 			Orientation = center_up
@@ -55,7 +55,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "filter_minors"
-			position = { x = 374 y = 113 }
+			position = { x = 374 y = 105 }
 			quadTextureSprite = "GFX_sort_button_140x29"
 			font = "hoi_18mbs"
 			buttonText = "WAR_OVERVIEW_FILTER_MINORS"
@@ -64,7 +64,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "filter_capitulated"
-			position = { x = 520 y = 113 }
+			position = { x = 520 y = 105 }
 			quadTextureSprite = "GFX_sort_button_140x29"
 			font = "hoi_18mbs"
 			buttonText = "WAR_OVERVIEW_FILTER_CAPITULATED"
@@ -73,7 +73,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "filter_callable"
-			position = { x = 665 y = 113 }
+			position = { x = 665 y = 105 }
 			quadTextureSprite = "GFX_sort_button_140x29"
 			font = "hoi_18mbs"
 			buttonText = "WAR_OVERVIEW_FILTER_CALLABLE"
@@ -179,7 +179,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "attacker_fielded_man"
-			position = { x = 20 y = 68 }
+			position = { x = 20 y = 85 }
 			font = "hoi_18mbs"
 			maxWidth = 250
 			maxHeight = 30
@@ -187,7 +187,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "attacker_losses"
-			position = { x = 20 y = 86 }
+			position = { x = 20 y = 105 }
 			font = "hoi_18mbs"
 			maxWidth = 250
 			maxHeight = 30
@@ -195,7 +195,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "defender_fielded_man"
-			position = { x = 900 y = 68 }
+			position = { x = 900 y = 85 }
 			font = "hoi_18mbs"
 			maxWidth = 250
 			maxHeight = 30
@@ -203,7 +203,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "defender_losses"
-			position = { x = 900 y = 86 }
+			position = { x = 900 y = 105 }
 			font = "hoi_18mbs"
 			maxWidth = 250
 			maxHeight = 30
