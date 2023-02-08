@@ -42,10 +42,10 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "default_playlist_window"
-			position = { x = 180 y = 116 }
-			size = { width = 600 height = 100%% }
+			position = { x = 180 y = 105 }
+			size = { width = 600 height = 475 }
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 15 left = 13 bottom = 13 right = 0 }
+			margin = { top = 15 left = 15 bottom = 13 right = 0 }
 			
 			background = {
 				name = "Background"
@@ -63,11 +63,11 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "default_stations_window"
-			position = { x = 0 y = 116 }
-			size = { width = 190 height = 100%% }
+			position = { x = 12 y = 80 }
+			size = { width = 190 height = 490 }
 			verticalScrollbar = "right_vertical_slider"
 			autohide_scrollbars = no
-			margin = { top = 10 left = 10 bottom = 10 right = 0 }
+			margin = { top = 10 left = 15 bottom = 10 right = 0 }
 
 			background = {
 				name = "Background"
@@ -113,7 +113,7 @@ guiTypes = {
 
 		iconType = {
 			name = "current_track"
-			position = { x = 15 y = 5 }
+			position = { x = 10 y = 1 }
 			quadTextureSprite = "GFX_selected_song"
 			alwaystransparent = yes
 		}
@@ -140,7 +140,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "track_label"
-			position = { x = 60 y = 8 }
+			position = { x = 60 y = 4 }
 			font = "hoi4_typewriter16"
 			maxWidth = 430
 			maxHeight = 20
@@ -151,7 +151,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "track_length"
-			position = { x = -106 y = 8 }
+			position = { x = -114 y = 4 }
 			font = "hoi4_typewriter16"
 			text = "9:33"
 			maxWidth = 60
