@@ -62,8 +62,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -217,6 +217,11 @@
 
 	# POLITICAL LEADERS
 	recruit_character = RAJ_charles_canning
+	recruit_character = RAJ_James_Bruce
+	recruit_character = RAJ_Council_of_India
+	recruit_character = RAJ_John_Lawrence
+	recruit_character = RAJ_Richard_Bourke
+	recruit_character = RAJ_Thomas_Baring
 
 	# GENERALS
 	recruit_character = RAJ_john_nicholson
@@ -296,8 +301,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -532,7 +537,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments
@@ -607,5 +612,8 @@
 
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 5000 producer = RAJ }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 5000 producer = RAJ }
+
+	retire_character = RAJ_charles_canning
+	promote_character = RAJ_Richard_Bourke
 	
 }

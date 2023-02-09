@@ -989,6 +989,27 @@ spriteTypes = {
 			name = "GFX_idea_FIN_lauantaiseura"
 			texturefile = "gfx/interface/ideas/FIN/FIN_lauantaiseura.dds"
 		}
+		spriteType = {
+			name = "GFX_idea_FIN_risk_of_famine"
+			texturefile = "gfx/interface/ideas/FIN/FIN_risk_of_famine.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_outdated_economy"
+			texturefile = "gfx/interface/ideas/FIN/FIN_outdated_economy.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_destroyed_marine"
+			texturefile = "gfx/interface/ideas/FIN/FIN_destroyed_marine.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_the_language_strife"
+			texturefile = "gfx/interface/ideas/FIN/FIN_the_language_strife.png"
+		}
+		spriteType = {
+			name = "GFX_idea_SDN_scandinavian_wolves"
+			texturefile = "gfx/interface/ideas/FIN/SDN_scandinavian_wolves.png"
+		}
+		
 }
 spriteTypes = {
 	# (FRA) France
@@ -2454,6 +2475,27 @@ spriteTypes = {
 			name = "GFX_idea_RUS_idea_disconnected_country"
 			texturefile = "gfx/interface/ideas/RUS/RUS_idea_disconnected_country.dds"
 		}
+		SpriteType = {
+			name = "GFX_idea_RUS_state_of_navy"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_navy.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_state_of_army"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_army.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_political_isolation"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_political_isolation.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_caucasian_war"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_caucasian_war.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_granary"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_granary.dds"
+		}
+	
 	# Advisors
 		spriteType = {
 			name = "GFX_idea_RUS_advisor_Ludwig_Knoop"
@@ -2599,6 +2641,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_RUS_vic_Izhevsk_Machine_Building_Plant"
 			texturefile = "gfx/interface/ideas/RUS/Manufacturers/izhevsk_mb_plant.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_vic_Konstanty_Rudzki"
+			texturefile = "gfx/interface/ideas/RUS/Manufacturers/konstanty_rudzki.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_vic_Bryansk_Machine_Building_Plant"
+			texturefile = "gfx/interface/ideas/RUS/Manufacturers/bryansk_factory.dds"
 		}
 }
 spriteTypes = {
@@ -3176,5 +3226,13 @@ spriteTypes={
 		name = "GFX_idea_SER_under_sultans_watchful_eyes"
 		texturefile = "gfx/interface/ideas/SER/SER_idea_under_sultans_watchful_eyes.png"
 	}
+}
 
+#Montenegro
+spriteTypes={
+	# NATIONAL SPIRIT
+	SpriteType = {
+		name = "GFX_idea_MNT_Danilo_Code"
+		texturefile = "gfx/interface/ideas/MNT/MNT_idea_Danilo_Code.png"
+	}
 }

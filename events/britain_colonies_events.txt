@@ -396,7 +396,6 @@ add_namespace = britishindia
 						puppet = BCO
 					}
 				}
-				puppet = TRA
 				BCO = { 
 					set_cosmetic_tag = BCO_Colony
 					set_politics = {
@@ -1044,7 +1043,7 @@ add_namespace = britishindia
 			CAN = { set_capital = { state = 1310 } }
 			hidden_effect = {
 				CAN = {
-					#news_event = can.14 Does not exist, commented out
+					country_event = britishcanada.108
 				}
 			}
 		}
@@ -5419,89 +5418,28 @@ add_namespace = britishindia
 		}
 	}
 
+	#HBC Change of administration
+	country_event = {
+		id = britishcanada.113
+		title = britishcanada.113.t
+		desc = britishcanada.113.d
+		picture = GFX_report_event_generic_riot
+
+		fire_only_once = yes
+		is_triggered_only = yes	
+				
+		option = {
+			name = britishcanada.113.a
+			retire_character = HBC_George_Simpson
+			promote_character = HBC_William_Mactavish
+		}
+	}
+
 ########################################
 ########################################
 ############# A F R I C A ##############
 ########################################
 ########################################
-
-	country_event = {##SAF - Henry Bartle Frere, man behind the zulu war
-		id = britishafrica.1
-		title = britishafrica.1.t
-		desc = britishafrica.1.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1877.2.20
-			has_country_leader = { character = SAF_Henry_Barkly ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.1.a
-			retire_character = SAF_Henry_Barkly
-			SAF_Henry_Bartle_Frere = {
-				promote_character = {
-					Ideology = federal
-				}
-				promote_character = yes
-			}
-		}
-	}
-
-	country_event = {##SAF - Henry Barkly
-		id = britishafrica.2
-		title = britishafrica.2.t
-		desc = britishafrica.2.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1877.9.18
-			has_country_leader = { character = SAF_Charles_Craufurd_Hay ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.2.a
-			retire_character = SAF_Charles_Craufurd_Hay
-			SAF_Henry_Barkly = {
-				promote_character = {
-					Ideology = despotism
-				}
-				promote_character = yes
-			}
-		}
-	}
-	
-	country_event = {##SAF - Henry Hugh Clifford
-		id = britishafrica.3
-		title = britishafrica.3.t
-		desc = britishafrica.3..d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1880.9.15
-			has_country_leader = { character = SAF_Henry_Bartle_Frere ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.3.a
-			retire_character = SAF_Henry_Bartle_Frere
-			SAF_Henry_Hugh_Clifford = {
-				promote_character = {
-					Ideology = conserv
-				}
-				promote_character = yes
-			}
-		}
-	}
 
 	#Bechuanaland protectorate
 	country_event = {
@@ -5664,59 +5602,6 @@ add_namespace = britishindia
 		option = { #great
 			name = britishafrica.8.a
 			set_country_flag = SAF_diamonds_f
-		}
-	}
-
-	###cape colony govenerors
-	country_event = {##SAF - Philip Edmond Wodehouse
-		id = britishafrica.9
-		title = britishafrica.9.t
-		desc = britishafrica.9.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1862.2.20
-			has_country_leader = { character = SAF_Robert_Henry_Wynyard ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.9.a
-			retire_character = SAF_Robert_Henry_Wynyard
-			SAF_Philip_Edmond_Wodehouse = {
-				promote_character = {
-					Ideology = despotism
-				}
-				promote_character = yes
-			}
-		}
-	}
-
-	country_event = {##SAF - Charles Craufurd Hay
-		id = britishafrica.10
-		title = britishafrica.10.t
-		desc = britishafrica.10.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1870.2.20
-			has_country_leader = { character = SAF_Philip_Edmond_Wodehouse ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.10.a
-			retire_character = SAF_Philip_Edmond_Wodehouse
-			SAF_Charles_Craufurd_Hay = {
-				promote_character = {
-					Ideology = despotism
-				}
-				promote_character = yes
-			}
 		}
 	}
 
@@ -6201,58 +6086,6 @@ add_namespace = britishindia
 			name = britishafrica.27.c
 			ai_chance = { factor = 0 }
 			add_political_power = -200
-		}
-	}
-
-	country_event = {##SAF - Philip Edmond Wodehouse backup
-		id = britishafrica.28
-		title = britishafrica.28.t
-		desc = britishafrica.28.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1862.2.20
-			has_country_leader = { character = NZL_george_edward_grey ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.28.a
-			retire_character = NZL_george_edward_grey
-			SAF_Philip_Edmond_Wodehouse = {
-				promote_character = {
-					Ideology = despotism
-				}
-				promote_character = yes
-			}
-		}
-	}
-
-	country_event = {##SAF - George Strahan
-		id = britishafrica.29
-		title = britishafrica.29.t
-		desc = britishafrica.29.d
-		#picture = GFX_report_event_chinese_army_training
-		
-		is_triggered_only = yes
-		fire_only_once = yes
-		trigger={
-			tag = SAF
-			#date>1880.9.27
-			has_country_leader = { character = SAF_Henry_Hugh_Clifford ruling_only = yes }
-		}
-		
-		option = { ##ok
-			name = britishafrica.29.a
-			retire_character = SAF_Henry_Hugh_Clifford
-			SAF_George_Strahan = {
-				promote_character = {
-					Ideology = conserv
-				}
-				promote_character = yes
-			}
 		}
 	}
 
@@ -8462,8 +8295,8 @@ add_namespace = britishindia
 				NZA={
 					set_popularities = {
 						anarchism = 0
-						vanguard_communism = 0
-						collectivist_socialism = 0
+						ideology_social_liberalism = 0
+						ideology_radical_socialism = 0
 						social_egalitarianism = 0
 						centrism = 0
 						traditional_conservatism = 0
@@ -9434,6 +9267,130 @@ add_namespace = britishindia
 
 		option = {
 			name = britishoceania.86.a
+		}
+	}
+
+	country_event = { #QNL Invade Port Morseby?
+		id = britishoceania.87
+		title = britishoceania.87.t
+		desc = britishoceania.87.d
+
+		picture = GFX_report_event_telegraph
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = QNL
+			#date = 1883.1.1
+		}
+
+		#Yes
+		option = {
+			name = britishoceania.87.a
+			ai_chance = {
+				factor = 95
+			}
+			add_political_power = -100
+			add_war_support = 0.05
+			transfer_state = 523
+			hidden_effect =	{
+				ENG = {
+					country_event = britishoceania.88
+				}
+			}
+		}
+
+		#No
+		option = {
+			name = britishoceania.87.b
+			ai_chance = {
+				factor = 5
+			}
+			add_war_support = -0.1
+		}
+	}
+
+	country_event = { #ENG - QNL Invaded Port Morseby
+		id = britishoceania.88
+		title = britishoceania.88.t
+		desc = britishoceania.88.d
+
+		picture = GFX_report_event_telegraph
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = ENG
+			#date = 1883.1.1
+		}
+
+		#Oppose
+		option = {
+			name = britishoceania.88.a
+			ai_chance = {
+				factor = 95
+			}
+			add_political_power = -50
+			add_war_support = 0.05
+			custom_effect_tooltip = historical_option
+			hidden_effect =	{
+				QNL = {
+					country_event = britishoceania.89
+				}
+			}
+		}
+
+		#Allow them to keep it
+		option = {
+			name = britishoceania.88.b
+			ai_chance = {
+				factor = 5
+			}
+			add_war_support = -0.1
+		}
+	}
+
+	country_event = { #QNL - ENG refuse to ratify treaty
+		id = britishoceania.89
+		title = britishoceania.89.t
+		desc = britishoceania.89.d
+
+		picture = GFX_report_event_telegraph
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = QNL
+			#date = 1883.1.1
+		}
+
+		#keep it anyway
+		option = {
+			name = britishoceania.89.a
+			ai_chance = {
+				factor = 95
+			}
+			add_political_power = -50
+		}
+	}
+
+#################
+##### OTHER #####
+#################
+
+	#Christmas Islands Annexed
+	country_event = {
+		id = britishoceania.90
+		title = britishoceania.90.t
+		desc = britishoceania.90.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = britishoceania.90.a
+			transfer_state = 711
+			add_state_core = 711
 		}
 	}
 
@@ -10831,18 +10788,7 @@ add_namespace = britishindia
 		picture = GFX_report_event_yugoslavian_cavalry
 
 		fire_only_once = yes
-
-		mean_time_to_happen = {
-			days = 2
-		}
-
-		trigger = {
-			TAG = SRS
-			has_global_flag = eoanb_flag_sepoy_rebellion_ongoing
-			RAJ={
-				surrender_progress > 0.5
-			}
-		}
+		is_triggered_only = yes
 
 		option = {
 			name = britishindia.14.a
@@ -10889,12 +10835,15 @@ add_namespace = britishindia
 					delete_unit_template_and_units = { division_template = "Bengal Native Infantry" }
 					delete_unit_template_and_units = { division_template = "Indian Rebels" }
 					delete_unit_template_and_units = { division_template = "Armed Peasants" }
+					clr_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag
 				}
 				KAR={
-					country_event = {id= sepoy.4 days = 30}#threat from the south
+					country_event = sepoy.4 #threat from the south
 					transfer_state = 442
 					add_state_core = 442
 					RAJ = { end_puppet = KAR }
+					add_ideas = SRS_natural_defences
+					remove_ideas = SRS_idea_princely_neutrality
 				}
 				KAS={
 					if={
@@ -10927,6 +10876,24 @@ add_namespace = britishindia
 						white_peace = OUD
 					}
 					RAJ = { end_puppet = HYD }
+				}
+				GUJ = {
+					remove_ideas = SRS_idea_princely_neutrality
+				}
+				MYS = {
+					remove_ideas = SRS_idea_princely_neutrality
+				}
+				NEP = {
+					remove_ideas = SRS_idea_princely_neutrality
+				}
+				ORS = {
+					remove_ideas = SRS_idea_princely_neutrality
+				}
+				TRA = {
+					remove_ideas = SRS_idea_princely_neutrality
+				}
+				BTR = {
+					remove_ideas = SRS_idea_princely_neutrality
 				}
 				ENG = { complete_national_focus = ENG_focus_humiliation_by_sepoy }
 				clr_global_flag = eoanb_flag_sepoy_rebellion_ongoing
@@ -11084,5 +11051,83 @@ add_namespace = britishindia
 
 		option = {
 			name = britishindia.17.a
+		}
+	}
+
+	#James Bruce Dies
+	country_event = {
+		id = britishindia.18
+		title = britishindia.18.t
+		desc = britishindia.18.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = britishindia.18.a
+			retire_character = RAJ_James_Bruce
+			promote_character = RAJ_Council_of_India
+		}
+	}
+
+	#John Lawrence becomes governer
+	country_event = {
+		id = britishindia.19
+		title = britishindia.19.t
+		desc = britishindia.19.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = britishindia.19.a
+			promote_character = RAJ_John_Lawrence
+		}
+	}
+
+	#Richard Bourke becomes governer
+	country_event = {
+		id = britishindia.20
+		title = britishindia.20.t
+		desc = britishindia.20.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = britishindia.20.a
+			retire_character = RAJ_John_Lawrence
+			promote_character = RAJ_Richard_Bourke
+		}
+	}
+
+	#Richard Bourke Assinated
+	country_event = {
+		id = britishindia.21
+		title = britishindia.21.t
+		desc = britishindia.21.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = britishindia.21.a
+			retire_character = RAJ_John_Lawrence
+			promote_character = RAJ_Council_of_India
+		}
+	}
+
+	#Thomas Baring becomes governer
+	country_event = {
+		id = britishindia.22
+		title = britishindia.22.t
+		desc = britishindia.22.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = britishindia.22.a
+			promote_character = RAJ_Thomas_Baring
 		}
 	}

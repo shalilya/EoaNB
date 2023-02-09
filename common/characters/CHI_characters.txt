@@ -11,6 +11,7 @@ characters={
 			ideology=absolutism
 			expire="1965.1.1.1"
 			id=-1
+			traits = { inexperienced_monarch }
 		}
 	}
 	QNG_Sengge_Rinchen={
@@ -49,8 +50,9 @@ characters={
 	}
 	QNG_Zuo_Zongtang={
 		name="Zuo Zongtang"
-		portraits={
+		portraits = {
 			army={
+				small = "GFX_idea_europe_generic_1"
 				large="gfx/leaders/QNG/Portrait_QNG_Zuo_Zongtang.dds"
 			}
 		}
@@ -62,6 +64,19 @@ characters={
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id=3502
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_zuo_zongtang
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Zuo_Zongtang
+			}
+			ai_will_do = {
+				factor = 7
+			}
 		}
 	}
 	QNG_Nie_Shicheng={
@@ -102,6 +117,7 @@ characters={
 		name="Zeng Guofan"
 		portraits={
 			army={
+				small = "GFX_idea_europe_generic_1"
 				large="gfx/leaders/QNG/Portrait_QNG_Zeng_Guofan.dds"
 			}
 		}
@@ -113,6 +129,21 @@ characters={
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id=3507
+		}
+		advisor = {
+			cost = 250
+			slot = theorist
+			idea_token = QNG_theorist_land_guofan
+			ledger = army
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				
+			}
+			ai_will_do = {
+				factor = 8
+			}
 		}
 	}
 	QNG_Zhang_Shusheng={
@@ -1061,3 +1092,201 @@ characters = {
 			}
 	}
 }
+
+#Qing Advisors
+	QNG_weng_tonghe = {
+		name = "Weng Tonghe"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_weng_tonghe
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_keying = {
+		name = "Keying"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_keying
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Keying
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_yixuan_princ_chun = {
+		name = "Yixuan Prince Chun"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_yixuan_princ_chun
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Yixuan_Prince_Chun
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_duan = {
+		name = "Duan"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_duan
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Duan
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_shushun = {
+		name = "Sushun"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_shushun
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Sushun
+			}
+			research_bonus = {
+				humanities_tech = 0.02
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_prince_gong = {
+		name = "Prince Gong"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_prince_gong
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				
+			}
+			research_bonus = {
+				
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	
+	QNG_prosper_giquel = {
+		name = "Prosper Giquel"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
+	QNG_john_fryer = {
+		name = "John Fryer"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+
+#Qing Theorists
+	QNG_li_hongzhang = { 
+		name = "Li Hongzhang"
+		portraits = {
+			army = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QNG_advisor_li_hongzhang
+			allowed = {
+				original_tag = QNG
+			}
+			traits = {
+				QNG_trait_Li_Hongzhang
+			}
+			ai_will_do = {
+				factor = 7
+			}
+		}
+		advisor = {
+			cost = 250
+			slot = theorist
+			idea_token = QNG_theorist_land_hongzhang
+			ledger = army
+			allowed = {
+				original_tag = QNG
+			}
+			research_bonus = {
+				
+			}
+			traits = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}

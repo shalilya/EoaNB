@@ -42,7 +42,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_musicplayer_play_pause_button"
-		texturefile = "gfx//interface//topbar//musicplayer//musicplayer_play_pause_button.dds"
+		texturefile = "gfx//interface//topbar//musicplayer//music_pause_button.dds"
 		effectFile = "gfx/FX/buttonstate.lua"	
 		noOfFrames = 2			
 	}
@@ -55,13 +55,13 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_musicplayer_next_button"
-		texturefile = "gfx//interface//topbar//musicplayer//musicplayer_next_button.dds"
+		texturefile = "gfx//interface//topbar//musicplayer//music_next_button.dds"
 		effectFile = "gfx/FX/buttonstate.lua"	
 	}
 
 	spriteType = {
 		name = "GFX_musicplayer_previous_button"
-		texturefile = "gfx//interface//topbar//musicplayer//musicplayer_previous_button.dds"
+		texturefile = "gfx//interface//topbar//musicplayer//music_back_button.dds"
 		effectFile = "gfx/FX/buttonstate.lua"	
 	}
 

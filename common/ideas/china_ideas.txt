@@ -7,6 +7,7 @@ ideas = {
 				opinion_gain_monthly_factor = -0.25
 			}
 		}
+		
 		QNG_idea_TAI_defense = {
 			picture = ast_naval_auxiliary_patrol
 			
@@ -77,6 +78,7 @@ ideas = {
 				defense_bonus_against = 0.05
 			}
 		}
+		
 		QNG_idea_banner_armies = {
 			picture = chi_banner_system
 			
@@ -86,6 +88,7 @@ ideas = {
 				conscription_factor = 0.25
 			}
 		}
+		
 		QNG_idea_nian_cavalry = {
 			picture = FRA_national_mobilization_focus
 			

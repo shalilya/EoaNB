@@ -1032,8 +1032,7 @@ political_actions = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 				}
 			}
@@ -1067,8 +1066,7 @@ political_actions = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 				}
 			}
@@ -1102,8 +1100,7 @@ political_actions = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 				}
 			}
@@ -1136,8 +1133,7 @@ political_actions = {
 			}
 			OR = {
 				has_government = social_egalitarianism
-				has_government = collectivist_socialism
-				has_government = vanguard_communism
+				has_government = ideology_radical_socialism
 				has_government = anarchism
 			}
 		}
@@ -1173,8 +1169,7 @@ political_actions = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 				}
 			}
@@ -1720,6 +1715,71 @@ PRS_decision_category_zollverein = {
 					has_opinion = {
 						target = PRS
 						value < 101
+					}
+				}
+			}
+		}
+	}
+	#Zollverein trade with Qing - historically in September 1861
+	PRS_decision_zollverein_add_QNG = {
+		icon = money
+		#allowed = { tag = PRS }
+		available = {
+			PRS = {
+				has_war = no
+			}
+			QNG = {
+				has_war = no
+			}
+			QNG = {
+				has_opinion = {
+					target = PRS
+					value > 0
+				}
+			}
+			NOT = {
+				has_country_flag = PRS_zollverein_trade_treaty_negotiating_flag
+			}
+		}
+		visible = {
+			has_completed_focus = PRS_focus_norswe_zoll
+			QNG = {
+				exists = yes
+			}
+			QNG = {
+				is_puppet = no
+			}
+			QNG = {
+				nation_is_in_zollverein = no
+			}
+			NOT = {
+				has_idea = PRS_Zollverein_foreign_treaties_2
+			}
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 60
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = PRS_zollverein_trade_treaty_negotiating_flag
+			}
+		}
+		remove_effect = {
+			QNG = {
+				country_event = {
+					days = 1
+					id = prussia.501
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				QNG = {
+					has_opinion = {
+						target = PRS
+						value < 0
 					}
 				}
 			}
@@ -3390,9 +3450,6 @@ PRS_decision_category_industrialisation = {
 					advisor = {
 						slot = political_advisor
 						idea_token = PRS_advisor_albert_borsig
-						allowed = {
-							original_tag = PRS
-						}
 						traits = {
 							PRS_trait_Albert_Borsig
 						}
@@ -3496,9 +3553,6 @@ PRS_decision_category_industrialisation = {
 					advisor = {
 						slot = political_advisor
 						idea_token = PRS_advisor_alfred_krupp
-						allowed = {
-							original_tag = PRS
-						}
 						traits = {
 							PRS_trait_Alfred_Krupp
 						}
@@ -3591,9 +3645,6 @@ PRS_decision_category_industrialisation = {
 					advisor = {
 						slot = political_advisor
 						idea_token = PRS_advisor_werner_von_siemens
-						allowed = {
-							original_tag = PRS
-						}
 						traits = {
 							PRS_trait_Werner_Siemens
 						}
@@ -4921,9 +4972,6 @@ PRS_decision_category_constitutional_crisis = {
 					advisor = {
 						slot = political_advisor
 						idea_token = PRS_advisor_finance_carl_von_bodelschwingh
-						allowed = {
-							original_tag = PRS
-						}
 						traits = {
 							PRS_trait_Carl_von_Bodelschwingh
 						}
@@ -9542,9 +9590,6 @@ PRS_decision_category_NGC_politics = {
 					advisor = {
 						slot = political_advisor
 						idea_token = PRS_advisor_wilhelm_stieber
-						allowed = {
-							original_tag = PRS
-						}
 						traits = {
 							PRS_trait_Wilhelm_Stieber
 						}

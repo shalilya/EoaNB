@@ -100,7 +100,7 @@ country_event = {
 			add_idea = RUS_Alexander_III
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.02
 		}		
 		add_popularity = {
@@ -317,7 +317,7 @@ country_event = {
 	option = {
 		name = rossiya.17.a
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.01
 		}
 	}
@@ -389,7 +389,7 @@ country_event = {
 			add_idea = RUS_Alexander_III
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.05
 		}
 		add_popularity = {
@@ -533,7 +533,7 @@ country_event = {
 		name = rossiya.22.a
 		ai_chance = { factor = 90 }
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.01
 		}
 	}
@@ -568,7 +568,7 @@ country_event = {
 	option = {
 		name = rossiya.23.a
 		add_popularity = {
-			ideology = collectivist_socialism 
+			ideology = ideology_radical_socialism 
 			popularity = 0.02
 		}
 	}
@@ -728,7 +728,7 @@ country_event = {
 			popularity = -0.05
 		}
 		add_popularity = {
-			ideology = collectivist_socialism 
+			ideology = ideology_radical_socialism 
 			popularity = -0.05
 		}
 	}
@@ -875,7 +875,7 @@ country_event = {
 	}
 }
     
-#Michael Place
+#New Michael Palace (30.07.1862)
 country_event = {
 	id = rossiya.59
 	title = rossiya.59.t
@@ -883,10 +883,968 @@ country_event = {
 	picture = GFX_report_event_krenholm_manufacture
 	
 	fire_only_once = yes
-	is_triggered_only = yes	
-		
+	is_triggered_only = yes
+	
 	option = {
 		name = rossiya.59.a
+	}
+}
+
+#Nazranov Rebellion (15.05.1858) - Fires if CAU still in rebellion
+country_event = {
+	id = rossiya.60
+	title = rossiya.60.t
+	desc = rossiya.60.d
+	picture = GFX_report_event_nazranov_rebellion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		AND = {
+			country_exists = CAU
+			CAU = { NOT = { is_puppet_of = RUS } }
+		}
+	}
+	
+	option = {
+		name = rossiya.60.a
+		add_stability = -0.02
+		1123 = { add_manpower = -5000 }
+		hidden_effect = {
+			CAU = { load_oob = CAU_rebels_ingush }
+		}
+	}
+}
+
+#Nazranov Rebellion (15.05.1858) - Fires if CAU not in rebellion anymore
+country_event = {
+	id = rossiya.61
+	title = rossiya.61.t
+	desc = rossiya.61.d
+	picture = GFX_report_event_nazranov_rebellion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			CAU = { exists = no }
+			CAU = { is_puppet_of = RUS }
+		}
+	}
+	
+	option = {
+		name = rossiya.61.a
+		add_stability = -0.02
+		1123 = { add_manpower = -5000 }
+		add_manpower = -800
+	}
+}
+
+#Riga Technical University (01.07.1862)
+country_event = {
+	id = rossiya.62
+	title = rossiya.62.t
+	desc = rossiya.62.d
+	picture = GFX_report_event_riga_technical_university
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.62.a
+		random_list = {
+			25 = {
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = mechanical_engineering_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = process_engineering_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = synthetic_chemicals_tech }
+			}
+		}
+		add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase
+		}
+		reverse_add_opinion_modifier = {
+			target = PRS
+			modifier = small_increase 
+		}
+	}
+}
+
+#Khalibov Armenian School (01.10.1858)
+country_event = {
+	id = rossiya.63
+	title = rossiya.63.t
+	desc = rossiya.63.d
+	picture = GFX_report_event_armenian_school
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.63.a
+		add_stability = 0.01
+		random_list = {
+			25 = {
+				add_tech_bonus = { bonus = 0.05 uses = 1 category = biochemistry_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.05 uses = 1 category = mechanical_engineering_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.05 uses = 1 category = process_engineering_tech }
+			}
+			25 = {
+				add_tech_bonus = { bonus = 0.05 uses = 1 category = synthetic_chemicals_tech }
+			}
+		}
+	}
+}
+
+#South Ussuriysk Border Commissariat (12.11.1869)
+country_event = {
+	id = rossiya.64
+	title = rossiya.64.t
+	desc = rossiya.64.d
+	picture = GFX_report_event_south_ussuriysk_border_commissariat
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_completed_focus = RUS_great_game
+	}
+	
+	option = {
+		name = rossiya.64.a
+		add_stability = 0.02
+		add_opinion_modifier = {
+			target = QNG
+			modifier = medium_decrease
+		}
+		reverse_add_opinion_modifier = {
+			target = QNG
+			modifier = medium_decrease 
+		}
+	}
+}
+
+#Sevastopol Biological Station (01.03.1871)
+country_event = {
+	id = rossiya.65
+	title = rossiya.65.t
+	desc = rossiya.65.d
+	picture = GFX_report_event_sevastopol_biological_station
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.65.a
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = biochemistry_tech }
+		set_temp_variable = {
+			eoanb_prestige_change = 1
+		}
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Zarozhansky Sugar Factory (01.07.1866)
+country_event = {
+	id = rossiya.66
+	title = rossiya.66.t
+	desc = rossiya.66.d
+	picture = GFX_report_event_zarozhany_sugar_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 1127
+	}
+	
+	option = {
+		name = rossiya.66.a
+		activate_mission_tooltip = RUS_mission_sugar_factory_zarozhany
+		hidden_effect = {
+			activate_mission = RUS_mission_sugar_factory_zarozhany
+		}
+	}
+}
+
+#First Ukrainian Discourse Theatre Established in Lviv (29.03.1864)
+country_event = {
+	id = rossiya.67
+	title = rossiya.67.t
+	desc = rossiya.67.d
+	picture = GFX_report_event_ukrainian_discourse_theater
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 91
+	}
+	
+	option = {
+		name = rossiya.67.a
+		add_stability = 0.01
+		set_temp_variable = {
+			eoanb_prestige_change = 1
+		}
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Meeting with Pedro II of Brazil (01.06.1876)
+country_event = {
+	id = rossiya.68
+	title = rossiya.68.t
+	desc = rossiya.68.d
+	picture = GFX_report_event_pedro_ii_visit
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.68.a
+		add_opinion_modifier = { target = BRA modifier = medium_increase }
+		reverse_add_opinion_modifier = { target = BRA modifier = medium_increase }
+	}
+}
+
+#Russian Musical Society (01.04.1859)
+country_event = {
+	id = rossiya.69
+	title = rossiya.69.t
+	desc = rossiya.69.d
+	picture = GFX_report_event_russian_musical_society
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.69.a
+		add_stability = 0.01
+		set_temp_variable = {
+			eoanb_prestige_change = 1
+		}
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Trams in Warsaw (11.12.1866)
+country_event = {
+	id = rossiya.70
+	title = rossiya.70.t
+	desc = rossiya.70.d
+	picture = GFX_report_event_trams_in_warsaw
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 1314
+	}
+	
+	option = {
+		name = rossiya.70.a
+		1314 = {
+			add_dynamic_modifier = {
+				modifier = eoanb_dynmod_city_development
+			}
+		}
+	}
+}
+
+#Bratnia Pomoc (01.08.1859)
+country_event = {
+	id = rossiya.71
+	title = rossiya.71.t
+	desc = rossiya.71.d
+	picture = GFX_report_event_bratnia_pomoc
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 90
+	}
+	
+	option = {
+		name = rossiya.71.a
+		add_timed_idea = {
+			idea = RUS_idea_bratnia_pomoc
+			days = 365
+		}
+	}
+}
+
+#K. Rudzki i S-ka (01.07.1858)
+country_event = {
+	id = rossiya.72
+	title = rossiya.72.t
+	desc = rossiya.72.d
+	picture = GFX_report_event_konstanty_rudzki
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 1314
+	}
+	
+	option = {
+		name = rossiya.72.a
+		custom_effect_tooltip = RUS_konstanty_rudzki_event_effect_tt
+		hidden_effect = {
+			set_country_flag = RUS_rudzki_company_flag
+		}
+	}
+}
+
+#Corps Concordia Rigensis (29.11.1869)
+country_event = {
+	id = rossiya.73
+	title = rossiya.73.t
+	desc = rossiya.73.d
+	picture = GFX_report_event_corps_concordia_rigensis
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 12
+	}
+	
+	option = {
+		name = rossiya.73.a
+		add_opinion_modifier = { target = PRS modifier = small_increase }
+		reverse_add_opinion_modifier = { target = PRS modifier = small_increase }
+	}
+}
+
+#Estonian Song Festival in Dorpat (01.07.1869)
+country_event = {
+	id = rossiya.74
+	title = rossiya.74.t
+	desc = rossiya.74.d
+	picture = GFX_report_event_estonian_song_festival
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 191
+	}
+	
+	option = {
+		name = rossiya.74.a
+		add_stability = 0.01
+	}
+}
+
+#Bryansk Machine-Building Plant (01.07.1873)
+country_event = {
+	id = rossiya.75
+	title = rossiya.75.t
+	desc = rossiya.75.d
+	picture = GFX_report_event_bryansk_machine_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 224
+	}
+	
+	option = {
+		name = rossiya.75.a
+		custom_effect_tooltip = RUS_bryansk_company_event_effect_tt
+		hidden_effect = {
+			set_country_flag = RUS_bryansk_company_flag
+		}
+	}
+}
+
+#Feodosia Teachers' Institute (16.01.1874)
+country_event = {
+	id = rossiya.76
+	title = rossiya.76.t
+	desc = rossiya.76.d
+	picture = GFX_report_event_feodosia_teachers_institute
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 137
+	}
+	
+	option = {
+		name = rossiya.76.a
+		add_stability = 0.02
+	}
+}
+
+#Tiligul Railway Disaster (24.12.1875)
+country_event = {
+	id = rossiya.77
+	title = rossiya.77.t
+	desc = rossiya.77.d
+	picture = GFX_report_event_tiligul_railway_disaster
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 192
+	}
+	
+	option = {
+		name = rossiya.77.a
+		add_stability = -0.05
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = -12
+			producer = RUS
+		}
+		if = {
+			limit = {
+				has_railway_level = {
+					state = 192
+					level > 0
+				}
+			}
+			192 = {
+				damage_building = {
+					type = rail_way
+					damage = 0.5
+				}
+			}
+		}
+	}
+}
+
+#Yekaterinburg Secondary School (23.10.1873)
+country_event = {
+	id = rossiya.78
+	title = rossiya.78.t
+	desc = rossiya.78.d
+	picture = GFX_report_event_yekaterinburg_school
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.78.a
+		add_stability = 0.01
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+	}
+}
+
+#The Nobel Brothers' Petroleum Production Company (15.4.1876)
+country_event = {
+	id = rossiya.79
+	title = rossiya.79.t
+	desc = rossiya.79.d
+	picture = GFX_report_event_ludvig_nobel
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 229
+	}
+	
+	option = {
+		name = rossiya.79.a
+		89 = {
+			add_resource = {
+				type = oil
+				amount = 1
+			}
+		}
+	}
+}
+
+#Major Foreign Investment into BraNobel (18.5.1879)
+country_event = {
+	id = rossiya.80
+	title = rossiya.80.t
+	desc = rossiya.80.d
+	picture = GFX_report_event_branobel_oil_company
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 229
+	}
+	
+	option = {
+		name = rossiya.80.a
+		89 = {
+			add_resource = {
+				type = oil
+				amount = 2
+			}
+		}
+	}
+}
+
+#Ha-Melitz - First Hebrew Newspaper (29.9.1860)
+country_event = {
+	id = rossiya.81
+	title = rossiya.81.t
+	desc = rossiya.81.d
+	picture = GFX_report_event_ha_melitz
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.81.a
+		add_stability = 0.01
+	}
+}
+
+#Franz Krull Metal Works (25.4.1865)
+country_event = {
+	id = rossiya.82
+	title = rossiya.82.t
+	desc = rossiya.82.d
+	picture = GFX_report_event_franz_krull_metal_works
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 191
+	}
+	
+	option = {
+		name = rossiya.82.a
+		add_stability = 0.01
+		add_timed_idea = { idea = RUS_idea_franz_krull_metal_works days = 730 }
+	}
+}
+
+#Kyiv Police Department (15.3.1858)
+country_event = {
+	id = rossiya.83
+	title = rossiya.83.t
+	desc = rossiya.83.d
+	picture = GFX_report_event_kyiv_police_department
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 202
+	}
+	
+	option = {
+		name = rossiya.83.a
+		add_stability = 0.03
+	}
+}
+
+#Kyiv Opera (27.10.1867)
+country_event = {
+	id = rossiya.84
+	title = rossiya.84.t
+	desc = rossiya.84.d
+	picture = GFX_report_event_kyiv_opera
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 202
+	}
+	
+	option = {
+		name = rossiya.84.a
+		add_stability = 0.01
+	}
+}
+
+#Moscow Criminal Investigations Department (31.12.1866)
+country_event = {
+	id = rossiya.85
+	title = rossiya.85.t
+	desc = rossiya.85.d
+	picture = GFX_report_event_moscow_criminial_investigation_department
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.85.a
+		upgrade_intelligence_agency = upgrade_passive_defense
+	}
+}
+
+#Circle of Tchaikovsky (1.8.1868)
+country_event = {
+	id = rossiya.86
+	title = rossiya.86.t
+	desc = rossiya.86.d
+	picture = GFX_report_event_tchaikovsky
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.86.a
+		add_stability = -0.05
+	}
+}
+
+#Meteorite Shower in Poland (30.1.1868)
+country_event = {
+	id = rossiya.87
+	title = rossiya.87.t
+	desc = rossiya.87.d
+	picture = GFX_report_event_pultusk_meteorite
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 98
+	}
+	
+	option = {
+		name = rossiya.87.a
+		add_stability = -0.01
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = biochemistry_tech }
+	}
+}
+
+#Kazan Veterinary Institute (31.5.1873)
+country_event = {
+	id = rossiya.88
+	title = rossiya.88.t
+	desc = rossiya.88.d
+	picture = GFX_report_event_kazan_veterinary_institute
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.88.a
+		add_tech_bonus = { bonus = 0.25 uses = 2 category = biochemistry_tech }
+	}
+}
+
+#Iosif Goshkevich's Travels to East Asia (1.10.1867)
+country_event = {
+	id = rossiya.89
+	title = rossiya.89.t
+	desc = rossiya.89.d
+	picture = GFX_report_event_iosif_goshkevich
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.89.a
+		if = {
+			limit = {
+				country_exists = JAP
+			}
+			add_opinion_modifier = { target = JAP modifier = small_increase }
+			reverse_add_opinion_modifier = { target = JAP modifier = small_increase }
+		}
+		if = {
+			limit = {
+				country_exists = TSH
+			}
+			add_opinion_modifier = { target = TSH modifier = small_increase }
+			reverse_add_opinion_modifier = { target = TSH modifier = small_increase }
+		}
+	}
+}
+
+#'A Cracow Wedding' (01.10.1878)
+country_event = {
+	id = rossiya.90
+	title = rossiya.90.t
+	desc = rossiya.90.d
+	picture = GFX_report_event_cracow_wedding
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.90.a
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Committee for the Establishment of a National History Museum (01.09.1872)
+country_event = {
+	id = rossiya.91
+	title = rossiya.91.t
+	desc = rossiya.91.d
+	picture = GFX_report_event_imperial_museum_uvarov
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.91.a
+		add_political_power = 10
+	}
+}
+
+#Grand Opening of the Imperial Russian History Museum (27.05.1883)
+country_event = {
+	id = rossiya.92
+	title = rossiya.92.t
+	desc = rossiya.92.d
+	picture = GFX_report_event_imperial_museum_building
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.92.a
+		set_temp_variable = { eoanb_prestige_change = 2 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Tretyakovskiy Street (15.04.1871)
+country_event = {
+	id = rossiya.93
+	title = rossiya.93.t
+	desc = rossiya.93.d
+	picture = GFX_report_event_tretyakovskiy_street
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.93.a
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Moscow Archaeological Society (17.02.1864)
+country_event = {
+	id = rossiya.94
+	title = rossiya.94.t
+	desc = rossiya.94.d
+	picture = GFX_report_event_archaeological_society
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.94.a
+		add_tech_bonus = { bonus = 0.15 uses = 1 category = humanities_tech }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = resource_extraction_tech }
+	}
+}
+
+#Warm Malls - First Heated Retail Space in Moscow (01.02.1870)
+country_event = {
+	id = rossiya.95
+	title = rossiya.95.t
+	desc = rossiya.95.d
+	picture = GFX_report_event_warm_malls
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.95.a
+		add_political_power = 10
+	}
+}
+
+#First Performance of 'Don Quixote' in Russia (01.05.1869)
+country_event = {
+	id = rossiya.96
+	title = rossiya.96.t
+	desc = rossiya.96.d
+	picture = GFX_report_event_russian_theater
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.96.a
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Death of Alexander Herzen (21.01.1870)
+country_event = {
+	id = rossiya.97
+	title = rossiya.97.t
+	desc = rossiya.97.d
+	picture = GFX_report_event_alexander_herzen
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.97.a
+		add_political_power = 10
+		add_stability = 0.01
+		add_popularity = { ideology = social_egalitarianism popularity = -0.01 }
+	}
+}
+
+#The Mendeleev Periodic Table (17.02.1869)
+country_event = {
+	id = rossiya.98
+	title = rossiya.98.t
+	desc = rossiya.98.d
+	picture = GFX_report_event_mendeleev
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.98.a
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = biochemistry_tech }
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Russian Entomological Society (15.06.1859)
+country_event = {
+	id = rossiya.99
+	title = rossiya.99.t
+	desc = rossiya.99.d
+	picture = GFX_report_event_russian_entomological_society
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.99.a
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = biochemistry_tech }
+	}
+}
+
+#Moscow Zoo (31.01.1864)
+country_event = {
+	id = rossiya.100
+	title = rossiya.100.t
+	desc = rossiya.100.d
+	picture = GFX_report_event_moscow_zoo
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.100.a
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Church of the Intercession in Pershemaysk (15.04.1869)
+country_event = {
+	id = rossiya.101
+	title = rossiya.101.t
+	desc = rossiya.101.d
+	picture = GFX_report_event_church_of_the_intercession
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.101.a
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Yablochkov Candle (01.05.1876)
+country_event = {
+	id = rossiya.102
+	title = rossiya.102.t
+	desc = rossiya.102.d
+	picture = GFX_report_event_yablochkov_candle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.102.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = electronics_devices_tech }
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Formose Reaction (01.02.1861)
+country_event = {
+	id = rossiya.103
+	title = rossiya.103.t
+	desc = rossiya.103.d
+	picture = GFX_report_event_alexander_butlerov
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.103.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+		set_temp_variable = { eoanb_prestige_change = 2 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Anna Karenina (01.03.1878)
+country_event = {
+	id = rossiya.104
+	title = rossiya.104.t
+	desc = rossiya.104.d
+	picture = GFX_report_event_anna_karenina
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.104.a
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#St. Petersburg Telegraph Museum (11.09.1872)
+country_event = {
+	id = rossiya.105
+	title = rossiya.105.t
+	desc = rossiya.105.d
+	picture = GFX_report_event_telegraph_museum
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.105.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = electronics_devices_tech }
 	}
 }
 
@@ -908,6 +1866,10 @@ country_event = {
 		name = rossiya.201.a
 		activate_mission_tooltip = RUS_mission_vic_German_Volga_Immigration_1
 		activate_mission_tooltip = RUS_mission_vic_German_Volga_Immigration_2
+		hidden_effect ={
+			activate_mission = RUS_mission_vic_German_Volga_Immigration_1
+			activate_mission = RUS_mission_vic_German_Volga_Immigration_2
+		}
 	}
 }
 
@@ -1007,6 +1969,9 @@ country_event = {
 
 	option = {
 		name = rossiya.207.a
+		hidden_effect = {
+			country_event = { id = rossiya.85 days = 700 }
+		}
 	}
 }
 
@@ -1075,7 +2040,7 @@ country_event = {
 		
 	option = {
 		name = rossiya.211.a
-		add_popularity = { ideology = collectivist_socialism popularity = 0.03 }
+		add_popularity = { ideology = ideology_radical_socialism popularity = 0.03 }
 	}
 }
 
@@ -1210,7 +2175,7 @@ country_event = {
 	option = {
 		name = rossiya.216.a
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.01 
 		}
 		add_stability = -0.01
@@ -1327,6 +2292,434 @@ country_event = {
 	option = {
 		name = rossiya.220.a
 		add_political_power = 10
+	}
+}
+
+###Juridical Reform
+#A New Court Statute
+country_event = {
+	id = rossiya.221
+	title = rossiya.221.t
+	desc = rossiya.221.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.221.a
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system
+				add_idea = RUS_idea_inefficient_judicial_system1
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system1
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system1
+				add_idea = RUS_idea_inefficient_judicial_system2
+			}
+		}
+	}
+}
+
+#Improvement of The Criminal Trial
+country_event = {
+	id = rossiya.222
+	title = rossiya.222.t
+	desc = rossiya.222.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.222.a
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system
+				add_idea = RUS_idea_inefficient_judicial_system1
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system1
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system1
+				add_idea = RUS_idea_inefficient_judicial_system2
+			}
+		}
+	}
+}
+
+#Justice of Peace
+country_event = {
+	id = rossiya.223
+	title = rossiya.223.t
+	desc = rossiya.223.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.223.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech category = economics_tech }
+	}
+}
+
+#The Jury Trial
+country_event = {
+	id = rossiya.224
+	title = rossiya.224.t
+	desc = rossiya.224.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.224.a
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system
+				add_idea = RUS_idea_inefficient_judicial_system1
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = RUS_idea_inefficient_judicial_system1
+			}
+			swap_ideas = {
+				remove_idea = RUS_idea_inefficient_judicial_system1
+				add_idea = RUS_idea_inefficient_judicial_system2
+			}
+		}
+	}
+}
+
+#Expert Legal Assistance
+country_event = {
+	id = rossiya.225
+	title = rossiya.225.t
+	desc = rossiya.225.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.225.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech category = economics_tech }
+	}
+}
+
+##Another Reforms
+
+#Specialized Excise Services
+country_event = {
+	id = rossiya.226
+	title = rossiya.226.t
+	desc = rossiya.226.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.226.a
+		
+	}
+}
+
+#Local Town Reorganization
+country_event = {
+	id = rossiya.227
+	title = rossiya.227.t
+	desc = rossiya.227.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.227.a
+		add_stability = 0.05
+		add_political_power = 100
+		add_timed_idea = {
+			idea = RUS_idea_urbanisation
+			days = 1800
+		}
+	}
+}
+
+#State Bank of the Russian Empire
+country_event = {
+	id = rossiya.228
+	title = rossiya.228.t
+	desc = rossiya.228.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.228.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+		add_ideas = RUS_idea_state_bank_russian_empire
+	}
+}
+
+#Dmitrii Zamyatnin
+country_event = {
+	id = rossiya.229
+	title = rossiya.229.t
+	desc = rossiya.229.d
+	picture = GFX_report_event_von_reutern
+		
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rossiya.229.a
+		RUS_dmitry_bludov = {
+			add_advisor_role = {
+					advisor = {
+					slot = political_advisor
+					idea_token = RUS_advisor_dmitry_bludov
+					allowed = {
+						original_tag = RUS
+					}
+					visible = {
+						
+					}
+					research_bonus = {
+						
+					}
+					traits = {
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+##Zemstvo Events
+#Zemstvo Start
+country_event = {
+	id = rossiya.230
+	title = rossiya.230.t
+	desc = rossiya.230.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.230.a
+		hidden_effect = {
+			activate_mission = RUS_mission_zemstvo_reform
+		}
+	}
+}
+
+#Abolishment of Prikazy Obshchestvennego Prizeniia
+country_event = {
+	id = rossiya.231
+	title = rossiya.231.t
+	desc = rossiya.231.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.231.a
+
+	}
+}
+
+#The Society of Russian Doctors (1858)
+country_event = {
+	id = rossiya.232
+	title = rossiya.232.t
+	desc = rossiya.232.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.232.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+		RUS_ivan_sokolov = {
+			add_advisor_role = {
+				advisor = {
+					slot = political_advisor
+					idea_token = RUS_advisor_ivan_sokolov
+					allowed = {
+					 original_tag = RUS
+					}
+					visible = {
+								
+					}
+					traits = {
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+#1864 Regulation of Public Primary Schools
+country_event = {
+	id = rossiya.233
+	title = rossiya.233.t
+	desc = rossiya.233.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.233.a
+
+	}
+}
+
+#1874 Regulation of Public Primary Schools
+country_event = {
+	id = rossiya.234
+	title = rossiya.234.t
+	desc = rossiya.234.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.234.a
+
+	}
+}
+
+#Zemstvo Stamp
+country_event = {
+	id = rossiya.235
+	title = rossiya.235.t
+	desc = rossiya.235.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.235.a
+
+	}
+}
+
+#1870 Stamp Regulation Law
+country_event = {
+	id = rossiya.236
+	title = rossiya.236.t
+	desc = rossiya.236.d
+	picture = GFX_report_event_krenholm_manufacture	
+		
+	fire_only_once = yes 
+	is_triggered_only = yes
+		
+	option = {
+		name = rossiya.236.a
+
+	}
+}
+
+#Petrovskaya Agricultural Academy
+country_event = {
+	id = rossiya.237
+	title = rossiya.237.t
+	desc = rossiya.237.d
+	picture = GFX_report_event_petrovskaya_agricultural_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.237.a
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = farming_tech }
+	}
+}
+
+###Peasant Reform
+
+#Emancipation Manifesto
+country_event = {
+	id = rossiya.238
+	title = rossiya.238.t
+	desc = rossiya.238.d
+	picture = GFX_report_event_petrovskaya_agricultural_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.238.a
+
+	}
+}
+
+#Buyback Operation
+country_event = {
+	id = rossiya.239
+	title = rossiya.239.t
+	desc = rossiya.239.d
+	picture = GFX_report_event_petrovskaya_agricultural_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.239.a
+
+	}
+}
+
+#End of Peasant Reform 
+country_event = {
+	id = rossiya.240
+	title = rossiya.240.t
+	desc = rossiya.240.d
+	picture = GFX_report_event_petrovskaya_agricultural_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rossiya.240.a
+
 	}
 }
 
@@ -1617,9 +3010,6 @@ country_event = {
 		add_timed_idea = { idea = USA_idea_alaska_purchase days = 365 }
 		custom_effect_tooltip = RUS_vic_Russian_Alaska_tooltip
 		hidden_effect = {
-			463 = { add_core_of = ALK }
-			transfer_state = 463
-			release_puppet = ALK
 			ALK = {
 				set_cosmetic_tag = ALK_LIE_company
 				swap_ideas = {
@@ -3728,7 +5118,7 @@ country_event = {
 	id = rossiya.504
 	title = rossiya.504.t
 	desc = rossiya.504.d
-	picture = GFX_report_event_krenholm_manufacture
+	picture = GFX_report_event_warsaw_petersburg_railway
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3840,29 +5230,14 @@ country_event = {
 	}
 }
 
-#Russian State Bank (12.06.1860)
-country_event = {
-	id = rossiya.509
-	title = rossiya.509.t
-	desc = rossiya.509.d
-	picture = GFX_report_event_krenholm_manufacture
-	
-	fire_only_once = yes
-	is_triggered_only = yes	
-	
-	option = {
-		name = rossiya.509.a
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
-		add_ideas = RUS_idea_state_bank_russian_empire
-	}
-}
+#509 - free to use
 
 #Agriculture Society - Congress Poland (22.12.1857)
 country_event = {
 	id = rossiya.510
 	title = rossiya.510.t
 	desc = rossiya.510.d
-	picture = GFX_report_event_krenholm_manufacture
+	picture = GFX_report_event_polish_agro_society
 	
 	fire_only_once = yes
 	is_triggered_only = yes	
@@ -3879,7 +5254,7 @@ country_event = {
 		set_temp_variable = { eoanb_prestige_change = 1 }
 		eoanb_change_prestige_score = yes
 		add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech category = farming_tech }
-		1134 = {
+		1314 = {
 			add_compliance = 5
 		}
 	}
@@ -3889,7 +5264,7 @@ country_event = {
 		add_political_power = 75
 		set_temp_variable = { eoanb_prestige_change = -1 }
 		eoanb_change_prestige_score = yes
-		1134 = {
+		1314 = {
 			add_compliance = -5
 			add_resistance = 5
 		}
@@ -3941,6 +5316,31 @@ country_event = {
 		1134 = {
 			add_compliance = -5
 			add_resistance = 5
+		}
+	}	
+}
+
+#Hughesovka
+country_event = {
+	id = rossiya.512
+	title = rossiya.512.t
+	desc = rossiya.512.d
+	picture = GFX_report_event_krenholm_manufacture
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+	
+	option = {
+		name = rossiya.512.a
+		add_political_power = 70
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			set_province_name = { id = 6474 name = "Yuzoka"}
+			set_victory_points = {
+				province = 6474
+				value = 5
+			}
 		}
 	}
 }
@@ -5134,7 +6534,7 @@ country_event = {
 	id = rossiya.802
 	title = rossiya.802.t
 	desc = rossiya.802.d
-	picture = GFX_report_event_alex_II
+	picture = GFX_report_event_russian_gatling
 		
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5150,7 +6550,7 @@ country_event = {
 	id = rossiya.803
 	title = rossiya.803.t
 	desc = rossiya.803.d
-	#picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_russian_railway_troops
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5217,7 +6617,7 @@ country_event = {
 	id = rossiya.804
 	title = rossiya.804.t
 	desc = rossiya.804.d
-	#picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_russian_railway_troops
 	
 	is_triggered_only = yes
 	
@@ -5283,7 +6683,7 @@ country_event = {
 	id = rossiya.805
 	title = rossiya.805.t
 	desc = rossiya.805.d
-	picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_russian_railway_troops
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5381,7 +6781,7 @@ country_event = {
 	id = rossiya.808
 	title = rossiya.808.t
 	desc = rossiya.808.d
-	#picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_berdan_rfile
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5529,6 +6929,45 @@ country_event = {
 	}
 }
 
+#Saint Petersburg Declaration of 1868 (11.12.1868)
+country_event = {
+	id = rossiya.814
+	title = rossiya.814.t
+	desc = rossiya.814.d	
+	picture = GFX_report_event_st_petersburg_declaration
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.814.a
+		add_stability = 0.03
+		add_war_support = -0.02
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
+	}
+}
+
+#Odessa Military Academy (1.3.1866)
+country_event = {
+	id = rossiya.815
+	title = rossiya.815.t
+	desc = rossiya.815.d	
+	picture = GFX_report_event_odessa_military_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes	
+		
+	option = {
+		name = rossiya.815.a
+		add_manpower = 5000
+		add_war_support = 0.03
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
+		custom_effect_tooltip = RUS_army_reform_effect_tt
+		add_to_variable = { RUS_army_reform_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+		add_to_variable = { RUS_army_reform_mlcf = 0.05 }
+	}
+}
+
 ### NAVY EVENTS (rossiya.901-999) ###
 
 #ENG - Russia Seeks Naval Cooperation
@@ -5605,7 +7044,7 @@ country_event = {
 	id = rossiya.904
 	title = rossiya.904.t
 	desc = rossiya.904.d
-	#picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_crimean_war_navy
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5652,7 +7091,7 @@ country_event = {
 	id = rossiya.906
 	title = rossiya.906.t
 	desc = rossiya.906.d
-	picture = GFX_report_event_sms_drache
+	picture = GFX_report_event_siberian_gunboats
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5706,12 +7145,12 @@ country_event = {
 	}
 }
 	
-#St. Petersburg Navy Schools
+#St.Petersburg Navy Schools
 country_event = {
 	id = rossiya.907
 	title = rossiya.907.t
 	desc = rossiya.907.d
-	#picture = GFX_report_event_austrian_army_1
+	picture = GFX_report_event_petersburg_navy_schools
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5817,6 +7256,7 @@ country_event = {
 	id = rossiya.911
 	title = rossiya.911.t
 	desc = rossiya.911.d
+	picture = GFX_report_event_petropavlovsk_ship
 		
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5829,19 +7269,32 @@ country_event = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
-					name = "Petropavlovsk Class"
+					#name = "Petropavlovsk Class"
+					name = "Armored frigate Sevastopol-class M1861"
 					type = ship_hull_ironclad_0
 					name_group = RUS_IRC_HISTORICAL_0
 					parent_version = 0
+					#modules = {
+					#	fixed_ship_battery_slot = ship_cannon_battery_1
+					#	fixed_ship_fire_control_system_slot = fire_control_system_0
+					#	fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
+					#	fixed_ship_armor_slot = ship_armor_capital_hardwood_1
+					#	mid_1_custom_slot = ship_cannon_battery_1
+					#	mid_2_custom_slot = ship_cannon_battery_1
+					#	front_1_custom_slot = ship_cannon_battery_1
+					#	rear_1_custom_slot = ship_cannon_battery_1
+					#}
 					modules = {
-						fixed_ship_battery_slot = ship_cannon_battery_1
-						fixed_ship_fire_control_system_slot = fire_control_system_0
-						fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
-						fixed_ship_armor_slot = ship_armor_capital_hardwood_1
-						mid_1_custom_slot = ship_cannon_battery_1
-						mid_2_custom_slot = ship_cannon_battery_1
-						front_1_custom_slot = ship_cannon_battery_1
-						rear_1_custom_slot = ship_cannon_battery_1
+			           fixed_ship_battery_slot=ship_module_ram_0
+			           fixed_ship_fire_control_system_slot=fire_control_system_0
+			           fixed_ship_engine_slot=ship_engine_steam_screw_cruiser
+			           mid_1_custom_slot=empty
+			           fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+			           mid_2_custom_slot=empty
+			           mid_3_custom_slot=empty
+			           front_1_custom_slot=ship_cannon_battery_1
+			           front_2_custom_slot=empty
+			           rear_1_custom_slot=ship_cannon_battery_1
 					}
 					#obsolete = no
 				}
@@ -5856,6 +7309,7 @@ country_event = {
 	id = rossiya.912
 	title = rossiya.912.t
 	desc = rossiya.912.d
+	picture = GFX_report_event_general_admiral
 		
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5868,19 +7322,32 @@ country_event = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
-					name = "General-Admiral Class"
-					type = ship_hull_ironclad_0
-					name_group = RUS_IRC_HISTORICAL_0
+					#name = "General-Admiral Class"
+					name = "Armored frigate General-Admiral class M1870"
+					#type = ship_hull_ironclad_0
+					type = ship_hull_ironclad_1
+					#name_group = RUS_IRC_HISTORICAL_0
+					name_group = RUS_IRC_HISTORICAL_1
 					parent_version = 0
+					#modules = {
+					#	fixed_ship_battery_slot = ship_cannon_battery_1
+					#	fixed_ship_fire_control_system_slot = fire_control_system_0
+					#	fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
+					#	fixed_ship_armor_slot = ship_armor_capital_hardwood_1
+					#	mid_1_custom_slot = ship_cannon_battery_1
+					#	mid_2_custom_slot = ship_cannon_battery_1
+					#	front_1_custom_slot = ship_cannon_battery_1
+					#	rear_1_custom_slot = ship_cannon_battery_1
+					#}
 					modules = {
-						fixed_ship_battery_slot = ship_cannon_battery_1
-						fixed_ship_fire_control_system_slot = fire_control_system_0
-						fixed_ship_engine_slot = ship_engine_steam_screw_cruiser
-						fixed_ship_armor_slot = ship_armor_capital_hardwood_1
-						mid_1_custom_slot = ship_cannon_battery_1
-						mid_2_custom_slot = ship_cannon_battery_1
-						front_1_custom_slot = ship_cannon_battery_1
-						rear_1_custom_slot = ship_cannon_battery_1
+			           fixed_ship_battery_slot=ship_module_ram_0
+			           fixed_ship_fire_control_system_slot=fire_control_system_0
+			           fixed_ship_engine_slot=ship_engine_steam_screw_cruiser
+			           fixed_ship_armor_slot=ship_armor_capital_hardwood_1
+			           rear_1_custom_slot=ship_cannon_battery_2
+			           mid_1_custom_slot=ship_cannon_battery_2
+			           mid_2_custom_slot=ship_cannon_battery_2
+			           front_1_custom_slot=ship_cannon_battery_2
 					}
 					#obsolete = no
 				}

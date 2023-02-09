@@ -12,8 +12,18 @@ leader_traits = {
 	
 	centrist = {
 		random = no
-		# Boosts centrism
+		# Boosts conservative liberalism
 		centrism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	social_liberalist = {
+		random = no
+		# Boosts social liberalism
+		ideology_social_liberalism_drift = 0.1
 		
 		ai_will_do = {
 			factor = 0
@@ -30,20 +40,10 @@ leader_traits = {
 		}
 	}
 	
-	collectivist_socialist = {
+	radical_socialist = {
 		random = no
-		# Boosts socialisms
-		collectivist_socialism_drift = 0.1
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
-	vanguard_communist = {
-		random = no
-		# Boosts communism
-		vanguard_communism_drift = 0.1
+		# Boosts radical socialism
+		ideology_radical_socialism_drift = 0.1
 		
 		ai_will_do = {
 			factor = 0
@@ -112,19 +112,9 @@ leader_traits = {
 
 	#POLITICAL ALIGNMENT TRAITS
 
-
-	vanguard_communism_alignment = {
+	ideology_radical_socialism_alignment = {
 		random = no
-		vanguard_communism_drift = 0.05
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	collectivist_socialism_alignment = {
-		random = no
-		collectivist_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.05
 		
 		ai_will_do = {
 			factor = 0
@@ -143,6 +133,15 @@ leader_traits = {
 	centrism_alignment = {
 		random = no
 		centrism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ideology_social_liberalism_alignment = {
+		random = no
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = {
 			factor = 0
@@ -735,6 +734,15 @@ leader_traits = {
 		random = no
 		radical_democracy_drift = 0.05
 		mobilization_speed = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	eoanb_academic = {
+		random = no
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
@@ -1439,7 +1447,7 @@ leader_traits = {
 		stability_factor = 0.03	
 	}
 	
-	###Prussian/German Leader Traits
+	### Prussian/German Leader Traits ###
 	
 	PRS_trait_Bismarck_Iron_Chancellor = {
 		random = no
@@ -1453,7 +1461,7 @@ leader_traits = {
 		stability_weekly = 0.001
 	}
 	
-	###Prussian/German Advisor Traits
+	### Prussian/German Advisor Traits ###
 	
 	PRS_trait_Albert_Borsig = {
 		random = no
@@ -1496,7 +1504,7 @@ leader_traits = {
 		political_power_factor = 0.07
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		collectivist_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1638,7 +1646,7 @@ leader_traits = {
 		consumer_goods_factor = 0.04
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		social_egalitarianism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1681,6 +1689,7 @@ leader_traits = {
 		political_power_factor = 0.03
 		stability_factor = 0.02
 		war_support_factor = 0.02
+		centrism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1689,7 +1698,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.05
 		production_speed_buildings_factor = 0.03
-		centrism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1705,17 +1714,18 @@ leader_traits = {
 	
 	PRS_trait_Rudolf_Virchow = {
 		random = no
-		research_speed_factor = 0.02
-		consumer_goods_factor = 0.02
-		centrism_drift = 0.05
+		research_speed_factor = 0.03
+		consumer_goods_factor = 0.01
+		ideology_social_liberalism_drift = 0.05
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 3 }
 	}
 	
 	PRS_trait_Theodor_Mommsen = {
 		random = no
-		political_power_factor = -0.02
-		research_speed_factor = 0.02
+		political_power_factor = 0.03
+		research_speed_factor = 0.01
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 2 }
 	}
@@ -1733,7 +1743,7 @@ leader_traits = {
 		political_power_factor = 0.06
 		stability_factor = 0.01
 		stability_weekly = 0.001
-		vanguard_communism_drift = 0.05
+		ideology_radical_socialism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1744,6 +1754,14 @@ leader_traits = {
 		agency_upgrade_time = -0.15
 		
 		ai_will_do = { factor = 1 }
+	}
+
+	### Saxon Leader Traits ###
+
+	SAX_trait_Beust_Trias_Promoter = {
+		random = no
+		political_power_factor = 0.05
+		trade_opinion_factor = 0.1
 	}
 	
 	### Saxon Advisor Traits ###
@@ -1761,7 +1779,7 @@ leader_traits = {
 		random = no
 		political_power_factor = -0.02
 		monthly_population = 0.02
-		centrism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 4 }
 	}
@@ -1770,6 +1788,7 @@ leader_traits = {
 		random = no
 		production_speed_buildings_factor = 0.02
 		political_power_factor = 0.04
+		centrism_drift = 0.05
 		
 		ai_will_do = { factor = 4 }
 	}
@@ -1807,7 +1826,7 @@ leader_traits = {
 		opinion_gain_monthly_same_ideology_factor = 0.15
 		war_support_factor = 0.05
 		war_support_weekly_factor = 0.1
-		centrism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1870,7 +1889,7 @@ leader_traits = {
 		political_power_factor = 0.02
 		drift_defence_factor = 0.1
 		war_support_weekly_factor = 0.25
-		centrism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -2071,7 +2090,7 @@ leader_traits = {
 		production_speed_arms_factory_factor = 0.05
 		production_speed_bunker_factor = 0.25
 		production_speed_coastal_bunker_factor = 0.25
-		social_egalitarianism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 7 }
 	}
@@ -2120,7 +2139,7 @@ leader_traits = {
 		stability_weekly = 0.001
 		stability_factor = 0.03
 		local_resources_factor = 0.03
-		social_egalitarianism_drift = 0.05
+		ideology_social_liberalism_drift = 0.05
 		
 		ai_will_do = { factor = 3 }
 	}
@@ -2147,7 +2166,7 @@ leader_traits = {
 		political_power_factor = 0.06
 		stability_factor = 0.01
 		stability_weekly = 0.001
-		collectivist_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -2597,6 +2616,58 @@ leader_traits = {
 		ai_will_do = { factor = 10 }
 	}
 	
+	### QNG Advisor Traits ###
+	
+	QNG_trait_Zuo_Zongtang = {
+		random = no
+		consumer_goods_factor = -0.03
+		local_resources_factor = 0.03
+		production_speed_farm_factor = 0.05
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	QNG_trait_Yixuan_Prince_Chun = {
+		random = no
+		political_power_gain = 0.05
+		stability_factor = 0.1
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	QNG_trait_Duan = {
+		random = no
+		stability_factor = 0.05
+		drift_defence_factor = 0.05
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	QNG_trait_Sushun = {
+		random = no
+		political_power_gain = 0.05
+		stability_weekly_factor = 0.05
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	QNG_trait_Li_Hongzhang = {
+		random = no
+		army_org_factor = 0.05
+		research_speed_factor = 0.02
+		political_power_gain = 0.05
+		
+		ai_will_do = { factor = 10 }
+	}
+	
+	QNG_trait_Keying = {
+		random = no
+		improve_relations_maintain_cost_factor = 0.1
+		opinion_gain_monthly_factor = 0.05
+		
+		ai_will_do = { factor = 10 }
+	}
+	
 	### BEL Advisor Traits ###
 	
 	BEL_trait_Guillaume_Delcourt = {
@@ -2623,7 +2694,7 @@ leader_traits = {
 	
 	SER_trait_svetozar_markovic = {
 		random = no
-		collectivist_socialism_drift =  0.05
+		ideology_radical_socialism_drift =  0.05
 		political_power_factor = 0.1
 
 		ai_will_do = { 
@@ -2793,12 +2864,136 @@ leader_traits = {
 		}
 	}
 	
+	MNT_mandator_of_the_Montenegrin_people = {
+		random = no
+		monthly_population = 0.2
+		production_speed_buildings_factor = 0.05
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
 	MNT_trait_metropolitan_of_montenegro = {
+	    political_power_gain = 0.1
+		stability_factor = 0.025
+		political_advisor_cost_factor = -0.1
 		random = no
 
 		ai_will_do = { 
 			factor = 10 
 		}
+	}
+	
+	MNT_famous_painter = {
+	    war_support_factor = 0.15
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_soldier_and_lawyer = {
+	    political_advisor_cost_factor = -0.05
+		army_morale_factor = 0.08
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_minister_of_feregin = {
+	    research_speed_factor = 0.05
+		opinion_gain_monthly = 0.02
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_lawyer_and_pioneer_of_sociology = {
+	    political_power_factor = 0.15
+		max_command_power = 30
+		trade_opinion_factor = 0.2
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+		
+	MNT_milena_vukotic= {
+        stability_factor = 0.15
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_Herzegovina_rebel_leader= {
+        army_org_factor = 0.08
+		planing_speed = 0.05
+		war_support_factor = 0.05
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_Montenegrin_sovereignty_and_international_law= {
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	
+	MNT_bosnian_educated_man= {
+		research_speed_factor = 0.08
+		production_speed_infrastructure_factor = 0.05
+		
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_Chief_of_Justice= {
+		political_power_factor = 0.1
+        conscription = 0.01
+		
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	
+	MNT_diplomat_and_treasury_keeper= {
+        opinion_gain_monthly = 0.01
+		consumer_goods_factor = -0.03
+		production_speed_buildings_factor = 0.025
+		
+		random = no
+
+		ai_will_do = { 
+			factor = 10 
+		}
+	}
+	
+	MNT_red_cross_and_metropolit= {
+	    political_power_gain = 0.1
+		stability_factor = 0.025
+		political_advisor_cost_factor = -0.1
+		attrition = -0.05
 	}
 	
 	### Montenegro Leader Traits ###
@@ -3297,5 +3492,49 @@ leader_traits = {
 		
 		production_speed_infrastructure_factor = 0.025
 		political_power_gain = -0.01
+	}
+	
+	BRA_trait_cavalry_equipment_bonus_1 = {
+		random = no
+		equipment_bonus = {
+			cavalry_equipment = {
+				instant = yes
+				build_cost_ic = -0.15
+			}
+		}
+	}
+	
+	BRA_trait_cavalry_equipment_bonus_2 = {
+		random = no
+		equipment_bonus = {
+			cavalry_equipment = {
+				instant = yes
+				build_cost_ic = -0.25
+			}
+		}
+	}
+	
+	BRA_trait_uniform_equipment_bonus_1 = {
+		random = no
+		equipment_bonus = {
+			uniform_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+				defense = 0.02
+				max_organisation = 0.12
+			}
+		}
+	}
+	
+	BRA_trait_uniform_equipment_bonus_2 = {
+		random = no
+		equipment_bonus = {
+			uniform_equipment = {
+				instant = yes
+				build_cost_ic = -0.2
+				defense = 0.035
+				max_organisation = 0.2
+			}
+		}
 	}
 }

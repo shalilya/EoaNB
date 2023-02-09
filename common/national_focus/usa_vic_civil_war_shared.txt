@@ -46,8 +46,7 @@
 			if = {
 				limit = {
 					OR = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = social_egalitarianism
 						has_government = anarchism
 					}
@@ -1405,7 +1404,10 @@
 		bypass = {
 			OR = {
 				owns_state = 463
-				RUS = { NOT = { owns_state = 463 } }
+				RUS = { NOT = {ALK = {
+					owns_state = 463
+					is_subject_of = RUS
+				} } }
 			}
 		}
 		relative_position_id = USA_diplomacy_europe

@@ -1,22 +1,45 @@
 ﻿l_english:
 
+###Starting National Spirits
+QNG_idea_banner_armies: "Banner System"
+QNG_outdated_army: "Outdated Army"
+QNG_outdated_army1: "Outdated Army"
+QNG_outdated_army1a: "Outdated Army"
+QNG_outdated_army1b: "Outdated Army"
+QNG_outdated_army2a: "Outdated Army"
+QNG_outdated_army2b: "Outdated Army"
+QNG_outdated_army1c: "Outdated Army"
+QNG_outdated_army2c: "Outdated Army"
+QNG_idea_opium_crissis: "Opium Crisis"
+QNG_idea_opium_crissis_desc: "Following the defeat of the First Opium War, Opium Markets have been flowing in with tons of Opium being fed to the chinese population, as the nation's treasury was flown out to these opium markets as such."
+QNG_idea_han_nationalism: "Rising Han Chinese Nationalism"
+QNG_idea_han_nationalism_desc: "The nation faces itself with increase of Han Chinese Nationalism, leading to an increase of Han Chinese revolts or even rebellions, with the Empire in a state of near collapse."
+QNG_idea_devastation_first_opium_war: "Devastation of the First Opium War"
+QNG_idea_devastation_first_opium_war_desc: "A Scar of Humiliation from the First Opium War, the Qing suffered huge humiliation and was hit with the reality that their empire was heavily backwards compared to the west.Special Measures will be taken to help Qing become the supreme Empire in the worldor at least confront the barbarians."
+
 	########################################################################################
 	########################################################################################
 	##################################### IDEAS ############################################
 	########################################################################################
 	########################################################################################
 
- QNG_foochow_arsenal: "The Foochow Arsenal"
- QNG_foochow_arsenal_2: "The Foochow Arsenal"
- QNG_foochow_arsenal_3: "The Foochow Arsenal"
+ QNG_foochow_arsenal: "Foochow Arsenal"
+ QNG_foochow_arsenal_2: "Foochow Arsenal"
+ QNG_foochow_arsenal_3: "Foochow Arsenal"
+ QNG_jiangnan_arsenal: "Jiangnan Arsenal"
+ QNG_jiangnan_arsenal_2: "Jiangnan Arsenal"
  QNG_bright_young_sailors: "Bright Young Sailors"
  QNG_patrolling_the_eastern_seas: "Patrolling the Eastern Seas"
  QNG_civilian_industry_improvements: "Civilian Industry Focus"
  QNG_civilian_industry_improvements2: "Civilian Industry Focus"
  QNG_civilian_industry_improvements3: "Civilian Industry Focus"
  QNG_civilian_industry_improvements4: "Civilian Industry Focus"
+ QNG_restore_national_facilities: "Restore National Facilities"
  SIC_multi_ethnic_army: "Multi-Ethnic Army"
  SIC_multi_ethnic_army_desc: "The peasants of Guizhou have risen up and have begun protesting the new grain prices. They come from all sorts of areas, bringing unique fighting styles to the table and allowing us to help vanquish the Qing!"
+ 
+ fuzhou_shipyard: "Foochow Arsenal"
+ chinese_engineer_and_mining_company: "Chinese Engineering and Mining Company"
 
 	########################################################################################
 	########################################################################################
@@ -138,11 +161,13 @@
  qing_reb.48.t: "Gaoshan Declines"
  qing_reb.49.t: "Unifaction of Taiwan"
  
- 
+ qing.501.t: "Creation of the Chinese Engineering and Mining Company"
+ qing.501.a: "Accept"
+ qing.502.t: "Foundation of the Kaiping Mines"
+ qing.502.a: "Accept"
  
  QNG_rebel_uprising: "Rebel Uprising"
  QNG_rebel_uprising_lost: "Rebel Spirit Failing"
- QNG_idea_banner_armies: "Banner System"
  QNG_idea_nian_cavalry: "Nian Cavalry"
 
 	########################################################################################
@@ -159,6 +184,9 @@ QNG_Industry_tooltip:0 "§YWe will begin looking over our Industry§!"
 QNG_PTH_yunnan_peace:0 "Panthay Victory"
 EOANB_cant_call_autonomus_navies:0 "Is a Autonomus Navy"
 
+QNG_focus_construct_the_fuzhou_navy_shipyard_tt: "§Y[ROOT.GetNameWithFlag]§! unlocks company partnership §YFoochow Arsenal§!"
+QNG_focus_chinese_engineer_and_mining_company_tt: "§Y[ROOT.GetNameWithFlag]§! unlocks company partnership §YChinese Engineering and Mining Company§!"
+
 QNG_Tongzhi_emperor_name: "Emperor Tongzhi"
 QNG_Guangxu_Emperor_name:0 "Emperor Guangxu"
 QNG_insulting_audience:0 "Insulting Audience"
@@ -168,6 +196,7 @@ QNG_insulting_audience:0 "Insulting Audience"
 	#################################### FOCUSES ###########################################
 	########################################################################################
 	########################################################################################
+    
 QNG_gxu_issue_of_famine:0 "Issue of the Famine"
 QNG_gxu_rasing_relief_funds:0 "Rasing Relief Funds"
 QNG_gxu_gaining_foreign_aid:0 "Gaining Foreign Aid"
@@ -275,10 +304,10 @@ QNG_Jin_Ling_Arsenal:0 "Jinling Arsenal"
 QNG_Jin_Ling_Arsenal_desc:0 "To help further the industrialization of the army, we have been ordered to construct an arsenal in the city of Jinling, this will act as a storage point for weapons and will also be a construction place for weapons and other military items."
 QNG_Jin_Ling_Machine_Factory:0 "Jinling Machine Factory"
 QNG_Jin_Ling_Machine_Factory_desc:0 "Alongside the arsenal, we also have orders to construct multiple machine factories inside the city of Jinling, these will help with making machine parts for construction, and smaller things, like parts for trains and weapons."
-QNG_Jiangnan_Arsenal:0 "Jiangnan Arsenal"
-QNG_Jiangnan_Arsenal_desc:0 "In order to forward modernization and industrialization, this arsenal shall help with the manufacture of arms and the study of western literature and western languages, along with western studies."
-QNG_Jiangnan_Arsenal_Naval_Factory:0 "Jiangnan Arsenal Naval Factory"
-QNG_Jiangnan_Arsenal_Naval_Factory_desc:0 "With the Jiangnan Arsenal so close to the ocean, near the city of Shanghai, we can turn a section of the arsenal into a naval factory, this can help with our naval fleets in the area, and will help defend our coasts for the foreseeable future."
+#QNG_Jiangnan_Arsenal:0 "Jiangnan Arsenal"
+#QNG_Jiangnan_Arsenal_desc:0 "In order to forward modernization and industrialization, this arsenal shall help with the manufacture of arms and the study of western literature and western languages, along with western studies."
+#QNG_Jiangnan_Arsenal_Naval_Factory:0 "Jiangnan Arsenal Naval Factory"
+#QNG_Jiangnan_Arsenal_Naval_Factory_desc:0 "With the Jiangnan Arsenal so close to the ocean, near the city of Shanghai, we can turn a section of the arsenal into a naval factory, this can help with our naval fleets in the area, and will help defend our coasts for the foreseeable future."
 QNG_Expand_the_Jiangnan_Arsenal:0 "Expand the Jiangnan Arsenal"
 QNG_Expand_the_Jiangnan_Arsenal_desc:0 "With many resources and other factories around, we can use some of these to expand the Jiangnan arsenal, this will help increase military and industrial output in the region, and will also help make items not made in other factories."
 QNG_Beiyang_Machine_Factory:0 "Beiyang Machine Factory"
@@ -478,20 +507,19 @@ CHI_rse_an_official_army:0 "Building a Official Army"
 CHI_rse_army_for_the_state:0 "The Official Army"
 CHI_rse_oaths_to_emps:0 "Demand Oaths to the Emperor"
 
-eoanb_decision_CHI_unite_china_force: "Take [From.GetName] by force"
+eoanb_decision_CHI_unite_china_force:0 "Take [From.GetName] by force"
 eoanb_decision_CHI_unite_china_diplo:0 "Integrate [From.GetName]"
 CHI_is_rival:0 "Is a Rival"
 CHI_idea_military_bureau:0 "Military Bureau"
 
-CHI_idea_insufficient_army: "Insufficient Army"
+CHI_idea_insufficient_army:0 "Insufficient Army"
 CHI_idea_insufficient_army_2:0 "Insufficient Army"
 CHI_idea_settling_internal_affairs:0 "Settling Internal Affairs"
 CHI_idea_settling_foreign_affairs:0 "Settling Foreign Affairs"
 
-CHI_develop_military_industry_successor: "Developing Military Industry"
+CHI_develop_military_industry_successor:0 "Developing Military Industry"
 CHI_develop_naval_industry_successor:0 "Developing Naval Industry"
 
-QNG_outdated_army: "Outdated Army"
 QNG_army_funding:0 "Outdated Army"
 QNG_army_funding_2:0 "Improving Army"
 QNG_army_funding_3:0 "Improving Army"
@@ -668,6 +696,14 @@ tai_ways_of_the_west:0 "Ways of the West"
  QNG_Advisor_Yixuan_desc: ""
  TAI_1857_Leader_desc: "Born into a poor family in 1814 in Guangdong province, the future Tianwang of the Taiping Heavenly Kingdom Hong Xiuquan was touted to be high in intelligence. However as Hong took the government examinations several times he was unable to obtain a degree. After a period of emotional turmoil Hong turned to Christianity becoming a self-declared Christian."
  
+ ###Advisors Traits
+ QNG_trait_Zuo_Zongtang: "Agriculture Expert"
+ QNG_trait_Yixuan_Prince_Chun: "Modest Official"
+ QNG_trait_Duan: "Hardline Conservative"
+ QNG_trait_Sushun: "Consulter of the Emperor"
+ QNG_trait_Li_Hongzhang: "Enthusiast Reformer"
+ QNG_trait_Keying: "Experienced Diplomat"
+ 
 CHI_rsw_rebels_to_state:0 "From Rebels to State"
 CHI_rsw_removing_manchu_influence:0 "Removing Manchu Influence"
 CHI_rsw_kowtow:0 "Kowtow"
@@ -798,7 +834,19 @@ QNG_jiangnan_arsenal_2_mission:0 "Expansion of the Jiangnan Arsenal"
 QNG_jin_ling_arsenal_mission:0 "Construction of the Jinling Arsenal"
 QNG_beiyang_machine_factory_mission:0 "Construction of the Beiyang Machine Factory"
 QNG_beiyang_machine_factory_dockyard_mission:0 "Construction of the Beiyang Dockyards"
+QNG_fuzhou_navy_shipyard: "Construction of the Foochow Arsenal"
+QNG_fuzhou_navy_shipyard_expansion: "Expansion of the Foochow Arsenal"
+QNG_construction_anqing_arsenal: "Construction of the Anqing Arsenal"
+QNG_construction_shanghai_arsenal: "Construction of The Shanghai Arsenal"
+QNG_decision_lanzhou_arsenal: "Construction of The Lanzhou Arsenal"
+QNG_decision_lanzhou_fabric_factory: "Construction of The Lanzhou Fabric Factory"
+QNG_decision_hubei_fabric_factory: "Construction of The Hubei Fabric Factory"
+QNG_decision_guizhou_ironworks: "Construction of The Guizhou Ironworks"
+QNG_decision_hanyang_ironworks: "Construction of The Hanyang Ironworks"
+QNG_decision_ping_hsiang_coal_mines: "Foundation of The Ping Hsiang Coal Mines"
+QNG_decision_keelung_coal_mine: "Foundation of The Keelung Coal Mines"
+QNG_decision_foreign_weapon_manuals: "Study Western Weapon Designs"
+QNG_decision_foreign_weapon_manuals_desc: "Our scholars studying western weapon designs will give them greater insight on foreign equipment design."
 CHI_idea_tongwen_guan:0 "Tongwen Guan"
 eoanb_decision_QNG_retake_dali:0 "Retake Dali"
 CHI_industrialization_category:0 "Self Strengthing Movement"
-

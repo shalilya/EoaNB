@@ -736,7 +736,6 @@ eoanb_category_economic = {
 
 		remove_effect = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
-			#99 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 			48 = { add_extra_state_shared_building_slots = 1 }
 			build_railway = {
 				level = 1
@@ -799,10 +798,69 @@ eoanb_category_economic = {
 			base = 1000
 		}
 	}
-	
-	
-##DECISIONS BEYOND THIS POINT ARE NOT FULLY IMPLEMENTED!!!##
-	
+
+	BUL_decision_sofia_pernik_railway = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = BUL_focus_link_sofia_pernik
+		}
+
+		visible = {
+			48 = { is_owned_by = BUL }
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 48
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		
+		days_remove = 200
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 48 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			48 = { add_extra_state_shared_building_slots = 1 }
+			build_railway = {
+				level = 1
+				path = {
+					949
+					935
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
 	
 	BUL_decision_company_czech = {
 		icon = coal
@@ -815,13 +873,21 @@ eoanb_category_economic = {
 			has_completed_focus = BUL_focus_bulgarian_technical_company
 		}
 
-		available = { }
+		available = {
+			date > 1894.12.31
+		}
 
-		modifier = { }
+		modifier = { consumer_goods_factor = 0.1 }
 
 		days_remove = 60
 
-		complete_effect = { }
+		complete_effect = { 
+			add_tech_bonus = {
+				bonus = 0.7
+				uses = 1
+				category = economics_tech
+			}
+		}
 
 		remove_effect = {  }
 
@@ -841,13 +907,21 @@ eoanb_category_economic = {
 			has_completed_focus = BUL_focus_bulgarian_technical_company
 		}
 
-		available = { }
+		available = { 
+			date > 1894.12.31
+		}
 
 		modifier = { }
 
 		days_remove = 60
 
-		complete_effect = { }
+		complete_effect = { 
+			add_tech_bonus = {
+				bonus = 0.7
+				uses = 1
+				category = biochemistry_tech
+			}
+		}
 
 		remove_effect = {  }
 
@@ -871,7 +945,10 @@ eoanb_category_economic = {
 			date > 1893.1.1
 		}
 
-		modifier = { }
+		modifier = { 
+			consumer_goods_factor = -0.02
+			production_speed_buildings_factor = -0.1
+		}
 
 		days_remove = 60
 
@@ -883,26 +960,112 @@ eoanb_category_economic = {
 			base = 0
 		}
 	}
-	
-	BUL_decision_introducing_first_public_pensions = {
-		icon = coal
+
+	BUL_decision_railway_to_sea = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = BUL_focus_connect_capital_sea
+		}
+
+		visible = {
+			48 = { is_owned_by = BUL }
+			211 = { is_owned_by = BUL }
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 48
+				state = 211
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		
+		days_remove = 730
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { 
+				owns_state = 48 
+				owns_state = 211
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			48 = { add_extra_state_shared_building_slots = 1 }
+			211 = { add_extra_state_shared_building_slots = 1 }
+			build_railway = {
+				level = 1
+				path = {
+					13862
+					949
+					6982
+					6952
+					6814
+					6842
+					9769
+					649
+					9783
+				}
+			}
+			set_temp_variable = {
+				eoanb_prestige_change = 2
+			}
+			eoanb_change_prestige_score = yes
+			EOANBSYS_institutions_innovative_add_one = yes
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_decision_british_credit = {
+		icon = money
 		fire_only_once = yes
 		cost = 25
 
 		allowed = { tag = BUL }
 
 		visible = {
-			has_country_flag = BUL_flag_rise_in_the_intelligensia
+			has_completed_focus = BUL_focus_foreign_loans
 		}
 
 		available = {
+			date > 1893.1.1
 		}
 
-		modifier = { }
+		modifier = { 
+		}
 
-		days_remove = 60
+		days_remove = 35
 
 		complete_effect = { 
+			ENG = {
+				country_event = eoanb_bulgaria.14
+			}
 		}
 
 		remove_effect = {  }
@@ -911,11 +1074,466 @@ eoanb_category_economic = {
 			base = 0
 		}
 	}
+
+	BUL_decision_austrian_bank_lend = {
+		icon = money
+		fire_only_once = yes
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_foreign_loans
+		}
+
+		available = {
+			date > 1893.1.1
+		}
+
+		modifier = { 
+		}
+
+		days_remove = 35
+
+		complete_effect = { 
+			AUS = {
+				country_event = eoanb_bulgaria.14
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_parrel_railway = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = BUL_focus_parallel_track_line
+		}
+
+		visible = {
+			48 = { is_owned_by = BUL }
+			1023 = { is_owned_by = BUL }
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 48
+				state = 1023
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		
+		days_remove = 500
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { 
+				owns_state = 48 
+				owns_state = 1023
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			1023 = { add_extra_state_shared_building_slots = 1 }
+			build_railway = {
+				level = 1
+				path = {
+					13862
+					6982
+					6923
+					6862
+					6814
+				}
+			}
+			set_temp_variable = {
+				eoanb_prestige_change = 2
+			}
+			eoanb_change_prestige_score = yes
+			EOANBSYS_institutions_innovative_add_one = yes
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_decision_BUL_OTO_railway = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = BUL_focus_skopije
+		}
+
+		visible = {
+			has_country_flag = OTO_accept_flag
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 48
+				state = 106
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		
+		days_remove = 150
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 48 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			build_railway = {
+				level = 1
+				path = {
+					949
+					939
+					907
+					3882
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+				clr_country_flag = OTO_accept_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_decision_BUL_OTO_railway2 = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			BUL = {
+				has_completed_focus = BUL_focus_skopije
+			}
+		}
+
+		visible = {
+			BUL = {
+				has_country_flag = OTO_accept_flag
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 341
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 125
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 341 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			build_railway = {
+				level = 1
+				path = {
+					11842
+					13818
+					9902
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+				clr_country_flag = OTO_accept_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_decision_russian_railway = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			BUL = {
+				has_completed_focus = BUL_focus_danube_shipping
+			}
+		}
+
+		visible = {
+			BUL = {
+				has_completed_focus = BUL_focus_danube_shipping
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 341
+				state = 211
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 210
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 341 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			build_railway = {
+				level = 1
+				path = {
+					949
+					965
+					793
+					3796
+					9610
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+				clr_country_flag = RUS_railway_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_decision_austrian_railway = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			BUL = {
+				has_completed_focus = BUL_focus_danube_shipping
+			}
+		}
+
+		visible = {
+			BUL = {
+				has_completed_focus = BUL_focus_danube_shipping
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 341
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 100
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 341 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			build_railway = {
+				level = 1
+				path = {
+					949
+					965
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+				clr_country_flag = AUS_railway_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	BUL_mission_ruse_port = { 
+
+		icon = railway
+		
+		allowed = { tag = BUL }
+
+		available = {
+			77 = {
+				dockyard > 1
+			}
+		}
+
+		visible = {
+			BUL = {
+				has_completed_focus = BUL_focus_ruse_port_plant
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 77
+			}
+		}
+
+		activation = { always = no }
+
+        fire_only_once = yes
+		
+		is_good = no
+
+        days_mission_timeout = 2000
+
+        timeout_effect = {
+	        add_political_power = -50
+			add_stability = -0.05
+        }
+
+        complete_effect = {
+            
+        }
+
+        ai_will_do = {
+			base = 100
+		}
+	}
+	
+	#BUL_decision_introducing_first_public_pensions = {
+	#	icon = coal
+	#	fire_only_once = yes
+	#	cost = 25
+	#
+	#	allowed = { tag = BUL }
+	#
+	#	visible = {
+	#		has_country_flag = BUL_flag_rise_in_the_intelligensia
+	#	}
+	#
+	#	available = {
+	#	}
+	#
+	#	modifier = { }
+	#
+	#	days_remove = 60
+	#
+	#	complete_effect = { 
+	#	}
+	#
+	#	remove_effect = {  }
+	#
+	#	ai_will_do = {
+	#		base = 0
+	#	}
+	#}
 }
 
 political_actions = {
 	BUL_decision_knayz_visit_with_greek_heir_in_london = {
-		icon = coal
+		icon = constitution
 		fire_only_once = yes
 		cost = 25
 
@@ -933,6 +1551,789 @@ political_actions = {
 		days_remove = 0
 
 		complete_effect = { 
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_first_gov = {
+		icon = constitution
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_new_knyaz
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_new_knyaz
+		}
+
+		modifier = { }
+
+		days_remove = 0
+
+		complete_effect = { 
+			add_stability = 0.03
+			add_political_power = 50
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_appoint_agent_belgrade = {
+		icon = constitution
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		modifier = { }
+
+		days_remove = 15
+
+		complete_effect = { 
+			add_opinion_modifier = {
+				target = SER
+				modifier = improved_relations
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_appoint_agent_bucharest = {
+		icon = constitution
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		modifier = { }
+
+		days_remove = 15
+
+		complete_effect = { 
+			add_opinion_modifier = {
+				target = ROM
+				modifier = improved_relations
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_appoint_agent_tsarigrad = {
+		icon = constitution
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_bulgarian_diplomatic_agents
+		}
+
+		modifier = { }
+
+		days_remove = 15
+
+		complete_effect = { 
+			add_opinion_modifier = {
+				target = OTO
+				modifier = improved_relations
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_martial_law_varna = {
+		icon = constitution
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_turkish_riots
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_turkish_riots
+		}
+
+		modifier = { }
+
+		days_remove = 35
+
+		complete_effect = { 
+			add_stability = 0.03
+			211 = {
+				add_state_modifier = {
+					modifier = {
+						conscription_factor = 0.25
+						production_speed_buildings_factor = 0.25
+					}
+				}
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_ohrid_con = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_ohrid_conspiracy
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_ohrid_conspiracy
+		}
+
+		modifier = { }
+
+		days_remove = 25
+
+		complete_effect = { 
+			106 = {
+				add_resistance = 40
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_demand_bishops_send = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 25
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_exarchate
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_exarchate
+		}
+
+		modifier = { }
+
+		days_remove = 25
+
+		complete_effect = { 
+			add_political_power = 50
+			add_stability = 0.01
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_establish_macedonian_odrinian_com = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_vmoro
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_vmoro
+		}
+
+		modifier = { }
+
+		days_remove = 35
+
+		complete_effect = { 
+			#country_event = eoanb_bulgaria.23
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_dissolve_state_council = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_idea = BUL_idea_state_council
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_amnesty_decree
+		}
+
+		modifier = { }
+
+		days_remove = 35
+
+		complete_effect = { 
+			remove_ideas = BUL_idea_state_council
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_search_for_new_knyaz = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_three_member_delegation
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_three_member_delegation
+		}
+
+		modifier = { }
+
+		days_remove = 90
+
+		complete_effect = { 
+			country_event = eoanb_bulgaria.36
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_execute_kosta = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_three_member_delegation
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_kosta_panitsa_conspiracy
+		}
+
+		modifier = { }
+
+		days_remove = 10
+
+		complete_effect = { 
+			increase_ps_by_one = yes
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_arrest_political_op = {
+		icon = Politic
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_repress_opposition
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_repress_opposition
+		}
+
+		modifier = { }
+
+		days_remove = 10
+
+		complete_effect = { 
+			add_stability = -0.25
+			add_political_power = 100
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+}
+
+eoanb_category_military = {
+	BUL_decision_impose_prov_regulations = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 20
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_decree_23_war_ministry
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_decree_23_war_ministry
+		}
+
+		modifier = { }
+
+		days_remove = 20
+
+		complete_effect = { 
+			add_war_support = 0.03
+			add_tech_bonus = { 
+				bonus = 0.5 
+				uses = 1 
+				category = rifle_equipment_techs
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_rus_officer_and_sergeant = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_learn_russo_turkish_war
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_learn_russo_turkish_war
+		}
+
+		modifier = { 
+			experience_gain_army_unit = 0.01
+		}
+
+		days_remove = 60
+
+		complete_effect = { 
+			add_ideas = BUL_idea_rus_generals
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_establish_training_squad = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_national_miliatary_university
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_national_miliatary_university
+		}
+
+		modifier = { 
+			experience_gain_army_factor = 0.01
+		}
+
+		days_remove = 120
+
+		complete_effect = { 
+			add_tech_bonus = { 
+				bonus = 0.25
+				uses = 1 
+				category = land_doctrine
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_establish_paramedic_school = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_national_miliatary_university
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_national_miliatary_university
+		}
+
+		modifier = { 
+
+		}
+
+		days_remove = 60
+
+		complete_effect = { 
+			add_tech_bonus = { 
+				bonus = 0.25
+				uses = 1 
+				category = support_tech
+			}
+			add_manpower = 100
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_organise_rus_equipement = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_general_piotor_parensov
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_general_piotor_parensov
+		}
+
+		modifier = { 
+
+		}
+
+		days_remove = 60
+
+		complete_effect = { 
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_rifle_3
+				amount = 1500
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = rifled_cannon_equipment_1
+				amount = 100
+				producer = RUS
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_east_corpus = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		modifier = { 
+			training_time_factor = -0.05
+		}
+
+		days_remove = 90
+
+		complete_effect = { 
+			
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_west_corpus = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		modifier = { 
+			weekly_manpower = 100
+		}
+
+		days_remove = 120
+
+		complete_effect = { 
+			
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_north_detatchment = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_corps_organisation
+		}
+
+		modifier = { 
+			minimum_training_level = -0.15
+		}
+
+		days_remove = 90
+
+		complete_effect = { 
+			
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_establish_hydrographic_service = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 50
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_ruse_port_plant
+		}
+
+		available = {
+			has_completed_focus = BUL_focus_ruse_port_plant
+		}
+
+		modifier = { 
+
+		}
+
+		days_remove = 60
+
+		complete_effect = { 
+			add_tech_bonus = { 
+				bonus = 0.25
+				uses = 1 
+				category = naval_equipment
+			}
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_peoples_militia = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 10
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_peoples_militia
+		}
+
+		available = {
+			has_defensive_war = yes
+		}
+
+		modifier = { 
+		}
+
+		days_remove = 15
+
+		complete_effect = { 
+			load_oob = BUL_BRCC_weak
+		}
+
+		remove_effect = {  }
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	BUL_decision_defend_sofia = {
+		icon = artillery
+		fire_only_once = yes
+
+		cost = 10
+
+		allowed = { tag = BUL }
+
+		visible = {
+			has_completed_focus = BUL_focus_mobilise_at_ottoman_border
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		modifier = {
+			dig_in_speed_factor = 0.3
+		}
+
+		days_remove = 14
+
+		complete_effect = { 
+			
 		}
 
 		remove_effect = {  }

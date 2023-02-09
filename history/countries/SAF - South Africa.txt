@@ -56,7 +56,7 @@
 	set_variable = { most_favoured_country = ENG.id }
 
 	set_politics = {
-		ruling_party = traditional_conservatism
+		ruling_party = autocracy
 	}
 
 	#Diplomacy
@@ -71,14 +71,14 @@
 
 set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 35
-		traditional_conservatism = 65
+		traditional_conservatism = 15
 		radical_democracy = 0
 		chauvinist_populism = 0
-		autocracy = 0
+		autocracy = 50
 		fundamentalism = 0
 }
 
@@ -120,10 +120,6 @@ set_popularities = {
 	recruit_character = NZL_george_edward_grey
 	recruit_character = SAF_Robert_Henry_Wynyard
 	recruit_character = SAF_Philip_Edmond_Wodehouse
-	recruit_character = SAF_Charles_Craufurd_Hay
 	recruit_character = SAF_Henry_Barkly
-	recruit_character = SAF_Henry_Bartle_Frere
-	recruit_character = SAF_Henry_Hugh_Clifford
-	recruit_character = SAF_George_Strahan
-	recruit_character = SAF_character_william_jervois
+	recruit_character = SAF_John_Molteno
 }
