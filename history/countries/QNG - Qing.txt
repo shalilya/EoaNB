@@ -47,6 +47,9 @@
 	QNG_idea_arrow_incident
 	QNG_idea_banner_armies
 	QNG_outdated_army
+	QNG_idea_opium_crissis
+	QNG_idea_han_nationalism
+	QNG_idea_devastation_first_opium_war
   }
   
     #Rivals 
@@ -65,8 +68,8 @@ activate_mission = QNG_PTH_yunnan_peace
 
 set_popularities = {
     anarchism = 0
-    vanguard_communism = 0
-    collectivist_socialism = 0
+    ideology_social_liberalism = 0
+    ideology_radical_socialism = 0
     social_egalitarianism = 0
     centrism = 0
     traditional_conservatism = 0
@@ -150,6 +153,20 @@ set_popularities = {
 	recruit_character = QNG_great_regency_council
 	recruit_character = QNG_Tongzhi_emperor
 	recruit_character = QNG_Guangxu_Emperor
+	recruit_character = QNG_Zeng_Guofan
+	
+	#Advisors
+	recruit_character = QNG_weng_tonghe
+	recruit_character = QNG_keying
+	recruit_character = QNG_yixuan_princ_chun
+	recruit_character = QNG_duan
+	recruit_character = QNG_shushun
+	recruit_character = QNG_prince_gong
+	recruit_character = QNG_prosper_giquel
+	recruit_character = QNG_john_fryer
+	
+	#Theorists
+	recruit_character = QNG_li_hongzhang
 
 }
 
@@ -220,8 +237,8 @@ set_popularities = {
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0

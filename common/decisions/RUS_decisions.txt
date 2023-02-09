@@ -325,7 +325,7 @@ RUS_Industrialisation_decisions = {
 		#allowed = { tag = RUS }
 
 		visible = {
-			has_completed_focus = RUS_vic_Petersburg_Warsaw_Railway
+			
 		}
 
 		available = {
@@ -397,7 +397,7 @@ RUS_Industrialisation_decisions = {
 		#allowed = { tag = RUS }
 
 		visible = {
-			has_completed_focus = RUS_vic_Petersburg_Warsaw_Railway
+			
 		}
 
 		available = {
@@ -473,7 +473,7 @@ RUS_Industrialisation_decisions = {
 		#allowed = { tag = RUS }
 
 		visible = {
-			has_completed_focus = RUS_vic_Urbanisation_Committee
+			
 		}
 
 		available = {
@@ -1081,7 +1081,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		activation = {
-			has_completed_focus = RUS_vic_Support_Volga_German_Farming
+			always = no
 		}
 
 		highlight_states = {
@@ -1137,7 +1137,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		activation = {
-			has_completed_focus = RUS_vic_Support_Volga_German_Farming
+			always = no
 		}
 
 		highlight_states = {
@@ -1195,7 +1195,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		activation = {
-			has_completed_focus = RUS_vic_Factories_In_Tsaritsyn
+			always = no
 		}
 
 		highlight_states = {
@@ -1525,7 +1525,7 @@ RUS_Industrialisation_decisions = {
 		#allowed = { tag = RUS }
 
 		visible = {
-			has_completed_focus = RUS_vic_Moscow_Tsaritsyn_Railway
+			
 		}
 
 		available = {
@@ -1583,7 +1583,7 @@ RUS_Industrialisation_decisions = {
 		}
 
 		activation = {
-			has_completed_focus = RUS_vic_Alaskan_Gold
+			always = no
 		}
 
 		highlight_states = {
@@ -2617,9 +2617,15 @@ RUS_Industrialisation_decisions = {
 		days_mission_timeout = 800
 
 		timeout_effect = {
-			add_political_power = -50
-			add_command_power = -80
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_war_support = -0.05
+			}
 		}
+		
 		complete_effect = {
 			add_stability = 0.01
 			add_command_power = 15
@@ -2634,57 +2640,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Tula_Armory_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Tula_Armories
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Tula_Armory
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Tula_Armories
-			num_of_civilian_factories_available_for_projects > 6
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 223
-			controls_state = 223
-			223 = { arms_factory < 1 }
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 480
-
-		modifier = {
-			civilian_factory_use = 7
-		}
-
-		remove_effect = { 
-			223 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 9
-			}
 		}
 	}
 
@@ -2713,9 +2668,15 @@ RUS_Industrialisation_decisions = {
 		days_mission_timeout = 900
 
 		timeout_effect = {
-			add_political_power = -50
-			add_stability = -0.01
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
+		
 		complete_effect = {
 			add_political_power = 40
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = mechanical_engineering_tech }
@@ -2724,57 +2685,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Moscows_Factories_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Moscows_Factories
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Moscows_Factories
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Moscows_Factories
-			num_of_civilian_factories_available_for_projects > 7
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 953
-			controls_state = 953
-			953 = { industrial_complex < 2 }
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 520
-
-		modifier = {
-			civilian_factory_use = 8
-		}
-
-		remove_effect = { 
-			953 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 10
-			}
 		}
 	}
 
@@ -2893,9 +2803,15 @@ RUS_Industrialisation_decisions = {
 		days_mission_timeout = 800
 
 		timeout_effect = {
-			add_political_power = -50
-			add_stability = -0.01
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
+		
 		complete_effect = {
 			add_political_power = 40
 			navy_experience = 25
@@ -2908,57 +2824,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Navy_Expansion_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Invest_In_The_Navy
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Navy_Expansion
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Invest_In_The_Navy
-			num_of_civilian_factories_available_for_projects > 4
-			ROOT = {
-				is_ai = yes
-			}
-			195 = { dockyard < 3 }
-			owns_state = 195
-			controls_state = 195
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 420
-
-		modifier = {
-			civilian_factory_use = 5
-		}
-
-		remove_effect = { 
-			195 = {
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 8
-			}
 		}
 	}
 
@@ -3040,9 +2905,15 @@ RUS_Industrialisation_decisions = {
 		days_mission_timeout = 900
 
 		timeout_effect = {
-			add_political_power = -50
-			add_stability = -0.01
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
 		}
+		
 		complete_effect = {
 			add_stability = 0.02
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = mechanical_engineering_tech }
@@ -3051,57 +2922,6 @@ RUS_Industrialisation_decisions = {
 
 		ai_will_do = {
 			base = 1
-		}
-	}
-
-	RUS_mission_vic_Factories_In_Warsaw_ai = {
-
-		visible = {
-			has_completed_focus = RUS_vic_Factories_In_Warsaw
-			ROOT = {
-				is_ai = yes
-			}
-			has_active_mission = RUS_mission_vic_Factories_In_Warsaw
-		}
-
-		available = {
-			has_completed_focus = RUS_vic_Factories_In_Warsaw
-			num_of_civilian_factories_available_for_projects > 7
-			ROOT = {
-				is_ai = yes
-			}
-			owns_state = 1314
-			controls_state = 1314
-			1314 = { industrial_complex < 2 }
-		}
-
-		fire_only_once = yes
-
-		is_good = yes			
-		  
-		cost = 0
-		days_remove = 520
-
-		modifier = {
-			civilian_factory_use = 8
-		}
-
-		remove_effect = { 
-			1314 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1000
-				num_of_civilian_factories_available_for_projects > 10
-			}
 		}
 	}
 
@@ -3425,7 +3245,82 @@ RUS_Industrialisation_decisions = {
 		}
 	}
 	
+	#Goradskaya yprava
+	RUS_decision_goradskaya_yprava = {
+
+		#icon = textile
+		
+		#allowed = { tag = RUS }
+
+		available = {
+			has_completed_focus = RUS_vic_urban_reform
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+
+		days_remove = 120
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
 	
+	#Hughesovka
+	RUS_decision_hughesovka = {
+
+		#icon = textile
+		
+		#allowed = { tag = RUS }
+
+		available = {
+			has_completed_focus = RUS_vic_urban_reform
+			RUS_john_hughes = { is_advisor = yes }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+
+		days_remove = 120
+		
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			country_event = rossiya.512
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
 }
 
 RUS_Caucasian_decisions = {
@@ -4427,12 +4322,11 @@ eoanb_category_politics_foreign = {
 		cost = 15
 
 		complete_effect = {
-			add_opinion_modifier = { target = BRA modifier = medium_increase }
-			reverse_add_opinion_modifier = { target = BRA modifier = medium_increase }
+			country_event = { id = rossiya.68 days = 30 }
 		}
 
 		ai_will_do = {
-			base = 1
+			base = 100
 		}
 	}
 
@@ -5099,6 +4993,61 @@ eoanb_category_economic = {
 			base = 1
 		}
 	}
+	
+	#The Zarozhansky Sugar Factory
+	RUS_mission_sugar_factory_zarozhany = {
+		
+		icon = generic_factory
+		
+		allowed = { always = no }
+		
+		available = {
+			owns_state = 1127
+			1127 = {
+				industrial_complex > 0
+			}
+		}
+		
+		activation = { always = no }
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1127
+			}
+		}
+		
+		fire_only_once = yes
+		
+		is_good = no
+		
+		days_mission_timeout = 1800
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -50
+				add_stability = -0.02
+			}
+		}
+		
+		complete_effect = {
+			1127 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_stability = 0.01
+			set_temp_variable = {
+				eoanb_prestige_change = 2
+			}
+			eoanb_change_prestige_score = yes
+			EOANBSYS_institutions_innovative_add_one = yes
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
 
 }
 
@@ -5704,7 +5653,7 @@ RUS_decision_category_siberian_colonization = {
 				state = 566
 			}
 			has_equipment = {
-				convoy_equipment > 4
+				convoy > 4
 			}
 		}
 		
@@ -6145,7 +6094,7 @@ RUS_decision_category_milyutin_reforms = {
 	#Osowiec Fortress
 	RUS_mission_vic_expand_osowiec_fortress = {
 
-		icon = generic_construction
+		icon = fort
 
 		highlight_states = {
 			state = 939
@@ -6154,6 +6103,7 @@ RUS_decision_category_milyutin_reforms = {
 		#allowed = { tag = RUS }
 
 		available = {
+			has_completed_focus = RUS_vic_Vistula_Defence_Scheme 
 			NOT = { has_country_flag = RUS_military_reform_ongoing_flag }
 			num_of_civilian_factories_available_for_projects > 0
 			owns_state = 939
@@ -6161,7 +6111,7 @@ RUS_decision_category_milyutin_reforms = {
 		}
 
 		visible = {
-			has_completed_focus = RUS_vic_Vistula_Defence_Scheme 
+			
 		}
 
 		fire_only_once = yes
@@ -6172,6 +6122,10 @@ RUS_decision_category_milyutin_reforms = {
 
 		modifier = {
 			civilian_factory_use = 1
+		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
 		}
 		
 		complete_effect = {
@@ -6202,7 +6156,7 @@ RUS_decision_category_milyutin_reforms = {
 	#Crimea Forts
 	RUS_mission_vic_crimea1 = {
 
-		icon = generic_construction
+		icon = fort
 
 		highlight_states = {
 			state = 137
@@ -6212,12 +6166,14 @@ RUS_decision_category_milyutin_reforms = {
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = RUS_vic_Protect_Crimea
+			NOT = { has_country_flag = RUS_military_reform_ongoing_flag }
 			owns_state = 137
 			controls_state = 137
 		}
 
 		visible = {
-			has_completed_focus = RUS_vic_Protect_Crimea 
+			 
 		}
 
 		fire_only_once = yes
@@ -6228,6 +6184,16 @@ RUS_decision_category_milyutin_reforms = {
 
 		modifier = {
 			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_military_reform_ongoing_flag
+			}
 		}
 
 		remove_effect = { 
@@ -6247,6 +6213,9 @@ RUS_decision_category_milyutin_reforms = {
 					instant_build = yes
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = RUS_military_reform_ongoing_flag
+			}
 		}
 
 		ai_will_do = {
@@ -6257,7 +6226,7 @@ RUS_decision_category_milyutin_reforms = {
 	#Crimea Forts
 	RUS_mission_vic_crimea2 = {
 
-		icon = generic_construction
+		icon = fort
 
 		highlight_states = {
 			state = 137
@@ -6267,12 +6236,14 @@ RUS_decision_category_milyutin_reforms = {
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = RUS_vic_Protect_Crimea
+			NOT = { has_country_flag = RUS_military_reform_ongoing_flag }
 			owns_state = 137
 			controls_state = 137
 		}
 
 		visible = {
-			has_completed_focus = RUS_vic_Protect_Crimea 
+			 
 		}
 
 		fire_only_once = yes
@@ -6283,6 +6254,16 @@ RUS_decision_category_milyutin_reforms = {
 
 		modifier = {
 			civilian_factory_use = 1
+		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_military_reform_ongoing_flag
+			}
 		}
 
 		remove_effect = { 
@@ -6302,6 +6283,9 @@ RUS_decision_category_milyutin_reforms = {
 					instant_build = yes
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = RUS_military_reform_ongoing_flag
+			}
 		}
 
 		ai_will_do = {
@@ -6312,7 +6296,7 @@ RUS_decision_category_milyutin_reforms = {
 	#Crimea Forts
 	RUS_mission_vic_crimea3 = {
 
-		icon = generic_construction
+		icon = fort
 
 		highlight_states = {
 			state = 137
@@ -6322,12 +6306,14 @@ RUS_decision_category_milyutin_reforms = {
 
 		available = {
 			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = RUS_vic_Protect_Crimea
+			NOT = { has_country_flag = RUS_military_reform_ongoing_flag }
 			owns_state = 137
 			controls_state = 137
 		}
 
 		visible = {
-			has_completed_focus = RUS_vic_Protect_Crimea 
+
 		}
 
 		fire_only_once = yes
@@ -6339,6 +6325,12 @@ RUS_decision_category_milyutin_reforms = {
 		modifier = {
 			civilian_factory_use = 2
 		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_military_reform_ongoing_flag
+			}
+		}
 
 		remove_effect = { 
 			137 = {
@@ -6348,6 +6340,9 @@ RUS_decision_category_milyutin_reforms = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			hidden_effect = {
+				clr_country_flag = RUS_military_reform_ongoing_flag
 			}
 		}
 
@@ -6379,19 +6374,36 @@ RUS_decision_category_milyutin_reforms = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 24.9
-			has_army_experience > 24.9
-			command_power > 49.99
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
 		}
-		custom_cost_text = eoanb_political_power_25_army_experience_25_command_power_50
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 180
 		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
 		complete_effect = {
-			add_political_power = -25
-			army_experience = -25
-			add_command_power = -50
 			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			hidden_effect = {
 				set_country_flag = RUS_military_reform_ongoing_flag
 			}
@@ -6525,6 +6537,7 @@ RUS_decision_category_milyutin_reforms = {
 		available = {
 			NOT = { has_country_flag = RUS_military_reform_ongoing_flag }
 			has_completed_focus = RUS_vic_fortification_of_empire
+			owns_state = 94
 		}
 
 		visible = {
@@ -6694,9 +6707,19 @@ RUS_decision_category_milyutin_reforms = {
 		fire_only_once = yes
 
 		
-		cost = 0
-		custom_cost_trigger = { has_army_experience > 49.99 }
-		custom_cost_text = RUS_army_experience_more_than_49
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 180
 		
@@ -6708,6 +6731,15 @@ RUS_decision_category_milyutin_reforms = {
 		
 		complete_effect = {
 			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			hidden_effect = { 
 				set_country_flag = RUS_military_reform_ongoing_flag 
 			}
@@ -6777,9 +6809,19 @@ RUS_decision_category_milyutin_reforms = {
 
 		fire_only_once = yes
 
-		cost = 0
-		custom_cost_trigger = { has_army_experience > 49.99 }
-		custom_cost_text = RUS_army_experience_more_than_49
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 180
 		
@@ -6791,7 +6833,15 @@ RUS_decision_category_milyutin_reforms = {
 		
 		complete_effect = {
 			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
-			army_experience = -50
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			create_equipment_variant = {
 				type = rifled_cannon_equipment_0_improved
 				#parent = rifled_cannon_equipment_0
@@ -6808,7 +6858,7 @@ RUS_decision_category_milyutin_reforms = {
 				add_equipment_to_stockpile = {
 					type = rifled_cannon_equipment_0_improved
 					amount = 250
-					producer = AUS
+					producer = RUS
 				}
 				clr_country_flag = RUS_military_reform_ongoing_flag
 			}
@@ -6837,9 +6887,19 @@ RUS_decision_category_milyutin_reforms = {
 
 		fire_only_once = yes
 
-		cost = 0
-		custom_cost_trigger = { has_army_experience > 49.99 }
-		custom_cost_text = RUS_army_experience_more_than_49
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 180
 		
@@ -6851,6 +6911,15 @@ RUS_decision_category_milyutin_reforms = {
 		
 		complete_effect = {
 			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			hidden_effect = { 
 				set_country_flag = RUS_military_reform_ongoing_flag 
 			}
@@ -6945,6 +7014,10 @@ RUS_decision_category_milyutin_reforms = {
 		visible = {
 
 		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		fire_only_once = yes
 
@@ -7014,6 +7087,10 @@ RUS_decision_category_milyutin_reforms = {
 		}
 
 		visible = {
+		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
 		}
 
 		fire_only_once = yes
@@ -7107,10 +7184,29 @@ RUS_decision_category_milyutin_reforms = {
 
 		visible = {
 		}
+		
+		cancel_trigger = {
+			OR = {
+				has_tech = rifle_equipment3
+				NOT = { debt_not_bankrupt_trigger = yes }
+			}
+		}
 
 		fire_only_once = yes
 
-		cost = 150
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 90
 		
@@ -7160,19 +7256,41 @@ RUS_decision_category_milyutin_reforms = {
 		}
 		
 		cancel_trigger = {
-			has_tech = rifle_equipment3
+			OR = {
+				has_tech = rifle_equipment3
+				NOT = { debt_not_bankrupt_trigger = yes }
+			}
 		}
 
 		fire_only_once = no
 
-		cost = 0
-		custom_cost_trigger = { has_army_experience > 49.99 }
-		custom_cost_text = RUS_army_experience_more_than_49
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 180
 		
 		complete_effect = {
-			add_command_power = -50
+			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			set_technology = {
 				rifle_equipment3 = 1
 			}
@@ -7225,9 +7343,19 @@ RUS_decision_category_milyutin_reforms = {
 
 		fire_only_once = yes
 
-		cost = 0
-		custom_cost_trigger = { has_army_experience > 49.99 }
-		custom_cost_text = RUS_army_experience_more_than_49
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_army_experience > 24.99
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_army_investment_debt_cost
 		
 		days_remove = 280
 		
@@ -7238,11 +7366,21 @@ RUS_decision_category_milyutin_reforms = {
 		}
 		
 		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
 			has_tech = rifle_equipment4
 		}
 		
 		complete_effect = {
-			add_command_power = -50
+			custom_effect_tooltip = RUS_military_reform_ongoing_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				army_experience = -25
+				add_command_power = -50
+			}
 			set_technology = {
 				rifle_equipment4 = 1
 			}
@@ -7329,11 +7467,16 @@ RUS_decision_category_navy_reforms = {
 
 		is_good = no
 		days_mission_timeout = 400
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		timeout_effect = {
 			add_political_power = -50
 			add_war_support = -0.02
 		}
+		
 		complete_effect = {
 			DEN = {
 				country_event = { id = rossiya.417 days = 10 }
@@ -7399,6 +7542,10 @@ RUS_decision_category_navy_reforms = {
 
 		is_good = no
 		days_mission_timeout = 400
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		timeout_effect = {
 			add_political_power = -50
@@ -7440,7 +7587,7 @@ RUS_decision_category_navy_reforms = {
 				OR = {
 					ships_in_state_ports = {
 						size > 4
-						state = 954
+						state = 1163
 					}
 					ROOT = { is_ai = yes }
 				}
@@ -7455,6 +7602,10 @@ RUS_decision_category_navy_reforms = {
 
 		is_good = no
 		days_mission_timeout = 120
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		timeout_effect = {
 			add_political_power = -25
@@ -7503,6 +7654,10 @@ RUS_decision_category_navy_reforms = {
 		is_good = no
 		
 		days_mission_timeout = 730
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 		
 		timeout_effect = {
 			navy_experience = -50
@@ -7590,6 +7745,10 @@ RUS_decision_category_navy_reforms = {
 		is_good = no
 
 		days_mission_timeout = 1800
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		timeout_effect = {
 			if = {
@@ -7607,10 +7766,6 @@ RUS_decision_category_navy_reforms = {
 
 		ai_will_do = {
 			base = 100
-		}
-
-		cancel_trigger = {
-			
 		}
 	}
 	
@@ -7641,12 +7796,16 @@ RUS_decision_category_navy_reforms = {
 		
 		days_remove = 365
 		
+		
 		modifier = {
 			civilian_factory_use = 2
         }
 		
 		cancel_trigger = {
-			NOT = { owns_state = 195 }
+			OR = {
+				NOT = { owns_state = 195 }
+				NOT = { debt_not_bankrupt_trigger = yes }
+			}
 		}
 		
 		complete_effect = {
@@ -7694,11 +7853,18 @@ RUS_decision_category_navy_reforms = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 24.9
-			has_navy_experience > 24.9
-			command_power > 49.99
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_navy_experience > 24.9
+				command_power > 49.99
+			}
 		}
-		custom_cost_text = eoanb_political_power_25_navy_experience_25_command_power_50
+		custom_cost_text = eoanb_decision_navy_investment_debt_cost
 		
 		days_remove = 300
 		
@@ -7708,10 +7874,20 @@ RUS_decision_category_navy_reforms = {
 			experience_gain_navy_factor = 0.05
 		}
 		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
 		complete_effect = {
-			add_political_power = -25
-			navy_experience = -25
-			add_command_power = -50
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				navy_experience = -25
+				add_command_power = -50
+			}
 		}
 		
 		remove_effect = {
@@ -7742,11 +7918,18 @@ RUS_decision_category_navy_reforms = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 24.9
-			has_navy_experience > 24.9
-			command_power > 49.99
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_navy_experience > 24.9
+				command_power > 49.99
+			}
 		}
-		custom_cost_text = eoanb_political_power_25_navy_experience_25_command_power_50
+		custom_cost_text = eoanb_decision_navy_investment_debt_cost
 		
 		days_remove = 300
 		
@@ -7757,9 +7940,15 @@ RUS_decision_category_navy_reforms = {
 		}
 		
 		complete_effect = {
-			add_political_power = -25
-			navy_experience = -25
-			add_command_power = -50
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				navy_experience = -25
+				add_command_power = -50
+			}
 		}
 		
 		remove_effect = {
@@ -7799,6 +7988,10 @@ RUS_decision_category_navy_reforms = {
 
 		is_good = no
 		days_mission_timeout = 120
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		timeout_effect = {
 			navy_experience = -35
@@ -7810,7 +8003,7 @@ RUS_decision_category_navy_reforms = {
 		}
 
 		ai_will_do = {
-			base = 1
+			base = 100
 		}
 	}
 		
@@ -7833,17 +8026,36 @@ RUS_decision_category_navy_reforms = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 49.9
-			has_navy_experience > 9.99
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_navy_experience > 24.9
+				command_power > 49.99
+			}
 		}
-		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
+		custom_cost_text = eoanb_decision_navy_investment_debt_cost
 		
 		days_remove = 180
 		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
 		complete_effect = {
-			#custom_effect_tooltip = AUS_ship_order_in_progress_effect_tt
-			add_political_power = -50
-			navy_experience = -10
+			custom_effect_tooltip = AUS_ship_order_in_progress_effect_tt
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				navy_experience = -25
+				add_command_power = -50
+			}
 		}
 		
 		remove_effect = {
@@ -7871,12 +8083,40 @@ RUS_decision_category_navy_reforms = {
 
 		fire_only_once = yes
 
-		cost = 75
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 24.9
+				has_navy_experience > 24.9
+				command_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_navy_investment_debt_cost
 		
 		days_remove = 80
 		
 		modifier = {
 			political_power_gain = -0.15
+		}
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			else = {
+				add_political_power = -25
+				navy_experience = -25
+				add_command_power = -50
+			}
 		}
 
 		remove_effect = {
@@ -7911,10 +8151,18 @@ RUS_decision_category_navy_reforms = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 99.9
-			has_navy_experience > 29.99
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+			}
+			else = {
+				has_political_power > 99.9
+				has_navy_experience > 49.9
+				command_power > 49.99
+			}
 		}
-		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_30
+		custom_cost_text = eoanb_decision_navy_infrastructure_investment_debt_cost
 		
 		days_remove = 80
 		
@@ -7922,9 +8170,20 @@ RUS_decision_category_navy_reforms = {
 			political_power_gain = -0.15
 		}
 		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
 		complete_effect = {
-			add_political_power = -50
-			navy_experience = -30
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_2 = yes
+			}
+			else = {
+				add_political_power = -100
+				navy_experience = -50
+				add_command_power = -50
+			}
 		}
 
 		remove_effect = {
@@ -8003,8 +8262,11 @@ RUS_decision_category_navy_reforms = {
 		days_remove = 180
 		
 		cancel_trigger = {
-			NOT = {
-				owns_state = 195
+			OR = {
+				NOT = {
+					owns_state = 195
+				}
+				NOT = { debt_not_bankrupt_trigger = yes }
 			}
 		}
 		
@@ -8048,6 +8310,10 @@ RUS_decision_category_navy_reforms = {
 		cost = 75
 		
 		days_remove = 90
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 		
 		
 		complete_effect = {
@@ -8109,6 +8375,10 @@ RUS_decision_category_navy_reforms = {
 		
 		days_remove = 30
 		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+		
 		complete_effect = {
 			custom_effect_tooltip = AUS_naval_reform_effect_tt
 			add_to_variable = { RUS_naval_reform_cgf = 0.01 tooltip = consumer_goods_factor_tooltip }
@@ -8167,6 +8437,10 @@ RUS_decision_category_navy_reforms = {
 		is_good = no
 
 		days_mission_timeout = 1800
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 		
 		ai_will_do = {
 			base = 100
@@ -8234,6 +8508,10 @@ RUS_decision_category_navy_reforms = {
 		}
 
 		days_remove = 180
+		
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
 
 		remove_effect = {
 			if = {
@@ -8370,14 +8648,56 @@ RUS_decision_category_navy_reforms = {
 }
 
 RUS_decision_category_judiciary_reform = {
-	#Civil and Criminal Cases
-	RUS_decision_civil_and_criminal_cases = {
+	
+	RUS_mission_judiciary_reform = {
 
-		icon = money
+		icon = constitution
 
 		#allowed = { tag = RUS }
 
 		available = {
+			has_idea = RUS_idea_inefficient_judicial_system2
+			has_stability > 0.59
+		}
+
+		activation = {
+			always = no
+		}
+
+		fire_only_once = yes
+
+		is_good = no
+
+		days_mission_timeout = 130
+
+		timeout_effect = {
+			add_political_power = -200
+			add_stability = -0.15
+			decrease_ps_by_one = yes
+			add_popularity = {
+				ideology = traditional_conservatism
+				popularity = -0.25
+			}
+		}
+
+		complete_effect = {
+			
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	#Civil and Criminal Cases
+	RUS_decision_civil_and_criminal_cases = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
 			has_completed_focus = RUS_vic_New_Ministry_of_Justice
 		}
 
@@ -8391,8 +8711,23 @@ RUS_decision_category_judiciary_reform = {
 		
 		days_remove = 30
 		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
 		complete_effect = {
-			
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.222
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
 		}
 
 		ai_will_do = {
@@ -8403,11 +8738,12 @@ RUS_decision_category_judiciary_reform = {
 	#The District Court
 	RUS_decision_district_court = {
 
-		icon = money
+		icon = constitution
 
 		#allowed = { tag = RUS }
 
 		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
 			has_completed_focus = RUS_vic_New_Ministry_of_Justice
 		}
 
@@ -8421,8 +8757,23 @@ RUS_decision_category_judiciary_reform = {
 		
 		days_remove = 30
 		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
 		complete_effect = {
-			
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech category = economics_tech }
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
 		}
 
 		ai_will_do = {
@@ -8433,11 +8784,12 @@ RUS_decision_category_judiciary_reform = {
 	#The Magistrates' Court
 	RUS_decision_magistrates_court = {
 
-		icon = money
+		icon = constitution
 
 		#allowed = { tag = RUS }
 
 		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
 			has_completed_focus = RUS_vic_New_Ministry_of_Justice
 		}
 
@@ -8451,8 +8803,1618 @@ RUS_decision_category_judiciary_reform = {
 		
 		days_remove = 30
 		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.223
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Institute of Judicial Investigators
+	RUS_decision_judicial_investigators = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = 75
+			add_stability = 0.05
+			increase_legitimacy_by_two = yes
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Jury Trials
+	RUS_decision_jury_trials = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+			country_event = rossiya.224
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Free Public Prosecution
+	RUS_decision_free_public_prosecution = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = 75
+			add_stability = 0.05
+			increase_legitimacy_by_two = yes
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Preliminary and Judicial Proceedings
+	RUS_decision_judicial_proceedings = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = 75
+			add_stability = 0.05
+			increase_legitimacy_by_two = yes
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Institution of the Bar Association
+	RUS_decision_bar_association = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_justice_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				has_active_mission = RUS_mission_judiciary_reform
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.225
+			hidden_effect = {
+				clr_country_flag = RUS_justice_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+}
+
+RUS_decision_category_education_reform = {
+
+	#Lubyanka Women's Courses
+	RUS_decision_lubyanka_women_courses = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_education_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_university_autonomy
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 49.99
+			}
+			else = {
+				has_political_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_50pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -50
+			hidden_effect = {
+				set_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			EOANBSYS_institutions_innovative_add_two = yes
+			set_temp_variable = {
+				eoanb_prestige_change = 1
+			}
+			eoanb_change_prestige_score = yes
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			hidden_effect = {
+				clr_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Alarcina Courses
+	RUS_decision_alarcina_courses = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_education_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_university_autonomy
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 49.99
+			}
+			else = {
+				has_political_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_50pp
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -50 
+			hidden_effect = {
+				set_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			EOANBSYS_institutions_innovative_add_two = yes
+			set_temp_variable = {
+				eoanb_prestige_change = 1
+			}
+			eoanb_change_prestige_score = yes
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			hidden_effect = {
+				clr_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Establish the Petrov Agricultural Academy
+	RUS_decision_petrov_agricultural_academy = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_education_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_university_autonomy
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 49.99
+			}
+			else = {
+				has_political_power > 49.99
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_50pp
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -50
+			hidden_effect = {
+				set_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.237
+			hidden_effect = {
+				clr_country_flag = RUS_education_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+}
+
+RUS_decision_category_fiscal_reform = {
+
+	#Avoid Bankruptcy
+	RUS_mission_avoid_bankruptcy = {
+
+		icon = money
+
+		allowed = { always = no }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = AUS_mission_avoid_bankruptcy_trigger_tt
+				hidden_trigger = {
+					check_variable = { ROOT.debt_level > 49 }
+					has_country_flag = debt_declared_bankruptcy_flag
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 50
+		
+		fire_only_once = no
+		
+		is_good = yes
+		
+		days_mission_timeout = 3650
+
+        timeout_effect = {
+			increase_ps_by_one = yes
+			add_political_power = 250
+			add_stability = 0.15
+			add_war_support = 0.15
+        }
+
+        complete_effect = {
+            decrease_ps_by_two = yes
+			add_political_power = -250
+			add_stability = -0.15
+			add_war_support = -0.15
+        }
+
+        ai_will_do = {
+			base = 2000
+		}
+    }
+	
+	#Make Debt Repayment
+	RUS_decision_debt_repayments = {
+		
+		icon = money
+		
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = { ROOT.debt_level > 0 }
+			NOT = { has_country_flag = paying_debt }
+			NOT = { has_country_flag = debt_free_flag }
+			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+		}
+
+		fire_only_once = no
+
+		cost = 10
+		
+		complete_effect = {
+			activate_mission = AUS_mission_paying_debt
+			custom_effect_tooltip = AUS_decision_debt_repayments_effect_tt
+			add_ideas = AUS_idea_debt_repayments
+			hidden_effect = {
+				AUS_calculate_debt_time = yes
+				set_country_flag = paying_debt
+			}
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	}
+	
+	#Made Debt Repayment
+	RUS_decision_debt_repayments_done = {
+	
+		icon = money
+		
+		visible = { always = no }
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = paying_debt
+					}
+					clr_country_flag = paying_debt
+				}
+				if = {
+					limit = {
+						has_idea = AUS_idea_debt_repayments 
+					}
+					remove_ideas = AUS_idea_debt_repayments
+				}
+			}
+			if = {
+				limit = { 
+					check_variable = { debt_level = 0 }
+				}
+				#country_event = { id = austria.902 }
+			}
+			else = {
+				#country_event = { id = austria.903 }
+			}
+		}
+	}
+	
+	#Repaying Debt
+	RUS_mission_paying_debt = {
+		
+		icon = money
+		
+		allowed = { always = no }
+		
+		available = {
+			hidden_trigger = { always = no }
+		}
+		
+		activation = { always = no }
+		
+		days_mission_timeout = 180
+		
+		cancel_trigger = {
+			hidden_trigger = { 
+				OR = {
+					has_country_flag = debt_declared_bankruptcy_flag
+					has_country_flag = debt_free_flag
+				}
+			}
+		}
+		
+		is_good = yes
+		
+		timeout_effect = {
+			debt_level_decrease_by_1 = yes
+			hidden_effect = {
+				#activate_decision = AUS_decision_debt_repayments_done
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	#Cancellation of the Poll Tribute
+	RUS_decision_poll_tribute = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_fiscal_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_state_bank
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Transparency in The Economy
+	RUS_decision_transparency_economy = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_fiscal_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_state_bank
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Modern Taxation
+	RUS_decision_modern_taxation = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_fiscal_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_state_bank
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#The beginnings of redemption operations
+	RUS_decision_redemption_operations = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_fiscal_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_state_bank
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Creation of the main redemption institution
+	RUS_decision_redemption_institutions = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_fiscal_reform_ongoing_flag }
+			has_completed_focus = RUS_vic_state_bank
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_fiscal_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+}
+
+RUS_decision_category_zemstva = {
+
+	RUS_mission_zemstvo_reform = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			
+		}
+
+		activation = {
+			always = no
+		}
+
+		fire_only_once = yes
+
+		is_good = no
+
+		days_mission_timeout = 720
+
+		timeout_effect = {
+			
+		}
+
 		complete_effect = {
 			
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	#Abolishment of Prikazy Obshchestvennego Prizeniia
+	RUS_decision_abolishment_prikazy_obshchestvennego_prizeniia = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			has_completed_focus = RUS_vic_zemstvo
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		#days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			country_event = rossiya.231
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+
+
+	#Zemstwo Statistics
+	RUS_decision_zemstwo_statistics = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 0 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Zemsky Insurance
+	RUS_decision_zemsky_insurance = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 0 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100 
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	###Zemsky Education - HAS TO BE CONNECTED WITH EDUCATION REFORM
+	#Zemsky Education
+	RUS_decision_zemsky_education = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 0 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100 
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#1864 Regulation of Public Primary Schools
+	RUS_decision_zemsky_primary_schools1 = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 5 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.233
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	RUS_decision_zemsky_primary_schools2 = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 5 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.234
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	RUS_decision_zemsky_post_office = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 0 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.235
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#1870 Stamp Regulation Law
+	RUS_decision_zemsky_1870_stamp_law = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 5 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = rossiya.236
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Zemsky Medicine
+	RUS_decision_zemsky_medicine = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 0 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			add_to_variable = { RUS_passed_zemstvo_reforms = 1 }
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Healthcare Law of 1879
+	RUS_decision_healthcare_law = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			check_variable = { RUS_passed_zemstvo_reforms > 5 }
+			NOT = { has_country_flag = RUS_zemstvo_reform_ongoing_flag }
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				check_variable = { debt_level > 0 }
+				check_variable = { debt_level < 50 }
+				has_political_power > 99.9
+			}
+			else = {
+				has_political_power > 99.9
+			}
+		}
+		custom_cost_text = eoanb_decision_cost_1_debt_100pp 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = { has_active_mission = RUS_mission_zemstvo_reform }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_idea = egy_vic_debt }
+				debt_level_increase_by_1 = yes
+			}
+			add_political_power = -100
+			hidden_effect = {
+				set_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_zemstvo_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+}
+
+RUS_decision_category_peasant_reform = {
+	
+	#Land Distribution
+	RUS_decision_land_distribution = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_peasant_reform_ongoing_flag }
+			#has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Slave Labour System
+	RUS_decision_slave_labour_system = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_peasant_reform_ongoing_flag }
+			#has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#The Local Regulations
+	RUS_decision_local_regulations = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_peasant_reform_ongoing_flag }
+			#has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#Free Movement for the Jew
+	RUS_decision_jews_movement = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_peasant_reform_ongoing_flag }
+			#has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	#The Buyback Operation
+	RUS_decision_buyback_operation = {
+
+		icon = constitution
+
+		#allowed = { tag = RUS }
+
+		available = {
+			NOT = { has_country_flag = RUS_peasant_reform_ongoing_flag }
+			#has_completed_focus = RUS_vic_New_Ministry_of_Justice
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50 
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RUS_peasant_reform_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = RUS_peasant_reform_ongoing_flag
+			}
 		}
 
 		ai_will_do = {

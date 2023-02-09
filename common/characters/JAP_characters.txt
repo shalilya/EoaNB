@@ -571,7 +571,8 @@ characters = {
 			# https://de.wikipedia.org/wiki/Philipp_Franz_von_Siebold
 			portraits = {
 				civilian = {
-					small = GFX_Portrait_TSH_Philip_Franz_von_Siebold
+					large = GFX_Portrait_TSH_Philip_Franz_von_Siebold
+					small = GFX_Portrait_TSH_Philip_Franz_von_Siebold_Small
 				}
 			}
 		}
@@ -688,8 +689,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -745,8 +745,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -795,8 +794,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -845,8 +843,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -895,8 +892,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -944,8 +940,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -992,8 +987,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -1040,8 +1034,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -1088,8 +1081,7 @@ characters = {
 
 				visible = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -1348,8 +1340,7 @@ characters = {
 
 				available = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -1419,8 +1410,7 @@ characters = {
 
 				available = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -1493,8 +1483,7 @@ characters = {
 
 				available = {
 					NOT = {
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}

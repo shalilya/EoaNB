@@ -230,6 +230,7 @@ country_event = {
 	#fire_only_once = yes
 	option = {
 		name = ita.6.a
+		custom_effect_tooltip = PIE_generic_event_historical_TT
 		### Change HOS
 		PIE_victor_emmanuel_ii = {
 			#add_country_leader_trait = 
@@ -416,12 +417,14 @@ country_event = {
 	#fire_only_once = yes
 	option = {
 		name = ita.13.a
-		## Custom Effect Tooltip Needed
-		every_owned_state = {
-			ROOT = {
-				delete_unit = { 
-					state = PREV
-					disband = yes 
+		custom_effect_tooltip = ITA_disband_army_TT
+		hidden_effect = {
+			every_owned_state = {
+				ROOT = {
+					delete_unit = { 
+						state = PREV
+						disband = yes 
+					}
 				}
 			}
 		}
@@ -1187,6 +1190,9 @@ country_event = {
 	#fire_only_once = yes
 	option = { ### They must be stopped!
 		name = ita.46.a
+		ai_chance = {
+			base = 2
+		}
 		unlock_national_focus = ITA_PIE_focus_Meetings_with_Garibaldi
 		custom_effect_tooltip = PIE_generic_event_historical_TT
 		hidden_effect = {
@@ -1200,6 +1206,13 @@ country_event = {
 	}
 	option = { ### Organize a new Expedition!
 		name = ita.46.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
 		### Leads to Expedtiion into Veneto and Dalmatia (Garibaldi Lands in Dalmatia while Italy fights in Veneto)
 		### Decisions Needed
 		### Events
@@ -1777,10 +1790,20 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ita.74.a
+		ai_chance = {
+			base = 1
+		}
 		custom_effect_tooltip = PIE_generic_event_historical_TT
 	}
 	option = {
 		name = ita.74.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
 		add_political_power = -15
 		add_timed_idea = {
 			idea = ITA_Decentralization_Project
@@ -2103,6 +2126,416 @@ country_event = {
 	option = {
 		name = ita.89.a
 		add_political_power = -15
+	}
+}
+
+### Fanti Decree
+country_event = {
+	id = ita.90
+	title = ita.90.t
+	desc = ita.90.d
+	picture = GFX_event_ITA_Creation_Army
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.90.a
+		hidden_effect = {
+			load_oob = "ITA_Unification"
+		}
+		custom_effect_tooltip = ITA_Unified_Army_TT
+	}
+}
+
+### Conference on Rome - Minghetti Proposes Conference
+country_event = {
+	id = ita.91
+	title = ita.91.t
+	desc = ita.91.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.91.a
+		### French Event about Meeting with Nigra
+		complete_national_focus = ITA_PIE_focus_The_September_Convention
+	}
+}
+
+### Conference on Rome - French Event about Meeting with Nigra
+country_event = {
+	id = ita.92
+	title = ita.92.t
+	desc = ita.92.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.92.a
+		### Italian Event about Drafting of Convention
+		ITA = {
+			country_event = {
+				id = ita.93
+			}
+		}
+	}
+}
+
+### Conference on Rome - Italian event about drafting of Convention
+country_event = {
+	id = ita.93
+	title = ita.93.t
+	desc = ita.93.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.93.a
+		### Italian Event about Articles of Convetnion - Paying for Military, etc. 
+		country_event = {
+			id = ita.94
+		}
+	}
+}
+
+### Conference on Rome - Italian event about articles
+country_event = {
+	id = ita.94
+	title = ita.94.t
+	desc = ita.94.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.94.a
+		### Italian Event about Secret Clause
+		country_event = {
+			id = ita.95
+		}
+	}
+}
+
+### Conference on Rome - Italian event about Secret Clause
+country_event = {
+	id = ita.95
+	title = ita.95.t
+	desc = ita.95.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { ## Naples
+		name = ita.95.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		### Italian Event about Reaction of King Victor Emmanuel
+		country_event = {
+			id = ita.96
+		}
+	}
+	option = { ## Florence: Historical
+		name = ita.95.a
+		ai_chance = {
+			base = 1
+		}
+		### Italian Event about Reaction of King Victor Emmanuel
+		country_event = {
+			id = ita.96
+		}
+	}
+}
+
+### Conference on Rome - Italian event about King Victor Emmanuel Reaction
+country_event = {
+	id = ita.96
+	title = ita.96.t
+	desc = ita.96.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.96.a
+		### French Event on Convention
+		FRA = {
+			country_event = {
+				id = ita.97
+			}
+		}
+	}
+}
+
+### Conference on Rome - French Decide
+country_event = {
+	id = ita.97
+	title = ita.97.t
+	desc = ita.97.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { ## Accept
+		name = ita.97.a
+		ai_chance = {
+			base = 2
+		}
+		### French Accept
+		ITA = {
+			country_event = {
+				id = ita.98
+			}
+		}
+	}
+	option = { ### Deny
+		name = ita.97.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		### French Deny
+		ITA = {
+			country_event = {
+				id = ita.99
+			}
+		}
+	}
+}
+
+### Conference on Rome - Italian event about French Accepting
+country_event = {
+	id = ita.98
+	title = ita.98.t
+	desc = ita.98.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.98.a
+		### French Accepted
+		### National Spirits for Italy, French Military Eventually Leave (Mission), Mission for Capital Moving (set event to fire that will show protests), Event for Papal States about Volunteer Division
+		activate_mission = ITA_PIE_legislative_September_Convention
+		add_timed_idea = {
+			idea = ITA_Papal_Army_Payments
+			days = 800
+		}
+		hidden_effect = {
+			country_event = {  ### Turin Massacre
+				id = ita.104 
+				days = 3
+			}
+		}
+	}
+}
+
+### Conference on Rome - Italian event about French Declining
+country_event = {
+	id = ita.99
+	title = ita.99.t
+	desc = ita.99.d
+	picture = GFX_event_ITA_napoleon_victor
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.99.a
+		### French Declined
+		### Unsure as of now what effect this could have, ultimately Rome will still fall in 1870 when French pull out garrisons due to FPW though not having the Capital moved to Florence could mean different political path for Italy
+	}
+}
+
+### Seeking Recognition, Greece
+country_event = {
+	id = ita.100
+	title = ita.100.t
+	desc = ita.100.d
+	picture = GFX_event_ITA_Greek_Recognition
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.100.a
+		GRE = {
+			country_event = {
+				id = ita.101
+			}
+		}
+	}
+}
+
+### Seeking Recognition, Greece (Greek Event)
+country_event = {
+	id = ita.101
+	title = ita.101.t
+	desc = ita.101.d
+	picture = GFX_event_ITA_Greek_Recognition
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { ## Naples
+		name = ita.101.a
+		ITA = {
+			country_event = {
+				id = ita.102
+			}
+		}
+		add_opinion_modifier = {
+			target = ITA
+			modifier = ITA_Active_Diplomacy
+		}
+	}
+}
+
+### Seeking Recognition, Greece Recognizes Italy
+country_event = {
+	id = ita.102
+	title = ita.102.t
+	desc = ita.102.d
+	picture = GFX_event_ITA_Greek_Recognition
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.102.a
+		add_political_power = 25
+		add_opinion_modifier = {
+			target = GRE
+			modifier = ITA_Active_Diplomacy
+		}
+	}
+}
+
+### Seeking Recognition, Portugal Will Recognize Following More Major Powers
+country_event = {
+	id = ita.103
+	title = ita.103.t
+	desc = ita.103.d
+	picture = GFX_event_ITA_Greek_Recognition
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.103.a
+		add_political_power = -5
+	}
+}
+
+### Turin Massacre - News Leaked
+country_event = {
+	id = ita.104
+	title = ita.104.t
+	desc = ita.104.d
+	picture = GFX_event_ITA_Greek_Recognition
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.104.a
+		country_event = {
+			id = ita.105
+			days = 3
+		}
+	}
+}
+
+### Turin Massacre - Massacre Occurs
+country_event = {
+	id = ita.105
+	title = ita.105.t
+	desc = ita.105.d
+	picture = GFX_event_ITA_turin_massacre
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.105.a
+		add_stability = -0.05
+		add_political_power = -35
+		complete_national_focus = ITA_PIE_focus_Aftermath_of_the_Turin_Massacre
+	}
+}
+
+### Turin Massacre - Aftermath/ La Marmora Takes Over
+country_event = {
+	id = ita.106
+	title = ita.106.t
+	desc = ita.106.d
+	picture = GFX_event_ITA_Marmora
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = {
+		name = ita.106.a
+		promote_character = PIE_alfonso_ferrero_la_marmora
+	}
+}
+
+### Turin Massacre - Inquiry (arrests of soldiers)
+country_event = {
+	id = ita.107
+	title = ita.107.t
+	desc = ita.107.d
+	picture = GFX_event_ITA_Florence_deputies
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.107.a
+		add_manpower = -50
+		add_stability = 0.01
+	}
+}
+
+### Turin Massacre - Inquiry (No Blame is Placed for Massacre)
+country_event = {
+	id = ita.108
+	title = ita.108.t
+	desc = ita.108.d
+	picture = GFX_event_ITA_Florence_deputies
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.108.a
+		add_political_power = -15
+		add_stability = 0.01
+	}
+}
+
+### Lanza Law
+country_event = {
+	id = ita.109
+	title = ita.109.t
+	desc = ita.109.d
+	picture = GFX_event_ITA_Lanza_Law
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.109.a
+		### Add National Spirit and Possibly some Decisions, national spirit starts bad but can be improved by decisions?
+		add_political_power = -15
+		add_stability = -0.01
+	}
+}
+
+### Chamber Moves to Florence amid Protests
+country_event = {
+	id = ita.110
+	title = ita.110.t
+	desc = ita.110.d
+	picture = GFX_event_ITA_Florence_deputies
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.110.a
+		add_political_power = -50
+	}
+}
+
+### King Victor Emmanuel Moves to Florence
+country_event = {
+	id = ita.111
+	title = ita.111.t
+	desc = ita.111.d
+	picture = GFX_event_ITA_king_victor_emmanuel
+	is_triggered_only = yes
+	#fire_only_once = yes
+	option = { 
+		name = ita.111.a
+		add_stability = 0.02
 	}
 }
 

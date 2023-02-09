@@ -168,6 +168,9 @@ focus_tree = {
 					amount = 5
 				}
 			}
+			hidden_effect = {
+				activate_mission = RUS_mission_vic_Alaskan_Immigration
+			}
 		}
 	}
 
@@ -321,6 +324,9 @@ focus_tree = {
 		completion_reward = {
 			activate_mission_tooltip = RUS_mission_vic_Tsaritsyn_Factory
 			custom_effect_tooltip = RUS_tt_vic_Factories_In_Tsaritsyn
+			hidden_effect = {
+				activate_mission = RUS_mission_vic_Tsaritsyn_Factory
+			}
 		}
 	}
 
@@ -3613,7 +3619,24 @@ focus_tree = {
 			country_event = { id = rossiya.203 }
 		}
 	}
+	focus = {
+		id = RUS_vic_great_reforms
+		
+		icon = GFX_
+		cost = 70
 
+		available = {}
+		prerequisite = { focus = RUS_vic_Tsar_Alexander_II }
+		relative_position_id = RUS_vic_Tsar_Alexander_II
+		x = 0
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			
+		}
+	}
 	focus = {
 		id = RUS_vic_Promote_Von_Reutern
 		icon = GFX_Focus_RUS_promote_mikhail_von_reutern
@@ -3621,11 +3644,11 @@ focus_tree = {
 
 		available = {
 		}
-		prerequisite = { focus = RUS_vic_Tsar_Alexander_II }
+		prerequisite = { focus = RUS_vic_great_reforms }
 
 		relative_position_id = RUS_vic_Tsar_Alexander_II
 		x = -3
-		y = 1
+		y = 2
 
 		ai_will_do = { factor = 10 }
 
@@ -3690,7 +3713,7 @@ focus_tree = {
 		prerequisite = { focus = RUS_vic_Promote_Von_Reutern }
 
 		relative_position_id = RUS_vic_Promote_Von_Reutern
-		x = -2
+		x = -3
 		y = 1
 
 		ai_will_do = { factor = 10 }
@@ -3870,16 +3893,16 @@ focus_tree = {
 
 	# Mid-Left
 	focus = {
-		id = RUS_vic_Reintroduce_Brandy_Excise_Tax
+		id = RUS_vic_editorial_boards
 		icon = GFX_Focus_Economy_Increase_Wages
 		cost = 70
 
 		available = { }
 		prerequisite = { focus = RUS_vic_Promote_Von_Reutern }
-		prerequisite = { focus = RUS_vic_Promote_Gorchakov }
+		prerequisite = { focus = RUS_vic_Promote_Zamyatnin }
 
 		relative_position_id = RUS_vic_Promote_Von_Reutern
-		x = 1
+		x = 0
 		y = 1
 
 		ai_will_do = { factor = 10 }
@@ -3918,82 +3941,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Introduce_Public_Accounting
-		icon = GFX_Focus_banks
-		cost = 70
-
-		available = {
-		}
-		prerequisite = { focus = RUS_vic_Reintroduce_Brandy_Excise_Tax }
-
-		relative_position_id = RUS_vic_Reintroduce_Brandy_Excise_Tax
-		x = 0
-		y = 1
-
-		ai_will_do = { factor = 10 }
-
-		completion_reward = {
-			add_stability = 0.02
-			add_tech_bonus = { bonus = 1.5 uses = 1 category = humanities_tech }
-		}
-	}
-
-	# Middle
-	focus = {
-		id = RUS_vic_Promote_Gorchakov
-		icon = GFX_Focus_RUS_promote_gorchakov
-		cost = 70
-
-		available = {
-		}
-		prerequisite = { focus = RUS_vic_Tsar_Alexander_II }
-
-		relative_position_id = RUS_vic_Tsar_Alexander_II
-		x = 0
-		y = 1
-
-		ai_will_do = { factor = 10 }
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = RUS_vic_French_Words
-		icon = GFX_focus_chi_reach_out_to_france
-		cost = 70
-
-		prerequisite = { focus = RUS_vic_Promote_Gorchakov }
-
-		relative_position_id = RUS_vic_Promote_Gorchakov
-		x = 0
-		y = 2
-
-		ai_will_do = { factor = 10 }
-
-		bypass = {
-			NOT = {
-				has_idea = RUS_WUR_politica_isolation
-			}
-		}
-
-		available = { }
-
-		completion_reward = {
-		}
-	}
-
-	focus = {
 		id = RUS_vic_Emancipation_of_Serfs
 		icon = GFX_Focus_freedom_association
 		cost = 70
 
-		prerequisite = { focus = RUS_vic_Introduce_Public_Accounting }
-		prerequisite = { focus = RUS_vic_French_Words }
-		prerequisite = { focus = RUS_vic_Promote_Emancipation_Within_Nobility }
+		prerequisite = { focus = RUS_vic_editorial_boards }
 		
-		relative_position_id = RUS_vic_French_Words
+		relative_position_id = RUS_vic_editorial_boards
 		x = 0
 		y = 1
 
@@ -4015,6 +3969,149 @@ focus_tree = {
 		}
 	}
 
+	# Middle
+	focus = {
+		id = RUS_vic_Promote_Zamyatnin
+		#icon = GFX_Focus_RUS_promote_gorchakov
+		cost = 70
+
+		available = {
+		}
+		prerequisite = { focus = RUS_vic_great_reforms }
+
+		relative_position_id = RUS_vic_Tsar_Alexander_II
+		x = 0
+		y = 2
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			country_event = rossiya.229
+		}
+	}
+
+	focus = {
+		id = RUS_vic_state_bank
+		icon = GFX_goal_focus_RUS_gosbank
+		cost = 70
+
+		prerequisite = { focus = RUS_vic_Promote_Zamyatnin }
+
+		relative_position_id = RUS_vic_Promote_Zamyatnin
+		x = 0
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		bypass = {
+			NOT = {
+				has_idea = RUS_WUR_politica_isolation
+			}
+		}
+
+		available = { }
+
+		completion_reward = {
+			country_event = rossiya.228
+		}
+	}
+	focus = {
+		id = RUS_vic_new_course
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 70
+
+		prerequisite = { focus = RUS_vic_state_bank }
+
+		relative_position_id = RUS_vic_state_bank
+		x = -1
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		bypass = {
+			NOT = {
+				has_idea = RUS_WUR_politica_isolation
+			}
+		}
+
+		available = { }
+
+		completion_reward = {
+			unlock_decision_category_tooltip = RUS_decision_category_fiscal_reform
+			RUS_valerian_tatarinov = {
+				add_advisor_role = {
+						advisor = {
+						slot = political_advisor
+						idea_token = RUS_advisor_valerian_tatarinov
+						allowed = {
+							original_tag = RUS
+						}
+						visible = {
+						
+						}
+						research_bonus = {
+						
+						}
+						traits = {
+						
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = RUS_vic_zemstvo
+		icon = GFX_goal_focus_RUS_zemstvos
+		cost = 70
+
+		prerequisite = { focus = RUS_vic_Emancipation_of_Serfs }
+		prerequisite = { focus = RUS_vic_new_course }
+		prerequisite = { focus = RUS_vic_classic_real_schools }
+		prerequisite = { focus = RUS_vic_kaznaichestvo }
+		relative_position_id = RUS_vic_new_course
+		x = 0
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		available = { }
+
+		completion_reward = {
+			unlock_decision_category_tooltip = RUS_decision_category_zemstva
+			country_event = rossiya.230
+			add_political_power = 120
+			hidden_effect = {
+				set_variable = { RUS_passed_zemstvo_reforms = 0 }
+			}
+		}
+	}
+	focus = {
+		id = RUS_vic_kaznaichestvo
+		icon = GFX_goal_focus_RUS_russian_treasury
+		cost = 70
+
+		prerequisite = { focus = RUS_vic_state_bank }
+
+		relative_position_id = RUS_vic_state_bank
+		x = 1
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		bypass = {
+			NOT = {
+				has_idea = RUS_WUR_politica_isolation
+			}
+		}
+
+		available = { }
+
+		completion_reward = {
+			country_event = rossiya.226
+		}
+	}
+
 	# Mid Right
 	focus = {
 		id = RUS_vic_Promote_Panin
@@ -4022,11 +4119,11 @@ focus_tree = {
 		cost = 70
 
 		available = { }
-		prerequisite = { focus = RUS_vic_Tsar_Alexander_II }
+		prerequisite = { focus = RUS_vic_great_reforms }
 
 		relative_position_id = RUS_vic_Tsar_Alexander_II
 		x = 3
-		y = 1
+		y = 2
 
 		ai_will_do = { factor = 10 }
 
@@ -4085,21 +4182,24 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Educate_The_Serfs
+		id = RUS_vic_university_autonomy
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 70
 
 		available = { }
-		prerequisite = { focus = RUS_vic_Promote_Gorchakov }
+		prerequisite = { focus = RUS_vic_Promote_Zamyatnin }
 		prerequisite = { focus = RUS_vic_Promote_Panin }
 
 		relative_position_id = RUS_vic_Promote_Panin
-		x = -1
+		x = 0
 		y = 1
 
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
+			unlock_decision_category_tooltip = RUS_decision_category_education_reform
+			unlock_decision_tooltip = RUS_decision_lubyanka_women_courses
+			unlock_decision_tooltip = RUS_decision_alarcina_courses
 			if = {
 				limit = { has_idea = privileged_education }
 				swap_ideas = {
@@ -4120,20 +4220,21 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Promote_Emancipation_Within_Nobility
+		id = RUS_vic_classic_real_schools
 		icon = GFX_Focus_Partisans_Popularize
 		cost = 70
 
 		available = { }
-		prerequisite = { focus = RUS_vic_Educate_The_Serfs }
+		prerequisite = { focus = RUS_vic_university_autonomy }
 
-		relative_position_id = RUS_vic_Educate_The_Serfs
+		relative_position_id = RUS_vic_university_autonomy
 		x = 0
 		y = 1
 
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
+			unlock_decision_tooltip = RUS_decision_petrov_agricultural_academy
 			add_political_power = 35
 			add_stability = 0.04
 		}
@@ -4149,7 +4250,7 @@ focus_tree = {
 		prerequisite = { focus = RUS_vic_Promote_Panin }
 
 		relative_position_id = RUS_vic_Promote_Panin
-		x = 2
+		x = 3
 		y = 1
 
 		ai_will_do = {
@@ -4170,12 +4271,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RUS_vic_Create_The_Zemstvos
-		icon = GFX_Focus_Government_Decentralized
+		id = RUS_vic_reform_public_administration
+		icon = GFX_goal_focus_RUS_moscow_reform
 		cost = 70
 
-		available = {
-		}
+		available = { date > 1862.1.1 }
+		
 		prerequisite = { focus = RUS_vic_Mild_Reforms }
 
 		relative_position_id = RUS_vic_Mild_Reforms
@@ -4185,15 +4286,12 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 
 		completion_reward = {
-			add_political_power = 75
-			add_stability = 0.02
-			add_tech_bonus = { bonus = 0.35 uses = 1 category = biochemistry_tech }
-			add_ideas = RUS_idea_zemstva
+			953 = { add_dynamic_modifier = { modifier = dynmod_RUS_moscow } }
 		}
 	}
 
 	focus = {
-		id = RUS_vic_Establish_City_Dumas
+		id = RUS_vic_third_departament
 		icon = GFX_Focus_banks
 		cost = 70
 
@@ -4201,33 +4299,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = RUS_vic_Mild_Reforms }
 
-		relative_position_id = RUS_vic_Mild_Reforms
-		x = 1
-		y = 1
-
-		ai_will_do = { factor = 10 }
-
-		completion_reward = {
-			add_political_power = 120
-			add_popularity = {
-				ideology = centrism
-				popularity = 0.04
-			}
-		}
-	}
-
-	focus = {
-		id = RUS_vic_Establish_The_Okhrana
-		icon = GFX_goal_generic_intelligence_exchange
-		cost = 70
-
-		available = {
-		}
-		prerequisite = { focus = RUS_vic_Create_The_Zemstvos }
-
-		relative_position_id = RUS_vic_Create_The_Zemstvos
-		x = 0
-		y = 1
+		relative_position_id = RUS_vic_reform_public_administration
+		x = 2
+		y = 0
 
 		ai_will_do = { factor = 10 }
 
@@ -4256,15 +4330,36 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RUS_vic_urban_reform
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 70
+
+		available = {
+		}
+		prerequisite = { focus = RUS_vic_reform_public_administration }
+
+		relative_position_id = RUS_vic_reform_public_administration
+		x = 0
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			unlock_decision_tooltip = RUS_decision_goradskaya_yprava
+			country_event = rossiya.227
+		}
+	}
+
+	focus = {
 		id = RUS_vic_Universal_Conscription
 		icon = GFX_focus_generic_little_entente
 		cost = 70
 
 		available = {
 		}
-		prerequisite = { focus = RUS_vic_Establish_City_Dumas }
+		prerequisite = { focus = RUS_vic_third_departament }
 
-		relative_position_id = RUS_vic_Establish_City_Dumas
+		relative_position_id = RUS_vic_third_departament
 		x = 0
 		y = 1
 
@@ -4326,11 +4421,13 @@ focus_tree = {
 		icon = GFX_Focus_law_reform
 		cost = 70
 
+		prerequisite = { focus = RUS_vic_classic_real_schools }
+		prerequisite = { focus = RUS_vic_kaznaichestvo }
 		prerequisite = { focus = RUS_vic_Emancipation_of_Serfs }
-
-		relative_position_id = RUS_vic_Emancipation_of_Serfs
-		x = 0
-		y = 1
+		prerequisite = { focus = RUS_vic_new_course }
+		relative_position_id = RUS_vic_zemstvo
+		x = 2
+		y = 0
 
 		ai_will_do = { factor = 10 }
 
@@ -4338,7 +4435,9 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = rossiya.208 }
+			country_event = rossiya.229
 			unlock_decision_category_tooltip = RUS_decision_category_judiciary_reform
+			activate_mission_tooltip = RUS_mission_judiciary_reform
 			if = {
 				limit = { has_idea = no_constitution }
 				swap_ideas = {
@@ -4360,9 +4459,31 @@ focus_tree = {
 				add_political_power = 100
 				add_stability = 0.05
 			}
+			hidden_effect = {
+				activate_mission = RUS_mission_judiciary_reform
+			}
 		}
 	}
+	focus = {
+		id = RUS_vic_press_regulations
+		icon = GFX_Focus_law_reform
+		cost = 70
 
+		prerequisite = { focus = RUS_vic_zemstvo }
+		prerequisite = { focus = RUS_vic_New_Ministry_of_Justice }
+
+		relative_position_id = RUS_vic_zemstvo
+		x = 1
+		y = 1
+
+		ai_will_do = { factor = 10 }
+
+		available = { }
+
+		completion_reward = {
+			
+		}
+	}
 	focus = {
 		id = RUS_vic_Land_Redistribution
 		icon = GFX_focus_generic_concessions
@@ -4421,10 +4542,10 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		cost = 70
 
-		prerequisite = { focus = RUS_vic_Establish_The_Okhrana }
+		prerequisite = { focus = RUS_vic_urban_reform }
 		prerequisite = { focus = RUS_vic_Universal_Conscription }
 
-		relative_position_id = RUS_vic_Establish_The_Okhrana
+		relative_position_id = RUS_vic_urban_reform
 		x = 1
 		y = 1
 
@@ -4444,13 +4565,14 @@ focus_tree = {
 		cost = 70
 
 		available = {
+			always = no
 		}
-		prerequisite = { focus = RUS_vic_New_Ministry_of_Justice }
+		prerequisite = { focus = RUS_vic_press_regulations }
 		prerequisite = { focus = RUS_vic_Land_Redistribution }
 		mutually_exclusive = { focus = RUS_vic_Limit_The_Censorship }
 		bypass = { has_idea = free_press }
 
-		relative_position_id = RUS_vic_New_Ministry_of_Justice
+		relative_position_id = RUS_vic_press_regulations
 		x = -1
 		y = 1
 
@@ -4486,8 +4608,9 @@ focus_tree = {
 		cost = 70
 
 		available = {
+			always = no
 		}
-		prerequisite = { focus = RUS_vic_New_Ministry_of_Justice }
+		prerequisite = { focus = RUS_vic_press_regulations }
 		prerequisite = { focus = RUS_vic_Peasant_Land_Bank }
 		mutually_exclusive = { focus = RUS_vic_End_The_Censorship }
 		bypass = {
@@ -4497,7 +4620,7 @@ focus_tree = {
 			}
 		}
 
-		relative_position_id = RUS_vic_New_Ministry_of_Justice
+		relative_position_id = RUS_vic_press_regulations
 		x = 1
 		y = 1
 
@@ -5083,7 +5206,10 @@ focus_tree = {
 		icon = GFX_goal_focus_us_purchase_alaska
 		cost = 70
 		available = {
-			463 = { is_owned_and_controlled_by = RUS }
+			ALK = {
+				owns_state = 463
+				is_subject_of = RUS
+			}
 		}
 		x = 0
 		y = 1
@@ -5096,7 +5222,10 @@ focus_tree = {
 		
 		bypass = {
 			NOT = {
-				463 = { is_owned_by = RUS }
+				ALK = {
+					owns_state = 463
+					is_subject_of = RUS
+				}
 			}
 		}
 		
@@ -5151,7 +5280,10 @@ focus_tree = {
 		icon = GFX_Focus_Law_Vote_1
 		cost = 70
 		available = {
-			463 = { is_owned_and_controlled_by = RUS }
+			ALK = {
+				owns_state = 463
+				is_subject_of = RUS
+			}
 		}
 		x = 0
 		y = 1
@@ -5161,10 +5293,6 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 		completion_reward = {
 			hidden_effect = {
-				463 = {
-					add_core_of = ALK
-				}
-				RUS = { release_puppet = ALK }
 				ALK = {
 					load_oob = "ALK_Russian_Troops"
 				}

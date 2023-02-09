@@ -83,38 +83,50 @@
 	}
 	# Laws
 	add_ideas = {
-		#POLITICS
+		#State of the Country
 		hos_is_leader
+		non_monarchical_system
+		industrializing
 		victorian_era
 		law_victorian_army
-		industrializing
-		non_monarchical_system
+
+		#Matters of Constitution
 		presidential_republic
+		constitution_adopted
+		free_elections
 		balanced_powers
 		federalist
 
-		#Economic
-		civilian_economy
-		export_focus
-		two_percent
-		normal_taxes
-		cl_legal
-		unlimited_work_day
+		#Political Liberties
+		open_schools
+		free_press
+		foa_free_assembly
+		pp_open_politics
+		tu_free_unions
+		jury_court
 
-		#Population
-		#stagnation_growth
+		#Individual Liberties
 		border_control
-		volunteer_only
 		usa_slavery_law
 		universal_male_suffrage
-
-		constitution_adopted
-		free_elections
-
-		#Culture
-		open_schools
+		volunteer_only
 		secular_state
-		#religion_protestant
+
+		#Economic Policies
+		free_trade
+		very_low_taxes
+		cl_legal
+		unlimited_work_day
+		lp_land_purchase
+		civilian_economy
+
+		#Internal Budget Laws
+		hc_no_healthcare
+		law_police_force
+		inframain_no_subsidies_infrastructure
+		navinfra_good_naval_infrastructure
+		five_percent
+		sfund_private_ventures_only
 
 		### National Spirits
 
@@ -147,7 +159,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_john_breckinridge
-				allowed = { original_tag = USA }
 				traits = { hawk }
 				ai_will_do = { factor = 0 }
 			}
@@ -165,7 +176,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_roger_taney
-				allowed = { original_tag = USA }
 				traits = { trait_chief_justice }
 				ai_will_do = { factor = 0 }
 			}
@@ -179,7 +189,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_lewis_cass
-				allowed = { original_tag = USA }
 				traits = { trait_secretary_of_state }
 				ai_will_do = { factor = 0 }
 			}
@@ -193,7 +202,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_howell_cobb
-				allowed = { original_tag = USA }
 				traits = { trait_secretary_of_the_treasury }
 				ai_will_do = { factor = 0 }
 			}
@@ -207,7 +215,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_john_floyd
-				allowed = { original_tag = USA }
 				traits = { trait_secretary_of_war_corrupt }
 				ai_will_do = { factor = 0 }
 			}
@@ -221,7 +228,6 @@
 			advisor = {
 				slot = political_advisor
 				idea_token = USA_advisor_jacob_thompson
-				allowed = { original_tag = USA }
 				traits = { trait_secretary_of_the_interior }
 				ai_will_do = { factor = 0 }
 			}
@@ -249,27 +255,19 @@
 	# Internal Politics
 	USA = {
 		set_politics = {
-			# ruling_party = traditional_conservatism
-			ruling_party = radical_democracy
+			ruling_party = traditional_conservatism
 			#last_election = "1856.11.5"
 			#election_frequency = 48
 			#election_allowed = yes
 			elections_allowed = no
 		}
 		set_party_name = {
-			ideology = radical_democracy
-			# long_name = USA_know_nothing_party
-			# name = USA_know_nothing_party
-			name = USA_southern_democrat_party
-			long_name = USA_southern_democrat_party_long
-		}
-		set_party_name = {
 			ideology = traditional_conservatism
-			name = USA_northern_democrat_party
-			long_name = USA_northern_democrat_party_long
+			name = USA_democrat_party
+			long_name = USA_democrat_party_long
 		}
 		set_party_name = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			name = USA_republican_party
 			long_name = USA_republican_party_long
 		}
@@ -280,37 +278,25 @@
 		}
 		set_party_name = {
 			ideology = chauvinist_populism
-			long_name = USA_know_nothing_party
-			name = USA_know_nothing_party
-			# long_name = USA_democratic_party_radical_long
-			# name = USA_democratic_party_radical
+			name = USA_democrat_party
+			long_name = USA_democrat_party_long
 		}
 		set_party_name = {
-			ideology = anarchism
-			name = USA_anti_federal_party
-			long_name = USA_anti_federal_party_long
+			ideology = centrism
+			name = USA_know_nothing_party
+			long_name = USA_know_nothing_party_long
 		}
 		set_popularities = {
 			anarchism = 0
-			vanguard_communism = 0
-			collectivist_socialism = 0
-			social_egalitarianism = 2.3
-			centrism = 32.8
-			traditional_conservatism = 31.6
-			radical_democracy = 17
-			chauvinist_populism = 16.3
+			ideology_social_liberalism = 22.1
+			ideology_radical_socialism = 0
+			social_egalitarianism = 11
+			centrism = 21.5
+			traditional_conservatism = 31.4
+			radical_democracy = 0
+			chauvinist_populism = 14
 			autocracy = 0
 			fundamentalism = 0
-			# anarchism = 1
-			# vanguard_communism = 0
-			# collectivist_socialism = 0
-			# social_egalitarianism = 3
-			# centrism = 30
-			# traditional_conservatism = 60
-			# radical_democracy = 6
-			# chauvinist_populism = 0
-			# autocracy = 0
-			# fundamentalism = 0
 		}
 	}
 
@@ -992,8 +978,8 @@
 		}
 		set_popularities = {
 			anarchism = 0
-			vanguard_communism = 0
-			collectivist_socialism = 0
+			ideology_social_liberalism = 0
+			ideology_radical_socialism = 0
 			social_egalitarianism = 0
 			centrism = 20
 			traditional_conservatism = 20
@@ -1002,8 +988,8 @@
 			autocracy = 0
 			fundamentalism = 0
 			# anarchism = 0
-			# vanguard_communism = 0
-			# collectivist_socialism = 0
+			# ideology_social_liberalism = 0
+			# ideology_radical_socialism = 0
 			social_egalitarianism = 40
 			# centrism = 30
 			# traditional_conservatism = 0
@@ -1342,7 +1328,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments

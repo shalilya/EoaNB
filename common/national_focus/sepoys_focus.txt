@@ -102,7 +102,7 @@ focus_tree = {
 		x = 4
 		y = 4
 		completion_reward = {
-			
+			add_political_power = 5
 		}
 	}
 
@@ -121,7 +121,7 @@ focus_tree = {
 		x = 4
 		y = 5
 		completion_reward = {
-			
+			add_stability = 0.05
 		}
 	}
 
@@ -140,7 +140,7 @@ focus_tree = {
 		x = 4
 		y = 6
 		completion_reward = {
-			
+			add_war_support = 0.1
 		}
 	}
 
@@ -159,7 +159,8 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
-			
+			add_stability = 0.1
+			add_political_power = 50
 		}
 	}
 	
@@ -315,7 +316,7 @@ focus_tree = {
 	focus = {
 		id = SRS_issue_of_obtaining_modern_equipment
 		icon = GFX_Focus_anything_will_do
-		cost = 140
+		cost = 70
 		relative_position_id = SRS_forging_a_military
 		available_if_capitulated = no
 		ai_will_do = {
@@ -591,7 +592,7 @@ focus_tree = {
 	focus = {
 		id = SRS_free_from_britain
 		icon = GFX_focus_AST_never_gallipoli
-		cost = 70
+		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 1
@@ -631,7 +632,7 @@ focus_tree = {
 	focus = {
 		id = SRS_the_future
 		icon = GFX_Focus_Examine_Foreign_Laws
-		cost = 70
+		cost = 35
 		relative_position_id = SRS_free_from_britain
 		available_if_capitulated = no
 		ai_will_do = {
@@ -673,7 +674,7 @@ focus_tree = {
 	focus = {
 		id = SRS_new_path
 		icon = GFX_Focus_Government_Decentralized
-		cost = 70
+		cost = 35
 		relative_position_id = SRS_free_from_britain
 		available_if_capitulated = no
 		ai_will_do = {
@@ -903,7 +904,13 @@ focus_tree = {
 		x = 1
 		y = 9
 		completion_reward = {
-			
+			declare_war_on = {
+				target = RAJ
+				type = annex_everything
+			}
+			ENG ={
+				country_event = sepoy.29
+			}
 		}
 	}
 
@@ -1436,7 +1443,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = { ideology = social_egalitarianism popularity = 0.05 }
 			decrease_ps_by_one = yes
-			add_ideas = SRS_idea_Productivity_First
+			add_ideas = CAN_idea_Productivity_First
 			if = {
 				limit = {
 					has_idea = fourteen_hour_work_day
@@ -1616,7 +1623,7 @@ focus_tree = {
 		icon = GFX_Focus_Continent_India
 		x = 44
 		y = 0
-		cost = 70
+		cost = 35
 		available_if_capitulated = no   
 
 		ai_will_do = {
@@ -1802,7 +1809,9 @@ focus_tree = {
 		prerequisite = { focus = SRS_meet_nears }	
 
 		completion_reward = {
-			
+			BRM = {
+				country_event = sepoy.20
+			}
 		}
 	}
 
@@ -1822,7 +1831,9 @@ focus_tree = {
 		prerequisite = { focus = SRS_meet_nears }	
 
 		completion_reward = {
-			
+			QNG = {
+				country_event = sepoy.25
+			}
 		}
 	}
 
@@ -1842,7 +1853,9 @@ focus_tree = {
 		prerequisite = { focus = SRS_meet_nears }	
 
 		completion_reward = {
-			
+			SIA = {
+				country_event = sepoy.23
+			}
 		}
 	}
 
@@ -1862,7 +1875,9 @@ focus_tree = {
 		prerequisite = { focus = SRS_meet_nears }	
 
 		completion_reward = {
-			
+			PER = {
+				country_event = sepoy.26
+			}
 		}
 	}
 
@@ -1882,7 +1897,9 @@ focus_tree = {
 		prerequisite = { focus = SRS_meet_nears }	
 
 		completion_reward = {
-			
+			AFG = {
+				country_event = sepoy.24
+			}
 		}
 	}
 

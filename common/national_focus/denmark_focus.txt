@@ -945,6 +945,20 @@ focus_tree = {
 		x = 1
 		y = 3
 		cost = 30
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_focus_the_copenhagen_trade_crisis_trigger_tt
+				hidden_trigger = {
+					OR = {
+						has_idea = Panic_of_1857_1
+						has_idea = Panic_of_1857_2
+						has_idea = Panic_of_1857_3
+						has_idea = Panic_of_1857_4
+						date > 1858.1.1
+					}
+				}
+			}
+		}
 		ai_will_do = {
 			base = 100
 		}
@@ -987,7 +1001,7 @@ focus_tree = {
 		}
 	}
 	
-	#Leftist Path
+	#Social Liberal Path
 	
 	focus = {
 		id = DEN_focus_a_coalition_of_the_left
@@ -1003,11 +1017,11 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_the_1858_elections }
 		mutually_exclusive = { focus = DEN_focus_a_coalition_of_the_center focus = DEN_focus_a_coalition_of_the_right }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
         	decrease_ps_by_one = yes
-			set_politics = { ruling_party = social_egalitarianism elections_allowed = yes election_frequency = 36 }
+			set_politics = { ruling_party = ideology_social_liberalism elections_allowed = yes election_frequency = 36 }
 			add_stability = -0.02
 			country_event = { id = denmark.205 }
 		}
@@ -1026,12 +1040,12 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_a_coalition_of_the_left }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
 			if = {
 				limit = {
-					social_egalitarianism > 0.549
+					ideology_social_liberalism > 0.549
 				}
 				increase_legitimacy_by_three = yes
 				if = {
@@ -1049,8 +1063,8 @@ focus_tree = {
 			else_if = {
 				limit = {
 					AND = {
-						social_egalitarianism < 0.55
-						social_egalitarianism > 0.45
+						ideology_social_liberalism < 0.55
+						ideology_social_liberalism > 0.45
 					}
 				}
 				increase_legitimacy_by_two = yes
@@ -1080,7 +1094,7 @@ focus_tree = {
 					}
 				}
 			}
-			add_popularity = { ideology = social_egalitarianism popularity = 0.02 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.02 }
 			add_political_power = 50
 		}
 	}
@@ -1098,17 +1112,17 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_a_government_of_the_people }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
-			add_popularity = { ideology = social_egalitarianism popularity = 0.02 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.02 }
 			add_political_power = 25
 			add_stability = 0.01
 		}
 	}
 	
 	focus = {
-		id = DEN_focus_implement_leftist_policies
+		id = DEN_focus_implement_social_liberal_policies
 		icon = GFX_Focus_Government_Struggle
 		relative_position_id = DEN_focus_a_coalition_of_the_left
 		x = 0
@@ -1120,7 +1134,7 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_contain_the_resistance }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
 			decrease_legitimacy_by_three = yes
@@ -1151,9 +1165,9 @@ focus_tree = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_implement_leftist_policies }
+		prerequisite = { focus = DEN_focus_implement_social_liberal_policies }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
 			increase_legitimacy_by_three = yes
@@ -1168,7 +1182,7 @@ focus_tree = {
 					political_legitimacy_equilibrium_custom = 0.03
 				}
 			}
-			add_popularity = { ideology = social_egalitarianism popularity = 0.03 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.03 }
 			add_political_power = -25
 			unlock_decision_tooltip = DEN_decision_organize_a_gathering_of_peasants_in_jutland
 			unlock_decision_tooltip = DEN_decision_organize_a_gathering_of_peasants_in_sjaelland
@@ -1188,7 +1202,7 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_act_as_representative_of_the_rural_people }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
 			add_ideas = DEN_idea_rural_commissions
@@ -1208,7 +1222,7 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_act_as_representative_of_the_rural_people }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
 			country_event = { id = denmark.915 }
@@ -1229,10 +1243,10 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_creation_of_rural_commissions }
 		prerequisite = { focus = DEN_focus_establish_legal_equality_of_the_peasantry }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
-			add_popularity = { ideology = social_egalitarianism popularity = 0.05 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.05 }
 			add_popularity = { ideology = traditional_conservatism popularity = 0.02 }
 			add_political_power = -50
 			add_stability = -0.03
@@ -1240,7 +1254,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_building_up_support_leftist
+		id = DEN_focus_building_up_support_social_liberals
 		icon = GFX_Focus_Ideology_Support_Democracy
 		relative_position_id = DEN_focus_a_coalition_of_the_left
 		x = 0
@@ -1252,10 +1266,10 @@ focus_tree = {
 
 		prerequisite = { focus = DEN_focus_protect_tenant_farmers_from_exploitation }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
-			add_popularity = { ideology = social_egalitarianism popularity = 0.03 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.03 }
 			add_political_power = 50
 			unlock_decision_tooltip = DEN_decision_increase_literacy_amongst_the_peasantry
 			unlock_decision_tooltip = DEN_decision_create_a_newspaper_aimed_at_the_peasantry
@@ -1263,7 +1277,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = DEN_focus_prepare_for_the_next_election_leftist
+		id = DEN_focus_prepare_for_the_next_election_social_liberals
 		icon = GFX_Focus_Ideology_social_democracy
 		relative_position_id = DEN_focus_a_coalition_of_the_left
 		x = 0
@@ -1273,12 +1287,12 @@ focus_tree = {
 			base = 100
 		}
 
-		prerequisite = { focus = DEN_focus_building_up_support_leftist }
+		prerequisite = { focus = DEN_focus_building_up_support_social_liberals }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_EGAL FOCUS_FILTER_ALTHISTORY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_ALTHISTORY }
 
 		completion_reward = {
-			add_popularity = { ideology = social_egalitarianism popularity = 0.03 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.03 }
 			add_political_power = 50
 		}
 	}
@@ -1551,10 +1565,11 @@ focus_tree = {
 		prerequisite = { focus = DEN_focus_act_as_the_center_of_danish_politics }
 		prerequisite = { focus = DEN_focus_cooperate_with_the_conservatives }
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_CENTRISM FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_CENTRISM FOCUS_FILTER_SOCIAL_LIBERALISM FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			add_popularity = { ideology = centrism popularity = 0.02 }
+			add_popularity = { ideology = traditional_conservatism popularity = -0.01 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.03 }
 			add_political_power = 25
 		}
 	}
@@ -1900,7 +1915,7 @@ focus_tree = {
 			base = 1
 		}
 
-		prerequisite = { focus = DEN_focus_prepare_for_the_next_election_leftist focus = DEN_focus_prepare_for_the_next_election_liberals focus = DEN_focus_prepare_for_the_next_election_conservatives }
+		prerequisite = { focus = DEN_focus_prepare_for_the_next_election_social_liberals focus = DEN_focus_prepare_for_the_next_election_liberals focus = DEN_focus_prepare_for_the_next_election_conservatives }
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
@@ -2911,8 +2926,8 @@ focus_tree = {
 			}
             unlock_decision_tooltip = DEN_decision_the_stooulog_law
 			swap_ideas = {
-				remove_idea = DEN_icelandic_independence_movement_1
-				add_idea = DEN_icelandic_independence_movement_2
+				remove_idea = DEN_idea_icelandic_independence_movement_1
+				add_idea = DEN_idea_icelandic_independence_movement_2
 			}
 		}
 	}
@@ -2942,7 +2957,7 @@ focus_tree = {
 		            load_oob = "ICE_1857"
 				}
 		    }
-			remove_ideas = DEN_icelandic_independence_movement_2
+			remove_ideas = DEN_idea_icelandic_independence_movement_2
         	add_political_power = 50
 		}
 	}
@@ -3019,6 +3034,45 @@ focus_tree = {
         	1307 = { add_manpower = -1500 }
 			37 = { add_manpower = 1000 }
 			99 = { add_manpower = 500 }
+			if = {
+				limit = {
+					has_idea = DEN_idea_danish_colonies_2
+				}
+				swap_ideas = {
+					remove_idea = DEN_idea_danish_colonies_2
+					add_idea = DEN_idea_danish_colonies_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DEN_idea_danish_colonies_3
+				}
+				swap_ideas = {
+					remove_idea = DEN_idea_danish_colonies_3
+					add_idea = DEN_idea_danish_colonies_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DEN_idea_danish_colonies_4
+				}
+				swap_ideas = {
+					remove_idea = DEN_idea_danish_colonies_4
+					add_idea = DEN_idea_danish_colonies_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DEN_idea_danish_colonies_5
+				}
+				swap_ideas = {
+					remove_idea = DEN_idea_danish_colonies_5
+					add_idea = DEN_idea_danish_colonies_4
+				}
+			}
+			else = {
+				remove_ideas = DEN_idea_danish_colonies_1
+			}
 		}
 	}
 	
@@ -3038,7 +3092,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
-            #unlock_decision_tooltip = DEN_mission_farm_on_the_islands
+			unlock_decision_tooltip = DEN_decision_intensify_tobacco_cultivation_west_indies_1
 		}
 	}
 	
@@ -3068,9 +3122,9 @@ focus_tree = {
 
 		completion_reward = {
 			add_timed_idea = {
-		    	idea = DEN_kept_our_colony
-		    	days = 100
-		    }
+		    	idea = DEN_idea_kept_our_colony
+		    	days = 90
+			}
 		}
 	}
 	
@@ -3090,7 +3144,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-            unlock_decision_tooltip = DEN_mission_farm_on_the_islands
+			unlock_decision_tooltip = DEN_decision_intensify_cotton_cultivation_nicobars_1
 		}
 	}
 	
@@ -3122,48 +3176,53 @@ focus_tree = {
 			37 = { add_manpower = -100 }
 			99 = { add_manpower = -100 }
 			1111 = {
-                set_temp_variable = {
-                    type_temp = global.fon
-                }
-                set_temp_variable = {
-                    percentage_temp = 0.01
-                }
-                pops_decrease_culture = yes
 				set_temp_variable = {
-                    type_temp = global.yoruban
-                }
-                set_temp_variable = {
-                    percentage_temp = 0.01
-                }
-                pops_decrease_culture = yes
-                set_temp_variable = {
-                    type_temp = global.danish
-                }
-                set_temp_variable = {
-                    percentage_temp = 0.02
-                }
-                pops_increase_culture = yes
+					type_temp = global.fon
+				}
 				set_temp_variable = {
-                    type_temp = global.animist
-                }
-                set_temp_variable = {
-                    percentage_temp = 0.02
-                }
-                pops_decrease_religion = yes
-                set_temp_variable = {
-                    type_temp = global.protestant
-                }
-                set_temp_variable = {
-                    percentage_temp = 0.02
-                }
-                pops_increase_religion = yes
-                add_manpower = 200
-            }
+					percentage_temp = 0.01
+				}
+				pops_decrease_culture = yes
+				
+				set_temp_variable = {
+					type_temp = global.yoruban
+				}
+				set_temp_variable = {
+					percentage_temp = 0.01
+				}
+				pops_decrease_culture = yes
+				
+				set_temp_variable = {
+					type_temp = global.danish
+				}
+				set_temp_variable = {
+					percentage_temp = 0.02
+				}
+				pops_increase_culture = yes
+				
+				set_temp_variable = {
+					type_temp = global.animist
+				}
+				set_temp_variable = {
+					percentage_temp = 0.02
+				}
+				pops_decrease_religion = yes
+				
+				set_temp_variable = {
+					type_temp = global.protestant
+				}
+				set_temp_variable = {
+					percentage_temp = 0.02
+				}
+				pops_increase_religion = yes
+				
+				add_manpower = 200
+			}
 			add_stability = -0.05
 			DAH = {
-		    	add_timed_idea = { idea = DEN_bought_our_land days = 365 }
+				add_timed_idea = { idea = DEN_idea_denmark_bought_our_land days = 900 }
 			}
-			add_timed_idea = { idea = DEN_idea_colonial_purchases days = 365 }
+			add_timed_idea = { idea = DEN_idea_colonial_acquisitions days = 180 }
 		}
 	}
 	
@@ -3250,6 +3309,8 @@ focus_tree = {
 		cost = 70
 		available = {
 			has_tech = tech_infantry_quinine
+			has_tech = tech_humanities_colonial_settlements
+			owns_state = 1111
 		}
 		ai_will_do = {
 			base = 100
@@ -3261,7 +3322,16 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		completion_reward = {
-			# 
+			if = {
+				limit = {
+					SWE = { owns_state = 1328 }
+				}
+				country_event = { id = denmark.402 }
+			}
+			activate_mission_tooltip = DEN_mission_prepare_possible_colonization_of_dahomey
+			hidden_effect = {
+				activate_mission = DEN_mission_prepare_possible_colonization_of_dahomey
+			}
 		}
 	}
 	
@@ -3287,7 +3357,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			# 
+			unlock_decision_tooltip = DEN_decision_intensify_coffee_cultivation_west_indies_1
 		}
 	}
 	
@@ -3310,7 +3380,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			# 
+			unlock_decision_tooltip = DEN_decision_intensify_cocoa_cultivation_africa_1
 		}
 	}
 	
@@ -3336,7 +3406,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
 
 		completion_reward = {
-			# 
+			unlock_decision_tooltip = DEN_decision_establish_trade_hub_nicobars
 		}
 	}
 	

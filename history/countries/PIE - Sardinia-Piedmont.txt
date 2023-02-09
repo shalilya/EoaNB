@@ -60,10 +60,10 @@
 	}
 	set_popularities = {
 		anarchism = 5
-		vanguard_communism = 0
-		collectivist_socialism = 5
+		ideology_social_liberalism = 28
+		ideology_radical_socialism = 5
 		social_egalitarianism = 15
-		centrism = 68
+		centrism = 40
 		traditional_conservatism = 0
 		radical_democracy = 0
 		chauvinist_populism = 0
@@ -424,8 +424,8 @@
 	}
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 20
 		centrism = 70
 		traditional_conservatism = 0
@@ -652,7 +652,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments

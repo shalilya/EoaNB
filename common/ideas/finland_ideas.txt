@@ -11,7 +11,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = ITA_agriculture_focus
+			#picture = FIN_risk_of_famine
 			
 			modifier = {
 
@@ -24,7 +24,7 @@ ideas = {
 				always = no
 			}
 			
-			picture = generic_disjointed_gov
+			picture = FIN_the_language_strife
 			
 			allowed_civil_war = {
 				always = yes
@@ -44,7 +44,7 @@ ideas = {
 				always = no
 			}
 			
-			picture = generic_disjointed_gov
+			picture = FIN_the_language_strife
 			
 			allowed_civil_war = {
 				always = yes
@@ -138,7 +138,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = idea_generic_agrarian_reform
+			picture = FIN_outdated_economy
 			
 			modifier = {
 			    weekly_manpower = -100
@@ -559,7 +559,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = man_five_year_plan_industry
+			picture = FIN_destroyed_marine
 			
 			modifier = {
 				industrial_capacity_dockyard = -0.15
@@ -581,7 +581,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = man_five_year_plan_industry
+			picture = FIN_destroyed_marine
 			
 			modifier = {
 				industrial_capacity_dockyard = -0.10

@@ -1,4 +1,62 @@
 political_actions = {
+
+	SRS_victory_sepoy_rebellion = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			RAJ = {
+				surrender_progress > 0.5
+			}
+		}
+
+		days_mission_timeout = 750
+
+		activation = {
+			SRS={
+				exists = yes
+				has_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag
+			}
+			has_war_with = ENG
+		}
+
+		#cancel_trigger = {
+		#
+		#}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 439
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = fenian_rising_dublin
+		#	tag = ENG
+		#}
+
+		is_good = no
+
+		timeout_effect = {
+			RAJ = {
+				annex_country = {
+					target = SRS
+					transfer_troops = no
+				}
+		    }
+			ENG ={
+				country_event = britishindia.1
+			}
+		}
+
+		complete_effect = {
+		    country_event = {id=britishindia.14}
+		    add_stability = 0.05
+			add_war_support = 0.05
+        }
+    }
 	
 	#Defense of Delhi
 	eoanb_decision_SRS_defend_delhi = {
@@ -38,7 +96,584 @@ political_actions = {
 			}
 		}
 	}
-	
+
+	SRS_decision_call_burma_to_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_burma
+			BRM = {
+				has_country_flag = SRS_Offered_Military
+			}
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_war_with = RAJ
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 15
+		
+		#modifier = {
+		#
+		#}
+		
+		remove_effect ={
+			BRM = {
+				country_event = sepoy.27
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_call_siam_to_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_siam
+			SIA = {
+				has_country_flag = SRS_Offered_Military
+			}
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_war_with = RAJ
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 15
+		
+		#modifier = {
+		#
+		#}
+		
+		remove_effect ={
+			SIA = {
+				country_event = sepoy.27
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_call_afghan_to_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_afghan
+			SIA = {
+				has_country_flag = SRS_Offered_Military
+			}
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_war_with = KAR
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+
+		days_remove = 15
+		
+		#modifier = {
+		#
+		#}
+		
+		remove_effect ={
+			AFG = {
+				country_event = sepoy.28
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_GWA = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_intergrate_new_land
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			GWA ={
+				is_subject_of = SRS
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			annex_country = {
+				target = GWA
+				transfer_troops = yes
+			}
+			754 = {
+				add_core_of = SRS
+			}
+			437 = {
+				add_core_of = SRS
+			}
+			436 = {
+				add_core_of = SRS
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_OUD = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_intergrate_new_land
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			OUD ={
+				is_subject_of = SRS
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			annex_country = {
+				target = OUD
+				transfer_troops = yes
+			}
+			438 = {
+				add_core_of = SRS
+			}
+			756 = {
+				add_core_of = SRS
+			}
+			435 = {
+				add_core_of = SRS
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_HYD = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_intergrate_new_land
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			HYD ={
+				is_subject_of = SRS
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			annex_country = {
+				target = HYD
+				transfer_troops = yes
+			}
+			427 = {
+				add_core_of = SRS
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_princes_lands = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_intergrate_new_land
+			owns_state = 754
+			owns_state = 437
+			owns_state = 436
+			owns_state = 438
+			owns_state = 756
+			owns_state = 435
+			owns_state = 427
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_completed_focus = SRS_annex_princes
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+
+		days_remove = 200
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			754 = {
+				add_core_of = SRS
+			}
+			437 = {
+				add_core_of = SRS
+			}
+			436 = {
+				add_core_of = SRS
+			}
+			438 = {
+				add_core_of = SRS
+			}
+			756 = {
+				add_core_of = SRS
+			}
+			435 = {
+				add_core_of = SRS
+			}
+			427 = {
+				add_core_of = SRS
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_sikh_lands = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_sikhs
+			owns_state = 1249
+			owns_state = 441
+			owns_state = 1317
+			owns_state = 440
+			owns_state = 1330
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_completed_focus = SRS_sikhs
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 200
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			add_state_core = 1249
+			add_state_core = 441
+			add_state_core = 1317
+			add_state_core = 440
+			add_state_core = 1330
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_intergrate_RAJ_lands = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_britain
+			owns_state = 431
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_completed_focus = SRS_britain
+		}
+
+		fire_only_once = yes
+
+		cost = 250
+
+		days_remove = 300
+		
+		modifier = {		
+			political_power_factor = -0.10
+		}
+		
+		remove_effect ={
+			add_state_core = 1000
+			add_state_core = 443
+			add_state_core = 428
+			add_state_core = 1007
+			add_state_core = 429
+			add_state_core = 977
+			add_state_core = 425
+			add_state_core = 757
+			add_state_core = 758
+			add_state_core = 423
+			add_state_core = 424
+			add_state_core = 1034
+			add_state_core = 755
+			add_state_core = 1030
+			add_state_core = 426
+			add_state_core = 431
+			add_state_core = 1289
+			add_state_core = 1315
+			add_state_core = 1397
+			add_state_core = 430
+			add_state_core = 1316
+			add_state_core = 1075
+			add_state_core = 1390
+			add_state_core = 1392
+			add_state_core = 1391
+			add_state_core = 288
+			add_state_core = 432
+			add_state_core = 434
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_attack_HYD = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_annex_princes
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+		
+		#modifier = {		
+		#
+		#}
+		
+		remove_effect ={
+			declare_war_on = {
+				target = HYD
+				type = annex_everything
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_attack_OUD = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_annex_princes
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+		
+		#modifier = {		
+		#
+		#}
+		
+		remove_effect ={
+			declare_war_on = {
+				target = OUD
+				type = annex_everything
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_attack_GWA = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SRS_annex_princes
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+		
+		#modifier = {		
+		#
+		#}
+		
+		remove_effect ={
+			declare_war_on = {
+				target = GWA
+				type = annex_everything
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SRS_decision_british_truce = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_war_with = ENG
+			RAJ = {
+				has_capitulated = yes
+			}
+		}
+		
+		allowed = { TAG = SRS }
+
+		visible = {
+			TAG = SRS
+			has_completed_focus = SRS_britain
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+		
+		#modifier = {		
+		#
+		#}
+		
+		remove_effect ={
+			hidden_effect = {
+				white_peace = ENG
+				annex_country = {
+					target = RAJ
+					transfer_troops = no
+				}
+				ENG = {
+					end_puppet = NEP
+				}
+				NEP = {
+					remove_ideas = AFR_british_protectorate
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
 }
 
 eoanb_category_development={

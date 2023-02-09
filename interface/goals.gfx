@@ -4444,6 +4444,15 @@ spriteTypes = {
 		name = "GFX_focus_por_concordat"
 		texturefile = "gfx/interface/goals/focus_por_concordat.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_generic_free_iberia"
+		texturefile = "gfx/interface/goals/focus_generic_free_iberia.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_generic_population_growth"
+		texturefile = "gfx/interface/goals/focus_generic_population_growth.dds"
+	}
 	### EOANB
 	
 	####GENERAL GOALS GO HERE, SORTED INTO THIER COMPONANT FILES
@@ -4756,7 +4765,11 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_ENG_focus_royal_coat_arms"
-		texturefile = "gfx/interface/goals/uk/ENG_focus_royal_coat_arms.dds"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_royal_coat_arms.png"
+	}
+	SpriteType = {
+		name = "GFX_ENG_10_downing_street_icon"
+		texturefile = "gfx/interface/goals/uk/ENG_10_downing_street_icon.png"
 	}
 	spriteType = {
 		name = "GFX_focus_ENG_new_doctrines"
@@ -5480,6 +5493,10 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_ITA_Nigra"
 		texturefile = "gfx/interface/goals/italy/focus_ITA_Nigra.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_ITA_third_independence_war"
+		texturefile = "gfx/interface/goals/italy/focus_ITA_third_independence_war.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_ITA_italian_army"

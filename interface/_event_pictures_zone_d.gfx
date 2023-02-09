@@ -186,6 +186,22 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/russia/report_event_krenholm_manufacture.dds"
 	}	
 	spriteType = {
+		name = "GFX_report_event_warsaw_petersburg_railway"
+		texturefile = "gfx/event_pictures/russia/report_event_warsaw_petersburg_railway.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_polish_agro_society"
+		texturefile = "gfx/event_pictures/russia/report_event_polish_agro_society.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_petropavlovsk_ship"
+		texturefile = "gfx/event_pictures/russia/report_event_petropavlovsk_ship.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_siberian_gunboats"
+		texturefile = "gfx/event_pictures/russia/report_event_siberian_gunboats.dds"
+	}
+	spriteType = {
 		name = "GFX_report_event_russian_manchuria"
 		texturefile = "gfx/event_pictures/russia/report_event_russian_manchuria.dds"
 	}
@@ -218,6 +234,38 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/russia/report_event_crimean_war.dds"
 	}
 	spriteType = {
+		name = "GFX_report_event_crimean_war_navy"
+		texturefile = "gfx/event_pictures/russia/report_event_crimean_war_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_petersburg_navy_schools"
+		texturefile = "gfx/event_pictures/russia/report_event_petersburg_navy_schools.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_general_admiral"
+		texturefile = "gfx/event_pictures/russia/report_event_general_admiral.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_gatling"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_gatling.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_railway_troops"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_railway_troops.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_berdan_rfile"
+		texturefile = "gfx/event_pictures/russia/report_event_berdan_rfile.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_lena_goldfields"
+		texturefile = "gfx/event_pictures/russia/report_event_lena_goldfields.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_state_bank"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_state_bank.dds"
+	}
+	spriteType = {
 		name = "GFX_report_event_okhrana"
 		texturefile = "gfx/event_pictures/russia/report_event_okhrana.dds"
 	}
@@ -236,6 +284,198 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_mahtra_war"
 		texturefile = "gfx/event_pictures/russia/report_event_mahtra_war.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_nazranov_rebellion"
+		texturefile = "gfx/event_pictures/russia/report_event_nazranov_rebellion.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_riga_technical_university"
+		texturefile = "gfx/event_pictures/russia/report_event_riga_technical_university.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_armenian_school"
+		texturefile = "gfx/event_pictures/russia/report_event_armenian_school.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_south_ussuriysk_border_commissariat"
+		texturefile = "gfx/event_pictures/russia/report_event_south_ussuriysk_border_commissariat.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_sevastopol_biological_station"
+		texturefile = "gfx/event_pictures/russia/report_event_sevastopol_biological_station.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_zarozhany_sugar_factory"
+		texturefile = "gfx/event_pictures/russia/report_event_zarozhany_sugar_factory.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_ukrainian_discourse_theater"
+		texturefile = "gfx/event_pictures/russia/report_event_ukrainian_discourse_theater.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_pedro_ii_visit"
+		texturefile = "gfx/event_pictures/russia/report_event_pedro_ii_visit.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_musical_society"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_musical_society.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_trams_in_warsaw"
+		texturefile = "gfx/event_pictures/russia/report_event_trams_in_warsaw.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_bratnia_pomoc"
+		texturefile = "gfx/event_pictures/russia/report_event_bratnia_pomoc.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_konstanty_rudzki"
+		texturefile = "gfx/event_pictures/russia/report_event_konstanty_rudzki.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_corps_concordia_rigensis"
+		texturefile = "gfx/event_pictures/russia/report_event_corps_concordia_rigensis.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_estonian_song_festival"
+		texturefile = "gfx/event_pictures/russia/report_event_estonian_song_festival.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_petrovskaya_agricultural_academy"
+		texturefile = "gfx/event_pictures/russia/report_event_petrovskaya_agricultural_academy.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_st_petersburg_declaration"
+		texturefile = "gfx/event_pictures/russia/report_event_st_petersburg_declaration.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_bryansk_machine_factory"
+		texturefile = "gfx/event_pictures/russia/report_event_bryansk_machine_factory.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_feodosia_teachers_institute"
+		texturefile = "gfx/event_pictures/russia/report_event_feodosia_teachers_institute.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_tiligul_railway_disaster"
+		texturefile = "gfx/event_pictures/russia/report_event_tiligul_railway_disaster.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_yekaterinburg_school"
+		texturefile = "gfx/event_pictures/russia/report_event_yekaterinburg_school.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_ludvig_nobel"
+		texturefile = "gfx/event_pictures/russia/report_event_ludvig_nobel.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_branobel_oil_company"
+		texturefile = "gfx/event_pictures/russia/report_event_branobel_oil_company.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_ha_melitz"
+		texturefile = "gfx/event_pictures/russia/report_event_ha_melitz.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_odessa_military_academy"
+		texturefile = "gfx/event_pictures/russia/report_event_odessa_military_academy.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_franz_krull_metal_works"
+		texturefile = "gfx/event_pictures/russia/report_event_franz_krull_metal_works.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_kyiv_police_department"
+		texturefile = "gfx/event_pictures/russia/report_event_kyiv_police_department.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_kyiv_opera"
+		texturefile = "gfx/event_pictures/russia/report_event_kyiv_opera.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_moscow_criminial_investigation_department"
+		texturefile = "gfx/event_pictures/russia/report_event_moscow_criminial_investigation_department.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_tchaikovsky"
+		texturefile = "gfx/event_pictures/russia/report_event_tchaikovsky.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_pultusk_meteorite"
+		texturefile = "gfx/event_pictures/russia/report_event_pultusk_meteorite.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_kazan_veterinary_institute"
+		texturefile = "gfx/event_pictures/russia/report_event_kazan_veterinary_institute.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_iosif_goshkevich"
+		texturefile = "gfx/event_pictures/russia/report_event_iosif_goshkevich.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_cracow_wedding"
+		texturefile = "gfx/event_pictures/russia/report_event_cracow_wedding.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_imperial_museum_building"
+		texturefile = "gfx/event_pictures/russia/report_event_imperial_museum_building.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_imperial_museum_uvarov"
+		texturefile = "gfx/event_pictures/russia/report_event_imperial_museum_uvarov.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_tretyakovskiy_street"
+		texturefile = "gfx/event_pictures/russia/report_event_tretyakovskiy_street.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_archaeological_society"
+		texturefile = "gfx/event_pictures/russia/report_event_archaeological_society.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_warm_malls"
+		texturefile = "gfx/event_pictures/russia/report_event_warm_malls.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_theater"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_theater.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_alexander_herzen"
+		texturefile = "gfx/event_pictures/russia/report_event_alexander_herzen.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_mendeleev"
+		texturefile = "gfx/event_pictures/russia/report_event_mendeleev.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_entomological_society"
+		texturefile = "gfx/event_pictures/russia/report_event_russian_entomological_society.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_moscow_zoo"
+		texturefile = "gfx/event_pictures/russia/report_event_moscow_zoo.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_church_of_the_intercession"
+		texturefile = "gfx/event_pictures/russia/report_event_church_of_the_intercession.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_yablochkov_candle"
+		texturefile = "gfx/event_pictures/russia/report_event_yablochkov_candle.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_alexander_butlerov"
+		texturefile = "gfx/event_pictures/russia/report_event_alexander_butlerov.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_anna_karenina"
+		texturefile = "gfx/event_pictures/russia/report_event_anna_karenina.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_telegraph_museum"
+		texturefile = "gfx/event_pictures/russia/report_event_telegraph_museum.png"
 	}
 	
 ### Sweden ###

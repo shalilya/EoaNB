@@ -1,5 +1,22 @@
 #### Zone D Decision Categories ####
 
+### Eastern Crisis ###
+eastern_crisis_decision_category =	{
+	icon = generic_arms_trade
+	allowed = { 
+		OR = {
+			tag = RUS
+			tag = ROM
+			tag = OTO
+			tag = SER
+			tag = MNT
+		}
+	}
+	visible = {
+		
+	}
+}
+
 ### Finland ###
 FIN_decision_category_industrialization = {
 	icon = generic_economy
@@ -117,7 +134,23 @@ MNT_decision_category_economy = {
 	icon = generic_economy
 	allowed = { tag = MNT }
 	visible = {
-		has_completed_focus = MNT_the_new_age
+		#has_completed_focus = MNT_focus_into_the_new_age
+	}
+}
+
+MNT_decision_category_agriculture = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		#has_completed_focus = MNT_focus_into_the_new_age
+	}
+}
+
+MNT_decision_category_administration = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		#has_completed_focus = MNT_focus_into_the_new_age
 	}
 }
 
@@ -125,7 +158,25 @@ MNT_decision_category_army = {
 	icon = generic_economy
 	allowed = { tag = MNT }
 	visible = {
-		has_completed_focus = MNT_danilos_army_reform
+		#has_completed_focus = MNT_danilos_army_reform
+	}
+}
+
+MNT_decision_category_negotiation_with_ottomans = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		
+	}
+}
+
+MNT_decision_category_Herzegovinian_uprising = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		HRZ = {
+			has_war_with = OTO
+		}
 	}
 }
 
@@ -381,11 +432,6 @@ RUS_Caucasian_decisions = {
 	priority = 200
 }
 
-RUS_constitution_creation = {
-	icon = generic_political_actions
-	allowed = { tag = RUS }
-}
-
 RUS_decision_category_siberian_colonization = {
 	icon = generic_political_actions
 	allowed = { tag = RUS }
@@ -434,6 +480,35 @@ RUS_decision_category_navy_reforms = {
 RUS_decision_category_russian_technical_society = {
 	icon = generic
 	allowed = { tag = RUS }
+}
+
+RUS_decision_category_education_reform = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_university_autonomy
+	}
+}
+
+RUS_decision_category_zemstva = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_zemstvo
+	}
+}
+
+RUS_decision_category_fiscal_reform = {
+	icon = generic
+	allowed = { tag = RUS }
+}
+
+RUS_decision_category_peasant_reform = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_university_autonomy
+	}
 }
 
 ### Scandinavia ###
@@ -535,6 +610,15 @@ SER_decision_category_balkan_politics = {
 	#visible = {
 		#has_completed_focus = SER_create_balkan_alliance
 	#}
+}
+
+SER_decision_category_maistorovich_affair = {
+	icon = generic_crisis
+	allowed = { tag = SER }
+	visible_when_empty = no
+	visible = {
+		has_country_flag = SER_maistorovich_coup
+	}
 }
 
 ### Sweden ###
