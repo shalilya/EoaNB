@@ -12,7 +12,7 @@ country_event = {
 	option = {
 		name = montenegro.1.a
 		ai_chance = { factor = 100 } 
-        #complete_national_focus = MNT_Montenegrin_Clans
+        
 	}	
 }
 
@@ -72,7 +72,26 @@ country_event = {
 	option = {
 		name = montenegro.5.a
 		ai_chance = { factor = 100 } 
-	}	
+		            division_template = {
+                name = "Clans Army njegoš"
+                is_locked = yes
+                division_cap = 0 
+                priority = 0
+                template_counter = 0
+                regiments = {
+                    native_mountaineers = { x = 0 y = 0 }
+					native_mountaineers = { x = 0 y = 1 }
+                    light_infantry = { x = 0 y = 2 }
+                }
+
+            }
+			942 = {
+				create_unit = {
+					division = "name = \"Njegoš Batalions\" division_template = \"Clans Army njegoš\" start_experience_factor = 0.7"
+					owner = MNT
+			}
+		}	
+	}
 }
 
 country_event = {
@@ -145,7 +164,7 @@ country_event = {
 		
 		942 = { add_extra_state_shared_building_slots = 1 }
 		942 = { add_manpower = 300 }
-		set_victory_points = {
+		add_victory_points = {
 			province = 9821
 			value = 3
 		}
@@ -243,7 +262,7 @@ country_event = { #People's Census
 	}
 }
 
-country_event = { #Vukalović Uprising - Montenegro Support
+country_event = { #Alaj-Barjak
 	id = montenegro.14
 	title = montenegro.14.t
 	desc = montenegro.14.d
@@ -256,9 +275,6 @@ country_event = { #Vukalović Uprising - Montenegro Support
 	option = {
 		name = montenegro.14.a
 		ai_chance = { factor = 100 }
-		add_opinion_modifier = { target = MNT modifier = MNT_Supported_Vukalovic }
-		reverse_add_opinion_modifier = { target = MNT modifier = MNT_Supported_Vukalovic }
-		add_war_support = -0.02
 	}
 }
 
@@ -495,3 +511,1689 @@ country_event = { #Bishops of Centije - ordination
 		}
 	}
 }
+
+
+##Vukalović Uprising Events
+country_event = { #Vukalović Uprising - Montenegro Support
+	id = montenegro.26
+	title = montenegro.26.t
+	desc = montenegro.26.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.26.a
+		ai_chance = { factor = 100 }
+		add_opinion_modifier = { target = MNT modifier = MNT_Supported_Vukalovic }
+		reverse_add_opinion_modifier = { target = MNT modifier = MNT_Supported_Vukalovic }
+		add_war_support = -0.02
+	}
+}
+
+country_event = { #Sandjak Capture - WIN
+	id = montenegro.27
+	title = montenegro.27.t
+	desc = montenegro.27.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.27.a
+		ai_chance = { factor = 100 }
+		1202 = {
+			transfer_state_to = MNT
+		}
+		if = { 
+			limit = {
+				tag = MNT 
+			}
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+				producer = OTO
+            }
+		}
+		if = { 
+			limit = {
+				tag = OTO 
+			}
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+				producer = OTO
+            }
+		}
+	}
+}
+
+country_event = { #Sandjak Capture - LOSE
+	id = montenegro.28
+	title = montenegro.28.t
+	desc = montenegro.28.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.28.a
+		ai_chance = { factor = 100 }
+
+	}
+}
+
+country_event = { #Sandjak Capture - DRAW
+	id = montenegro.29
+	title = montenegro.29.t
+	desc = montenegro.29.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.29.a
+		ai_chance = { factor = 100 }
+
+	}
+}
+
+country_event = { #Outer Montenegro Capture - WIN
+	id = montenegro.30
+	title = montenegro.30.t
+	desc = montenegro.30.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.30.a
+		ai_chance = { factor = 100 }
+		1204 = {
+			transfer_state_to = MNT
+		}
+		if = { 
+			limit = {
+				tag = MNT 
+			}
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+				producer = OTO
+            }
+		}
+		if = { 
+			limit = {
+				tag = OTO 
+			}
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+				producer = OTO
+            }
+		}
+	}
+}
+
+country_event = { #Outer Montenegro Capture - LOSE
+	id = montenegro.31
+	title = montenegro.31.t
+	desc = montenegro.31.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.31.a
+		ai_chance = { factor = 100 }
+
+	}
+}
+
+country_event = { #Outer Montenegro Capture - DRAW
+	id = montenegro.32
+	title = montenegro.32.t
+	desc = montenegro.32.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.32.a
+		ai_chance = { factor = 100 }
+
+	}
+}
+
+
+
+# country_event = {
+#	id = montenegro.33
+#	title = montenegro.33.t
+#	desc = montenegro.33.d
+#	picture = GFX_report_event_generic_read_write
+#	
+#   #date = 1858.10.1.
+#
+#	option = {
+#   	name = montenegro.33.a
+#       ai_chance = { factor = 60 } 
+#		random_list = {
+#   			20 = {  
+#					MNT = { country_event = { days = 180 id = montenegro.34   } } 
+#					add_timed_idea = { 
+#						idea = MNT_agricultural_siutation_1 
+#						day = 180 
+#					} 
+#				}
+#	
+#   			20 = {  
+#					MNT = { country_event = { days = 180 id = montenegro.34   } } 
+#					add_timed_idea = { 
+#						idea = MNT_agricultural_siutation_2
+#   					day = 180 
+#					} 
+#				}
+#	
+#   			20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } }
+#  					add_timed_idea = { 
+#						idea = MNT_agricultural_siutation_3
+#						day = 180 
+#					}	
+#				}
+#
+#				20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } }
+#  					add_timed_idea = { 
+#						idea = MNT_agricultural_siutation_4
+#						day = 180 
+#					}	
+#				}
+#
+#				20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } }
+#  					add_timed_idea = { 
+#						idea = MNT_agricultural_siutation_3
+#						day = 180 
+#				}	
+#			}			
+#	  	}
+#	 }
+#}
+#
+#country_event = {
+#	id = montenegro.34
+#	title = montenegro.34.t
+#	desc = montenegro.34.d
+#	picture = GFX_report_event_generic_read_write
+#
+#	option = {
+#		name = montenegro.34.a
+#		ai_chance = { factor = 60 } 
+#		random_list = {
+#   20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_1 
+#	day = 180 } 
+#	}
+#	
+#   20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } } 
+#       add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_2
+#   day = 180 } 
+#	}
+#	
+#   20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } }
+#   add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_3
+#	day = 180 }	}
+#	
+#   20 = {  MNT = { country_event = { days = 180 id = montenegro.34  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   20 = {  MNT = { country_event = { days = 180 id = montenegro.34   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	   }			
+#	  }
+#	 }
+#	 option = {
+#		name = montenegro.34.b
+#		ai_chance = { factor = 100 } 
+#		trigger = {has_completed_focus = MNT_focus_buy_modern_machinery}
+#		random_list = {
+#	25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_2
+#   day = 180 } 
+#	}
+#	
+#   25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } }
+#   add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_3
+#	day = 180 }	}
+#	
+#   25 = {  MNT = { country_event = { days = 180 id = montenegro.35  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	    }
+#	  }
+#	 }
+#	}
+#	
+#	   country_event = {
+#	id = montenegro.35
+#	title = montenegro.35.t
+#	desc = montenegro.35.d
+#	picture = GFX_report_event_generic_read_write
+#
+#	option = {
+#		name = montenegro.35.a
+#		ai_chance = { factor = 60 } 
+#				random_list = {
+#	25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_2
+#   day = 180 } 
+#	}
+#	
+#   25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } }
+#  add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_3
+#	day = 180 }	}
+#	
+#  25 = {  MNT = { country_event = { days = 180 id = montenegro.35  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   25 = {  MNT = { country_event = { days = 180 id = montenegro.35   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	    }
+#	  }
+#
+#	 }
+#	 option = {
+#		name = montenegro.35.b
+#		ai_chance = { factor = 100 } 
+#		trigger = {has_completed_focus = MNT_focus_advance_agricultural_technology}
+#		random_list = {
+#	
+#   33 = {  MNT = { country_event = { days = 180 id = montenegro.36   } }
+#  add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_3
+#	day = 180 }	}
+#	
+#   33 = {  MNT = { country_event = { days = 180 id = montenegro.36  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   33 = {  MNT = { country_event = { days = 180 id = montenegro.36   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	    }
+#	  }
+#	 }
+#	}
+#	
+#	
+#	
+#	 country_event = {
+#	id = montenegro.36
+#	t#itle = montenegro.36.t
+#	desc = montenegro.36.d
+#	picture = GFX_report_event_generic_read_write
+#
+#	option = {
+#		name = montenegro.36.a
+#		ai_chance = { factor = 60 } 
+#				random_list = {
+#	
+#  33 = {  MNT = { country_event = { days = 180 id = montenegro.36   } }
+# add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_3
+#	day = 180 }	}
+#	
+#    33 = {  MNT = { country_event = { days = 180 id = montenegro.36  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   33 = {  MNT = { country_event = { days = 180 id = montenegro.36   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#       day = 180 }
+#	    }
+#	  }
+#	  }
+#	 
+#	 option = {
+#		name = montenegro.36.b
+#		ai_chance = { factor = 100 } 
+#		trigger = {has_completed_focus = MNT_focus_increase_farming_yields  }
+#		random_list = {
+#	
+#   50 = {  MNT = { country_event = { days = 180 id = montenegro.37  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   50 = {  MNT = { country_event = { days = 180 id = montenegro.37   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	    }
+#	  }
+#	 }
+#	}
+#	
+#	
+#	
+#	
+#	
+#	
+#		 country_event = {
+#	id = montenegro.37
+#	title = montenegro.37.t
+#	desc = montenegro.37.d
+#	picture = GFX_report_event_generic_read_write
+#
+#	option = {
+#		name = montenegro.37.a
+#		ai_chance = { factor = 60 } 
+#				random_list = {
+#   50 = {  MNT = { country_event = { days = 180 id = montenegro.37  } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_4
+#	day = 180 }}
+#	
+#   50 = {  MNT = { country_event = { days = 180 id = montenegro.37   } } 
+#	add_timed_idea = { 
+#	idea = MNT_agricultural_siutation_5
+#	day = 180 }
+#	    }
+#	  }
+#	 }
+#	 
+#	 option = {
+#		name = montenegro.37.b
+#		ai_chance = { factor = 100 } 
+#		trigger = {has_completed_focus = MNT_focus_a_surplus_of_foodstuff}
+#	add_idea = { 
+#	idea = MNT_agricultural_siutation_6
+#
+#	    }
+#	  }
+#	 }
+#	 
+country_event = {
+	id = montenegro.33
+    title = montenegro.33.t
+    desc = montenegro.33.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = montenegro.33.a
+        ai_chance = { factor = 100 }
+        HRZ = {
+            division_template = {
+                name = "Jaroši Batalions"
+                is_locked = yes
+                regiments = {
+                    native_mountaineers = { x = 0 y = 0 }
+                    feudal_infantry = { x = 0 y = 1 }
+                }
+
+            }
+			1205 = {
+				create_unit = {
+					division = "name = \"Jaroši Batalions\" division_template = \"Jaroši Batalions\"  start_experience_factor = 0.1"
+					owner = HRZ
+				}
+				create_unit = {
+					division = "name = \"Jaroši Batalions\" division_template = \"Jaroši Batalions\"  start_experience_factor = 0.1"
+					owner = HRZ
+				}
+			}
+	    }
+    }
+}
+
+country_event = {
+	id = montenegro.34 # Danilo No Guaranteed Survival Option
+	title = montenegro.34.t
+	desc = montenegro.34.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { 
+		NOT = {
+			# has_country_flag = inset_same_country_flag
+		}
+	}
+
+	option = {
+		name = montenegro.34.a # Dies
+		ai_chance = { factor = 75 }
+	}
+	option = {
+		name = montenegro.34.b # 50/50
+		ai_chance = { factor = 25 }
+	}
+}
+country_event = {
+	id = montenegro.35 # Danilo With Guaranteed Survival Option
+	title = montenegro.35.t
+	desc = montenegro.35.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# has_country_flag = inset_same_country_flag
+	}
+
+	option = {
+		name = montenegro.35.a # Dies
+		ai_chance = { factor = 75 }
+	}
+	option = {
+		name = montenegro.35.b # 50/50
+		ai_chance = { factor = 25 }
+	}
+	option = {
+		name = montenegro.35.c # Survives
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { #Bogišić Code
+	id = montenegro.36
+	title = montenegro.36.t
+	desc = montenegro.36.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.36.a
+		ai_chance = { factor = 100 }
+
+	}
+}
+
+country_event = {
+	id = montenegro.37 #resource rights negotiations
+	title = montenegro.37.t
+	desc = montenegro.37.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.37.a
+		ai_chance = { factor = 100 }
+        add_stability = 0.02
+		MNT = {
+		   if = {
+			 limit = {
+				has_idea = MNT_negotiations_with_the_Ottoman_Empire
+             }
+			 swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire add_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure } 
+           }
+           else_if = {
+			 limit = {
+				has_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure
+             }
+             swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure add_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable } 
+		  }
+          else_if = {
+			limit = {
+				has_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable
+            }
+            swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable add_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise } 
+	      }
+		  else_if = {
+			limit = {
+				has_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise
+			}
+            swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise add_idea = MNT_negotiations_with_the_Ottoman_Empire_Success } 
+	       }
+		}
+	}	         
+					 
+	option = {
+		name = montenegro.37.b
+		ai_chance = { factor = 70 } 
+		add_stability = -0.02
+		MNT = {
+			country_event = {
+				id = montenegro.38
+				days = 20
+			}
+		}
+	}
+}
+			
+country_event = {
+	id = montenegro.38
+	title = montenegro.38.t
+	desc = montenegro.38.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.38.a
+		ai_chance = { factor = 100 }
+			add_ideas = MNT_Ottoman_mining_sanctions
+			add_war_support = 0.1
+	}
+					 
+	option = {
+		name = montenegro.38.b
+		ai_chance = { factor = 100 } 
+		swap_ideas = {
+			remove_idea = MNT_dominance_of_the_rich_ottomans
+			add_idea = MNT_dominance_of_the_rich_ottomans1
+		}
+		add_stability = -0.05
+	}  
+}
+
+country_event = {
+	id = montenegro.39
+	title = montenegro.39.t
+	desc = montenegro.39.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.39.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.02
+		1202 = { add_compliance = 5 }
+		1204 = { add_compliance = 5 }
+		MNT = {
+            if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire add_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure } 
+            }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure add_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable } 
+                }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable add_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise } 
+	      }
+		   else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise add_idea = MNT_negotiations_with_the_Ottoman_Empire_Success } 
+	       }
+		}
+	}
+					 
+	option = {
+		name = montenegro.39.b
+		ai_chance = { factor = 10 }
+		add_stability = -0.02
+		MNT = {
+			country_event = {
+				id = montenegro.40
+				days = 20
+			}
+		}	
+		1202 = { add_resistance = 20 }
+		1204 = { add_resistance = 20 }	
+	}
+}
+
+country_event = {
+	id = montenegro.40
+	title = montenegro.40.t
+	desc = montenegro.40.d
+	picture = GFX_report_event_generic_read_write
+	
+     is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.40.a
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+		add_manpower = -150
+	}
+}  
+
+country_event = {
+	id = montenegro.41
+	title = montenegro.41.t
+	desc = montenegro.41.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.41.a
+		ai_chance = { factor = 101 }
+			1202 = { add_resistance = 20 }
+			1204 = { add_resistance = 20 }	
+			MNT = {
+				add_ideas = MNT_ban_on_arms_imports
+				country_event = {
+					id = montenegro.42	
+					days = 20
+			}
+		}
+	}
+	   
+	option = {
+		name = montenegro.41.b
+		ai_chance = { factor = 101 }
+		MNT = {
+            if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire add_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure } 
+            }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure add_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable } 
+                }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable add_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise } 
+	      }
+		   else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise add_idea = MNT_negotiations_with_the_Ottoman_Empire_Success } 
+	       }
+		}
+	}
+}
+	
+country_event = {
+	id = montenegro.42	
+	title = montenegro.42.t
+	desc = montenegro.42.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.42.a
+		ai_chance = { factor = 101 }
+		add_war_support = 0.1
+	    add_manpower = 100
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 10
+			producer = MNT
+		}
+	}
+}
+
+country_event = {
+	id = montenegro.43
+	title = montenegro.43.t
+	desc = montenegro.43.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.43.a
+		ai_chance = { factor = 80 }
+		1202 = { add_resistance = 20 }
+		1204 = { add_resistance = 20 }		
+		MNT = {
+			country_event = {
+				id = montenegro.44	
+				days = 20
+			}
+			add_manpower = -100
+		}
+	}
+	   
+	option = {
+		name = montenegro.43.b
+		ai_chance = { factor = 101 }
+		MNT = {
+            if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire add_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure } 
+            }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Failure add_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable } 
+                }
+            else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Unacceptable add_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise } 
+	      }
+		   else_if = {
+                limit = {
+                    has_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise
+                }
+                swap_ideas = { remove_idea = MNT_negotiations_with_the_Ottoman_Empire_Compromise add_idea = MNT_negotiations_with_the_Ottoman_Empire_Success } 
+	       }
+		}
+	}
+}
+		
+country_event = {
+	id = montenegro.44
+	title = montenegro.44.t
+	desc = montenegro.44.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.44.a
+		ai_chance = { factor = 101 }
+		army_experience = -25
+	}
+}
+
+#an event where the OTO decides the fate of the herzegovina
+country_event = { 
+	id = montenegro.45
+	title = montenegro.45.t
+	desc = montenegro.45.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.45.a
+		ai_chance = { factor = 101 }
+		OTO = {
+			annex_country = {
+			target = HRZ
+			}
+		}
+		1205 = { add_resistance = 80 }
+	}
+	
+	option = {
+		name = montenegro.45.b
+		ai_chance = { factor = 101 }
+		OTO = {
+			puppet = HRZ
+		}
+		HRZ = { complete_national_focus = HRZ_focus_Scutari_convention }
+	}
+}
+
+#an event reporting that Montenegro had surrendered
+country_event = {
+	id = montenegro.46
+	title = montenegro.46.t
+	desc = montenegro.46.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.46.a
+		ai_chance = { factor = 101 }
+		add_stability = 0.02
+	 }
+   }
+   
+ #battle of grahovac
+ country_event = {
+	id = montenegro.47
+	title = montenegro.47.t
+	desc = montenegro.47.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	trigger = {
+    has_border_war = yes
+	}
+	
+	option = {
+		name = montenegro.47.a
+		ai_chance = { factor = 101 }
+		add_war_support = 0.03
+		OTO = {
+		country_event = montenegro.48
+		}
+		add_equipment_to_stockpile = {
+				type = cannon_equipment
+				amount = 20
+				producer = OTO
+        		}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = OTO
+        		}
+        damage_units = {
+	    province = 11858
+        state = 1204
+        region = 24
+        damage = 0.3
+        org_damage = 0.4
+        str_damage = 0.2
+        ratio = no
+        army = yes
+        navy = no
+		}
+		
+		damage_units = {
+	    province = 13779
+        state = 1204
+        region = 24
+        damage = 0.3
+        org_damage = 0.4
+        str_damage = 0.2
+        ratio = no
+        army = yes
+        navy = no
+		}
+	}
+}
+      
+ #battle of grahovac OTO side
+ country_event = {
+	id = montenegro.48
+	title = montenegro.48.t
+	desc = montenegro.48.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	
+	option = {
+		name = montenegro.48.a
+		ai_chance = { factor = 101 }
+        add_stability = -0.02
+				add_equipment_to_stockpile = {
+				type = cannon_equipment
+				amount = -20
+				producer = OTO
+        		}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+				producer = OTO
+        		}
+	}
+}
+
+ #migration to montenegro
+ country_event = {
+	id = montenegro.49
+	title = montenegro.49.t
+	desc = montenegro.49.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	
+	option = {
+		name = montenegro.49.a
+		ai_chance = { factor = 101 }
+        add_stability = -0.02
+		if = { 
+			limit = {
+				controls_state = 1204
+				}
+        1204 = { add_manpower = 2375 }
+		942 = { add_manpower = 987 }
+		}
+		else_if = {
+			limit = {
+				controls_state = 942
+			}
+		942 = { add_manpower = 1585 }
+		}		
+	}
+}
+	
+   
+
+country_event = {
+	id = montenegro.108
+	title = montenegro.108.t
+	desc = montenegro.108.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.108.a
+		ai_chance = { factor = 101 }
+		hidden_effect = {
+		MNT = {country_event = { id = montenegro.47 days = 16 } }
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 1204
+				num_provinces = 1
+				on_win = montenegro.111
+				on_lose = montenegro.112
+				on_cancel = montenegro.113
+				modifier = 0.1
+			}	
+			defender = {
+				state = 942
+				num_provinces = 1
+				on_win = montenegro.114
+				on_lose = montenegro.115
+				on_cancel = montenegro.116
+				modifier = 0.5
+			}
+		}
+	}
+}
+			  
+country_event = {
+	id = montenegro.109
+	title = montenegro.109.t
+	desc = montenegro.109.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.109.a
+		ai_chance = { factor = 101 }
+		hidden_effect = {
+		MNT = {country_event = { id = montenegro.47 days = 18 } }
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 1204
+				num_provinces = 1
+				on_win = montenegro.111
+				on_lose = montenegro.112
+				on_cancel = montenegro.113
+				modifier = 0.1
+			}	
+			defender = {
+				state = 942
+				num_provinces = 1
+				on_win = montenegro.114
+				on_lose = montenegro.115
+				on_cancel = montenegro.116
+				modifier = 0.4
+			}
+		}
+	}
+}
+	   
+country_event = {
+	id = montenegro.110
+	title = montenegro.110.t
+	desc = montenegro.110.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.110.a
+		ai_chance = { factor = 101 }
+		hidden_effect = {
+		MNT = {country_event = { id = montenegro.47 days = 18 } }
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 1204
+				num_provinces = 1
+				on_win = montenegro.111
+				on_lose = montenegro.112
+				on_cancel = montenegro.113
+				modifier = 0.1
+			}	
+			defender = {
+				state = 942
+				num_provinces = 1
+				on_win = montenegro.114
+				on_lose = montenegro.115
+				on_cancel = montenegro.116
+				modifier = 0.3
+			}
+		}
+	}
+	
+	option = {
+		name = montenegro.110.b
+		ai_chance = { factor = 101 }
+		complete_national_focus = MNT_focus_recognize_our_status_under_the_ottomans
+	}
+}
+	   
+	   
+country_event = {
+	id = montenegro.111
+	title = montenegro.111.t
+	desc = montenegro.111.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.111.a
+		ai_chance = { factor = 100 }
+		army_experience = 10
+	}
+}
+	   
+country_event = {
+	id = montenegro.112
+	title = montenegro.112.t
+	desc = montenegro.112.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.112.a
+		ai_chance = { factor = 100 }
+		add_stability = -0.03
+	}
+}
+	   
+country_event = {
+	id = montenegro.113
+	title = montenegro.113.t
+	desc = montenegro.113.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.113.a
+		ai_chance = { factor = 100 }
+		army_experience = 5
+	}
+}
+	   
+country_event = {
+	id = montenegro.114
+	title = montenegro.114.t
+	desc = montenegro.114.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.114.a
+		ai_chance = { factor = 100 }
+		complete_national_focus = MNT_focus_strike_a_deal_with_the_ottomans
+		transfer_state = 1204
+		1204 = { set_demilitarized_zone = yes }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = MNT
+		}
+	}
+}
+	   
+country_event = {
+	id = montenegro.115
+	title = montenegro.115.t
+	desc = montenegro.115.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.115.a
+		ai_chance = { factor = 100 }
+		complete_national_focus = MNT_focus_the_mostar_convention
+	}
+}
+	   
+country_event = {
+	id = montenegro.116
+	title = montenegro.116.t
+	desc = montenegro.116.d
+	picture = GFX_report_event_generic_read_write
+	
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.116.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+        id = montenegro.117
+        title = montenegro.117.t
+        desc = montenegro.117.d
+        picture = GFX_report_event_generic_read_write
+
+        is_triggered_only = yes
+        fire_only_once = yes
+
+
+        option = {
+        name = montenegro.117.a
+        ai_chance = { factor = 100 }
+        HRZ = {
+            division_template = {
+                name = "Jaroši batalions"
+                is_locked = yes
+                division_cap = 0 
+                priority = 0
+                template_counter = 0
+                regiments = {
+                    native_mountaineers = { x = 0 y = 0 }
+                    light_infantry = { x = 0 y = 1 }
+                }
+
+            }
+			1205 = {
+            create_unit = {
+                division = "name = \"Jaroši batalions\" division_template = \"Jaroši batalions\" start_experience_factor = 0.5"
+                owner = HRZ
+            }
+            create_unit = {
+                division = "name = \"Jaroši batalions\" division_template = \"Jaroši batalions\" start_experience_factor = 0.5"
+                owner = HRZ
+           }
+        }
+      }
+    }
+	}
+	
+	
+#Departure of Henri Delarue to France
+	country_event = {
+	id = montenegro.165#40
+	title = montenegro.165.t
+	desc = montenegro.165.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+		
+    trigger = {
+        tag = MNT
+        OR = { 
+			has_completed_focus = MNT_focus_recognize_our_status_under_the_ottomans 
+			has_completed_focus =  MNT_focus_strike_a_deal_with_the_ottomans 
+			has_completed_focus =  MNT_focus_the_mostar_convention 
+		}
+    }
+	
+	option = {
+		name = montenegro.165.a
+		ai_chance = { factor = 100 } 
+		add_ideas = MNT_the_question_of_the_new_chancellor
+		remove_advisor_role = {
+			character = "MNT_Henri_Delarue"
+			slot = political_advisor
+		}
+	}	
+}
+
+#Jan vaclik has a problem with the authorities in the Austrian monarchy
+country_event = {
+	id = montenegro.166#41
+	title = montenegro.166.t
+	desc = montenegro.166.d
+	picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+   
+	option = {
+		name = montenegro.166.a
+		ai_chance = { factor = 100 } 
+		random_list = {
+			50 = {  
+				MNT = { country_event = { days = 30 id = montenegro.167#42   } }
+			}
+			50 = {  MNT = { country_event = { days = 30 id = montenegro.168#43  } }
+			}
+		}
+	}
+			
+	option = {
+		name = montenegro.166.b.
+		ai_chance = { factor = 100 } 
+		remove_ideas = MNT_the_question_of_the_new_chancellor
+		add_political_power = -150
+		MNT_jan_vaclik = {
+	    add_advisor_role = {
+		    advisor = {
+			slot = political_advisor
+			idea_token =  MNT_advisor_Jan_Vaclik
+			traits = {
+			MNT_Montenegrin_sovereignty_and_international_law
+		   }
+		  }
+		 }
+		}
+	}
+}	   
+			
+country_event = {
+	id = montenegro.167#42
+	title = montenegro.167.t
+	desc = montenegro.167.d
+	picture = GFX_report_event_generic_read_write
+
+		option = {
+		name = montenegro.167.a
+		ai_chance = { factor = 100 } 
+		remove_ideas = MNT_the_question_of_the_new_chancellor
+		add_political_power = -200
+		add_advisor_role = {
+		    character = MNT_jan_vaclik
+		    advisor = {
+			slot = political_advisor
+			cost = 50
+			idea_token =  MNT_advisor_Jan_Vaclik
+			allowed = {
+			original_tag = MMT 
+			} 
+			traits = {
+			MNT_Montenegrin_sovereignty_and_international_law
+			}
+		   }
+		  }
+	    }
+	   }
+			
+	country_event = {
+	id = montenegro.168#43
+	title = montenegro.168.t
+	desc = montenegro.168.d
+	picture = GFX_report_event_generic_read_write
+
+	option = {
+		name = montenegro.168.a
+		ai_chance = { factor = 100 } 
+		remove_ideas = MNT_the_question_of_the_new_chancellor
+		add_advisor_role = {
+		    character = MNT_jan_vaclik
+		    advisor = {
+			slot = political_advisor
+			cost = 50
+			idea_token =  MNT_advisor_Jan_Vaclik
+			allowed = {
+			original_tag = MMT 
+			} 
+			traits = {
+			MNT_Montenegrin_sovereignty_and_international_law
+			}
+		   }
+		  }
+	     }
+	    } 
+			
+		country_event = {
+	id = montenegro.169#44
+	title = montenegro.169.t
+	desc = montenegro.169.d
+	picture = GFX_report_event_generic_read_write
+	
+     is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.169.a
+		ai_chance = { factor = 100 } 
+		{MNT = { country_event = { days = 30 id = montenegro.166#41}
+			} 
+		   }
+	      }
+	     }
+			
+
+country_event = { #Kotor Bay Trade - Question
+	id = montenegro.173
+	title = montenegro.173.t
+	desc = montenegro.173.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.173.a
+		ai_chance = { factor = 80 }
+		MNT = {
+			country_event = {
+				id = montenegro.170
+				days = 10
+	    }
+	  }
+	}
+
+	option = {
+		name = montenegro.173.b
+		ai_chance = { factor = 20 }
+		MNT = {
+			country_event = {
+				id = montenegro.171
+				days = 10
+				}
+			}
+		}
+	}
+
+	   country_event = { #Kotor Bay Trade - Austria Accepted
+	id = montenegro.170
+	title = montenegro.170.t
+	desc = montenegro.170.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.170.a
+		ai_chance = { factor = 100 }
+		add_ideas = MNT_Kotor_Bay_Trade
+		add_opinion_modifier = { target = AUS modifier = small_increase }
+		reverse_add_opinion_modifier = { target = AUS modifier = small_increase }
+	}
+}
+
+country_event = { #Kotor Bay Trade - Austria Declined
+	id = montenegro.171
+	title = montenegro.171.t
+	desc = montenegro.171.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = montenegro.171.a
+		ai_chance = { factor = 100 }
+		add_political_power = -25
+		add_stability = -0.03
+		add_opinion_modifier = { target = AUS modifier = small_decrease }
+		reverse_add_opinion_modifier = { target = AUS modifier = small_decrease }
+	}
+}
+
+
+
+
+	country_event = {
+	id = montenegro.200
+	title = montenegro.200.t
+	desc = montenegro.200.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = montenegro.200.a
+		ai_chance = { factor = 100 } 
+		   if = { 
+		   limit = { NOT = { has_tech = early_medicine }}
+		   set_technology = { early_medicine = 1 }
+		   add_stability = -0.03
+		   }
+		   
+		   if = { 
+		   limit = { NOT = { has_tech = food_canning }}
+		   set_technology = { food_canning = 1 }
+		   add_stability = -0.03
+		   }
+		   
+		   if = { 
+		   limit = { NOT = { has_tech = high_phosphate_fertilizer }}
+		   set_technology = { high_phosphate_fertilizer = 1 }
+		   add_stability = -0.03
+		   }
+		    
+		   if = { 
+		   limit = { NOT = { has_tech = mechanized_farming }}
+		   set_technology = { mechanized_farming = 1 }
+		   add_stability = -0.03
+		   }
+		   
+		   if = { 
+		   limit = { NOT = { has_tech = pre_industrial_farms }}
+		   set_technology = { pre_industrial_farms = 1 }
+		   add_stability = -0.03
+		   }
+		  }
+		 }
+		 
+	country_event = {
+	id = montenegro.201
+	title = montenegro.201.t
+	desc = montenegro.201.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+		name = montenegro.201.a
+		ai_chance = { factor = 100 } 
+		add_political_power = 50
+	 }
+	 }
+
+   #the event informs about Montenegrin policy towards Russia
+	country_event = {
+	id = montenegro.226
+	title = montenegro.226.t
+	desc = montenegro.226.d
+	picture = GFX_report_event_generic_read_write
+
+     is_triggered_only = yes
+      fire_only_once = yes
+	  
+	    option = {
+		name = montenegro.226.a
+		ai_chance = { factor = 100 } 
+        add_stability = 0.01
+        } 
+	    }
+		
+country_event = {
+	id = montenegro.227
+	title = montenegro.227.t
+	desc = montenegro.227.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = montenegro.227.a
+		ai_chance = { factor = 100 } 
+		if = { 
+		   limit = { NOT = { has_tech = yataghan_bayonet }}
+			set_technology = { yataghan_bayonet = 1 }
+			army_experience = -15
+		}
+		else_if = { 
+		   limit = { NOT = { has_tech = civil_army_cloth }}
+			set_technology = { civil_army_cloth = 1 }
+			army_experience = -15
+		}	
+		else_if = { 
+		   limit = { NOT = { has_tech = rifle_equipment2 }}
+			set_technology = { rifle_equipment2 = 1 }
+			army_experience = -15
+		}
+	}
+} 
+		
+country_event = {
+	id = montenegro.228
+	title = montenegro.228.t
+	desc = montenegro.228.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = montenegro.228.a
+		ai_chance = { factor = 100 } 
+			add_stability = 0.025
+	} 
+}
+
+
+country_event = {
+	id = montenegro.229
+	title = montenegro.229.t
+	desc = montenegro.229.d
+	picture = GFX_report_event_generic_read_write
+
+   	is_triggered_only = yes
+    fire_only_once = yes
+	
+	    option = {
+		name = montenegro.229.a
+		ai_chance = { factor = 100 } 
+		    if = { 
+		    limit = { NOT = { has_tech = mechanical_production_1 }}
+			set_technology = { mechanical_production_1 = 1 }
+			add_stability = -0.02 
+		    }
+		
+		    if = { 
+		    limit = { NOT = { has_tech = interchange_parts }}
+			set_technology = { interchange_parts = 1 }
+			add_stability = -0.02 
+			}
+			
+			if = { 
+		    limit = { NOT = { has_tech = factory_industry_1 }}
+			set_technology = { factory_industry_1 = 1 }
+			add_stability = -0.02 
+			}
+			
+			if = { 
+		    limit = { NOT = { has_tech = industrial_era_tools_1 }}
+			set_technology = { industrial_era_tools_1 = 1 }
+			add_stability = -0.02 
+			}
+			
+			if = { 
+		    limit = { NOT = { has_tech = refining }}
+			set_technology = { refining = 1 }
+			add_stability = -0.02 
+			}
+            } 
+	        }
+			
+	country_event = {
+	id = montenegro.230
+	title = montenegro.230.t
+	desc = montenegro.230.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = montenegro.230.a
+		ai_chance = { factor = 100 } 
+		add_political_power = 50
+		add_stability = 0.025
+	 }
+	 }

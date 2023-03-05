@@ -1,4 +1,133 @@
 defined_text = {
+	name = GetMissileGetTabRDStatus
+	text = {
+		trigger={
+			#always = yes
+			check_variable={NMC_opened_tab = 0}
+		}
+		localization_key = "GFX_nmissle_tab_switch:2"
+	}
+	text = {	
+		localization_key = "GFX_nmissle_tab_switch:1"
+	}
+}
+defined_text = {
+	name = MISSILE_GET_TAB_PRODUCTION_STATUS
+	text = {
+		trigger={
+			#always = yes
+			check_variable={NMC_opened_tab =1}
+		}
+		localization_key = "GFX_nmissle_tab_switch:2"
+	}
+	text = {	
+		localization_key = "GFX_nmissle_tab_switch:1"
+	}
+}
+defined_text = {
+	name = MISSILE_GET_TAB_TARGETING_STATUS
+	text = {
+		trigger={
+			#always = yes
+			check_variable={NMC_opened_tab = 2}
+		}
+		localization_key = "GFX_nmissle_tab_switch:2"
+	}
+	text = {	
+		localization_key = "GFX_nmissle_tab_switch:1"
+	}
+}
+defined_text = {
+	name = GET_CURRENT_MISSILE_TARGETED_NATION
+	text = {
+		trigger={
+			#always = yes
+			check_variable={ zmissile_current_nuke_target = zmissile_targeted_states_country_array^i }
+		}
+		localization_key = "GFX_launch_pad_blue_light_icon_2"
+	}
+	text = {	
+		localization_key = "GFX_launch_pad_blue_light_icon"
+	}
+}
+defined_text = {
+	name = MISSILE_GET_CURRENT_NUKE_COUNT
+	text = {
+		trigger={
+			#always = yes
+			num_of_nukes > 0
+		}
+		localization_key = "GFX_prod_deployment_nukes_3_bg"
+	}
+	text = {	
+		localization_key = "GFX_prod_deployment_nukes_3_red_bg"
+	}
+}
+defined_text = {
+	name = MISSILE_GET_CURRENT_STORED_MISSILE_COUNT
+	text = {
+		trigger={
+			always = no
+		}
+		localization_key = "GFX_prod_deployment_nukes_3_bg"
+	}
+	text = {	
+		localization_key = "GFX_prod_deployment_nukes_3_red_bg"
+	}
+}
+defined_text = {
+	name = GET_CURRENT_MISSILE_COUNTER_ZEROS
+	text = {
+		trigger={
+			check_variable={num_prepared_nuclear_missiles<10}
+		}
+		localization_key = "000[?num_prepared_nuclear_missiles]"
+	}
+	text = {
+		trigger={
+			check_variable={num_prepared_nuclear_missiles>9}
+			check_variable={num_prepared_nuclear_missiles<100}
+		}
+		localization_key = "00[?num_prepared_nuclear_missiles]"
+	}
+	text = {
+		trigger={
+			check_variable={num_prepared_nuclear_missiles>99}
+			check_variable={num_prepared_nuclear_missiles<1000}
+		}
+		localization_key = "0[?num_prepared_nuclear_missiles]"
+	}
+	text = {	
+		localization_key = "[?num_prepared_nuclear_missiles]"
+	}
+}
+defined_text = {
+	name = GET_CURRENT_NUKES_COUNTER_ZEROS
+	text = {
+		trigger={
+			check_variable={num_of_nukes<10}
+		}
+		localization_key = "000[?num_of_nukes]"
+	}
+	text = {
+		trigger={
+			check_variable={num_of_nukes>9}
+			check_variable={num_of_nukes<100}
+		}
+		localization_key = "00[?num_of_nukes]"
+	}
+	text = {
+		trigger={
+			check_variable={num_of_nukes>99}
+			check_variable={num_of_nukes<1000}
+		}
+		localization_key = "0[?num_of_nukes]"
+	}
+	text = {	
+		localization_key = "[?num_of_nukes]"
+	}
+}
+defined_text = {
 	name = SIA_GET_CURRENT_INTEREST_LEVEL_ENG
 	text = {
 		trigger={
@@ -42,7 +171,7 @@ defined_text = {
 		}
 		localization_key = "Noticing"
 	}
-	text = {
+	text = {	
 		localization_key = "Uninterested"
 	}
 }
@@ -90,7 +219,7 @@ defined_text = {
 		}
 		localization_key = "Noticing"
 	}
-	text = {
+	text = {	
 		localization_key = "Uninterested"
 	}
 }
@@ -98,6 +227,7 @@ defined_text = {
 	name = GETFLINTLOCKREQS
 	text = {
 		trigger={
+			#always = yes
 			afr_is_tribal = yes
 			NOT={
 				has_idea = afr_reforming_kingdom
@@ -111,6 +241,7 @@ defined_text = {
 	}
 	text = {
 		trigger={
+			#always = yes
 			OR={
 				has_idea = afr_reforming_kingdom
 				has_country_flag = Oceania_industrializing
@@ -548,7 +679,7 @@ defined_text = {
 			check_variable = {super_event_displayed = 42}
 		}
 		localization_key = "GFX_fra_orsini_attack_event"
-	}
+	}	
 	###Easter Egg Super Events
 	text = {
 		trigger={
@@ -1086,7 +1217,7 @@ defined_text = {
 			check_variable = {super_event_displayed = 42}
 		}
 		localization_key = "Catastrophe!"
-	}
+	}	
 
 
 	###Easter Egg Super Events

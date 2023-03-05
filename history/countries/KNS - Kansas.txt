@@ -7,6 +7,8 @@
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = KNS }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = KNS }
 
+	set_cosmetic_tag = KNS_US
+
 	add_ideas = {
 		#POLITICS
 		hos_is_leader
@@ -52,8 +54,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 30
 		centrism = 34
 		traditional_conservatism = 12

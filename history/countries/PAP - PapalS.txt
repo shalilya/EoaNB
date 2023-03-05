@@ -11,12 +11,6 @@
 		}
 	}
 
-	#create_import = {
-	#	resource = cotton
-	#	amount = 8
-	#	exporter = BRA
-	#}
-
 	set_convoys = 8
 	set_research_slots = 2
 	add_ideas = {
@@ -49,14 +43,15 @@
 		sfund_private_ventures_only
 		#NATIONAL SPIRITS
 		PIE_Baby_Boom
+		PAP_vic_idea_Cholera
 	}
 	set_politics = {
 		ruling_party = fundamentalism
 	}
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -108,6 +103,7 @@
 		train_1855 = 1
 		tech_support = 1
 		basic_cavalry = 1
+		pre_industrial_farms = 1
 	}
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_rifle_0

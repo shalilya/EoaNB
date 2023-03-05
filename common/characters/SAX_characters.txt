@@ -20,10 +20,16 @@ characters = {
 		}
 	}
 	
-	#Centrism
+	#ConLib
 	#SAX_friedrich_ferdinand_von_beust (see advisors)
 	
+	#SocLib
+	#SAX_hermann_joseph (see advisors)
+	
 	#SocEgal
+	#SAX_ferdinand_lassalle (see advisors)
+	
+	#RadSoc
 	SAX_otto_freytag = {
 		name = "Otto Freytag"
 		portraits = {
@@ -33,17 +39,11 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_GENERIC_EOANB_DESC"
-			ideology = social_democracy
+			ideology = marxism
 			expire = "1900.1.1.1"
 			id = -1
 		}
 	}
-	
-	#CollSoc
-	
-
-	#VanCom
-	
 
 	#Peripheral
 	SAX_sächsischer_landtag = {
@@ -329,6 +329,7 @@ characters = {
 		portraits = {
 			civilian = {
 				small = "GFX_idea_SAX_advisor_ferdinand_lassalle"
+				large = "GFX_Portrait_PRS_Ferdinand_Lassalle"
 			}
 		}
 		advisor = {
@@ -344,8 +345,14 @@ characters = {
 				PRS_trait_Ferdinand_Lassalle
 			}
 			ai_will_do = {
-				factor = 1
+				factor = 2
 			}
+		}
+		country_leader = {
+			desc = "POLITICS_GENERIC_EOANB_DESC"
+			ideology = liberal_social
+			expire = "1900.1.1.1"
+			id = -1
 		}
 	}
 	SAX_friedrich_ferdinand_von_beust = {
@@ -377,6 +384,9 @@ characters = {
 			ideology = conserv_liberal
 			expire = "1900.1.1.1"
 			id = -1
+			traits = {
+				SAX_trait_Beust_Trias_Promoter
+			}
 		}
 	}
 	SAX_gustav_fechner = {
@@ -416,7 +426,33 @@ characters = {
 		portraits = {
 			civilian = {
 				small = "GFX_idea_SAX_advisor_hermann_joseph"
+				#large = ""
 			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SAX_advisor_hermann_joseph
+			allowed = {
+				original_tag = SAX
+			}
+			available = {
+				OR = {
+					has_government = centrism
+					has_government = ideology_social_liberalism
+				}
+			}
+			traits = {
+				SAX_trait_Hermann_Joseph
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_GENERIC_EOANB_DESC"
+			ideology = radical_liberal
+			expire = "1900.1.1.1"
+			id = -1
 		}
 	}
 	SAX_johann_andreas_schubert = {
@@ -481,6 +517,25 @@ characters = {
 		portraits = {
 			civilian = {
 				small = "GFX_idea_SAX_advisor_karl_braun"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SAX_advisor_karl_braun
+			allowed = {
+				original_tag = SAX
+			}
+			available = {
+				OR = {
+					has_government = centrism
+					has_government = ideology_social_liberalism
+				}
+			}
+			traits = {
+				SAX_trait_Karl_Braun
+			}
+			ai_will_do = {
+				factor = 2
 			}
 		}
 	}

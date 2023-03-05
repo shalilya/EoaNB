@@ -17,7 +17,7 @@ focus_tree = {
 
 	default = no
 
-	# Economic tree
+# Economic tree
 
 	focus = {
 		id = BUL_focus_agrarian_coup
@@ -26,7 +26,7 @@ focus_tree = {
 		y = 0
 
 		cost = 70
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_field_question
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		ai_will_do = { factor = 1 }
@@ -67,7 +67,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_production_of_goods
 
 		ai_will_do = { factor = 1 }
 
@@ -93,7 +93,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Agriculture_mechanization
 
 		ai_will_do = { factor = 1 }
 
@@ -115,7 +115,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Worker_Appeal
 
 		ai_will_do = { factor = 1 }
 
@@ -133,7 +133,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Worker
 
 		ai_will_do = { factor = 1 }
 
@@ -152,7 +152,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Trade_Mediterranean
 
 		ai_will_do = { factor = 1 }
 
@@ -175,7 +175,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_urbanization
 
 		ai_will_do = { factor = 1 }
 
@@ -193,7 +193,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_new_fiscal_system
 
 		ai_will_do = { factor = 1 }
 
@@ -211,7 +211,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_banks
 
 		ai_will_do = { factor = 1 }
 
@@ -230,7 +230,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Economy_Reforms
 
 		ai_will_do = { factor = 1 }
 
@@ -253,7 +253,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Roads_Canals_Investment
 
 		ai_will_do = { factor = 1 }
 
@@ -278,7 +278,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Trade_International
 
 		ai_will_do = { factor = 1 }
 
@@ -310,27 +310,33 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_machine_concern
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_company_czech
+			unlock_decision_tooltip = BUL_decision_the_first_apothecary_society
+			unlock_decision_tooltip = BUL_decision_engineering_architectural_company
+		}
 	}
 
-	focus = {
+	focus = { ###Unsure about yaroslav veshin bit, please have a look at this at a later date
 		id = BUL_focus_university_pedagogy_course
-		prerequisite = { focus = BUL_focus_bulgarian_technical_company }
+		prerequisite = { focus = BUL_focus_protectionist_policy }
 
-		relative_position_id = BUL_focus_bulgarian_technical_company
+		relative_position_id = BUL_focus_protectionist_policy
 		x = -2
-		y = 1
+		y = 2
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_school_opening
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_bulgaria.11
+		}
 	}
 
 	focus = {
@@ -342,27 +348,48 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Renovate_School
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_zhirkov_law
+			
+			hidden_effect = {
+				country_event = {
+					id = eoanb_bulgaria.12
+					days = 30
+					random_days = 30
+				}
+			}
+		}
 	}
 
 	focus = {
 		id = BUL_focus_sofia_hospital
-		prerequisite = { focus = BUL_focus_bulgarian_technical_company }
+		prerequisite = { focus = BUL_focus_protectionist_policy }
 
-		relative_position_id = BUL_focus_bulgarian_technical_company
+		relative_position_id = BUL_focus_protectionist_policy
 		x = 2
-		y = 1
+		y = 2
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Build_More_Hospitals
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_timed_idea = {
+				idea = BUL_idea_sofia_first_class_hospital
+				days = 360
+			}
+			
+			add_tech_bonus = {
+				bonus = 0.33
+				uses = 1
+				category = support_tech
+			}
+		}
 	}
 
 	focus = {
@@ -376,9 +403,16 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Advance_Science
 
 		ai_will_do = { factor = 1 }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = "Completed by event"
+				always = no
+			}
+		}
 
 		completion_reward = { }
 	}
@@ -392,11 +426,26 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Economy_Increase_Wages
 
 		ai_will_do = { factor = 1 }
-
-		completion_reward = { }
+		
+		available = {
+			date > 1889.1.1
+		}
+		
+		completion_reward = {
+			48 = {
+				add_dynamic_modifier = { 
+					modifier = dynmod_BUL_battenbergov_plan
+					days = 720
+				}
+			}
+			add_timed_idea = {
+				idea = BUL_idea_battenbergov_plan
+				days = 720
+			}
+		}
 	}
 
 	focus = {
@@ -408,12 +457,35 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
-
+		icon = GFX_Focus_metropolitan_communities
+		
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
-	}
+		available = {
+			date > 1889.1.1
+		}
+		
+		completion_reward = { 
+			add_political_power = 30
+			
+			BUL_Dimitar_Petikov = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = BUL_advisor_Dimitar_Petikov
+						allowed = {
+							original_tag = BUL
+						}
+						traits = {
+						}
+						ai_will_do = {
+							factor = 0
+						}
+					}
+				}
+			}
+		}
+	} 
 
 	focus = {
 		id = BUL_focus_bulgarian_russian_financial_convention
@@ -424,11 +496,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Diplomatic_Ally_RUS
 
 		ai_will_do = { factor = 1 }
-
-		completion_reward = { }
+		
+		available = {
+			has_idea = BUL_idea_credentials_regime
+		}
+		
+		completion_reward = { 
+			country_event = eoanb_bulgaria.13
+		}
 	}
 
 	focus = {
@@ -440,11 +518,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_prefecture_lines_railway
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_sofia_pernik_railway
+		}
 	}
 
 	focus = {
@@ -456,11 +536,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_coal_mines
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_pernik_coal_mine
+			add_ideas = BUL_idea_excavation_law
+		}
 	}
 
 	focus = {
@@ -472,11 +555,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_war_gauges
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			unlock_decision_tooltip = BUL_decision_railway_to_sea
+		 }
 	}
 
 	focus = {
@@ -488,11 +573,15 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_railroad_development
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 75
+			add_tech_bonus = { bonus = 0.15 uses = 3 category = transport_tech }
+			add_ideas = BUL_idea_railways_act
+		}
 	}
 
 	focus = {
@@ -504,11 +593,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_economy_trade_europe
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_british_credit
+			unlock_decision_tooltip = BUL_decision_austrian_bank_lend
+		}
 	}
 
 	focus = {
@@ -520,11 +612,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Elite
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 40
+		}
 	}
 
 	focus = {
@@ -536,11 +630,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_rolling_stock
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_tsaribrod_varakel_railway
+		}
 	}
 
 	focus = {
@@ -552,11 +648,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_geared_railway
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = { bonus = 0.15 uses = 3 category = transport_tech }
+		}
 	}
 
 	focus = {
@@ -569,11 +667,16 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_financial_westernisation
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_timed_idea = {
+				idea = BUL_idea_trade_west
+				days = 365
+			}
+		}
 	}
 
 	focus = {
@@ -585,14 +688,16 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Worker_Control
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_parrel_railway
+		}
 	}
 
-	# Political tree
+# Political tree
 
 	focus = {
 		id = BUL_focus_new_knyaz
@@ -601,12 +706,17 @@ focus_tree = {
 		y = 0
 
 		cost = 70
-		#icon =
+		icon = GFX_focus_government_legislation
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_first_gov
+			hidden_effect = {
+				country_event ={ id = eoanb_bulgaria.16 days = 1}
+			}
+		}
 	}
 
 	focus = {
@@ -618,11 +728,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Civil_Servant_Law
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event ={ id = eoanb_bulgaria.17 days = 45}
+		}
 	}
 
 	focus = {
@@ -634,11 +746,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_crowd
+
+		available = {
+			has_decision = BUL_decision_first_gov
+		}
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = BUL_idea_todor_gov
+		}
 	}
 
 	focus = {
@@ -650,11 +768,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_cater_to_workers
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+			unlock_decision_tooltip = BUL_decision_appoint_agent_belgrade
+			unlock_decision_tooltip = BUL_decision_appoint_agent_bucharest
+			unlock_decision_tooltip = BUL_decision_appoint_agent_tsarigrad
+		}
 	}
 
 	focus = {
@@ -666,11 +790,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Justice
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.03
+			add_popularity = { ideology = centrism popularity = 0.15 }
+		}
 	}
 
 	focus = {
@@ -682,11 +809,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Elementary_School_0
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = BUL_idea_sofia_school
+		}
 	}
 
 	focus = {
@@ -698,11 +827,21 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_rally_people
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		available = {
+			has_completed_focus = BUL_focus_agrarian_coup
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = OTO
+				modifier = improved_relations
+			}
+			add_political_power = 30
+		}
 	}
 
 	focus = {
@@ -714,11 +853,22 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Ideology_Soviet_crushed
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = -20
+			211 = {
+				add_state_modifier = {
+					modifier = {
+						conscription_factor = -0.25
+						production_speed_buildings_factor = -0.25
+					}
+				}
+			}
+			unlock_decision_tooltip = BUL_decision_martial_law_varna
+		}
 	}
 
 	focus = {
@@ -732,7 +882,7 @@ focus_tree = {
 		y = 2
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Vote_generic
 
 		ai_will_do = { factor = 1 }
 
@@ -758,11 +908,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Freedom_Press_newspapers
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -774,11 +926,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Ideology_Soviet_commune_council
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			army_experience = 25
+		}
 	}
 
 	focus = {
@@ -790,11 +944,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Eliminate_Resistance
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			unlock_decision_tooltip = BUL_decision_ohrid_con
+		}
 	}
 
 	focus = {
@@ -806,7 +962,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Map_Gerrymandering
 
 		ai_will_do = { factor = 1 }
 
@@ -822,11 +978,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Law_protections
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_demand_bishops_send
+		}
 	}
 
 	focus = {
@@ -838,11 +996,15 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_transport_war_gauges
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			OTO = {
+				country_event = eoanb_bulgaria.20
+			}
+		}
 	}
 
 	focus = {
@@ -855,12 +1017,18 @@ focus_tree = {
 		x = 1
 		y = 1
 
+		available = {
+			date > 1893.1.1
+		}
+
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Ideology_social_democracy
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_armed_resistance
+		}
 	}
 
 	focus = {
@@ -872,11 +1040,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Navy_Tactics
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_bulgaria.26
+		}
 	}
 
 	focus = {
@@ -888,11 +1058,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Agriculture_wheat
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 5
+		}
 	}
 
 	focus = {
@@ -904,11 +1076,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_radio_telegraph
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.02
+		}
 	}
 
 	focus = {
@@ -920,11 +1094,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Civil_Servant_Law
+
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 5
+		}
 	}
 
 	focus = {
@@ -937,11 +1114,24 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Freedom_Press_newspapers
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = "Completed by event"
+				always = no
+			}
+			hidden_trigger = {
+				always = no
+			}
+		}
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_credentials_regime
+			add_ideas = BUL_idea_RUS_influence_1
+		}
 	}
 
 	focus = {
@@ -953,11 +1143,15 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_focus_politics_government_chaos
+
+		cancelable = no
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_bulgaria.29
+		}
 	}
 
 	focus = {
@@ -969,11 +1163,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Education_Books
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.03
+		}
 	}
 
 	focus = {
@@ -985,11 +1181,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_school_opening
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 4
+				category = support_tech
+			}	
+		}
 	}
 
 	focus = {
@@ -1001,11 +1203,31 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Diplomatic_Ally_RUS_2
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = RUS
+				modifier = small_increase
+			}
+			if = {
+				limit = {
+					has_idea = BUL_idea_RUS_influence_1
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_RUS_influence_1
+					add_idea = BUL_idea_RUS_influence_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = BUL_idea_RUS_influence_2
+					add_idea = BUL_idea_RUS_influence_3
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1017,11 +1239,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_crowd 
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_state_council
+		}
 	}
 
 	focus = {
@@ -1033,11 +1257,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Diplomatic_foreign_central 
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.01
+		}
 	}
 
 	focus = {
@@ -1049,11 +1275,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Government_Military
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = -0.1
+			add_popularity = { ideology = centrism popularity = -0.02 }
+		}
 	}
 
 	focus = {
@@ -1065,11 +1294,29 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Freedom_Press_controlled
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		bypass = { has_idea = censored_press }
+
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = free_press
+				}
+				swap_ideas = {
+					remove_idea = free_press
+					add_idea = censored_press
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = state_controlled_press
+					add_idea = censored_press
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1083,11 +1330,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Reforms
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+			army_experience = 25
+		}
 	}
 
 	focus = {
@@ -1099,11 +1349,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Espionage_subtle_exclusion
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+			add_opinion_modifier = {
+				target = RUS
+				modifier = small_decrease
+			}
+		}
 	}
 
 	focus = {
@@ -1115,11 +1371,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_Boost_Popularity
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			increase_ps_by_one = yes
+		}
 	}
 
 	focus = {
@@ -1131,11 +1389,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Electorate_unity
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+			add_popularity = { ideology = centrism popularity = 0.05 }
+		}
 	}
 
 	focus = {
@@ -1147,11 +1408,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Ideology_Liberal_comprimise
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+		}
 	}
 
 	focus = {
@@ -1163,11 +1426,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Assembly_Law
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			remove_ideas = BUL_idea_constitution_suspended
+			add_popularity = { ideology = centrism popularity = 0.03 }
+		}
 	}
 
 	focus = {
@@ -1179,11 +1445,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Government_adminstrative_service
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+		}
 	}
 
 	focus = {
@@ -1194,12 +1462,32 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 70
-		#icon =
+		cost = 50
+		icon = GFX_Focus_Diplomatic_Ally_RUS
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = RUS
+				modifier = small_increase
+			}
+			if = {
+				limit = {
+					has_idea = BUL_idea_RUS_influence_1
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_RUS_influence_1
+					add_idea = BUL_idea_RUS_influence_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = BUL_idea_RUS_influence_2
+					add_idea = BUL_idea_RUS_influence_3
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1211,11 +1499,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Ideology_Support_Liberty
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -1227,11 +1517,29 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Freedom_Press_3
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+			add_stability = 0.05
+			if = {
+				limit = {
+					has_idea = free_press
+				}
+				swap_ideas = {
+					remove_idea = free_press
+					add_idea = state_controlled_press
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = censored_press
+					add_idea = state_controlled_press
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1243,11 +1551,14 @@ focus_tree = {
 		y = 1
 
 		cost = 20
-		#icon =
+		icon = GFX_Focus_Law_Vote_1
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+			add_political_power = -75
+		}
 	}
 
 	focus = {
@@ -1259,11 +1570,13 @@ focus_tree = {
 		y = 1
 
 		cost = 20
-		#icon =
+		icon = GFX_Focus_Urbanization
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -1275,11 +1588,31 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_divide_africa
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = small_decrease
+			}
+			if = {
+				limit = {
+					has_idea = BUL_idea_RUS_influence_1
+				}
+				remove_ideas = BUL_idea_RUS_influence_1
+			}
+			if = {
+				limit = {
+					has_idea = BUL_idea_RUS_influence_2
+				}
+				remove_ideas = BUL_idea_RUS_influence_2
+			}
+			else = {
+				remove_ideas = BUL_idea_RUS_influence_3
+			}
+		}
 	}
 
 	focus = {
@@ -1293,11 +1626,13 @@ focus_tree = {
 		y = 2
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Government
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			remove_ideas = BUL_idea_credentials_regime
+		}
 	}
 
 	focus = {
@@ -1308,12 +1643,18 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 70
-		#icon =
+		cost = 10
+		icon = GFX_Focus_refugee_management
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = { 
+				bonus = 0.5 
+				uses = 1 
+				category = humanities_tech
+			}
+		}
 	}
 
 	focus = {
@@ -1325,11 +1666,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_social_freedom
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_dissolve_state_council
+		}
 	}
 
 	focus = {
@@ -1341,11 +1684,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Reform_Government
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 25
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -1359,9 +1705,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_maintain_the_status_quo
 
 		ai_will_do = { factor = 1 }
+		
+		available = {
+			always = no
+		}
 
 		completion_reward = { }
 	}
@@ -1375,11 +1725,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Monarch_Death
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			country_event = eoanb_bulgaria.34
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -1390,12 +1743,19 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 70
-		#icon =
+		cost = 20
+		icon = GFX_Focus_Law
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		available = {
+			date > 1886.10.1
+		}
+
+		completion_reward = { 
+			add_political_power = 50
+			country_event = eoanb_bulgaria.35
+		}
 	}
 
 	focus = {
@@ -1407,11 +1767,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Monarchy
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip =BUL_decision_search_for_new_knyaz
+		}
 	}
 
 	focus = {
@@ -1423,11 +1785,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_consolidate_power 
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 100
+			add_opinion_modifier = {
+				target = RUS
+				modifier = medium_decrease
+			}
+		}
 	}
 
 	focus = {
@@ -1440,11 +1808,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_freedom_association
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -1456,11 +1826,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Partisans_Elimination
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.03
+			unlock_decision_tooltip = BUL_decision_execute_kosta
+		}
 	}
 
 	
@@ -1473,11 +1846,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Orthodox_Religion
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = -0.05
+		}
 	}
 
 	focus = {
@@ -1490,11 +1865,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Assembly_Law
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 25
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -1506,11 +1884,17 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Industry_Construction_Support
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = { 
+				bonus = 0.5 
+				uses = 1 
+				category = industry
+			}
+		}
 	}
 
 	focus = {
@@ -1523,11 +1907,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Eliminate_Resistance
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+			unlock_decision_tooltip = BUL_decision_arrest_political_op
+		}
 	}
 
 	# Military tree
@@ -1539,12 +1926,19 @@ focus_tree = {
 		y = 0
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Conscription
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_new_army1
+			add_tech_bonus = { 
+				bonus = 0.25 
+				uses = 1 
+				category = rifle_equipment_techs
+			}
+		}
 	}
 
 	focus = {
@@ -1556,11 +1950,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_military_factory_regulations
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_impose_prov_regulations
+		}
 	}
 
 	focus = {
@@ -1571,12 +1967,20 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 70
-		#icon =
+		cost = 30
+		icon = GFX_goal_focus_RUS_establish_the_okhrana
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			army_experience = 20
+			add_tech_bonus = { 
+				bonus = 0.5 
+				uses = 1 
+				category = land_doctrine
+			}
+			unlock_decision_tooltip = BUL_decision_rus_officer_and_sergeant
+		}
 	}
 
 	focus = {
@@ -1588,11 +1992,19 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Reformed
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = { 
+				bonus = 0.25 
+				uses = 2
+				category = land_doctrine
+			}
+			unlock_decision_tooltip = BUL_decision_establish_training_squad
+			unlock_decision_tooltip = BUL_decision_establish_paramedic_school
+		}
 	}
 
 	focus = {
@@ -1604,11 +2016,34 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Mandatory_Conscription
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		available = {
+			date > 1880.1.1
+		}
+
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = disarmed_nation
+				}
+				swap_ideas = {
+					remove_idea = disarmed_nation
+					add_idea = limited_conscription
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = volunteer_only
+				}
+				swap_ideas = {
+					remove_idea = volunteer_only
+					add_idea = limited_conscription
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1620,11 +2055,30 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Generic_Coalition_Army 
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = BUL_idea_new_army1
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_new_army1
+					add_idea = BUL_idea_new_army2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BUL_idea_new_army2
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_new_army2
+					add_idea = BUL_idea_new_army3
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1636,11 +2090,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_goal_focus_RUS_new_russian_seige_guns
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_organise_rus_equipement
+		}
 	}
 
 	focus = {
@@ -1652,11 +2108,16 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Crush 
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = BUL_idea_bandits1
+				add_idea = BUL_idea_bandits2
+			}
+		}
 	}
 
 	focus = {
@@ -1668,11 +2129,20 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Generic_Revanchism
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		available = {
+			date > 1883.1.1
+		}
+
+		completion_reward = { 
+			add_timed_idea = {
+				idea = BUL_idea_bul_rus_protocol
+				days = 120
+			}
+		}
 	}
 
 	focus = {
@@ -1685,11 +2155,15 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Generic_Imperial_Army
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_east_corpus
+			unlock_decision_tooltip = BUL_decision_west_corpus
+			unlock_decision_tooltip = BUL_decision_north_detatchment
+		}
 	}
 
 	focus = {
@@ -1701,11 +2175,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Generic_Naval_Industry
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			navy_experience = 25
+		}
 	}
 
 	focus = {
@@ -1717,11 +2193,14 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Production_Battleship_1940
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			activate_mission = BUL_mission_ruse_port
+			unlock_decision_tooltip = BUL_decision_establish_hydrographic_service 
+		}
 	}
 
 	focus = {
@@ -1733,11 +2212,18 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Navy_Restriction_1
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			navy_experience = 25
+			add_tech_bonus = { 
+				bonus = 0.25
+				uses = 1 
+				category = naval_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -1750,11 +2236,35 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Weapon_Canon_5_Russian
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_tech_bonus = { 
+				bonus = 0.25
+				uses = 1 
+				category = artillery
+			}
+			if = {
+				limit = {
+					has_idea = BUL_idea_new_army1
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_new_army1
+					add_idea = BUL_idea_new_army2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BUL_idea_new_army2
+				}
+				swap_ideas = {
+					remove_idea = BUL_idea_new_army2
+					add_idea = BUL_idea_new_army3
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1767,11 +2277,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_conscription
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_peoples_militia
+		}
 	}
 
 	focus = {
@@ -1782,12 +2294,18 @@ focus_tree = {
 		x = 0
 		y = 1
 
+		available = {
+			always = no
+		}
+
 		cost = 70
-		#icon =
+		icon = GFX_Focus_fight_SER
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			custom_effect_tooltip = CAN_END
+		}
 	}
 
 	focus = {
@@ -1798,12 +2316,14 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 70
-		#icon =
+		cost = 14
+		icon = GFX_Focus_defence_plans
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			unlock_decision_tooltip = BUL_decision_defend_sofia
+		}
 	}
 
 	focus = {
@@ -1814,14 +2334,50 @@ focus_tree = {
 		x = -1
 		y = 1
 
+		available = {
+			always = no
+		}
+
 		cost = 70
-		#icon =
+		icon = GFX_Focus_SER_Second_Bulgarian_Legion
 
 		mutually_exclusive = { focus = BUL_focus_tophanen_act }
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			add_ideas = BUL_idea_bul_war_reps_SER
+			add_ideas = BUL_idea_bul_broken_unification
+			SER = {
+				transfer_state = 48
+				transfer_state = 965
+				transfer_state = 1273
+				if = {
+					limit = {
+						OR = {
+							has_dlc = "Together for Victory"
+							has_dlc = "Waking the Tiger"
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					if = {
+						limit = {
+							country_exists = BUL
+						}
+						set_autonomy = {
+							target = BUL
+							autonomy_state = autonomy_puppet
+						}
+					}
+				}
+				else = {
+					limit = {
+						country_exists = BUL
+					}
+					puppet = BUL
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1833,11 +2389,15 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_goal_saint_andrew_day
 
 		ai_will_do = { factor = 1 }
 
-		completion_reward = { }
+		completion_reward = { 
+			set_capital = {
+				state = 211
+			}
+		}
 	}
 
 	focus = {
@@ -1848,8 +2408,12 @@ focus_tree = {
 		x = 1
 		y = 1
 
+		available = {
+			always = no
+		}
+
 		cost = 70
-		#icon =
+		icon = GFX_Focus_SER_Bulgarian_Serbian_Friendship
 
 		mutually_exclusive = { focus = BUL_focus_serbian_hegemony }
 
@@ -1868,7 +2432,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_allow_non_noble_officer
 
 		ai_will_do = { factor = 1 }
 
@@ -1884,7 +2448,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Tactics_Death_or_Dishonor
 
 		ai_will_do = { factor = 1 }
 
@@ -1900,9 +2464,13 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Army_Reforms
 
 		ai_will_do = { factor = 1 }
+
+		available = {
+			has_completed_focus = BUL_focus_aftermath_of_regime
+		}
 
 		completion_reward = { }
 	}
@@ -1917,7 +2485,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Focus_Law_Vote_1
 
 		ai_will_do = { factor = 1 }
 
@@ -1933,7 +2501,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon =
+		icon = GFX_Goal_modernized_army_equipment 
 
 		ai_will_do = { factor = 1 }
 

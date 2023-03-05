@@ -91,8 +91,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 20
 		traditional_conservatism = 45
@@ -159,6 +159,8 @@
 	recruit_character = SER_dura_horvatovic
 	recruit_character = SER_mirko_apostolovic
 	recruit_character = SER_Milojko_Lesjanin
+	recruit_character = SER_Sava_Grujic
+	
 	
 	# Army Chief
 	recruit_character = SER_Hipolit_Mondain
@@ -170,7 +172,7 @@
 	recruit_character = SER_felix_hoffman
 	recruit_character = SER_szabo_j
 	# recruit_character = SER_svetozar_markovic
-	recruit_character = SER_georgi_rakovkski
+	recruit_character = SER_georgi_rakovski
 	recruit_character = SER_lazar_brsenijevic_batalaka
 	recruit_character = SER_jevrem_grujic
 	recruit_character = SER_vladimir_jovanovic
@@ -182,4 +184,5 @@
 	recruit_character = SER_sima_andreevic
 	recruit_character = SER_milutin_garasanin
 	recruit_character = SER_konstantin_cukic
+	recruit_character = SER_ilija_garasanin
 }

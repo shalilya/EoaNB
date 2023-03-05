@@ -11,7 +11,7 @@
 		}
 	}
 
-	set_convoys = 0
+	set_convoys = 16
 
 	set_research_slots = 3
 	set_variable = { debt_level = 5 }
@@ -77,8 +77,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 20
 		centrism = 0
 		traditional_conservatism = 60

@@ -33,20 +33,31 @@ KDE_bi_yearly_event_fire_1858 = {
 	RUS = {
 		country_event = { id = rossiya.53 days = 178 } # 1858.6.28
 		country_event = { id = rossiya.54 days = 243 } # 1858.9.1
-		country_event = { id = rossiya.503 days = 339 } # 1858.12.6
-		country_event = { id = rossiya.502 days = 282 } # 1858.10.10
-		country_event = { id = rossiya.212 days = 127 } # 1858.5.8
 		country_event = { id = rossiya.55 days = 204 } # 1858.7.24
+		country_event = { id = rossiya.60 days = 134 } # 1858.5.15
+		country_event = { id = rossiya.61 days = 134 } # 1858.5.15
+		country_event = { id = rossiya.63 days = 273 } # 1858.10.1
+		country_event = { id = rossiya.69 days = 455 } # 1859.4.1
+		country_event = { id = rossiya.71 days = 577 } # 1859.8.1
+		country_event = { id = rossiya.72 days = 181 } # 1858.7.1
+		country_event = { id = rossiya.83 days = 73 } # 1858.3.15
+		country_event = { id = rossiya.99 days = 530 } # 1859.6.15
+		country_event = { id = rossiya.212 days = 127 } # 1858.5.8
+		country_event = { id = rossiya.232 days = 151 } # 1858.6.1
+		country_event = { id = rossiya.502 days = 282 } # 1858.10.10
+		country_event = { id = rossiya.503 days = 339 } # 1858.12.6
 		country_event = { id = rossiya.735 days = 80 } # 1858.3.22
 		country_event = { id = rossiya.740 days = 470 } # 1859.4.16
 	}
 	OTO = {
 		country_event = { id = wallachian_union.1 days = 247 } # 1858.9.5
+		country_event = { id = OTO_events.36 days = 73 } # 1858.15.3
 	}
 	GRE = {
 		country_event = { id = GRE_misc.7 days = 504 } # 1859.5.20
 		country_event = { id = GRE_politics.18 days = 575 } # 1859.7.30
 		country_event = { id = GRE_politics.19 days = 665 } # 1859.10.28
+		country_event = { id = GREeconomy.7 days = 1950} # 1863.5.5
 	}
 	POR = {
 		country_event = { id = portugal.1 days = 240 } # 1858.8.29
@@ -74,9 +85,9 @@ KDE_bi_yearly_event_fire_1858 = {
 		country_event = { id = liberia.61 days = 515 } # 1859.5.31
 	}
 	BEL = {
-		country_event = { id = belgium_election.1 days = 4 } # 1858.1.5
-		country_event = { id = belgium_election.2 days = 558 } # 1859.7.13
-		country_event = { id = belgium_event.5 days = 545 } # 1859.6.30
+		#country_event = { id = belgium_election.1 days = 4 } # 1858.1.5
+		#country_event = { id = belgium_election.2 days = 558 } # 1859.7.13
+		#country_event = { id = belgium_event.5 days = 545 } # 1859.6.30
 	}
 	NSC = {
 		country_event = { id = risorgimento.601 days = 515 } # 1859.5.31
@@ -129,6 +140,7 @@ KDE_bi_yearly_event_fire_1858 = {
 	PIE = {
 		country_event = { id = risorgimento.3 days = 118 random_days = 10 } ####1858.04.29
 		country_event = { id = risorgimento.224 days = 90 random_days = 30 } #### 1858 03/04 
+		country_event = { id = risorgimento.269 days = 400 random_days = 30 } #### around early 1859
 	}
 	TUS = {
 		country_event = { id = risorgimento.537 days = 165 } #1858.06.15
@@ -190,6 +202,7 @@ KDE_bi_yearly_event_fire_1858 = {
 		country_event = { id = austria.25 days = 606 } # 1859.08.30
 		country_event = { id = austria.26 days = 316 } # 1858.11.13
 		country_event = { id = austria.38 days = 303 } # 1858.10.31
+		country_event = { id = advisor_death.22 days = 328 hours = 8 } # 1858.11.25
 	}
 	PRS = {
 		country_event = { id = prussia.79 days = 24 } # 1858.1.25
@@ -198,7 +211,7 @@ KDE_bi_yearly_event_fire_1858 = {
 		country_event = { id = prussia.16 days = 490 } # 1859.5.6
 		country_event = { id = prussia.80 days = 151 } # 1858.6.1
 		country_event = { id = gerconfed.502 days = 678 } # 1859.11.10
-		country_event = { id = gerconfed.515 days = 255 } # 1858.9.13
+		country_event = { id = gerconfed.515 days = 256 } # 1858.9.14
 		country_event = { id = prussia.8 days = 391 } # 1859.1.27
 		country_event = { id = prussia.204 days = 590 } # 1859.8.14
 		country_event = { id = prussia.203 days = 495 } # 1859.5.11
@@ -225,14 +238,11 @@ KDE_bi_yearly_event_fire_1858 = {
 	ROM = {
 		country_event = { id = wallachian_union.13 days = 669 } # 1859.1.1
 	}
-	SGP = {
-		country_event = { id = straits_settlements_event.2 days = 453} #1859.8.6
+	RAJ = {
+		#country_event = { id = britishmalaya.2 days = 453} #1859.8.6
 	}
 	NVS = {
 		country_event = { id = britishcanada.39 days = 669 } # 1859.1.1
-	}
-	SGP = {
-		country_event = { id = straits_settlements_event.2 days = 453} #1859.8.6
 	}
 	SER = {
 		country_event = { id = SER_economy.1 days = 10 }
@@ -246,11 +256,13 @@ KDE_bi_yearly_event_fire_1858 = {
 # Events fired in between 1 Jan. 1860 and 31 Dec. 1861
 KDE_bi_yearly_event_fire_1860 = {
 	RUS = {
-		country_event = { id = rossiya.509 days = 162 } # 1860.6.12
+		country_event = { id = rossiya.81 days = 271 } # 1860.9.29
+		country_event = { id = rossiya.103 days = 396 } # 1861.2.1
 		country_event = { id = rossiya.202 days = 529 } # 1861.6.14
 		country_event = { id = rossiya.214 days = 484 } # 1861.4.30
 		country_event = { id = rossiya.413 days = 467 } # 1861.4.13
 		country_event = { id = rossiya.414 days = 535 } # 1861.6.20
+		country_event = { id = rossiya.509 days = 162 } # 1860.6.12
 		country_event = { id = rossiya.730 days = 178 } # 1860.6.28
 	}
 	OFS = {
@@ -273,7 +285,8 @@ KDE_bi_yearly_event_fire_1860 = {
 		country_event = { id = britishcanada.106 days = 287 } # 1860.10.15
 	}
 	SER = {
-		country_event = { id = SERobr.5 days = 284 } # 1860.10.12
+		country_event = { id = SERmisc.42 days = 573} # 1861.07.28
+		country_event = { id = SER_politics.54 days = 268} # 1860.09.26
 	}
 	NZL = {
 		country_event = { id = britishoceania.12 days = 533 } # 1861.6.18
@@ -323,8 +336,8 @@ KDE_bi_yearly_event_fire_1860 = {
 				country_event = { id = liberia.62 days = 521 } # 1861.6.6
 		}
 	BEL = {
-				country_event = { id = belgium_election.3 days = 555 } # 1861.7.10
-				country_event = { id = belgium_event.6 days = 112 } # 1860.4.23
+				#country_event = { id = belgium_election.3 days = 555 } # 1861.7.10
+				#country_event = { id = belgium_event.6 days = 112 } # 1860.4.23
 		}
 	TUS = {
 				country_event = { id = risorgimento.500 days = 185 } # 1860.7.5
@@ -393,6 +406,7 @@ KDE_bi_yearly_event_fire_1860 = {
 		country_event = { id = britain.102 days = 159 } # 1860.6.9
 		news_event = { id = britain.65 days = 725 } # 1861.12.27
 		country_event = { id = britain.57 days = 480 } # 1861.4.25
+		country_event = { id = britishmalaya.12 days = 474 } # 1861.4.21
 	}
 	AUS = {
 		country_event = { id = austria.27 } # 1860.1.1
@@ -442,6 +456,9 @@ KDE_bi_yearly_event_fire_1860 = {
 	KOR = {
 		country_event = { id = KOR_joseon_dynasty.4 days = 151 } # 1860.6.1
 	}
+	SGP = {
+		country_event = { id = britishmalaya.15 days = 569 } # 1861.7.24
+	}
 }
 
 KDE_bi_yearly_event_fire_1862 = {
@@ -455,6 +472,7 @@ KDE_bi_yearly_event_fire_1862 = {
 		country_event = { id = rossiya.217 days = 330 } # 1862.11.27
 		country_event = { id = rossiya.56 days = 693 } # 1863.11.25
 		country_event = { id = rossiya.59 days = 210 } # 1862.7.30
+		country_event = { id = rossiya.62 days = 181 } # 1862.7.1
 		country_event = { id = rossiya.728 days = 686 } # 1863.11.18
 		country_event = { id = rossiya.739 days = 58 } # 1862.2.28
 		country_event = { id = rossiya.218 days = 225 } # 1862.8.14
@@ -527,10 +545,6 @@ KDE_bi_yearly_event_fire_1862 = {
 		country_event = { id = holland_generals.2 days = 206 } # 1862.7.26
 		country_event = { id = hol_flavor.1 days = 546 } # 1863.07.01
 	}
-	SAF = {
-		country_event = { id = britishafrica.9 days = 79 } # 1862.3.21
-		country_event = { id = britishafrica.15 days = 79 } # 1862.3.21
-	}
 	PRS = {
 		country_event = { id = prussia.88 days = 674 } # 1863.11.06
 		country_event = { id = prussia.231 days = 298 } # 1862.10.26
@@ -590,11 +604,6 @@ KDE_bi_yearly_event_fire_1862 = {
 	KOR = {
 		country_event = { id = KOR_joseon_dynasty.3 days = 50 } ###1862.2.20
 	}
-	PIE = {
-		#country_event = { id = ita.22 days = 68 } # 1862.3.10
-		#country_event = { id = ita.23 days = 454 } # 1863.3.31
-		#country_event = { id = ita.31 days = 348 } # 1862.12.15
-	}
 	FRA = {
 		country_event = { id = france_flavor.1 days = 409 random_days = 30 } # 1863.3.1
 	}
@@ -628,11 +637,14 @@ KDE_bi_yearly_event_fire_1862 = {
 		country_event = { id = britain.166 days = 30 } # 1862.1.31
 		country_event = { id = britain.25 days = 35 } # 1862.2.5
 		country_event = { id = britain.42 days = 44 } # 1862.2.14
-		country_event = { id = britain.43 days = 300 } # 1862.10.28
+		country_event = { id = britain.43 days = 487 } # 1863.5.3
 		country_event = { id = britain.44 days = 464 } # 1863.4.10
 		country_event = { id = britainirishunrest.5 days = 464 } # 1863.4.10
 		country_event = { id = britainirishunrest.10 days = 722 } # 1863.12.24
 		country_event = { id = britain.58 days = 251 } # 1862.9.9
+	}
+	RAJ = {
+		country_event = { id = britishindia.18 days = 688 } # 1863.11.20
 	}
 	AUS = {
 		country_event = { id = austria.30 days = 46 } # 1862.2.16
@@ -654,7 +666,16 @@ KDE_bi_yearly_event_fire_1862 = {
 		country_event = { id = OTO_events.35 days = 178 }#1862.06.28
 	}
 	ITA = {
-		country_event = { id = ita.4 days = 129 } #1862.05.10 
+		country_event = { id = ita.4 days = 129 } #1862.05.10
+		if = {
+			limit = {
+				original_tag = PIE
+			}
+			country_event = { id = ita.73 days = 395 } #1863.01.31
+		}
+	}
+	ROM = {
+		country_event = {id = rom_wallachia.30 days = 365 }#1863.01.01
 	}
 	KOR = {
 		country_event = { id = KOR_joseon_dynasty.3 days = 50 } # 1862.2.20
@@ -674,15 +695,19 @@ KDE_bi_yearly_event_fire_1864 = {
 		country_event = { id = qing_reb.16 days = 250 random_days = 950 }
 	}
 	RUS = {
-		country_event = { id = rossiya.812 days = 30 } # 1864.1.31
-		country_event = { id = rossiya.216 days = 1 } # 1864.1.2
-		country_event = { id = rossiya.813 days = 344 } # 1864.12.11
-		country_event = { id = rossiya.415 days = 261 } # 1864.9.19
+		country_event = { id = rossiya.1 days = 508 } # 1865.5.24
 		country_event = { id = rossiya.57 days = 180 } # 1864.6.30
 		country_event = { id = rossiya.58 days = 90 } # 1864.4.1
-		country_event = { id = rossiya.1 days = 508 } # 1865.5.24
-		country_event = { id = rossiya.732 days = 449 } # 1865.3.26
+		country_event = { id = rossiya.67 days = 87 } # 1864.3.29
+		country_event = { id = rossiya.82 days = 479 } # 1865.4.25
+		country_event = { id = rossiya.94 days = 47 } # 1864.2.17
+		country_event = { id = rossiya.100 days = 30 } # 1864.1.31
+		country_event = { id = rossiya.216 days = 1 } # 1864.1.2
 		country_event = { id = rossiya.355 days = 516 } # 1865.6.1
+		country_event = { id = rossiya.415 days = 261 } # 1864.9.19
+		country_event = { id = rossiya.732 days = 449 } # 1865.3.26
+		country_event = { id = rossiya.812 days = 30 } # 1864.1.31
+		country_event = { id = rossiya.813 days = 344 } # 1864.12.11
 	}
 	OFS = {
 		country_event = { id = boer_states.8 days = 61 } # 1864.3.3
@@ -732,8 +757,6 @@ KDE_bi_yearly_event_fire_1864 = {
 	BRA = {
 		country_event = { id = brazil.49 days = 300 } # 1864.10.28
 		country_event = { id = brazil.50 days = 300 } # 1864.10.28
-	}
-	BRA = {
 		country_event = { id = brazil.47 days = 60 } # 1864.3.2
 		country_event = { id = brazil.48 days = 60 } # 1864.3.2
 		country_event = { id = brazil.51 days = 514 } # 1865.5.30
@@ -782,6 +805,7 @@ KDE_bi_yearly_event_fire_1864 = {
 	}
 	FIN = {
 		country_event = { id = finlandfamine.1 days = 365 } # 1865.1.1
+		country_event = { id = finland.19 days = 595 } # 1865.8.19
 	}
 	DEN = {
 		#country_event = { id = denmark_secschwar.1 days = 44 } # 1864.2.14
@@ -801,6 +825,9 @@ KDE_bi_yearly_event_fire_1864 = {
 		country_event = { id = britain.59 days = 704 } # 1865.12.5
 		country_event = { id = britain.119 days = 569 } # 1865.7.24
 	}
+	RAJ = {
+		country_event = { id = britishindia.19 days = 12 } # 1864.1.12
+	}
 	AUS = {
 		country_event = { id = austria.32 days = 270 } # 1864.9.28
 		country_event = { id = austria.33 days = 403 } # 1865.2.8
@@ -808,6 +835,11 @@ KDE_bi_yearly_event_fire_1864 = {
 		country_event = { id = austria.41 days = 694 } # 1865.11.26
 		country_event = { id = austria.704 days = 150 } # 1864.5.31
 		country_event = { id = austria.707 days = 176 } # 1864.6.26
+		country_event = { id = advisor_death.4 days = 575 hours = 8 } # 1865.7.30
+		country_event = { id = advisor_death.12 days = 589 hours = 8 } # 1865.8.13
+	}
+	BAD = {
+		country_event = { id = gerconfed.517 days = 460 } # 1865.4.6
 	}
 	BAV = {
 		country_event = { id = gerconfed.505 days = 123 } # 1864.5.4
@@ -846,6 +878,9 @@ KDE_bi_yearly_event_fire_1864 = {
 		country_event = { id = KOR_joseon_dynasty.2 days = 45 } # 1864.2.15
 		country_event = { id = KOR_joseon_dynasty.12 days = 449 random_days = 50 } # 1865.3.26
 	}
+	ROM = {
+		country_event = { id = rom_wallachia.18 days = 439 random_days = 4 } # 1865.03.16
+	}
 }
 
 KDE_bi_yearly_event_fire_1866 = {
@@ -854,16 +889,21 @@ KDE_bi_yearly_event_fire_1866 = {
 		country_event = { id = JAP_tokugawa_shogunate.161 days = 200 random_days = 30 }
 	}
 	RUS = {
+		country_event = { id = rossiya.3 days = 338 } # 1866.12.5
 		country_event = { id = rossiya.16 days = 93 } # 1866.4.4
-		country_event = { id = rossiya.19 days = 93 } # 1867.5.25
+		country_event = { id = rossiya.19 days = 509 } # 1867.5.25
+		country_event = { id = rossiya.66 days = 181 } # 1866.7.1
+		country_event = { id = rossiya.70 days = 344 } # 1866.12.11
+		country_event = { id = rossiya.84 days = 664 } # 1867.10.27
+		country_event = { id = rossiya.89 days = 638 } # 1867.10.1
 		country_event = { id = rossiya.505 days = 422 } # 1867.2.27
 		country_event = { id = rossiya.506 days = 270 } # 1866.9.28
-		country_event = { id = rossiya.3 days = 338 } # 1866.12.5
 		country_event = { id = rossiya.731 days = 254 } # 1866.9.12
 		country_event = { id = rossiya.734 days = 295 } # 1866.10.23
+		country_event = { id = rossiya.815 days = 59 } # 1866.3.1
 	}
 	OTO = {
-		country_event = { id = GREcrete.1 days = 290 } # 1866.10.18
+		country_event = { id = GREcrete.1 days = 232 } # 1866.8.21
 	}
 	SER = {
 		country_event = { id = SERkar.8 days = 485 } # 1867.5.1
@@ -883,9 +923,6 @@ KDE_bi_yearly_event_fire_1866 = {
 		country_event = { id = belgium_event.1 days = 101 } # 1866.4.12
 		country_event = { id = belgium_event.13 days = 4 } # 1866.1.5
 		country_event = { id = belgium_event.14 days = 4 } # 1866.1.5
-	}
-	CET = {
-		country_event = { id = GREcrete.3 days = 331 } # 1866.11.28
 	}
 	BRA = {
 		country_event = { id = brazil.59 days = 481 } # 1867.4.27
@@ -941,6 +978,10 @@ KDE_bi_yearly_event_fire_1866 = {
 		country_event = { id = britain.49 days = 587 } # 1867.8.11
 		country_event = { id = britainirishunrest.7 days = 435 } # 1867.3.12
 		country_event = { id = britain.88 days = 485 } # 1867.4.30
+		country_event = { id = britishmalaya.4 days = 455 } # 1867.4.1
+	}
+	SGP = {
+		country_event = { id = britishmalaya.3 days = 485 } # 1867.4.30
 	}
 	AUS = {
 		country_event = { id = austria.14 days = 66 random_days = 90 } # 1866.3.8
@@ -952,6 +993,8 @@ KDE_bi_yearly_event_fire_1866 = {
 		country_event = { id = austria.351 days = 344 random_days = 90 } # 1866.12.11
 		country_event = { id = austria.703 days = 181 } # 1866.7.1
 		country_event = { id = austria.705 days = 186 } # 1866.7.6
+		country_event = { id = advisor_death.1 days = 713 hours = 8 } # 1867.12.15
+		country_event = { id = advisor_death.16 days = 14 hours = 8 } # 1866.1.15
 	}
 	PRS = {
 		country_event = { id = prussia.706 days = 106 } # 1866.04.17
@@ -977,9 +1020,18 @@ KDE_bi_yearly_event_fire_1866 = {
 
 KDE_bi_yearly_event_fire_1868 = {
 	RUS = {
+		country_event = { id = rossiya.64 days = 680 } # 1869.11.12
+		country_event = { id = rossiya.73 days = 697 } # 1869.11.29
+		country_event = { id = rossiya.74 days = 546 } # 1869.7.1
+		country_event = { id = rossiya.86 days = 212 } # 1868.8.1
+		country_event = { id = rossiya.87 days = 29 } # 1868.1.30
+		country_event = { id = rossiya.96 days = 485 } # 1869.5.1
+		country_event = { id = rossiya.98 days = 412 } # 1869.2.17
+		country_event = { id = rossiya.101 days = 469 } # 1869.4.15
 		country_event = { id = rossiya.211 days = 176 } # 1868.6.26
 		country_event = { id = rossiya.738 days = 486 } # 1869.5.2
-		}
+		country_event = { id = rossiya.814 days = 344 } # 1868.12.11
+	}
 	JSH = {
 		country_event = { id = arab_events.64 days = 104 } # 1868.4.15
 		country_event = { id = arab_events.65 days = 438 } # 1869.3.15
@@ -1032,11 +1084,14 @@ KDE_bi_yearly_event_fire_1868 = {
 		country_event = { id = finland.3 days = 425 } # 1869.3.2
 	}
 	ENG = {
-		country_event = { id = britishafrica.1 days = 128 } # 1868.5.9
 		country_event = { id = britain.38 days = 698 } # 1869.11.30
 		country_event = { id = britain.50 days = 174 } # 1868.6.24
 		country_event = { id = britain.51 days = 318 } # 1868.11.15
 		country_event = { id = britain.120 days = 341 } # 1868.12.7
+		country_event = { id = britishmalaya.13 days = 464 } # 1869.4.10
+	}
+	RAJ = {
+		country_event = { id = britishindia.20 days = 376 } # 1869.1.12
 	}
 	AUS = {
 		country_event = { id = austria.22 days = 159 } # 1868.6.9
@@ -1048,13 +1103,17 @@ KDE_bi_yearly_event_fire_1868 = {
 	}
 	BAV = {
 		country_event = { id = gerconfed.507 days = 630 } # 1869.9.23
+		country_event = { id = gerconfed.516 days = 257 } # 1868.9.15
 	}
 	PRS = {
-		country_event = { id = prussia.253 days = 584 } # 1869.08.08
-		country_event = { id = prussia.707 days = 227 } # 1868.08.16
+		country_event = { id = prussia.253 days = 584 } # 1869.8.8
+		country_event = { id = prussia.707 days = 227 } # 1868.8.16
 	}
 	JAP = {
-		country_event = { id = japan_flavor.1 days = 243 } # 1868.08.01
+		country_event = { id = japan_flavor.1 days = 243 } # 1868.8.1
+	}
+	SER = {
+		country_event = { id = SER_politics.60 days = 160 } # 1868.6.10
 	}
 }
 
@@ -1066,9 +1125,16 @@ KDE_bi_yearly_event_fire_1870 = {
 		news_event = {id = japan_daimyo_characters.7 days = 300 random_days = 200 }
 	}
 	RUS = {
+		country_event = { id = rossiya.65 days = 424 } # 1871.3.1
+		country_event = { id = rossiya.93 days = 424 } # 1871.4.15
+		country_event = { id = rossiya.95 days = 31 } # 1870.2.1
+		country_event = { id = rossiya.97 days = 20 } # 1870.1.21
 		country_event = { id = rossiya.507 days = 455 } # 1871.4.1
 		country_event = { id = rossiya.719 days = 468 } # 1871.4.14
 		country_event = { id = rossiya.733 days = 567 } # 1871.7.22
+	}
+	SER = {
+		country_event = { id = eastern_crisis.1 days = 619 } # 1871.9.12
 	}
 	NJD = {
 		country_event = { id = arab_events.56 days = 425 } # 1871.3.2
@@ -1091,10 +1157,6 @@ KDE_bi_yearly_event_fire_1870 = {
 	BEL = {
 		country_event = { id = belgium_election.8 days = 190 } # 1870.7.10
 	}
-	SAF = {
-		country_event = { id = britishafrica.10 days = 79 } # 1870.3.21
-		country_event = { id = britishafrica.11 days = 394 } # 1871.1.30
-	}
 	BRA = {
 		country_event = { id = brazil.60 days = 221 } # 1870.8.10
 		country_event = { id = brazil.61 days = 362 } # 1870.12.29
@@ -1114,9 +1176,11 @@ KDE_bi_yearly_event_fire_1870 = {
 		country_event = { id = britain.39 days = 94 } # 1870.4.5
 		country_event = { id = britain.40 days = 235 } # 1870.8.24
 		country_event = { id = britain.60 days = 275 } # 1870.10.3
+		country_event = { id = britain.187 days = 250 } # 1870.9.8
 	}
 	AUS = {
 		country_event = { id = austria.37 days = 299 } # 1870.10.27
+		country_event = { id = advisor_death.23 days = 461 hours = 8 } # 1871.4.7
 	}
 	BAV = {
 		country_event = { id = gerconfed.508 days = 177 } # 1870.6.27
@@ -1157,8 +1221,12 @@ KDE_bi_yearly_event_fire_1872 = {
 	ENG = {
 		country_event = { id = britain.168 days = 395 } # 1873.1.31
 	}
+	RAJ = {
+		country_event = { id = britishindia.21 days = 38 } # 1872.2.8
+	}
 	AUS = {
 		country_event = { id = austria.951 days = 485 random_days = 61 } # 1873.5.1
+		country_event = { id = advisor_death.9 days = 268 hours = 8 } # 1872.9.26
 	}
 	PRS = {
 		country_event = { id = prussia.87 days = 90 } # 1872.4.1
@@ -1167,6 +1235,14 @@ KDE_bi_yearly_event_fire_1872 = {
 		country_event = { id = germany.15 days = 316 } # 1872.11.13
 		country_event = { id = germany.17 days = 166 } # 1872.6.16
 		country_event = { id = gerconfed.510 days = 141 } # 1872.5.22
+		country_event = { id = germany.105 days = 59 } # 1872.3.1
+	}
+	RUS = {
+		country_event = { id = rossiya.75 days = 546 } # 1873.7.1
+		country_event = { id = rossiya.78 days = 660 } # 1873.10.23
+		country_event = { id = rossiya.88 days = 515 } # 1873.5.31
+		country_event = { id = rossiya.91 days = 243 } # 1872.9.1
+		country_event = { id = rossiya.105 days = 253 } # 1872.9.11
 	}
 	SPR = {
 		country_event = { id = spanishflavour.8 days = 546 random_days = 61 } # 1873.7.1
@@ -1186,6 +1262,7 @@ KDE_bi_yearly_event_fire_1874 = {
 		news_event = { id = japan_daimyo_characters.2 days = 1 random_days = 200 }
 	}
 	ENG = {
+		country_event = { id = britishmalaya.7 days = 15 } # 1874.1.15
 		country_event = { id = britain.181 days = 90 } # 1874.4.1
 		country_event = { id = britain.121 days = 17 } # 1874.1.17
 	}
@@ -1210,6 +1287,13 @@ KDE_bi_yearly_event_fire_1874 = {
 	FIN = {
 		country_event = { id = finland.9 days = 545 } # 1875.6.30
 	}
+	AUS = {
+		country_event = { id = advisor_death.3 days = 579 hours = 8 } # 1875.8.3
+		country_event = { id = advisor_death.5 days = 207 hours = 8 } # 1874.7.27
+	}
+	MNT = {
+		country_event = { id = eastern_crisis.122 days = 287 } # 1874.10.15
+	}
 	PRS = {
 		country_event = { id = prussia.255 days = 511 } # 1875.5.27
 		country_event = { id = prussia.172 days = 275 } # 1874.10.3
@@ -1217,14 +1301,24 @@ KDE_bi_yearly_event_fire_1874 = {
 		country_event = { id = prussia.22 days = 163 } # 1874.6.13
 		country_event = { id = germany.18 days = 193 } # 1874.7.13
 	}
+	RUS = {
+		country_event = { id = rossiya.76 days = 15 } # 1874.1.16
+		country_event = { id = rossiya.77 days = 722 } # 1875.12.24
+	}
+	ROM = {
+		country_event = { id = eastern_crisis.201 days = 429 } # 1875.3.6
+	}
+	SER = {
+		country_event = { id = eastern_crisis.4 days = 534 } # 1875.6.19
+	}
 	QNG = {
-		country_event = { id = qing.13 days = 376 } # 1875.01.12
+		country_event = { id = qing.13 days = 376 } # 1875.1.12
 	}
 	USA = {
-		country_event = { id = usa_flavor.11 days = 501 } # 1875.05.17
+		country_event = { id = usa_flavor.11 days = 501 } # 1875.5.17
 	}
 	UCT = {
-		news_event = { id = news_flavor.12 days = 120 } # 1874.05.1
+		news_event = { id = news_flavor.12 days = 120 } # 1874.5.1
 	}
 	TOS = {
 		news_event = { id = japan_daimyo_characters.15 days = 200 random_days = 200 }
@@ -1235,8 +1329,14 @@ KDE_bi_yearly_event_fire_1874 = {
 }
 
 KDE_bi_yearly_event_fire_1876 = {
+	ROM = {
+		country_event = { id = eastern_crisis.208 days = 103 } # 1876.4.14
+	}
 	RUS = {
+		country_event = { id = rossiya.79 days = 104 } # 1876.4.15
+		country_event = { id = rossiya.102 days = 120 } # 1876.5.1
 		country_event = { id = rossiya.736 days = 2 } # 1876.1.3
+		country_event = { id = eastern_crisis.442 days = 728 } # 1877.12.30
 	}
 	NJD = {
 		country_event = { id = arab_events.60 days = 30 } # 1876.1.31
@@ -1248,7 +1348,6 @@ KDE_bi_yearly_event_fire_1876 = {
 		country_event = { id = edc_congo.1 days = 120 } # 1876.5.1
 	}
 	SAF = {
-		country_event = { id = britishafrica.12 days = 444 } # 1877.3.21
 		country_event = { id = boer_states.93 days = 545 } # 1877.6.30
 	}
 	BRA = {
@@ -1257,10 +1356,12 @@ KDE_bi_yearly_event_fire_1876 = {
 	PRS = {
 		country_event = { id = prussia.23 days = 413 } # 1877.2.18
 		country_event = { id = gerconfed.511 days = 225 } # 1876.8.14
+		country_event = { id = germany.106 days = 3 } # 1876.1.4
 	}
 	ENG = {
 		country_event = { id = britain.159 days = 372 } # 1877.1.7
-		country_event = { id = britain.175 days = 425 } #1877.3.1
+		country_event = { id = britain.175 days = 424 } #1877.3.1
+		country_event = { id = eastern_crisis.423 days = 454 } #1877.3.31
 	}
 	QNG = {
 		country_event = { id = qing.16 days = 31 random_days = 90 } # 1877.2.1
@@ -1272,8 +1373,11 @@ KDE_bi_yearly_event_fire_1876 = {
 
 KDE_bi_yearly_event_fire_1878 = {
 	RUS = {
-		country_event = { id = rossiya.21 days = 468 } # 1879.4.20
+		country_event = { id = rossiya.21 days = 474 } # 1879.4.20
 		country_event = { id = rossiya.23 days = 699 } # 1879.12.1
+		country_event = { id = rossiya.80 days = 502 } # 1879.5.18
+		country_event = { id = rossiya.90 days = 273 } # 1878.10.1
+		country_event = { id = rossiya.104 days = 59 } # 1878.3.1
 		country_event = { id = rossiya.702 days = 432 } # 1879.3.9
 		country_event = { id = rossiya.720 days = 590 } # 1879.8.14
 		country_event = { id = rossiya.723 days = 40 } # 1878.2.10
@@ -1286,12 +1390,19 @@ KDE_bi_yearly_event_fire_1878 = {
 		country_event = { id = britain.178 days = 90 } # 1878.4.1
 		country_event = { id = britain.174 days = 365 } # 1878.12.31
 		country_event = { id = britain.61 days = 436 } # 1879.3.13
+		country_event = { id = britishmalaya.13 days = 110 } # 1878.4.21
+	}
+	AUS = {
+		country_event = { id = advisor_death.21 days = 558 hours = 8 } # 1879.7.13
 	}
 	PRS = {
 		country_event = { id = prussia.26 days = 99 } # 1878.4.10
 	}
 	USA = { 
 		395 = { state_event = { id = usa_flavor.16 days = 460 trigger_for = controller} }# 1879.4.06
+	}
+	BUL ={
+		country_event = { id = eoanb_bulgaria.18 days = 637 } # 1879.9.30
 	}
 }
 
@@ -1305,20 +1416,25 @@ KDE_bi_yearly_event_fire_1880 = {
 	FIN = {
 		country_event = { id = finland.12 days = 425 } # 1881.3.2
 	}
-	SAF = {
-		country_event = { id = britishafrica.13 days = 284 } # 1880.10.12
-		country_event = { id = britishafrica.14 days = 296 } # 1880.10.24
+	AUS = {
+		country_event = { id = advisor_death.18 days = 667 hours = 8 } # 1881.10.30
+		country_event = { id = advisor_death.19 days = 45 hours = 8 } # 1880.2.15
 	}
 	PRS = {
 		country_event = { id = prussia.173 days = 151 } # 1880.6.1
 		country_event = { id = prussia.27 days = 517 } # 1881.6.2
 		country_event = { id = germany.16 days = 686 } # 1881.11.18
+		country_event = { id = germany.108 days = 187 } # 1880.7.7
 	}
 	ENG = {
 		country_event = { id = britain.180 days = 417 } # 1881.2.27
 		country_event = { id = britain.182 days = 412 } # 1881.2.22
 		country_event = { id = britain.125 days = 474 } # 1881.4.19
 		country_event = { id = britain.122 days = 482 } # 1881.4.27
+		country_event = { id = britishmalaya.11 days = 475 } # 1881.4.20
+	}
+	BUL ={
+		country_event = { id = eoanb_bulgaria.27 days = 437 } # 1881.3.13
 	}
 }
 
@@ -1327,6 +1443,7 @@ KDE_bi_yearly_event_fire_1882 = {
 		news_event = { id = japan_daimyo_characters.6 days = 5 random_days = 50 }
 	}
 	RUS = {
+		country_event = { id = rossiya.92 days = 511 } # 1883.5.27
 		country_event = { id = rossiya.704 days = 135 } # 1882.5.16
 		country_event = { id = rossiya.705 days = 187 } # 1882.7.7
 		country_event = { id = rossiya.713 days = 508 } # 1883.5.24
@@ -1343,6 +1460,12 @@ KDE_bi_yearly_event_fire_1882 = {
 	UCT = {
 		news_event = { id = worldnewsfl.41 days = 630 } # 1883.9.23
 	}
+	AUS = {
+		country_event = { id = advisor_death.6 days = 586 hours = 8 } # 1883.8.10
+		country_event = { id = advisor_death.10 days = 559 hours = 8 } # 1883.7.14
+		country_event = { id = advisor_death.11 days = 6 hours = 8 } # 1882.1.7
+		country_event = { id = advisor_death.17 days = 300 hours = 8 } # 1882.10.28
+	}
 	PRS = {
 		country_event = { id = prussia.28 days = 28 } # 1882.1.29
 		country_event = { id = gerconfed.512 days = 207 } # 1882.7.27
@@ -1352,17 +1475,17 @@ KDE_bi_yearly_event_fire_1882 = {
 		country_event = { id = britain.62 days = 116 } # 1882.4.27
 		country_event = { id = britain.163 days = 467 } # 1883.4.13
 	}
-	PHG = {
+	SGP = {
 		country_event = { id = britishmalaya.6 days = 0 } # 1882.01.01 
 	}
 	JAP = {
 		country_event = { id = JAP_political.8 days = 0 } # 1882.01.01 
 	}
-	PHG = {
-		country_event = { id = britishmalaya.6 days = 0 } # 1882.01.01
-	}
 	POL = {
 		country_event = { id = poland.94 days = 365 }
+	}
+	QNL = {
+		country_event = { id = britishoceania.87 days = 443 } # 1883.3.20
 	}
 }
 
@@ -1378,6 +1501,7 @@ KDE_bi_yearly_event_fire_1884 = {
 		country_event = { id = britain.177 days = 30 } # 1884.2.1
 		country_event = { id = britishafrica.4 days = 395 } # 1885.1.31
 		country_event = { id = britain.63 days = 571	} # 1885.7.25
+		country_event = { id = britishmalaya.17 days = 52 } # 1884.2.23
 	}
 	PRS = {
 		country_event = { id = prussia.31 days = 414 } # 1885.2.19
@@ -1403,6 +1527,9 @@ KDE_bi_yearly_event_fire_1886 = {
 	HOL = {
 		country_event = { id = holland_generals.1 days = 550 } # 1887.7.5
 	}
+	AUS = {
+		country_event = { id = advisor_death.8 days = 493 hours = 8 } # 1887.5.9
+	}
 	PRS = {
 		country_event = { id = prussia.32 days = 201 } # 1886.7.21
 	}
@@ -1416,6 +1543,9 @@ KDE_bi_yearly_event_fire_1886 = {
 	TOS = {
 		news_event = { id = japan_daimyo_characters.15 days = 100 random_days = 200 }
 	}
+	BUL = {
+		country_event = { id = eoanb_bulgaria.30 days = 189 } # 1886.7.9
+	}
 }
 
 KDE_bi_yearly_event_fire_1888 = {
@@ -1424,6 +1554,15 @@ KDE_bi_yearly_event_fire_1888 = {
 	}
 	ENG = {
 		country_event = { id = britain.171 days = 395 } # 1889.1.31
+		country_event = { id = britishmalaya.10 days = 274 } # 1888.10.1
+		country_event = { id = britishmalaya.14 days = 165 } # 1888.6.14
+		country_event = { id = britishmalaya.16 days = 260 } # 1888.9.17
+		country_event = { id = britishmalaya.20 days = 69 } # 1888.3.11
+		country_event = { id = britishoceania.90 days = 157 } # 1888.6.6
+	}
+	AUS = {
+		country_event = { id = advisor_death.14 days = 257 hours = 8 } # 1888.9.15
+		country_event = { id = advisor_death.15 days = 483 hours = 8 } # 1889.4.29
 	}
 	PRS = {
 		country_event = { id = prussia.6 days = 67 } # 1888.3.9
@@ -1435,9 +1574,6 @@ KDE_bi_yearly_event_fire_1888 = {
 KDE_bi_yearly_event_fire_1890 = {
 	JSH = {
 		country_event = { id = arab_events.51 days = 414 } # 1891.2.19
-	}
-	FIN = {
-		country_event = { id = finland.4 days = 90 } # 1900.4.1
 	}
 	USA = {
 		country_event = usa.313
@@ -1475,6 +1611,9 @@ KDE_bi_yearly_event_fire_1894 = {
 	ENG = {
 		country_event = { id = britain.172 days = 395 } # 1895.1.31
 	}
+	AUS = {
+		country_event = { id = advisor_death.13 days = 715 hours = 8 } # 1895.12.17
+	}
 	PRS = {
 		country_event = { id = prussia.37 days = 250 } # 1894.9.8
 	}
@@ -1491,8 +1630,14 @@ KDE_bi_yearly_event_fire_1896 = {
 	JSH = {
 		country_event = { id = arab_events.67 days = 552 } # 1897.7.7
 	}
+	AUS = {
+		country_event = { id = advisor_death.20 days = 621 hours = 8 } # 1897.9.14
+	}
 	PRS = {
 		country_event = { id = prussia.39 days = 355 } # 1896.12.22
+	}
+	ENG = {
+		country_event = { id = britishmalaya.18 days = 182 } # 1896.7.5
 	}
 	SAT = {
 		#news_event = { id = japan_daimyo_characters.10 days = 100 random_days = 200 }
@@ -1524,10 +1669,15 @@ KDE_bi_yearly_event_fire_1900 = {
 	}
 	PRS = {
 		country_event = { id = prussia.42 days = 218 } # 1900.8.7
+		news_event = { id = news.53 days = 103 } # 1900.4.14
+		country_event = { id = germany.109 days = 534 } # 1901.6.19
 	}
 	CHI = {
 		country_event = { id = xinghai_reb.4 days = 234 } # 1900.8.23
 		country_event = { id = xinghai_reb.5 days = 280 } # 1900.10.8 Huizhou Uprising
+	}
+	FIN = {
+		country_event = { id = finland.4 days = 90 } # 1900.4.1
 	}
 }
 
@@ -1551,6 +1701,9 @@ KDE_bi_yearly_event_fire_1904 = {
 	CHI = {
 		country_event = { id = xinghai_reb.8 days = 441 random_days = 80 } # 1905.05.08
 		country_event = { id = xinghai_reb.9 days = 631 } # 1905.05.08
+	}
+	AUS = {
+		country_event = { id = advisor_death.2 days = 62 hours = 8 } # 1904.3.4
 	}
 }
 
@@ -1581,8 +1734,14 @@ KDE_bi_yearly_event_fire_1908 = {
 	UCT = {
 		news_event = { id = worldnewsfl.61 days = 212 } # 1908.8.1
 	}
+	AUS = {
+		country_event = { id = advisor_death.7 days = 185 hours = 8 } # 1908.7.5
+	}
 	PRS = {
 		country_event = { id = prussia.46 days = 492 } # 1909.5.8
+	}
+	ENG = {
+		country_event = { id = britishmalaya.19 days = 439 } # 1909.3.15
 	}
 	CHI = {
 		country_event = { id = xinghai_reb.16 days = 85 } # 1908.3.27

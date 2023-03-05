@@ -1,0 +1,1798 @@
+eastern_crisis_decision_category =	{
+	
+	### BOSNIA & HERZEGOVINA ###
+	
+	#The Herzegovina Crisis of 1875
+	eastern_crisis_mission_herzegovina_uprising_of_1875 = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = HRZ
+				}
+				### What they need to control
+				has_full_control_of_state = 104
+				has_full_control_of_state = 1205
+				has_full_control_of_state = 1207
+				has_full_control_of_state = 1208
+				has_full_control_of_state = 1272
+				custom_trigger_tooltip = {
+					tooltip = eastern_crisis_mission_herzegovina_uprising_of_1875_trigger_tt
+					hidden_trigger = {
+						controls_province = 13779
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				HRZ = {
+					surrender_progress > 0.8
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 80
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = HRZ
+				}
+				HRZ = {
+					transfer_state = 104
+					transfer_state = 1204
+					transfer_state = 1205
+					transfer_state = 1207
+					transfer_state = 1208
+					transfer_state = 1272
+					white_peace = OTO
+				}
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				OTO = {
+					annex_country = {
+						target = HRZ
+					}
+				}
+			}
+			clr_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = HRZ
+				}
+				transfer_state = 104
+				transfer_state = 1204
+				transfer_state = 1205
+				transfer_state = 1207
+				transfer_state = 1208
+				transfer_state = 1272
+				white_peace = OTO
+			}
+			else_if = {
+				limit = {
+					tag = OTO
+				}
+				if = {
+					limit = {
+						OR = {
+							has_dlc = "Together for Victory"
+							has_dlc = "Waking the Tiger"
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = HRZ
+						autonomous_state = autonomy_khedive
+						freedom_level = 0.7
+					}
+				}
+				else = {
+					puppet = HRZ
+				}
+			}
+			clr_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+	}
+	
+	#Send in the Garibaldists
+	eastern_crisis_decision_send_in_the_garibaldists = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			OR = {
+				tag = NSC
+				tag = PAP
+				tag = PIE
+				tag = TUS
+			}
+		}
+		
+		available = {
+			HRZ = {
+				exists = yes
+				has_war_with = OTO
+			}
+		}
+
+		visible = {
+			has_country_flag = is_literally_italy
+			has_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 90
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_herzegovina_uprising_flag
+			}
+		}
+		
+		modifier = {
+			political_power_gain = -0.03
+			consumer_goods_factor = 0.01
+		}
+		
+		remove_effect = {
+			add_manpower = -2000
+			HRZ = { country_event = { id = eastern_crisis.7 } }
+			add_opinion_modifier = { target = HRZ modifier = om_war_support }
+			reverse_add_opinion_modifier = { target = HRZ modifier = om_war_support }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Establish the International Uprising Relief Committee
+	eastern_crisis_decision_international_uprising_relief_committee = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			tag = FRA
+		}
+
+		available = {
+			HRZ = {
+				exists = yes
+				has_war_with = OTO
+			}
+		}
+
+		visible = {
+			has_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 90
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_herzegovina_uprising_flag
+			}
+		}
+		
+		modifier = {
+			political_power_gain = -0.03
+			consumer_goods_factor = 0.03
+		}
+		
+		remove_effect = {
+			HRZ = { country_event = { id = eastern_crisis.8 } }
+			add_opinion_modifier = { target = HRZ modifier = om_war_support }
+			reverse_add_opinion_modifier = { target = HRZ modifier = om_war_support }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Help our Slavic Brethren
+	eastern_crisis_decision_help_our_slavic_brethren = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			tag = RUS
+		}
+
+		available = {
+			HRZ = {
+				exists = yes
+				has_war_with = OTO
+			}
+		}
+
+		visible = {
+			has_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 90
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_herzegovina_uprising_flag
+			}
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.02
+		}
+		
+		 remove_effect = {
+			add_manpower = -2000
+			HRZ = { country_event = { id = eastern_crisis.9 } }
+			add_opinion_modifier = { target = HRZ modifier = om_war_support }
+			reverse_add_opinion_modifier = { target = HRZ modifier = om_war_support }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Undertake a Military Operation in Bosnia
+	eastern_crisis_decision_bosnia_military_operation = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_war_support > 0.4
+			custom_trigger_tooltip = {
+				tooltip = eastern_crisis_decision_bosnia_military_operation_trigger_tt
+				hidden_trigger = {
+					NOT = {
+						check_variable = { ROOT.debt_level > 49 }
+						has_country_flag = debt_declared_bankruptcy_flag
+					}
+					has_country_flag = eastern_crisis_reichstadt_agreement_signed_flag
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_global_flag = eastern_crisis_herzegovina_uprising_flag }
+			has_country_flag = AUS_international_units_in_bosnia_flag
+			has_country_flag = AUS_croatian_refugee_crisis_flag
+		}
+		
+		fire_only_once = yes
+		
+		cost = 100
+		
+		days_remove = 60
+
+		modifier = {
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.1
+		}
+		
+		remove_effect = {
+			country_event = { id = eastern_crisis.12 }
+			if = {
+				limit = {
+					HRZ = {
+						exists = yes
+						is_puppet_of = OTO
+					}
+				}
+				declare_war_on = {
+					target = HRZ
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					OTO = {
+						owns_state = 104
+						owns_state = 1205
+						owns_state = 1207
+						owns_state = 1208
+						owns_state = 1272
+					}
+				}
+				declare_war_on = {
+					target = OTO
+					type = annex_everything
+				}
+			}
+			else = {
+				every_other_country = {
+					limit = {
+						OR = {
+							owns_state = 104
+							owns_state = 1205
+							owns_state = 1207
+							owns_state = 1208
+							owns_state = 1272
+						}
+					}
+					AUS = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+						hidden_effect = {
+							PREV = { activate_mission = eastern_crisis_mission_austrian_occupation_of_bosnia }
+						}
+					}
+				}
+			}
+			activate_mission = eastern_crisis_mission_austrian_occupation_of_bosnia
+			hidden_effect = {
+				clr_country_flag = AUS_international_units_in_bosnia_flag
+				clr_country_flag = AUS_croatian_refugee_crisis_flag
+				clr_country_flag = eastern_crisis_reichstadt_agreement_signed_flag
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#The Austrian Occupation of Bosnia
+	eastern_crisis_mission_austrian_occupation_of_bosnia = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				### What they need to control
+				has_full_control_of_state = 104
+				has_full_control_of_state = 1205
+				has_full_control_of_state = 1207
+				has_full_control_of_state = 1208
+				has_full_control_of_state = 1272
+			}
+			if = {
+				limit = {
+					NOT = { tag = AUS }
+				}
+				AUS = {
+					surrender_progress > 0.2
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 80
+		
+		is_good = no
+		
+		days_mission_timeout = 150
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				country_event = { id = eastern_crisis.16 }
+				HRZ = {
+					transfer_state = 104
+					transfer_state = 1205
+					transfer_state = 1207
+					transfer_state = 1208
+					transfer_state = 1272
+				}
+				if = {
+					limit = {
+						OR = {
+							has_dlc = "Together for Victory"
+							has_dlc = "Waking the Tiger"
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = HRZ
+						autonomous_state = autonomy_supervised_state
+						freedom_level = 0.5
+					}
+				}
+				else = {
+					puppet = HRZ
+				}
+				hidden_effect = {
+					white_peace = ENG
+					white_peace = HRZ
+					white_peace = OTO
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = AUS }
+				}
+				country_event = { id = eastern_crisis.18 }
+				AUS = { country_event = { id = eastern_crisis.18 } }
+				white_peace = AUS
+			}
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				country_event = { id = eastern_crisis.20 }
+				hidden_effect = {
+					white_peace = ENG
+					white_peace = HRZ
+					white_peace = OTO
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = AUS }
+				}
+				country_event = { id = eastern_crisis.20 }
+				white_peace = AUS
+			}
+		}
+	}
+	
+	### BULGARIA ###
+	
+	#Bulgarian Revolt Imminent
+	eastern_crisis_mission_bulgarian_revolt_imminent = {
+		
+		icon = border_war
+		
+		allowed = { always = no }
+		
+		available = {
+			army_manpower_in_state = {
+				amount > 3999
+				state = 211
+			}
+			army_manpower_in_state = {
+				amount > 1999
+				state = 212
+			}
+			army_manpower_in_state = {
+				amount > 1999
+				state = 810
+			}
+			army_manpower_in_state = {
+				amount > 2999
+				state = 963
+			}
+			army_manpower_in_state = {
+				amount > 2999
+				state = 964
+			}
+			army_manpower_in_state = {
+				amount > 9999
+				state = 1023
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 90
+		
+		is_good = no
+		
+		days_mission_timeout = 7
+		
+		war_with_on_complete = BUL
+		war_with_on_timeout = BUL
+		
+		complete_effect = {
+			custom_effect_tooltip = eastern_crisis_mission_bulgarian_revolt_imminent_complete_effect_tt
+			hidden_effect = {
+				random_list = {
+					60 = {
+						set_country_flag = OTO_bulgarian_revolt_strong_flag
+					}
+					40 = {
+						set_country_flag = OTO_bulgarian_revolt_very_strong_flag
+					}
+				}
+			}
+			country_event = { id = eastern_crisis.210 }
+		}
+		
+		timeout_effect = {
+			custom_effect_tooltip = eastern_crisis_mission_bulgarian_revolt_imminent_timeout_effect_tt
+			hidden_effect = {
+				set_country_flag = OTO_bulgarian_revolt_very_strong_flag
+			}
+			country_event = { id = eastern_crisis.210 }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#The April Uprising
+	eastern_crisis_mission_april_uprising = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = BUL
+				}
+				### What they need to control
+				has_full_control_of_state = 48
+				has_full_control_of_state = 211
+				has_full_control_of_state = 963
+				has_full_control_of_state = 1023
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				BUL = {
+					surrender_progress > 0.8
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 90
+		
+		is_good = no
+		
+		days_mission_timeout = 180
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = BUL
+				}
+				transfer_state = 48
+				transfer_state = 211
+				transfer_state = 963
+				transfer_state = 1023
+				white_peace = OTO
+				country_event = { id = eastern_crisis.227 days = 5 }
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				OTO = {
+					annex_country = {
+						target = BUL
+					}
+				}
+				country_event = { id = eastern_crisis.225 days = 5 }
+				hidden_effect = {
+					ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+				}
+			}
+			clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = BUL
+				}
+				transfer_state = 48
+				transfer_state = 211
+				transfer_state = 963
+				transfer_state = 1023
+				white_peace = OTO
+				hidden_effect = {
+					ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = OTO
+				}
+				if = {
+					limit = {
+						OR = {
+							has_dlc = "Together for Victory"
+							has_dlc = "Waking the Tiger"
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = BUL
+						autonomous_state = autonomy_khedive
+						freedom_level = 0.7
+					}
+				}
+				else = {
+					puppet = BUL
+				}
+				country_event = { id = eastern_crisis.229 days = 5 }
+			}
+			clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+	}
+	
+	### SERBIA & MONTENEGRO ###
+	
+	#The Time for Freedom Has Come
+	eastern_crisis_decision_time_for_freedom = {
+
+		icon = generic_independence
+
+		allowed = {
+			tag = SER
+		}
+		
+		available = {
+			has_war_support > 0.4
+		}
+
+		visible = {
+			date > 1876.05.15
+			SER = {
+				exists = yes
+				is_subject = yes
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 30
+		
+		war_with_on_remove = OTO
+		
+		cancel_trigger = {
+			NOT = {
+				SER = { is_subject = yes }
+			}
+		}
+		
+		modifier = {
+			war_support_weekly = 0.02
+			weekly_manpower = 500
+		}
+		
+		remove_effect = {
+			country_event = { id = eastern_crisis.101 }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#The Serbian-Ottoman War #UNFINISHED
+	eastern_crisis_mission_serbian_ottoman_war = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = SER
+				}
+				OTO = {
+					surrender_progress > 0.2
+				}
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				SER = {
+					surrender_progress > 0.75
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 90
+		
+		is_good = no
+		
+		days_mission_timeout = 210
+		
+		complete_effect = {
+			#if = {
+			#	limit = {
+			#		tag = SER
+			#	}
+			#	white_peace = OTO
+			#	#country_event = { id = eastern_crisis.227 days = 5 }
+			#}
+			#if = {
+			#	limit = {
+			#		tag = OTO
+			#	}
+			#	OTO = {
+			#		annex_country = {
+			#			target = BUL
+			#		}
+			#	}
+			#	country_event = { id = eastern_crisis.225 days = 5 }
+			#	hidden_effect = {
+			#		ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+			#	}
+			#}
+			#clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+		
+		timeout_effect = {
+			#if = {
+			#	limit = {
+			#		tag = BUL
+			#	}
+			#	transfer_state = 48
+			#	transfer_state = 211
+			#	transfer_state = 963
+			#	transfer_state = 1023
+			#	white_peace = OTO
+			#	hidden_effect = {
+			#		ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+			#	}
+			#}
+			#else_if = {
+			#	limit = {
+			#		tag = OTO
+			#	}
+			#	if = {
+			#		limit = {
+			#			OR = {
+			#				has_dlc = "Together for Victory"
+			#				has_dlc = "Waking the Tiger"
+			#				has_dlc = "Death or Dishonor"
+			#			}
+			#		}
+			#		set_autonomy = {
+			#			target = BUL
+			#			autonomous_state = autonomy_khedive
+			#			freedom_level = 0.7
+			#		}
+			#	}
+			#	else = {
+			#		puppet = BUL
+			#	}
+			#	country_event = { id = eastern_crisis.229 days = 5 }
+			#}
+			#clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+	}
+	
+	### RUSSO-TURKISH WAR ###
+	
+	#Fortify the Town of Razgrad
+	eastern_crisis_decision_fortify_razgrad = {
+
+		icon = fort
+
+		allowed = {
+			tag = OTO
+		}
+
+		available = {
+			has_war_support > 0.4
+			owns_state = 211
+			controls_province = 649
+			num_of_available_civilian_factories > 0
+		}
+
+		visible = {
+			has_country_flag = eastern_crisis_april_uprising_quelled
+		}
+		
+		fire_only_once = yes
+		
+		cost = 25
+		
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+		}
+		
+		remove_effect = {
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = 649
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Fortify the Town of Pleven
+	eastern_crisis_decision_fortify_pleven = {
+
+		icon = fort
+
+		allowed = {
+			tag = OTO
+		}
+
+		available = {
+			has_war_support > 0.4
+			owns_state = 211
+			controls_province = 3796
+			num_of_available_civilian_factories > 0
+		}
+
+		visible = {
+			has_country_flag = eastern_crisis_april_uprising_quelled
+		}
+		
+		fire_only_once = yes
+		
+		cost = 25
+		
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+		}
+		
+		remove_effect = {
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = 3796
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Sign a Treaty with Romania
+	eastern_crisis_decision_sign_treaty_with_romania = {
+
+		icon = constitution
+
+		allowed = {
+			tag = RUS
+		}
+
+		available = {
+			ROM = { exists = yes }
+			NOT = { has_war_with = OTO }
+			has_global_flag = eastern_crisis_ongoing_flag
+		}
+
+		visible = {
+			OR = {
+				has_country_flag = eastern_crisis_armistice_rejected_flag
+				has_country_flag = eastern_crisis_london_protocol_rejected_flag
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 25
+		
+		days_remove = 5
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			ROM = { country_event = { id = eastern_crisis.432 } }
+			hidden_effect = {
+				clr_country_flag = eastern_crisis_armistice_rejected_flag
+				clr_country_flag = eastern_crisis_london_protocol_rejected_flag
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Declare War on the Ottomans
+	eastern_crisis_decision_declare_war_on_the_ottomans = {
+
+		icon = border_war
+
+		allowed = {
+			tag = RUS
+		}
+
+		available = {
+			NOT = { has_war_with = OTO }
+			has_global_flag = eastern_crisis_ongoing_flag
+		}
+
+		visible = {
+			OR = {
+				has_country_flag = eastern_crisis_bucharest_treaty_signed_flag
+				has_country_flag = eastern_crisis_bucharest_treaty_rejected_flag
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 7
+		
+		war_with_on_remove = OTO
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			country_event = { id = eastern_crisis.435 }
+		}
+			
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#The Russo-Turkish War
+	eastern_crisis_mission_russo_turkish_war = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = RUS
+				}
+				OTO = {
+					surrender_progress > 0.3
+					NOT = { controls_province = 13816 }
+				}
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				if = {
+					limit = {
+						BUL = { has_war_with = OTO }
+					}
+					BUL = {
+						surrender_progress > 0.4
+					}
+				}
+				if = {
+					limit = {
+						GRE = { has_war_with = OTO }
+					}
+					GRE = {
+						surrender_progress > 0.2
+					}
+				}
+				RUS = {
+					surrender_progress > 0.1
+				}
+				if = {
+					limit = {
+						ROM = { has_war_with = OTO }
+					}
+					ROM = {
+						surrender_progress > 0.1
+					}
+				}
+				if = {
+					limit = {
+						SER = { has_war_with = OTO }
+					}
+					SER = {
+						surrender_progress > 0.2
+					}
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 90
+		
+		is_good = no
+		
+		days_mission_timeout = 365
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = RUS
+				}
+				white_peace = OTO
+				country_event = { id = eastern_crisis.468 days = 3 }
+			}
+			#if = {
+			#	limit = {
+			#		tag = OTO
+			#	}
+			#	OTO = {
+			#		annex_country = {
+			#			target = BUL
+			#		}
+			#	}
+			#	country_event = { id = eastern_crisis.225 days = 5 }
+			#	hidden_effect = {
+			#		ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+			#	}
+			#}
+			#clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+		
+		timeout_effect = {
+			#if = {
+			#	limit = {
+			#		tag = BUL
+			#	}
+			#	transfer_state = 48
+			#	transfer_state = 211
+			#	transfer_state = 963
+			#	transfer_state = 1023
+			#	white_peace = OTO
+			#	hidden_effect = {
+			#		ROM = { country_event = { id = eastern_crisis.223 days = 60 random_days = 30 } }
+			#	}
+			#}
+			#else_if = {
+			#	limit = {
+			#		tag = OTO
+			#	}
+			#	if = {
+			#		limit = {
+			#			OR = {
+			#				has_dlc = "Together for Victory"
+			#				has_dlc = "Waking the Tiger"
+			#				has_dlc = "Death or Dishonor"
+			#			}
+			#		}
+			#		set_autonomy = {
+			#			target = BUL
+			#			autonomous_state = autonomy_khedive
+			#			freedom_level = 0.7
+			#		}
+			#	}
+			#	else = {
+			#		puppet = BUL
+			#	}
+			#	country_event = { id = eastern_crisis.229 days = 5 }
+			#}
+			#clr_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+	}
+	
+	#Join the War Against the Ottomans - Romania
+	eastern_crisis_decision_romania_join_the_war = {
+
+		icon = border_war
+
+		allowed = {
+			tag = ROM
+		}
+
+		available = {
+			has_global_flag = eastern_crisis_ongoing_flag
+			has_completed_focus = ROM_cross_danube
+		}
+
+		visible = {
+			NOT = { has_war_with = OTO }
+			RUS = { has_war_with = OTO }
+			has_country_flag = eastern_crisis_bucharest_treaty_rejected_flag
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = eastern_crisis.436 }
+			hidden_effect = {
+				clr_country_flag = eastern_crisis_bucharest_treaty_rejected_flag
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Secure Financial Aid from Russia
+	eastern_crisis_decision_serbia_secure_financial_aid = {
+
+		icon = money
+
+		allowed = {
+			tag = SER
+		}
+
+		available = {
+			has_global_flag = eastern_crisis_ongoing_flag
+			has_war_support > 0.4
+			has_country_flag = eastern_crisis_secured_financial_aid_flag
+		}
+
+		visible = {
+			NOT = { has_war_with = OTO }
+			RUS = { has_war_with = OTO }
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			RUS = { country_event = { id = eastern_crisis.115 days = 2 } }
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Join the War Against the Ottomans - Serbia
+	eastern_crisis_decision_serbia_join_the_war = {
+
+		icon = border_war
+
+		allowed = {
+			tag = SER
+		}
+
+		available = {
+			has_global_flag = eastern_crisis_ongoing_flag
+			OR = {
+				has_war_support > 0.7
+				has_country_flag = eastern_crisis_secured_financial_aid_flag
+			}
+		}
+
+		visible = {
+			NOT = { has_war_with = OTO }
+			RUS = { has_war_with = OTO }
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = eastern_crisis.436 }
+			hidden_effect = {
+				clr_country_flag = eastern_crisis_secured_financial_aid_flag
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Enlist Western Bulgaria Recruits
+	eastern_crisis_decision_enlist_western_bulgaria_recruits = {
+
+		icon = generic_military
+
+		allowed = {
+			tag = RUS
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+			has_equipment = {
+				uniform_equipment > 1999
+			}
+			has_war_with = OTO
+			has_global_flag = eastern_crisis_ongoing_flag
+			OTO = {
+				NOT = { controls_province = 949 }
+				NOT = { controls_province = 13674 }
+			}
+		}
+
+		visible = {
+			has_country_flag = eastern_crisis_bulgarian_volunteers_flag
+			has_template = "Bulgarian Volunteers"
+		}
+
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				OR = {
+					has_war_with = OTO
+					has_global_flag = eastern_crisis_ongoing_flag
+				}
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = -20
+			add_command_power = -50
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -2000
+			}
+			48 = {
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 949
+				}
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 13674
+				}
+				add_manpower = -4000
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Enlist Recruits from Shumen
+	eastern_crisis_decision_enlist_shumen_recruits = {
+
+		icon = generic_military
+
+		allowed = {
+			tag = RUS
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+			has_equipment = {
+				uniform_equipment > 1999
+			}
+			has_war_with = OTO
+			has_global_flag = eastern_crisis_ongoing_flag
+			OTO = {
+				NOT = { controls_province = 9769 }
+			}
+		}
+
+		visible = {
+			has_country_flag = eastern_crisis_bulgarian_volunteers_flag
+			has_template = "Bulgarian Volunteers"
+		}
+
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				OR = {
+					has_war_with = OTO
+					has_global_flag = eastern_crisis_ongoing_flag
+				}
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = -20
+			add_command_power = -50
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -2000
+			}
+			211 = {
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 9769
+				}
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 9769
+				}
+				add_manpower = -4000
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#Enlist Recruits from Pleven
+	eastern_crisis_decision_enlist_pleven_recruits = {
+
+		icon = generic_military
+
+		allowed = {
+			tag = RUS
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+			has_equipment = {
+				uniform_equipment > 1999
+			}
+			has_war_with = OTO
+			has_global_flag = eastern_crisis_ongoing_flag
+			OTO = {
+				NOT = { controls_province = 3796 }
+			}
+		}
+
+		visible = {
+			has_country_flag = eastern_crisis_bulgarian_volunteers_flag
+			has_template = "Bulgarian Volunteers"
+		}
+
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+		
+		days_remove = 30
+		
+		cancel_trigger = {
+			NOT = {
+				OR = {
+					has_war_with = OTO
+					has_global_flag = eastern_crisis_ongoing_flag
+				}
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = -20
+			add_command_power = -50
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -2000
+			}
+			48 = {
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 3796
+				}
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02"
+					owner = RUS
+					prioritize_location = 3796
+				}
+				add_manpower = -4000
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	#The Quadrilateral Fortresses
+	eastern_crisis_mission_quadrilateral_fortresses = {
+		
+		icon = fort
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = RUS
+				}
+				NOT = {
+					OTO = {
+						OR = {
+							controls_province = 9612
+							controls_province = 9614
+							controls_province = 9769
+							controls_province = 9783
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				date > 1878.3.1
+				controls_province = 9612
+				controls_province = 9614
+				controls_province = 9769
+				controls_province = 9783
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 80
+		
+		is_good = no
+		
+		days_mission_timeout = 270
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = RUS
+				}
+				country_event = { id = eastern_crisis.444 }
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				country_event = { id = eastern_crisis.445 }
+			}
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = RUS
+					has_war_with = OTO
+					has_global_flag = eastern_crisis_ongoing_flag
+					date < 1878.3.1
+				}
+				RUS = { activate_mission = eastern_crisis_mission_quadrilateral_fortresses }
+			}
+			if = {
+				limit = {
+					tag = OTO
+					has_war_with = RUS
+					has_global_flag = eastern_crisis_ongoing_flag
+					date < 1878.3.1
+				}
+				OTO = { activate_mission = eastern_crisis_mission_quadrilateral_fortresses }
+			}
+		}
+	}
+	
+	#The Siege of Pleven
+	eastern_crisis_mission_siege_of_pleven = {
+		
+		icon = fort_flag
+		
+		allowed = { always = no }
+		
+		available = {
+			NOT = {
+				OTO = {
+					controls_province = 3796
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 70
+		
+		is_good = no
+		
+		days_mission_timeout = 120
+		
+		complete_effect = {
+			country_event = { id = eastern_crisis.458 }
+		}
+		
+		timeout_effect = {
+			country_event = { id = eastern_crisis.459 }
+		}
+	}
+
+	### GREECE ###
+
+	#Declare War on the Ottomans
+	eastern_crisis_decision_declare_war_on_the_ottomans_greece = {
+
+		icon = border_war
+
+		allowed = {
+			tag = GRE
+		}
+
+		available = {
+			NOT = { has_war_with = OTO }
+			has_global_flag = eastern_crisis_ongoing_flag
+		}
+
+		visible = {
+			OR = {
+				has_country_flag = eastern_crisis_greek_involvement_flag
+				has_country_flag = eastern_crisis_russian_support_flag
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+		days_remove = 7
+		
+		war_with_on_remove = OTO
+		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eastern_crisis_ongoing_flag
+			}
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = eastern_crisis_greek_involvement_flag
+				}
+				country_event = { id = eastern_crisis.705 }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = eastern_crisis_russian_support_flag
+				}
+				country_event = { id = eastern_crisis.436 }
+			}
+		}
+			
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	#The Greco-Ottoman War
+	eastern_crisis_mission_greco_ottoman_war = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
+		available = {
+			if = {
+				limit = {
+					tag = GRE
+				}
+				has_full_control_of_state = 185
+				has_full_control_of_state = 731
+				has_full_control_of_state = 811
+				has_full_control_of_state = 1200
+				controls_province = 11818
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				GRE = {
+					surrender_progress > 0.5
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		priority = 90
+		
+		is_good = no
+		
+		days_mission_timeout = 365
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = GRE
+				}
+				white_peace = OTO
+				if = {
+					limit = {
+						CET = { has_war_with = OTO }
+					}
+					CET = { white_peace = OTO }
+				}
+				country_event = { id = eastern_crisis.710 days = 1 }
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				white_peace = GRE
+				if = {
+					limit = {
+						has_war_with = CET
+					}
+					white_peace = CET
+				}
+				country_event = { id = eastern_crisis.712 days = 1 }
+			}
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = GRE
+				}
+				white_peace = OTO
+				country_event = { id = eastern_crisis.714 }
+				if = {
+					limit = {
+						OTO = { has_war_with = CET }
+					}
+					OTO = { white_peace = CET }
+					hidden_effect = {
+						CET = { country_event = { id = eastern_crisis.714 } }
+					}
+				}
+			}
+		}
+	}
+	
+	eastern_crisis_decision_greek_support = {
+
+		icon = generic_political_discourse
+
+		allowed = { always = no }
+		
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+		cost = 75
+		 days_remove = 140
+		  
+		 modifier = {
+			
+		 }  
+		
+			complete_effect = {
+			
+		}
+		
+		 remove_effect = {
+			
+		 }
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	eastern_crisis_decision_british_help = {
+
+		icon = generic_political_discourse
+
+		allowed = { always = no }
+		
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+		cost = 75
+		 days_remove = 140
+		  
+		 modifier = {
+			
+		 }  
+		
+			complete_effect = {
+			
+		}
+		
+		 remove_effect = {
+			
+		 }
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}

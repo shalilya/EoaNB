@@ -174,6 +174,12 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				stability_factor = 0.1
 			}
 		}
+		PIE_large_scaled_Exports = {
+			picture = FRA_international_inflow
+			modifier = {
+				consumer_goods_factor = -0.02
+			}
+		}
 		PIE_Baby_Boom = {
 			picture = ITA_Baby_Boom
 			modifier = {
@@ -506,131 +512,14 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				stability_factor = -0.1
 			}
 		}
-		ITA_Nurture_Liberal_Ideals = {
+		ITA_Decentralization_Project = {
 			picture = neutrality_idea
 			modifier = {
-				centrism_drift = 0.1
-			}
-		}
-		ITA_Follow_Mazzini = {
-			picture = neutrality_idea
-			modifier = {
-				traditional_conservatism_drift = 0.1
-			}
-		}
-		ITA_Hate_Crimes = {
-			picture = generic_pp_unity_bonus
-			modifier = {
-				political_power_gain = -0.1
-				centrism_drift = 0.1
-			}
-		}
-		ITA_Free_Speech = {
-			picture = generic_pp_unity_bonus
-			modifier = {
-				political_power_gain = 0.5
-				drift_defence_factor = -0.5
-			}
-		}
-		ITA_March_On_Rome = {
-			picture = generic_democratic_drift_bonus
-			modifier = {
-				traditional_conservatism_drift = 0.1
-			}
-		}
-		ITA_Ban_Monarchism = {
-			picture = neutrality_idea
-			modifier = {
-				autocracy_drift = -0.1
-			}
-		}
-		ITA_Unite_Italian_Lands = {
-			picture = FRA_national_mobilization_focus
-			modifier = {
-				justify_war_goal_time = -0.25
-			}
-		}
-		ITA_Overthrow_The_King = {
-			picture = generic_disjointed_gov
-			modifier = {
-				stability_weekly = -1
-			}
-		}
-		ITA_Checks_And_Balances = {
-			picture = neutrality_idea
-			modifier = {
-				political_power_gain = 0.3
-			}
-		}
-		ITA_Improve_Public_Opinion = {
-			picture = generic_intel_bonus
-			modifier = {
-				autocracy_drift = 0.1
-				stability_weekly = 0.005
-			}
-		}
-		ITA_Restrict_The_Economy = {
-			picture = generic_goods_red_bonus
-			modifier = {
-				political_power_factor = -0.25
-				line_change_production_efficiency_factor = 0.05
-				production_speed_buildings_factor = -0.05
-				conversion_cost_civ_to_mil_factor = -0.05
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
-				consumer_goods_factor = -0.05
-				production_factory_efficiency_gain_factor = -0.05
-				equipment_conversion_speed = 0.05
-				industry_free_repair_factor = 0.05
-				industry_repair_factor = 0.05
-				global_building_slots_factor = 0.1
-			}
-		}
-		ITA_Advocate_Expansion = {
-			picture = generic_manpower_bonus
-			modifier = {
-				justify_war_goal_time = -0.25
-			}
-		}
-		ITA_Crack_Down_Centrists = {
-			picture = FRA_scw_intervention_nationalists_focus
-			modifier = {
-				autocracy_drift = 0.05
-				centrism_drift = -0.05
-			}
-		}
-		ITA_Restrict_Free_Speech = {
-			picture = generic_pp_unity_bonus
-			modifier = {
-				autocracy_drift = 0.05
 				political_power_gain = -0.25
+				stability_factor = 0.05
 			}
-		}
-		ITA_Elite_Troop_Training = {
-			picture = FRA_national_mobilization_focus
-			modifier = {
-				training_time_army_factor = -0.25
-			}
-		}
-		ITA_Military_Draft = {
-			picture = FRA_national_mobilization_focus
-			modifier = {
-				conscription_factor = 0.025
-			}
-		}
-		ITA_Perfect_War_Machine = {
-			picture = generic_manpower_bonus
-			modifier = {
-				conscription_factor = 0.01
-				non_core_manpower = 0.01
-				planning_speed = 0.1
-				army_org_Factor = 0.05
-				army_morale_factor = 0.1
-				army_attack_factor = 0.1
-				army_defence_factor = 0.1
-				army_speed_factor = 0.05
-				attrition = -0.1
-				experience_gain_army = 0.05
+			research_bonus = {
+				humanities_tech = 0.05
 			}
 		}
 		ITA_Unorganized_Army = {
@@ -641,6 +530,16 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				training_time_army_factor = 0.1
 				planning_speed = -0.1
 				army_org_Factor = -0.05
+				experience_gain_army_factor = -0.1
+			}
+		}
+		ITA_Unorganized_General_Staff = {
+			picture = ITA_Unorganized_Army
+			modifier = {
+				conscription_factor = -0.1
+				land_reinforce_rate = -0.1
+				training_time_army_factor = 0.05
+				planning_speed = -0.05
 				experience_gain_army_factor = -0.1
 			}
 		}
@@ -679,7 +578,6 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				research_speed_factor = -0.05
 				conscription_factor = -0.05
 				resistance_growth = 0.1
-				PIE_Southern_Unrest_Modifier = 1
 			}
 		}
 		ITA_Military_Crackdown_Southern = {
@@ -688,7 +586,6 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				stability_factor = -0.05
 				war_support_factor = -0.05
 				conscription_factor = -0.025
-				PIE_Southern_Unrest_Modifier = -1
 			}
 		}
 		ITA_Manipulate_Southern_Economy_idea = {
@@ -702,7 +599,6 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			modifier = {
 				production_speed_buildings_factor = 0.2
 				consumer_goods_factor = 0.05
-				PIE_Southern_Unrest_Modifier = -1
 			}
 		}
 		ITA_Southern_Strikes = {
@@ -713,14 +609,34 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				conscription_factor = -0.025
 				production_speed_buildings_factor = -0.1
 				consumer_goods_factor = 0.1
-				PIE_Southern_Unrest_Modifier = 1
 			}
 		}
+		ITA_Florence_Revival = {
+			picture = chi_war_of_resistance2
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		 
 		ITA_Agriculture_Revival = {
 			picture = ITA_Brigandage
 			modifier = {
 				MONTHLY_POPULATION = 0.05
 				army_morale_factor = 0.05
+			}
+		}
+		ITA_Papal_Army_Payments = {
+			picture = generic_manpower_bonus
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+			cancel = {
+				NOT = {
+					PAP = {
+						controls_state = 2
+					}
+				}
 			}
 		}
 		ITA_Different_Naval_Doctorines = {
@@ -803,15 +719,6 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			modifier = {
 				consumer_goods_factor = -0.01
 			}
-		}
-		ITA_Southern_Revolt_Risk_Idea = {
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			picture = generic_purge
 		}
 		ITA_Southern_Revolt_Defeat = {
 			allowed = {
@@ -1011,6 +918,19 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			picture = FRA_international_inflow
 			modifier = {
 				consumer_goods_factor = 0.025
+			}
+		}
+		PAP_vic_idea_Cholera = {
+			picture = cholera_generic
+			allowed = {
+				NOT = {
+					has_government = radical_democracy
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				MONTHLY_POPULATION = -0.05
+				production_speed_farm_factor = -0.1
 			}
 		}
 	}

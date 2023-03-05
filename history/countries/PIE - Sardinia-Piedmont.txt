@@ -60,10 +60,10 @@
 	}
 	set_popularities = {
 		anarchism = 5
-		vanguard_communism = 0
-		collectivist_socialism = 5
+		ideology_social_liberalism = 28
+		ideology_radical_socialism = 5
 		social_egalitarianism = 15
-		centrism = 68
+		centrism = 40
 		traditional_conservatism = 0
 		radical_democracy = 0
 		chauvinist_populism = 0
@@ -130,12 +130,14 @@
 		tech_infantry_percussion_cap = 1
 		rifle_equipment1 = 1
 		corliss_steam_engine = 1
+		high_speed_steam_engine = 1
 		mongolfiere = 1
 		ornithopter = 1
 		screw_propeller = 1
 		basic_train = 1
 		tech_support = 1
 		train_1855 = 1
+		pre_industrial_farms = 1
 	}
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_rifle_1
@@ -221,6 +223,15 @@
 		set_character_flag = PIE_Not_Transfer_SAR
 	}
 
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = { 
+			name = "Sezione Servizi Segreti" 
+			icon = "GFX_intelligence_agency_logo_pie" 
+		  }
+	}
 	
 	if = {
 		limit = {
@@ -276,7 +287,7 @@
 		}
 		create_equipment_variant = {
 			name = "Gunboat Class"
-			type = ship_hull_gunboat_0
+			type = ship_hull_gunboat_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -296,7 +307,6 @@
 				fixed_ship_battery_slot = ship_cannon_battery_0
 				fixed_ship_fire_control_system_slot = fire_control_system_0
 				fixed_ship_engine_slot = ship_engine_sail_2
-				#fixed_ship_secondaries_slot = ship_secondary_guns_0
 				fixed_ship_armor_slot = ship_armor_capital_hardwood_0
 				front_1_custom_slot = ship_cannon_battery_0
 				front_2_custom_slot = ship_cannon_battery_0
@@ -317,7 +327,7 @@
 			}
 			create_equipment_variant = {
 				name = "Gunboat Class"
-				type = ship_gunboat_0
+				type = ship_gunboat_1
 				name_group = GER_CA_HISTORICAL
 				parent_version = 0
 			}
@@ -414,8 +424,8 @@
 	}
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 20
 		centrism = 70
 		traditional_conservatism = 0
@@ -642,7 +652,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments

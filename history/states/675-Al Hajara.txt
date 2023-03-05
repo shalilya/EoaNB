@@ -1,21 +1,18 @@
 state = {
 	id =675
 	name = "STATE_675"
-	manpower = 62093
+	manpower = 42093
 
 	local_supplies=0.0 
 	
 	state_category = wasteland
 
 	history = {
-		owner = OTO
-		victory_points = {
-			10744 1
-		}
+		owner = JSH
 		buildings = {
 			infrastructure = 0
 		}
-		add_core_of = OTO
+		add_core_of = JSH
 		
 		add_to_array = { state_culture_array = 163 }
 		add_to_array = { state_culture_array_num = 1.00 }

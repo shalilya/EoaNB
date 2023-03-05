@@ -497,6 +497,14 @@ spriteTypes = {
 		}
 }
 spriteTypes = {
+	# (BUL) Bulgaria
+	# Spirits
+		spriteType = {
+			name = "GFX_idea_BUL_flying_squad_cavalry"
+			texturefile = "gfx/interface/ideas/BUL/BUL_flying_squad_cavalry.png"
+		}
+}
+spriteTypes = {
 	# (DEN) Denmark
 	# Spirits
 		spriteType = {
@@ -989,6 +997,27 @@ spriteTypes = {
 			name = "GFX_idea_FIN_lauantaiseura"
 			texturefile = "gfx/interface/ideas/FIN/FIN_lauantaiseura.dds"
 		}
+		spriteType = {
+			name = "GFX_idea_FIN_risk_of_famine"
+			texturefile = "gfx/interface/ideas/FIN/FIN_risk_of_famine.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_outdated_economy"
+			texturefile = "gfx/interface/ideas/FIN/FIN_outdated_economy.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_destroyed_marine"
+			texturefile = "gfx/interface/ideas/FIN/FIN_destroyed_marine.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FIN_the_language_strife"
+			texturefile = "gfx/interface/ideas/FIN/FIN_the_language_strife.png"
+		}
+		spriteType = {
+			name = "GFX_idea_SDN_scandinavian_wolves"
+			texturefile = "gfx/interface/ideas/FIN/SDN_scandinavian_wolves.png"
+		}
+		
 }
 spriteTypes = {
 	# (FRA) France
@@ -2454,6 +2483,27 @@ spriteTypes = {
 			name = "GFX_idea_RUS_idea_disconnected_country"
 			texturefile = "gfx/interface/ideas/RUS/RUS_idea_disconnected_country.dds"
 		}
+		SpriteType = {
+			name = "GFX_idea_RUS_state_of_navy"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_navy.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_state_of_army"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_army.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_political_isolation"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_political_isolation.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_caucasian_war"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_caucasian_war.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_granary"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_granary.dds"
+		}
+	
 	# Advisors
 		spriteType = {
 			name = "GFX_idea_RUS_advisor_Ludwig_Knoop"
@@ -2571,6 +2621,22 @@ spriteTypes = {
 			name = "GFX_idea_RUS_fyodor_logginovich_van_heiden"
 			texturefile = "gfx/interface/ideas/RUS/RUS_fyodor_logginovich_van_heiden.dds"
 		}
+		spriteType = {
+			name = "GFX_idea_RUS_Valerian_Tatarianov"
+			texturefile = "gfx/interface/ideas/RUS/RUS_Valerian_Tatarianov.png"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_Kvist_Alexander_Ilyich"
+			texturefile = "gfx/interface/ideas/RUS/RUS_Kvist_Alexander_Ilyich.png"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_Metlin"
+			texturefile = "gfx/interface/ideas/RUS/RUS_Metlin.png"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_Bludov"
+			texturefile = "gfx/interface/ideas/RUS/RUS_Bludov.png"
+		}
 	# Manufacturers
 		spriteType = {
 			name = "GFX_idea_RUS_vic_MGTS"
@@ -2599,6 +2665,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_RUS_vic_Izhevsk_Machine_Building_Plant"
 			texturefile = "gfx/interface/ideas/RUS/Manufacturers/izhevsk_mb_plant.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_vic_Konstanty_Rudzki"
+			texturefile = "gfx/interface/ideas/RUS/Manufacturers/konstanty_rudzki.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_RUS_vic_Bryansk_Machine_Building_Plant"
+			texturefile = "gfx/interface/ideas/RUS/Manufacturers/bryansk_factory.dds"
 		}
 }
 spriteTypes = {
@@ -3176,5 +3250,81 @@ spriteTypes={
 		name = "GFX_idea_SER_under_sultans_watchful_eyes"
 		texturefile = "gfx/interface/ideas/SER/SER_idea_under_sultans_watchful_eyes.png"
 	}
+}
 
+#Montenegro
+spriteTypes={
+	# NATIONAL SPIRIT
+	SpriteType = {
+		name = "GFX_idea_MNT_Danilo_Code"
+		texturefile = "gfx/interface/ideas/MNT/MNT_idea_Danilo_Code.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Administrative_chaos"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Administrative_chaos.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_beef_exports_profit"
+		texturefile = "gfx/interface/ideas/MNT/MNT_beef_exports_profit.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_bogisic_code"
+		texturefile = "gfx/interface/ideas/MNT/MNT_bogisic_code.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Clans_question"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Clans_question.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_crops_export"
+		texturefile = "gfx/interface/ideas/MNT/MNT_crops_export.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Disastrous_Agriculture"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Disastrous_Agriculture.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Disconnected_Nahiyahs"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Disconnected_Nahiyahs.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_French_support"
+		texturefile = "gfx/interface/ideas/MNT/MNT_French_support.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_idea_la_souverainete_du_montenegro"
+		texturefile = "gfx/interface/ideas/MNT/MNT_idea_la_souverainete_du_montenegro.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Kotor_Bay_Trade"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Kotor_Bay_Trade.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Mostar_Convention"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Mostar_Convention.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_negotiations_with_the_Ottoman_Empire"
+		texturefile = "gfx/interface/ideas/MNT/MNT_negotiations_with_the_Ottoman_Empire.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Outdated_Economy"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Outdated_Economy.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Russian_financial_assistance"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Russian_financial_assistance.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Scutari_Convention"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Scutari_Convention.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_The_Theological_Seminary_of_St_Peter_of_Cetinje"
+		texturefile = "gfx/interface/ideas/MNT/MNT_The_Theological_Seminary_of_St_Peter_of_Cetinje.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_Unsure_positions_of_church"
+		texturefile = "gfx/interface/ideas/MNT/MNT_Unsure_positions_of_church.png"
+	}
 }

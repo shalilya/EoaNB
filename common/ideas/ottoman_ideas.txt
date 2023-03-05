@@ -414,7 +414,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.1 
@@ -437,7 +437,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.15
@@ -459,7 +459,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.075
@@ -481,7 +481,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.075
@@ -502,7 +502,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.20
@@ -524,7 +524,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = OTO_crimean_war_debt
+			picture = mounting_debt
 			
 			modifier = {
 				consumer_goods_factor = 0.10
@@ -532,6 +532,25 @@ ideas = {
 				stability_factor = -0.05
 				war_support_factor = -0.40
 				drift_defence_factor = -0.30
+			}
+		}
+		OTO_idea_cretan_revolt = {
+			
+			allowed = {
+				TAG = OTO
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_gain = -0.02
+				stability_weekly_factor = -0.05
 			}
 		}
 		tatar_migrant_crisis = {
@@ -959,7 +978,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				MONTHLY_POPULATION = -1.50
@@ -980,7 +999,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				MONTHLY_POPULATION = -1.15
@@ -1001,7 +1020,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.5
@@ -1022,7 +1041,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.25
@@ -1043,7 +1062,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.1
@@ -1083,7 +1102,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = oto_grain_crisis
+			picture = OTO_grain_crisis
 			
 			modifier = {
 				consumer_goods_factor = 0.02

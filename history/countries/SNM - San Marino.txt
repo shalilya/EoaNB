@@ -57,8 +57,8 @@
 
 set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 10
 		centrism = 80
 		traditional_conservatism = 10
@@ -97,6 +97,7 @@ set_popularities = {
 	early_artificial_fertilizer = 1
 	electrical_engineering = 1
 	basic_cavalry = 1
+	pre_industrial_farms = 1
 	}
 
 	#How to set up initial debt_level

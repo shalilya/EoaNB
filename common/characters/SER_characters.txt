@@ -242,7 +242,17 @@ characters={
 		portraits = {
 			army = {
 				small = "GFX_idea_europe_generic_1"
-				#large = "gfx/leaders/PRS/Portrait_PRS_Gustav_Friedrich_von_Beyer.png"
+				large = "gfx/leaders/PRS/Portrait_PRS_Gustav_Friedrich_von_Beyer.png"
+			}
+		}
+	}
+	
+	SER_Sava_Grujic = { #ID 3607
+		name = "Sava Grujić"
+		portraits = {
+			army = {
+				small = "GFX_idea_europe_generic_1"
+				large = "gfx/leaders/PRS/Portrait_PRS_Gustav_Friedrich_von_Beyer.png"
 			}
 		}
 	}
@@ -273,22 +283,7 @@ characters={
 	# 		}
 	# 	}
 	# }
-	SER_georgi_rakovkski = {
-		name = "Georgi Rakovkski"
-		portraits = {
-			army = {
-				small = "GFX_idea_FIN_vic_mannerheim"
-			}
-		}
-	}
-	# SER_svetozar_markovic = {
-	# 	name = "Svetozar Markovic"
-	# 	portraits = {
-	# 		army = {
-	# 			small = "GFX_idea_FIN_vic_mannerheim"
-	# 		}
-	# 	}
-	# }
+	
 	SER_lazar_brsenijevic_batalaka = {
 		name = "Lazar Arsenijevic Batalaka"
 		portraits = {
@@ -297,6 +292,7 @@ characters={
 			}
 		}
 	}
+	
 	SER_jevrem_grujic = {
 		name = "Jevrem Grujic"
 		portraits = {
@@ -306,7 +302,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_jevrem_grujic
+			idea_token = SER_advisor_jevrem_grujic
 			allowed = {
 				original_tag = SER
 			}
@@ -320,6 +316,7 @@ characters={
 			}
         }
 	}
+	
 	SER_vladimir_jovanovic = {
 		name = "Vladimir Jovanovic"
 		portraits = {
@@ -328,6 +325,7 @@ characters={
 			}
 		}
 	}
+	
 	SER_dorde_cenic = {
 		name = "Đorđe Cenić"
 		portraits = {
@@ -349,6 +347,7 @@ characters={
 			}
         }
 	}
+	
 	# SER_alexander_bugarski = {
 	# 	name = "Alexander Bugarski"
 	# 	portraits = {
@@ -370,6 +369,7 @@ characters={
 	# 		}
     #     }
 	# }
+	
 	SER_jan_nevole = {
 		name = "Jan Nevole"
 		portraits = {
@@ -379,7 +379,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_jan_nevole
+			idea_token = SER_advisor_jan_nevole
 			allowed = {
 				original_tag = SER
 			}
@@ -391,6 +391,7 @@ characters={
 			}
         }
 	}
+	
 	SER_josif_pancic = {
 		name = "Josif Pancic"
 		portraits = {
@@ -400,7 +401,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_josif_pancic
+			idea_token = SER_advisor_josif_pancic
 			allowed = {
 				original_tag = SER
 			}
@@ -412,6 +413,7 @@ characters={
 			}
         }
 	}
+	
 	SER_misha_anastasijevic = {
 		name = "Misha Anastasijevic"
 		portraits = {
@@ -421,7 +423,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_misha_anastasijevic
+			idea_token = SER_advisor_misha_anastasijevic
 			allowed = {
 				original_tag = SER
 			}
@@ -433,6 +435,7 @@ characters={
 			}
         }
 	}
+	
 	SER_sima_andreevic = {
 		name = "Sima Andreevic"
 		portraits = {
@@ -442,7 +445,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_sima_andreevic
+			idea_token = SER_advisor_sima_andreevic
 			allowed = {
 				original_tag = SER
 			}
@@ -450,10 +453,11 @@ characters={
 				date < 1874.1.1
 			}
 			traits = {
-				eoanb_successful_merchant
+				SER_trait_sima_andreevic
 			}
         }
 	}
+	
 	SER_milutin_garasanin = {
 		name = "Milutin Garasanin"
 		portraits = {
@@ -463,7 +467,7 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = SER_milutin_garasanin
+			idea_token = SER_advisor_milutin_garasanin
 			allowed = {
 				original_tag = SER
 			}
@@ -476,6 +480,7 @@ characters={
 			}
         }
 	}
+	
 	SER_konstantin_cukic = {
 		name = "Konstantin Cukić"
 		portraits = {
@@ -484,22 +489,22 @@ characters={
 			}
 		}
 	}
-	#SER_ = {
-	#	name = ""
-	#	portraits = {
-	#		army = {
-	#			small = "GFX_idea_FIN_vic_mannerheim"
-	#		}
-	#	}
-	#	advisor = {
-	#		slot = political_advisor
-	#		idea_token = SER_
-	#		allowed = {
-	#			original_tag = SER
-	#		}
-	#		traits = {
-	#			 
-	#		}
-    #    }
-	#}
+	
+	SER_ilija_garasanin = {
+		name = "Ilija Garašanin"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_3"
+			}
+		}
+	}
+	
+	SER_georgi_rakovski = {
+		name = "Georgi Stoykov Rakovski"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_3"
+			}
+		}
+	}
 }

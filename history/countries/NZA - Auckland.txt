@@ -55,8 +55,8 @@
 
 set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -99,7 +99,7 @@ set_popularities = {
 	create_country_leader = {
 		name = "John Williamson"
 		desc = "POLITICS_TEMP_DESC"
-		picture = "Portrait_NZA_John_Williamson.dds"
+		picture = "GFX_GENERIC_Portrait_Europe_generic_leader_politician_14"
 		expire = 1875.02.16
 		ideology = despotism
 	}

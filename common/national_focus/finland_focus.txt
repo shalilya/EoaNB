@@ -24,13 +24,7 @@ focus_tree = {
 		y = 0
 		cost = 50
 
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
+		ai_will_do = { base = 80 }
 		completion_reward = {
 			country_event = finlandfocus.5
 		}
@@ -44,13 +38,7 @@ focus_tree = {
 		y = 1
 		cost = 50
 
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
+		ai_will_do = { base = 80 }
 		prerequisite = {
 			focus = FIN_the_porvoo_diet
 		}
@@ -61,19 +49,13 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_the_diet_of_1863
-		icon = GFX_Focus_Diplomatic_Ally_RUS_2
+		icon = GFX_focus_FIN_diet_1863
 		relative_position_id = FIN_the_january_comitee
 		x = 0
 		y = 1
 		cost = 50
 
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
+		ai_will_do = { base = 80 }
 		
 		available = {
 			date > 1863.3.1
@@ -138,7 +120,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_flag_discussion
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_focus_FIN_fennomans_flag
 		relative_position_id = FIN_support_fennomans
 		x = 0
 		y = 1
@@ -188,7 +170,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_karelianism
-		icon = GFX_Focus_Ideology_Support_Liberty
+		icon = GFX_focus_FIN_karelianism
 		relative_position_id = FIN_support_fennomans
 		x = 0
 		y = 3
@@ -240,7 +222,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_flag_svecomans
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_focus_FIN_svecomans_flag
 		relative_position_id = FIN_the_diet_of_1863
 		x = 1
 		y = 3
@@ -338,7 +320,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_second_diet
-		icon = GFX_Focus_Strong_Absolutist_Rule
+		icon = GFX_focus_FIN_diet_1863
 		relative_position_id = FIN_finnishing_reforms
 		x = 0
 		y = 1
@@ -472,7 +454,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_finnish_banks
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_focus_FIN_finnish_banks
 		relative_position_id = FIN_own_currency
 		x = 0
 		y = 1
@@ -783,7 +765,7 @@ focus_tree = {
 			focus = FIN_trade_fleets
 		}
 		completion_reward = {
-			custom_effect_tooltip = FIN_focus_helsingin_laivatelakka_osakeyhtio_effect_tt
+			custom_effect_tooltip = FIN_Helsingin_focus_tt
 		}
 	}
 			
@@ -815,7 +797,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_question_of_industralization
-		icon = GFX_Focus_stimulate_economy
+		icon = GFX_focus_FIN_finnish_industrialization
 		relative_position_id = FIN_status_of_economy
 		x = -2
 		y = 1
@@ -1013,7 +995,7 @@ focus_tree = {
 		}
 		completion_reward = {
 		    unlock_decision_tooltip = FIN_mission_sawmills
-			custom_effect_tooltip = FIN_focus_rosenlew_company_effect_tt
+			custom_effect_tooltip = FIN_Rosenlew_focus_tt
 		}
 	}
 			
@@ -1065,7 +1047,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_new_agriculture_laws
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_field_question
 		relative_position_id = FIN_slowly_industralization
 		x = 1
 		y = 1
@@ -1230,13 +1212,13 @@ focus_tree = {
 			focus = FIN_dockyard_industry
 		}
 		completion_reward = {
-			custom_effect_tooltip = FIN_focus_fiskari_company_effect_tt
+			custom_effect_tooltip = FIN_Fiskari_focus_tt
 		}
 	}
 			
 	focus = {
 		id = FIN_tamflet_company
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_Focus_Resource_Textile
 		relative_position_id = FIN_modernisation_of_ironwork_factories
 		x = 0
 		y = 1
@@ -1253,13 +1235,13 @@ focus_tree = {
 			focus = FIN_modernisation_of_ironwork_factories
 		}
 		completion_reward = {
-			custom_effect_tooltip = FIN_focus_tamflet_company_effect_tt
+			custom_effect_tooltip = FIN_Tamfelt_focus_tt
 		}
 	}
 			
 	focus = {
 		id = FIN_mekaniska_verkstads
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_Focus_economic_control
 		relative_position_id = FIN_dockyard_industry
 		x = 0
 		y = 1
@@ -1282,7 +1264,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_fiskari_dominance
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_Focus_consumer_appliances
 		relative_position_id = FIN_fiskari_industry
 		x = 0
 		y = 1
@@ -1490,7 +1472,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_state_railway_investment
-		icon = GFX_focus_generic_get_rick_rolled_meme
+		icon = GFX_Focus_social_workers_rights
 		relative_position_id = FIN_railway_start
 		x = -1
 		y = 1
@@ -1618,7 +1600,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_crimea_war_lesson
-		icon = GFX_Focus_leave_continent_alone
+		icon = GFX_focus_FIN_crimean_war_lessons
 
 		x = 33
 		y = 0
@@ -2226,7 +2208,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_ask_grain_shipment
-		icon = GFX_Focus_Agriculture_3
+		icon = GFX_Focus_Agriculture_wheat
 		relative_position_id = FIN_famine_public_railway
 		x = 2
 		y = 1

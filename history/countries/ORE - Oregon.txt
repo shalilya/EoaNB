@@ -4,8 +4,10 @@
 	set_convoys = 100
 
 	set_research_slots = 2
-			add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = ORE }
+	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = ORE }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = ORE }
+
+	set_cosmetic_tag = ORE_US
 
 	add_ideas = {
 			hos_is_leader
@@ -54,8 +56,8 @@
 
 set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 86
 		traditional_conservatism = 14

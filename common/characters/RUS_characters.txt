@@ -1185,12 +1185,57 @@ characters={
 		}
 	}
 	
+	RUS_nicholas_miklouho_maclay = {
+		name = "Nicholas Miklouho-Maclay"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
+	RUS_dmitry_bludov = {
+		name = "Count Dmitry Nikolayevich Bludov"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_RUS_Bludov"
+			}
+		}
+	}
+	
+	RUS_valerian_tatarinov = {
+		name = "Valerian Tatarinov"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_RUS_Valerian_Tatarianov"
+			}
+		}
+	}
+	
+	RUS_horace_gunzburg = {
+		name = "Horace Günzburg"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
+	RUS_ivan_sokolov = {
+		name = "Ivan Sokolov"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_europe_generic_1"
+			}
+		}
+	}
+	
 	#Theorists
 	RUS_alexander_kvist = {
 		name = "Alexander Iliych Kvist"
 		portraits = {
 			army = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_RUS_Kvist_Alexander_Ilyich"
 			}
 		}
 		advisor = {
@@ -1215,7 +1260,7 @@ characters={
 		name = "Nikolai Fedorovich Metlin"
 		portraits = {
 			army = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_RUS_Metlin"
 			}
 		}
 		advisor = {

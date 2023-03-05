@@ -1203,24 +1203,16 @@ spriteTypes = {
 spriteTypes = {
 	# Governor
 		spriteType = {
+			name = "GFX_Portrait_SGP_governor_general"
+			texturefile = "gfx/leaders/SGP/Portrait_SGP_governor_general.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SUL_governor_general"
+			texturefile = "gfx/leaders/SGP/Portrait_SUL_governor_general.png"
+		}
+		spriteType = {
 			name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh"
 			texturefile = "gfx/leaders/SGP/Portrait_SGP_William_Orfeur_Cavenaugh.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_SGP_William_Orfeur_Cavenaugh_Small"
-			texturefile = "gfx/leaders/SGP/small/Portrait_SGP_William_Orfeur_Cavenaugh.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_SGP_Harry_Ord"
-			texturefile = "gfx/leaders/SGP/Portrait_SGP_Harry_Ord.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_SGP_Cecil_Clementi_Smith"
-			texturefile = "gfx/leaders/SGP/Portrait_SGP_Cecil_Clementi_Smith.png"
-		}
-		spriteType = {
-			name = "GFX_Portrait_SGP_Cecil_Clementi_Smith_Small"
-			texturefile = "gfx/leaders/SGP/small/Portrait_SGP_Cecil_Clementi_Smith.png"
 		}
 }
 # Johor
@@ -1606,12 +1598,28 @@ spriteTypes = {
 			texturefile = "gfx/leaders/SRS/Portrait_SRS_Bahadur_Shah_II.dds"
 		}
 		spriteType = {
+			name = "GFX_Portrait_SRS_Bahadur_Shah_III"
+			texturefile = "gfx/leaders/SRS/Portrait_SRS_Bahadur_Shah_III.png"
+		}
+		spriteType = {
 			name = "GFX_Portrait_SRS_Rani_Jhansi"
 			texturefile = "gfx/leaders/SRS/Portrait_SRS_Rani_Jhansi.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_SRS_Mirza_Mughal"
 			texturefile = "gfx/leaders/SRS/Portrait_SRS_Mirza_Mughal.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SRS_kunwar_singh"
+			texturefile = "gfx/leaders/SRS/Portrait_SRS_kunwar_singh.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SRS_rao_tula_ram"
+			texturefile = "gfx/leaders/SRS/Portrait_SRS_rao_tula_ram.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_SRS_bakht_khan"
+			texturefile = "gfx/leaders/SRS/Portrait_SRS_bakht_khan.png"
 		}
 }
 # Central Asia
@@ -1738,5 +1746,42 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_Portrait_UPC_Sun_Chuanfang"
 			textureFile = "gfx/leaders/UPC/Portrait_UPC_Sun_Chuanfang.png"
+		}
+	# Raj 
+		spriteType = {
+			name = "GFX_Portrait_RAJ_Charles_Canning"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Charles_Canning.dds"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_James_George_Smith_Neill"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_James_George_Smith_Neill.dds"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_John_Cheape"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_John_Cheape.dds"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_John_Nicholson"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_John_Nicholson.dds"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_James_Bruce"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_James_Bruce.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_Council_of_India"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Council_of_India.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_John_Lawrence"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_John_Lawrence.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_Richard_Bourke"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Richard_Bourke.png"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_Thomas_Baring"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Thomas_Baring.png"
 		}
 }

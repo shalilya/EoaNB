@@ -49,14 +49,36 @@
 
 	}
 
-	set_politics = {
-		ruling_party = fundamentalism
+	ENG = {
+    	if={
+    		limit = {
+       			OR = {
+        			has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+        		}
+      		}
+        	set_autonomy = {
+				target = NEP
+				autonomous_state = autonomy_afr_protectorate
+				freedom_level = 0.8
+        	}
+      	}
+      	else={
+        	puppet = NEP
+      	}
+     	NEP = {
+        	set_politics = {
+         		ruling_party = fundamentalism
+        	}
+      	}
 	}
+	
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0

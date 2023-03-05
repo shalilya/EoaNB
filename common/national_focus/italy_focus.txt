@@ -33,6 +33,9 @@ focus_tree = {
 		available = {
 			has_completed_focus = ITA_PIE_focus_Elections_of_1861
 		}
+		allow_branch = {
+			always = false
+		}
 		x = 45
 		y = 1
 		completion_reward = {
@@ -85,6 +88,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.90
+			}
 		}
 	}
 	focus = {
@@ -98,6 +104,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_Unorganized_Army
+				add_idea = ITA_Unorganized_General_Staff
+			}
 		}
 	}
 	focus = {
@@ -111,6 +121,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			### add positive spirit? Maybe decisions about formations of troops
 		}
 	}
 	focus = {
@@ -124,6 +135,18 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_rifle_0
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment_0
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = cannon_equipment_0
+				amount = 150
+			}
 		}
 	}
 	focus = {
@@ -137,6 +160,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			remove_ideas = {
+				ITA_Unorganized_General_Staff
+			}
+			### Possibly add generals
 		}
 	}
 	focus = {
@@ -150,6 +177,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			### Minor benefits to military doctrine research? 
 		}
 	}
 	focus = {
@@ -163,6 +191,39 @@ focus_tree = {
 		x = 2
 		y = 1
 		completion_reward = {
+			hidden_effect = {
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Calabria'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 9990
+				}
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Forlì'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 782
+				}
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Bari'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 6843
+				}
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Cosenza'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 3901
+				}
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Pescara'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 6831
+				}
+				create_unit = {
+					division = "name = \"Cacciatori Carabinieri 'Foggia'\" division_template = \"Brigata Reale Carabinieri\" start_experience_factor = 0.5 start_equipment_factor = 0.95"
+					owner = PIE
+					prioritize_location = 6939
+				}
+			}
+			custom_effect_tooltip = ITA_Carabinieri_Creation_TT
 		}
 	}
 	focus = {
@@ -228,6 +289,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			remove_ideas = {
+				ITA_Unorganized_Navy
+			}
 		}
 	}
 	focus = {
@@ -241,6 +305,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
+			# Decisions to Commission historical ships
 		}
 	}
 	focus = {
@@ -254,6 +319,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			# research some ships that were converted if possible, if not maybe a temp bonus to refitting? Module cost reduction?
 		}
 	}
 	focus = {
@@ -267,6 +333,8 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			### Perhaps idea that takes away consumer goods to represent Naval Spending, Give technology boosts
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_equipment }
 		}
 	}
 	focus = {
@@ -293,11 +361,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			remove_ideas = {
+				ITA_Different_Naval_Doctorines
+			}
+			### Bonuses + Advisors
 		}
 	}
 	focus = {
 		id = ITA_PIE_focus_Expand_the_Arsenal_in_La_Spezia
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_ITA_la_spezia_academy
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Creation_of_the_Naval_Departments
@@ -306,6 +378,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			activate_decision = ITA_La_Spezia_Naval_Expansion
 		}
 	}
 	focus = {
@@ -386,7 +459,7 @@ focus_tree = {
 	focus = {
 		id = ITA_PIE_focus_The_Southern_Question
 		icon = GFX_goal_focus_ITA_Southern_question
-		cost = 70
+		cost = 25
 		#prerequisite = {
 		#	focus = ITA_PIE_focus_Elections_of_1861
 		#}
@@ -405,7 +478,7 @@ focus_tree = {
 	focus = {
 		id = ITA_PIE_focus_Tackling_Brigandage
 		icon = GFX_Focus_Tactics_Death_or_Dishonor
-		cost = 70
+		cost = 25
 		prerequisite = {
 			focus = ITA_PIE_focus_The_Southern_Question
 		}
@@ -432,6 +505,14 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
 		}
 	}
 	focus = {
@@ -440,6 +521,9 @@ focus_tree = {
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Tackling_Brigandage
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Law_no_143
 		}
 		relative_position_id = ITA_PIE_focus_Tackling_Brigandage
 		x = 0
@@ -455,10 +539,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Gather_Military_Leaders
 		}
+		
 		relative_position_id = ITA_PIE_focus_Gather_Military_Leaders
 		x = -2
 		y = 1
 		completion_reward = {
+			# event chain with Papal States, IF THEY EXIST
+			# THings like military convention
 		}
 	}
 	focus = {
@@ -472,6 +559,8 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			
+			#Government in Exile stuff?
 		}
 	}
 	focus = {
@@ -485,12 +574,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			# Possibly unlock decisions about Parliament? 
 		}
 	}
 	focus = {
 		id = ITA_PIE_focus_Bypass_the_Law
 		icon = GFX_Focus_Partisans_Elimination
 		cost = 70
+		available = {
+			has_completed_focus = ITA_PIE_focus_Pica_Law
+		}
 		prerequisite = {
 			focus = ITA_PIE_focus_Gather_Political_Leaders
 		}
@@ -529,7 +622,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-			## add buildings in North but lose a few buildings
+			## add buildings in North but lose a few buildings (decision)
 		}
 	}
 	focus = {
@@ -560,7 +653,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
-			# minus to construction speed, maintain southern buildings
+			unlock_decision_tooltip = ITA_appoint_regional_administrator_1
+			unlock_decision_tooltip = ITA_appoint_regional_administrator_2
+			unlock_decision_tooltip = ITA_appoint_regional_administrator_3
+			unlock_decision_tooltip = ITA_appoint_regional_administrator_4
 		}
 	}
 	focus = {
@@ -583,8 +679,6 @@ focus_tree = {
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_End_Elitist_Economic_Policies
-		}
-		prerequisite = {
 			focus = ITA_PIE_focus_Utilize_Piedmontese_Workers
 		}
 		relative_position_id = ITA_PIE_focus_End_Elitist_Economic_Policies
@@ -608,6 +702,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
+			#mission to have divisions in southern states and reward will be BOP movement
 		}
 	}
 	################# FOREIGN POLICY ################
@@ -680,7 +775,8 @@ focus_tree = {
 		}
 		available = {
 			has_completed_focus = ITA_PIE_focus_Pepoli_Law
-			has_completed_focus = ITA_PIE_focus_Build_Recognition_in_Europe
+			has_completed_focus = ITA_PIE_focus_Further_Diplomacy_France
+			## add check that either Rattazzi or Ricasoli are doing it
 		}
 		relative_position_id = ITA_PIE_focus_Free_Church_in_Free_State
 		x = -1
@@ -708,7 +804,8 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			### To be honest I have no idea what this is supposed to refer to anymore
+			### Eventually it should probably represent a pre-aspromonte event chain about the possibility of working with Garibaldi
 		}
 	}
 	focus = {
@@ -721,10 +818,22 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Diplomacy_with_the_Papal_States
 		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Propose_Conference_on_Rome
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no
+			}
+		}
 		relative_position_id = ITA_PIE_focus_Meetings_with_Garibaldi
 		x = -1
 		y = 1
 		completion_reward = {
+			FRA = {
+				country_event = {
+					id = ita.92
+				}
+			}
 		}
 	}
 	focus = {
@@ -773,6 +882,8 @@ focus_tree = {
 			# Unlock decisions for building recognition in Europe
 			unlock_decision_tooltip = ITA_FRA_Seek_French_Recognition
 			unlock_decision_tooltip = ITA_RUS_Seek_Russian_Recognition
+			unlock_decision_tooltip = ITA_GRE_Seek_Greek_Recognition
+			unlock_decision_tooltip = ITA_POR_Seek_Portuguese_Recognition
 		}
 	}
 	focus = {
@@ -799,7 +910,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			custom_effect_tooltip = ITA_further_french_diplomacy_TT
 		}
 	}
 	focus = {
@@ -824,6 +935,7 @@ focus_tree = {
 		}
 		available = {
 			has_completed_Focus = ITA_PIE_focus_Tackling_Brigandage
+			has_completed_focus = ITA_PIE_focus_Pica_Law
 		}
 		relative_position_id = ITA_PIE_focus_Further_Diplomacy_France
 		x = -2
@@ -969,7 +1081,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ITA_PIE_focus_The_Third_War_of_Independence
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_ITA_third_independence_war
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Send_an_Agent_to_Berlin
@@ -1118,7 +1230,7 @@ focus_tree = {
 	focus = {
 		id = ITA_PIE_focus_Fiscal_Consolidation
 		icon = GFX_Focus_Economy_Increase_Wages
-		cost = 70
+		cost = 15
 		prerequisite = {
 			focus = ITA_PIE_focus_Piedmontization
 		}
@@ -1135,7 +1247,7 @@ focus_tree = {
 	focus = {
 		id = ITA_PIE_focus_Close_Custom_Barriers
 		icon = GFX_Focus_new_fiscal_system
-		cost = 70
+		cost = 15
 		prerequisite = {
 			focus = ITA_PIE_focus_Piedmontization
 		}
@@ -1151,7 +1263,7 @@ focus_tree = {
 	focus = {
 		id = ITA_PIE_focus_Death_of_Cavour
 		icon = GFX_Focus_Health_Funerals
-		cost = 70
+		cost = 35
 		prerequisite = {
 			focus = ITA_PIE_focus_Close_Custom_Barriers
 		}
@@ -1161,8 +1273,9 @@ focus_tree = {
 		available = {
 			has_completed_focus = ITA_PIE_focus_Apply_Casati_Law
 			has_completed_focus = ITA_PIE_focus_State_of_the_Armed_Forces
+			has_completed_focus = ITA_PIE_focus_Tackling_Brigandage
 			OR = {
-				has_completed_Focus = ITA_PIE_focus_Canali_Cavour
+				has_completed_Focus = ITA_PIE_focus_Canale_Cavour
 				has_completed_Focus = ITA_PIE_focus_Focus_on_the_South
 			}
 		}
@@ -1170,13 +1283,13 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-			custom_effect_tooltip = ITA_PIE_focus_unlocks_political_branch_TT
+			#custom_effect_tooltip = ITA_PIE_focus_unlocks_political_branch_TT
 			country_event = {
 				id = ita.10
 			}
-			hidden_effect = {
-				mark_focus_tree_layout_dirty = yes
-			}
+			#hidden_effect = {
+			#	mark_focus_tree_layout_dirty = yes
+			#}
 		}
 	}
 	focus = {
@@ -1190,9 +1303,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Apply_Casati_Law
 		}
-		allow_branch = {
-			has_completed_focus = ITA_PIE_focus_Death_of_Cavour
-		}
+		#allow_branch = {
+		#	has_completed_focus = ITA_PIE_focus_Death_of_Cavour
+		#}
 		relative_position_id = ITA_PIE_focus_Death_of_Cavour
 		x = -2
 		y = 1
@@ -1248,7 +1361,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ITA_PIE_focus_Arrests_in_Trentino
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_PIE_Garibaldi2
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Call_on_Rattazzi
@@ -1283,7 +1396,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ITA_PIE_focus_Rise_of_Farini
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_ITA_Luigi_Farini
 		cost = 70
 		available = {
 			custom_trigger_tooltip = {
@@ -1310,11 +1423,16 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Rise_of_Farini
 		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Tackling_Brigandage
+		}
 		relative_position_id = ITA_PIE_focus_Rise_of_Farini
 		x = 0
 		y = 1
 		completion_reward = {
-			# Tied in with Brigandage
+			country_event = {
+				id = ita.84
+			}
 		}
 	}
 	focus = {
@@ -1335,7 +1453,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ITA_PIE_focus_Reorganize_the_Cabinet
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_ita_marco_minghetti
 		cost = 70
 		available = {
 			has_completed_focus = ITA_PIE_focus_Demand_the_King_Declare_on_Russia
@@ -1347,11 +1465,12 @@ focus_tree = {
 		x = 3
 		y = 1
 		completion_reward = {
+			### new advisors
 		}
 	}
 	focus = {
 		id = ITA_PIE_focus_Propose_Decentralization_Laws
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_Focus_Government_Reform_Administration
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Reorganize_the_Cabinet
@@ -1360,6 +1479,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.74
+			}
 		}
 	}
 	focus = {
@@ -1373,6 +1495,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.87
+			}
 		}
 	}
 	focus = {
@@ -1385,18 +1510,30 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Propose_Decentralization_Laws
 		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Further_Diplomacy_France
+		}
 		relative_position_id = ITA_PIE_focus_Pica_Law
 		x = -1
 		y = 1
 		completion_reward = {
+			# CHECK IF PAPAL STATES DIDNT ALREADY CEDE LAND 
+			### Event then unlock focus in diplomacy tree with French Conference
+			country_event = {
+				id = ita.91
+			}
 		}
 	}
 	focus = {
 		id = ITA_PIE_focus_Aftermath_of_the_Turin_Massacre
-		icon = GFX_Focus_refugee_management
+		icon = GFX_goal_focus_ita_alfonso_la_marmora
 		cost = 70
 		available = {
 			has_completed_focus = ITA_PIE_focus_Propose_Conference_on_Rome
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no
+			}
 		}
 		prerequisite = {
 			focus = ITA_PIE_focus_Letters_to_King
@@ -1405,6 +1542,9 @@ focus_tree = {
 		x = 6
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.106
+			}
 		}
 	}
 	focus = {
@@ -1418,6 +1558,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.109
+			}
 		}
 	}
 	focus = {
@@ -1427,15 +1570,23 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_PIE_focus_Lanza_Law
 		}
+		available = {
+			162 = {
+				is_capital = yes
+			}
+		}
 		relative_position_id = ITA_PIE_focus_Lanza_Law
 		x = 0
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.110
+			}
 		}
 	}
 	focus = {
 		id = ITA_PIE_focus_Arrival_of_the_King_Florence
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_focus_ITA_florence_capital
 		cost = 70
 		prerequisite = {
 			focus = ITA_PIE_focus_Move_Chamber_to_Florence
@@ -1444,6 +1595,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			country_event = {
+				id = ita.111
+			}
+			unlock_decision_category_tooltip = ITA_decisions_category_ITA_florence_restoration
 		}
 	}
 	focus = {
@@ -1460,6 +1615,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
+			
 		}
 	}
 	focus = {
@@ -1557,6 +1713,9 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
+			add_ideas = {
+				PIE_large_scaled_Exports
+			}
 		}
 	}
 	focus = {
@@ -1671,7 +1830,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ITA_PIE_focus_Canali_Cavour
+		id = ITA_PIE_focus_Canale_Cavour
 		icon = GFX_Focus_Agriculture_3
 		cost = 70
 		prerequisite = {
@@ -1688,9 +1847,9 @@ focus_tree = {
 		icon = GFX_Focus_Agriculture_3
 		cost = 70
 		prerequisite = {
-			focus = ITA_PIE_focus_Canali_Cavour
+			focus = ITA_PIE_focus_Canale_Cavour
 		}
-		relative_position_id = ITA_PIE_focus_Canali_Cavour
+		relative_position_id = ITA_PIE_focus_Canale_Cavour
 		x = 0
 		y = 1
 		completion_reward = {

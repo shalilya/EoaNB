@@ -43,13 +43,6 @@ eoanb_category_formables = {
 		cost = 50
 		
 		complete_effect = {
-			load_focus_tree = generic_vic_ft
-			if = {
-				limit = {
-					has_idea = ROM_idea_sentiment_of_unity
-				}
-				remove_ideas = ROM_idea_sentiment_of_unity
-			}
 			custom_effect_tooltip = eoanb_tt_decision_ROM_generic_form
 			hidden_effect = {
 				set_cosmetic_tag = ROM_costag_generic_formed
@@ -72,10 +65,8 @@ eoanb_category_formables = {
 
 		available = {
 			tag = ROM
-			OR = {
-				has_country_flag = ROM_union_allowed
-				date > 1861.1.1
-			}
+			has_country_flag = ROM_union_allowed
+			has_country_flag = ROM_unification_compatible
 			MOL = {
 				OR = {
 					has_autonomy_state = autonomy_personal_union
@@ -87,6 +78,7 @@ eoanb_category_formables = {
 		
 		visible = {
 			tag = ROM
+			has_completed_focus = ROM_cuza
 		}
 		
 		allowed = { TAG = ROM }
@@ -105,14 +97,18 @@ eoanb_category_formables = {
 				}
 				remove_ideas = ROM_battleground
 			}
-			
+			if = {
+				limit = {
+					has_idea = ROM_idea_sentiment_of_unity1
+				}
+				remove_ideas = ROM_idea_sentiment_of_unity1
+			}
+			clr_country_flag = ROM_unification_incompatible
 			hidden_effect = {
 				79={
-					add_core_of = ROM
 					remove_core_of = MOL
 				}
 				1126={
-					add_core_of = ROM
 					remove_core_of = MOL
 				}
 				set_cosmetic_tag = ROM_united_principalities
@@ -148,10 +144,7 @@ ROM_military_decision_wallachia = {
 			has_tech = sixfour_army_cloth
 			has_tech = improved_cavalry
 			has_tech = improved_handguns
-			OR = {
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+
 			OR = {
 				has_idea = three_percent
 				has_idea = five_percent
@@ -164,7 +157,7 @@ ROM_military_decision_wallachia = {
 		
 		is_good = no
 		
-		days_mission_timeout = 1800
+		days_mission_timeout = 2500
 		
 		cancel_trigger = {
 			NOT = {
@@ -217,7 +210,7 @@ ROM_military_decision_wallachia = {
 		}
 		
 		remove_effect = {
-			country_event = rom_military.4
+			country_event = {id = rom_military.4}
 			hidden_effect = {
 				clr_country_flag = ROM_army_reform_ongoing_flag
 			}
@@ -237,7 +230,7 @@ ROM_military_decision_wallachia = {
 
 		allowed = { TAG = ROM }
 		
-		cost = 100
+		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
@@ -315,7 +308,7 @@ ROM_military_decision_wallachia = {
 
 		allowed = { TAG = ROM }
 		
-		cost = 100
+		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
@@ -677,7 +670,11 @@ ROM_military_decision_wallachia = {
 		#allowed = { tag = ROM }
 
 		available = {
-			has_idea = ROM_idea_french_military_mission
+			OR = {
+				has_idea = ROM_idea_french_military_mission
+				has_idea = ROM_idea_french_military_mission2
+				has_idea = ROM_idea_french_military_mission3
+			}
 			NOT = { has_country_flag = ROM_army_reform_ongoing_flag }
 		}
 
@@ -724,6 +721,14 @@ ROM_military_decision_wallachia = {
 				}
 				swap_ideas = { 
 					remove_idea = ROM_idea_corrupted_army2 add_idea = ROM_idea_corrupted_army3 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROM_idea_corrupted_army3
+				}
+				swap_ideas = { 
+					remove_idea = ROM_idea_corrupted_army3 add_idea = ROM_idea_corrupted_army4 
 				}
 			}
 			if = {
@@ -760,7 +765,11 @@ ROM_military_decision_wallachia = {
 		#allowed = { tag = ROM }
 
 		available = {
-			has_idea = ROM_idea_french_military_mission
+			OR = {
+				has_idea = ROM_idea_french_military_mission
+				has_idea = ROM_idea_french_military_mission2
+				has_idea = ROM_idea_french_military_mission3
+			}
 			NOT = { has_country_flag = ROM_army_reform_ongoing_flag }
 		}
 
@@ -808,6 +817,14 @@ ROM_military_decision_wallachia = {
 				}
 				swap_ideas = { 
 					remove_idea = ROM_idea_corrupted_army2 add_idea = ROM_idea_corrupted_army3 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROM_idea_corrupted_army3
+				}
+				swap_ideas = { 
+					remove_idea = ROM_idea_corrupted_army3 add_idea = ROM_idea_corrupted_army4 
 				}
 			}
 			if = {
@@ -844,7 +861,11 @@ ROM_military_decision_wallachia = {
 		#allowed = { tag = ROM }
 
 		available = {
-			has_idea = ROM_idea_french_military_mission
+			OR = {
+				has_idea = ROM_idea_french_military_mission
+				has_idea = ROM_idea_french_military_mission2
+				has_idea = ROM_idea_french_military_mission3
+			}
 			NOT = { has_country_flag = ROM_army_reform_ongoing_flag }
 		}
 
@@ -892,6 +913,14 @@ ROM_military_decision_wallachia = {
 				}
 				swap_ideas = { 
 					remove_idea = ROM_idea_corrupted_army2 add_idea = ROM_idea_corrupted_army3 
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROM_idea_corrupted_army3
+				}
+				swap_ideas = { 
+					remove_idea = ROM_idea_corrupted_army3 add_idea = ROM_idea_corrupted_army4 
 				}
 			}
 			if = {
@@ -1110,7 +1139,7 @@ ROM_navy_decision_wallachia = {
 
 		allowed = { TAG = ROM }
 		
-		cost = 100
+		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
@@ -1173,7 +1202,7 @@ ROM_navy_decision_wallachia = {
 
 		fire_only_once = no
 		
-		cost = 100
+		cost = 50
 		
         days_remove = 180
 		
@@ -1280,7 +1309,7 @@ ROM_navy_decision_wallachia = {
 
 		allowed = { TAG = ROM }
 		
-		cost = 100
+		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
@@ -1864,5 +1893,1877 @@ ROM_economy_descision_wallachia = {
 }
 
 ROM_1859_elections_gui = {
+	ROM_decision_cuza_influence = {
 
+		icon = GFX_decision_newspaper_open
+
+		available = {
+			has_completed_focus = ROM_unification_rallies
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_doing_election_action
+				check_variable = {ROM_election_action = 0}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_unification_rallies
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		days_remove = 20
+		#fire_only_once = yes
+		
+		cost = 40
+		days_re_enable = 15
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_stability = -0.05
+			set_variable = {ROM_election_action = 1}
+		}
+
+		remove_effect = {
+			add_to_variable = { cuza_party_view = 5 }
+			custom_effect_tooltip = ROM_effect_cuza_influence
+			set_variable = {ROM_election_action = 0}
+        }
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_decision_bibescu_influence = {
+
+		icon = GFX_decision_newspaper_open
+
+		available = {
+			has_completed_focus = ROM_demote_unionist_officers
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_doing_election_action
+				check_variable = {ROM_election_action = 0}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_demote_unionist_officers
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 20
+		cost = 40
+		days_re_enable = 15
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_stability = -0.05
+			set_variable = {ROM_election_action = 1}
+		}
+		
+		remove_effect = {
+			add_to_variable = { bibescu_party_view = 5 }
+			custom_effect_tooltip = ROM_effect_bibescu_influence
+			set_variable = {ROM_election_action = 0}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_decision_cuza_attack_influence = {
+
+		icon = GFX_decision_newspaper_open
+
+		available = {
+			has_completed_focus = ROM_unification_rallies
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_doing_election_action
+				check_variable = {ROM_election_action = 0}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_unification_rallies
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		days_remove = 20
+		#fire_only_once = yes
+		
+		cost = 40
+		days_re_enable = 15
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_stability = -0.1
+			set_variable = {ROM_election_action = 1}
+		}
+
+		remove_effect = {
+			subtract_from_variable = { bibescu_party_view = 5 }
+			custom_effect_tooltip = ROM_effect_bibescu_influence_minus
+			set_variable = {ROM_election_action = 0}
+        }
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_decision_bibescu_attack_influence = {
+
+		icon = GFX_decision_generic_political_rally
+
+		available = {
+			has_completed_focus = ROM_demote_unionist_officers
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_doing_election_action
+				check_variable = {ROM_election_action = 0}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_demote_unionist_officers
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 20
+		cost = 40
+		days_re_enable = 15
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_stability = -0.1
+			set_variable = {ROM_election_action = 1}
+		}
+		
+		remove_effect = {
+			subtract_from_variable = { cuza_party_view = 5 }
+			custom_effect_tooltip = ROM_effect_cuza_influence_minus
+			set_variable = {ROM_election_action = 0}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_decision_block_opponent = {
+
+		icon = GFX_decision_parliament_speech_denied
+
+		available = {
+			OR = {
+				has_completed_focus = ROM_demote_unionist_officers
+				has_completed_focus = ROM_unification_rallies
+			}
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_doing_election_action
+				check_variable = {ROM_election_action = 0}
+			}
+		}
+
+		visible = {
+			OR = {
+				has_completed_focus = ROM_demote_unionist_officers
+				has_completed_focus = ROM_unification_rallies
+			}
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 35
+		cost = 60
+		days_re_enable = 5
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_political_power = 20
+			add_stability = 0.01
+			set_variable = { ROM_opponent_election_blocked = 1 }
+			custom_effect_tooltip = ROM_effect_opponent_blocked
+			set_variable = {ROM_election_action = 1}
+		}
+		
+		remove_effect = {
+			set_variable = { ROM_opponent_election_blocked = 0 }
+			custom_effect_tooltip = ROM_effect_opponent_unblocked
+			set_variable = {ROM_election_action = 0}
+        }
+		ai_will_do = {
+			factor = 200
+		}
+
+	}
+	ROM_decision_reduce_dissent = {
+
+		icon = money
+
+		available = {
+			OR = {
+				has_completed_focus = ROM_demote_unionist_officers
+				has_completed_focus = ROM_unification_rallies
+			}
+			has_completed_focus = ROM_elections
+			custom_trigger_tooltip = {
+				tooltip = ROM_requirement_party_50
+				if={
+					limit={
+						has_completed_focus = ROM_unification_rallies
+					}
+					check_variable = {cuza_party_view > 50}
+				}
+				else_if={
+					limit={
+						has_completed_focus = ROM_demote_unionist_officers
+					}
+					check_variable = {bibescu_party_view > 50}
+				}
+			}
+		}
+
+		visible = {
+			OR = {
+				has_completed_focus = ROM_demote_unionist_officers
+				has_completed_focus = ROM_unification_rallies
+			}
+			has_completed_focus = ROM_elections
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 0
+		cost = 0
+		days_re_enable = 10
+		
+		complete_effect = {
+			add_political_power = 100
+			add_stability = 0.05
+			if={
+				limit={
+					has_completed_focus = ROM_unification_rallies
+				}
+				custom_effect_tooltip = ROM_effect_cuza_influence_minus_10
+				subtract_from_variable = {cuza_party_view = 10}
+			}
+			else_if={
+				limit={
+					has_completed_focus = ROM_demote_unionist_officers
+				}
+				custom_effect_tooltip = ROM_effect_bibescu_influence_minus_10
+				subtract_from_variable = {bibescu_party_view = 10}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+	}
+	ROM_1859_opponent_timer = {
+		icon = politics
+		
+		
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		available = {
+			always=no
+		}
+		is_good = yes
+		days_mission_timeout = 25
+		
+		timeout_effect = {
+			hidden_effect = {
+				activate_mission = ROM_1859_opponent_timer
+			}
+			if={
+				limit = {
+					check_variable = {ROM_opponent_election_blocked = 0}
+				}
+				if={
+					limit={
+						has_completed_focus = ROM_unification_rallies
+					}
+					country_event={id = wallachian_union.18 days = 0}
+					
+				}
+				else_if={
+					limit={
+						has_completed_focus = ROM_demote_unionist_officers
+					}
+					country_event={id = wallachian_union.19 days = 0}
+					
+				}
+			}
+			else = {
+				custom_effect_tooltip = ROM_effect_opponent_blocked
+			}
+			
+		}
+		complete_effect = {
+
+		}
+	}
+	ROM_1859_election_timer = {
+		
+		icon = GFX_decision_constitution
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_cuza
+				has_completed_focus = ROM_bibescu
+			}
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+
+		is_good = yes
+		
+		days_mission_timeout = 122
+		
+		timeout_effect = {
+			if={
+				limit={
+					check_variable = {cuza_party_view > bibescu_party_view}
+				}
+				country_event={id = wallachian_union.15 days = 2}
+			}
+			else_if={
+				limit={
+					check_variable = {bibescu_party_view > cuza_party_view}
+				}
+				country_event={id = wallachian_union.16 days = 2}
+			}
+			else={
+				if={
+					limit={
+						is_historical_focus_on = yes
+					}
+					country_event={id = wallachian_union.15 days = 2}
+				}
+				else={
+					random_list = {
+					50 = {
+						country_event={id = wallachian_union.15 days = 2}
+					}
+					50 = {
+						country_event={id = wallachian_union.16 days = 2}
+					}
+
+					}
+				}
+			}
+		}
+		complete_effect = {
+
+		}
+	}
+}
+ROM_cuza_reform_gui = {
+	ROM_cuza_reform_reduce_unrest = {
+
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_dream_achieved
+			custom_trigger_tooltip = {
+				tooltip = cuza_unrest_0_tt
+				check_variable = {cuza_unrest > 0}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_dream_achieved
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		days_re_enable = 10
+		
+		complete_effect = {
+			custom_effect_tooltip = ROM_reduce_unrest_tooltip
+			custom_effect_tooltip = ROM_cuza_decrease_unrest_gain
+			subtract_from_variable = {cuza_unrest = 1}
+			subtract_from_variable = {cuza_unrest_gain = 0.2}
+			set_temp_variable = { temp1 = cuza_unrest }
+			subtract_from_temp_variable = { temp1 = 2 }
+			divide_temp_variable = { temp1 = -20 }
+			set_variable = { ROM_cuza_unrest_stab = temp1 }
+			set_temp_variable = { temp2 = ROM_cuza_unrest_stab }
+			multiply_temp_variable = { temp2 = -1 }
+			set_variable = { ROM_cuza_unrest_consumer = temp2 }
+			force_update_dynamic_modifier = yes
+		}
+		remove_effect = {
+			add_stability = 0.05
+			add_to_variable = {cuza_unrest_gain = 0.2}
+			custom_effect_tooltip = ROM_cuza_increase_unrest_gain
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_cuza_reform_reduce_unrest_gain = {
+
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_dream_achieved
+			custom_trigger_tooltip = {
+				tooltip = cuza_unrest_0_tt
+				check_variable = {cuza_unrest > 0}
+			}
+			custom_trigger_tooltip = {
+				tooltip = cuza_unrest_gain_0_6_tt
+				check_variable = {cuza_unrest_gain < 0.6}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_dream_achieved
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 180
+		cost = 200
+		days_re_enable = 10
+		modifier = {
+			political_power_gain = -0.2
+		}
+		remove_effect = {
+			add_stability = 0.1
+			custom_effect_tooltip = ROM_cuza_decrease_unrest_gain
+			subtract_from_variable = {cuza_unrest_gain = 0.2}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_cuza_decision_increase_reform_power = {
+
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_dream_achieved
+			NOT = {has_completed_focus = ROM_monstrous_coalition}
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_100_tt
+				check_variable = {cuza_reform_power < 100}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_dream_achieved
+			NOT = {has_completed_focus = ROM_monstrous_coalition}
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 30
+		cost = 75
+		days_re_enable = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		remove_effect = {
+			add_to_variable = {cuza_reform_power = 10}
+			add_to_variable = {cuza_unrest = 0.5}
+			custom_effect_tooltip = ROM_cuza_increase_reform
+			custom_effect_tooltip = ROM_cuza_increase_unrest_3
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_cuza_decision_spend_reform = {
+
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_dream_achieved
+			NOT = {has_completed_focus = ROM_monstrous_coalition}
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_10
+				check_variable = {cuza_reform_power > 10}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_dream_achieved
+			NOT = {has_completed_focus = ROM_monstrous_coalition}
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		#fire_only_once = yes
+		#days_remove = 30
+		cost = 0
+		days_re_enable = 20
+		
+		complete_effect = {
+			add_political_power = 150
+			subtract_from_variable = {cuza_reform_power = 10}
+			custom_effect_tooltip = ROM_cuza_decrease_reform_10
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_cuza_reform_increase_unrest = {
+
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_fight_inevitable
+			custom_trigger_tooltip = {
+				tooltip = cuza_unrest_10_tt
+				check_variable = {cuza_reform_power < 10}
+			}
+		}
+
+		visible = {
+			has_completed_focus = ROM_dream_achieved
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		#fire_only_once = yes
+		days_remove = 90
+		cost = 100
+		days_re_enable = 10
+		modifier = {
+			political_power_gain = 0.1
+		}
+		remove_effect = {
+			add_stability = -0.1
+			custom_effect_tooltip = ROM_cuza_increase_unrest_2
+			add_to_variable = {cuza_unrest = 2}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+
+	}
+	ROM_cuza_update_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+
+		is_good = yes
+		
+		days_mission_timeout = 30
+		
+		timeout_effect = {
+			activate_mission = ROM_cuza_update_timer
+			set_variable = {cuza_temp1 = cuza_unrest}
+			add_to_variable = {cuza_temp1 = cuza_unrest_gain}
+			if = {
+				limit = { check_variable = {
+							var = cuza_unrest_gain
+							value = 0
+							compare = less_than
+							}
+						}
+				if = {
+					limit = { check_variable = {
+								var = cuza_temp1
+								value = 0
+								compare = greater_than_or_equals
+								}
+							}
+					set_variable = {cuza_unrest = cuza_temp1}
+				}
+			}
+			else = {
+				if = {
+					limit = {check_variable = {
+								var = cuza_temp1
+								value = 10
+								compare = less_than_or_equals
+								}
+							}
+					set_variable = {cuza_unrest = cuza_temp1}
+				}
+			}
+			set_variable = {cuza_temp2 = cuza_reform_power}
+			add_to_variable = {cuza_temp2 = cuza_reform_power_gain}
+			if = {
+				limit = { check_variable = {
+							var = cuza_reform_power_gain
+							value = 0
+							compare = less_than
+							}
+						}
+				if = {
+					limit = { check_variable = {
+								var = cuza_temp2
+								value = 0
+								compare = greater_than_or_equals
+								}
+							}
+					set_variable = {cuza_reform_power = cuza_temp2}
+				}
+			}
+			else = {
+				if = {
+					limit = {check_variable = {
+								var = cuza_temp2
+								value = 100
+								compare = less_than_or_equals
+								}
+							}
+					set_variable = {cuza_reform_power = cuza_temp2}
+				}
+			}
+			set_temp_variable = { temp1 = cuza_unrest }
+			subtract_from_temp_variable = { temp1 = 2 }
+			divide_temp_variable = { temp1 = -20 }
+			set_variable = { ROM_cuza_unrest_stab = temp1 }
+			set_temp_variable = { temp2 = ROM_cuza_unrest_stab }
+			multiply_temp_variable = { temp2 = -1 }
+			set_variable = { ROM_cuza_unrest_consumer = temp2 }
+			force_update_dynamic_modifier = yes
+			clear_variable = cuza_temp1
+			clear_variable = cuza_temp2
+		}
+		complete_effect = {
+
+		}
+	}
+	ROM_monstrous_coalition_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = ROM_abdication
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+
+		is_good = yes
+		
+		days_mission_timeout = 300
+		
+		timeout_effect = {
+			if={
+				limit={
+					check_variable = {cuza_unrest > 4}
+				}
+				country_event={id = rom_wallachia.34 days = 2}
+			}
+			else_if={
+				limit={
+					check_variable = {cuza_unrest < 4}
+				}
+				country_event={id = rom_wallachia.35 days = 2}
+			}
+			else={
+				if={
+					limit={
+						is_historical_focus_on = yes
+					}
+					country_event={id = rom_wallachia.34 days = 2 }
+				}
+				else={
+					random_list = {
+					75 = {
+						country_event={id = rom_wallachia.34 days = 2 }
+					}
+					25 = {
+						country_event={id = rom_wallachia.35 days = 2 }
+					}
+
+					}
+				}
+			}
+		}
+		complete_effect = {
+
+		}
+	}
+}
+ROM_focsani_commission_decisions = {
+	ROM_integrate_moldavia_proper = {
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_administration_zones
+		}
+
+		visible = {
+			has_completed_focus = ROM_administration_zones
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		complete_effect = {
+			add_stability = -0.1
+		}
+		remove_effect = {
+			79 = { add_core_of = ROM}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_integrate_budjak = {
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_administration_zones
+		}
+
+		visible = {
+			has_completed_focus = ROM_administration_zones
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		complete_effect = {
+			add_stability = -0.1
+		}
+		remove_effect = {
+			1126 = { add_core_of = ROM}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	} 
+	ROM_decision_common_law = {
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_administration_zones
+			has_completed_focus = ROM_common_legislature
+		}
+
+		visible = {
+			has_completed_focus = ROM_common_legislature
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			add_stability = 0.1
+			remove_ideas = {ROM_idea_Confused_bureaucracy2}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_complete_defacto_unification = {
+		icon = generic
+
+		available = {
+			has_completed_focus = ROM_establish_focsani_central_commission
+			custom_trigger_tooltip = {
+				tooltip = ROM_unification_check_tooltip
+				79 = {is_core_of = ROM}
+				1126 = {is_core_of = ROM}
+				NOT = {has_idea = ROM_idea_Confused_bureaucracy2}
+				NOT = {has_idea = ROM_idea_Confused_bureaucracy}
+			}	
+		}
+
+		visible = {
+			has_completed_focus = ROM_establish_focsani_central_commission
+		}
+		fire_only_once = yes
+		days_remove = 0
+		cost = 0
+		
+		remove_effect = {
+			set_country_flag = ROM_unification_compatible
+			custom_effect_tooltip = ROM_unification_compatible_tooltip
+			remove_ideas = ROM_idea_Unification_process
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+ROM_cuza_international_relations = {
+	ROM_cuza_ask_britain = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			ENG = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_cuza_ask_france = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			FRA = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_cuza_ask_prussia = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			PRS = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_cuza_ask_russia = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			RUS = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_cuza_ask_italy = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			PIE = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	ROM_cuza_ask_austria = {
+		icon = generic
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Union_cuza_diplo_action_tt
+				check_variable = {Union_cuza_diplo_action = 0}
+			}
+		}
+		cancel_trigger = {
+			has_completed_focus = ROM_move_away_from_Ottomans
+		}
+		visible = {
+		}
+		fire_only_once = yes
+		days_remove = 15
+		cost = 10
+		modifier = {
+			political_power_gain = -0.1
+		}
+		complete_effect = {
+			set_variable = {Union_cuza_diplo_action = 1}
+		}
+		remove_effect = {
+			add_to_variable = {Union_cuza_asked = 1}
+			set_variable = {Union_cuza_diplo_action = 0}
+			AUS = {
+				country_event = {id = wallachian_union.23}
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+ROM_cuza_reforms_education = {
+	ROM_implement_public_education = {
+		icon=generic
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_5
+				check_variable = {cuza_reform_power > 5}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 50
+		cost = 50
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_education_reform
+
+			country_event = {id = rom_wallachia.20}
+			swap_ideas = {
+				remove_idea = privileged_education
+				add_idea = compulsory_education
+			}
+		}
+	}
+	ROM_construct_bucharest_university = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_bucharest_university
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_10
+				check_variable = {cuza_reform_power > 10}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 300
+		cost = 50
+		modifier = {
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.2
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_education_reform
+			country_event = {id = rom_wallachia.21}
+			add_ideas = ROM_bucharest_university
+		}
+	}
+	ROM_decision_fight_illiteracy = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_fight_illiteracy
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 50
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+			stability_weekly = 0.01
+			consumer_goods_factor = 0.1
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_education_reform
+			swap_ideas = {
+				remove_idea = ROM_mass_illiteracy
+				add_idea = ROM_mass_illiteracy1
+			}
+		}
+	}
+	ROM_education_reform_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ROM_finished_education_reform_tt
+				has_idea = ROM_mass_illiteracy1
+			}
+		}
+
+		is_good = no
+		
+		days_mission_timeout = 820
+		
+		timeout_effect = {
+			add_political_power = -100
+			add_stability = -0.1
+			add_timed_idea = {idea = ROM_failed_education_reform days = 1870}
+			add_to_variable = {cuza_unrest = 1}
+			custom_effect_tooltip = ROM_cuza_increase_unrest
+		}
+		complete_effect = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+}
+ROM_cuza_reforms_legal = {
+	ROM_merge_courts = {
+		icon=generic
+		available = {
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 50
+		cost = 50
+		modifier = {
+			political_power_gain = -0.3
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_legal_reform
+			add_ideas = ROM_merged_court_system
+			
+		}
+	}
+	ROM_decision_justice_reform = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_justice_reform
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_10
+				check_variable = {cuza_reform_power > 10}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 200
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_legal_reform
+			country_event = {id = rom_wallachia.24}
+		}
+	}
+	ROM_decision_civil_penal_code = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_civil_penal_code
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_legal_reform
+			add_ideas = ROM_new_civil_penal_code
+		}
+	}
+	ROM_legal_reform_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ROM_finished_legal_reform_tt
+				has_idea = ROM_new_civil_penal_code
+			}
+		}
+
+		is_good = no
+		
+		days_mission_timeout = 820
+		
+		timeout_effect = {
+			add_political_power = -200
+			add_stability = -0.1
+			add_timed_idea = {idea = ROM_failed_legal_reform days = 1870}
+			add_to_variable = {cuza_unrest = 1}
+			custom_effect_tooltip = ROM_cuza_increase_unrest
+		}
+		complete_effect = {
+			add_political_power = 200
+			add_stability = 0.1
+		}
+	}
+}
+ROM_cuza_reforms_economic = {
+	ROM_implement_trade_reforms = {
+		icon=generic
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_10
+				check_variable = {cuza_reform_power > 10}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 200
+		cost = 50
+		modifier = {
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.4
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_economic_reform
+			add_timed_idea = {idea = ROM_economic_boom days = 1825}
+			country_event = {id = rom_wallachia.22}
+			
+		}
+	}
+	ROM_implement_new_currency = {
+		icon=generic
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_10
+				check_variable = {cuza_reform_power > 10}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 10
+		cost = 50
+		modifier = {
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.4
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_economic_reform
+			country_event = {id = rom_wallachia.25}
+			
+		}
+	}
+	ROM_found_post_service = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_new_post_service
+			custom_trigger_tooltip = {
+				tooltip = cuza_reform_power_check_5
+				check_variable = {cuza_reform_power > 5}
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_economic_reform
+			country_event = {id = rom_wallachia.23}
+			
+		}
+	}
+	ROM_start_agrarian_reform = {
+		icon=generic
+		available = {
+			has_completed_focus = ROM_new_agrarian_reform
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+			stability_weekly = -0.01
+		}
+		remove_effect = {
+			clr_country_flag = ROM_doing_economic_reform
+			set_country_flag = ROM_unlock_agriculture_tree
+			custom_effect_tooltip = ROM_unlock_agriculture_tree_tt
+		}
+	}
+	ROM_economic_reform_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = ROM
+		}
+		cancel_trigger = {
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ROM_finished_economic_reform_tt
+				has_country_flag = ROM_unlock_agriculture_tree
+			}
+		}
+
+		is_good = no
+		
+		days_mission_timeout = 820
+		
+		timeout_effect = {
+			add_political_power = -100
+			add_stability = -0.1
+			remove_ideas = {ROM_economic_boom}
+			add_timed_idea = {
+				idea = ROM_failed_economic_reform
+				days = 1870
+			}
+			add_to_variable = {cuza_unrest = 1}
+			custom_effect_tooltip = ROM_cuza_increase_unrest
+		}
+		complete_effect = {
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+}
+ROM_industrialise_decisions = {
+	ROM_decision_bucharest_iasi_railway = {
+		icon = railway
+		available = {
+			has_completed_focus = ROM_bucharest_iasi_railway
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 360
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			add_political_power = 10
+			add_stability = 0.1
+			79 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = supply_node
+					province = 9716
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				path = { 3663 9651 11652 9701 6747 }
+				start_province = 13673
+				target_province = 9716
+			}
+			79 = { add_extra_state_shared_building_slots = 2 }
+		}
+	
+
+	}
+	ROM_decision_bucharest_craiova_railway = {
+		icon = railway
+		available = {
+			has_completed_focus = ROM_bucharest_craiova_railway
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 360
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+			consumer_goods_factor = 0.1
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+
+			add_political_power = 10
+			add_stability = 0.1
+			81 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				#path = {}
+				start_province = 13673
+				target_province = 6652
+			}
+			81 = { add_extra_state_shared_building_slots = 1 }
+		}
+	}
+	ROM_decision_setup_supply_craiova= {
+		icon = generic
+		available = {
+			has_completed_focus = ROM_bucharest_craiova_railway
+			
+		}
+		visible = {
+			
+			has_railway_connection = {
+				start_province = 13673
+				target_province = 6652
+			}
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		modifier = {
+			political_power_gain = -0.2
+			consumer_goods_factor = 0.2
+		}
+		remove_effect = {
+			add_political_power = 10
+			81 = {
+				add_building_construction = {
+					type = supply_node
+					province = 6652
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ROM_decision_bucharest_braila_railway = {
+		icon = railway
+		available = {
+			has_completed_focus = ROM_bucharest_braila_railway
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		modifier = {
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.35
+		}
+		remove_effect = {
+			add_political_power = 10
+			add_stability = 0.1
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				#path = {}
+				start_province = 13673
+				target_province = 6677
+			}
+		}
+	}
+	ROM_decision_invite_foreign_investors = {
+
+		icon = eng_trade_unions_support
+
+		allowed = { tag = ROM }
+		
+		available = {
+			has_completed_focus = ROM_invite_foreign_investors
+			has_stability > 0.3
+		}
+
+		visible = {
+			has_full_control_of_state = 46
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 60
+		
+		remove_effect = {
+			country_event = {id = rom_wallachia.29}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+	ROM_decision_jiu_valley = { 
+
+        icon = coal
+		
+		available = {
+		    has_completed_focus = ROM_jiu_valley 
+			num_of_civilian_factories_available_for_projects > 0
+			owns_state = 81
+		}
+		
+		allowed = { tag = ROM } 
+
+		visible = {
+		}
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 80
+
+		modifier = {
+			civilian_factory_use = 1
+			political_power_gain = -0.1
+		}
+		
+		complete_effect = {
+		}
+
+		remove_effect = { 
+			81 = {
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+				add_resource = {
+					type = iron
+					amount = 2
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+    }
+	ROM_decision_oil_ploiesti = { 
+
+        icon = oil
+		
+		available = {
+		    has_completed_focus = ROM_oil_ploiesti 
+			num_of_civilian_factories_available_for_projects > 0
+			owns_state = 46
+		}
+		
+		allowed = { tag = ROM } 
+
+		visible = {
+		}
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 50
+		days_remove = 80
+
+		modifier = {
+			civilian_factory_use = 1
+			political_power_gain = -0.1
+		}
+		
+		complete_effect = {
+		}
+
+		remove_effect = { 
+			46 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+    }
+	ROM_decision_belvedere_factory = { 
+
+        icon = money
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ROM_e_grant_unlocked_tt
+				has_country_flag = ROM_e_grant_unlocked
+			}
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		
+		allowed = { tag = ROM } 
+
+		visible = {
+			has_country_flag = ROM_e_grant_unlocked
+		}
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 200
+		days_remove = 200
+
+		modifier = {
+			civilian_factory_use = 1
+			political_power_gain = -0.5
+		}
+		
+		complete_effect = {
+		}
+
+		remove_effect = { 
+			46 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			hidden_effect = {
+				country_event = {id = rom_wallachia.31 days = 165}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+    }
+}
+ROM_agriculture_reform = {
+	ROM_decision_appease_church = {
+		icon = generic
+		available = {
+			has_completed_focus = ROM_compensate_church
+			has_idea = ROM_idea_unhappy_church_cuza
+			
+		}
+		visible = {
+			has_completed_focus = ROM_focus_agriculture
+			has_idea = ROM_idea_unhappy_church_cuza
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 70
+		modifier = {
+			political_power_gain = -0.5
+			consumer_goods_factor = 0.5
+		}
+		remove_effect = {
+			remove_ideas = ROM_idea_unhappy_church_cuza
+		}
+	}
+	ROM_decision_negotiate_landowners = {
+		icon = generic
+		available = {
+			has_completed_focus = ROM_negotiate_landowners
+		}
+		visible = {
+			has_completed_focus = ROM_focus_agriculture
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		modifier = {
+			political_power_gain = -0.5
+		}
+		remove_effect = {
+			country_event = {id = rom_wallachia.39}
+		}
+	}
+	ROM_decision_free_peasants = {
+		icon = generic
+		available = {
+			has_completed_focus = ROM_help_peasantry
+		}
+		visible = {
+			has_completed_focus = ROM_focus_agriculture
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 50
+		modifier = {
+			political_power_gain = -0.3
+			consumer_goods_factor = 0.5
+		}
+		remove_effect = {
+			country_event = {id = rom_wallachia.38}
+			add_timed_idea = {idea = ROM_idea_peasant_distribution days = 365}
+		}
+	}
+	ROM_decision_enforce_land_reform = {
+		icon = generic
+		available = {
+			has_completed_focus = ROM_enforce_land_reform
+		}
+		visible = {
+			has_completed_focus = ROM_focus_agriculture
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		modifier = {
+			political_power_gain = -0.3
+		}
+		remove_effect = {
+			79 = {
+				add_building_construction = {
+					type = farm
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
 }

@@ -885,7 +885,7 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = PIE_Work_With_Mazzinni
+						has_completed_focus = PIE_Work_With_Mazzini
 					}
 					custom_trigger_tooltip = {
 						tooltip = ITA_Mission_AUS_PIE_Peace_Treaty_1860_ITA_VICTORY_France_Carbonari_tt
@@ -958,7 +958,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			PIE = {
 				if = {
 					limit = {
-						has_completed_focus = PIE_Work_With_Mazzinni
+						has_completed_focus = PIE_Work_With_Mazzini
 						tag = PIE
 						LVN = {
 							has_capitulated = yes
@@ -1430,10 +1430,12 @@ ITA_decisions_category_wars_and_conflicts = {
 					}
 					country_event = {
 						id = austria.526
-					}					#Event enabling Austrian post-war victory content
+					}
+					#Event enabling Austrian post-war victory content
 					country_event = {
 						id = risorgimento.48
-					}					#House of Savoy Flees
+					}
+					#House of Savoy Flees
 					hidden_effect = {
 						set_country_flag = AUS_triumph_in_italy_flag
 						mark_focus_tree_layout_dirty = yes
@@ -1907,10 +1909,12 @@ ITA_decisions_category_wars_and_conflicts = {
 						}
 						country_event = {
 							id = austria.526
-						}						#Event enabling Austrian post-war victory content
+						}
+						#Event enabling Austrian post-war victory content
 						country_event = {
 							id = risorgimento.48
-						}						#House of Savoy Flees
+						}
+						#House of Savoy Flees
 						hidden_effect = {
 							set_country_flag = AUS_triumph_in_italy_flag
 							mark_focus_tree_layout_dirty = yes
@@ -2135,7 +2139,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = PIE
 						}
 						PAP = {
-							surrender_progress > 0.8
+							surrender_progress > 0.7
 						}
 					}
 				}
@@ -2158,7 +2162,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = PIE
 						}
 						PAP = {
-							surrender_progress > 0.8
+							surrender_progress > 0.7
 						}
 					}
 				}
@@ -2227,6 +2231,132 @@ ITA_decisions_category_wars_and_conflicts = {
 			}
 		}
 	}
+	ITA_War_Mission_PAP_Rome = {
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		is_good = yes
+		days_mission_timeout = 200
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ITA_Rome_victory_conditions_PAP_tt1
+					# Victory Condition for Sardinia
+					tag = ITA #Probably PIE though
+					OR = {
+						2 = {
+							is_controlled_by = ITA
+						}
+						PAP = {
+							surrender_progress > 0.5
+						}
+						ITA = {
+							controls_province = 9904 #Rome
+						}
+						
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ITA_Rome_victory_conditions_PAP_tt2
+					# Victory Condition for Papal States
+					tag = PAP
+					ITA = {
+						surrender_progress > 0.6
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					tag = ITA #Probably PIE though
+					OR = {
+						2 = {
+							is_controlled_by = ITA
+						}
+						PAP = {
+							surrender_progress > 0.5
+						}
+						ITA = {
+							controls_province = 9904 #Rome
+						}
+						
+					}
+				}
+				# Peace Treaty Event 
+				ITA = {
+					transfer_state = 2
+					add_state_core = 2
+					diplomatic_relation = {
+						country = PAP
+						relation = guarantee
+						active = yes
+					}
+					news_event = {
+						id = ita.904
+					}
+					set_temp_variable = {
+						eoanb_prestige_change = 3
+					}
+					eoanb_change_prestige_score = yes
+				}
+			}
+			if = {
+				limit = {
+					tag = PAP
+					PIE = {
+						surrender_progress > 0.6
+					}
+				}
+				PAP = {
+					white_peace = ITA
+					# Eventually maybe reconquer some land?
+				}
+			}
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							tag = ITA
+							has_war_with = PAP
+						}
+						AND = {
+							tag = PAP
+							has_war_with = ITA
+						}
+					}
+					date < 1864.12.1
+				}
+				activate_mission = ITA_War_Mission_PAP_Rome
+			}
+			else_if = {
+				limit = {
+					date > 1864.12.1
+				}
+				ITA = {
+					transfer_state = 2
+					add_state_core = 2
+					diplomatic_relation = {
+						country = PAP
+						relation = guarantee
+						active = yes
+					}
+					news_event = {
+						id = ita.904
+					}
+					set_temp_variable = {
+						eoanb_prestige_change = 3
+					}
+					eoanb_change_prestige_score = yes
+				}
+			}
+		}
+	}
 	ITA_War_Mission_PAP_TUS = {
 		allowed = {
 			always = no
@@ -2247,7 +2377,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = TUS
 						}
 						PAP = {
-							surrender_progress > 0.8
+							surrender_progress > 0.7
 						}
 					}
 				}
@@ -2270,7 +2400,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = TUS
 						}
 						PAP = {
-							surrender_progress > 0.8
+							surrender_progress > 0.7
 						}
 					}
 				}
@@ -3084,15 +3214,12 @@ ITA_brigindage_category_decisions = {
 			#	id = ita.36
 			#	days = 10
 			#}
-			clear_variable = southern_revolt_risk
 			remove_ideas = ITA_Brigandage
-			# Eat shit and die
 		}
 		complete_effect = {
 			# What happens when we activate the mission i.e. mission success?
 			add_political_power = 50
 			remove_ideas = ITA_Brigandage
-			clear_variable = southern_revolt_risk			# VITORIA
 		}
 	}
 	ITA_Brigandage_government_debate = {
@@ -3105,9 +3232,8 @@ ITA_brigindage_category_decisions = {
 		available = {
 			AND = {
 				original_tag = PIE
-				has_completed_focus = ITA_Deal_with_Brigandage
+				has_completed_focus = ITA_PIE_focus_Gather_Political_Leaders
 				has_active_mission = ITA_decision_deal_with_brigindage
-				has_completed_focus = ITA_1861_elections
 			}
 		}
 		cost = 50
@@ -3128,16 +3254,16 @@ ITA_brigindage_category_decisions = {
 		days_re_enable = 180
 		available = {
 			has_active_mission = ITA_decision_deal_with_brigindage
+			has_completed_focus = ITA_PIE_focus_Tackling_Brigandage
 		}
 		complete_effect = {
-			custom_effect_tooltip = ITA_Increase_Military_Presence_tooltip
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = -2
-			}
 			add_timed_idea = {
 				idea = ITA_Military_Crackdown_Southern
 				days = 180
+			}
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
 			}
 		}
 	}
@@ -3150,17 +3276,143 @@ ITA_brigindage_category_decisions = {
 		fire_only_once = yes
 		available = {
 			has_active_mission = ITA_decision_deal_with_brigindage
-			has_completed_focus = ITA_limit_economic_power_south
+			has_completed_focus = ITA_PIE_focus_Move_Southern_Industry_North
 		}
 		complete_effect = {
-			custom_effect_tooltip = ITA_Decrease_revolt_risk
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = -2
-			}
 			add_timed_idea = {
 				idea = ITA_Manipulate_Southern_Economy_idea
 				days = 200
+			}
+		}
+	}
+	ITA_Brutal_Repression_South = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_Focus = ITA_PIE_focus_Tackling_Brigandage
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 45
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Tackling_Brigandage
+		}
+		days_remove = 120
+		remove_effect = {
+			country_event = {
+				id = ita.75
+			}
+		}
+	}
+	ITA_Drafting_of_the_Massari_Report = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_Focus = ITA_PIE_focus_Begin_the_Inquiry
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 45
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Begin_the_Inquiry
+		}
+		days_remove = 120
+		remove_effect = {
+			country_event = { 
+				id = ita.85
+			}
+		}
+	}
+	ITA_Brigandage_Pica_Law = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_Focus = ITA_PIE_focus_Pica_Law
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 45
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Pica_Law
+		}
+		days_remove = 150
+		modifier = {
+			power_balance_weekly = 0.01
+		}
+		remove_effect = {
+			### TODO:Event about result of Pica Law (perhaps a small negative move left?)
+			if = {
+				limit = {
+					has_power_balance_modifier = {
+						id = ITA_Balance_of_Power_Brigandage
+						modifier = ITA_power_balance_pica_law_sicily
+					}
+				}
+				remove_power_balance_modifier = {
+					id = ITA_Balance_of_Power_Brigandage
+					modifier = ITA_power_balance_pica_law_sicily
+				}
+			}
+		}
+	}
+	ITA_Extend_Pica_Law = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_decision = ITA_Brigandage_Pica_Law
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_decision = ITA_Brigandage_Pica_Law
+		}
+		complete_effect = {
+			add_days_remove  = {
+				decision = ITA_Brigandage_Pica_Law
+				days = 365
+			}
+		}
+	}
+	ITA_Extend_Pica_Law_south = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_decision = ITA_Brigandage_Pica_Law
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 40
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_decision = ITA_Brigandage_Pica_Law
+		}
+		complete_effect = {
+			country_event = {
+				id = ita.88
+			}
+			add_power_balance_modifier = {
+				id = ITA_Balance_of_Power_Brigandage
+				modifier = ITA_power_balance_pica_law_sicily
 			}
 		}
 	}
@@ -3460,7 +3712,7 @@ ITA_decisions_category_artisan_industry = {
 			tag = TUS
 		}
 		visible = {
-			has_completed_focus = TUS_focus_the_artisans
+			has_completed_focus = TUS_focus_the_iron_industry
 		}
 		icon = generic_construction
 		fire_only_once = yes
@@ -3485,7 +3737,7 @@ ITA_decisions_category_artisan_industry = {
 			tag = TUS
 		}
 		visible = {
-			has_completed_focus = TUS_focus_the_artisans
+			has_completed_focus = TUS_focus_the_iron_industry
 		}
 		icon = generic_construction
 		fire_only_once = yes
@@ -3735,6 +3987,39 @@ ITA_decisions_category_artisan_industry = {
 					type = dockyard
 					level = 1
 					instant_build = yes
+				}
+			}
+		}
+	}
+	ITA_La_Spezia_Naval_Expansion = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Expand_the_Arsenal_in_La_Spezia
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 50
+		modifier = {
+			civilian_factory_use = 2
+		}
+		ai_will_do = {
+			base = 25
+		}
+		days_remove = 150
+		remove_effect = {
+			158 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_building_level = {
+					type = naval_base
+					level = 8
+					province = 14140
 				}
 			}
 		}
@@ -4104,6 +4389,7 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 		}
 	}
 }
+
 ITA_decisions_category_ITA_legislative_actions = {
 	ITA_PIE_legislative_rattazzi_losing_confidence = {
 		allowed = {
@@ -4119,7 +4405,6 @@ ITA_decisions_category_ITA_legislative_actions = {
 		days_mission_timeout = 120
 		selectable_mission = yes
 		complete_effect = {
-
 		}
 		timeout_effect = {
 			country_event = {
@@ -4127,7 +4412,83 @@ ITA_decisions_category_ITA_legislative_actions = {
 			}
 		}
 	}
+	ITA_PIE_legislative_September_Convention = {
+		allowed = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		icon = mission_icon
+		days_mission_timeout = 180
+		selectable_mission = no
+		timeout_effect = {
+			set_capital = {
+				state = 162
+			}
+		}
+	}
+	ITA_PIE_legislative_Inquiry_on_Turin_Massacre = {
+		allowed = {
+			tag = PIE
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Aftermath_of_the_Turin_Massacre
+			NOT = {
+				has_completed_focus = ITA_PIE_focus_Government_in_Crisis
+			}
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Aftermath_of_the_Turin_Massacre
+			NOT = {
+				has_completed_focus = ITA_PIE_focus_Government_in_Crisis
+			}
+		}
+		fire_only_once = yes
+		icon = generic_political_actions
+		cost = 20
+		days_remove = 130
+		complete_effect = {
+			country_event = {
+				id = ita.107
+			}
+		}
+		remove_effect = {
+			country_event = {
+				id = ita.108
+			}
+		}
+	}
 }
+
+ITA_decisions_category_ITA_florence_restoration = {
+	ITA_PIE_florence_begin_revival = {
+		allowed = {
+			tag = PIE
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Arrival_of_the_King_Florence
+		}
+		available = {
+			has_completed_focus = ITA_PIE_focus_Arrival_of_the_King_Florence
+		}
+		icon = generic_construction
+		fire_only_once = yes
+		cost = 20
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			add_ideas = {
+				ITA_Florence_Revival
+			}
+		}
+	}
+}
+
 ITA_decisions_category_PIE_legislative_actions = {
 	ITA_PIE_legislative_alessandria_barracks = {
 		allowed = {
@@ -4400,7 +4761,6 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 				has_completed_focus = PIE_Political_Structure_Planning_FT
 				has_country_flag = is_literally_italy
 			}
-			
 		}
 		icon = ENG
 		fire_only_once = yes
@@ -4518,7 +4878,6 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 			has_completed_focus = ITA_PIE_focus_Build_Recognition_in_Europe
 		}
 		available = {
-			
 		}
 		icon = FRA
 		fire_only_once = yes
@@ -4529,6 +4888,48 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		complete_effect = {
 			country_event = {
 				id = ita.19
+			}
+		}
+	}
+	ITA_GRE_Seek_Greek_Recognition = {
+		allowed = {
+			original_tag = PIE
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Build_Recognition_in_Europe
+		}
+		available = {
+		}
+		icon = GRE
+		fire_only_once = yes
+		cost = 15
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			country_event = {
+				id = ita.100
+			}
+		}
+	}
+	ITA_POR_Seek_Portuguese_Recognition = {
+		allowed = {
+			original_tag = PIE
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Build_Recognition_in_Europe
+		}
+		available = {
+		}
+		icon = POR
+		fire_only_once = yes
+		cost = 15
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			country_event = {
+				id = ita.103
 			}
 		}
 	}
@@ -4556,13 +4957,49 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		remove_effect = {
 			### papal states transfered, cores gained
 			effect_tooltip = {
-				ITA = {
-					transfer_state = 2
-					add_state_core = 2
-					diplomatic_relation = {
-						country = PAP
-						relation = guarantee
-						active = yes
+				if = {
+					limit = {
+						PAP = {
+							has_country_flag = PAP_Decline_Italian_Proposal_FRA
+						}
+					}
+					PAP = {
+						country_event = {
+							id = ita.81
+						}
+					}
+				}
+				else = {
+					ITA = {
+						transfer_state = 2
+						add_state_core = 2
+						diplomatic_relation = {
+							country = PAP
+							relation = guarantee
+							active = yes
+						}
+						PIE_Urbano_Rattazzi = {
+							if = {
+								limit = {
+									is_country_leader = yes
+								}
+								add_trait = {
+									ideology = conserv_liberal
+									trait = PIE_trait_Captured_Rome
+								}
+							}
+						}
+						PIE_bettino_ricasoli = {
+							if = {
+								limit = {
+									is_country_leader = yes
+								}
+								add_trait = {
+									ideology = conserv_liberal
+									trait = PIE_trait_Captured_Rome
+								}
+							}
+						}
 					}
 				}
 			}
@@ -4570,6 +5007,18 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 				if = {
 					limit = {
 						tag = ITA
+						NOT = {
+							PAP = {
+								has_country_flag = PAP_Decline_Italian_Proposal_FRA
+							}
+						}
+					}
+					FRA = {
+						diplomatic_relation = {
+							country = PAP
+							relation = guarantee
+							active = no
+						}
 					}
 					ITA = {
 						transfer_state = 2
@@ -4582,11 +5031,54 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 						news_event = {
 							id = ita.904
 						}
-						set_temp_variable = { eoanb_prestige_change = 3 }
+						set_temp_variable = {
+							eoanb_prestige_change = 3
+						}
 						eoanb_change_prestige_score = yes
+						PIE_Urbano_Rattazzi = {
+							if = {
+								limit = {
+									is_country_leader = yes
+								}
+								add_trait = {
+									ideology = conserv_liberal
+									trait = PIE_trait_Captured_Rome
+								}
+							}
+						}
+						PIE_bettino_ricasoli = {
+							if = {
+								limit = {
+									is_country_leader = yes
+								}
+								add_trait = {
+									ideology = conserv_liberal
+									trait = PIE_trait_Captured_Rome
+								}
+							}
+						}
 					}
 				}
-				### Eventually Check for it Papal States Said no!
+				else_if = {
+					limit = {
+						tag = ITA
+						PAP = {
+							has_country_flag = PAP_Decline_Italian_Proposal_FRA
+						}
+					}
+					FRA = {
+						diplomatic_relation = {
+							country = PAP
+							relation = guarantee
+							active = no
+						}
+					}
+					PAP = {
+						country_event = {
+							id = ita.81
+						}
+					}
+				}
 			}
 		}
 	}
@@ -4909,7 +5401,10 @@ ITA_Economic_category_decisions = {
 		cost = 100
 		fire_only_once = yes
 		available = {
-			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
 		}
 		#####
 		complete_effect = {
@@ -4923,11 +5418,6 @@ ITA_Economic_category_decisions = {
 					modifier = dynmod_ITA_regional_economic_benefits
 				}
 			}
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = 3
-			}
-			custom_effect_tooltip = ITA_Increase_revolt_risk
 		}
 		remove_effect = {
 			117 = {
@@ -4951,7 +5441,10 @@ ITA_Economic_category_decisions = {
 		cost = 100
 		fire_only_once = yes
 		available = {
-			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
 		}
 		#####
 		complete_effect = {
@@ -4960,11 +5453,6 @@ ITA_Economic_category_decisions = {
 					modifier = dynmod_ITA_regional_economic_benefits
 				}
 			}
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = 3
-			}
-			custom_effect_tooltip = ITA_Increase_revolt_risk
 		}
 		remove_effect = {
 			997 = {
@@ -4983,7 +5471,10 @@ ITA_Economic_category_decisions = {
 		cost = 100
 		fire_only_once = yes
 		available = {
-			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
 		}
 		#####
 		complete_effect = {
@@ -4992,11 +5483,6 @@ ITA_Economic_category_decisions = {
 					modifier = dynmod_ITA_regional_economic_benefits
 				}
 			}
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = 3
-			}
-			custom_effect_tooltip = ITA_Increase_revolt_risk
 		}
 		remove_effect = {
 			156 = {
@@ -5015,7 +5501,10 @@ ITA_Economic_category_decisions = {
 		cost = 100
 		fire_only_once = yes
 		available = {
-			has_completed_focus = ITA_Bring_Leftist_Policies_to_Parliamnet
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
+		}
+		visible = {
+			has_completed_focus = ITA_PIE_focus_Regional_Economic_Administrations
 		}
 		#####
 		complete_effect = {
@@ -5024,11 +5513,6 @@ ITA_Economic_category_decisions = {
 					modifier = dynmod_ITA_regional_economic_benefits
 				}
 			}
-			add_to_variable = {
-				var = southern_revolt_risk
-				value = 3
-			}
-			custom_effect_tooltip = ITA_Increase_revolt_risk
 		}
 		remove_effect = {
 			115 = {

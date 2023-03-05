@@ -21,7 +21,9 @@ SER_decision_category_saint_adrews_assembly = {
 		days_mission_timeout = 130
 
 		timeout_effect = {
-			
+			hidden_effect = {
+				activate_mission = SER_mission_the_saint_adrews_assembly
+			}
 		}
 
 		complete_effect = {
@@ -32,7 +34,55 @@ SER_decision_category_saint_adrews_assembly = {
 			base = 100
 		}
 	}
-	
+	#Appeal to the Masses
+	SER_decision_appeal_masses = {
+
+		#icon = newspaper_open
+
+		#allowed = { tag = SER }
+		
+		available = {
+			
+		}
+
+		visible = {
+			has_active_mission = SER_mission_the_saint_adrews_assembly
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		
+		days_remove = 30
+		
+		modifier = {
+			political_power_gain = -0.07
+			stability_weekly = 0.01
+		}
+		
+		cancel_trigger = {
+			has_war = yes
+			NOT = {
+				has_active_mission = SER_mission_the_saint_adrews_assembly
+			}
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = centrism
+				popularity = 0.05
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.15
+			}
+			add_stability = 0.1
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	}
 	#Strong Partisan
 	SER_decision_strong_partisan = {
 
@@ -50,7 +100,7 @@ SER_decision_category_saint_adrews_assembly = {
 
 		fire_only_once = yes
 
-		cost = 50
+		cost = 30
 		
 		days_remove = 30
 		
@@ -60,13 +110,112 @@ SER_decision_category_saint_adrews_assembly = {
 		
 		cancel_trigger = {
 			has_war = yes
+			NOT = {
+				has_active_mission = SER_mission_the_saint_adrews_assembly
+			}
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = centrism
+				popularity = 0.02
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.1
+			}
+			set_temp_variable = { political_legitimacy_change = -0.05 }
+			eoanb_political_legitimacy_change = yes
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	}
+	#Foreign Relations
+	SER_decision_foreign_relation_direction = {
+
+		#icon = newspaper_open
+
+		#allowed = { tag = SER }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SER_unlocked_foreign_tt
+				has_country_flag = SER_Foreign_Relations
+			}
+		}
+
+		visible = {
+			has_active_mission = SER_mission_the_saint_adrews_assembly
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		
+		days_remove = 30
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			has_war = yes
+			NOT = {
+				has_active_mission = SER_mission_the_saint_adrews_assembly
+			}
+		}
+
+		remove_effect = {
+			country_event = {id = SER_politics.53}
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	}
+	#Strengthen Dynasty
+	SER_decision_strengthen_dynasty = {
+
+		#icon = newspaper_open
+
+		#allowed = { tag = SER }
+		
+		available = {
+			
+		}
+
+		visible = {
+			has_active_mission = SER_mission_the_saint_adrews_assembly
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		
+		days_remove = 30
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			has_war = yes
+			NOT = {
+				has_active_mission = SER_mission_the_saint_adrews_assembly
+			}
 		}
 
 		remove_effect = {
 			add_stability = 0.05
 			add_popularity = {
 				ideology = centrism
-				popularity = 0.05
+				popularity = -0.03
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = -0.1
 			}
 			set_temp_variable = { political_legitimacy_change = 0.05 }
 			eoanb_political_legitimacy_change = yes
@@ -76,18 +225,88 @@ SER_decision_category_saint_adrews_assembly = {
 			base = 500
 		}
 	}
+	#Improve Public Perception of the Prince
+	SER_decision_improve_public_image = {
+
+		#icon = newspaper_open
+
+		#allowed = { tag = SER }
+		
+		available = {
+			
+		}
+
+		visible = {
+			has_active_mission = SER_mission_the_saint_adrews_assembly
+		}
+
+		fire_only_once = no
+
+		cost = 55
+		
+		days_remove = 30
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		cancel_trigger = {
+			has_war = yes
+			NOT = {
+				has_active_mission = SER_mission_the_saint_adrews_assembly
+			}
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = centrism
+				popularity = -0.05
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = -0.15
+			}
+			set_temp_variable = { political_legitimacy_change = 0.1 }
+			eoanb_political_legitimacy_change = yes
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	}
 }
 
-
-
-
-
-
-
-
-
-
 SER_decision_category_political = {
+	SER_imprison_pro_russian_supporters = { # Imprison Pro Russian Sympathisers
+		icon = GFX_decision_icon_default
+
+		allowed = { tag = SER }
+		visible = {
+			has_completed_focus = SER_ban_russophile
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 40
+		modifier = {
+			political_power_gain = 0.1
+		}
+		remove_effect = {
+			RUS = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = small_decrease
+				}
+			}
+			add_stability = -0.1
+			add_political_power = 20
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
 
 	SER_mission_the_malogospojinska_assembly = {
 
@@ -198,15 +417,22 @@ SER_decision_category_political = {
 		}
 
 		fire_only_once = yes
-
+		
+		days_remove = 30
 		cost = 20
-
-		complete_effect = {
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
 			add_stability = 0.05
 			add_political_power = 50
 			add_popularity = {
 				ideology = centrism
 				popularity = -0.05
+			}
+			
+			hidden_effect = {
+				set_country_flag = SER_purged_council
 			}
 		}
 
@@ -222,17 +448,28 @@ SER_decision_category_political = {
 		visible = {
 			has_country_flag = SER_coup
 		}
+		available = {
+			has_country_flag = SER_purged_council
+		}
 
 		fire_only_once = yes
 
+		days_remove = 30
 		cost = 20
+		modifier = {
+			political_power_gain = -0.1
+		}
 
-		complete_effect = {
+		remove_effect = {
 			add_stability = 0.05
 			add_political_power = 50
 			add_popularity = {
 				ideology = centrism
 				popularity = -0.05
+			}
+			clr_country_flag = SER_purged_council
+			hidden_effect = {
+				country_event = {id = SER_politics.48 days = 2}
 			}
 		}
 
@@ -240,12 +477,8 @@ SER_decision_category_political = {
 			base = 100
 		}
 	}
+
 }
-
-
-
-
-
 
 SER_decision_category_french_mission  = {
 	
@@ -972,6 +1205,12 @@ SER_decision_category_french_mission  = {
 			has_completed_focus = SER_blaznavac_war_minister
 		}
 		
+		cancel_trigger = {
+			NOT = {
+				has_global_flag = eoanb_flag_franco_prussian_war_ongoing
+			}
+		}
+		
 		fire_only_once = no
 
 		cost = 50
@@ -1363,7 +1602,7 @@ eoanb_category_economic = {
 		}
 		
 		remove_effect = { 
-			add_stability = 0.02
+			add_political_power = 50
 			107 = { add_extra_state_shared_building_slots = 1 }
 		}
 
@@ -2941,148 +3180,6 @@ SER_decision_category_lyumbomir_kleric = {
 	}
 }
 
-SER_decision_category_macedonia_propaganda = {
-	SER_decision_build_churches = {
-		icon = generic_construction
-	
-		#allowed = { tag = SER }
-		
-		visible = {
-			has_completed_focus = SER_macedonia_propoganda
-		}
-	
-		fire_only_once = yes
-		cost = 20
-		days_remove = 90
-	
-		remove_effect = { 
-			add_stability = 0.03
-		}
-	
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	SER_decision_finance_renovate_school = {
-		icon = generic_construction
-	
-		allowed = {
-			tag = SER
-		}
-		visible = {
-			has_completed_focus = SER_macedonia_propoganda
-		}
-	
-		fire_only_once = yes
-		cost = 50
-		days_remove = 120
-
-		modifier = {
-			civilian_factory_use = 2
-		}
-		remove_effect = { 
-			add_ideas = SER_idea_renovated_finance_schools
-			add_stability = 0.03
-		}
-	
-		ai_will_do = {
-			base = 1000
-		}
-	}
-}
-
-SER_decision_category_albanian_cooperation = {
-	SER_decision_send_cpt_ljubomir_ivanovic = {
-		icon = generic_construction
-	
-		#allowed = { tag = SER }
-		
-		visible = {
-			has_completed_focus = SER_cooperate_with_albania
-		}
-	
-		fire_only_once = yes
-		custom_cost_trigger = {
-			command_power > 20
-	   }
-	   custom_cost_text = SER_command_power_more_than_20
-		days_remove = 50
-	
-		remove_effect = { 
-			add_war_support = 0.03
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	SER_decision_aid_albanian_resistance = {
-		icon = generic_construction
-	
-		#allowed = { tag = SER }
-		
-		available = {
-			has_equipment = {
-				infantry_equipment > 999
-			}
-		}
-		visible = {
-			has_completed_focus = SER_cooperate_with_albania
-		}
-	
-		fire_only_once = yes
-		custom_cost_trigger = {
-			command_power > 20
-	   }
-	   custom_cost_text = SER_command_power_more_than_20
-		days_remove = 120
-	
-		remove_effect = { 
-			add_war_support = 0.05
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -1000
-				producer = SER
-			}
-		}
-	
-		ai_will_do = {
-			base = 1000
-		}
-	}
-}
-
-SER_decision_category_propaganda_newspaper = {
-	SER_decision_propaganda_newspaper = {
-		icon = generic_construction
-	
-		allowed = {
-			tag = SER
-		}
-		visible = {
-			has_completed_focus = SER_work_with_omalandi
-		}
-	
-		fire_only_once = yes
-		cost = 50
-	
-		remove_effect = { 
-			add_stability = 0.03
-			add_war_support = 0.03
-		}
-	
-		ai_will_do = {
-			base = 1000
-		}
-	}
-}
-
 SER_decision_category_cukur = {
 
 	SER_begin_operation = {
@@ -3334,31 +3431,517 @@ SER_decision_category_cukur = {
 	}
 }
 
- 
-#	SER_send_filip = {
-#		icon = GFX_decision_icon_default
-#
-#		allowed = {
-#			tag = SER
-#		}
-#		visible = {
-#			has_country_flag = SER_siege
-#		}
-#
-#		fire_only_once = yes
-#
-#		cost = 25
-#
-#		complete_effect = {
-#			ENG = {
-#				country_event = {
-#					id = SER_filipengland.1
-#					days = 7
-#				}
-#			}
-#		}
-#
-#		ai_will_do = {
-#			base = 100
-#		}
-#	}
+SER_decision_category_balkan_politics = {
+
+
+	SER_decision_voslau_treaty = {
+		
+		icon = generic_military
+
+		available = {
+			has_completed_focus = SER_voslau_treaty
+			GRE = {
+				has_war = no
+			}
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 55
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.05
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			country_event = SER_politics.41
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	SER_decision_support_albanians = {
+		
+		icon = generic_military
+
+		available = {
+			has_completed_focus = SER_cooperate_with_albania
+			has_war = no
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 55
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.05
+		}
+		
+		complete_effect = {
+			44 = {
+				custom_effect_tooltip = "RUS_vic_NA_tooltip"
+				hidden_effect = {
+					add_compliance = -20
+					add_resistance = 20
+				}
+			}
+		}
+
+		remove_effect = {
+			
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	SER_decision_ljubomir_ivanovic = {
+		
+		icon = generic_military
+
+		available = {
+			has_completed_focus = SER_cooperate_with_albania
+			has_war = no
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 55
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.15
+		}
+		
+		complete_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -500 producer = SER } 
+		}
+
+		remove_effect = {
+			44 = {
+				custom_effect_tooltip = "RUS_vic_NA_tooltip"
+				hidden_effect = {
+					add_compliance = -25
+					add_resistance = 25
+				}
+			}
+			ALB = {
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = SER }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	SER_decision_churches_macedonia = {
+		
+		icon = generic_military
+
+		available = {
+			has_completed_focus = SER_macedonia_propoganda
+			has_war = no
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 75
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.15
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			106 = {
+				custom_effect_tooltip = "RUS_vic_NA_tooltip"
+				hidden_effect = {
+					add_compliance = -25
+					add_resistance = 25
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	SER_decision_finance_schools = {
+		
+		icon = generic_military
+
+		available = {
+			has_completed_focus = SER_macedonia_propoganda
+			has_war = no
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 75
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.15
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			106 = {
+				custom_effect_tooltip = "RUS_vic_NA_tooltip"
+				hidden_effect = {
+					add_compliance = -25
+					add_resistance = 25
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	SER_decision_raise_first_bulgarian_legion = {
+		
+		icon = generic_military
+
+		available = {
+			SER = { has_defensive_war_with = OTO }
+		}
+
+		visible = {
+			
+		}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+		is_good = yes
+
+		cost = 75
+		days_remove = 50
+
+		modifier = {
+		    political_power_gain = -0.15
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			OTO = { country_event = { days = 15 id = SER_politics.44 } }
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+SER_decision_category_maistorovich_affair = {
+	SER_decision_police_smederevo = {
+		icon = generic_military
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SER_doing_police_mission_tt
+				NOT = {
+					has_country_flag = SER_doing_police_mission
+				}
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = SER_maistorovich_coup
+		#}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		cost = 50
+
+		days_remove = 40
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = SER_maistorovich_coup
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 107
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+
+		complete_effect = {
+			add_manpower = -500
+			add_war_support = 0.02
+			hidden_effect = {
+				set_country_flag = SER_doing_police_mission
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = SER_pacified_cities_tt
+			hidden_effect = {
+				clr_country_flag = SER_doing_police_mission
+				add_to_variable = {
+					var = SER_pacified_cities
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SER_focus_police_kragujevac = {
+		icon = generic_military
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SER_doing_police_mission_tt
+				NOT = {
+					has_country_flag = SER_doing_police_mission
+				}
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = SER_maistorovich_coup
+		#}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		cost = 50
+
+		days_remove = 40
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = SER_maistorovich_coup
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 107
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+
+		complete_effect = {
+			add_manpower = -500
+			add_war_support = 0.02
+			hidden_effect = {
+				set_country_flag = SER_doing_police_mission
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = SER_pacified_cities_tt
+			hidden_effect = {
+				clr_country_flag = SER_doing_police_mission
+				add_to_variable = {
+					var = SER_pacified_cities
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SER_focus_police_posarevac = {
+		icon = generic_military
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SER_doing_police_mission_tt
+				NOT = {
+					has_country_flag = SER_doing_police_mission
+				}
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = SER_maistorovich_coup
+		#}
+		
+		#allowed = { tag = SER }
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		cost = 50
+
+		days_remove = 40
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = SER_maistorovich_coup
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 941
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		
+		complete_effect = {
+			add_manpower = -500
+			add_war_support = 0.02
+			hidden_effect = {
+				set_country_flag = SER_doing_police_mission
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = SER_pacified_cities_tt
+			hidden_effect = {
+				clr_country_flag = SER_doing_police_mission
+				add_to_variable = {
+					var = SER_pacified_cities
+					value = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SER_mission_maistorovich_coup = {
+		icon = generic
+
+		allowed = { always = no }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SER_pacified_cities_all_tt
+				check_variable = { SER_pacified_cities = 3}
+			}
+		}
+
+		activation = { always = no }
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		days_mission_timeout = 220
+
+		timeout_effect = {
+			custom_effect_tooltip = SER_coup_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = { SER_pacified_cities > 1}
+					}
+					country_event = { id = SER_politics.56 }
+				}
+				else = {
+					country_event = { id = SER_politics.57 }
+				}
+			}
+		}
+
+		complete_effect = {
+			country_event = { id = SER_politics.56 }
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+}

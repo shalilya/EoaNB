@@ -585,3 +585,141 @@ DMY_decision_navy = {
 		}
 	}
 }
+DMY_decision_daimyo_tactics = {
+	DMY_decision_beach_defence_upkeep_half = {
+		icon = GFX_decision_fort
+		allowed = {
+			
+		}
+		available = {
+			has_completed_focus = dmy_beach_defenses
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = DMY_decision_beach_defence_flag
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = dmy_beach_defenses
+			NOT = {
+				has_country_flag = DMY_decision_beach_defence_flag
+			}
+		}
+		fire_only_once = no
+		cost = 30
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.02
+		}
+		complete_effect = {
+			add_war_support = 0.02
+		}
+		remove_effect = {
+			unlock_decision_tooltip = DMY_decision_beach_defence_upkeep_full
+			set_country_flag = DMY_decision_beach_defence_flag
+			swap_ideas = { remove_idea = DMY_enganbogyo_idea add_idea = DMY_enganbogyo_idea_beach_1 }
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	DMY_decision_beach_defence_upkeep_full = {
+		icon = GFX_decision_fort
+		allowed = {
+			
+		}
+		available = {
+			has_country_flag = DMY_decision_beach_defence_flag
+		}
+		visible = {
+			has_country_flag = DMY_decision_beach_defence_flag
+		}
+		fire_only_once = no
+		cost = 30
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.02
+		}
+		complete_effect = {
+			add_war_support = 0.02
+		}
+		remove_effect = {
+			unlock_decision_tooltip = DMY_decision_beach_defence_upkeep_half
+			clr_country_flag = DMY_decision_beach_defence_flag
+			swap_ideas = { remove_idea = DMY_enganbogyo_idea_beach_1 add_idea = DMY_enganbogyo_idea_beach_2 }
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	DMY_decision_mainland_defence_upkeep_half = {
+		icon = GFX_decision_fort
+		allowed = {
+			
+		}
+		available = {
+			has_completed_focus = dmy_mainland_defense
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = DMY_decision_mainland_defence_flag
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = dmy_mainland_defense
+			NOT = {
+				has_country_flag = DMY_decision_mainland_defence_flag
+			}
+		}
+		fire_only_once = no
+		cost = 30
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.02
+		}
+		complete_effect = {
+			add_war_support = 0.02
+		}
+		remove_effect = {
+			unlock_decision_tooltip = DMY_decision_mainland_defence_upkeep_full
+			set_country_flag = DMY_decision_mainland_defence_flag
+			swap_ideas = { remove_idea = DMY_enganbogyo_idea add_idea = DMY_enganbogyo_idea_land_1 }
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	DMY_decision_mainland_defence_upkeep_full = {
+		icon = GFX_decision_fort
+		allowed = {
+			
+		}
+		available = {
+			has_country_flag = DMY_decision_mainland_defence_flag
+		}
+		visible = {
+			has_country_flag = DMY_decision_mainland_defence_flag
+		}
+		fire_only_once = no
+		cost = 30
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.02
+		}
+		complete_effect = {
+			add_war_support = 0.02
+		}
+		remove_effect = {
+			unlock_decision_tooltip = DMY_decision_mainland_defence_upkeep_half
+			clr_country_flag = DMY_decision_mainland_defence_flag
+			swap_ideas = { remove_idea = DMY_enganbogyo_idea_land_1 add_idea = DMY_enganbogyo_idea_land_2 }
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}

@@ -4168,7 +4168,7 @@
 4167;47;165;153;land;false;hills;6
 4168;47;168;13;land;true;plains;2
 4169;47;168;68;land;true;mountain;6
-4170;47;168;218;land;true;plains;1
+4170;47;168;218;land;true;hills;1
 4171;47;171;33;land;false;forest;5
 4172;47;171;183;land;false;hills;6
 4173;47;174;98;land;false;plains;6
@@ -9615,7 +9615,7 @@
 9614;129;42;24;land;false;plains;1
 9615;129;42;69;land;false;forest;2
 9616;129;45;34;land;false;hills;2
-9617;129;45;89;land;false;urban;1
+9617;129;45;89;land;false;plains;1
 9618;129;45;139;land;false;mountain;1
 9619;129;48;54;land;false;mountain;1
 9620;129;48;204;land;false;hills;1
@@ -9904,7 +9904,7 @@
 9903;130;177;79;land;false;hills;1
 9904;130;177;129;land;true;urban;1
 9905;130;180;44;land;false;plains;6
-9906;130;180;89;land;false;mountain;1
+9906;130;180;89;land;false;forest;1
 9907;130;183;54;land;false;urban;1
 9908;130;183;159;land;false;hills;2
 9909;130;186;19;land;true;urban;1
@@ -12056,7 +12056,7 @@
 12055;173;159;152;land;false;plains;6
 12056;173;162;12;land;false;hills;6
 12057;173;162;67;land;false;mountain;6
-12058;173;162;217;land;true;plains;1
+12058;173;162;217;land;true;hills;1
 12059;173;165;32;land;false;mountain;6
 12060;173;165;182;land;true;hills;6
 12061;173;168;97;land;false;forest;6
@@ -13672,7 +13672,7 @@
 13671;89;243;79;land;false;forest;2
 13672;30;40;8;land;false;hills;1
 13673;61;80;22;land;false;urban;1
-13674;26;79;68;land;false;urban;1
+13674;26;79;68;land;false;forest;1
 13675;13;46;39;land;false;forest;1
 13676;92;118;65;land;false;forest;1
 13677;47;84;10;land;false;hills;1
@@ -13791,7 +13791,7 @@
 13790;100;145;138;land;false;hills;6
 13791;70;97;159;land;true;hills;6
 13792;170;173;131;land;false;hills;6
-13793;98;135;59;land;true;hills;6
+13793;98;135;59;land;false;hills;6
 13794;67;163;165;land;false;hills;6
 13795;175;109;42;land;false;hills;6
 13796;52;225;3;land;false;hills;1
@@ -14377,3 +14377,5 @@
 14376;43;29;35;land;false;plains;5
 14377;175;22;53;land;false;plains;5
 14378;85;89;177;lake;false;lakes;2
+14379;93;216;95;land;false;plains;1
+14380;215;160;209;land;false;plains;1

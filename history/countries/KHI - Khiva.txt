@@ -43,7 +43,9 @@
 		navinfra_no_naval_infrastructure
 		sfund_private_ventures_only
 
-				 #NATIONAL SPIRITS
+	#NATIONAL SPIRITS
+	KHI_persion_slaves
+	KHI_karacheriks
 
 	}
 
@@ -53,8 +55,8 @@
 
   set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0

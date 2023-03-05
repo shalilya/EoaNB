@@ -630,7 +630,7 @@ ideas = {
 			picture = placeholder
 
 			modifier = {
-				navy_refit_speed = 0.05
+				refit_speed = 0.05
 				experience_gain_navy = 0.1
 				navy_visibility = 0.1
 				spotting_chance = 0.1
@@ -887,10 +887,10 @@ ideas = {
 		}
 		
 		
-		CET_idea_cretan_fighters = {
+		CET_idea_cretan_spirit = {
 	
 	        allowed = {
-	            always = no 
+	            has_war_with = OTO
 	        }
 			
 			allowed_civil_war = {
@@ -899,17 +899,18 @@ ideas = {
 	
 	        removal_cost = -1
 			
-	        picture = placeholder
+	        picture = gre_venerate_the_ancient_hellenes_hoplite
 	
 			targeted_modifier = { 
 				tag = OTO
-				attack_bonus_against = 0.8 
-			} 
+				attack_bonus_against = 0.5
+				defense_bonus_against = 0.5
+			}
 	
 	        modifier = { 
                 army_org_Factor = 0.5 
-				army_core_attack_factor = 0.5 
-				conscription = 0.35 
+				army_core_attack_factor = 0.5
+				conscription = 0.35
 			}
         }
 		
@@ -1465,7 +1466,7 @@ ideas = {
 			}
 		}
 		
-		GRE_idea_collectivist_socialism_drift = {
+		GRE_idea_ideology_radical_socialism_drift = {
 			allowed = {
 	            always = no 
 	        }
@@ -1479,7 +1480,7 @@ ideas = {
 	        picture = generic_constitutional_guarantees
 		
 			modifier = { 
-				collectivist_socialism_drift = 0.02
+				ideology_radical_socialism_drift = 0.02
 			}
 		}
 		
@@ -1639,7 +1640,7 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = GRE_expand_the_laurion_mines
+				has_country_flag = GRE_the_laurion_mines_exploited_by_France
 			}
 
 			cost = 150
@@ -1647,6 +1648,30 @@ ideas = {
 			
 			traits = {
 				GRE_trait_laurion_mines
+			}
+
+			research_bonus = {
+				resource_extraction_tech = 0.05
+			}
+		}
+
+		GRE_nationalised_laurion_mines = {
+
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				tag = GRE
+			}
+			
+			available = {
+				has_country_flag = GRE_the_laurion_mines_exploited
+			}
+
+			cost = 150
+			removal_cost = 10
+			
+			traits = {
+				GRE_trait_nationalised_laurion_mines
 			}
 
 			research_bonus = {

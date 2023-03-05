@@ -799,6 +799,165 @@ country_event = {
 		reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_RUS_decrease_small }
 		}
 	}
+### HIDDEN EVENT
+# moved to become a hidden mission (JAP_industrialization_funding_mission_hidden)
+	# country_event = {
+	# 	id = japindustrialrevolution.39
+	# 	title = japindustrialrevolution.39.t
+	# 	desc = japindustrialrevolution.39.d
+	# 	#picture =
+
+	# 	fire_only_once = no
+	# 	#is_triggered_only = yes
+	# 	hidden = yes
+
+	# 	trigger = {
+	# 		original_tag = JAP
+	# 		has_country_flag = jap_industralisation_funding_events_flag
+	# 	}
+
+	# 	option = {
+	# 		name = japindustrialrevolution.39.a
+	# 		random_list = {
+	# 			6 = {
+	# 				country_event = japindustrialrevolution.40 #Public Funding Campagin
+	# 				country_event = japindustrialrevolution.39 #LOOP
+	# 			}
+	# 			12 = {
+	# 				country_event = japindustrialrevolution.41 #Private Funding Campagin
+	# 				country_event = japindustrialrevolution.39 #LOOP
+	# 			}
+	# 			18 = {
+	# 				country_event = japindustrialrevolution.42 #Government Funding Campagin
+	# 				country_event = japindustrialrevolution.39 #LOOP
+	# 			}
+	# 			64 = {
+	# 				country_event = japindustrialrevolution.43 #Nothing
+	# 				country_event = japindustrialrevolution.39 #LOOP
+	# 			}
+	# 		}
+	# 	}
+	# }
+### PUBLIC FUNDING EVENT
+country_event = {  
+	id = japindustrialrevolution.40
+	title = japindustrialrevolution.40.t
+	desc = japindustrialrevolution.40.d
+	picture = GFX_tun_the_fundamental_pact
+
+	fire_only_once = no
+	is_triggered_only = yes
+
+	option = {
+		name = japindustrialrevolution.40.a
+			random_list = {
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission4
+						days = 20
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission3
+						days = 20
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission2
+						days = 20
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission
+						days = 20
+					}
+				}
+			}
+		}
+	}
+### PRIVATE FUNDING EVENT
+country_event = {  
+	id = japindustrialrevolution.41
+	title = japindustrialrevolution.41.t
+	desc = japindustrialrevolution.41.d
+	picture = GFX_tun_the_fundamental_pact
+
+	fire_only_once = no
+	is_triggered_only = yes
+
+	option = {
+		name = japindustrialrevolution.41.a
+			random_list = {
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission4
+						days = 40
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission3
+						days = 40
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission2
+						days = 40
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission
+						days = 40
+					}
+				}
+			}
+		}
+	}
+### GOVERNMENT FUNDING EVENT
+country_event = {  
+	id = japindustrialrevolution.42
+	title = japindustrialrevolution.42.t
+	desc = japindustrialrevolution.42.d
+	picture = GFX_tun_the_fundamental_pact
+
+	fire_only_once = no
+	is_triggered_only = yes
+
+	option = {
+		name = japindustrialrevolution.42.a
+			random_list = {
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission4
+						days = 60
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission3
+						days = 60
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission2
+						days = 60
+					}
+				}
+				25 = {
+					add_days_mission_timeout = {
+						mission = JAP_industrialization_mission
+						days = 60
+					}
+				}
+			}
+		}
+	}
 ### JAPANESE POLITICAL TREE
 ### Decide the Monetary System
 country_event = {  
@@ -978,13 +1137,13 @@ country_event = {
 	desc = {
 		text = JAP_imperial.7.d1
 		trigger = {
-			has_completed_focus = JAP_abolish_the_han_system
+		#	has_completed_focus = JAP_abolish_the_han_system
 		}
 	}
 	desc = {
 		text = JAP_imperial.7.d2
 		trigger = {
-			has_completed_focus = JAP_let_the_domains_live
+		#	has_completed_focus = JAP_let_the_domains_live
 		}
 	}
 	#picture =
@@ -1002,7 +1161,7 @@ country_event = {
 		if = {
 			limit = {
 				FROM = {
-					has_completed_focus = JAP_let_the_domains_live
+				#	has_completed_focus = JAP_let_the_domains_live
 				}
 			}
 			decrease_ps_by_one = yes
@@ -1018,7 +1177,7 @@ country_event = {
 		if = {
 			limit = {
 				FROM = {
-					has_completed_focus = JAP_abolish_the_han_system
+				#	has_completed_focus = JAP_abolish_the_han_system
 				}
 			}
 			decrease_ps_by_one = yes
@@ -1594,6 +1753,7 @@ country_event = {
 		}
 	}
 }
+### BEGINNING OF THE PAIWAN EXPEDITION
 country_event = {
 	id = JAP_imperial.23
 	title = JAP_imperial.23.t
@@ -1605,7 +1765,6 @@ country_event = {
 
 	option = {
 		activate_mission_tooltip = JAP_monthly_kills_mission
-		add_ideas = JAP_taiwan_exp
 		hidden_effect = {
 			activate_mission = JAP_monthly_kills_mission
 			add_to_variable = {

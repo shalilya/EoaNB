@@ -98,8 +98,8 @@
 
 	set_popularities = {
 		anarchism = 5
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 15
 		centrism = 35
 		traditional_conservatism = 30
@@ -246,33 +246,6 @@
 		}
 	}
 
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
-		set_autonomy = {
-			target = SUL
-			autonomous_state = autonomy_colony
-			freedom_level = 0.2
-		}
-	}
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-		}
-		puppet = SUL
-	}
-
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = SPR }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = SPR }
 
@@ -323,7 +296,7 @@
 		}
 		create_equipment_variant = {
 			name = "Villa de Bilbao Class"
-			type = ship_hull_corvette_0
+			type = ship_hull_corvette_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -338,7 +311,7 @@
 		}
 		create_equipment_variant = {
 			name = "Colón Class"
-			type = ship_hull_corvette_0
+			type = ship_hull_corvette_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -353,7 +326,7 @@
 		}
 		create_equipment_variant = {
 			name = "Isabel II Class"
-			type = ship_hull_corvette_0
+			type = ship_hull_corvette_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {

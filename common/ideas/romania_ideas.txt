@@ -15,13 +15,48 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = ROM_unity
 			
 			modifier = {
 				political_power_gain = -0.8
 			}
 		}
+		ROM_idea_Confused_bureaucracy = {
 
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = generic_bad_constitution
+			
+			modifier = {
+				political_power_gain = -0.4
+				stability_factor = -0.2
+				consumer_goods_factor = 0.25
+			}
+		}
+		ROM_idea_Confused_bureaucracy2 = {
+
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = generic_bad_constitution
+			
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.05
+				consumer_goods_factor = 0.1
+			}
+		}
 		ROM_idea_focsani_central_commission = {
 
 			allowed = { 
@@ -32,7 +67,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = generic_government_centralisation
 			
 			modifier = {
 				autonomy_gain = -0.5
@@ -50,7 +85,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = OTO_the_sick_man
 			
 			modifier = {
 				autonomy_gain = 0.5
@@ -70,10 +105,26 @@ ideas = {
 			picture = placeholder
 			
 			modifier = {
-				political_power_gain = 0.5
+				political_power_gain = 0.1
 			}
 		}
+		ROM_idea_constitutional_monarchy = {
 
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_gain = -0.4
+				stability_weekly = 0.01
+			}
+		}
 		######################
 		### MILITARY IDEAS ###
 		######################
@@ -93,10 +144,8 @@ ideas = {
 			modifier = {
 				command_power_gain = -0.2
 				conscription_factor = 0.4
-				army_org_regain = -0.2
 				army_morale_factor = -0.4
                 		supply_consumption_factor = -0.2
-				army_core_attack_factor = -0.2
 				army_core_defence_factor = 0.2
 				army_org_factor = -0.2
 			}
@@ -117,10 +166,7 @@ ideas = {
 			modifier = {
 				command_power_gain = 0.1
 				conscription_factor = 0.15
-				army_org_regain = 0.15
-				army_morale_factor = 0.1
                 		supply_consumption_factor = 0.1
-				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.2
 				army_org_factor = 0.05
 				dig_in_speed = 5
@@ -196,11 +242,11 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = army_spending_cuts
 			
 			modifier = {
-				offence = -0.1
-				defence = -0.1
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
 				army_org_factor = -0.2
 				army_org_regain = -0.1
 				army_morale = -0.15
@@ -217,11 +263,11 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = generic_army_investment
 			
 			modifier = {
-				offence = 0.1
-				defence = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
 				army_org_factor = 0.15
 				army_org_regain = 0.1
 				army_morale = 0.2
@@ -239,7 +285,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = BEL_industrial_revolution
 			
 			modifier = {
 				consumer_goods_factor = 0.02
@@ -263,7 +309,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = generic_army_corruption
 			
 			modifier = {
 				command_power_gain = -0.4
@@ -283,7 +329,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = generic_army_corruption
 			
 			modifier = {
 				command_power_gain = -0.2
@@ -303,7 +349,7 @@ ideas = {
 				always = no
 			}
 
-			picture = placeholder
+			picture = generic_army_corruption
 			
 			modifier = { 
 				command_power_gain = -0.15
@@ -311,6 +357,25 @@ ideas = {
                 army_org_regain = -0.25
                 supply_consumption_factor = 0.34
 				conscription_factor = -0.4
+			}
+		}
+		ROM_idea_corrupted_army4 = {
+			allowed = { 
+			    always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = generic_army_corruption
+			
+			modifier = { 
+				command_power_gain = -0.1
+				army_org_factor = -0.2
+                army_org_regain = -0.2
+                supply_consumption_factor = 0.24
+				conscription_factor = -0.2
 			}
 		}
 		
@@ -380,7 +445,7 @@ ideas = {
 			picture = placeholder
 			
 			modifier = {
-				political_power_factor = -0.1
+				political_power_factor = -0.15
 				war_support_factor = -0.05
 			}
 		}
@@ -397,7 +462,7 @@ ideas = {
 			picture = placeholder
 			
 			modifier = {
-				political_power_factor = -0.15
+				political_power_factor = -0.2
 				war_support_factor = -0.1
 			}
 		}
@@ -414,11 +479,28 @@ ideas = {
 			picture = placeholder
 			
 			modifier = {
-				political_power_factor = -0.2
+				political_power_factor = -0.25
 				war_support_factor = -0.15
 			}
 		}
+		ROM_idea_gendarmerie = {
 
+			allowed = { 
+			    always = no 
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = placeholder
+			
+			modifier = {
+				political_power_factor = 0.03
+				war_support_factor = 0.05
+				stability_factor = 0.1
+			}
+		}
+		
 		####################
 		### AGRICULTURE? ###
 		####################
@@ -448,7 +530,7 @@ ideas = {
 			
 			modifier = {
                                 consumer_goods_factor = -0.05
-				political_power_gain = 0.1
+				political_power_gain = 0.05
 				production_speed_buildings_factor = 0.1 
 			}
 		}
@@ -539,7 +621,191 @@ ideas = {
                 research_speed_factor = -0.20
 			}
 		}
-		
+		ROM_expensive_schooling = {
+			allowed_civil_war = {
+				always = no
+			}
+			picture = ROM_idea_illteracy
+			modifier = {
+				consumer_goods_factor = 0.25
+			}
+		}
+		ROM_underfunded_schools = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_illteracy
+
+			modifier = {
+                research_speed_factor = -0.15
+				consumer_goods_factor = -0.05
+			}
+		}
+		ROM_failed_education_reform = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ROM_idea_illteracy
+
+			modifier = {
+                research_speed_factor = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		ROM_bucharest_university = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_technical_school
+
+			modifier = {
+                research_speed_factor = 0.05
+				consumer_goods_factor = 0.05
+				political_power_factor = 0.01
+			}
+		}
+		ROM_bucharest_university2 = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_technical_school
+
+			modifier = {
+                research_speed_factor = 0.08
+				consumer_goods_factor = 0.06
+				political_power_factor = 0.05
+			}
+		}
+		ROM_economic_boom = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_rapid_industrialisation
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_factor = 0.02
+				stability_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		ROM_post_service = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_factor = -0.25
+				stability_factor = 0.2
+				global_building_slots_factor = 0.2
+				
+			}
+		}
+		ROM_better_post_service = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_factor = -0.3
+				stability_factor = 0.4
+				global_building_slots_factor = 0.4
+				
+			}
+		}
+		ROM_failed_economic_reform = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = the_market_crash
+
+			modifier = {
+				consumer_goods_factor = 0.2
+				political_power_factor = -0.6
+				stability_factor = -0.2
+				production_speed_buildings_factor = -0.1
+				
+			}
+		}
+		ROM_merged_court_system = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_government_centralisation
+
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.3
+			}
+		}
+		ROM_new_civil_penal_code = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_civil_servant_law
+
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.3
+				war_support_factor = 0.35
+			}
+		}
+		ROM_failed_legal_reform = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_assembly_tensions
+
+			modifier = {
+				political_power_factor = -0.7
+				stability_factor = -0.3
+				stability_weekly = -0.01
+				war_support_factor = -0.35
+			}
+		}
+		ROM_romanul_currency = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_bank
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				political_power_gain = 0.03
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		ROM_embargoed_economy = {
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_poor_working_condition
+
+			modifier = {
+				consumer_goods_factor = 0.3
+				political_power_gain = -0.5
+				stability_weekly = -0.01
+				war_support_factor = 0.3
+				production_speed_buildings_factor = -0.2
+			}
+		}
 		ROM_ruined_agriculture = {
 			allowed_civil_war = {
 				always = yes
@@ -652,55 +918,6 @@ ideas = {
 			}
 		}
 		
-		ROM_preparing_industralization = {
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-                consumer_goods_factor = -0.15
-				political_power_gain = -0.15
-				local_building_slots_factor = -0.1
-                production_speed_buildings_factor = -0.25 				
-			}
-		}
-		
-		ROM_preparing_industralization1 = {
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-                consumer_goods_factor = -0.1
-				political_power_gain = -0.1
-				local_building_slots_factor = -0.1
-                production_speed_buildings_factor = -0.20				
-			}
-		}
-		
-		ROM_preparing_industralization2 = {
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-                consumer_goods_factor = -0.05
-				political_power_gain = -0.05
-				local_building_slots_factor = -0.1
-                production_speed_buildings_factor = -0.15
-			}
-		}
-		
-		ROM_compensating_landowners = {
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-                consumer_goods_factor = 0.1
-			}
-		}
-		
 		ROM_incompetent_officers = {
 
 	         picture = SWE_Inept_Army
@@ -729,6 +946,20 @@ ideas = {
 			}
 		}
 		
+		ROM_idea_floods = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_epidemic
+			
+			modifier = {
+				political_power_factor = -0.2
+				war_support_factor = -0.3
+				stability_factor = -0.2
+				consumer_goods_factor = 0.5
+			}
+		}
 		ROM_bulgarian_refugees = {
 		    allowed_civil_war = {
 				always = yes
@@ -741,7 +972,199 @@ ideas = {
 				political_power_gain = -0.05
 			}
 		}
-		
+		ROM_idea_danube_trade = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = road_investments
+
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		ROM_idea_danube_trade2 = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = road_investments
+
+			modifier = {
+				political_power_gain = 0.15
+				consumer_goods_factor = -0.05
+			}
+		}
+		ROM_idea_danube_trade3 = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = road_investments
+
+			modifier = {
+				political_power_gain = 0.2
+				consumer_goods_factor = -0.05
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		ROM_idea_confusing_medical_system = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_epidemic
+
+			modifier = {
+				monthly_population	 = 0.05
+				political_power_gain = -0.2
+				consumer_goods_factor = 0.05
+			}
+		}
+		ROM_idea_romanian_medical_system = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_improve_credit_organisation
+
+			modifier = {
+				monthly_population	 = 0.05
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.05
+			}
+		}
+		ROM_idea_romanian_medical_system2 = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_improve_credit_organisation
+
+			modifier = {
+				monthly_population	 = 0.1
+				political_power_gain = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		ROM_idea_romanian_medical_system3 = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_improve_credit_organisation
+
+			modifier = {
+				monthly_population	 = 0.1
+				political_power_gain = -0.05
+				stability_factor = 0.05
+				consumer_goods_factor = 0.1
+			}
+		}
+		ROM_idea_romanian_medical_system4 = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_improve_credit_organisation
+
+			modifier = {
+				monthly_population	 = 0.15
+				stability_factor = 0.05
+				consumer_goods_factor = 0.1
+			}
+		}
+		ROM_idea_seized_church_land = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_rapid_industrialisation
+
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.1
+				political_power_gain = 0.12
+			}
+		}
+		ROM_idea_unhappy_church_cuza = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SWE_Toxic_Politics
+
+			modifier = {
+				stability_weekly = -0.05
+				political_power_gain = -0.4
+			}
+		}
+		ROM_idea_heavy_compensation = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = money_bad
+
+			modifier = {
+				political_power_gain = -0.5
+				consumer_goods_factor = 0.3
+				stability_weekly = 0.02
+			}
+		}
+		ROM_idea_light_compensation = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = money_bad
+
+			modifier = {
+				political_power_gain = -0.3
+				consumer_goods_factor = 0.15
+			}
+		}
+		ROM_idea_peasant_distribution = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = farmer_wheat_law_treaty_chain
+
+			modifier = {
+				stability_weekly = 0.01
+				political_power_gain = 0.01
+				consumer_goods_factor = 0.05
+			}
+		}
+		ROM_idea_agriculture_golden_age = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = golden_era
+
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.15
+				conscription_factor = 0.1
+				political_power_gain = 0.06
+			}
+		}
+		ROM_idea_dream_modern_romania = {
+		    allowed_civil_war = {
+				always = yes
+			}
+
+			picture = placeholder
+
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				army_morale_factor = 0.05
+				political_power_gain = 0.03
+			}
+		}
 		ROM_romanian_merchant_navy = {
 			allowed = {
 				always = yes
@@ -761,6 +1184,256 @@ ideas = {
 				trade_opinion_factor = 0.03
 				faction_trade_opinion_factor = 0.03
 				autonomy_gain_trade = 0.05
+			}
+		}
+		
+		######################
+		###   CAROL IDEAS  ### 
+		######################
+		
+		ROM_carols_constitution = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_five_year_plan_industry
+			
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = 0.05
+			}
+		}
+		
+		ROM_endemic_corruption = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = -0.25
+				political_power_gain = 0.2
+			}
+		}
+		
+		ROM_endemic_corruption2 = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = 0.025
+				stability_factor = -0.1
+				political_power_gain = 0.5
+			}
+		}
+		
+		ROM_endemic_corruption3 = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = -0.3
+				political_power_gain = 0.2
+			}
+		}
+		
+		ROM_endemic_corruption4 = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = -0.325
+				political_power_gain = 0.25
+			}
+		}
+		ROM_endemic_corruption5 = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = 0.35
+				stability_factor = -0.25
+				political_power_gain = 0.05
+			}
+		}
+		
+		ROM_peasant_unrest = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				stability_weekly = -0.025
+			}
+		}
+		
+		ROM_peasant_unrest2 = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				stability_weekly = -0.005
+			}
+		}
+		
+		ROM_romanian_parliament = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				political_power_gain = 0.5
+			}
+		}
+		
+		ROM_unsatisfied_populace = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				stability_weekly = -0.15
+			}
+		}
+		
+		ROM_revolting_landowners = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				stability_weekly = -0.05
+			}
+		}
+		ROM_new_agrarian_reform_idea = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		ROM_great_society = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = GFX_
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.02
 			}
 		}
 	}

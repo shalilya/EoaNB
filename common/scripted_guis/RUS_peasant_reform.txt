@@ -1,0 +1,493 @@
+scripted_gui = {
+	russian_peasant_reform_gui = {
+		window_name = "russian_peasant_reform_container"
+		context_type = player_context
+
+		allowed = { original_tag = RUS }
+
+		visible = {
+			has_country_flag = russian_peasant_reform_gui_flag
+		}
+
+		effects = {
+			close_button_click = {
+				clr_country_flag = russian_peasant_reform_gui_flag
+			}
+
+			#Tab Buttons
+				pr_tab_1_button_click = {
+					#set_country_flag = russian_peasant_reform_tab_1_flag
+					clr_country_flag = russian_peasant_reform_tab_2_flag
+					clr_country_flag = russian_peasant_reform_tab_3_flag
+					clr_country_flag = russian_peasant_reform_tab_4_flag
+					clr_country_flag = russian_peasant_reform_tab_5_flag
+					clr_country_flag = russian_peasant_reform_tab_6_flag
+				}
+				pr_tab_2_button_click = {
+					#clr_country_flag = russian_peasant_reform_tab_1_flag
+					set_country_flag = russian_peasant_reform_tab_2_flag
+					clr_country_flag = russian_peasant_reform_tab_3_flag
+					clr_country_flag = russian_peasant_reform_tab_4_flag
+					clr_country_flag = russian_peasant_reform_tab_5_flag
+					clr_country_flag = russian_peasant_reform_tab_6_flag
+				}
+				pr_tab_3_button_click = {
+					#clr_country_flag = russian_peasant_reform_tab_1_flag
+					clr_country_flag = russian_peasant_reform_tab_2_flag
+					set_country_flag = russian_peasant_reform_tab_3_flag
+					clr_country_flag = russian_peasant_reform_tab_4_flag
+					clr_country_flag = russian_peasant_reform_tab_5_flag
+					clr_country_flag = russian_peasant_reform_tab_6_flag
+				}
+				pr_tab_4_button_click = {
+					#clr_country_flag = russian_peasant_reform_tab_1_flag
+					clr_country_flag = russian_peasant_reform_tab_2_flag
+					clr_country_flag = russian_peasant_reform_tab_3_flag
+					set_country_flag = russian_peasant_reform_tab_4_flag
+					clr_country_flag = russian_peasant_reform_tab_5_flag
+					clr_country_flag = russian_peasant_reform_tab_6_flag
+				}
+				pr_tab_5_button_click = {
+					#clr_country_flag = russian_peasant_reform_tab_1_flag
+					clr_country_flag = russian_peasant_reform_tab_2_flag
+					clr_country_flag = russian_peasant_reform_tab_3_flag
+					clr_country_flag = russian_peasant_reform_tab_4_flag
+					set_country_flag = russian_peasant_reform_tab_5_flag
+					clr_country_flag = russian_peasant_reform_tab_6_flag
+				}
+				pr_tab_6_button_click = {
+					#clr_country_flag = russian_peasant_reform_tab_1_flag
+					clr_country_flag = russian_peasant_reform_tab_2_flag
+					clr_country_flag = russian_peasant_reform_tab_3_flag
+					clr_country_flag = russian_peasant_reform_tab_4_flag
+					clr_country_flag = russian_peasant_reform_tab_5_flag
+					set_country_flag = russian_peasant_reform_tab_6_flag
+				}
+			#
+			#Decision Buttons
+
+			#
+		}
+
+		triggers = {
+			pr_tab_1_button_visible = {
+				OR = {
+					has_country_flag = russian_peasant_reform_tab_2_flag
+					has_country_flag = russian_peasant_reform_tab_3_flag
+					has_country_flag = russian_peasant_reform_tab_4_flag
+					has_country_flag = russian_peasant_reform_tab_5_flag
+					has_country_flag = russian_peasant_reform_tab_6_flag
+				}
+			}
+			pr_tab_2_button_visible = {
+				NOT = {
+					has_country_flag = russian_peasant_reform_tab_2_flag
+				}
+			}
+			pr_tab_3_button_visible = {
+				NOT = {
+					has_country_flag = russian_peasant_reform_tab_3_flag
+				}
+			}
+			pr_tab_4_button_visible = {
+				NOT = {
+					has_country_flag = russian_peasant_reform_tab_4_flag
+				}
+			}
+			pr_tab_5_button_visible = {
+				NOT = {
+					has_country_flag = russian_peasant_reform_tab_5_flag
+				}
+			}
+			pr_tab_6_button_visible = {
+				NOT = {
+					has_country_flag = russian_peasant_reform_tab_6_flag
+				}
+			}
+		}
+
+		properties = {
+			pr_total_progress_bar = {
+				frame = RUS.pr_total_progress_var
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_1_gui = {
+		window_name = "russian_peasant_reform_tab_1_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = russian_peasant_reform_tab_2_flag
+					has_country_flag = russian_peasant_reform_tab_3_flag
+					has_country_flag = russian_peasant_reform_tab_4_flag
+					has_country_flag = russian_peasant_reform_tab_5_flag
+					has_country_flag = russian_peasant_reform_tab_6_flag
+				}
+			}
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_1
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_2_gui = {
+		window_name = "russian_peasant_reform_tab_2_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			has_country_flag = russian_peasant_reform_tab_2_flag
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_2
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_3_gui = {
+		window_name = "russian_peasant_reform_tab_3_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			has_country_flag = russian_peasant_reform_tab_3_flag
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_3
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_4_gui = {
+		window_name = "russian_peasant_reform_tab_4_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			has_country_flag = russian_peasant_reform_tab_4_flag
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_4
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_5_gui = {
+		window_name = "russian_peasant_reform_tab_5_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			has_country_flag = russian_peasant_reform_tab_5_flag
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_5
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+	russian_peasant_reform_tab_6_gui = {
+		window_name = "russian_peasant_reform_tab_6_container"
+		context_type = player_context
+
+		parent_window_name = "russian_peasant_reform_container"
+
+		visible = {
+			has_country_flag = russian_peasant_reform_tab_6_flag
+		}
+
+		effects = {
+			pr_decision_select_click = {
+				activate_decision = var:v
+				hidden_effect = {
+					set_temp_variable = { lp_cost = cost1@var:v }
+					multiply_variable = { lp_cost = -1 }
+					add_political_power = var:lp_cost
+				}
+				set_variable = {
+					clicked@var:v = 1
+				}
+			}
+		} 
+		triggers = {
+			pr_decision_select_click_enabled = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+			pr_decision_background_available_visible = {
+				set_temp_variable = { lpcost = cost1@var:v }
+				has_political_power > var:lpcost
+				check_variable = {
+					debt_level < cost2@var:v
+				}
+				check_variable = {
+					clicked@var:v = 0
+				}
+			}
+		}
+		properties = {
+			pr_decision_icon = {
+				image = "GFX_[?icon@var:v.getTokenKey]"
+			}
+		}
+		dynamic_lists = {
+			pr_decision_grid_1 = {
+				array = pr_decision_array_6
+				entry_container = pr_decision_container
+			}
+		}
+
+		ai_enabled = {
+			always = no #maybe enable later idk
+		}
+	}
+}

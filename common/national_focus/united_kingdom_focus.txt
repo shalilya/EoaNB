@@ -554,6 +554,8 @@ focus_tree = {
 					var = ENG_RAJ_revolt_risk
 					value = 3
 				}
+				retire_character = RAJ_charles_canning
+				promote_character = RAJ_James_Bruce
 			}
 			custom_effect_tooltip = eoanb_tt_focus_ENG_direct_RAJ_control
 			hidden_effect = {
@@ -661,6 +663,10 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = eoanb_tt_focus_ENG_RAJ_compromise
+			RAJ = {
+				retire_character = RAJ_charles_canning
+				promote_character = RAJ_James_Bruce
+			}
 			hidden_effect = {
 				every_country={
 					limit={
@@ -831,6 +837,10 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = eoanb_tt_focus_ENG_grant_RAJ_autonomy
+			RAJ = {
+				retire_character = RAJ_charles_canning
+				promote_character = RAJ_James_Bruce
+			}
 			hidden_effect = {
 				every_country={
 					limit={
@@ -2811,7 +2821,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_assess_agricultural_industry
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_field_question
 		x = 50
 		y = 1
 		cost = 35
@@ -3746,9 +3756,9 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_focus_the_calais_question
-		icon = GFX_Focus_colonial_empire_FRA
-		x = 66
+		id = ENG_focus_imperialist_economic_interests
+		icon = GFX_focus_por_luso_tropicalism
+		x = 65
 		y = 1
 		cost = 35
 		available_if_capitulated = no
@@ -3756,24 +3766,6 @@ focus_tree = {
 			factor = 40
 		}
 		prerequisite = { focus = ENG_focus_address_political_economic_matters }
-		search_filters = {  FOCUS_FILTER_POLITICAL }
-		
-		completion_reward = {
-			country_event = { id = britain.73 random = 12 }
-		}
-	}
-
-	focus = {
-		id = ENG_focus_imperialist_economic_interests
-		icon = GFX_focus_por_luso_tropicalism
-		x = 66
-		y = 2
-		cost = 35
-		available_if_capitulated = no
-		ai_will_do = {
-			factor = 40
-		}
-		prerequisite = { focus = ENG_focus_the_calais_question }
 		search_filters = {  FOCUS_FILTER_WAR_SUPPORT }
 		
 		completion_reward = {
@@ -3782,10 +3774,28 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ENG_focus_the_ionion_question
+		icon = GFX_Focus_Diplomatic_Ally_GRE
+		x = 66
+		y = 2
+		cost = 35
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 40
+		}
+		prerequisite = { focus = ENG_focus_imperialist_economic_interests }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			country_event = britain.43
+		}
+	}
+
+	focus = {
 		id = ENG_focus_demand_japanese_trade_port
 		icon = GFX_focus_JAP_science_eng_navy
-		x = 66
-		y = 3
+		x = 64
+		y = 2
 		cost = 35
 		available_if_capitulated = no
 		ai_will_do = {
@@ -7131,7 +7141,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_1885_transfer
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_10_downing_street_icon
 		x = 0
 		y = 4
 		cost = 7

@@ -4,7 +4,7 @@ state = {
 	name = "STATE_609" # East Hebei
 
 	local_supplies=0.0 
-	manpower = 3100000
+	manpower = 3102395
 
 	state_category = town
 

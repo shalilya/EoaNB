@@ -7,7 +7,7 @@ political_actions = {
 	      has_country_flag = GRE_pick_monarchy_or_republic_a
 		}
 
-		allowed = { TAG = GRE }
+		allowed = { tag = GRE }
 
 		fire_only_once = yes
 
@@ -28,7 +28,7 @@ political_actions = {
 	      has_country_flag = GRE_pick_monarchy_or_republic_a
 		}
 
-		allowed = { TAG = GRE }
+		allowed = { tag = GRE }
 
 		fire_only_once = yes
 
@@ -353,7 +353,7 @@ GRE_decision_category_obtain_foreign_equipment = {
 		}
 	}
 
-	##Buy canons from Britain
+	##Buy canonns from Britain
 	GRE_decision_buy_english_cannons = {
 
 		icon = artillery
@@ -402,7 +402,7 @@ GRE_decision_category_obtain_foreign_equipment = {
 		}
 	}
 
-	#Buy canons from Prussia
+	#Buy cannons from Prussia
 	GRE_decision_buy_prussian_cannons = {
 
 		icon = artillery
@@ -501,31 +501,123 @@ GRE_decision_category_obtain_foreign_equipment = {
 	}
 }
 
-eoanb_category_diplomatic_actions = {
+GRE_decision_category_cretan_revolution = {
 
-	#Greece sends help to Crete
-	eoanb_decision_gre_help_cet = {
-
-		icon = generic_decision
-
-		allowed = {
-			TAG = GRE
-		}
-
+	#The Cretan Revolution
+	eoanb_mission_cretan_revolution = {
+		
+		icon = generic_ignite_civil_war
+		
+		allowed = { always = no }
+		
 		available = {
-			has_war = no
-			has_manpower > 1000
-			OR = {
-				has_equipment = {
-					infantry_equipment_rifle_0 > 99
+			if = {
+				limit = {
+					tag = CET
 				}
-				has_equipment = {
-					infantry_equipment_rifle_1 > 99
+				surrender_progress < 0.8
+				OR = {
+					controls_province = 9940
+					controls_province = 12058
+				}
+				date > 1869.7.1
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				custom_effect_tooltip = cretan_revolution_ottoman_trigger_tt
+				CET = {
+					surrender_progress > 0.8
+				}
+				if = {
+					limit = {
+						GRE = { has_war_with = OTO }
+					}
+					GRE = {
+						surrender_progress > 0.3
+					}
 				}
 			}
 		}
+		
+		activation = { always = no }
+		
+		priority = 75
+		
+		is_good = no
+		
+		days_mission_timeout = 1095
+		
+		complete_effect = {
+			if = {
+				limit = {
+					tag = CET
+				}
+				white_peace = OTO
+				country_event = { id = GREcrete.11 days = 1 }
+			}
+			if = {
+				limit = {
+					tag = OTO
+				}
+				OTO = {
+					annex_country = {
+						target = CET
+					}
+				}
+				if = {
+					limit = {
+						GRE = { has_war_with = OTO }
+					}
+					white_peace = GRE
+				}
+				country_event = { id = GREcrete.13 days = 1 }
+			}
+			clr_global_flag = cretan_revolution_ongoing_flag
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = OTO
+				}
+				white_peace = CET
+				if = {
+					limit = {
+						OR = {
+							has_dlc = "Together for Victory"
+							has_dlc = "Waking the Tiger"
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = CET
+						autonomous_state = autonomy_khedive
+						freedom_level = 0.5
+					}
+				}
+				else = {
+					puppet = CET
+				}
+			}
+		}
+	}
+	
+	#Help the Cretan Rebels
+	GRE_decision_help_the_cretan_rebels = {
+
+		icon = generic_nationalism
+
+		allowed = { tag = GRE }
+
+		available = {
+			has_war = no
+			has_manpower > 999
+		}
 
 		visible = {
+			has_global_flag = cretan_revolution_ongoing_flag
 			CET = {
 				has_war_with = OTO
 				exists = yes
@@ -534,196 +626,496 @@ eoanb_category_diplomatic_actions = {
 
 		fire_only_once = yes
 
-		cost = 10
+		cost = 25
 
-		complete_effect = {
+		days_remove = 7
+
+		cancel_trigger = {
 			CET = {
-				country_event = { id = greek_events.3 }
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
 			}
+		}
+
+		remove_effect = {
+			CET = { country_event = { id = greek_events.3 } }
 			add_manpower = -1000
+			unlock_decision_category_tooltip = GRE_decision_category_cretan_revolution
+			hidden_effect = {
+				set_country_flag = cretan_revolution_greek_help_flag
+			}
 		}
 
 		ai_will_do = {
-			base = 1
+			base = 1000
 		}
 	}
 
-	GRE_decision_help_crete_1 = { #Send men
+	#Send Military Officers to Crete
+	GRE_decision_help_the_cretan_rebels_1 = {
 
-		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-          NOT = { GRE = { has_country_flag = CET_cretan_revolt_no_help } }
+		icon = generic_military
+
+		allowed = { tag = GRE }
+
+		available = {
+			has_war = no
+			has_manpower > 249
+			has_equipment = {
+				infantry_equipment > 249
+			}
+			has_equipment = {
+				uniform_equipment > 249
+			}
+			has_army_experience > 10
 		}
-
-		allowed = { TAG = GRE }
-
-		cost = 100
-
-		fire_only_once = yes
-
-		complete_effect = {
-            custom_effect_tooltip = GRE_tt_help_crete_1
-			army_experience = -15
-			add_manpower = -2500
+		
+		visible = {
+			has_country_flag = cretan_revolution_greek_help_flag
+			has_global_flag = cretan_revolution_ongoing_flag
 			CET = {
-                army_experience = 10
-                add_manpower = 2500
-			}
-		    hidden_effect = {
-			    CET = { country_event = { id = GREcrete.2 days = 20 } }
+				has_war_with = OTO
+				exists = yes
 			}
 		}
-
-		ai_will_do = {
-			base = 100
-		}
-	}
-
-	GRE_decision_help_crete_2 = { #Send guns
-
-		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-          NOT = { GRE = { has_country_flag = CET_cretan_revolt_no_help } }
-		}
-
-		allowed = { TAG = GRE }
-
-		cost = 100
 
 		fire_only_once = yes
 
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+
+		days_remove = 21
+
+		cancel_trigger = {
+			CET = {
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
+			}
+		}
+
 		complete_effect = {
-		    custom_effect_tooltip = GRE_tt_help_crete_1
-            send_equipment = {
-                equipment = infantry_equipment
-                amount = 500
-                target = CET
-            }
-		    hidden_effect = {
-			    CET = { country_event = { id = GREcrete.7 days = 20 } }
+			add_political_power = -20
+			add_command_power = -50
+		}
+
+		remove_effect = {
+			CET = { country_event = { id = GREcrete.4 } }
+			add_manpower = -250
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 250
+				target = CET
+			}
+			send_equipment = {
+				equipment = uniform_equipment
+				amount = 250
+				target = CET
+			}
+			army_experience = -10
+			custom_effect_tooltip = cretan_revolution_help_crete_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_2_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+				}
+				else_if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_1_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+				}
+				else = {
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+				}
 			}
 		}
 
 		ai_will_do = {
-			base = 100
+			base = 1000
 		}
 	}
 
-	GRE_decision_help_crete_3 = { #Escalate the aid
+	#Send Military Equipment to Crete
+	GRE_decision_help_the_cretan_rebels_2 = {
 
+		icon = generic_industry
+
+		allowed = { tag = GRE }
+
+		available = {
+			has_war = no
+			has_equipment = {
+				infantry_equipment > 499
+			}
+			has_equipment = {
+				uniform_equipment > 499
+			}
+			has_equipment = {
+				cannon_equipment > 23
+			}
+		}
+		
 		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-          NOT = { GRE = { has_country_flag = CET_cretan_revolt_no_help } }
-          date > 1867.08.21
+			has_country_flag = cretan_revolution_greek_help_flag
+			has_global_flag = cretan_revolution_ongoing_flag
+			CET = {
+				has_war_with = OTO
+				exists = yes
+			}
 		}
 
-		allowed = { TAG = GRE }
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+
+		days_remove = 21
+
+		cancel_trigger = {
+			CET = {
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
+			}
+		}
+
+		complete_effect = {
+			add_political_power = -20
+			add_command_power = -50
+		}
+
+		remove_effect = {
+			CET = { country_event = { id = GREcrete.5 } }
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 500
+				target = CET
+			}
+			send_equipment = {
+				equipment = uniform_equipment
+				amount = 500
+				target = CET
+			}
+			send_equipment = {
+				equipment = cannon_equipment
+				amount = 24
+				target = CET
+			}
+			custom_effect_tooltip = cretan_revolution_help_crete_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_2_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+				}
+				else_if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_1_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+				}
+				else = {
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	#Send a Volunteer Unit to Crete
+	GRE_decision_help_the_cretan_rebels_3 = {
+
+		icon = generic_reorganize_irregulars
+
+		allowed = { tag = GRE }
+
+		available = {
+			has_war = no
+			has_manpower > 999
+			has_equipment = {
+				infantry_equipment > 199
+			}
+			has_equipment = {
+				uniform_equipment > 199
+			}
+		}
+		
+		visible = {
+			has_country_flag = cretan_revolution_greek_help_flag
+			has_global_flag = cretan_revolution_ongoing_flag
+			CET = {
+				has_war_with = OTO
+				exists = yes
+				OR = {
+					controls_province = 9940
+					controls_province = 12058
+				}
+			}
+			date > 1866.10.1
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			has_political_power > 19.9
+			command_power > 49.99
+		}
+		custom_cost_text = eoanb_political_power_20_command_power_50
+
+		days_remove = 60
+
+		cancel_trigger = {
+			CET = {
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
+			}
+		}
+
+		complete_effect = {
+			add_political_power = -20
+			add_command_power = -50
+		}
+
+		remove_effect = {
+			CET = { country_event = { id = GREcrete.6 } }
+			add_manpower = -1000
+			custom_effect_tooltip = cretan_revolution_help_crete_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_2_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_2_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_3_REL }
+				}
+				else_if = {
+					limit = {
+						has_opinion_modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					remove_opinion_modifier = {
+						target = OTO
+						modifier = GRE_CRETAN_HELP_OTO_1_REL
+					}
+					OTO = {
+						remove_opinion_modifier = {
+							target = GRE
+							modifier = GRE_CRETAN_HELP_OTO_1_REL
+						}
+					}
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_2_REL }
+				}
+				else = {
+					add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+					reverse_add_opinion_modifier = { target = OTO modifier = GRE_CRETAN_HELP_OTO_1_REL }
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+
+	#Prepare an Intervention
+	GRE_decision_help_the_cretan_rebels_4 = {
+
+		icon = generic_ignite_civil_war
+		
+		allowed = { tag = GRE }
+
+		available = {
+			has_war = no
+			has_war_support > 0.65
+		}
+		
+		visible = {
+			has_country_flag = cretan_revolution_greek_intervention_flag
+			has_global_flag = cretan_revolution_ongoing_flag
+			CET = {
+				has_war_with = OTO
+				exists = yes
+			}
+		}
+
+		fire_only_once = yes
 
 		cost = 150
 
-		fire_only_once = yes
+		days_remove = 90
 
-		complete_effect = {
-		    custom_effect_tooltip = GRE_tt_help_crete_1
-            send_equipment = {
-                equipment = infantry_equipment
-                amount = 750
-                target = CET
-            }
-			add_manpower = -1000
+		war_with_on_remove = OTO
+
+		cancel_trigger = {
 			CET = {
-                add_manpower = 1000
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
 			}
-		    hidden_effect = {
-			    CET = { country_event = { id = GREcrete.8 days = 20 } }
+		}
+
+		remove_effect = {
+			CET = { country_event = { id = GREcrete.9 } }
+			create_faction = faction_greek_allies
+			add_to_faction = CET
+			add_to_war = {
+				targeted_alliance = CET
+				enemy = OTO
 			}
 		}
 
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 	}
 
-	GRE_decision_help_crete_4 = { #Escalate the aid by a lot
+	#Violate Greek Sovereignty
+	OTO_decision_violate_greek_sovereignty = {
 
-		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-          NOT = { GRE = { has_country_flag = CET_cretan_revolt_no_help } }
+		icon = generic_ignite_civil_war
+		
+		allowed = { tag = OTO }
+
+		available = {
+			has_war_support > 0.5
+			has_opinion_modifier = GRE_CRETAN_HELP_OTO_3_REL
 		}
-
-		allowed = { TAG = GRE }
-
-		cost = 150
+		
+		visible = {
+			has_global_flag = cretan_revolution_ongoing_flag
+			has_war_with = CET
+			#GRE = {
+			#	has_country_flag = GRE_Crete_Support_Yes
+			#}
+			#has_country_flag = OTO_Crete_Greece_Support_Yes
+		}
 
 		fire_only_once = yes
 
-		complete_effect = {
-		    custom_effect_tooltip = GRE_tt_help_crete_1
-            send_equipment = {
-                equipment = infantry_equipment
-                amount = 1500
-                target = CET
-            }
-			add_manpower = -1000
-			CET = {
-                add_manpower = 1000
-			}
-		    hidden_effect = {
-			    CET = { country_event = { id = GREcrete.9 days = 20 } }
-			    OTO = { country_event = { id = GRE_diplomacy.2 days = 200 } }
-			}
+		custom_cost_trigger = {
+			has_political_power > 99.9
+			command_power > 49.99
 		}
+		custom_cost_text = eoanb_political_power_100_command_power_50
 
-		ai_will_do = {
-			base = 100
+		days_remove = 30
+
+		war_with_on_remove = GRE
+
+		cancel_trigger = {
+			NOT = { has_war_with = CET }
 		}
-	}
-
-	OTO_decision_war_greece_crete_revolt = { #dec greece
-
-		visible = {
-		  tag = OTO
-		  CET = { has_country_flag = CET_cretan_revolt }
-		  GRE = {
-		        has_country_flag = GRE_Crete_Support_Yes
-		  }
-          OTO = { has_country_flag = OTO_Crete_Greece_Support_Yes }
-		}
-
-		allowed = { TAG = GRE }
-
-		cost = 150
-
-		fire_only_once = yes
-
-		war_with_on_complete = GRE
 
 		complete_effect = {
-		    # declare_war_on = {
-                # target = GRE
-                # type = annex_everything
-            # }
-			##replacing the above with a border war to avoid larger issues
+			add_political_power = -100
+			add_command_power = -50
+		}
+
+		remove_effect = {
 			start_border_war = {
 				change_state_after_war = no
-				attacker = {
-					state = 811
-					num_provinces = 4
-					on_win = GRE_diplomacy.14
-					on_lose = GRE_diplomacy.15
-					on_cancel = GRE_diplomacy.16
-				}
-
-				defender = {
-					state = 47
-					num_provinces = 3
-					on_win = GRE_diplomacy.15
-					on_lose = GRE_diplomacy.17
-					on_cancel = GRE_diplomacy.16
+				if = {
+					limit = {
+						OTO = { owns_state = 811 }
+					}
+					attacker = {
+						state = 811
+						num_provinces = 4
+						on_win = GRE_diplomacy.14
+						on_lose = GRE_diplomacy.15
+						on_cancel = GRE_diplomacy.16
+					}
+					defender = {
+						state = 47
+						num_provinces = 3
+						on_win = GRE_diplomacy.15
+						on_lose = GRE_diplomacy.17
+						on_cancel = GRE_diplomacy.16
+					}
 				}
 			}
 		}
@@ -733,69 +1125,147 @@ eoanb_category_diplomatic_actions = {
 		}
 	}
 
-	GRE_decision_request_british_mediation = { #Request British help
+	#Request British Mediation
+	GRE_decision_request_british_mediation = {
 
-		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-		  GRE = {
-		        has_country_flag = GRE_Crete_Support_Yes
-                OR = {
-				    has_country_flag = GRE_flag_George_I
-				    has_country_flag = GRE_flag_Alfred_I
-				}
-		  }
-          NOT = { GRE = { has_country_flag = GRE_Crete_Support_No } }
+		allowed = { always = no }
+		
+		#allowed = { tag = GRE }
+
+		available = {
+			has_war_support > 0.5
+			has_opinion_modifier = GRE_CRETAN_HELP_OTO_3_REL
 		}
 
-		allowed = { TAG = GRE }
-
-		cost = 150
+		visible = { always = no }
+		
+		#visible = {
+		#	has_global_flag = cretan_revolution_ongoing_flag
+		#	has_war_with = CET
+		#	OR = {
+		#		has_country_flag = GRE_flag_George_I
+		#		has_country_flag = GRE_flag_Alfred_I
+		#	}
+		#	#has_country_flag = GRE_Crete_Support_Yes
+		#	NOT = { has_country_flag = cretan_revolution_seek_austrian_mediation_flag }
+		#}
 
 		fire_only_once = yes
+		
+		cost = 50
+
+		days_remove = 7
+
+		cancel_trigger = {
+			CET = {
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
+			}
+		}
 
 		complete_effect = {
-		    custom_effect_tooltip = GRE_tt_eng_help_crete_1
-		    hidden_effect = {
-			    ENG = { country_event = { id = GRE_diplomacy.6 days = 20 } }
+			hidden_effect = {
+				set_country_flag = cretan_revolution_seek_british_mediation_flag
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GRE_tt_eng_help_crete_1
+			hidden_effect = {
+				ENG = { country_event = { id = GRE_diplomacy.6 } }
 			}
 		}
 
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 10
+				has_opinion = {
+					target = ENG
+					value > 99
+				}
+			}
+			modifier = {
+				factor = 0
+				has_opinion = {
+					target = ENG
+					value < 0
+				}
+			}
 		}
 	}
 
-	GRE_decision_request_austrian_mediation = { #Request Austrian help
+	#Request Austrian Mediation
+	GRE_decision_request_austrian_mediation = {
 
-		visible = {
-		  tag = GRE
-		  CET = { has_country_flag = CET_cretan_revolt }
-		  GRE = {
-		        has_country_flag = GRE_Crete_Support_Yes
-                OR = {
-				    has_country_flag = GRE_flag_Luitpold_I
-				    has_country_flag = GRE_flag_Otto_I
-				}
-		  }
-          NOT = { GRE = { has_country_flag = GRE_Crete_Support_No } }
+		allowed = { always = no }
+		
+		#allowed = { tag = GRE }
+
+		available = {
+			has_war_support > 0.5
+			has_opinion_modifier = GRE_CRETAN_HELP_OTO_3_REL
 		}
+		
+		visible = { always = no }
 
-		allowed = { TAG = GRE }
-
-		cost = 150
+		#visible = {
+		#	has_global_flag = cretan_revolution_ongoing_flag
+		#	has_war_with = CET
+		#	OR = {
+		#		has_country_flag = GRE_flag_Luitpold_I
+		#		has_country_flag = GRE_flag_Otto_I
+		#	}
+		#	#has_country_flag = GRE_Crete_Support_Yes
+		#	NOT = { has_country_flag = cretan_revolution_seek_british_mediation_flag }
+		#}
 
 		fire_only_once = yes
+		
+		cost = 50
+
+		days_remove = 7
+
+		cancel_trigger = {
+			CET = {
+				OR = {
+					NOT = { has_war_with = OTO }
+					exists = no
+				}
+			}
+		}
 
 		complete_effect = {
-		    custom_effect_tooltip = GRE_tt_aus_help_crete_1
-		    hidden_effect = {
-			    AUS = { country_event = { id = GREcrete.2 days = 20 } }
+			hidden_effect = {
+				set_country_flag = cretan_revolution_seek_austrian_mediation_flag
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = GRE_tt_aus_help_crete_1
+			hidden_effect = {
+				AUS = { country_event = { id = GRE_diplomacy.6 } }
 			}
 		}
 
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 10
+				has_opinion = {
+					target = AUS
+					value > 99
+				}
+			}
+			modifier = {
+				factor = 0
+				has_opinion = {
+					target = AUS
+					value < 0
+				}
+			}
 		}
 	}
 }
@@ -807,7 +1277,7 @@ GRE_decision_category_industry = {
 
         icon = infrastructure
 
-        #allowed = { TAG = GRE }
+        #allowed = { tag = GRE }
 
         available = {
 			AND = {
@@ -877,7 +1347,7 @@ GRE_decision_category_industry = {
 
         icon = railway
 
-        #allowed = { TAG = GRE }
+        #allowed = { tag = GRE }
 
         available = {
 			AND = {
@@ -940,7 +1410,7 @@ GRE_decision_category_industry = {
 
         icon = railway
 
-        #allowed = { TAG = GRE }
+        #allowed = { tag = GRE }
 
         available = {
 			AND = {
@@ -1005,7 +1475,7 @@ GRE_decision_category_industry = {
 
         icon = railway
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 
         available = {
 			AND = {
@@ -1085,7 +1555,7 @@ GRE_decision_category_industry = {
 								id = 4109 # Piraeus
 							}
 							building = naval_base
-							level > 3
+							level > 2
 						}
 					}
 				}
@@ -1208,7 +1678,7 @@ GRE_decision_category_industry = {
 
 		icon = generic_factory
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			OR = { 
@@ -1279,7 +1749,7 @@ GRE_decision_category_industry = {
 
 		icon = generic_factory
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_ironworks_in_ermoupoli
@@ -1353,7 +1823,7 @@ GRE_decision_category_industry = {
 
 		icon = generic_factory
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_encourage_textile_industry
@@ -1415,7 +1885,7 @@ GRE_decision_category_industry = {
 
 		icon = generic_factory
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			debt_not_bankrupt_trigger = yes
@@ -1477,7 +1947,7 @@ GRE_decision_category_industry = {
 
 		icon = eng_trade_unions_support
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_balance_import_and_export
@@ -1496,8 +1966,7 @@ GRE_decision_category_industry = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 					has_government = chauvinist_populism
 				}
@@ -1540,7 +2009,7 @@ GRE_decision_category_industry = {
 			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		visible = {
 			has_completed_focus = GRE_land_reform
@@ -1593,7 +2062,7 @@ GRE_decision_category_industry = {
 
 		icon = eng_trade_unions_support
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_attract_foreign_investors
@@ -1613,8 +2082,7 @@ GRE_decision_category_industry = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 					has_government = chauvinist_populism
 				}
@@ -1656,7 +2124,7 @@ GRE_decision_category_industry = {
 
 		icon = money
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_establish_the_greek_stock_market
@@ -1679,8 +2147,7 @@ GRE_decision_category_industry = {
 			NOT = {
 				OR = {
 					has_government = social_egalitarianism
-					has_government = collectivist_socialism
-					has_government = vanguard_communism
+					has_government = ideology_radical_socialism
 					has_government = anarchism
 					has_government = chauvinist_populism
 				}
@@ -1726,7 +2193,7 @@ GRE_decision_category_industry = {
 
 		icon = coal
 
-       #allowed = { TAG = GRE }
+        allowed = { tag = GRE }
 
         available = {
 			AND = {
@@ -1750,6 +2217,7 @@ GRE_decision_category_industry = {
 
 		complete_effect = {
 			debt_level_increase_by_1 = yes
+			set_country_flag = GRE_founded_the_Lavrion_mines
 		}
 		
 		remove_effect = {
@@ -1769,6 +2237,95 @@ GRE_decision_category_industry = {
 			NOT = { debt_not_bankrupt_trigger = yes }
 		}
 	}
+
+	GRE_decision_Lavrion_mines_tin_extractions = {
+		icon = iron
+
+        allowed = { tag = GRE }
+
+        available = {
+			AND = {
+				has_idea = industrializing
+				debt_not_bankrupt_trigger = yes
+				controls_state = 1251
+				has_country_flag = GRE_founded_the_Lavrion_mines
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		
+		days_remove = 180
+
+		modifier = {
+			political_power_gain = -0.01
+			consumer_goods_factor = 0.025
+			production_speed_buildings_factor = 0.05
+		}
+
+		complete_effect = {
+			debt_level_increase_by_1 = yes
+		}
+		
+		remove_effect = {
+
+			add_resource = {
+				type = coal
+				amount = 1
+				state = 1251
+			}
+			add_resource = {
+				type = iron
+				amount = 2
+				state = 1251
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { debt_not_bankrupt_trigger = yes }
+		}
+	}
+
+	### French mission
+	GRE_decision_contest_Lavrion_Mines = {
+
+		allowed = {
+			tag = FRA
+		}
+
+		available = {
+			ships_in_area = { area = 202 size > 10 }
+		}
+
+		days_mission_timeout = 40
+    	selectable_mission = yes
+
+		complete_effect = {
+			add_political_power = -25
+			set_country_flag = FRA_contest_Lavrion_mines
+			hidden_effect = {
+				GRE = {
+					country_event = {
+						id = GREeconomy.11
+						days = 5
+					}
+				}
+			}
+		}
+
+		timeout_effect = {
+			custom_effect_tooltip = GRE_FRA_backdown_from_Lavrion_mines_tt
+			hidden_effect = {
+				GRE = {
+					country_event = {
+						id = GREeconomy.10
+						days = 3
+					}
+				}
+			}
+		}
+	}
 	
 	GRE_decision_greek_cotton_central_greece = { 
 
@@ -1786,7 +2343,7 @@ GRE_decision_category_industry = {
 			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		visible = {
 			has_completed_focus = GRE_land_reform
@@ -1847,7 +2404,7 @@ GRE_decision_category_industry = {
 			NOT = { has_country_flag = SAX_industry_development_ongoing_flag }
 		}
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		visible = {
 			has_completed_focus = GRE_land_reform
@@ -1897,7 +2454,7 @@ GRE_decision_category_industry = {
 
 		icon = coal
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_expand_the_laurion_mines
@@ -1949,7 +2506,7 @@ GRE_decision_category_industry = {
 	GRE_decision_tax_laurion_mines = {
 		icon = money
 		
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			debt_not_bankrupt_trigger = yes
@@ -1996,7 +2553,7 @@ GRE_decision_category_industry = {
 
 		icon = railway
 
-		#allowed = { TAG = GRE }
+		#allowed = { tag = GRE }
 		
 		available = {
 			has_completed_focus = GRE_acquire_train_technologies

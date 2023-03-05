@@ -14,7 +14,7 @@ country_event = {
 				hidden_effect = {
 					OUD = { country_event = { id = sepoy.2 } }
 					GWA = { country_event = { id = sepoy.2 } }
-					country_event = { days = 180 id = sepoy.21 }
+					#country_event = { days = 180 id = sepoy.21 } Doesn't exist so commented out
 					set_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag 
 				}
 				add_timed_idea = {
@@ -286,4 +286,913 @@ country_event = {
 			type = annex_everything
 		}
 	}
+}
+
+country_event = { #SRS Requests Aid from FRA
+	id = sepoy.9
+	title = sepoy.9.t
+	desc = sepoy.9.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.9.a
+		ai_chance = { factor = 50 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = cannon_equipment_0
+			amount = -10
+		}
+		add_opinion_modifier = { 
+			target = SRS
+			modifier = large_increase
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = FRA
+				modifier = large_increase
+			}
+			country_event = sepoy.10
+		}
+		ENG = {
+			add_opinion_modifier = { 
+				target = FRA
+				modifier = medium_decrease
+			}
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.9.b
+		ai_chance = { factor = 50 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = FRA
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #France Supports
+	id = sepoy.10
+	title = sepoy.10.t
+	desc = sepoy.10.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.10.a
+		add_political_power = 10
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = FRA
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = 500
+			producer = FRA
+		}
+		add_equipment_to_stockpile = {
+			type = cannon_equipment_0
+			amount = 10
+			producer = FRA
+		}
+	}
+}
+
+country_event = { #European Power declines
+	id = sepoy.11
+	title = sepoy.11.t
+	desc = sepoy.11.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.11.a
+		add_stability = -0.05
+		add_political_power = -50
+	}
+}
+
+country_event = { #SRS Requests Aid from POR
+	id = sepoy.12
+	title = sepoy.12.t
+	desc = sepoy.12.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.12.a
+		ai_chance = { factor = 0 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = -500
+		}
+		add_opinion_modifier = { 
+			target = SRS
+			modifier = large_increase
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = POR
+				modifier = large_increase
+			}
+			country_event = sepoy.13
+		}
+		ENG = {
+			add_opinion_modifier = { 
+				target = POR
+				modifier = medium_decrease
+			}
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.12.b
+		ai_chance = { factor = 100 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = POR
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #POR Supports
+	id = sepoy.13
+	title = sepoy.13.t
+	desc = sepoy.13.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.13.a
+		add_political_power = 10
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = POR
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = 500
+			producer = POR
+		}
+	}
+}
+
+country_event = { #SRS Requests Aid from RUS
+	id = sepoy.14
+	title = sepoy.14.t
+	desc = sepoy.14.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.14.a
+		ai_chance = { factor = 80 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1500
+		}
+		add_opinion_modifier = { 
+			target = SRS
+			modifier = large_increase
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = RUS
+				modifier = large_increase
+			}
+			country_event = sepoy.15
+		}
+		ENG = {
+			add_opinion_modifier = { 
+				target = RUS
+				modifier = medium_decrease
+			}
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.14.b
+		ai_chance = { factor = 20 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = RUS
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #RUS Supports
+	id = sepoy.15
+	title = sepoy.15.t
+	desc = sepoy.15.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.15.a
+		add_political_power = 10
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1500
+			producer = RUS
+		}
+	}
+}
+
+country_event = { #SRS Requests Aid from HOL
+	id = sepoy.16
+	title = sepoy.16.t
+	desc = sepoy.16.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.16.a
+		ai_chance = { factor = 30 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = cannon_equipment_0
+			amount = -10
+		}
+		add_opinion_modifier = { 
+			target = SRS
+			modifier = large_increase
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = HOL
+				modifier = large_increase
+			}
+			country_event = sepoy.17
+		}
+		ENG = {
+			add_opinion_modifier = { 
+				target = HOL
+				modifier = medium_decrease
+			}
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.16.b
+		ai_chance = { factor = 70 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = HOL
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #HOL Supports
+	id = sepoy.17
+	title = sepoy.17.t
+	desc = sepoy.17.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = sepoy.17.a
+		add_political_power = 10
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = HOL
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment
+			amount = 500
+			producer = HOL
+		}
+		add_equipment_to_stockpile = {
+			type = cannon_equipment_0
+			amount = 10
+			producer = HOL
+		}
+	}
+}
+
+country_event = { #SRS Requests Recognition
+	id = sepoy.18
+	title = sepoy.18.t
+	desc = sepoy.18.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.18.a
+		ai_chance = { factor = 50 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = ENG
+				modifier = large_increase
+			}
+			country_event = sepoy.19
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.18.b
+		ai_chance = { factor = 50 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = ENG
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #SRS Receives Recognition from ENG
+	id = sepoy.19
+	title = sepoy.19.t
+	desc = sepoy.19.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.19.a
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			remove_state_core = 1000
+			remove_state_core = 443
+			remove_state_core = 428
+			remove_state_core = 1007
+			remove_state_core = 429
+			remove_state_core = 977
+			remove_state_core = 425
+			remove_state_core = 757
+			remove_state_core = 758
+			remove_state_core = 423
+			remove_state_core = 424
+			remove_state_core = 1034
+			remove_state_core = 755
+			remove_state_core = 1030
+			remove_state_core = 426
+			remove_state_core = 431
+			remove_state_core = 1289
+			remove_state_core = 1315
+			remove_state_core = 1397
+			remove_state_core = 430
+			remove_state_core = 1316
+			remove_state_core = 1075
+			remove_state_core = 1390
+			remove_state_core = 1392
+			remove_state_core = 1391
+			remove_state_core = 288
+			remove_state_core = 432
+			remove_state_core = 434
+		}
+	}
+}
+
+country_event = { #SRS Requests Recognition BRM
+	id = sepoy.20
+	title = sepoy.20.t
+	desc = sepoy.20.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.20.a
+		ai_chance = { factor = 45 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = BRM
+				modifier = medium_increase
+			}
+			country_event = sepoy.21
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.20.b
+		ai_chance = { factor = 5 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = BRM
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+
+	#Yes, offer military help
+	option = {
+		name = sepoy.20.b
+		ai_chance = { factor = 50 }
+		trigger = {
+			SRS = {
+				NOT = {
+					has_completed_focus = SRS_britain
+				}
+			}
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = BRM
+				modifier = large_increase
+			}
+			country_event = sepoy.22
+		}
+		set_country_flag = SRS_Offered_Military
+	}
+}
+
+country_event = { #SRS Receives Recognition from Minor
+	id = sepoy.21
+	title = sepoy.21.t
+	desc = sepoy.21.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.21.a
+		ai_chance = { factor = 50 }
+		diplomatic_relation = {
+			country = ROOT
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+country_event = { #SRS Receives Military Support from Minor
+	id = sepoy.22
+	title = sepoy.22.t
+	desc = sepoy.22.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.22.a
+		ai_chance = { factor = 50 }
+		diplomatic_relation = {
+			country = ROOT
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+country_event = { #SRS Requests Recognition SIA
+	id = sepoy.23
+	title = sepoy.23.t
+	desc = sepoy.23.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.23.a
+		ai_chance = { factor = 45 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = SIA
+				modifier = medium_increase
+			}
+			country_event = sepoy.21
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.23.b
+		ai_chance = { factor = 5 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = SIA
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+
+	#Yes, offer military help
+	option = {
+		name = sepoy.23.b
+		ai_chance = { factor = 50 }
+		trigger = {
+			SRS = {
+				NOT = {
+					has_completed_focus = SRS_britain
+				}
+			}
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = SIA
+				modifier = large_increase
+			}
+			country_event = sepoy.22
+		}
+		set_country_flag = SRS_Offered_Military
+	}
+}
+
+country_event = { #SRS Requests Recognition AFG
+	id = sepoy.24
+	title = sepoy.24.t
+	desc = sepoy.24.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.24.a
+		ai_chance = { factor = 45 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = AFG
+				modifier = medium_increase
+			}
+			country_event = sepoy.21
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.24.b
+		ai_chance = { factor = 5 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = AFG
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+
+	#Yes, offer military help
+	option = {
+		name = sepoy.24.b
+		ai_chance = { factor = 50 }
+		trigger = {
+			SRS = {
+				NOT = {
+					has_completed_focus = SRS_sikhs
+				}
+			}
+		}
+		SRS = {
+			add_opinion_modifier = { 
+				target = AFG
+				modifier = large_increase
+			}
+			country_event = sepoy.22
+		}
+		set_country_flag = SRS_Offered_Military
+	}
+}
+
+country_event = { #SRS Requests Recognition QNG
+	id = sepoy.25
+	title = sepoy.25.t
+	desc = sepoy.25.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.25.a
+		ai_chance = { factor = 5 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = QNG
+				modifier = medium_increase
+			}
+			country_event = sepoy.21
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.25.b
+		ai_chance = { factor = 95 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = QNG
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #SRS Requests Recognition PER
+	id = sepoy.26
+	title = sepoy.26.t
+	desc = sepoy.26.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Yes
+	option = {
+		name = sepoy.26.a
+		ai_chance = { factor = 75 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = PER
+				modifier = medium_increase
+			}
+			country_event = sepoy.21
+		}
+	}
+		
+	#No
+	option = {
+		name = sepoy.26.b
+		ai_chance = { factor = 25 }
+		SRS = {
+			add_opinion_modifier = { 
+				target = PER
+				modifier = small_decrease
+			}
+			country_event = sepoy.11
+		}
+	}	
+}
+
+country_event = { #SRS Call to War = RAJ
+	id = sepoy.27
+	title = sepoy.27.t
+	desc = sepoy.27.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.27.a
+		ai_chance = { factor = 100 }
+		declare_war_on = {
+			target = RAJ
+			type = annex_everything
+		}
+		clr_country_flag = SRS_Offered_Military
+		set_country_flag = SRS_Helped_War
+	}	
+}
+
+country_event = { #SRS Call to War = kar
+	id = sepoy.28
+	title = sepoy.28.t
+	desc = sepoy.28.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.28.a
+		ai_chance = { factor = 100 }
+		declare_war_on = {
+			target = KAR
+			type = annex_everything
+		}
+		clr_country_flag = SRS_Offered_Military
+		set_country_flag = SRS_Helped_War
+	}	
+}
+
+country_event = { #ENG - 2nd Sepoy War
+	id = sepoy.29
+	title = sepoy.29.t
+	desc = sepoy.29.d
+	picture = GFX_report_event_british_army5
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sepoy.29.a
+		ai_chance = { factor = 100 }
+		RAJ = {
+			if = {
+				limit = {
+					GUJ = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = GUJ
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					MYS = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = MYS
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					TRA = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = TRA
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					BTR = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = BTR
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					ORS = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = ORS
+					transfer_troops = no
+				}
+			}
+			if = {
+				limit = {
+					SKK = {
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = SKK
+					transfer_troops = no
+				}
+			}
+		}
+		transfer_state = 733
+		transfer_state = 422
+		transfer_state = 1331
+		hidden_effect = {
+			add_state_core = 733
+		}
+	}	
+}
+
+country_event = { #Honour Promise - AFG
+	id = sepoy.30
+	title = sepoy.30.t
+	desc = sepoy.30.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		AFG = {
+			has_country_flag = SRS_Helped_War
+		}
+		KAR = {
+			exists = no
+		}
+	}
+	
+	option = {
+		name = sepoy.30.a
+		ai_chance = { factor = 100 }
+		AFG = {
+			transfer_state = 442
+		}
+		AFG = {
+			clr_country_flag = SRS_Helped_War
+		}
+	}	
+}
+
+country_event = { #Honour Promise - BRM
+	id = sepoy.31
+	title = sepoy.31.t
+	desc = sepoy.31.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		BRM = {
+			has_country_flag = SRS_Helped_War
+		}
+		RAJ = {
+			exists = no
+		}
+	}
+	
+	option = {
+		name = sepoy.30.a
+		ai_chance = { factor = 100 }
+		BRM = {
+			transfer_state = 1392
+			transfer_state = 288
+			transfer_state = 1075
+		}
+		hidden_effect = {
+			BRM = {
+				clr_country_flag = SRS_Helped_War
+			}
+		}
+	}	
+}
+
+country_event = { #Honour Promise - SIA
+	id = sepoy.32
+	title = sepoy.32.t
+	desc = sepoy.32.d
+			
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		SIA = {
+			has_country_flag = SRS_Helped_War
+		}
+		RAJ = {
+			exists = no
+		}
+	}
+	
+	option = {
+		name = sepoy.32.a
+		ai_chance = { factor = 100 }
+		SIA = {
+			transfer_state = 1391
+		}
+		hidden_effect = {
+			SIA = {
+				clr_country_flag = SRS_Helped_War
+			}
+		}
+	}	
 }

@@ -15,18 +15,6 @@ characters= {
 			expire="1965.1.1.1"
 			id=-1
 		}
-		country_leader= {
-			desc="POLITICS_PEDRO_II_DESC"
-			ideology=despotism 
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader= {
-			desc="POLITICS_PEDRO_II_DESC"
-			ideology=absolutism
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
 	
 	BRA_Luis_Alves_de_Lima_e_Silva = {
@@ -63,7 +51,7 @@ characters= {
 			traits= {
 				infantry_officer		#personality
 				infantry_leader			#corps
-				#infantry_expert			#corps
+				infantry_expert			#corps
 				career_officer 			#personality
 				#politically_connected	#personality
 				#organisational_leader	#field_marshal
@@ -76,11 +64,11 @@ characters= {
 				adaptable 				#corps
 				
 			}
-			skill=3
-			attack_skill=3
-			defense_skill=3
+			skill=5
+			attack_skill=5
+			defense_skill=4
 			planning_skill=4
-			logistics_skill=3
+			logistics_skill=5
 		}
 	}
 	BRA_Deodoro_da_Fonseca= {
@@ -158,7 +146,7 @@ characters= {
 			}
 		}
 		corps_commander= {
-			traits= { }
+			traits= { politically_connected	}
 			skill=3
 			attack_skill=1
 			defense_skill=1
@@ -280,9 +268,13 @@ characters= {
 			}
 		}
 	}
+	
 	BRA_Marquis_of_Monte_Alegre= {
 		name="José da Costa Carvalho" 
 		portraits= {
+			army = {
+				small = "GFX_idea_montealegre"
+			}
 			civilian = {
 				large="gfx/leaders/Europe/Portrait_Europe_generic_leader_politician_28.png"
 			}
@@ -321,7 +313,7 @@ characters= {
 			}
 		}
 		country_leader= {
-			ideology=moderatism
+			ideology=conserv 
 			traits= { eoanb_trait_efficient_administrator }
 			expire="1870.06.07.01"
 			id=-1
@@ -459,18 +451,18 @@ characters= {
 			}
 			removal_cost = -1
 		}
-		advisor= {
-			slot = army_chief
-			idea_token = BRA_jose_antonio_saraiva_army_chief
-			visible= {
-				date < 1895.07.21
-			}
-			available= {
-				date < 1895.07.21
-			}
-			removal_cost = -1
-			traits= { army_chief_organizational_1 }
-		}
+		#advisor= {    The code associated with this is not set up correctly
+		#	slot = army_chief
+		#	idea_token = BRA_jose_antonio_saraiva_army_chief
+		#	visible= {
+		#		date < 1895.07.21
+		#	}
+		#	available= {
+		#		date < 1895.07.21
+		#	}
+		#	removal_cost = -1
+		#	traits= { army_chief_organizational_1 }
+		#}
 	}
 	
 	BRA_eusebio_de_queiros = {
@@ -1603,7 +1595,7 @@ characters= {
 #			}
 #		}
 #		country_leader= {
-#			ideology=social_liberal
+#			ideology=ideology_sub_social_liberal
 #			expire="1894.1.29.1"
 #			id=-1
 #		}

@@ -1,179 +1,242 @@
 OTO_suppress_independence_movements_in_the_balkans = {
-
-	#Decision to Reign in Montenegro
-	OTO_reign_in_montenegro = {
-		icon = generic_political_actions
-		available = {
-			always = yes
-		}
-
-		activation = {
-			always = no
-		}
-
-		selectable_mission = yes
-		days_mission_timeout = 60
-		fire_only_once = yes
-
-		cancel_trigger = {
-			NOT = {
-				country_exists = MNT
-				MNT = { is_subject = yes }
-			}
-		}
-
-		complete_effect = {
-			OTO = {
-				start_border_war = {
-					change_state_after_war = no
-					attacker = {
-						state = 1204
-						num_provinces = 1
-						on_win = OTO_battleofgrahovac.3
-						on_lose = OTO_battleofgrahovac.4
-						on_cancel = OTO_battleofgrahovac.5
-					}
-
-					defender = {
-						state = 942
-						num_provinces = 1
-						on_win = OTO_battleofgrahovac.3
-						on_lose = OTO_battleofgrahovac.4
-						on_cancel = OTO_battleofgrahovac.5
-					}
-				}
-				set_border_war_data = {
-					attacker = 1204
-					defender = 942
-					combat_width = 15
-				}
-				activate_mission = OTO_montenegro_independence_war
-			}
-		}
-
-		timeout_effect = {
-			country_event = { days = 1 id = OTO_battleofgrahovac.5 }
-		}
-	}
-
-	#Mission to Reign in Montenegro
-	OTO_montenegro_independence_war = {
-		icon = generic_political_actions
-
-		available = {
-			always = yes
-		}
-
-		activation = {
-			always = no
-		}
-
-		selectable_mission = no
-		days_mission_timeout = 30
-		is_good = no
-		fire_only_once = yes
-
-		cancel_trigger = {
-			OR = {
-				NOT = {
-					country_exists = MNT
-				}
-				NOT = {
-					MNT = { is_subject = yes }
-				}
-			}
-		}
-
-		remove_effect = {
-
-		}
-
-		complete_effect = {
-
-		}
-
-		timeout_effect = {
-			finalize_border_war = {
-				defender_win = yes
-				attacker = 1204
-				defender = 942
-			}
-		}
-	}
-
 }
-eoanb_category_politics_foreign = {
-	OTO_treaty_of_san_stefano = {
-		icon = generic_political_actions
 
+OTO_category_crete_revolt = {
+
+	OTO_send_pologeorgakis = {
+		allowed = {
+            always = no
+        }
 		available = {
 			always = no
 		}
 
-		activation = {
-			has_country_flag = OTO_treaty_san_stefano
-			NOT={has_global_flag = OTO_berlin_congress}
-		}
-
+        icon = generic_political_actions  
+        fire_only_once = yes
+		days_mission_timeout = 20
 		selectable_mission = no
-		days_mission_timeout = 30
-		is_good = no
-		fire_only_once = yes
 
-		cancel_trigger = {
-			has_global_flag = OTO_berlin_congress
-		}
-
-		remove_effect = {
-
-		}
-
-		complete_effect = {
-
-		}
-
-		timeout_effect = {
-			country_event = { id = OTO_russio_turkish_war.15}
-		}
-	}
-	OTO_cretan_war = {
-		icon = generic_political_actions
-
-		available = {
-			always = no
-		}
-
-		activation = {
-			has_country_flag = CET_cretan_revolt_happening
-		}
-
-		selectable_mission = no
-		days_mission_timeout = 720
-		is_good = no
-		fire_only_once = yes
-
-		cancel_trigger = {
-			CET = {exists = no}
-		}
-
-		remove_effect = {
-
-		}
-
-		complete_effect = {
-
-		}
-
-		timeout_effect = {
-			add_stability = -0.05
-			white_peace = CET
-			CET={
-				transfer_state = 1242
+        timeout_effect = {
+			hidden_effect = {
+				country_event = {
+					id = OTO_events.39
+				}
+				activate_mission = OTO_dispatch_Ali_Pasumacis_Djakymis_Hionias
 			}
-			CET ={country_event = { id = GREcrete.5}}
+
+			add_political_power = -10
+            182 = {
+				add_resistance = 10
+			}
+			1242 = {
+				add_resistance = 10
+			}
+        }
+	}
+
+	OTO_dispatch_Ali_Pasumacis_Djakymis_Hionias = {
+
+		allowed = {
+            always = no
+        }
+
+		available = {
+			always = no
 		}
+
+        icon = generic_political_actions  
+		fire_only_once = yes
+		days_mission_timeout = 20
+		selectable_mission = no
+
+        timeout_effect = {
+			hidden_effect = {
+				country_event = {
+					id = OTO_events.37
+					days = 3
+				}
+				country_event = {
+					id = OTO_events.39
+				}
+			}
+
+			add_political_power = -15
+			182 = {
+				add_resistance = 10
+			}
+			1242 = {
+				add_resistance = 10
+			}
+        }
+	}
+
+	OTO_ensure_Greek_arms_rights = {
+
+		allowed = {
+            tag = OTO
+        }
+
+		visible = {
+			has_country_flag = OTO_provide_greek_rights
+		}
+
+		available = {
+			hidden_trigger = {
+				has_country_flag = OTO_provide_greek_rights
+			}
+		}
+
+        icon = generic_political_actions  
+		fire_only_once = yes
+		cost = 50
+
+        complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = OTO_cretan_revolt_veli_pasha
+					}
+					country_event = {
+						id = OTO_events.38
+						days = 2
+					}
+				}
+				else = {
+					set_country_flag = OTO_cretan_revolt_arms_rights
+				}
+
+			}
+			182 = {
+				add_resistance = -5
+				add_compliance = 5
+			}
+			1242 = {
+				add_resistance = -5
+				add_compliance = 5
+			}
+        }
+	}
+
+	OTO_recall_Veli_Eddin_Pasha = {
+
+		allowed = {
+            tag = OTO
+        }
+
+		visible = {
+			has_country_flag = OTO_provide_greek_rights
+		}
+
+		available = {
+			hidden_trigger = {
+				has_country_flag = OTO_provide_greek_rights
+			}
+		}
+		
+        icon = generic_political_actions  
+        fire_only_once = yes
+		cost = 50
+
+        complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = OTO_cretan_revolt_arms_rights
+					}
+					country_event = {
+						id = OTO_events.38
+						days = 2
+					}
+				}
+				else = {
+					set_country_flag = OTO_cretan_revolt_veli_pasha
+				}
+			}
+			182 = {
+				add_resistance = -5
+				add_compliance = 5
+			}
+			1242 = {
+				add_resistance = -5
+				add_compliance = 5
+			}
+        }
 	}
 }
+
+#eoanb_category_politics_foreign = {
+	#OTO_treaty_of_san_stefano = {
+	#	icon = generic_political_actions
+	#
+	#	available = {
+	#		always = no
+	#	}
+	#
+	#	activation = {
+	#		has_country_flag = OTO_treaty_san_stefano
+	#		NOT={has_global_flag = OTO_berlin_congress}
+	#	}
+	#
+	#	selectable_mission = no
+	#	days_mission_timeout = 30
+	#	is_good = no
+	#	fire_only_once = yes
+	#
+	#	cancel_trigger = {
+	#		has_global_flag = OTO_berlin_congress
+	#	}
+	#
+	#	remove_effect = {
+	#
+	#	}
+	#
+	#	complete_effect = {
+	#
+	#	}
+	#
+	#	timeout_effect = {
+	#		country_event = { id = OTO_russio_turkish_war.15}
+	#	}
+	#}
+	
+	#OTO_cretan_war = {
+	#	icon = generic_political_actions
+	#
+	#	available = {
+	#		always = no
+	#	}
+	#
+	#	activation = {
+	#		has_global_flag = cretan_revolution_ongoing_flag
+	#	}
+	#
+	#	selectable_mission = no
+	#	days_mission_timeout = 720
+	#	is_good = no
+	#	fire_only_once = yes
+	#
+	#	cancel_trigger = {
+	#		CET = {exists = no}
+	#	}
+	#
+	#	remove_effect = {
+	#
+	#	}
+	#
+	#	complete_effect = {
+	#
+	#	}
+	#
+	#	timeout_effect = {
+	#		add_stability = -0.05
+	#		white_peace = CET
+	#		CET={
+	#			transfer_state = 1242
+	#		}
+	#		CET ={country_event = { id = GREcrete.6}}
+	#	}
+	#}
+#}
 
 eoanb_category_diplomatic_actions={
 	OTO_grant_romanian_union={
@@ -195,24 +258,88 @@ eoanb_category_diplomatic_actions={
 					has_country_flag = ROM_union_allowed
 				}
 			}
+			ROM = {
+				has_completed_focus = ROM_move_away_from_Ottomans
+			}
 		}
         cost = 25
         fire_only_once = yes
         complete_effect = {
 			ROM={
 				set_country_flag = ROM_union_allowed
+				country_event = {id = wallachian_union.28 days = 1}
 			}
 		}
 		ai_will_do = {
 			factor = 100
 			modifier = {#not before historical date
 				factor = 0
-				date > 1861.12.23
+				AND = {
+					date > 1861.12.23
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	
 	}
-	
+	OTO_embargo_timer = {
+		
+		icon = generic
+		
+		allowed = {
+			tag = OTO
+		}
+		cancel_trigger = {
+			ROM = {
+				has_country_flag = ROM_union_allowed
+			}
+		}
+		
+		activation = {
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+
+		is_good = no
+		
+		days_mission_timeout = 300
+		
+		timeout_effect = {
+			ROM = {
+				country_event = {id = wallachian_union.29 days = 1}
+				#set_country_flag = ROM_union_rejected
+			}
+			if = {
+				limit = {check_variable = {Union_cuza_approved = 6}}
+				add_political_power = -400
+				add_stability = -0.2
+			}
+			else_if = {
+				limit = {check_variable = {Union_cuza_approved = 5}}
+				add_political_power = -300
+				add_stability = -0.15
+			}
+			else_if = {
+				limit = {check_variable = {Union_cuza_approved = 4}}
+				add_political_power = -200
+				add_stability = -0.1
+			}
+			else_if = {
+				limit = {check_variable = {Union_cuza_approved = 3}}
+				add_political_power = -100
+				add_stability = -0.05
+			}
+			else = {
+				add_stability = -0.05
+			}
+		}
+		complete_effect = {
+
+		}
+	}
 }
 
 OTO_first_consitutional_era={

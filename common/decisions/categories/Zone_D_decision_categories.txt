@@ -1,5 +1,31 @@
 #### Zone D Decision Categories ####
 
+### Eastern Crisis ###
+eastern_crisis_decision_category = {
+	icon = generic_independence
+	priority = 99
+	allowed = { 
+		OR = {
+			tag = AUS
+			tag = FRA
+			tag = GRE
+			tag = HRZ
+			tag = MNT
+			tag = NSC
+			tag = OTO
+			tag = PAP
+			tag = PIE
+			tag = ROM
+			tag = RUS
+			tag = SER
+			tag = TUS
+		}
+	}
+	visible = {
+		has_global_flag = eastern_crisis_ongoing_flag
+	}
+}
+
 ### Finland ###
 FIN_decision_category_industrialization = {
 	icon = generic_economy
@@ -69,6 +95,21 @@ GRE_decision_category_obtain_foreign_equipment = {
 	}
 }
 
+GRE_decision_category_cretan_revolution = {
+	icon = generic_independence
+	priority = 90
+	allowed = {
+		OR = {
+			tag = CET
+			tag = GRE
+			tag = OTO
+		}
+	}
+	visible = {
+		has_global_flag = cretan_revolution_ongoing_flag
+	}
+}
+
 GRE_decision_category_industry = {
 	icon = generic_political_actions
 	allowed = { tag = GRE }
@@ -113,11 +154,35 @@ MNT_decision_category_foreign_politics = {
 	allowed = { tag = MNT }
 }
 
+MNT_decision_category_resolve_national_policy = {
+	icon = generic_political_actions
+	allowed = { tag = MNT }
+		visible = {
+		has_completed_focus = MNT_focus_normalization_of_the_relations_with_russia
+	}
+}
+
 MNT_decision_category_economy = {
 	icon = generic_economy
 	allowed = { tag = MNT }
 	visible = {
-		has_completed_focus = MNT_the_new_age
+		has_completed_focus = MNT_focus_into_the_new_age
+	}
+}
+
+MNT_decision_category_agriculture = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		has_completed_focus = MNT_focus_into_the_new_age
+	}
+}
+
+MNT_decision_category_administration = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		has_completed_focus = MNT_focus_into_the_new_age
 	}
 }
 
@@ -125,7 +190,25 @@ MNT_decision_category_army = {
 	icon = generic_economy
 	allowed = { tag = MNT }
 	visible = {
-		has_completed_focus = MNT_danilos_army_reform
+		#has_completed_focus = MNT_danilos_army_reform
+	}
+}
+
+MNT_decision_category_negotiation_with_ottomans = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+	has_completed_focus = MNT_focus_negotiations_with_the_ottomans	
+	}
+}
+
+MNT_decision_category_Herzegovinian_uprising = {
+	icon = generic_economy
+	allowed = { tag = MNT }
+	visible = {
+		HRZ = {
+			has_war_with = OTO
+		}
 	}
 }
 
@@ -231,7 +314,7 @@ ROM_1859_elections_gui = {
 	icon = GFX_decision_cat_rom_1859_election
 	allowed = { tag = ROM }
 	priority = {
-		base = 100
+		base = 200
 	}
 	scripted_gui = rom_elections_1859_ui
 	visible_when_empty = yes
@@ -249,18 +332,136 @@ ROM_1859_elections_gui = {
 		}
 	}
 }
-
+ROM_cuza_reform_gui = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 200
+	}
+	scripted_gui = rom_cuza_reform_ui
+	visible_when_empty = yes
+	visible = {
+		has_completed_focus = ROM_dream_achieved
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_abdication
+			}
+		}
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_cuza_on_top
+			}
+		}
+	}
+}
+ROM_focsani_commission_decisions = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 150
+	}
+	visible_when_empty = yes
+	visible = {
+		has_completed_focus = ROM_establish_focsani_central_commission
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_dissolve_central_commission
+			}
+		}
+	}
+}
+ROM_cuza_international_relations = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 120
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_union_international_relations
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_move_away_from_Ottomans
+			}
+		}
+	}
+}
+ROM_cuza_reforms_education = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 190
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_education_reform
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_monstrous_coalition
+			}
+		}
+	}
+}
+ROM_cuza_reforms_legal = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 190
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_merge_court_system
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_monstrous_coalition
+			}
+		}
+	}
+}
+ROM_cuza_reforms_economic = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 190
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_fiscal_reform
+		NOT = {
+			ROM = {
+				has_completed_focus = ROM_monstrous_coalition
+			}
+		}
+	}
+}
+ROM_industrialise_decisions = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 180
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_begin_industralization
+	}
+}
+ROM_agriculture_reform = {
+	icon = generic_political_actions
+	allowed = { tag = ROM }
+	priority = {
+		base = 180
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = ROM_focus_agriculture
+	}
+}
 ### Russia ###
 RUS_Caucasian_decisions = {
 	icon = generic_political_actions
 	picture = GFX_decision_cat_RUS_Caucasus
 	allowed = { tag = RUS }
 	priority = 200
-}
-
-RUS_constitution_creation = {
-	icon = generic_political_actions
-	allowed = { tag = RUS }
 }
 
 RUS_decision_category_siberian_colonization = {
@@ -292,6 +493,14 @@ RUS_decision_category_milyutin_reforms = {
 	}
 }
 
+RUS_decision_category_judiciary_reform = {
+	#icon = navy
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_New_Ministry_of_Justice
+	}
+}
+
 RUS_decision_category_navy_reforms = {
 	icon = navy
 	allowed = { tag = RUS }
@@ -300,9 +509,33 @@ RUS_decision_category_navy_reforms = {
 	}
 }
 
-RUS_decision_category_russian_technical_society = {
+RUS_decision_category_education_reform = {
 	icon = generic
 	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_university_autonomy
+	}
+}
+
+RUS_decision_category_zemstva = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_zemstvo
+	}
+}
+
+RUS_decision_category_fiscal_reform = {
+	icon = generic
+	allowed = { tag = RUS }
+}
+
+RUS_decision_category_peasant_reform = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		has_completed_focus = RUS_vic_university_autonomy
+	}
 }
 
 ### Scandinavia ###
@@ -337,6 +570,10 @@ SER_decision_category_political = {
 SER_decision_category_saint_adrews_assembly = {
 	icon = generic_political_actions
 	allowed = { tag = SER }
+	#visible_when_empty = yes
+	#visible = {
+	#	has_completed_focus = SER_saint_andrew_assembly
+	#}
 }
 
 SER_decision_category_french_mission = {
@@ -380,33 +617,6 @@ SER_decision_category_lyumbomir_kleric = {
 	}
 }
 
-SER_decision_category_macedonia_propaganda = {
-	icon = generic_propaganda
-	allowed = { tag = SER }
-	visible = {
-		has_completed_focus = SER_macedonia_propoganda
-	}
-}
-
-SER_decision_category_albanian_cooperation = {
-	icon = generic_foreign_policy
-	allowed = { tag = SER }
-	visible = {
-		has_completed_focus = SER_cooperate_with_albania
-	}
-}
-
-SER_decision_category_propaganda_newspaper = {
-	icon = generic_propaganda
-	priority = 100
-	allowed = { tag = SER }
-	scripted_gui = ser_propaganda_campaigns_ui
-	visible = {
-		has_completed_focus = SER_work_with_omalandi
-	}
-	visible_when_empty = yes
-}
-
 SER_decision_category_cukur = {
 	icon = generic_crisis
 	priority = 100
@@ -418,6 +628,23 @@ SER_decision_category_cukur = {
 	}
 	visible = {
 		has_country_flag = cukur_fountain_incident
+	}
+}
+
+SER_decision_category_balkan_politics = {
+	icon = generic_industry
+	allowed = { tag = SER }
+	#visible = {
+		#has_completed_focus = SER_create_balkan_alliance
+	#}
+}
+
+SER_decision_category_maistorovich_affair = {
+	icon = generic_crisis
+	allowed = { tag = SER }
+	visible_when_empty = no
+	visible = {
+		has_country_flag = SER_maistorovich_coup
 	}
 }
 

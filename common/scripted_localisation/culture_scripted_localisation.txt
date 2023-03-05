@@ -512,21 +512,21 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.albanian }
+			check_variable = { v = global.tosk }
 		}
-		localization_key = "Albanian"
+		localization_key = "Tosk Albanian"
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.kosovar }
+			check_variable = { v = global.gheg }
 		}
-		localization_key = "Kosovar"
+		localization_key = "Gheg Albanian"
 	}
 	text = {
 		trigger = {
 			check_variable = { v = global.cham }
 		}
-		localization_key = "Cham"
+		localization_key = "Cham Albanian"
 	}
 	text = {
 		trigger = {
@@ -3954,13 +3954,13 @@ defined_text = {
 
 	text = {
 		trigger = {
-			check_variable = { v = global.albanian }
+			check_variable = { v = global.tosk }
 		}
 		localization_key = "GFX_culture_albanian_albanian"
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.kosovar }
+			check_variable = { v = global.gheg }
 		}
 		localization_key = "GFX_culture_albanian_kosovar"
 	}
@@ -7116,6 +7116,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+            is_in_array = { global.bosniak_array =  v }
+		}
+		localization_key = "NATIONAL_CULTURE_SUBCULTURES_LIST_BOSNIAK"
+	}
+	text = {
+		trigger = {
             is_in_array = { global.egyptian_array =  v }
 		}
 		localization_key = "NATIONAL_CULTURE_SUBCULTURES_LIST_EGYPTIAN"
@@ -7642,7 +7648,7 @@ defined_text = {
 		trigger = {
 			is_in_array = { global.bulgarian_array = v }
 		}
-		localization_key = "Bulgarian"
+		localization_key = "Eastern South Slavic"
 	}
 
 	text = {
@@ -7864,6 +7870,12 @@ defined_text = {
 			is_in_array = { global.maghreb_array = v }
 		}
 		localization_key = "Maghreb"
+	}
+	text = {
+		trigger = {
+			is_in_array = { global.bosniak_array = v }
+		}
+		localization_key = "Bosniak"
 	}
 	text = {
 		trigger = {
@@ -8878,15 +8890,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { state_culture_array^0 = global.albanian }
+			check_variable = { state_culture_array^0 = global.tosk }
 		}
-		localization_key = "Albanian"
+		localization_key = "Tosk Albanian"
 	}
 	text = {
 		trigger = {
-			check_variable = { state_culture_array^0 = global.kosovar }
+			check_variable = { state_culture_array^0 = global.gheg }
 		}
-		localization_key = "Kosovar"
+		localization_key = "Gheg Albanian"
 	}
 	text = {
 		trigger = {

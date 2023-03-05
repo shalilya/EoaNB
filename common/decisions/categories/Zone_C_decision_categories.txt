@@ -173,7 +173,7 @@ DEN_decision_category_foreign_relations = {
 ### France ### 
 FRA_decision_category_cabinet_secondempire = {
 	priority = 1000
-	icon = GFX_Decision_Politic
+	icon = GFX_decision_politics
 	scripted_gui = FRA_SE_cabinet_ui
 	allowed = { original_tag = FRA }
 	visible = {
@@ -590,6 +590,18 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 	}
 	priority = 25
+}
+
+ITA_decisions_category_ITA_florence_restoration = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_ita_florence
+	allowed = {
+		original_tag = PIE
+	}
+	visible = {
+		has_completed_focus = ITA_PIE_focus_Arrival_of_the_King_Florence
+	}
+	priority = 30
 }
 
 ITA_decisions_category_ITA_legislative_actions = {

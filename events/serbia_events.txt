@@ -7,17 +7,24 @@ add_namespace = SER_politics
 		id = SER_politics.1 #saint andrews day
 		title = SER_politics.1.t
 		desc = SER_politics.1.d
-		picture = lorem_ipsum
+		#picture = lorem_ipsum
 
 		fire_only_once = yes
 		is_triggered_only = yes
 
 		option = {
 			name = SER_politics.1.a
+			custom_effect_tooltip = SER_bop_tt
 			hidden_effect = {
+				set_power_balance = {
+					id = SER_Balance_of_Power
+					left_side = SER_BOP_Karadjordjevic_Strength
+					right_side = SER_BOP_Obrenovic_Strength
+					set_value = 0
+				}
 				activate_mission = SER_mission_the_saint_adrews_assembly
+				country_event = {id = SER_politics.52 days = 50}
 			}
-			
 		}
 	}
 
@@ -25,7 +32,7 @@ add_namespace = SER_politics
 		id = SER_politics.2 #alliance of the liberals
 		title = SER_politics.2.t
 		desc = SER_politics.2.d
-		picture = lorem_ipsum
+		#picture = lorem_ipsum
 
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -38,9 +45,12 @@ add_namespace = SER_politics
 				ideology = centrism
 				popularity = 0.05
 			}
-			set_temp_variable = { political_legitimacy_change = 0.05 }
+			set_temp_variable = { political_legitimacy_change = -0.05 }
 			eoanb_political_legitimacy_change = yes
-			
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.1
+			}
 			hidden_effect = {
 				country_event = {
 					id = SER_politics.3 #idea of parlamentiarism
@@ -57,9 +67,12 @@ add_namespace = SER_politics
 				ideology = ROOT
 				popularity = 0.05
 			}
-			set_temp_variable = { political_legitimacy_change = -0.05 }
+			set_temp_variable = { political_legitimacy_change = 0.05 }
 			eoanb_political_legitimacy_change = yes
-			
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = -0.1
+			}
 			hidden_effect = {
 				country_event = {
 					id = SER_politics.6 #turmoil forms in liberal formation
@@ -73,7 +86,7 @@ add_namespace = SER_politics
 		id = SER_politics.3 #idea of parliamentiarism
 		title = SER_politics.3.t
 		desc = SER_politics.3.d
-		picture = lorem_ipsum
+		#picture = lorem_ipsum
 
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -94,6 +107,10 @@ add_namespace = SER_politics
 			}
 			add_stability = 0.02
 			add_war_support = -0.05
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.05
+			}
 		}
 	}
 
@@ -101,36 +118,202 @@ add_namespace = SER_politics
 		id = SER_politics.4 #serbian elite unites
 		title = SER_politics.4.t
 		desc = SER_politics.4.d
-		picture = lorem_ipsum
+		#picture = lorem_ipsum
 
 		fire_only_once = yes
 		is_triggered_only = yes
 
 		option = {
 			name = SER_politics.4.a
-
 			add_political_power = 25
-			
-			if = {
-				limit = {
-					check_variable = {
-						political_legitimacy < 0.5
+			custom_effect_tooltip = SER_faction_outcome_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						power_balance_value = {
+							id = SER_Balance_of_Power
+							value < -0.14
+						}
+					}
+					country_event = {id = SER_politics.50}
+				}
+				
+				else_if = {
+					limit = {
+						power_balance_value = {
+							id = SER_Balance_of_Power
+							value > 0.14
+						}
+					}
+					country_event = {id = SER_politics.51}
+				}
+				else = {
+					add_stability = -0.05
+					add_political_power = -100
+					random_list = {
+						50 = {
+							country_event = {id = SER_politics.50}
+						}
+						50 = {
+							country_event = {id = SER_politics.51}
+						}
 					}
 				}
-				set_country_flag = SER_karadjordjevic_dynasty
-			}
-			
-			else_if = {
-				limit = {
-					check_variable = {
-						political_legitimacy > 0.5
-					}
-				}
-				set_country_flag = SER_obrenovic_dynasty
 			}
 		}
 	}
+	country_event = {
+		id = SER_politics.50 #Karadjordjevic Dyansty Won
+		title = SER_politics.50.t
+		desc = SER_politics.50.d
+		#picture = lorem_ipsum
 
+			fire_only_once = yes
+
+			is_triggered_only = yes
+
+		option = {
+			name = SER_politics.51.a
+			ai_chance = {
+				factor = 50
+			}
+			set_country_flag = SER_karadjordjevic_dynasty
+			remove_power_balance = {
+				id = SER_Balance_of_Power
+			}
+		}
+	}
+	country_event = {
+		id = SER_politics.51 #Obrenovic Dynasty Won
+		title = SER_politics.51.t
+		desc = SER_politics.51.d
+		#picture = lorem_ipsum
+
+			fire_only_once = yes
+
+			is_triggered_only = yes
+
+		option = {
+			name = SER_politics.51.a
+			ai_chance = {
+				factor = 50
+			}
+			set_country_flag = SER_obrenovic_dynasty
+			remove_power_balance = {
+				id = SER_Balance_of_Power
+			}
+		}
+	}
+	country_event = {
+		id = SER_politics.52 #Ilija Garasanin diplomatic maneuvers
+		title = SER_politics.52.t
+		desc = SER_politics.52.d
+		#picture = lorem_ipsum
+
+			fire_only_once = yes
+
+			is_triggered_only = yes
+
+		option = {
+			name = SER_politics.52.a
+			ai_chance = {
+				factor = 50
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.1
+			}
+			OTO = {
+					add_opinion_modifier = {
+						target = SER
+						modifier = medium_decrease
+					}
+			}
+			AUS = {
+					add_opinion_modifier = {
+						target = SER
+						modifier = medium_decrease
+					}
+			}
+			set_country_flag = SER_Foreign_Relations
+		}
+		option = {
+			name = SER_politics.52.b
+			ai_chance = {
+				factor = 50
+			}
+			add_stability = -0.05
+			add_political_power = -30
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.05
+			}
+			AUS = {
+					add_opinion_modifier = {
+						target = SER
+						modifier = small_increase
+					}
+			}
+			set_country_flag = SER_Foreign_Relations
+		}
+	}
+	country_event = {
+		id = SER_politics.53 #The Direction of Foreign Affairs
+		title = SER_politics.53.t
+		desc = SER_politics.53.d
+		#picture = lorem_ipsum
+
+			fire_only_once = yes
+
+			is_triggered_only = yes
+
+		option = {
+			name = SER_politics.53.a
+			ai_chance = {
+				factor = 50
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = 0.1
+			}
+			add_political_power = -40
+			OTO = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = small_increase
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = small_increase
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = small_increase
+				}
+			}
+		}
+		option = {
+			name = SER_politics.53.b
+			ai_chance = {
+				factor = 50
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = -0.1
+			}
+			add_political_power = -40
+			AUS = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = large_increase
+				}
+			}
+		}
+	}
 	country_event = {
 		id = SER_politics.5 # second reign of milos obrenovic
 		title = SER_politics.5.t
@@ -142,11 +325,22 @@ add_namespace = SER_politics
 
 		option = {
 			name = SER_politics.5.a
-
-			set_country_flag = SER_obrenovic_dynasty
-			increase_ps_by_one = yes
-			add_stability = 0.05
-		}
+			ai_chance = {
+				factor = 100
+			}
+			retire_country_leader = yes
+			SER_milos_obrenovic = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					desc = "SER_milos_obrenovic"
+					ideology = conserv
+					expire = "1885.10.29"
+					traits = {}
+					}
+				}
+			}
+		}	
 	}
 
 	country_event = {
@@ -165,6 +359,10 @@ add_namespace = SER_politics
 			add_popularity = {
 				ideology = centrism
 				popularity = -0.1
+			}
+			add_power_balance_value = {
+				id = SER_Balance_of_Power
+				value = -0.05
 			}
 			add_stability = -0.05
 		}
@@ -466,6 +664,7 @@ add_namespace = SER_politics
 			add_political_power = 25
 			add_stability = 0.025
 			add_war_support = -0.05
+			complete_national_focus = SER_cukur_fountain_incident
 		}
 	}
 
@@ -490,6 +689,7 @@ add_namespace = SER_politics
 				target = OTO
 				type = independence_wargoal
 			}
+			complete_national_focus = SER_cukur_fountain_incident
 			activate_mission = Serbian_War_Independence_Peace_Treaty_Mission_Serbia
 			if = {
 				limit = {
@@ -596,7 +796,7 @@ country_event = {
 		ai_chance = {
 			base = 50
 			modifier = {
-				factor = 90
+				factor = 100
 				is_historical_focus_on = yes
 			}
 		}  
@@ -613,10 +813,11 @@ country_event = {
 		ai_chance = {
 			base = 50
 			modifier = {
-				factor = 10
+				factor = 0
 				is_historical_focus_on = yes
 			}
 		}
+		set_country_flag = SER_Karadjordjevic_Dead
 		SER = {
 		 	country_event = {
 				id = SER_politics.22
@@ -641,12 +842,12 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		SER = {
-			country_event = {
-				id = SER_politics.25
-				days = 10
-			}
-		}
+		#SER = {
+		#	country_event = {
+		#		id = SER_politics.25
+		#		days = 10
+		#	}
+		#}
 		add_stability = -0.2
 		add_political_power = -100
 		custom_effect_tooltip = "Unlocks decisions to purge undesirables from the government."
@@ -720,18 +921,19 @@ country_event = {
 
 	option = {
 		name = SER_politics.23.a #Milos
-		SER_mihailo_obrenovic = {
+		retire_country_leader = yes
+		SER_milos_obrenovic = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					desc = "SER_mihailo_obrenovic"
+					desc = "SER_milos_obrenovic"
 					ideology = conserv
 					expire = "1885.10.29"
 					traits = {}
 				}
 			}
 		}
-		retire_country_leader = yes
+		
 		hidden_effect ={ 
 			set_country_flag = SER_obrenovic_dynasty
 		}
@@ -752,18 +954,20 @@ country_event = {
 
 	option = {
 		name = SER_politics.24.a #Mihailo on the Throne
-		SER_milos_obrenovic = {
+		retire_country_leader = yes
+		SER_mihailo_obrenovic = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					desc = "SER_milos_obrenovic"
+					desc = "SER_mihailo_obrenovic"
 					ideology = conserv
 					expire = "1885.10.29"
 					traits = {}
 				}
 			}
 		}
-		retire_country_leader = yes
+		
+		
 		hidden_effect ={ 
 			set_country_flag = SER_obrenovic_dynasty
 		}
@@ -907,18 +1111,18 @@ country_event = {
 			limit = {
 				has_country_leader = { name = "Miloš Obrenović" ruling_only = yes }
 			}
-			SER_milos_obrenovic = {
-				add_country_leader_role = {
-					promote_leader = yes
-					country_leader = {
-						desc = "SER_milos_obrenovic"
-						ideology = conserv
-						expire = "1885.10.29"
-						traits = {}
+			SER_mihailo_obrenovic = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					desc = "SER_mihailo_obrenovic"
+					ideology = conserv
+					expire = "1885.10.29"
+					traits = {}
 					}
 				}
 			}
-			retire_country_leader = yes
+			retire_character = SER_milos_obrenovic
 		}	
 	}
 }
@@ -963,6 +1167,7 @@ country_event = {
 			add_stability = -0.02
 	}
 }
+
 
 ### NEEDS LOCALISATION ###
 ### PREVIOUS NAMESPACE WAS bankrupcy ###
@@ -1649,6 +1854,15 @@ country_event = { #Convocation of the Second Bulgarian Legion
 		hidden_effect = {
 			add_war_support = 0.05
 			army_experience = 20
+			if = {
+				limit = {
+					RUS = { has_active_mission = eastern_crisis_mission_russo_turkish_war }
+					NOT = {
+						has_template = "Bulgarian Legion"
+					}
+				}
+				load_oob = "SER_bulgarian_legion_1877"
+			}
 		}
 	}
 }
@@ -1678,6 +1892,17 @@ country_event = { #New Talented Generals
 						planning_skill = 2
 						logistics_skill = 4
 					legacy_id = 3606
+				}
+			}
+			SER_Sava_Grujic = {
+				add_corps_commander_role = {
+					traits = { }
+					skill = 3
+						attack_skill = 2
+						defense_skill = 3
+						planning_skill = 2
+						logistics_skill = 4
+					legacy_id = 3607
 				}
 			}
 		}
@@ -1794,10 +2019,15 @@ country_event = { #Captain Miša's Mansion
 	option = {
 		name = SERmisc.20.a
 		ai_chance = { factor = 100 }
-		add_political_power = -75
 		set_temp_variable = { eoanb_prestige_change = 5 }
 		eoanb_change_prestige_score = yes
 		add_ideas = SER_idea_european_architecture1
+		if = {
+			limit = {
+				has_idea = SER_advisor_misha_anastasijevic
+			}
+			add_political_power = 75
+		}
 	}
 }
 
@@ -2171,6 +2401,56 @@ country_event = { #Deforestation in Serbia
 	}
 }
 
+country_event = { #Salt
+	id = SERmisc.40
+	title = SERmisc.40.t
+	desc = SERmisc.40.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.40.a
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #Serbian Police Day
+	id = SERmisc.41
+	title = SERmisc.41.t
+	desc = SERmisc.41.d
+	#picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.41.a
+		ai_chance = { factor = 100 }
+		add_political_power = 20
+		add_stability = 0.1
+		add_war_support = 0.1
+	}
+}
+
+country_event = { #Serbian National Theatre
+	id = SERmisc.42
+	title = SERmisc.42.t
+	desc = SERmisc.42.d
+	#picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.42.a
+		ai_chance = { factor = 100 }
+		add_political_power = 20
+		add_stability = 0.1
+	}
+}
+
+###Rest of Politics
 country_event = {
 	id = SER_politics.31 # Alexander found dead
 	title = SER_politics.31.t
@@ -2311,5 +2591,530 @@ country_event = {
 	option = {
 		name = SER_politics.37.a 
 		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {
+	id = SER_politics.38 #Situation of Croatians in Austrian Monarchy
+	title = SER_politics.38.t
+	desc = SER_politics.38.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Support Croatians
+		name = SER_politics.38.a 
+		ai_chance = { factor = 90 }
+		AUS = { country_event = { days = 20 id = SER_politics.39 } }
+	}
+	
+	option = { #Leave Them
+		name = SER_politics.38.b 
+		ai_chance = { factor = 10 }
+		
+	}
+}
+
+country_event = {
+	id = SER_politics.39 #Serbians Supports Croatians
+	title = SER_politics.39.t
+	desc = SER_politics.39.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.39.a 
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {
+	id = SER_politics.40 #Ottoman reaction to Balkan Pact
+	title = SER_politics.40.t
+	desc = SER_politics.40.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.40.a 
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { #Voslau Treaty - pt 1
+	id = SER_politics.41
+	title = SER_politics.41.t
+	desc = SER_politics.41.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.41.a
+		ai_chance = { factor = 70 }
+		add_political_power = -50
+		GRE = {
+			country_event = {
+				id = SER_politics.42
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = SER_politics.41.b
+		ai_chance = { factor = 30 }
+		add_political_power = 50
+		add_war_support = -0.05
+		army_experience = -20
+	}
+}
+
+country_event = { #Voslau Treaty - pt 2 Greek Respond
+	id = SER_politics.42
+	title = SER_politics.42.t
+	desc = SER_politics.42.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = SERmisc.42.a
+		ai_chance = { factor = 70 }
+		reverse_add_opinion_modifier = { target = SER modifier = eoanb_om_RUS_increase_very_small }
+			diplomatic_relation = {
+                country = SER
+                relation = non_aggression_pact
+                active = yes
+            }
+		}
+
+	option = {
+		name = SER_politics.42.a
+		ai_chance = { factor = 30 }
+		reverse_add_opinion_modifier = { target = SER modifier = eoanb_om_RUS_decrease_small }
+	}
+}
+
+country_event = {
+	id = SER_politics.43 #Cooperation with Rakovski
+	title = SER_politics.43.t
+	desc = SER_politics.43.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.43.a 
+		ai_chance = { factor = 90 }
+		add_political_power = -75
+		army_experience = -50
+		add_war_support = 0.05
+		add_stability = 0.025
+		SER_georgi_rakovski = {
+			add_advisor_role = {
+				advisor = {
+					slot = political_advisor
+					idea_token = SER_advisor_georgi_rakovski
+					allowed = {
+						original_tag = SER
+					}
+					traits = {
+						#SER_trait_lazar_brsenijevic_batalaka
+					}
+					ai_will_do = {
+						factor = 80
+					}
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = SER_politics.43.b 
+		ai_chance = { factor = 10 }
+		add_political_power = 65
+		army_experience = 50
+		add_war_support = -0.05
+		add_stability = -0.025
+	}
+}
+
+country_event = {
+	id = SER_politics.44 #Raised tensions in Bulgaria and Macedonia
+	title = SER_politics.44.t
+	desc = SER_politics.44.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.44.a 
+		ai_chance = { factor = 100 }
+		106 = {
+			custom_effect_tooltip = "RUS_vic_NA_tooltip"
+			hidden_effect = {
+				add_compliance = -25
+				add_resistance = 25
+			}
+		}
+		48 = {
+			custom_effect_tooltip = "RUS_vic_NA_tooltip"
+			hidden_effect = {
+				add_compliance = -25
+				add_resistance = 25
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SER_politics.45 #Mihailo Obrenovic
+	title = SER_politics.45.t
+	desc = SER_politics.45.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.45.a 
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {
+	id = SER_politics.46 #1838 Constitution
+	title = SER_politics.46.t
+	desc = SER_politics.46.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.46.a 
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {
+	id = SER_politics.47 #Bulgarian Immigration
+	title = SER_politics.47.t
+	desc = SER_politics.47.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.47.a 
+		ai_chance = { factor = 50 }
+	}
+}
+country_event = {
+	id = SER_politics.48 #Great Power Intervention
+	title = SER_politics.48.t
+	desc = SER_politics.48.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.48.a 
+		ai_chance = { factor = 50 }
+		add_stability = -0.1
+		add_political_power = -20
+		hidden_effect = {
+			OTO = {
+				country_event = {id = SER_politics.49 days = 1}
+			}
+		}
+	}
+}
+country_event = {
+	id = SER_politics.49 #Ottoman News about Serbian Coup
+	title = SER_politics.49.t
+	desc = SER_politics.49.d
+	picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SER_politics.49.a 
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			SER = {
+				country_event = {id = SER_politics.25 days = 3}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SER_politics.54 #Death of Milos Obrenovic
+	title = SER_politics.54.t
+	desc = SER_politics.54.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Mihailo Obrenovic becomes Kynaz
+		name = SER_politics.54.a 
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		add_political_power = 10
+		if = {
+			limit = {
+				has_country_flag = SER_obrenovic_dynasty
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = SER_Karadjordjevic_Dead
+					}
+				}
+				country_event = {id = SER_politics.55 days = 1000 }
+			}
+			if = {
+				limit = {
+					has_country_leader = { name = "Miloš Obrenović" ruling_only = yes }
+				}
+				retire_country_leader = yes
+				SER_mihailo_obrenovic = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							desc = "SER_mihailo_obrenovic"
+							ideology = conserv
+							expire = "1885.10.29"
+							traits = {}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SER_politics.55 #Maistorovich Affair
+	title = SER_politics.55.t
+	desc = SER_politics.55.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Strength the Police force
+		name = SER_politics.55.a 
+		ai_chance = { factor = 50 }
+		add_stability = -0.02
+		activate_mission_tooltip = SER_mission_maistorovich_coup
+		hidden_effect = {
+			set_country_flag = SER_maistorovich_coup
+			set_variable = {
+				var = SER_pacified_cities
+				value = 0
+			}
+			activate_mission = SER_mission_maistorovich_coup
+		}
+	}
+}
+country_event = {
+	id = SER_politics.56 #Maistorovich Plot Exposed
+	title = SER_politics.56.t
+	desc = SER_politics.56.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #To the Supreme Court
+		name = SER_politics.56.a 
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		add_political_power = -50
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = humanities_tech
+		}
+		hidden_effect = {
+			clr_country_flag = SER_maistorovich_coup
+			clr_country_flag = SER_doing_police_mission
+			clear_variable = SER_pacified_cities
+		}
+	}
+	option = { #Kill them all
+		name = SER_politics.56.b 
+		ai_chance = { factor = 50 }
+		add_stability = -0.05
+		set_country_flag = SER_coup_attempt_destroyed #Note for future dev: The next Mihailo assasination should not happen!
+		hidden_effect = {
+			clr_country_flag = SER_maistorovich_coup
+			clr_country_flag = SER_doing_police_mission
+			clear_variable = SER_pacified_cities
+		}
+	}
+}
+country_event = {
+	id = SER_politics.57 #Mihailo is dead
+	title = SER_politics.57.t
+	desc = SER_politics.57.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #May he rest in peace
+		name = SER_politics.57.a 
+		ai_chance = { factor = 50 }
+		add_stability = -0.1
+		add_political_power = -100
+		hidden_effect = {
+			clr_country_flag = SER_maistorovich_coup
+			clr_country_flag = SER_doing_police_mission
+			clear_variable = SER_pacified_cities
+			country_event = {id = SER_politics.58}
+		}
+	}
+}
+country_event = {
+	id = SER_politics.58 #Karadjordjevic dyansty claims power
+	title = SER_politics.58.t
+	desc = SER_politics.58.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Long live the Karadjordjevics
+		name = SER_politics.58.a 
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		retire_country_leader = yes
+		hidden_effect = {
+			remove_country_leader_role = {
+				character = SER_aleksandar_karadordevic
+				ideology = conserv
+			}
+		}
+		add_country_leader_role = {
+			character = SER_aleksandar_karadordevic
+			promote_leader = yes
+			country_leader = {
+				desc = "SER_aleksandar_karadordevic"
+				ideology = conserv
+				expire = "1885.10.29"
+				traits = {}
+			}
+		}
+		clr_country_flag = SER_obrenovic_dynasty
+		complete_national_focus = SER_karadjordjevic_remain
+		country_event = {id = SER_politics.59 days = 50}
+	}
+}
+
+country_event = {
+	id = SER_politics.59 #Plot organisers fall out
+	title = SER_politics.59.t
+	desc = SER_politics.59.d
+	#picture = lorem_ipsum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #God Save Serbia
+		name = SER_politics.59.a 
+		ai_chance = { factor = 50 }
+		add_stability = -0.3
+		custom_effect_tooltip = SER_civil_war_tt
+		hidden_effect = {
+			start_civil_war = {
+				ideology = centrism
+				size = 0.5
+				capital = 941
+				states = {
+					941
+				}
+				keep_all_characters = yes
+				create_country_leader = {
+					name = "Milovan Yankovic"
+					#desc = ""
+					picture = "Portrait_SER_Milovan_Yankovic.png"
+					expire = "1900.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+				add_ideas = {SER_idea_civil_war}
+			}
+			add_ideas = {SER_idea_civil_war}
+		}
+	}
+}
+
+country_event = {
+	id = SER_politics.60 #Death of Mihailo Obrenovic
+	title = SER_politics.60.t
+	desc = SER_politics.60.d
+	#picture = lorem_ipsum
+	trigger = {
+		#date > 1868.6.10
+		has_country_flag = SER_obrenovic_dynasty
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #RIP
+		name = SER_politics.60.a 
+		ai_chance = { factor = 50 }
+		set_country_flag = SER_Milan_Obrenovic_rule
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = SER_unlock_tree_tt
+			SER_milan_obrenovic = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						desc = "SER_milan_obrenovic"
+						ideology = conserv
+						expire = "1900.1.1"
+						traits = {}
+					}
+				}
+			}
+		retire_character = SER_milos_obrenovic
+	}
+}
+
+country_event = {
+	id = SER_politics.61 #Milan Obrenovic becomes Kynaz
+	title = SER_politics.61.t
+	desc = SER_politics.61.d
+	#picture = lorem_ipsum
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Long live Milan
+		name = SER_politics.61.a 
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		add_political_power = 10
+		
 	}
 }

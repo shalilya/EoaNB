@@ -1,43 +1,43 @@
 state = {
 	id = 1241
-	name = "STATE_1241"
-	manpower = 47983
-
-	local_supplies=0.0
-
+	name = "STATE_1241"	# Central Dobrudja
+	manpower = 24458
 	state_category = rural
+
+	provinces = {
+		657
+	}
+
 	history = {
 		# End of a New Beginning
 		owner = OTO
 		1857.1.1 = {
-				victory_points = {
-			657 2
-			}
-			buildings = {
-				infrastructure = 2
-					657 = {
-						naval_base = 2
-					}
-			}
 			add_core_of = BUL
 			add_core_of = ROM
+
+			buildings = {
+				infrastructure = 2
+				657 = {
+					naval_base = 2
+				}
+			}
+
+			victory_points = { 657 2 } # Chostanza/Constanța
 			
 			add_to_array = { state_culture_array = 114 } # Crimea Tatar
-			add_to_array = { state_culture_array_num = 0.41 }
+			add_to_array = { state_culture_array_num = 0.413 }
+			add_to_array = { state_culture_array = 106 } # Turk
+			add_to_array = { state_culture_array_num = 0.304 }
 			add_to_array = { state_culture_array = 99 } # Wallachian
-			add_to_array = { state_culture_array_num = 0.31 }
+			add_to_array = { state_culture_array_num = 0.181 }
 			add_to_array = { state_culture_array = 69 } # Bulgarian
-			add_to_array = { state_culture_array_num = 0.26 }
-			add_to_array = { state_culture_array = 61 } # Aromanian
-			add_to_array = { state_culture_array_num = 0.02 }
+			add_to_array = { state_culture_array_num = 0.102 }
 			
-			add_to_array = { state_religion_array = 1 } # Orthodox
-			add_to_array = { state_religion_array_num = 0.69 }
-			add_to_array = { state_religion_array = 8 } # Sunni Islam
-			add_to_array = { state_religion_array_num = 0.31 }
+			add_to_array = { state_religion_array = 8 } # Islam
+			add_to_array = { state_religion_array_num = 0.717 }
+			add_to_array = { state_religion_array = 1 } # Orthodxy
+			add_to_array = { state_religion_array_num = 0.283 }
 		}
 	}
-	provinces = {
-		657
-	}
+	local_supplies=0.0
 }

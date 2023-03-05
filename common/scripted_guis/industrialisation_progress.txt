@@ -7,7 +7,7 @@ scripted_gui = {
 		parent_window_token = topbar
 
 		ai_enabled = { always = no }
- 
+
 		visible = {
 		# 	OR = {
 		# 		# has_idea = AF_T_unorganized_tribal_nation
@@ -28,6 +28,16 @@ scripted_gui = {
 				set_temp_variable = { show = 1 }
 				subtract_from_temp_variable = { show = show_innovation_progress }
 				set_variable = { show_innovation_progress = show }
+				if = {
+					limit = { tag = RUS }
+					if = {
+						limit = { has_country_flag = russian_peasant_reform_gui_flag }
+						clr_country_flag = russian_peasant_reform_gui_flag
+					}
+					else = {
+						set_country_flag = russian_peasant_reform_gui_flag
+					}
+				}
 			}
 			# innovation_progress_bg_click = {
 			# 	add_to_variable = { innovation_progress = 10 }
@@ -80,12 +90,12 @@ scripted_gui = {
 	}
 	colonial_power = {
 		window_name = "colonial_power_container_1"
-		
+
 		context_type = player_context
 
 		parent_window_token = topbar
 		ai_enabled = { always = no }
- 
+
 		visible = { has_idea = afr_colonial_power}
 
 		effects = {
@@ -106,7 +116,7 @@ scripted_gui = {
 	}
 	colonisation_powers_in_colonial_state = {
 		window_name = "progress_in_colonial_area_container"
- 
+
 		context_type = selected_state_context
 		parent_window_token = selected_state_view
 		ai_enabled = {
@@ -129,7 +139,7 @@ scripted_gui = {
 		ai_check = {
 			is_colonial_nation = yes
 		}
-		
+
 		visible = {
 			NOT={has_global_flag=berlin_conferance_happened}
 			ROOT = {
@@ -158,7 +168,7 @@ scripted_gui = {
 			}
 			is_coastal = yes
 		}
- 
+
 		effects = {
 				colonisation_stage_1_bg_click = {##
 				#ROOT = {
@@ -178,7 +188,7 @@ scripted_gui = {
 									FROM = {is_claimed_by = PREV}
 								}
 							}
-							
+
 						}
 					}
 					subtract_from_variable = {ROOT.colonial_power = 40}
@@ -239,7 +249,7 @@ scripted_gui = {
 						}
 					if={
 						limit={
-							any_neighbor_state = {		
+							any_neighbor_state = {
 								is_controlled_by = event_target:colonial_puppet
 									#save_event_target_as = colonial_puppet
 							}
@@ -308,7 +318,7 @@ scripted_gui = {
 					}
 				}
 				FROM={set_state_flag =@ROOT_colonised}
-				hidden_effect = { 
+				hidden_effect = {
 					if = {
 						limit = { OWNER = { NOT = { has_idea = afr_total_detrimental_colonial_impact_idea } } }
 						OWNER = { add_ideas = afr_total_detrimental_colonial_impact_idea }
@@ -358,7 +368,7 @@ scripted_gui = {
 						custom_effect_tooltip = AFR_Racial_Tension_plus_4
 					}
 				}
-				clear_variable = ROOT.colonisation_progress_@THIS 
+				clear_variable = ROOT.colonisation_progress_@THIS
 				if={
 					limit={
 						NOT={is_claimed_by = ROOT}
@@ -384,7 +394,7 @@ scripted_gui = {
 					}
 				if={
 					limit={
-						any_neighbor_state = {		
+						any_neighbor_state = {
 							is_controlled_by = event_target:colonial_puppet
 								#save_event_target_as = colonial_puppet
 						}
@@ -475,10 +485,10 @@ scripted_gui = {
 					command_power > 4
 				}
 			}
-			colonisation_stage_2_bg_click_enabled={	
+			colonisation_stage_2_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS =1}
 				OR = {
-					owner = { 
+					owner = {
 						OR = {
 							has_country_flag = @ROOT_colonial_deals
 							NOT = {has_country_flag = in_colonal_sphere}
@@ -492,7 +502,7 @@ scripted_gui = {
 			colonisation_stage_3_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS = 2}
 				OR = {
-					owner = { 
+					owner = {
 						OR = {
 							has_country_flag = @ROOT_colonial_deals
 							NOT = {has_country_flag = in_colonal_sphere}
@@ -506,7 +516,7 @@ scripted_gui = {
 			colonisation_stage_4_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS = 3}
 				OR = {
-					owner = { 
+					owner = {
 						OR = {
 							has_country_flag = @ROOT_colonial_deals
 							NOT = {has_country_flag = in_colonal_sphere}
@@ -520,7 +530,7 @@ scripted_gui = {
 			colonisation_stage_5_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS = 4}
 				OR = {
-					owner = { 
+					owner = {
 						OR = {
 							has_country_flag = @ROOT_colonial_deals
 							NOT = {has_country_flag = in_colonal_sphere}
@@ -537,7 +547,7 @@ scripted_gui = {
 			colonisation_stage_6_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS = 5}
 				OR = {
-					owner = { 
+					owner = {
 						NOT = {has_country_flag = colonal_state}
 						OR = {
 							is_puppet_of = ROOT
@@ -554,7 +564,7 @@ scripted_gui = {
 			colonisation_stage_7_bg_click_enabled={
 				check_variable = {ROOT.colonisation_progress_@THIS = 6}
 				OR = {
-					owner = { 
+					owner = {
 						NOT = {has_country_flag = colonal_state}
 						OR = {
 							is_puppet_of = ROOT
@@ -617,7 +627,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -634,7 +644,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -651,7 +661,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -668,7 +678,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -685,7 +695,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -702,7 +712,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -719,7 +729,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -736,7 +746,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -753,7 +763,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -770,7 +780,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -787,7 +797,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -804,7 +814,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -821,7 +831,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -838,7 +848,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -855,7 +865,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -872,7 +882,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -889,7 +899,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -906,7 +916,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -923,7 +933,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -940,7 +950,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -957,7 +967,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -974,7 +984,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = {
@@ -996,7 +1006,7 @@ scripted_gui = {
 									# }
 								# }
 							# }
-						# }	
+						# }
 						# add = 5
             		# }
 					# modifier = { # ENG historical colonies
@@ -1179,7 +1189,7 @@ scripted_gui = {
 			show_grid = {
 				array = EGY.suezInvestors
 				entry_container = suez_stockholder_entry
-			} 
+			}
 		}
 		triggers={
 			suez_construction_header_visible={
@@ -1190,11 +1200,699 @@ scripted_gui = {
 			}
 		}
 	}
-	
+	nuclear_missile_tab = {
+		window_name = "nmissle_container"
+
+		context_type = player_context
+	    ai_enabled={
+			always = no
+		}
+
+		visible = {
+			has_country_flag = NMC_opened
+		}
+		effects={
+			nmissle_container_escape_click={
+				clr_country_flag = NMC_opened
+			}
+			nmissle_toggle_production_click={
+				if={
+					limit = {check_variable = {NMC_production_active > 0}}
+					set_variable = {NMC_production_active = 0}
+				}
+				else={set_variable = {NMC_production_active = 2}}
+			}
+			nmissle_r_and_d_tab_button_click={
+				set_variable = {NMC_opened_tab = 0}
+			}
+			nmissle_production_tab_button_click={
+				set_variable = {NMC_opened_tab = 2}
+			}
+			nmissle_targeting_tab_button_click={
+				set_variable = {NMC_opened_tab = 1}
+			}
+		}
+		properties = {
+			nmissle_toggle_production = { frame = NMC_production_active}
+			nmissle_r_and_d_tab_button= { image = "[GetMissileGetTabRDStatus]"}
+			nmissle_production_tab_button= { image = "[MISSILE_GET_TAB_PRODUCTION_STATUS]"}
+			nmissle_targeting_tab_button= { image = "[MISSILE_GET_TAB_TARGETING_STATUS]"}
+		}
+		triggers={
+			nmissle_toggle_production_click_enabled={
+				check_variable = {NMC_research_array^29 >1}
+				#always = no#change to check if nmc production is enabled
+			}
+			nmissle_r_and_d_tab_button_visible={
+				NOT={check_variable = {NMC_opened_tab = 0}}
+			}
+			nmissle_production_tab_button_visible={
+				NOT={check_variable = {NMC_opened_tab = 2}}
+			}
+			nmissle_targeting_tab_button_visible={
+				NOT={check_variable = {NMC_opened_tab = 1}}
+			}
+		}
+	}
+	nuclear_missile_targeting_tab = {
+		window_name = "nmissle_targeting_tab"
+
+		context_type = player_context
+		parent_window_name = nmissle_container
+	    ai_enabled={
+			always = no
+		}
+
+		visible = {
+			has_country_flag = NMC_opened
+			check_variable = { NMC_opened_tab = 1 }
+		}
+		properties = {
+			nmissle_target_country = { image = "[GET_CURRENT_MISSILE_TARGETED_NATION]"}
+			missile_target_owner_flag = { image = "[?zmissile_targeted_states_country_array^i.GetFlag]" }
+			missile_current_target_country = { image = "[?zmissile_current_nuke_target.GetFlag]" }
+		}
+        effects = {
+			launch_strike_click={#the big red button
+				add_to_array = {
+					zmissile_targeted_states_array = "NA"
+				}
+				add_to_array = {
+					zmissile_targeted_states_country_array = "NA"
+				}
+				for_each_loop = {#nuke relevant states
+					array = zmissile_targeted_states_array
+					every_state={
+						limit={
+							state = v
+						}
+						if={
+							limit ={
+								owner = {tag = ROOT.zmissile_current_nuke_target}
+							}
+							ROOT={
+								launch_nuke = {
+									state = v
+									controller = ROOT.zmissile_current_nuke_target
+									use_nuke = no
+								}
+								remove_from_array = {
+									array = zmissile_targeted_states_country_array
+									index = i
+								}
+								remove_from_array = {
+									array = zmissile_targeted_states_array
+									index = i
+								}
+								add_to_array = {
+									index = i
+									zmissile_targeted_states_array = "NA"
+								}
+								add_to_array = {
+									zmissile_targeted_states_country_array = "NA"
+									index = i
+								}
+								subtract_from_variable = {ROOT.num_prepared_nuclear_missiles = 1}
+							}
+						}
+					}
+				}
+				if={#clean up
+					limit={
+						all_of = {
+							array = zmissile_targeted_states_array
+
+							check_variable={v = "NA"}
+						}
+					}
+					clear_array = zmissile_targeted_states_array
+					clear_array = zmissile_targeted_states_country_array
+				}
+				else={
+					for_each_loop = {
+						array = zmissile_targeted_states_array
+						if={
+							limit={
+								check_variable = {v="NA"}
+							}
+							remove_from_array = {
+								array = zmissile_targeted_states_array
+								value = "NA"
+							}
+							remove_from_array = {
+								array = zmissile_targeted_states_country_array
+								value = "NA"
+							}
+						}
+					}
+				}
+				#unassign nuked target
+				set_variable = { ROOT.zmissile_current_nuke_target=0 }
+			}
+			launch_pad_switch_cover_open_click={
+				clr_country_flag = launch_ready
+			}
+			launch_pad_switch_cover_click={
+				set_country_flag = launch_ready
+			}
+			nmissle_target_country_click={
+				set_variable = {zmissile_current_nuke_target = zmissile_targeted_states_country_array^i}
+			}
+			nmissle_targeted_list_remove_click={
+				remove_from_array={
+					array = zmissile_targeted_states_array
+					index = i
+				}
+				remove_from_array={
+					array = zmissile_targeted_states_country_array
+					index = i
+				}
+				add_to_variable = { num_prepared_nuclear_missiles = 1}
+			}
+			nmissle_targeted_list_move_up_click={
+				if={
+					limit={
+						check_variable={ i > 0}
+					}
+					set_temp_variable = { temp1 = i }
+					subtract_from_temp_variable = { temp1 = 1 }
+					set_temp_variable = { temp3 = zmissile_targeted_states_country_array^i}
+					remove_from_array = {
+						array = zmissile_targeted_states_country_array
+						index = i
+					}
+					add_to_array = {
+						array = zmissile_targeted_states_country_array
+						value = temp3
+						index = temp1
+					}
+					set_temp_variable = { temp3 = zmissile_targeted_states_array^i}
+					remove_from_array = {
+						array = zmissile_targeted_states_array
+						index = i
+					}
+					add_to_array = {
+						array = zmissile_targeted_states_array
+						value = temp3
+						index = temp1
+					}
+				}
+			}
+			nmissle_targeted_list_move_down_click={
+				if={
+					limit={
+						set_temp_variable = { temp1 = zmissile_targeted_states_array^num }
+						subtract_from_temp_variable = { temp1 = 1 }
+						check_variable = {i < temp1}
+					}
+					set_temp_variable = { temp1 = i }
+					add_to_temp_variable = { temp1 = 1 }
+					set_temp_variable = { temp3 = zmissile_targeted_states_country_array^i}
+					remove_from_array = {
+						array = zmissile_targeted_states_country_array
+						index = i
+					}
+					add_to_array = {
+						array = zmissile_targeted_states_country_array
+						value = temp3
+						index = temp1
+					}
+					set_temp_variable = { temp3 = zmissile_targeted_states_array^i}
+					remove_from_array = {
+						array = zmissile_targeted_states_array
+						index = i
+					}
+					add_to_array = {
+						array = zmissile_targeted_states_array
+						value = temp3
+						index = temp1
+					}
+				}
+			}
+        }
+        triggers = {
+			launch_strike_click_enabled={
+				has_country_flag = launch_ready
+			}
+			launch_pad_switch_cover_open_visible={
+				has_country_flag = launch_ready
+			}
+			launch_pad_switch_cover_visible={
+				NOT = {has_country_flag = launch_ready}
+			}
+			nmissle_targeted_list_move_down_visible={
+				check_variable = {
+					var = i
+					value = zmissile_targeted_states_array^num
+					compare = less_than
+				}
+			}
+			nmissle_targeted_list_move_up_visible={
+				check_variable = {i > 0}
+			}
+        }
+		dynamic_lists = {
+			nmissle_targeted_list = {
+				array = zmissile_targeted_states_array
+				entry_container = nmissle_targeted_list_container
+			}
+		}
+	}
+	nuclear_missile_r_and_d_tab = {
+		window_name = "nmissle_r_and_d_tab"
+
+		context_type = player_context
+		parent_window_name = nmissle_container
+	    ai_enabled={
+			always = no
+		}
+
+		visible = {
+			has_country_flag = NMC_opened
+			check_variable = { NMC_opened_tab = 0 }
+		}
+
+		effects={
+			nmissle_rd_research_1_1_click={
+				set_variable = {NMC_research_array^0 = 2}
+				add_command_power = -25
+			}
+			nmissle_rd_research_1_2_click={
+				set_variable = {NMC_research_array^1 = 2}
+				add_command_power = -25
+			}
+			nmissle_rd_research_2_1_click={
+				set_variable = {NMC_research_array^2 = 2}
+				add_command_power = -25
+			}
+			nmissle_rd_research_2_2_click={
+				set_variable = {NMC_research_array^3 = 2}
+				add_command_power = -25
+			}
+			nmissle_rd_extraction_1_click={
+				set_variable = {NMC_research_array^4 = 2}
+				if={
+					limit={
+						any_owned_state = {
+							has_uranium_deposits = yes
+						}
+					}
+					unlock_decision_tooltip = NMC_develop_uranium_extraction
+				}
+				else={
+					unlock_decision_tooltip = NMC_obtain_uranium_deals
+				}
+			}
+			nmissle_rd_extraction_2_click={
+				set_variable = {NMC_research_array^5 = 2}
+			}
+			nmissle_rd_refining_1_click={
+				set_variable = {NMC_research_array^6 = 2}
+			}
+			nmissle_rd_refining_2_click={
+				set_variable = {NMC_research_array^7 = 2}
+			}
+			nmissle_rd_fissile_material_1_click={
+				set_variable = {NMC_research_array^8 = 2}
+			}
+			nmissle_rd_fissile_material_2_click={
+				set_variable = {NMC_research_array^9 = 2}
+				set_variable = {NMC_research_array^29 = 2}
+				#country_event = { }#inform world of new nuclear power
+			}
+			nmissle_rd_electronics_1_click={
+				set_variable = {NMC_research_array^10 = 2}
+			}
+			nmissle_rd_electronics_2_click={
+				set_variable = {NMC_research_array^11 = 2}
+			}
+			nmissle_rd_radio_1_click={
+				set_variable = {NMC_research_array^12 = 2}
+			}
+			nmissle_rd_radio_2_click={
+				set_variable = {NMC_research_array^13 = 2}
+			}
+			nmissle_rd_servos_1_click={
+				set_variable = {NMC_research_array^14 = 2}
+			}
+			nmissle_rd_servos_2_click={
+				set_variable = {NMC_research_array^15 = 2}
+			}
+			nmissle_rd_gyros_1_click={
+				set_variable = {NMC_research_array^16 = 2}
+			}
+			nmissle_rd_gyros_2_click={
+				set_variable = {NMC_research_array^17 = 2}
+			}
+			nmissle_rd_propulsion_1_click={
+				set_variable = {NMC_research_array^18 = 2}
+			}
+			nmissle_rd_propulsion_2_click={
+				set_variable = {NMC_research_array^19 = 2}
+			}
+			nmissle_rd_casing_1_click={
+				set_variable = {NMC_research_array^20 = 2}
+			}
+			nmissle_rd_casing_2_click={
+				set_variable = {NMC_research_array^21 = 2}
+			}
+			nmissle_rd_launch_site_1_click={
+				set_variable = {NMC_research_array^22 = 2}
+			}
+			nmissle_rd_launch_site_2_click={
+				set_variable = {NMC_research_array^23 = 2}
+			}
+			nmissle_rd_mcontrol_1_click={
+				set_variable = {NMC_research_array^24 = 2}
+			}
+			nmissle_rd_mcontrol_2_click={
+				set_variable = {NMC_research_array^25 = 2}
+			}
+			nmissle_rd_security_1_click={
+				set_variable = {NMC_research_array^26 = 2}
+			}
+			nmissle_rd_security_2_click={
+				set_variable = {NMC_research_array^27 = 2}
+			}
+			nmissle_rd_launch_ready_click={
+				set_variable = {NMC_research_array^28 = 2}
+				set_variable = {NMC_research_array^29 = 3}
+			}
+		}
+		triggers={
+			nmissle_rd_research_1_1_click_enabled = {
+				command_power > 25
+			}
+			nmissle_rd_research_1_1_visible = {
+				check_variable = {NMC_research_array^0 = 0}
+			}
+			nmissle_rd_research_1_2_click_enabled = {
+				command_power > 25
+				check_variable = {NMC_research_array^0 = 2}
+			}
+			nmissle_rd_research_1_2_visible = {
+				check_variable = {NMC_research_array^1 = 0}
+			}
+			nmissle_rd_research_2_1_click_enabled = {
+				command_power > 25
+			}
+			nmissle_rd_research_2_1_visible = {
+				check_variable = {NMC_research_array^2 = 0}
+			}
+			nmissle_rd_research_2_2_click_enabled = {
+				command_power > 25
+				check_variable = {NMC_research_array^2 = 2}
+			}
+			nmissle_rd_research_2_2_visible = {
+				check_variable = {NMC_research_array^3 = 0}
+			}
+			nmissle_rd_extraction_1_click_enabled = {
+				has_political_power > 20
+				has_tech = mining_rig_11
+			}
+			nmissle_rd_extraction_1_visible = {
+				check_variable = {NMC_research_array^4 = 0}
+			}
+			nmissle_rd_extraction_2_click_enabled = {
+				has_country_flag = HAS_URANIUM_SOURCE
+				check_variable = {NMC_research_array^4 = 2}
+			}
+			nmissle_rd_extraction_2_visible = {
+				check_variable = {NMC_research_array^5 = 0}
+			}
+			nmissle_rd_refining_1_click_enabled = {
+				has_political_power > 20
+				has_tech = gas_centrifuge
+			}
+			nmissle_rd_refining_1_visible = {
+				check_variable = {NMC_research_array^6 = 0}
+			}
+			nmissle_rd_refining_2_click_enabled = {
+				has_tech = machine_tools_8
+				has_political_power > 20
+				check_variable = {NMC_research_array^6 = 2}
+			}
+			nmissle_rd_refining_2_visible = {
+				check_variable = {NMC_research_array^7 = 0}
+			}
+			nmissle_rd_fissile_material_1_click_enabled = {
+				has_political_power > 100
+				has_country_flag = HAS_URANIUM_SOURCE
+			}
+			nmissle_rd_fissile_material_1_visible = {
+				check_variable = {NMC_research_array^8 = 0}
+			}
+			nmissle_rd_fissile_material_2_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^8 = 2}
+			}
+			nmissle_rd_fissile_material_2_visible = {
+				check_variable = {NMC_research_array^9 = 0}
+			}
+
+			nmissle_rd_electronics_1_click_enabled = {
+				has_tech = double_diode_triodes
+				has_tech = smith-putnam_wind_turbine
+			}
+			nmissle_rd_electronics_1_visible = {
+				check_variable = {NMC_research_array^10 = 0}
+			}
+			nmissle_rd_electronics_2_click_enabled = {
+				has_tech = programing_languages
+				check_variable = {NMC_research_array^10 = 2}
+			}
+			nmissle_rd_electronics_2_visible = {
+				check_variable = {NMC_research_array^11 = 0}
+			}
+			nmissle_rd_radio_1_click_enabled = {
+				has_tech = slotted_waveguide_radar_system
+			}
+			nmissle_rd_radio_1_visible = {
+				check_variable = {NMC_research_array^12 = 0}
+			}
+			nmissle_rd_radio_2_click_enabled = {
+				has_tech = point_contact_transistor
+				check_variable = {NMC_research_array^12 = 2}
+			}
+			nmissle_rd_radio_2_visible = {
+				check_variable = {NMC_research_array^13 = 0}
+			}
+			nmissle_rd_servos_1_click_enabled = {
+				has_tech = alkaline_battery
+				has_tech = industrial_robotics
+			}
+			nmissle_rd_servos_1_visible = {
+				check_variable = {NMC_research_array^14 = 0}
+			}
+			nmissle_rd_servos_2_click_enabled = {
+				has_tech = tunnel_diodes
+				has_tech = wind_turbine_1
+				check_variable = {NMC_research_array^14 = 2}
+			}
+			nmissle_rd_servos_2_visible = {
+				check_variable = {NMC_research_array^15 = 0}
+			}
+			nmissle_rd_gyros_1_click_enabled = {
+				has_tech = assembly_line_tools_1
+				has_tech = industrial_metalworks_1
+			}
+			nmissle_rd_gyros_1_visible = {
+				check_variable = {NMC_research_array^16 = 0}
+			}
+			nmissle_rd_gyros_2_click_enabled = {
+				has_tech = swept_wings
+				has_tech = variable_stators
+				check_variable = {NMC_research_array^16 = 2}
+			}
+			nmissle_rd_gyros_2_visible = {
+				check_variable = {NMC_research_array^17 = 0}
+			}
+			nmissle_rd_propulsion_1_visible = {
+				check_variable = {NMC_research_array^18 = 0}
+			}
+			nmissle_rd_propulsion_2_click_enabled = {
+				has_tech = modern_ceramics
+				has_tech = hydrocracking
+				check_variable = {NMC_research_array^18 = 2}
+			}
+			nmissle_rd_propulsion_2_visible = {
+				check_variable = {NMC_research_array^19 = 0}
+			}
+
+
+			nmissle_rd_casing_1_click_enabled = {
+				has_political_power > 100
+			}
+			nmissle_rd_casing_1_visible = {
+				check_variable = {NMC_research_array^20 = 0}
+			}
+			nmissle_rd_casing_2_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^20 = 2}
+			}
+			nmissle_rd_casing_2_visible = {
+				check_variable = {NMC_research_array^21 = 0}
+			}
+			nmissle_rd_launch_site_1_click_enabled = {
+				has_political_power > 100
+			}
+			nmissle_rd_launch_site_1_visible = {
+				check_variable = {NMC_research_array^22 = 0}
+			}
+			nmissle_rd_launch_site_2_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^22 = 2}
+			}
+			nmissle_rd_launch_site_2_visible = {
+				check_variable = {NMC_research_array^23 = 0}
+			}
+
+			nmissle_rd_mcontrol_1_click_enabled = {
+				has_political_power > 100
+			}
+			nmissle_rd_mcontrol_1_visible = {
+				check_variable = {NMC_research_array^24 = 0}
+			}
+			nmissle_rd_mcontrol_2_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^24 = 2}
+			}
+			nmissle_rd_mcontrol_2_visible = {
+				check_variable = {NMC_research_array^25 = 0}
+			}
+
+			nmissle_rd_security_1_click_enabled = {
+				has_political_power > 100
+			}
+			nmissle_rd_security_1_visible = {
+				check_variable = {NMC_research_array^26 = 0}
+			}
+			nmissle_rd_security_2_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^26 = 2}
+			}
+			nmissle_rd_security_2_visible = {
+				check_variable = {NMC_research_array^27 = 0}
+			}
+			nmissle_rd_launch_ready_click_enabled = {
+				has_political_power > 100
+				check_variable = {NMC_research_array^28 = 0}
+				check_variable = {NMC_research_array^29 = 2}
+			}
+
+		}
+		properties = {
+			nmc_research_1_light = { frame = NMC_research_array^1}
+			nmc_research_2_light = { frame = NMC_research_array^3}
+			nmc_extraction_light = { frame = NMC_research_array^5}
+			nmc_refining_light = { frame = NMC_research_array^7}
+			nmc_fissile_light = { frame = NMC_research_array^9}
+			nmc_electronics_light = { frame = NMC_research_array^11}
+			nmc_radio_light = { frame = NMC_research_array^13}
+			nmc_servos_light = { frame = NMC_research_array^15}
+			nmc_gyros_light = { frame = NMC_research_array^17}
+			nmc_propulsion_light = { frame = NMC_research_array^19}
+			nmc_casing_light = { frame = NMC_research_array^21}
+			nmc_launch_site_light = { frame = NMC_research_array^23}
+			nmc_mcontrol_light = { frame = NMC_research_array^25}
+			nmc_security_light = { frame = NMC_research_array^27}
+			nmc_launch_ready_light = { frame = NMC_research_array^28}
+			nmissle_rd_launch_ready = { frame = NMC_research_array^28}
+		}
+	}
+	nuclear_missile_production_tab = {
+		window_name = "nmissle_production_tab"
+
+		context_type = player_context
+		parent_window_name = nmissle_container
+	    ai_enabled={
+			always = no
+		}
+
+		visible = {
+			has_country_flag = NMC_opened
+			check_variable = { NMC_opened_tab = 2 }
+		}
+
+		# effects={
+
+		# }
+		# triggers={
+
+
+		# }
+		properties = {
+			nmissile_warhead_construction_bar = {
+				frame = 100
+			}
+			nmissile_warhead_construction_screen_bg = {
+				frame = NMC_research_array^29
+			}
+		}
+	}
+	nuclear_missile_targeting = {
+       window_name = "nuclear_missile_targeting_container"
+
+       context_type = selected_state_context
+	   parent_window_token = selected_state_view
+
+		ai_enabled={
+			always = no
+		}
+		visible = {
+			ROOT={
+				has_country_flag = NMC_opened
+				check_variable = { NMC_opened_tab = 1 }
+			}
+		}
+
+        effects = {
+			target_state_with_missle_click={
+				if={
+					limit={
+						ROOT={
+							NOT={
+								is_in_array = {
+									array = zmissile_targeted_states_array
+									value = PREV
+								}
+							}
+						}
+					}
+					ROOT={
+						add_to_array = {
+							zmissile_targeted_states_array = PREV
+						}
+					}
+					OWNER={
+						ROOT={
+							add_to_array = {
+								zmissile_targeted_states_country_array = PREV
+							}
+						}
+					}
+					#ROOT = {subtract_from_variable = { num_prepared_nuclear_missiles = 1}}
+				}
+			}
+        }
+        triggers = {
+			target_state_with_missle_click_enabled = {
+				NOT={owner = {tag = ROOT}}
+				ROOT={check_variable = { num_prepared_nuclear_missiles > zmissile_targeted_states_array^num}}
+				NOT={
+					is_in_array = {
+						array = ROOT.zmissile_targeted_states_array
+						value = THIS
+					}
+				}
+			}
+        }
+	}
+
 	superevents_eoanb = {
 		context_type = player_context
 		window_name = "superevents_container"
-		
+
 		visible = {
 			check_variable = {super_event_displayed > 0}
 		}
@@ -1334,7 +2032,7 @@ scripted_gui = {
 			check_variable = {super_event_displayed = 19}
 		}
 	}
-	
+
 	eoanb_se_triple_alliance_sound = {
 		context_type = player_context
 		window_name = "triple_alliance_sound_container"
@@ -1505,7 +2203,7 @@ scripted_gui = {
 			check_variable = {super_event_displayed = 9901}
 		}
 	}
-	
+
 	eoanb_se_super_event_sound = {
 		context_type = player_context
 		window_name = "superevent_sound_container"
@@ -1516,7 +2214,7 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	taiping_princely_influence = {
 		context_type = decision_category
 		window_name = "taiping_princely_influence_window"

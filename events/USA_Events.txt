@@ -1017,39 +1017,6 @@ country_event = {
 
 #################### Utah/Mormon War #######################################################################################################
 
-# country_event = {#sets AI behavior
-# 	id = usa.248
-# 	title = usa.248.t
-# 	desc = usa.248.d
-# 	#hidden = yes
-
-# 	is_triggered_only = yes
-# 	fire_only_once = yes
-
-# 	option = {
-# 		name = usa.248.a
-# 		hidden_effect = {
-# 			set_country_flag = USA_mormon_NME
-# 			if = {
-# 				limit = {
-# 					is_historical_focus_on = yes
-# 				}
-# 				set_country_flag = AI_USA_mormonWar_peaceful
-# 			}
-# 			else = {
-# 				random_list = {
-# 					85 = {
-# 						set_country_flag = AI_USA_mormonWar_peaceful
-# 					}
-# 					15 = {
-# 						set_country_flag = AI_USA_mormonWar_aggressive
-# 					}
-# 				}
-# 			}			
-# 		}
-# 	}
-# }
-
 #Preperations for Utah War#
 country_event = {
 	id = USA_utah_war.1
@@ -1063,6 +1030,9 @@ country_event = {
  		name = USA_utah_war.1.a
 		hidden_effect = {
 			country_event = { id = USA_utah_war.2 days = 14 }
+			UTA = {
+				country_event = { id = UTA.1 days = 6 }
+			}
  		}
 	}
 }
@@ -1077,9 +1047,6 @@ country_event = {
 
 	option = {
 		name = USA_utah_war.2.a
-		hidden_effect = {
-			country_event = { id = USA_utah_war.3 days = 60 }
-		}
 	}
 }
 #Mountain Meadow Massacre#
@@ -1093,6 +1060,7 @@ country_event = {
 
  	option = {
 		name = USA_utah_war.3.a
+		add_manpower = -140
 		hidden_effect = {
 				country_event = { id = USA_utah_war.5 days = 24 }
 		}
@@ -1123,10 +1091,7 @@ country_event = {
 	option = {
 		name = USA_utah_war.5.a
 		hidden_effect = {
-				country_event = { id = USA_utah_war.6 days = 10 }
-				# UTA = {
-				# 	country_event = { id = UTA.5 days = 10 }
-				# }
+			country_event = { id = USA_utah_war.6 days = 10 }
 		}
 	}
 }
@@ -1162,7 +1127,7 @@ country_event = {
 		}
 	}
 }
-#Newspapers have Buchanan discuss with cabinet and Russia#
+#Newspapers spread Hysteria#
 country_event = {
 	id = USA_utah_war.8
 	title = USA_utah_war.8.t
@@ -1221,6 +1186,14 @@ country_event = {
 
 	option = {
 		name = USA_utah_war.11.a
+		custom_effect_tooltip = work_in_progress
+		hidden_effect = {
+			country_event = { id = USA_utah_war.12 days = 7 }
+		}
+	}
+	option = {
+		name = USA_utah_war.11.b
+		custom_effect_tooltip = historical_option
 		hidden_effect = {
 			country_event = { id = USA_utah_war.12 days = 7 }
 		}
@@ -1303,6 +1276,23 @@ country_event = {
 		name = USA_utah_war.16.a
 		hidden_effect = {
 			country_event = { id = USA_utah_war.17 days = 37 }
+			UTA = {
+				retire_country_leader = yes
+				set_politics = {
+					ruling_party = traditional_conservatism
+					elections_allowed = no
+				}
+				UTA_character_alfred_cumming = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = conserv
+							desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
+							expire = "1873.10.9"
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1995,9 +1985,7 @@ country_event = {
 			BRK = { country_event = { days = 30 id = usa.29 } }
 			NVS = { country_event = { days = 30 id = usa.29 } }
 			NFL = { country_event = { days = 30 id = usa.29 } }
-			# VAN = { country_event = { days = 30 id = usa.29 } }
 			BCO = { country_event = { days = 30 id = usa.29 } }
-			NWT = { country_event = { days = 30 id = usa.29 } }
 		}
 	}
 	option = {
@@ -2010,9 +1998,7 @@ country_event = {
 			BRK = { country_event = { days = 30 id = usa.30 } }
 			NVS = { country_event = { days = 30 id = usa.30 } }
 			NFL = { country_event = { days = 30 id = usa.30 } }
-			# VAN = { country_event = { days = 30 id = usa.30 } }
 			BCO = { country_event = { days = 30 id = usa.30 } }
-			NWT = { country_event = { days = 30 id = usa.30 } }
 		}
 	}
 }
@@ -2044,9 +2030,7 @@ country_event = {
 				TAG = BRK
 				TAG = NVS
 				TAG = NFL
-				# TAG = VAN
 				TAG = BCO
-				TAG = NWT
 			}
 		}
 		name = usa.29.c
@@ -2090,9 +2074,7 @@ country_event = {
 				TAG = BRK
 				TAG = NVS
 				TAG = NFL
-				# TAG = VAN
 				TAG = BCO
-				TAG = NWT
 			}
 		}
 		name = usa.30.c
@@ -2265,8 +2247,7 @@ country_event = {
 					NOT = {
 						OR = {
 							has_government = autocracy
-							has_government = vanguard_communism
-							has_government = collectivist_socialism
+							has_government = ideology_radical_socialism
 							has_government = anarchism
 						}
 					}
@@ -2280,8 +2261,7 @@ country_event = {
 					OR = {
 						has_war_with = CSA
 						has_government = autocracy
-						has_government = vanguard_communism
-						has_government = collectivist_socialism
+						has_government = ideology_radical_socialism
 						has_government = anarchism
 					}
 				}
@@ -5322,6 +5302,9 @@ country_event = {
 		set_country_flag = USA_norton_parliament
 	}
 }
+
+#Check for Liberal ideology changes
+
 #Sons of Liberty Revolt
 country_event = {
 	id = usa.104
@@ -5339,7 +5322,7 @@ country_event = {
 			has_completed_focus = USA_norton_promise_rights
 		}
 		start_civil_war = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			size = 0.4
 			capital = 1091
 			states = {
@@ -5349,7 +5332,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = USA
-				has_government = centrism
+				has_government = ideology_social_liberalism
 			}
 			create_country_leader = {
 		name = "Ulysses S. Grant"
@@ -5422,7 +5405,7 @@ country_event = {
 			}
 		}
 		start_civil_war = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			size = 0.3
 			capital = 1091
 			states = {
@@ -5432,7 +5415,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = USA
-				has_government = centrism
+				has_government = ideology_social_liberalism
 			}
 			create_country_leader = {
 				name = "Ulysses S. Grant"
@@ -5500,7 +5483,7 @@ country_event = {
 			}
 		}
 		start_civil_war = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			size = 0.2
 			capital = 1091
 			states = {
@@ -5510,7 +5493,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = USA
-				has_government = centrism
+				has_government = ideology_social_liberalism
 			}
 			create_country_leader = {
 				name = "Ulysses S. Grant"
@@ -5578,7 +5561,7 @@ country_event = {
 			}
 		}
 		start_civil_war = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			size = 0.15
 			capital = 1091
 			states = {
@@ -5588,7 +5571,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = USA
-				has_government = centrism
+				has_government = ideology_social_liberalism
 			}
 			create_country_leader = {
 				name = "Ulysses S. Grant"
@@ -5656,7 +5639,7 @@ country_event = {
 			}
 		}
 		start_civil_war = {
-			ideology = centrism
+			ideology = ideology_social_liberalism
 			size = 0.1
 			capital = 1091
 			states = {
@@ -5666,7 +5649,7 @@ country_event = {
 		random_other_country = {
 			limit = {
 				original_tag = USA
-				has_government = centrism
+				has_government = ideology_social_liberalism
 			}
 			create_country_leader = {
 				name = "Ulysses S. Grant"
@@ -6140,11 +6123,7 @@ country_event = {
 	option = {
 		name = usa.117.c
 		add_popularity = {
-			ideology = collectivist_socialism
-			popularity = 0.02
-		}
-		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_radical_socialism
 			popularity = 0.02
 		}
 		if = {
@@ -6188,7 +6167,7 @@ country_event = {
 	option = {
 		name = usa.118.b
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.02
 		}
 		add_popularity = {
@@ -6209,8 +6188,8 @@ country_event = {
 	option = {
 		name = usa.118.c
 		add_popularity = {
-			ideology = vanguard_communism
-			popularity = 0.02
+			ideology = ideology_radical_socialism
+			popularity = 0.04
 		}
 		if = {
 			limit = {
@@ -6270,7 +6249,7 @@ country_event = {
 	option = {
 		name = usa.119.c
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.04
 		}
 		if = {
@@ -6287,8 +6266,8 @@ country_event = {
 	option = {
 		name = usa.119.e
 		add_popularity = {
-			ideology = vanguard_communism
-			popularity = 0.04
+			ideology = ideology_radical_socialism
+			popularity = 0.06
 		}
 		if = {
 			limit = {
@@ -6335,7 +6314,7 @@ country_event = {
 			popularity = 0.03
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.03
 		}
 		if = {
@@ -6352,8 +6331,8 @@ country_event = {
 	option = {
 		name = usa.120.c
 		add_popularity = {
-			ideology = vanguard_communism
-			popularity = 0.03
+			ideology = ideology_radical_socialism
+			popularity = 0.05
 		}
 		if = {
 			limit = {
@@ -6379,7 +6358,7 @@ country_event = {
 	option = {
 		name = usa.121.a
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_radical_socialism
 			popularity = -0.1
 		}
 		if = {
@@ -6396,7 +6375,7 @@ country_event = {
 	option = {
 		name = usa.121.b
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_radical_socialism
 			popularity = 0.1
 		}
 		hidden_effect = {
@@ -6432,12 +6411,8 @@ country_event = {
 			value = party_popularity@social_egalitarianism
 		}
 		set_variable = {
-			var = MHC_collective_points
-			value = party_popularity@collectivist_socialism
-		}
-		set_variable = {
-			var = MHC_communist_points
-			value = party_popularity@vanguard_communism
+			var = MHC_radical_points
+			value = party_popularity@ideology_radical_socialism
 		}
 	}
 
@@ -6449,12 +6424,8 @@ country_event = {
 				check_variable = { MHC_anarchism_points = MHC_social_points }
 			}
 			OR = {
-				check_variable = { MHC_anarchism_points > MHC_collective_points }
-				check_variable = { MHC_anarchism_points = MHC_collective_points }
-			}
-			OR = {
-				check_variable = { MHC_anarchism_points > MHC_communist_points }
-				check_variable = { MHC_anarchism_points = MHC_communist_points }
+				check_variable = { MHC_anarchism_points > MHC_radical_points }
+				check_variable = { MHC_anarchism_points = MHC_radical_points }
 			}
 		}
 		set_politics = {
@@ -6472,12 +6443,8 @@ country_event = {
 				check_variable = { MHC_social_points = MHC_anarchism_points }
 			}
 			OR = {
-				check_variable = { MHC_social_points > MHC_collective_points }
-				check_variable = { MHC_social_points = MHC_collective_points }
-			}
-			OR = {
-				check_variable = { MHC_social_points > MHC_communist_points }
-				check_variable = { MHC_social_points = MHC_communist_points }
+				check_variable = { MHC_social_points > MHC_radical_points }
+				check_variable = { MHC_social_points = MHC_radical_points }
 			}
 		}
 		set_politics = {
@@ -6491,46 +6458,20 @@ country_event = {
 		name = usa.122.c
 		trigger = {
 			OR = {
-				check_variable = { MHC_collective_points > MHC_anarchism_points }
-				check_variable = { MHC_collective_points = MHC_anarchism_points }
+				check_variable = { MHC_radical_points > MHC_anarchism_points }
+				check_variable = { MHC_radical_points = MHC_anarchism_points }
 			}
 			OR = {
-				check_variable = { MHC_collective_points > MHC_social_points }
-				check_variable = { MHC_collective_points = MHC_social_points }
-			}
-			OR = {
-				check_variable = { MHC_collective_points > MHC_communist_points }
-				check_variable = { MHC_collective_points = MHC_communist_points }
+				check_variable = { MHC_radical_points > MHC_social_points }
+				check_variable = { MHC_radical_points = MHC_social_points }
 			}
 		}
 		set_politics = {
-			ruling_party = collectivist_socialism
+			ruling_party = ideology_radical_socialism
 			elections_allowed = yes
 			election_frequency = 48
 		}
 		set_country_flag = USA_mhc_sorge_flag
-	}
-	option = {
-		name = usa.122.e
-		trigger = {
-			OR = {
-				check_variable = { MHC_communist_points > MHC_social_points }
-				check_variable = { MHC_communist_points = MHC_social_points }
-			}
-			OR = {
-				check_variable = { MHC_communist_points > MHC_collective_points }
-				check_variable = { MHC_communist_points = MHC_collective_points }
-			}
-			OR = {
-				check_variable = { MHC_communist_points > MHC_anarchism_points }
-				check_variable = { MHC_communist_points = MHC_anarchism_points }
-			}
-		}
-		set_politics = {
-			ruling_party = vanguard_communism
-			elections_allowed = no
-		}
-		set_country_flag = USA_mhc_dietzgen_flag
 	}
 }
 #Marx Invited
@@ -10500,9 +10441,7 @@ country_event = {
 			BRK = { country_event = { days = 30 id = usa.179 } }
 			NVS = { country_event = { days = 30 id = usa.179 } }
 			NFL = { country_event = { days = 30 id = usa.179 } }
-			# VAN = { country_event = { days = 30 id = usa.179 } }
 			BCO = { country_event = { days = 30 id = usa.179 } }
-			NWT = { country_event = { days = 30 id = usa.179 } }
 		}
 	}
 	option = {
@@ -10518,9 +10457,7 @@ country_event = {
 			BRK = { country_event = { days = 30 id = usa.180 } }
 			NVS = { country_event = { days = 30 id = usa.180 } }
 			NFL = { country_event = { days = 30 id = usa.180 } }
-			# VAN = { country_event = { days = 30 id = usa.180 } }
 			BCO = { country_event = { days = 30 id = usa.180 } }
-			NWT = { country_event = { days = 30 id = usa.180 } }
 		}
 	}
 }
@@ -10558,9 +10495,7 @@ country_event = {
 				TAG = BRK
 				TAG = NVS
 				TAG = NFL
-				# TAG = VAN
 				TAG = BCO
-				TAG = NWT
 			}
 		}
 		name = usa.179.c
@@ -10608,9 +10543,7 @@ country_event = {
 				TAG = BRK
 				TAG = NVS
 				TAG = NFL
-				# TAG = VAN
 				TAG = BCO
-				TAG = NWT
 			}
 		}
 		name = usa.180.c
@@ -11390,12 +11323,12 @@ country_event = { # The formation of the Greenback Party
 	option = {
 		name = usa.206.a
 		set_party_name = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			long_name = USA_greenback_party_long
 			name = USA_greenback_party
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = .01
 		}
 		hidden_effect = {
@@ -11433,12 +11366,12 @@ country_event = {
 	option = {
 		name = usa.210.a
 		set_party_name = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			long_name = USA_greenback_party_long
 			name = USA_greenback_party
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = .04
 		}
 		hidden_effect = {
@@ -12584,8 +12517,7 @@ news_event = {
 				NOT = {
 					TAG = USA
 					has_government = social_egalitarianism
-					has_government = vanguard_communism
-					has_government = collectivist_socialism
+					has_government = ideology_radical_socialism
 				}
 			}
 			name = usa_news.10.a
@@ -12596,8 +12528,7 @@ news_event = {
 					TAG = USA
 				}
 				has_government = social_egalitarianism
-				has_government = vanguard_communism
-				has_government = collectivist_socialism
+				has_government = ideology_radical_socialism
 				}
 			name = usa_news.10.b
 			}
@@ -14368,7 +14299,7 @@ country_event = {
 				create_country_leader = {
 	    			name = "William A. Wheeler"
 	    			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
-	    			picture = "portrait_europe_generic_land_14.png"
+	    			picture = "GFX_GENERIC_Portrait_Europe_generic_leader_politician_39"
 	    			expire = "1947.1.1"
 	    			ideology = market_liberal
 	  			}

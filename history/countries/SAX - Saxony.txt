@@ -88,15 +88,26 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
-		social_egalitarianism = 5
-		centrism = 38
+		ideology_social_liberalism = 18
+		ideology_radical_socialism = 0
+		social_egalitarianism = 10
+		centrism = 20
 		traditional_conservatism = 32
 		radical_democracy = 0
 		chauvinist_populism = 0
-		autocracy = 25
+		autocracy = 20
 		fundamentalism = 0
+	}
+	
+	set_power_balance = {
+		id = SAX_Balance_of_Power_Trias
+		left_side = SAX_BOP_Particularism
+		right_side = SAX_BOP_Cooperation
+		set_value = -0.65
+	}
+	add_power_balance_modifier = {
+		id = SAX_Balance_of_Power_Trias
+		modifier = SAX_Balance_of_Power_Trias_active
 	}
 
 	set_technology = {
@@ -254,14 +265,11 @@
 	#SAX_friedrich_ferdinand_von_beust (see advisors)
 
 	#SocEgal
+	#SAX_ferdinand_lassalle (see advisors)
+
+	#RadSoc
 	recruit_character = SAX_otto_freytag
-
-	#CollSoc
 	
-
-	#VanCom
-	
-
 	#Peripheral
 	recruit_character = SAX_sächsischer_landtag
 

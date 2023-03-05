@@ -1,0 +1,6614 @@
+add_namespace = eastern_crisis
+
+#eastern_crisis.1-100		Bosnia and Herzegovina Events
+#eastern_crisis.101-200		Serbia and Montenegro Events
+#eastern_crisis.201-400		Bulgaria Events
+#eastern_crisis.401-600		Russo-Turkish War Events
+#eastern_crisis.601-700		Albania Events
+#eastern_crisis.701-800		Greece Events
+
+##### BOSNIA AND HERZEGOVINA EVENTS (eastern_crisis.1-100) #####
+
+#Memorandum of the Association for Serbian Liberation and Unification (12.09.1871)
+country_event = {
+	id = eastern_crisis.1
+	title = eastern_crisis.1.t
+	desc = eastern_crisis.1.d
+	picture = GFX_report_event_association_for_serbian_liberation_and_unification
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.1.a
+		if = {
+			limit = {
+				tag = SER
+			}
+			hidden_effect = {
+				MNT = { country_event = { id = eastern_crisis.1 } }
+				OTO = { country_event = { id = eastern_crisis.2 days = 1 } }
+			}
+		}
+	}
+}
+
+#OTO - Association for Serbian Liberation and Unification's Memorandum (13.09.1871)
+country_event = {
+	id = eastern_crisis.2
+	title = eastern_crisis.2.t
+	desc = eastern_crisis.2.d
+	picture = GFX_report_event_association_for_serbian_liberation_and_unification
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.2.a
+		add_stability = -0.03
+		custom_effect_tooltip = OTO_nationalist_resistance_eastern_crisis_effect_tt
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = BOS
+						is_core_of = MNT
+						is_core_of = SER
+					}
+				}
+				force_enable_resistance = OTO
+				start_resistance = OTO
+				set_resistance = 15
+				set_garrison_strength = 0.5
+			}
+			country_event = { id = eastern_crisis.3 days = 800 random_days = 180 }
+		}
+	}
+}
+
+#OTO - The Need for Reforms in Bosnia (between 1873-1874)
+country_event = {
+	id = eastern_crisis.3
+	title = eastern_crisis.3.t
+	desc = eastern_crisis.3.d
+	picture = GFX_report_event_bosnian_reforms
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.3.a
+		add_political_power = -25
+		hidden_effect = {
+			#set_country_flag = OTO_need_for_reforms_in_bosnia_flag 	### Add to enable Ottoman ft content later
+		}
+	}
+}
+
+#The Herzegovina Uprising of 1875 (19.06.1875)
+country_event = {
+	id = eastern_crisis.4
+	title = eastern_crisis.4.t
+	desc = eastern_crisis.4.d
+	picture = GFX_report_event_herzegovina_uprising
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.4.a
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = SER
+				}
+				MNT = { country_event = { id = eastern_crisis.4 } }
+				OTO = { country_event = { id = eastern_crisis.5 } }
+				AUS = { country_event = { id = eastern_crisis.10 days = 365 random_days = 30 } }
+				HRZ = { country_event = { id = eastern_crisis.11 days = 210 random_days = 14 } }
+				ROM = { country_event = { id = eastern_crisis.203 days = 54 } }
+			}
+		}
+	}
+}
+
+#OTO - The Herzegovina Uprising of 1875 (June 1875)
+country_event = {
+	id = eastern_crisis.5
+	title = eastern_crisis.5.t
+	desc = eastern_crisis.5.d
+	picture = GFX_report_event_herzegovina_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	immediate = {
+		hidden_effect = {
+			1207 = { add_core_of = HRZ }
+			release = HRZ
+			HRZ = {
+				load_oob = "HRZ_1875"
+				diplomatic_relation = {
+					country = MNT
+					relation = non_aggression_pact
+					active = yes
+				}
+				diplomatic_relation = {
+					country = SER
+					relation = non_aggression_pact
+					active = yes
+				}
+				add_manpower = 40000
+				HRZ_mico_ljubibratic = {
+					add_corps_commander_role = {
+						traits = { trickster guerilla_fighter }
+						skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 2
+							logistics_skill = 1
+					}
+				}
+				HRZ_bogdan_zimonjic = {
+					add_corps_commander_role = {
+						traits = { trickster guerilla_fighter }
+						skill = 1
+							attack_skill = 1
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 1
+					}
+				}
+			}
+			set_global_flag = eastern_crisis_ongoing_flag
+			set_global_flag = eastern_crisis_herzegovina_uprising_flag
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.5.a
+		declare_war_on = {
+			target = HRZ
+			type = wargoal_herzegovina_uprising
+		}
+		activate_mission = eastern_crisis_mission_herzegovina_uprising_of_1875
+		hidden_effect = {
+			HRZ = {
+				activate_mission = eastern_crisis_mission_herzegovina_uprising_of_1875
+				set_capital = { state = 1207 }
+			}
+			news_event = { id = eastern_crisis.6 days = 1 }
+			country_event = { id = eastern_crisis.601 days = 350 random_days = 100 }
+		}
+	}
+}
+
+#The Herzegovina Uprising of 1875 (June 1875)
+news_event = {
+	id = eastern_crisis.6
+	title = eastern_crisis.6.t
+	desc = eastern_crisis.6.d
+	picture = GFX_news_event_herzegovina_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.6.a
+	}
+}
+
+#HRZ - Italian Volunteers Arrive
+country_event = {
+	id = eastern_crisis.7
+	title = eastern_crisis.7.t
+	desc = eastern_crisis.7.d
+	picture = GFX_event_ITA_Garibaldi_Generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.7.a
+		custom_effect_tooltip = HRZ_italian_volunteers_effect_tt
+		hidden_effect = {
+			load_oob = "HRZ_Garibaldists"
+		}
+	}
+}
+
+#HRZ - French Relief Efforts
+country_event = {
+	id = eastern_crisis.8
+	title = eastern_crisis.8.t
+	desc = eastern_crisis.8.d
+	picture = GFX_report_event_generic_aid_relief
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.8.a
+		add_ideas = HRZ_idea_help_from_abroad
+	}
+}
+
+#HRZ - Russian Volunteers Arrive
+country_event = {
+	id = eastern_crisis.9
+	title = eastern_crisis.9.t
+	desc = eastern_crisis.9.d
+	picture = GFX_event_panslavic_flag
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.9.a
+		custom_effect_tooltip = HRZ_russian_volunteers_effect_tt
+		hidden_effect = {
+			load_oob = "HRZ_Russian_Volunteers"
+		}
+	}
+}
+
+#Refugee Crisis in Croatia (Second half of 1876)
+country_event = {
+	id = eastern_crisis.10
+	title = eastern_crisis.10.t
+	desc = eastern_crisis.10.d
+	picture = GFX_report_event_refugees_croatia
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.10.a
+		if = {
+			limit = {
+				tag = AUS
+			}
+			add_timed_idea = {
+				idea = AUS_idea_croatian_refugee_crisis
+				days = 120
+			}
+			if = {
+				limit = {
+					owns_state = 103
+				}
+				103 = {
+					add_dynamic_modifier = {
+						modifier = mass_immigration
+					}
+					add_manpower = 5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 109
+				}
+				109 = {
+					add_dynamic_modifier = {
+						modifier = mass_immigration
+					}
+					add_manpower = 10000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1011
+				}
+				1011 = {
+					add_dynamic_modifier = {
+						modifier = mass_immigration
+					}
+					add_manpower = 10000
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = AUS_international_units_in_bosnia_flag
+				}
+				unlock_decision_tooltip = eastern_crisis_decision_bosnia_military_operation
+			}
+			hidden_effect = {
+				MNT = { country_event = { id = eastern_crisis.10 } }
+				OTO = { country_event = { id = eastern_crisis.10 } }
+				SER = { country_event = { id = eastern_crisis.10 } }
+				if = {
+					limit = {
+						HRZ = { exists = yes }
+					}
+					HRZ = { country_event = { id = eastern_crisis.10 } }
+				}
+				set_country_flag = AUS_croatian_refugee_crisis_flag
+			}
+		}
+		else_if = {
+			limit = {
+				tag = HRZ
+			}
+			add_political_power = -25
+			add_stability = -0.05
+			if = {
+				limit = {
+					owns_state = 104
+				}
+				104 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1205
+				}
+				1205 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1207
+				}
+				1207 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1208
+				}
+				1208 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1272
+				}
+				1272 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				tag = OTO
+			}
+			add_political_power = -10
+			add_stability = -0.02
+			if = {
+				limit = {
+					owns_state = 104
+				}
+				104 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1205
+				}
+				1205 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1207
+				}
+				1207 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1208
+				}
+				1208 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 1272
+				}
+				1272 = {
+					add_dynamic_modifier = {
+						modifier = mass_emigration
+					}
+					add_manpower = -5000
+				}
+			}
+		}
+	}
+}
+
+#The International Units
+country_event = {
+	id = eastern_crisis.11
+	title = eastern_crisis.11.t
+	desc = eastern_crisis.11.d
+	picture = GFX_report_event_herzegovinian_troops
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.11.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		if = {
+			limit = {
+				tag = HRZ
+			}
+			add_opinion_modifier = { target = MNT modifier = om_war_support }
+			reverse_add_opinion_modifier = { target = MNT modifier = om_war_support }
+			add_opinion_modifier = { target = SER modifier = om_war_support }
+			reverse_add_opinion_modifier = { target = SER modifier = om_war_support }
+			hidden_effect = {
+				AUS = { country_event = { id = eastern_crisis.11 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.11 }
+				}
+				FRA = { country_event = { id = eastern_crisis.11 } }
+				MNT = { country_event = { id = eastern_crisis.11 } }
+				OTO = { country_event = { id = eastern_crisis.11 } }
+				RUS = { country_event = { id = eastern_crisis.11 } }
+				SER = { country_event = { id = eastern_crisis.11 } }
+			}
+		}
+		else_if = {
+			limit = {
+				tag = AUS
+			}
+			if = {
+				limit = {
+					has_country_flag = AUS_croatian_refugee_crisis_flag
+				}
+				unlock_decision_tooltip = eastern_crisis_decision_bosnia_military_operation
+			}
+			hidden_effect = {
+				set_country_flag = AUS_international_units_in_bosnia_flag
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.11.b
+		trigger = {
+			tag = OTO
+		}
+		add_opinion_modifier = { target = FRA modifier = om_war_support_for_enemy }
+		reverse_add_opinion_modifier = { target = FRA modifier = om_war_support_for_enemy }
+		add_opinion_modifier = { target = MNT modifier = om_war_support_for_enemy }
+		reverse_add_opinion_modifier = { target = MNT modifier = om_war_support_for_enemy }
+		add_opinion_modifier = { target = RUS modifier = om_war_support_for_enemy }
+		reverse_add_opinion_modifier = { target = RUS modifier = om_war_support_for_enemy }
+		add_opinion_modifier = { target = SER modifier = om_war_support_for_enemy }
+		reverse_add_opinion_modifier = { target = SER modifier = om_war_support_for_enemy }
+		every_other_country = {
+			limit = {
+				has_country_flag = is_literally_italy
+			}
+			add_opinion_modifier = { target = OTO modifier = om_war_support_for_enemy }
+			reverse_add_opinion_modifier = { target = OTO modifier = om_war_support_for_enemy }
+		}
+	}
+}
+
+#AUS - The Austro-Hungarian Military Operation in Bosnia (1878)
+country_event = {
+	id = eastern_crisis.12
+	title = eastern_crisis.12.t
+	desc = eastern_crisis.12.d
+	picture = GFX_report_event_austrian_occupation_troops
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.12.a
+		add_opinion_modifier = { target = ENG modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = ENG modifier = om_military_operation }
+		add_opinion_modifier = { target = FRA modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = FRA modifier = om_military_operation }
+		add_opinion_modifier = { target = MNT modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = MNT modifier = om_military_operation }
+		add_opinion_modifier = { target = OTO modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = OTO modifier = om_military_operation }
+		add_opinion_modifier = { target = RUS modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = RUS modifier = om_military_operation }
+		add_opinion_modifier = { target = SER modifier = om_military_operation }
+		reverse_add_opinion_modifier = { target = SER modifier = om_military_operation }
+		hidden_effect = {
+			news_event = { id = eastern_crisis.13 days = 1 }
+		}
+	}
+}
+
+#The Austro-Hungarian Military Operation in Bosnia (1878)
+news_event = {
+	id = eastern_crisis.13
+	title = eastern_crisis.13.t
+	desc = eastern_crisis.13.d
+	picture = GFX_news_event_austrian_military_operation_bosnia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.13.a
+	}
+}
+
+#AUS - The Storming of Sarajevo
+country_event = {
+	id = eastern_crisis.14
+	title = eastern_crisis.14.t
+	desc = eastern_crisis.14.d
+	picture = GFX_report_event_storming_of_sarajevo
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = AUS
+		has_active_mission = eastern_crisis_mission_austrian_occupation_of_bosnia
+		controls_province = 13876
+	}
+	
+	option = {
+		name = eastern_crisis.14.a
+		add_stability = -0.01
+		add_war_support = -0.01
+		if = {
+			limit = {
+				controls_state = 104
+			}
+			104 = {
+				add_resistance = 2
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1205
+			}
+			1205 = {
+				add_resistance = 2
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1207
+			}
+			1207 = {
+				add_resistance = 2
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1208
+			}
+			1208 = {
+				add_resistance = 2
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1272
+			}
+			1272 = {
+				add_resistance = 5
+			}
+		}
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			MNT = { country_event = { id = eastern_crisis.15 } }
+			RUS = { country_event = { id = eastern_crisis.15 } }
+			SER = { country_event = { id = eastern_crisis.15 } }
+		}
+	}
+}
+
+#MNT/RUS/SER - The Storming of Sarajevo
+country_event = {
+	id = eastern_crisis.15
+	title = eastern_crisis.15.t
+	desc = eastern_crisis.15.d
+	picture = GFX_report_event_storming_of_sarajevo
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.15.a
+		add_opinion_modifier = { target = AUS modifier = SER_opinion_sarajevo_storming }
+		reverse_add_opinion_modifier = { target = AUS modifier = SER_opinion_sarajevo_storming }
+	}
+}
+
+#AUS - Occupation of Bosnia and Herzegovina
+country_event = {
+	id = eastern_crisis.16
+	title = eastern_crisis.16.t
+	desc = eastern_crisis.16.d
+	picture = GFX_report_event_austrian_occupation_of_bosnia
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.16.a
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		add_opinion_modifier = { target = ENG modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = ENG modifier = om_military_occupation }
+		add_opinion_modifier = { target = FRA modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = FRA modifier = om_military_occupation }
+		add_opinion_modifier = { target = MNT modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = MNT modifier = om_military_occupation }
+		add_opinion_modifier = { target = OTO modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = OTO modifier = om_military_occupation }
+		add_opinion_modifier = { target = RUS modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = RUS modifier = om_military_occupation }
+		add_opinion_modifier = { target = SER modifier = om_military_occupation }
+		reverse_add_opinion_modifier = { target = SER modifier = om_military_occupation }
+		add_stability = -0.05
+		hidden_effect = {
+			#set_country_flag = AUS_successful_occupation_bosnia_flag 	### Add to enable Austrian ft content later
+			news_event = { id = eastern_crisis.17 days = 1 }
+		}
+	}
+}
+
+#Austro-Hungarian Occupation of Bosnia and Herzegovina
+news_event = {
+	id = eastern_crisis.17
+	title = eastern_crisis.17.t
+	desc = eastern_crisis.17.d
+	picture = GFX_news_event_austrian_occupation_bosnia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.17.a
+	}
+}
+
+#Austro-Hungarian Occupation of Bosnia and Herzegovina Fails
+country_event = {
+	id = eastern_crisis.18
+	title = eastern_crisis.18.t
+	desc = eastern_crisis.18.d
+	picture = GFX_report_event_austrian_occupation_of_bosnia
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.18.a
+		trigger = {
+			NOT = { tag = AUS }
+		}
+		add_political_power = 150
+		add_stability = 0.1
+		set_temp_variable = { eoanb_prestige_change = 10 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.18.b
+		trigger = {
+			tag = AUS
+		}
+		add_political_power = -150
+		add_stability = -0.1
+		set_temp_variable = { eoanb_prestige_change = -10 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			news_event = { id = eastern_crisis.19 days = 1 }
+		}
+	}
+}
+
+#Austro-Hungarian Occupation of Bosnia and Herzegovina Fails
+news_event = {
+	id = eastern_crisis.19
+	title = eastern_crisis.19.t
+	desc = eastern_crisis.19.d
+	picture = GFX_news_event_austrian_occupation_bosnia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.19.a
+	}
+}
+
+#Austro-Hungarian Occupation of Bosnia and Herzegovina Fails
+country_event = {
+	id = eastern_crisis.20
+	title = eastern_crisis.20.t
+	desc = eastern_crisis.20.d
+	picture = GFX_report_event_austrian_occupation_of_bosnia
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.20.a
+		trigger = {
+			NOT = { tag = AUS }
+		}
+		add_political_power = 50
+		add_stability = 0.03
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.20.b
+		trigger = {
+			tag = AUS
+		}
+		add_political_power = -75
+		add_stability = -0.05
+		set_temp_variable = { eoanb_prestige_change = -5 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			news_event = { id = eastern_crisis.19 days = 1 }
+		}
+	}
+}
+
+##### SERBIA AND MONTENEGRO EVENTS (eastern_crisis.101-200) #####
+
+#The Serbian-Ottoman War (30.06.1876)
+country_event = {
+	id = eastern_crisis.101
+	title = eastern_crisis.101.t
+	desc = eastern_crisis.101.d
+	picture = GFX_report_event_serbian_ottoman_war_outbreak
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			OTO = {
+				set_autonomy = {
+					target = MNT
+					autonomy_state = autonomy_free
+				}
+				set_autonomy = {
+					target = SER
+					autonomy_state = autonomy_free
+				}
+			}
+			create_faction = faction_serbia_montenegro
+			add_to_faction = MNT
+			MNT = { country_event = { id = eastern_crisis.102 } }
+			OTO = { country_event = { id = eastern_crisis.102 } }
+			RUS = { country_event = { id = eastern_crisis.426 days = 14 } }
+			set_global_flag = eastern_crisis_serbian_ottoman_war_flag
+		}
+	}
+		
+	option = {
+		name = eastern_crisis.101.a
+		add_war_support = 0.05
+		add_manpower = 20000
+		activate_mission = eastern_crisis_mission_serbian_ottoman_war
+		declare_war_on = {
+			target = OTO
+			type = wargoal_serbian_ottoman_war
+		}
+		MNT = {
+			add_to_war = {
+				targeted_alliance = SER
+				enemy = OTO
+			}
+		}
+		news_event = { id = eastern_crisis.103 days = 1 }
+	}
+}
+
+#The Serbian-Ottoman War (30.06.1876)
+country_event = {
+	id = eastern_crisis.102
+	title = {
+		trigger = { tag = OTO }
+		text = eastern_crisis.102.t_ottoman
+	}
+	title = {
+		trigger = { tag = MNT }
+		text = eastern_crisis.102.t_montenegro
+	}
+	desc = eastern_crisis.102.d
+	picture = GFX_report_event_serbian_ottoman_war_outbreak
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.102.a
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.05
+		add_war_support = 0.05
+		activate_mission = eastern_crisis_mission_serbian_ottoman_war
+	}
+	
+	option = {
+		name = eastern_crisis.102.b
+		trigger = {
+			tag = MNT
+		}
+		add_war_support = 0.05
+		add_manpower = 5000
+	}
+}
+
+#The Serbian-Ottoman War (01.07.1876)
+news_event = {
+	id = eastern_crisis.103
+	title = eastern_crisis.103.t
+	desc = eastern_crisis.103.d
+	picture = GFX_news_event_serbian_ottoman_war_outbreak
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.103.a
+	}
+}
+
+#Serbian Advance into Ottoman Territory
+country_event = {
+	id = eastern_crisis.104
+	title = eastern_crisis.104.t
+	desc = eastern_crisis.104.d
+	picture = GFX_report_event_serbian_mhc
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SER
+		has_war_with = OTO
+		OTO = { surrender_progress > 0.05 }
+	}
+	
+	option = {
+		name = eastern_crisis.104.a
+		add_stability = 0.01
+		add_war_support = 0.05
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			MNT = { country_event = { id = eastern_crisis.105 days = 1 } }
+			OTO = { country_event = { id = eastern_crisis.105 days = 1 } }
+			RUS = { country_event = { id = eastern_crisis.105 days = 1 } }
+		}
+	}
+}
+
+#Serbian Advance into Ottoman Territory
+country_event = {
+	id = eastern_crisis.105
+	title = eastern_crisis.105.t
+	desc = eastern_crisis.105.d
+	picture = GFX_report_event_serbian_mhc
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.105.a
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.02
+		add_war_support = -0.02
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.105.b
+		trigger = {
+			tag = MNT
+		}
+		add_stability = 0.01
+		add_war_support = 0.02
+	}
+	
+	option = {
+		name = eastern_crisis.105.c
+		trigger = {
+			tag = RUS
+		}
+		add_political_power = 10
+	}
+}
+
+#A Russian Ultimatum
+country_event = {
+	id = eastern_crisis.106
+	title = eastern_crisis.106.t
+	desc = eastern_crisis.106.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		SER = {
+			has_war_with = OTO
+			surrender_progress > 0.35
+			has_active_mission = eastern_crisis_mission_serbian_ottoman_war
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.106.a
+		add_stability = -0.02
+		add_war_support = -0.05
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.107 days = 1 } }
+			SER = { country_event = { id = eastern_crisis.107 days = 1 } }
+			MNT = { country_event = { id = eastern_crisis.107 days = 1 } }
+			country_event = { id = eastern_crisis.114 days = 90 }
+		}
+	}
+}
+
+#A Russian Ultimatum
+country_event = {
+	id = eastern_crisis.107
+	title = eastern_crisis.107.t
+	desc = eastern_crisis.107.d
+	picture = GFX_report_event_peterhof_palace
+	
+	is_triggered_only = yes
+	
+	timeout_days = 3
+	
+	#Accept the ultimatum
+	option = {
+		name = eastern_crisis.107.a
+		trigger = {
+			tag = OTO
+		}
+		custom_effect_tooltip = OTO_russian_ultimatum_accept_effect_tt
+		add_stability = -0.02
+		add_war_support = -0.02
+		white_peace = SER
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_serbian_ottoman_war
+			SER = {
+				remove_mission = eastern_crisis_mission_serbian_ottoman_war
+				remove_from_faction = MNT
+			}
+			RUS = { country_event = { id = eastern_crisis.108 } }
+		}
+	}
+	
+	#Reject the ultimatum
+	option = {
+		name = eastern_crisis.107.b
+		trigger = {
+			tag = OTO
+		}
+		custom_effect_tooltip = OTO_russian_ultimatum_reject_effect_tt
+		add_stability = -0.04
+		add_war_support = 0.02
+		hidden_effect = {
+			RUS = { country_event = { id = eastern_crisis.111 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.107.c
+		trigger = {
+			OR = {
+				tag = MNT
+				tag = SER
+			}
+		}
+		add_stability = 0.01
+		add_war_support = -0.03
+	}
+}
+
+#The Ottomans Accept the Ultimatum
+country_event = {
+	id = eastern_crisis.108
+	title = eastern_crisis.108.t
+	desc = eastern_crisis.108.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.108.a
+		add_political_power = 50
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			MNT = { country_event = { id = eastern_crisis.109 } }
+			SER = { country_event = { id = eastern_crisis.109 } }
+			news_event = { id = eastern_crisis.110 days = 1 }
+		}
+	}
+}
+
+#Serbo-Turkish Armistice
+country_event = {
+	id = eastern_crisis.109
+	title = eastern_crisis.109.t
+	desc = eastern_crisis.109.d
+	picture = GFX_report_event_serbian_ottoman_war_armistice
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.109.a
+		trigger = {
+			tag = SER
+		}
+		add_stability = 0.02
+		add_war_support = -0.15
+	}
+	
+	option = {
+		name = eastern_crisis.109.b
+		trigger = {
+			tag = MNT
+		}
+		add_stability = -0.05
+		add_war_support = -0.05
+		add_manpower = 5000
+		#activate_mission = 
+	}
+}
+
+#Serbo-Turkish Armistice
+news_event = {
+	id = eastern_crisis.110
+	title = eastern_crisis.110.t
+	desc = eastern_crisis.110.d
+	picture = GFX_news_event_serbian_ottoman_war_armistice
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.110.a
+	}
+}
+
+#The Ottomans Reject the Ultimatum
+country_event = {
+	id = eastern_crisis.111
+	title = eastern_crisis.111.t
+	desc = eastern_crisis.111.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.111.a
+		add_political_power = -25
+		add_war_support = 0.05
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		add_to_war = {
+			targeted_alliance = SER
+			enemy = OTO
+		}
+		unlock_decision_tooltip = eastern_crisis_decision_sign_treaty_with_romania
+		hidden_effect = {
+			MNT = { country_event = { id = eastern_crisis.112 } }
+			SER = { country_event = { id = eastern_crisis.112 } }
+			news_event = { id = eastern_crisis.113 days = 1 }
+			set_country_flag = eastern_crisis_armistice_rejected_flag
+		}
+	}
+}
+
+#Alliance with Russia
+country_event = {
+	id = eastern_crisis.112
+	title = eastern_crisis.112.t
+	desc = eastern_crisis.112.d
+	picture = GFX_report_event_serbian_ottoman_war_armistice
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.112.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_war_support = 0.05
+	}
+}
+
+#Russia Joins the Serbian-Ottoman War
+news_event = {
+	id = eastern_crisis.113
+	title = eastern_crisis.113.t
+	desc = eastern_crisis.113.d
+	picture = GFX_news_event_serbian_ottoman_war_armistice
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.113.a
+	}
+}
+
+#The 'Marche Slave' by Tchaikovsky
+country_event = {
+	id = eastern_crisis.114
+	title = eastern_crisis.114.t
+	desc = eastern_crisis.114.d
+	picture = GFX_report_event_tchaikovsky
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.114.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			set_temp_variable = { eoanb_prestige_change = 1 }
+			eoanb_change_prestige_score = yes
+			hidden_effect = {
+				MNT = { country_event = { id = eastern_crisis.114 } }
+				SER = { country_event = { id = eastern_crisis.114 } }
+			}
+		}
+	}
+}
+
+#RUS - Serbia Asks for Financial Aid
+country_event = {
+	id = eastern_crisis.115
+	title = eastern_crisis.115.t
+	desc = eastern_crisis.115.d
+	picture = GFX_report_event_association_for_serbian_liberation_and_unification
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Agree to help them
+	option = {
+		name = eastern_crisis.115.a
+		ai_chance = { base = 95 }
+		SER = { country_event = { id = eastern_crisis.116 days = 1 } }
+	}
+	
+	#Refuse to help them
+	option = {
+		name = eastern_crisis.115.b
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					has_opinion = {
+						target = SER
+						value > 75
+					}
+				}
+			}
+		}
+		SER = { country_event = { id = eastern_crisis.117 days = 1 } }
+	}
+}
+
+#Russia Agrees to Help
+country_event = {
+	id = eastern_crisis.116
+	title = eastern_crisis.116.t
+	desc = eastern_crisis.116.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.116.a
+		add_war_support = 0.05
+		unlock_decision_tooltip = eastern_crisis_decision_serbia_secure_financial_aid
+		hidden_effect = {
+			set_country_flag = eastern_crisis_secured_financial_aid_flag
+		}
+	}
+}
+	
+#Russia Refuses to Help
+country_event = {
+	id = eastern_crisis.117
+	title = eastern_crisis.117.t
+	desc = eastern_crisis.117.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.117.a
+		add_political_power = -25
+		add_war_support = -0.01
+	}
+}
+
+#SER - The Kumanovo Uprising
+country_event = {
+	id = eastern_crisis.118
+	title = eastern_crisis.118.t
+	desc = eastern_crisis.118.d
+	picture = GFX_report_event_kumanovo_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_war_with = OTO
+	}
+	
+	option = {
+		name = eastern_crisis.118.a
+		add_war_support = 0.02
+		106 = {
+			create_unit = {
+				division = "name = \"Serbian Rebels\" division_template = \"Serbian Rebels\" start_experience_factor = 0.01"
+				owner = SER
+				prioritize_location = 11832
+			}
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.119 } }
+		}
+	}
+}
+
+#OTO - The Kumanovo Uprising
+country_event = {
+	id = eastern_crisis.119
+	title = eastern_crisis.119.t
+	desc = eastern_crisis.119.d
+	picture = GFX_report_event_kumanovo_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.119.a
+		add_war_support = -0.02
+	}
+}
+
+#MNT - Battle of Vučji Do
+country_event = {
+	id = eastern_crisis.120
+	title = eastern_crisis.120.t
+	desc = eastern_crisis.120.d
+	picture = GFX_report_event_battle_of_vucji_do
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MNT
+		MNT = { has_war_with = OTO }
+		OTO = {
+			has_active_mission = eastern_crisis_mission_serbian_ottoman_war
+			NOT = { controls_province = 13779 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.120.a
+		add_war_support = 0.1
+		add_manpower = 2000
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.121 } }
+			SER = { country_event = { id = eastern_crisis.121 } }
+		}
+	}
+}
+
+#OTO/SER - Battle of Vučji Do
+country_event = {
+	id = eastern_crisis.121
+	title = eastern_crisis.121.t
+	desc = eastern_crisis.121.d
+	picture = GFX_report_event_battle_of_vucji_do
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.121.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.05
+	}
+	
+	option = {
+		name = eastern_crisis.121.b
+		trigger = {
+			tag = SER
+		}
+		add_war_support = 0.03
+	}
+}
+
+#The Podgorica Slaughter (15.10.1874)
+country_event = {
+	id = eastern_crisis.122
+	title = eastern_crisis.122.t
+	desc = eastern_crisis.122.d
+	picture = GFX_report_event_montenegrin_rebels
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OTO = { owns_state = 225 }
+	}
+	
+	option = {
+		name = eastern_crisis.122.a
+		add_war_support = 0.05
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = MNT
+				}
+				SER = { country_event = { id = eastern_crisis.122 } }
+				OTO = { country_event = { id = eastern_crisis.123 days = 1 } }
+			}
+		}
+	}
+}
+
+#OTO - The Podgorica Slaughter (16.10.1874)
+country_event = {
+	id = eastern_crisis.123
+	title = eastern_crisis.123.t
+	desc = eastern_crisis.123.d
+	picture = GFX_report_event_montenegrin_rebels
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.123.a
+		add_stability = -0.03
+		custom_effect_tooltip = OTO_nationalist_resistance_eastern_crisis_effect_tt
+		hidden_effect = {
+			every_owned_state = {
+				limit = { 
+					OR = {
+						is_core_of = BOS
+						is_core_of = MNT
+					}
+				}
+				force_enable_resistance = OTO
+				start_resistance = OTO
+				add_resistance = 5
+			}
+		}
+	}
+}
+
+##### BULGARIA EVENTS (eastern_crisis.201-400) #####
+
+#ROM - Bulgarian Weapons Found in Guyrgevo (06.03.1875)
+country_event = {
+	id = eastern_crisis.201
+	title = eastern_crisis.201.t
+	desc = eastern_crisis.201.d
+	picture = GFX_report_event_berdan_rifle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.201.a
+		add_stability = -0.02
+		add_war_support = 0.01
+		hidden_effect = {
+			ROM = { country_event = { id = eastern_crisis.202 days = 90 } }
+		}
+	}
+}
+
+#Death of Hilarion Makariopolis (04.06.1875)
+country_event = {
+	id = eastern_crisis.202
+	title = eastern_crisis.202.t
+	desc = eastern_crisis.202.d
+	picture = GFX_report_event_hilarion_of_makariopolis
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.202.a
+		trigger = {
+			tag = ROM
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.202 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.202.b
+		trigger = {
+			tag = OTO
+		}
+	}
+}
+
+#Meeting of the Bulgarian Revolutionary Committee (12.08.1875)
+country_event = {
+	id = eastern_crisis.203
+	title = eastern_crisis.203.t
+	desc = eastern_crisis.203.d
+	picture = GFX_report_event_bulgarian_revolutionary_committee
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.203.a
+		trigger = {
+			OR = {
+				tag = ROM
+				tag = RUS
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = ROM
+				}
+				OTO = { country_event = { id = eastern_crisis.203 } }
+				RUS = { country_event = { id = eastern_crisis.203 } }
+				country_event = { id = eastern_crisis.204 days = 35 }
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.203.b
+		trigger = {
+			tag = OTO
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = BUL
+			}
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			set_resistance = 10
+			set_garrison_strength = 0.5
+		}
+	}
+}
+
+#The Stara Zagora Uprising (16.09.1875)
+country_event = {
+	id = eastern_crisis.204
+	title = eastern_crisis.204.t
+	desc = eastern_crisis.204.d
+	picture = GFX_report_event_stara_zagora_uprising
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.204.a
+		trigger = {
+			OR = {
+				tag = ROM
+				tag = RUS
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = ROM
+				}
+				OTO = { country_event = { id = eastern_crisis.204 } }
+				RUS = { country_event = { id = eastern_crisis.204 } }
+				country_event = { id = eastern_crisis.206 }
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.204.b
+		trigger = {
+			tag = OTO
+		}
+		211 = {
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			add_resistance = 10
+			add_dynamic_modifier = {
+				modifier = local_uprising
+			}
+		}
+		1023 = {
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			add_resistance = 10
+			add_dynamic_modifier = {
+				modifier = local_uprising
+			}
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.205 days = 30 } }
+		}
+	}
+}
+
+#Stara Zagora Uprising Quelled (16.10.1875)
+country_event = {
+	id = eastern_crisis.205
+	title = eastern_crisis.205.t
+	desc = eastern_crisis.205.d
+	picture = GFX_report_event_stara_zagora_uprising
+
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.205.a
+		211 = {
+			add_resistance = -5
+			add_compliance = 5
+			remove_dynamic_modifier = {
+				modifier = local_uprising
+			}
+		}
+		1023 = {
+			add_resistance = -5
+			add_compliance = 5
+			remove_dynamic_modifier = {
+				modifier = local_uprising
+			}
+		}
+	}
+}
+
+#The Redwater Chetta (21.09.1875)
+country_event = {
+	id = eastern_crisis.206
+	title = eastern_crisis.206.t
+	desc = eastern_crisis.206.d
+	picture = GFX_report_event_redwater_chetta
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.206.a
+		trigger = {
+			tag = ROM
+		}
+		hidden_effect = {
+			country_event = { id = eastern_crisis.207 days = 80 random_days = 14 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.206.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.03
+		211 = {
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			add_resistance = 1
+		}
+	}
+}
+
+#Giurgiu Revolutionary Committee (11.11.-25.12.1875)
+country_event = {
+	id = eastern_crisis.207
+	title = eastern_crisis.207.t
+	desc = eastern_crisis.207.d
+	picture = GFX_report_event_guyrgevo_revolutionary_committee
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.207.a
+		if = {
+			limit = {
+				tag = ROM
+			}
+			OTO = {
+				every_owned_state = {
+					limit = {
+						is_core_of = BUL
+					}
+					force_enable_resistance = OTO
+					start_resistance = OTO
+					add_resistance = 5
+					add_compliance = -5
+				}
+			}
+			hidden_effect = {
+				RUS = { country_event = { id = eastern_crisis.207 } }
+				SER = { country_event = { id = eastern_crisis.207 } }
+			}
+		}
+	}
+}
+
+#Oborishte National Assembly (14.04.1876)
+country_event = {
+	id = eastern_crisis.208
+	title = eastern_crisis.208.t
+	desc = eastern_crisis.208.d
+	picture = GFX_report_event_oborishte_national_assembly
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.208.a
+		if = {
+			limit = {
+				tag = ROM
+			}
+			OTO = {
+				add_stability = -0.01
+				every_owned_state = {
+					limit = {
+						is_core_of = BUL
+					}
+					force_enable_resistance = OTO
+					start_resistance = OTO
+					add_resistance = 1
+					add_compliance = -1
+				}
+			}
+			hidden_effect = {
+				OTO = { country_event = { id = eastern_crisis.208 } }
+				RUS = { country_event = { id = eastern_crisis.208 } }
+				SER = { country_event = { id = eastern_crisis.208 } }
+				country_event = { id = eastern_crisis.209 days = 3 }
+			}
+		}
+		else_if = {
+			limit = {
+				tag = OTO
+			}
+			custom_effect_tooltip = OTO_bulgarian_revolt_imminent_effect_tt
+			activate_mission = eastern_crisis_mission_bulgarian_revolt_imminent
+		}
+	}
+}
+
+#Bulgarian Voice Newspaper (17.04.1876)
+country_event = {
+	id = eastern_crisis.209
+	title = eastern_crisis.209.t
+	desc = eastern_crisis.209.d
+	picture = GFX_report_event_bulgarian_voice_newspaper
+
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.209.a
+		trigger = {
+			tag = ROM
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.209 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.209.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.02
+	}
+}
+
+#The April Uprising (21.04.1876)
+country_event = {
+	id = eastern_crisis.210
+	title = eastern_crisis.210.t
+	desc = eastern_crisis.210.d
+	picture = GFX_report_event_bulgaria_april_uprising
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			BUL = {
+				set_state_owner = 211
+				set_state_owner = 963
+				set_state_owner = 1023
+				if = {
+					limit = {
+						OTO = { has_country_flag = OTO_bulgarian_revolt_very_strong_flag }
+					}
+					106 = { BUL = { set_province_controller = 6886 } }
+					load_oob = "BUL_1876_strong"
+				}
+				else_if = {
+					limit = {
+						OTO = { has_country_flag = OTO_bulgarian_revolt_strong_flag }
+					}
+					load_oob = "BUL_1876_weaker"
+				}
+				diplomatic_relation = {
+					country = ROM
+					relation = non_aggression_pact
+					active = yes
+				}
+				diplomatic_relation = {
+					country = SER
+					relation = non_aggression_pact
+					active = yes
+				}
+				add_manpower = 20000
+			}
+			set_global_flag = eastern_crisis_bulgaria_april_uprising_flag
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.210.a
+		declare_war_on = {
+			target = BUL
+			type = wargoal_april_uprising_war
+		}
+		activate_mission = eastern_crisis_mission_april_uprising
+		hidden_effect = {
+			BUL = {
+				activate_mission = eastern_crisis_mission_april_uprising
+				country_event = { id = eastern_crisis.214 days = 2 }
+			}
+			news_event = { id = eastern_crisis.211 days = 1 }
+		}
+	}
+}
+
+#The April Uprising (21.04.1876)
+news_event = {
+	id = eastern_crisis.211
+	title = eastern_crisis.211.t
+	desc = eastern_crisis.211.d
+	picture = GFX_news_event_bulgaria_april_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.211.a
+	}
+}
+
+#The Batak Massacre
+country_event = {
+	id = eastern_crisis.212
+	title = eastern_crisis.212.t
+	desc = eastern_crisis.212.d
+	picture = GFX_report_event_batak_massacre
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = OTO
+		has_active_mission = eastern_crisis_mission_april_uprising
+		controls_province = 11813
+	}
+	
+	option = {
+		name = eastern_crisis.212.a
+		add_stability = -0.05
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					OR = {
+						is_major = yes
+						tag = BUL
+						tag = MNT
+						tag = ROM
+						tag = SER
+					}
+				}
+				country_event = { id = eastern_crisis.213 }
+			}
+		}
+	}
+}
+
+#The Batak Massacre
+country_event = {
+	id = eastern_crisis.213
+	title = eastern_crisis.213.t
+	desc = eastern_crisis.213.d
+	picture = GFX_report_event_batak_massacre
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.213.a
+		trigger = {
+			tag = BUL
+		}
+		1023 = { add_manpower = -1500 }
+		add_war_support = 0.1
+		add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre }
+		reverse_add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre }
+	}
+	
+	option = {
+		name = eastern_crisis.213.b
+		trigger = {
+			NOT = { tag = BUL }
+		}
+		if = {
+			limit = {
+				NOT = { tag = ENG }
+			}
+			add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre_international }
+			reverse_add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre_international }
+		}
+		else = {
+			add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre_britain }
+			reverse_add_opinion_modifier = { target = OTO modifier = BUL_batak_massacre_britain }
+		}
+	}
+}
+
+#The Flying Squad (23.04.1876)
+country_event = {
+	id = eastern_crisis.214
+	title = eastern_crisis.214.t
+	desc = eastern_crisis.214.d
+	picture = GFX_report_event_bulgarian_flying_squad
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.214.a
+		add_war_support = 0.03
+		add_ideas = BUL_idea_flying_squad
+		custom_effect_tooltip = BUL_flying_squad_effect_tt
+		hidden_effect = {
+			load_oob = "BUL_flying_squad"
+			country_event = { id = eastern_crisis.215 days = 14 }
+		}
+	}
+}
+
+#Razlovtsi Insurrection (07.05.1876)
+country_event = {
+	id = eastern_crisis.215
+	title = eastern_crisis.215.t
+	desc = eastern_crisis.215.d
+	picture = GFX_report_event_razlovtsi_insurrection
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.215.a
+		add_war_support = 0.02
+		OTO = { add_stability = -0.02 }
+		963 = {
+			create_unit = {
+				division = "name = \"Razlovtsi Insurrection\" division_template = \"Bulgarian Revolutionaries\" start_experience_factor = 0.01 start_manpower_factor = 0.2"
+				owner = BUL
+				prioritize_location = 6857
+			}
+		}
+		hidden_effect = {
+			country_event = { id = eastern_crisis.216 days = 9 }
+		}
+	}
+}
+
+#The Botev Campaign (16.05.1876)
+country_event = {
+	id = eastern_crisis.216
+	title = eastern_crisis.216.t
+	desc = eastern_crisis.216.d
+	picture = GFX_report_event_botev_campaign
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.216.a
+		trigger = {
+			tag = BUL
+		}
+		add_war_support = 0.02
+		custom_effect_tooltip = BUL_botev_campaign_effect_tt
+		hidden_effect = {
+			load_oob = "BUL_botev_campaign"
+			AUS = { country_event = { id = eastern_crisis.216 } }
+			OTO = { country_event = { id = eastern_crisis.216 } }
+			ROM = { country_event = { id = eastern_crisis.216 } }
+			RUS = { country_event = { id = eastern_crisis.216 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.216.b
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+		add_stability = -0.02
+	}
+	
+	option = {
+		name = eastern_crisis.216.c
+		trigger = {
+			NOT = {
+				OR = {
+					tag = BUL
+					tag = OTO
+				}
+			}
+		}
+	}
+}
+
+#Todor Kirkov Hanged at Lovech (24.06.1876)
+country_event = {
+	id = eastern_crisis.217
+	title = eastern_crisis.217.t
+	desc = eastern_crisis.217.d
+	picture = GFX_report_event_todor_kirkov
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = OTO
+		has_active_mission = eastern_crisis_mission_april_uprising
+		controls_province = 3952
+	}
+	
+	option = {
+		name = eastern_crisis.217.a
+		add_war_support = 0.03
+		hidden_effect = {
+			BUL = { country_event = { id = eastern_crisis.218 } }
+			ROM = { country_event = { id = eastern_crisis.218 } }
+			RUS = { country_event = { id = eastern_crisis.218 } }
+			SER = { country_event = { id = eastern_crisis.218 } }
+		}
+	}
+}
+
+#Todor Kirkov Hanged at Lovech (24.06.1876)
+country_event = {
+	id = eastern_crisis.218
+	title = eastern_crisis.218.t
+	desc = eastern_crisis.218.d
+	picture = GFX_report_event_todor_kirkov
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.218.a
+		if = {
+			limit = {
+				tag = BUL
+			}
+			add_stability = -0.03
+			add_war_support = -0.01
+		}
+	}
+}
+
+#Stefan Peshev Killed in Sevlievo (25.06.1876)
+country_event = {
+	id = eastern_crisis.219
+	title = eastern_crisis.219.t
+	desc = eastern_crisis.219.d
+	picture = GFX_report_event_stefan_peshev
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = OTO
+		has_active_mission = eastern_crisis_mission_april_uprising
+		controls_province = 3819
+	}
+	
+	option = {
+		name = eastern_crisis.219.a
+		add_war_support = 0.02
+		hidden_effect = {
+			BUL = { country_event = { id = eastern_crisis.220 } }
+			ROM = { country_event = { id = eastern_crisis.220 } }
+			RUS = { country_event = { id = eastern_crisis.220 } }
+			SER = { country_event = { id = eastern_crisis.220 } }
+		}
+	}
+}
+
+#Stefan Peshev Killed in Sevlievo (25.06.1876)
+country_event = {
+	id = eastern_crisis.220
+	title = eastern_crisis.220.t
+	desc = eastern_crisis.220.d
+	picture = GFX_report_event_stefan_peshev
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.220.a
+		if = {
+			limit = {
+				tag = BUL
+			}
+			add_stability = -0.02
+			add_war_support = -0.01
+		}
+	}
+}
+
+#Death of Hristo Botev (01.06.1876)
+country_event = {
+	id = eastern_crisis.221
+	title = eastern_crisis.221.t
+	desc = eastern_crisis.221.d
+	picture = GFX_report_event_hristo_botev
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = OTO
+		has_active_mission = eastern_crisis_mission_april_uprising
+		BUL = {
+			has_template = "Botev Campaign"
+			any_country_division = {
+				division_has_majority_template = light_infantry
+				unit_strength < 0.05
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.221.a
+		add_war_support = 0.04
+		hidden_effect = {
+			BUL = { country_event = { id = eastern_crisis.222 } }
+			ROM = { country_event = { id = eastern_crisis.222 } }
+			RUS = { country_event = { id = eastern_crisis.222 } }
+			SER = { country_event = { id = eastern_crisis.222 } }
+		}
+	}
+}
+
+#Death of Hristo Botev (01.06.1876)
+country_event = {
+	id = eastern_crisis.222
+	title = eastern_crisis.222.t
+	desc = eastern_crisis.222.d
+	picture = GFX_report_event_hristo_botev
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.222.a
+		if = {
+			limit = {
+				tag = BUL
+			}
+			add_stability = -0.05
+			add_war_support = -0.03
+			delete_unit_template_and_units = {
+				division_template = "Botev Campaign"
+			}
+		}
+	}
+}
+
+#Bulgarian Central Charitable Society (10.07.1876)
+country_event = {
+	id = eastern_crisis.223
+	title = eastern_crisis.223.t
+	desc = eastern_crisis.223.d
+	picture = GFX_report_event_bulgarian_central_charitable_society
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.223.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		if = {
+			limit = {
+				tag = ROM
+			}
+			hidden_effect = {
+				OTO = { country_event = { id = eastern_crisis.223 } }
+				RUS = { country_event = { id = eastern_crisis.223 } }
+				SER = { country_event = { id = eastern_crisis.223 } }
+				if = {
+					limit = {
+						BUL = { exists = yes }
+					}
+					BUL = { country_event = { id = eastern_crisis.224 days = 92 } }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.223.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.02
+	}
+}
+
+#Garibaldi and the Bulgarian People (10.10.1876)
+country_event = {
+	id = eastern_crisis.224
+	title = eastern_crisis.224.t
+	desc = eastern_crisis.224.d
+	picture = GFX_report_event_garibaldi_bulgaria
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.224.a
+		if = {
+			limit = {
+				tag = BUL
+			}
+			add_political_power = 25
+			if = {
+				limit = {
+					any_other_country = {
+						has_country_flag = is_literally_italy
+					}
+				}
+				custom_effect_tooltip = BUL_italian_sympathies_effect_tt
+			}
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.224 }
+				}
+			}
+		}
+		else = {
+			add_opinion_modifier = { target = BUL modifier = BUL_deep_sympathies }
+			reverse_add_opinion_modifier = { target = BUL modifier = BUL_deep_sympathies }
+		}
+	}
+}
+
+#The End of the April Uprising - Ottoman Victory
+country_event = {
+	id = eastern_crisis.225
+	title = eastern_crisis.225.t
+	desc = eastern_crisis.225.d
+	picture = GFX_report_event_april_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.225.a
+		add_stability = 0.05
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		unlock_decision_tooltip = eastern_crisis_decision_fortify_razgrad
+		unlock_decision_tooltip = eastern_crisis_decision_fortify_pleven
+		hidden_effect = {
+			news_event = { id = eastern_crisis.226 days = 1 }
+			set_country_flag = eastern_crisis_april_uprising_quelled
+		}
+	}
+}
+
+#The End of the April Uprising - Ottoman Victory
+news_event = {
+	id = eastern_crisis.226
+	title = eastern_crisis.226.t
+	desc = eastern_crisis.226.d
+	picture = GFX_news_event_april_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.226.a
+	}
+}
+
+#The End of the April Uprising - Bulgarian Victory
+country_event = {
+	id = eastern_crisis.227
+	title = eastern_crisis.227.t
+	desc = eastern_crisis.227.d
+	picture = GFX_report_event_april_uprising
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.227.a
+		trigger = {
+			tag = BUL
+		}
+		add_political_power = 150
+		add_stability = 0.15
+		set_temp_variable = { eoanb_prestige_change = 10 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.227 } }
+			every_other_country = {
+				limit = {
+					NOT = { tag = OTO }
+				}
+				news_event = { id = eastern_crisis.228 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.227.b
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = -75
+		add_stability = -0.05
+		set_temp_variable = { eoanb_prestige_change = -5 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The End of the April Uprising - Bulgarian Victory
+news_event = {
+	id = eastern_crisis.228
+	title = eastern_crisis.228.t
+	desc = eastern_crisis.228.d
+	picture = GFX_news_event_april_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.228.a
+	}
+}
+
+#The End of the April Uprising - Stalemate
+country_event = {
+	id = eastern_crisis.229
+	title = eastern_crisis.229.t
+	desc = eastern_crisis.229.d
+	picture = GFX_report_event_april_uprising
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.229.a
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = -50
+		add_stability = -0.03
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			BUL = { country_event = { id = eastern_crisis.229 } }
+			every_other_country = {
+				limit = {
+					NOT = { tag = BUL }
+				}
+				news_event = { id = eastern_crisis.230 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.229.b
+		trigger = {
+			tag = BUL
+		}
+		add_political_power = 75
+		add_stability = 0.05
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The End of the April Uprising - More Autonomy for Bulgaria
+news_event = {
+	id = eastern_crisis.230
+	title = eastern_crisis.230.t
+	desc = eastern_crisis.230.d
+	picture = GFX_news_event_april_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.230.a
+	}
+}
+
+##### RUSSO-TURKISH WAR EVENTS (eastern_crisis.401-600) #####
+
+#The Andrássy Note (30.12.1875)
+country_event = {
+	id = eastern_crisis.401
+	title = eastern_crisis.401.t
+	desc = eastern_crisis.401.d
+	picture = GFX_report_event_andrassy_note
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.401.a
+		add_political_power = 10
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				PRS = { country_event = { id = eastern_crisis.401 } }
+				RUS = { country_event = { id = eastern_crisis.401 } }
+				OTO = { country_event = { id = eastern_crisis.402 days = 1 } }
+			}
+		}
+	}
+}
+
+#OTO - The Andrássy Note (31.12.1875)
+country_event = {
+	id = eastern_crisis.402
+	title = eastern_crisis.402.t
+	desc = eastern_crisis.402.d
+	picture = GFX_report_event_andrassy_note
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Accept
+	option = {
+		name = eastern_crisis.402.a
+		ai_chance = { base = 80 }
+		#activate_mission = eastern_crisis_mission_
+		custom_effect_tooltip = OTO_promise_reforms_effect_tt
+		hidden_effect = {
+			AUS = { country_event = { id = eastern_crisis.403 days = 3 } }
+			PRS = { country_event = { id = eastern_crisis.403 days = 3 } }
+			RUS = { country_event = { id = eastern_crisis.403 days = 3 } }
+			AUS = { country_event = { id = eastern_crisis.405 days = 140 } } #Move to mission later
+		}
+	}
+	
+	#Refuse
+	option = {
+		name = eastern_crisis.402.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_opinion_modifier = { target = AUS modifier = om_rejected_reforms }
+		reverse_add_opinion_modifier = { target = AUS modifier = om_rejected_reforms }
+		add_opinion_modifier = { target = PRS modifier = om_rejected_reforms }
+		reverse_add_opinion_modifier = { target = PRS modifier = om_rejected_reforms }
+		add_opinion_modifier = { target = RUS modifier = om_rejected_reforms }
+		reverse_add_opinion_modifier = { target = RUS modifier = om_rejected_reforms }
+		hidden_effect = {
+			AUS = { country_event = { id = eastern_crisis.404 days = 3 } }
+			PRS = { country_event = { id = eastern_crisis.404 days = 3 } }
+			RUS = { country_event = { id = eastern_crisis.404 days = 3 } }
+			AUS = { country_event = { id = eastern_crisis.405 days = 140 } } #Move to mission later
+		}
+	}
+}
+
+#The Ottomans Promise Reforms
+country_event = {
+	id = eastern_crisis.403
+	title = eastern_crisis.403.t
+	desc = eastern_crisis.403.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.403.a
+		add_political_power = 20
+		add_war_support = -0.02
+	}
+}
+
+#The Ottomans Reject Reforms
+country_event = {
+	id = eastern_crisis.404
+	title = eastern_crisis.404.t
+	desc = eastern_crisis.404.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.404.a
+		add_political_power = -20
+		add_war_support = 0.02
+	}
+}
+
+#The Berlin Memorandum (May 1876)
+country_event = {
+	id = eastern_crisis.405
+	title = eastern_crisis.405.t
+	desc = eastern_crisis.405.d
+	picture = GFX_report_event_berlin_memorandum
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.405.a
+		custom_effect_tooltip = eastern_crisis_berlin_memorandum_effect_tt
+		add_political_power = 20
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				OTO = { set_variable = { var = eastern_crisis_berlin_memorandum_gp_support value = 3 } }
+				PRS = { country_event = { id = eastern_crisis.405 } }
+				RUS = { country_event = { id = eastern_crisis.405 } }
+				ENG = { country_event = { id = eastern_crisis.406 days = 3 } }
+				FRA = { country_event = { id = eastern_crisis.406 days = 3 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.406 days = 3 }
+				}
+				country_event = { id = eastern_crisis.409 days = 14 }
+			}
+		}
+	}
+}
+
+#The Berlin Memorandum - Reaction of the other great powers (May 1876)
+country_event = {
+	id = eastern_crisis.406
+	title = eastern_crisis.406.t
+	desc = eastern_crisis.406.d
+	picture = GFX_report_event_berlin_memorandum
+	
+	is_triggered_only = yes
+	
+	timeout_days = 5
+	
+	#Support the demands	
+	option = {
+		name = eastern_crisis.406.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				add = -40
+				tag = ENG
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					tag = ENG
+				}
+			}
+		}
+		custom_effect_tooltip = eastern_crisis_berlin_memorandum_support_effect_tt
+		add_political_power = 20
+		hidden_effect = {
+			set_country_flag = eastern_crisis_support_berlin_memorandum_flag
+			OTO = { add_to_variable = { var = eastern_crisis_berlin_memorandum_gp_support value = 1 } }
+			AUS = {	country_event = { id = eastern_crisis.407 days = 2 } }
+			PRS = { country_event = { id = eastern_crisis.407 days = 2 } }
+			RUS = { country_event = { id = eastern_crisis.407 days = 2 } }
+		}
+	}
+	
+	#Reject the demands
+	option = {
+		name = eastern_crisis.406.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				tag = ENG
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					OR = {
+						tag = FRA
+						tag = NSC
+						tag = PAP
+						tag = PIE
+						tag = TUS
+					}
+				}
+			}
+		}
+		add_political_power = -20
+		hidden_effect = {
+			AUS = { country_event = { id = eastern_crisis.408 days = 2 } }
+			PRS = { country_event = { id = eastern_crisis.408 days = 2 } }
+			RUS = { country_event = { id = eastern_crisis.408 days = 2 } }
+		}
+	}
+}
+
+#Great Power Support Demands
+country_event = {
+	id = eastern_crisis.407
+	title = eastern_crisis.407.t
+	desc = eastern_crisis.407.d
+	picture = GFX_report_event_vienna_1
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.407.a
+		custom_effect_tooltip = eastern_crisis_berlin_memorandum_support_effect_tt
+		add_political_power = 10
+	}
+}
+
+#Great Power Rejects Demands
+country_event = {
+	id = eastern_crisis.408
+	title = eastern_crisis.408.t
+	desc = eastern_crisis.408.d
+	picture = GFX_report_event_vienna_1
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.408.a
+		add_political_power = -10
+	}
+}
+
+#Send the Berlin Memorandum to Constantinople (May-June 1876)
+country_event = {
+	id = eastern_crisis.409
+	title = eastern_crisis.409.t
+	desc = eastern_crisis.409.d
+	picture = GFX_report_event_berlin_memorandum
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.409.a
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				PRS = { country_event = { id = eastern_crisis.409 } }
+				RUS = { country_event = { id = eastern_crisis.409 } }
+				OTO = { country_event = { id = eastern_crisis.410 days = 7 } }
+			}
+		}
+	}
+}
+
+#OTO - The Berlin Memorandum (May 1876)
+country_event = {
+	id = eastern_crisis.410
+	title = eastern_crisis.410.t
+	desc = eastern_crisis.410.d
+	picture = GFX_report_event_berlin_memorandum
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Accept
+	option = {
+		name = eastern_crisis.410.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 3
+				check_variable = {
+					var = eastern_crisis_berlin_memorandum_gp_support
+					value = 5
+					compare = greater_than
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		#activate_mission = eastern_crisis_mission_
+		custom_effect_tooltip = OTO_promise_reforms_effect_tt
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = AUS
+						tag = PRS
+						tag = RUS
+						has_country_flag = eastern_crisis_support_berlin_memorandum_flag
+					}
+				}
+				country_event = { id = eastern_crisis.411 days = 3 }
+			}
+			AUS = { country_event = { id = eastern_crisis.413 days = 180 } } #Move to mission later
+			clear_variable = eastern_crisis_berlin_memorandum_gp_support
+		}
+	}
+	
+	#Refuse
+	option = {
+		name = eastern_crisis.410.b
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0.5
+				check_variable = {
+					var = eastern_crisis_berlin_memorandum_gp_support
+					value = 5
+					compare = greater_than
+				}
+			}
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = AUS
+						tag = PRS
+						tag = RUS
+						has_country_flag = eastern_crisis_support_berlin_memorandum_flag
+					}
+				}
+				country_event = { id = eastern_crisis.412 days = 3 }
+			}
+			AUS = { country_event = { id = eastern_crisis.413 days = 180 } } #Move to mission later
+			clear_variable = eastern_crisis_berlin_memorandum_gp_support
+		}
+	}
+}
+
+#The Ottomans Promise Reforms
+country_event = {
+	id = eastern_crisis.411
+	title = eastern_crisis.411.t
+	desc = eastern_crisis.411.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.411.a
+		add_political_power = 25
+		add_war_support = -0.03
+		hidden_effect = {
+			clr_country_flag = eastern_crisis_support_berlin_memorandum_flag
+		}
+	}
+}
+
+#The Ottomans Continue to Reject Reforms
+country_event = {
+	id = eastern_crisis.412
+	title = eastern_crisis.412.t
+	desc = eastern_crisis.412.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.412.a
+		add_political_power = -25
+		add_war_support = 0.03
+		add_opinion_modifier = { target = OTO modifier = om_rejected_reforms }
+		reverse_add_opinion_modifier = { target = OTO modifier = om_rejected_reforms }
+		hidden_effect = {
+			clr_country_flag = eastern_crisis_support_berlin_memorandum_flag
+		}
+	}
+}
+
+#The Constantinople Conference (December 1876-January 1877)
+country_event = {
+	id = eastern_crisis.413
+	title = eastern_crisis.413.t
+	desc = eastern_crisis.413.d
+	picture = GFX_report_event_constantinople_conference
+	
+	is_triggered_only = yes
+	
+	timeout_days = 7
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = eastern_crisis_constantinople_conference_flag
+			if = {
+				limit = {
+					tag = AUS
+				}
+				set_variable = { var = eastern_crisis_cc_status_quo value = 0 }
+				set_variable = { var = eastern_crisis_cc_russian_plan value = 0 }
+				set_variable = { var = eastern_crisis_cc_austrian_plan value = 0 }
+				PRS = { country_event = { id = eastern_crisis.413 } }
+				RUS = { country_event = { id = eastern_crisis.413 } }
+				ENG = { country_event = { id = eastern_crisis.413 } }
+				FRA = { country_event = { id = eastern_crisis.413 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.413 }
+				}
+				OTO = { country_event = { id = eastern_crisis.413 } }
+				country_event = { id = eastern_crisis.415 days = 14 }
+			}
+		}
+	}
+	
+	#Status quo
+	option = {
+		name = eastern_crisis.413.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					tag = AUS
+					tag = RUS
+				}
+			}
+		}
+		add_political_power = -10
+		hidden_effect = {
+			AUS = { add_to_variable = { var = eastern_crisis_cc_status_quo value = 1 } }
+		}
+	}
+	
+	#Russian plan
+	option = {
+		name = eastern_crisis.413.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_historical_focus_on = yes
+						OR = {
+							tag = ENG
+							tag = PRS
+						}
+					}
+					tag = AUS
+				}
+			}
+		}
+		add_political_power = 10
+		if = {
+			limit = {
+				NOT = { tag = RUS }
+			}
+			add_opinion_modifier = { target = RUS modifier = om_supports_reform_plan }
+			reverse_add_opinion_modifier = { target = RUS modifier = om_supports_reform_plan }
+		}
+		hidden_effect = {
+			AUS = { add_to_variable = { var = eastern_crisis_cc_russian_plan value = 1 } }
+		}
+	}
+	
+	#Austro-Hungarian plan
+	option = {
+		name = eastern_crisis.413.c
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 0
+				tag = RUS
+			}
+		}
+		add_political_power = 10
+		if = {
+			limit = {
+				NOT = { tag = AUS }
+			}
+			add_opinion_modifier = { target = AUS modifier = om_supports_reform_plan }
+			reverse_add_opinion_modifier = { target = AUS modifier = om_supports_reform_plan }
+		}
+		hidden_effect = {
+			AUS = { add_to_variable = { var = eastern_crisis_cc_austrian_plan value = 1 } }
+		}
+	}
+	
+	#Ottoman option
+	option = {
+		name = eastern_crisis.413.e
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = -50
+		add_stability = -0.03
+		hidden_effect = {
+			news_event = { id = eastern_crisis.414 days = 1 }
+			clr_country_flag = eastern_crisis_constantinople_conference_flag
+		}
+	}
+}
+
+#The Constantinople Conference (December 1876-January 1877)
+news_event = {
+	id = eastern_crisis.414
+	title = eastern_crisis.414.t
+	desc = eastern_crisis.414.d
+	picture = GFX_news_event_constantinople_conference
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.414.a
+	}
+}
+
+#Hidden Event to Calculate Majority
+country_event = {
+	id = eastern_crisis.415
+	title = eastern_crisis.415.t
+	
+	fire_only_once = yes
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					AND = {
+						check_variable = { eastern_crisis_cc_status_quo > eastern_crisis_cc_russian_plan }
+						check_variable = { eastern_crisis_cc_status_quo > eastern_crisis_cc_austrian_plan }
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = eastern_crisis_constantinople_conference_flag
+					}
+					country_event = { id = eastern_crisis.416 days = 3 }
+				}
+				set_global_flag = eastern_crisis_cc_status_quo_flag
+				OTO = { country_event = { id = eastern_crisis.419 days = 7 } }
+			}
+			else_if = {
+				limit = {
+					AND = {
+						check_variable = { eastern_crisis_cc_russian_plan > eastern_crisis_cc_status_quo }
+						check_variable = { eastern_crisis_cc_russian_plan > eastern_crisis_cc_austrian_plan }
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = eastern_crisis_constantinople_conference_flag
+					}
+					country_event = { id = eastern_crisis.417 days = 3 }
+				}
+				set_global_flag = eastern_crisis_cc_russian_plan_flag
+				OTO = { country_event = { id = eastern_crisis.419 days = 7 } }
+			}
+			else_if = {
+				limit = {
+					AND = {
+						check_variable = { eastern_crisis_cc_austrian_plan > eastern_crisis_cc_status_quo }
+						check_variable = { eastern_crisis_cc_austrian_plan > eastern_crisis_cc_russian_plan }
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = eastern_crisis_constantinople_conference_flag
+					}
+					country_event = { id = eastern_crisis.418 days = 3 }
+				}
+				set_global_flag = eastern_crisis_cc_austrian_plan_flag
+				OTO = { country_event = { id = eastern_crisis.419 days = 7 } }
+			}
+			else = {
+				every_country = {
+					limit = {
+						has_country_flag = eastern_crisis_constantinople_conference_flag
+					}
+					country_event = { id = eastern_crisis.416 days = 3 }
+				}
+				set_global_flag = eastern_crisis_cc_no_majority_flag
+				OTO = { country_event = { id = eastern_crisis.419 days = 7 } }
+			}
+		}
+	}
+}
+
+#The Constantinople Conference - Status Quo/No Majority
+country_event = {
+	id = eastern_crisis.416
+	title = eastern_crisis.416.t
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_status_quo_flag }
+		text = eastern_crisis.416.d_status_quo
+	}
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_no_majority_flag }
+		text = eastern_crisis.416.d_no_majority
+	}
+	picture = GFX_report_event_constantinople_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.416.a
+		trigger = {
+			has_global_flag = eastern_crisis_cc_status_quo_flag
+		}
+		add_political_power = -10
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				clear_variable = eastern_crisis_cc_status_quo
+				clear_variable = eastern_crisis_cc_russian_plan
+				clear_variable = eastern_crisis_cc_austrian_plan
+			}
+			clr_country_flag = eastern_crisis_constantinople_conference_flag
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.416.b
+		trigger = {
+			has_global_flag = eastern_crisis_cc_no_majority_flag
+		}
+		add_political_power = -20
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUS
+				}
+				clear_variable = eastern_crisis_cc_status_quo
+				clear_variable = eastern_crisis_cc_russian_plan
+				clear_variable = eastern_crisis_cc_austrian_plan
+			}
+			clr_country_flag = eastern_crisis_constantinople_conference_flag
+		}
+	}
+}
+
+#The Constantinople Conference - Russian Plan
+country_event = {
+	id = eastern_crisis.417
+	title = eastern_crisis.417.t
+	desc = eastern_crisis.417.d
+	picture = GFX_report_event_constantinople_conference
+	
+	is_triggered_only = yes
+	
+	#Other GPs
+	option = {
+		name = eastern_crisis.417.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = AUS
+					tag = RUS
+				}
+			}
+		}
+	}
+	
+	#Russia
+	option = {
+		name = eastern_crisis.417.b
+		trigger = {
+			tag = RUS
+		}
+		add_political_power = 25
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	#Austria
+	option = {
+		name = eastern_crisis.417.c
+		trigger = {
+			tag = AUS
+		}
+		add_political_power = -25
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The Constantinople Conference - Austrian Plan
+country_event = {
+	id = eastern_crisis.418
+	title = eastern_crisis.418.t
+	desc = eastern_crisis.418.d
+	picture = GFX_report_event_constantinople_conference
+	
+	is_triggered_only = yes
+	
+	#Other GPs
+	option = {
+		name = eastern_crisis.418.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = AUS
+					tag = RUS
+				}
+			}
+		}
+	}
+	
+	#Russia
+	option = {
+		name = eastern_crisis.418.b
+		trigger = {
+			tag = RUS
+		}
+		add_political_power = -25
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	#Austria
+	option = {
+		name = eastern_crisis.418.c
+		trigger = {
+			tag = AUS
+		}
+		add_political_power = 25
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The Constantinople Conference - Ottoman Response
+country_event = {
+	id = eastern_crisis.419
+	title = eastern_crisis.419.t
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_status_quo_flag }
+		text = eastern_crisis.419.d_status_quo
+	}
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_russian_plan_flag }
+		text = eastern_crisis.419.d_russian_plan
+	}
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_austrian_plan_flag }
+		text = eastern_crisis.419.d_austrian_plan
+	}
+	desc = {
+		trigger = { has_global_flag = eastern_crisis_cc_no_majority_flag }
+		text = eastern_crisis.419.d_no_majority
+	}
+	picture = GFX_report_event_constantinople_conference_proposal
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	timeout_days = 7
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = eastern_crisis.422 days = 14 }
+		}
+	}
+	
+	#Status Quo
+	option = {
+		name = eastern_crisis.419.a
+		trigger = {
+			has_global_flag = eastern_crisis_cc_status_quo_flag
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		hidden_effect = {
+			clr_global_flag = eastern_crisis_cc_status_quo_flag
+		}
+	}
+	
+	#Accept the Proposal
+	option = {
+		name = eastern_crisis.419.b
+		trigger = {
+			OR = {
+				has_global_flag = eastern_crisis_cc_russian_plan_flag
+				has_global_flag = eastern_crisis_cc_austrian_plan_flag
+			}
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		set_temp_variable = { eoanb_prestige_change = -5 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			MNT = {
+				transfer_state = 225
+				transfer_state = 1204
+			}
+			if = {
+				limit = {
+					HRZ = { exists = yes }
+				}
+				HRZ = {
+					transfer_state = 104
+					transfer_state = 966
+					transfer_state = 1202
+					transfer_state = 1205
+					transfer_state = 1207
+					transfer_state = 1208
+					transfer_state = 1272
+				}
+			}
+			else = {
+				HRZ = {
+					transfer_state = 104
+					transfer_state = 966
+					transfer_state = 1202
+					transfer_state = 1205
+					transfer_state = 1207
+					transfer_state = 1208
+					transfer_state = 1272
+				}
+				OTO = {
+					if = {
+						limit = {
+							OR = {
+								has_dlc = "Together for Victory"
+								has_dlc = "Waking the Tiger"
+								has_dlc = "Death or Dishonor"
+							}
+						}
+						set_autonomy = {
+							target = HRZ
+							autonomous_state = autonomy_khedive
+							freedom_level = 0.7
+						}
+					}
+					else = {
+						puppet = HRZ
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = eastern_crisis_cc_russian_plan_flag
+				}
+				BUL = {
+					transfer_state = 48
+					transfer_state = 77
+					transfer_state = 105
+					transfer_state = 106
+					transfer_state = 108
+					transfer_state = 184
+					transfer_state = 211
+					transfer_state = 212
+					transfer_state = 341
+					transfer_state = 731
+					transfer_state = 748
+					transfer_state = 810
+					transfer_state = 963
+					transfer_state = 964
+					transfer_state = 965
+					transfer_state = 1023
+					transfer_state = 1199
+					transfer_state = 1241
+					transfer_state = 1273
+					transfer_state = 1274
+				}
+				OTO = {
+					if = {
+						limit = {
+							OR = {
+								has_dlc = "Together for Victory"
+								has_dlc = "Waking the Tiger"
+								has_dlc = "Death or Dishonor"
+							}
+						}
+						set_autonomy = {
+							target = BUL
+							autonomous_state = autonomy_khedive
+							freedom_level = 0.7
+						}
+					}
+					else = {
+						puppet = BUL
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = eastern_crisis_cc_austrian_plan_flag
+				}
+				BUL = {
+					transfer_state = 48
+					transfer_state = 105
+					transfer_state = 106
+					transfer_state = 108
+					transfer_state = 810
+					transfer_state = 963
+					transfer_state = 965
+					transfer_state = 1273
+					set_cosmetic_tag = BUL_Western_Bulgaria
+				}
+				OTO = {
+					if = {
+						limit = {
+							OR = {
+								has_dlc = "Together for Victory"
+								has_dlc = "Waking the Tiger"
+								has_dlc = "Death or Dishonor"
+							}
+						}
+						set_autonomy = {
+							target = BUL
+							autonomous_state = autonomy_eyalet
+							freedom_level = 0.7
+						}
+					}
+					else = {
+						puppet = BUL
+					}
+				}
+				ERU = {
+					transfer_state = 77
+					transfer_state = 211
+					transfer_state = 748
+					transfer_state = 1023
+					transfer_state = 1241
+					set_cosmetic_tag = BUL_Eastern_Bulgaria
+				}
+				OTO = {
+					if = {
+						limit = {
+							OR = {
+								has_dlc = "Together for Victory"
+								has_dlc = "Waking the Tiger"
+								has_dlc = "Death or Dishonor"
+							}
+						}
+						set_autonomy = {
+							target = ERU
+							autonomous_state = autonomy_eyalet
+							freedom_level = 0.7
+						}
+					}
+					else = {
+						puppet = ERU
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = eastern_crisis_constantinople_conference_flag
+				}
+				country_event = { id = eastern_crisis.420 days = 1 }
+			}
+		}
+	}
+	
+	#Reject the Proposal
+	option = {
+		name = eastern_crisis.419.c
+		trigger = {
+			OR = {
+				has_global_flag = eastern_crisis_cc_russian_plan_flag
+				has_global_flag = eastern_crisis_cc_austrian_plan_flag
+			}
+		}
+		add_political_power = 50
+		add_war_support = 0.05
+		set_temp_variable = { eoanb_prestige_change = 2 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = eastern_crisis_constantinople_conference_flag
+				}
+				country_event = { id = eastern_crisis.421 days = 1 }
+			}
+			clr_global_flag = eastern_crisis_cc_russian_plan_flag
+			clr_global_flag = eastern_crisis_cc_austrian_plan_flag
+		}
+	}
+	
+	#No Majority
+	option = {
+		name = eastern_crisis.419.e
+		trigger = {
+			has_global_flag = eastern_crisis_cc_no_majority_flag
+		}
+		add_political_power = 25
+		add_stability = 0.025
+		hidden_effect = {
+			clr_global_flag = eastern_crisis_cc_no_majority_flag
+		}
+	}
+}
+
+#The Ottomans Accept the Proposal
+country_event = {
+	id = eastern_crisis.420
+	title = eastern_crisis.420.t
+	desc = eastern_crisis.420.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.420.a
+		add_political_power = 25
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			clr_country_flag = eastern_crisis_constantinople_conference_flag
+		}
+	}
+}
+
+#The Ottomans Reject the Proposal
+country_event = {
+	id = eastern_crisis.421
+	title = eastern_crisis.421.t
+	desc = eastern_crisis.421.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.421.b
+		add_political_power = -25
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			clr_country_flag = eastern_crisis_constantinople_conference_flag
+		}
+	}
+}
+
+#OTO - The Constitutional Era
+country_event = {
+	id = eastern_crisis.422
+	title = eastern_crisis.422.t
+	desc = eastern_crisis.422.d
+	picture = GFX_report_event_constitutional_era_parliament
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.422.a
+		increase_ps_by_one = yes
+		add_political_power = 25
+		add_stability = 0.025
+		hidden_effect = {
+			set_country_flag = OTO_first_constitutional_era_flag 	### Enable Ottoman ft content later
+			if = {
+				limit = {
+					has_idea = human_rights
+				}
+				swap_ideas = {
+					remove_idea = human_rights
+					add_idea = limited_constitution
+				}
+			}
+			if = {
+				limit = {
+					has_idea = no_constitution
+				}
+				swap_ideas = {
+					remove_idea = no_constitution
+					add_idea = human_rights
+				}
+			}
+			news_event = { id = OTO_events.29 days = 1 }
+		}
+	}
+}
+
+#The London Protocol of 1877 (31.03.1877)
+country_event = {
+	id = eastern_crisis.423
+	title = eastern_crisis.423.t
+	desc = eastern_crisis.423.d
+	picture = GFX_report_event_london_protocol_1877
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			OR = {
+				has_global_flag = eastern_crisis_cc_russian_plan_flag
+				has_global_flag = eastern_crisis_cc_austrian_plan_flag
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.423.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_political_power = 10
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = ENG
+				}
+				AUS = { country_event = { id = eastern_crisis.423 } }
+				FRA = { country_event = { id = eastern_crisis.423 } }
+				PRS = { country_event = { id = eastern_crisis.423 } }
+				RUS = { country_event = { id = eastern_crisis.423 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.423 }
+				}
+				OTO = { country_event = { id = eastern_crisis.423 days = 9 } }
+			}
+		}
+	}
+	
+	#Accept the demands
+	option = {
+		name = eastern_crisis.423.b
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = 20
+		add_stability = 0.02
+		add_war_support = -0.05
+		hidden_effect = {
+			ENG = { country_event = { id = eastern_crisis.424 days = 2 } }
+		}
+	}
+	
+	#Reject the demands
+	option = {
+		name = eastern_crisis.423.c
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = -20
+		add_stability = -0.02
+		add_war_support = 0.05
+		custom_effect_tooltip = OTO_reject_london_protocol_effect_tt
+		hidden_effect = {
+			ENG = { country_event = { id = eastern_crisis.425 days = 2 } }
+		}
+	}
+}
+
+#The Ottomans Accept the Demands of the London Protocol
+country_event = {
+	id = eastern_crisis.424
+	title = eastern_crisis.424.t
+	desc = eastern_crisis.424.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.424.a
+		add_political_power = 50
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = ENG
+				}
+				AUS = { country_event = { id = eastern_crisis.424 } }
+				FRA = { country_event = { id = eastern_crisis.424 } }
+				PRS = { country_event = { id = eastern_crisis.424 } }
+				RUS = { country_event = { id = eastern_crisis.424 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.424 }
+				}
+			}
+		}
+	}
+}
+
+#The Ottomans Reject the Demands of the London Protocol
+country_event = {
+	id = eastern_crisis.425
+	title = eastern_crisis.425.t
+	desc = eastern_crisis.425.d
+	picture = GFX_report_event_ottoman_high_porte
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.425.a
+		add_political_power = -25
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = ENG
+				}
+				AUS = { country_event = { id = eastern_crisis.425 } }
+				FRA = { country_event = { id = eastern_crisis.425 } }
+				PRS = { country_event = { id = eastern_crisis.425 } }
+				RUS = { country_event = { id = eastern_crisis.425 } }
+				every_other_country = {
+					limit = {
+						has_country_flag = is_literally_italy
+					}
+					country_event = { id = eastern_crisis.425 }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = RUS
+				}
+				unlock_decision_tooltip = eastern_crisis_decision_sign_treaty_with_romania
+				hidden_effect = {
+					set_country_flag = eastern_crisis_london_protocol_rejected_flag
+				}
+			}
+		}
+	}
+}
+
+#RUS - The Reichstadt Agreement
+country_event = {
+	id = eastern_crisis.426
+	title = eastern_crisis.426.t
+	desc = eastern_crisis.426.d
+	picture = GFX_report_event_reichstadt_castle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.426.a
+		AUS = { country_event = { id = eastern_crisis.427 days = 2 } }
+		if = {
+			limit = {
+				NOT = { has_completed_focus = RUS_reichstadt_agreement }
+			}
+			unlock_national_focus = RUS_reichstadt_agreement
+		}
+	}
+}
+
+#AUS - Signing the Reichstadt Agreement?
+country_event = {
+	id = eastern_crisis.427
+	title = eastern_crisis.427.t
+	desc = eastern_crisis.427.d
+	picture = GFX_report_event_reichstadt_castle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Sign the agreement
+	option = {
+		name = eastern_crisis.427.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = RUS
+					value > 50
+				}
+			}
+		}
+		custom_effect_tooltip = AUS_reichstadt_agreement_signed_effect_tt
+		add_political_power = 25
+		RUS = { country_event = { id = eastern_crisis.428 days = 2 } }
+		custom_effect_tooltip = historical_option
+		hidden_effect = {
+			set_country_flag = eastern_crisis_reichstadt_agreement_signed_flag
+			RUS = { set_country_flag = eastern_crisis_reichstadt_agreement_signed_flag }
+		}
+	}
+	
+	#Don't sign the agreement
+	option = {
+		name = eastern_crisis.427.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -5
+				has_opinion = {
+					target = RUS
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		custom_effect_tooltip = AUS_reichstadt_agreement_refused_effect_tt
+		add_political_power = -25
+		RUS = { country_event = { id = eastern_crisis.429 days = 2 } }
+		hidden_effect = {
+			RUS = { unlock_national_focus = RUS_budapest_convention }
+		}
+	}
+}
+
+#RUS - Austria Signed the Reichstadt Agreement
+country_event = {
+	id = eastern_crisis.428
+	title = eastern_crisis.428.t
+	desc = eastern_crisis.428.d
+	picture = GFX_report_event_reichstadt_castle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.428.a
+		add_political_power = 25
+		add_opinion_modifier = { target = AUS modifier = eoanb_om_RUS_reichstadt_agreement }
+		reverse_add_opinion_modifier = { target = AUS modifier = eoanb_om_RUS_reichstadt_agreement }
+	}
+}
+
+#RUS - Austria Refused to Sign the Reichstadt Agreement
+country_event = {
+	id = eastern_crisis.429
+	title = eastern_crisis.429.t
+	desc = eastern_crisis.429.d
+	picture = GFX_report_event_reichstadt_castle
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.429.a
+		add_political_power = -50
+		add_stability = -0.03
+		add_war_support = -0.03
+		add_opinion_modifier = { target = AUS modifier = eoanb_om_RUS_decrease_small }
+		reverse_add_opinion_modifier = { target = AUS modifier = eoanb_om_RUS_decrease_small }
+	}
+}
+
+#RUS - The Budapest Convention
+country_event = {
+	id = eastern_crisis.430
+	title = eastern_crisis.430.t
+	desc = eastern_crisis.430.d
+	picture = GFX_report_event_budapest_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.430.a
+		add_political_power = 25
+		add_stability = 0.025
+		add_opinion_modifier = { target = AUS modifier = eoanb_om_RUS_increase_small }
+		AUS = { country_event = { id = eastern_crisis.431 days = 1 } }
+	}
+}
+
+#AUS - Russia Reaffirms Agreements Regarding the Balkans
+country_event = {
+	id = eastern_crisis.431
+	title = eastern_crisis.431.t
+	desc = eastern_crisis.431.d
+	picture = GFX_report_event_budapest_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.431.a
+		add_political_power = 25
+		add_stability = 0.025
+		add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_increase_small }
+	}
+}
+
+#ROM - Signing a Treaty with Russia?
+country_event = {
+	id = eastern_crisis.432
+	title = eastern_crisis.432.t
+	desc = eastern_crisis.432.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Sign the treaty
+	option = {
+		name = eastern_crisis.432.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = RUS
+					value > 50
+				}
+			}
+			modifier = {
+				add = -85
+				NOT = { has_completed_focus = ROM_cross_danube }
+			}
+		}
+		custom_effect_tooltip = ROM_bucharest_treaty_signed_effect_tt
+		add_political_power = 25
+		give_military_access = RUS
+		RUS = { country_event = { id = eastern_crisis.433 } }
+		custom_effect_tooltip = historical_option
+		hidden_effect = {
+			set_country_flag = eastern_crisis_bucharest_treaty_signed_flag
+		}
+	}
+	
+	#We don't need a treaty - political situation not stable?
+	option = {
+		name = eastern_crisis.432.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -5
+				has_opinion = {
+					target = RUS
+					value > 50
+				}
+			}
+			modifier = {
+				add = 85
+				NOT = { has_completed_focus = ROM_cross_danube }
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		custom_effect_tooltip = ROM_bucharest_treaty_refused_effect_tt
+		add_political_power = -25
+		RUS = { country_event = { id = eastern_crisis.434 } }
+		hidden_effect = {
+			set_country_flag = eastern_crisis_bucharest_treaty_rejected_flag
+		}
+	}
+}
+
+#RUS - Romania Signed the Bucharest Treaty
+country_event = {
+	id = eastern_crisis.433
+	title = eastern_crisis.433.t
+	desc = eastern_crisis.433.d
+	picture = GFX_report_event_romania_russo_turkish_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.433.a
+		add_political_power = 25
+		add_opinion_modifier = { target = ROM modifier = eoanb_om_RUS_bucharest_treaty }
+		reverse_add_opinion_modifier = { target = ROM modifier = eoanb_om_RUS_bucharest_treaty }
+		unlock_decision_tooltip = eastern_crisis_decision_declare_war_on_the_ottomans
+		hidden_effect = {
+			set_country_flag = eastern_crisis_bucharest_treaty_signed_flag
+		}
+	}
+}
+
+#RUS - Romania Refused to Sign the Treaty
+country_event = {
+	id = eastern_crisis.434
+	title = eastern_crisis.434.t
+	desc = eastern_crisis.434.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.434.a
+		add_political_power = -25
+		add_stability = -0.01
+		add_war_support = -0.01
+		add_opinion_modifier = { target = ROM modifier = eoanb_om_RUS_decrease_small }
+		reverse_add_opinion_modifier = { target = ROM modifier = eoanb_om_RUS_decrease_small }
+		unlock_decision_tooltip = eastern_crisis_decision_declare_war_on_the_ottomans
+		hidden_effect = {
+			set_country_flag = eastern_crisis_bucharest_treaty_rejected_flag
+		}
+	}
+}
+
+#RUS - The Russo-Turkish War
+country_event = {
+	id = eastern_crisis.435
+	title = eastern_crisis.435.t
+	desc = eastern_crisis.435.d
+	picture = GFX_report_event_russo_turkish_war_russian_crossing
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.435.a
+		add_stability = -0.02
+		add_war_support = 0.05
+		declare_war_on = {
+			target = OTO
+			type = wargoal_russo_turkish_war
+		}
+		activate_mission = eastern_crisis_mission_russo_turkish_war
+		hidden_effect = {
+			create_faction = faction_russian_allies
+			OTO = {
+				country_event = { id = eastern_crisis.436 }
+				activate_mission = eastern_crisis_mission_russo_turkish_war
+			}
+			if = {
+				limit = {
+					ROM = { has_country_flag = eastern_crisis_bucharest_treaty_signed_flag }
+				}
+				ROM = { country_event = { id = eastern_crisis.436 } }
+			}
+			news_event = { id = eastern_crisis.437 }
+			country_event = { id = eastern_crisis.438 days = 30 random_days = 3 }
+			country_event = { id = eastern_crisis.440 days = 14 random_days = 7 }
+			country_event = { id = eastern_crisis.441 days = 70 random_days = 14 }
+			country_event = { id = eastern_crisis.443 days = 7 random_days = 5 }
+			GRE = { country_event = { id = eastern_crisis.701 days = 7 random_days = 7 } }
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_variable = { super_event_displayed = 27 }
+			}
+		}
+	}
+}
+
+#OTO/ROM - The Russo-Turkish War
+country_event = {
+	id = eastern_crisis.436
+	title = {
+		trigger = { tag = OTO }
+		text = eastern_crisis.436.t_ottoman
+	}
+	title = {
+		trigger = { tag = ROM }
+		text = eastern_crisis.436.t_romania
+	}
+	title = {
+		trigger = { tag = SER }
+		text = eastern_crisis.436.t_serbia
+	}
+	title = {
+		trigger = { tag = GRE }
+		text = eastern_crisis.436.t_greece
+	}
+	desc = eastern_crisis.436.d
+	picture = GFX_report_event_russo_turkish_war_russian_crossing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.436.a
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.1
+		add_war_support = 0.05
+	}
+	
+	option = {
+		name = eastern_crisis.436.b
+		trigger = {
+			tag = ROM
+		}
+		add_stability = -0.02
+		add_war_support = 0.05
+		RUS = { add_to_faction = ROM }
+		add_to_war = {
+			targeted_alliance = RUS
+			enemy = OTO
+		}
+		hidden_effect = {
+			clr_country_flag = eastern_crisis_bucharest_treaty_signed_flag
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.436.c
+		trigger = {
+			tag = SER
+		}
+		add_stability = -0.02
+		add_war_support = 0.05
+		RUS = { add_to_faction = SER }
+		add_to_war = {
+			targeted_alliance = RUS
+			enemy = OTO
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Serbian Rebels"
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+				}
+				is_locked = yes
+			}
+			country_event = { id = eastern_crisis.118 days = 14 }
+		}
+	}
+
+	option = {
+		name = eastern_crisis.436.e
+		trigger = {
+			tag = GRE
+		}
+		add_stability = -0.02
+		add_war_support = 0.05
+		RUS = { add_to_faction = GRE }
+		add_to_war = {
+			targeted_alliance = RUS
+			enemy = OTO
+		}
+		if = {
+			limit = {
+				country_exists = CET
+			}
+			create_faction = faction_greek_allies
+			CET = { country_event = { id = eastern_crisis.707 days = 2 } }
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Greek Rebels"
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+				}
+				is_locked = yes
+			}
+			#country_event = { id = eastern_crisis.118 days = 14 }
+		}
+	}
+}
+
+#The Russo-Turkish War
+news_event = {
+	id = eastern_crisis.437
+	title = eastern_crisis.437.t
+	desc = eastern_crisis.437.d
+	picture = GFX_news_event_russo_turkish_war_russian_crossing
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.437.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_variable = { super_event_displayed = 27 }
+			}
+		}
+	}
+}
+
+#RUS - Naval Engagement Near Măcin
+country_event = {
+	id = eastern_crisis.438
+	title = eastern_crisis.438.t
+	desc = eastern_crisis.438.d
+	picture = GFX_report_event_naval_engagement_macin
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	ROM = {
+	#		#ships condition
+	#	}
+	#}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_historical_focus_on = no
+				}
+				random_list = {
+					85 = {
+						set_global_flag = eastern_crisis_naval_engagement_rom_victory_flag
+					}
+					10 = {
+						set_global_flag = eastern_crisis_naval_engagement_tie_flag
+					}
+					5 = {
+						set_global_flag = eastern_crisis_naval_engagement_oto_victory_flag
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.438.a
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = eastern_crisis_naval_engagement_rom_victory_flag
+					is_historical_focus_on = yes
+				}
+			}
+			navy_experience = 5
+			add_war_support = 0.03
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_tie_flag
+			}
+			navy_experience = 5
+			add_war_support = 0.01
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_oto_victory_flag
+			}
+			navy_experience = 5
+			add_war_support = -0.03
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.439 } }
+			ROM = { country_event = { id = eastern_crisis.439 } }
+		}
+	}
+}
+
+#Naval Engagement Near Măcin
+country_event = {
+	id = eastern_crisis.439
+	title = eastern_crisis.439.t
+	desc = eastern_crisis.439.d
+	picture = GFX_report_event_naval_engagement_macin
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.439.a
+		trigger = {
+			tag = ROM
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = eastern_crisis_naval_engagement_rom_victory_flag
+					is_historical_focus_on = yes
+				}
+			}
+			navy_experience = 5
+			add_war_support = 0.03
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_tie_flag
+			}
+			navy_experience = 5
+			add_war_support = 0.01
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_oto_victory_flag
+			}
+			navy_experience = 5
+			add_war_support = -0.03
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.439.b
+		trigger = {
+			tag = OTO
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = eastern_crisis_naval_engagement_rom_victory_flag
+					is_historical_focus_on = yes
+				}
+			}
+			navy_experience = 5
+			add_war_support = -0.03
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_tie_flag
+			}
+			navy_experience = 5
+			add_war_support = 0.01
+		}
+		else_if = {
+			limit = {
+				has_global_flag = eastern_crisis_naval_engagement_oto_victory_flag
+			}
+			navy_experience = 5
+			add_war_support = 0.03
+		}
+	}
+}
+
+#The Bulgarian Resistance
+country_event = {
+	id = eastern_crisis.440
+	title = eastern_crisis.440.t
+	desc = eastern_crisis.440.d
+	picture = GFX_report_event_bulgarian_volunteers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			division_template = {
+				name = "Volunteer Legion"
+				regiments = {
+					light_infantry = { x = 0 y = 0 }
+					light_infantry = { x = 0 y = 1 }
+				}
+				is_locked = yes
+			}
+			division_template = {
+				name = "Bulgarian Volunteers"
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+				}
+				is_locked = yes
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.440.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		if = {
+			limit = {
+				tag = RUS
+			}
+			unlock_decision_tooltip = eastern_crisis_decision_enlist_western_bulgaria_recruits
+			unlock_decision_tooltip = eastern_crisis_decision_enlist_shumen_recruits
+			unlock_decision_tooltip = eastern_crisis_decision_enlist_pleven_recruits
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -3000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -3000
+			}
+			46 = {
+				create_unit = {
+					division = "name = \"1st Volunteer Legion\" division_template = \"Volunteer Legion\" start_experience_factor = 0.04 start_manpower_factor = 0.9"
+					owner = RUS
+					prioritize_location = 3663
+				}
+				create_unit = {
+					division = "name = \"2nd Volunteer Legion\" division_template = \"Volunteer Legion\" start_experience_factor = 0.04 start_manpower_factor = 0.9"
+					owner = RUS
+					prioritize_location = 3663
+				}
+				create_unit = {
+					division = "name = \"3rd Volunteer Legion\" division_template = \"Volunteer Legion\" start_experience_factor = 0.04 start_manpower_factor = 0.9"
+					owner = RUS
+					prioritize_location = 3663
+				}
+				create_unit = {
+					division = "name = \"4th Volunteer Legion\" division_template = \"Volunteer Legion\" start_experience_factor = 0.04 start_manpower_factor = 0.9"
+					owner = RUS
+					prioritize_location = 3663
+				}
+				add_manpower = -7200
+			}
+			78 = {
+				create_unit = {
+					division = "name = \"5th Volunteer Legion\" division_template = \"Volunteer Legion\" start_experience_factor = 0.04 start_manpower_factor = 0.7"
+					owner = RUS
+					prioritize_location = 11686
+				}
+				add_manpower = -1400
+			}
+			hidden_effect = {
+				set_country_flag = eastern_crisis_bulgarian_volunteers_flag
+				OTO = { country_event = { id = eastern_crisis.440 } }
+				ROM = { country_event = { id = eastern_crisis.440 } }
+				if = {
+					limit = {
+						BUL = { exists = yes }
+					}
+					BUL = { country_event = { id = eastern_crisis.440 } }
+				}
+				country_event = { id = eastern_crisis.465 days = 3 }
+			}
+		}
+		army_experience = 5
+	}
+	
+	option = {
+		name = eastern_crisis.440.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.03
+		add_war_support = -0.03
+	}
+}
+
+#The Kavarna Uprising
+country_event = {
+	id = eastern_crisis.441
+	title = eastern_crisis.441.t
+	desc = eastern_crisis.441.d
+	picture = GFX_report_event_bulgarian_volunteers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		RUS = { has_war_with = OTO }
+		has_global_flag = eastern_crisis_ongoing_flag
+	}
+	
+	option = {
+		name = eastern_crisis.441.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -1000
+			}
+			77 = {
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.01 start_equipment_factor = 0.3 start_manpower_factor = 0.75"
+					owner = RUS
+					prioritize_location = 11597
+				}
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.01 start_equipment_factor = 0.3 start_manpower_factor = 0.75"
+					owner = RUS
+					prioritize_location = 11597
+				}
+				add_manpower = -3000
+			}
+			hidden_effect = {
+				ROM = { country_event = { id = eastern_crisis.441 } }
+				if = {
+					limit = {
+						BUL = { exists = yes }
+					}
+					BUL = { country_event = { id = eastern_crisis.441 } }
+				}
+			}
+		}
+		add_war_support = 0.01
+	}
+}
+
+#The Trun Rebellion (30.12.1877)
+country_event = {
+	id = eastern_crisis.442
+	title = eastern_crisis.442.t
+	desc = eastern_crisis.442.d
+	picture = GFX_report_event_bulgarian_volunteers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		RUS = { has_war_with = OTO }
+		has_global_flag = eastern_crisis_ongoing_flag
+	}
+	
+	option = {
+		name = eastern_crisis.442.a
+		if = {
+			limit = {
+				tag = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			add_equipment_to_stockpile = {
+				type = uniform_equipment
+				amount = -200
+			}
+			965 = {
+				create_unit = {
+					division = "name = \"Bulgarian Volunteer Division\" division_template = \"Bulgarian Volunteers\" start_experience_factor = 0.02 start_equipment_factor = 0.2 start_manpower_factor = 0.4"
+					owner = RUS
+					prioritize_location = 11868
+				}
+				add_manpower = -800
+			}
+			hidden_effect = {
+				MNT = { country_event = { id = eastern_crisis.442 } }
+				ROM = { country_event = { id = eastern_crisis.442 } }
+				SER = { country_event = { id = eastern_crisis.442 } }
+				if = {
+					limit = {
+						BUL = { exists = yes }
+					}
+					BUL = { country_event = { id = eastern_crisis.442 } }
+				}
+			}
+		}
+		add_war_support = 0.01
+	}
+}
+
+#The Quadrilateral Fortresses in Northeastern Bulgaria
+country_event = {
+	id = eastern_crisis.443
+	title = eastern_crisis.443.t
+	desc = eastern_crisis.443.d
+	picture = GFX_report_event_quadrilateral_fortresses
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		RUS = { has_war_with = OTO }
+		has_global_flag = eastern_crisis_ongoing_flag
+	}
+	
+	immediate = {
+		hidden_effect = {
+			activate_mission = eastern_crisis_mission_quadrilateral_fortresses
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.443.a
+		trigger = {
+			tag = RUS
+		}
+		activate_mission_tooltip = eastern_crisis_mission_quadrilateral_fortresses
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.443 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.443.b
+		trigger = {
+			tag = OTO
+		}
+		activate_mission_tooltip = eastern_crisis_mission_quadrilateral_fortresses
+	}
+}
+
+#The Quadrilateral Fortresses Has Fallen
+country_event = {
+	id = eastern_crisis.444
+	title = eastern_crisis.444.t
+	desc = eastern_crisis.444.d
+	picture = GFX_report_event_quadrilateral_fortresses
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_quadrilateral_fortresses
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.444.a
+		trigger = {
+			tag = RUS
+		}
+		army_experience = 15
+		add_timed_idea = {
+			idea = RUS_idea_quadrilateral_fortresses_taken
+			days = 180
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.444 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.444.b
+		trigger = {
+			tag = OTO
+		}
+		army_experience = -15
+		add_stability = -0.05
+		add_war_support = -0.1
+	}
+}
+
+#The Quadrilateral Fortresses Stand Tall
+country_event = {
+	id = eastern_crisis.445
+	title = eastern_crisis.445.t
+	desc = eastern_crisis.445.d
+	picture = GFX_report_event_quadrilateral_fortresses
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_quadrilateral_fortresses
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.445.a
+		trigger = {
+			tag = RUS
+		}
+		army_experience = -15
+		add_stability = -0.02
+		add_war_support = -0.05
+	}
+	
+	option = {
+		name = eastern_crisis.445.b
+		trigger = {
+			tag = OTO
+		}
+		army_experience = 15
+		add_timed_idea = {
+			idea = RUS_idea_quadrilateral_fortresses_stand_tall
+			days = 180
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = eastern_crisis.445 } }
+		}
+	}
+}
+
+#RUS - The Liberation of Tarnovo
+country_event = {
+	id = eastern_crisis.446
+	title = eastern_crisis.446.t
+	desc = eastern_crisis.446.d
+	picture = GFX_report_event_tarnovo_liberation
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 6842 } }
+	}
+	
+	option = {
+		name = eastern_crisis.446.a
+		add_war_support = 0.03
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.447 } }
+			ROM = { country_event = { id = eastern_crisis.447 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.447 } }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - The Liberation of Tarnovo
+country_event = {
+	id = eastern_crisis.447
+	title = eastern_crisis.447.t
+	desc = eastern_crisis.447.d
+	picture = GFX_report_event_tarnovo_liberation
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.447.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.03
+	}
+	
+	option = {
+		name = eastern_crisis.447.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.02
+	}
+}
+
+#RUS - Landing at Galați
+country_event = {
+	id = eastern_crisis.448
+	title = eastern_crisis.448.t
+	desc = eastern_crisis.448.d
+	picture = GFX_report_event_landing_at_galati
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 3076 } }
+	}
+	
+	option = {
+		name = eastern_crisis.448.a
+		add_war_support = 0.02
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.449 } }
+			ROM = { country_event = { id = eastern_crisis.449 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.449 } }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - Landing at Galați
+country_event = {
+	id = eastern_crisis.449
+	title = eastern_crisis.449.t
+	desc = eastern_crisis.449.d
+	picture = GFX_report_event_landing_at_galati
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.449.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+	}
+	
+	option = {
+		name = eastern_crisis.449.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.01
+	}
+}
+
+#RUS - Battle of Svishtov
+country_event = {
+	id = eastern_crisis.450
+	title = eastern_crisis.450.t
+	desc = eastern_crisis.450.d
+	picture = GFX_report_event_svishtov_battle
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 9610 } }
+	}
+	
+	option = {
+		name = eastern_crisis.450.a
+		add_war_support = 0.02
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.451 } }
+			ROM = { country_event = { id = eastern_crisis.451 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.451 } }
+			}
+			if = {
+				limit = {
+					OTO = { NOT = { controls_province = 14380 } }
+				}
+				country_event = { id = eastern_crisis.456 days = 1 }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - Battle of Svishtov
+country_event = {
+	id = eastern_crisis.451
+	title = eastern_crisis.451.t
+	desc = eastern_crisis.451.d
+	picture = GFX_report_event_svishtov_battle
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.451.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+	}
+	
+	option = {
+		name = eastern_crisis.451.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.01
+	}
+}
+
+#RUS - Conquest of Bayezid
+country_event = {
+	id = eastern_crisis.452
+	title = eastern_crisis.452.t
+	desc = eastern_crisis.452.d
+	picture = GFX_report_event_bayezid_conquest
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 4583 } }
+	}
+	
+	option = {
+		name = eastern_crisis.452.a
+		add_war_support = 0.02
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.453 } }
+		}
+	}
+}
+
+#OTO - Conquest of Bayezid
+country_event = {
+	id = eastern_crisis.453
+	title = eastern_crisis.453.t
+	desc = eastern_crisis.453.d
+	picture = GFX_report_event_bayezid_conquest
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.453.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+	}
+}
+
+#RUS - The Fall of Nikopol
+country_event = {
+	id = eastern_crisis.454
+	title = eastern_crisis.454.t
+	desc = eastern_crisis.454.d
+	picture = GFX_report_event_nikopol_liberation
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 14380 } }
+	}
+	
+	option = {
+		name = eastern_crisis.454.a
+		add_war_support = 0.01
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.455 } }
+			ROM = { country_event = { id = eastern_crisis.455 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.455 } }
+			}
+			if = {
+				limit = {
+					OTO = { NOT = { controls_province = 9610 } }
+				}
+				country_event = { id = eastern_crisis.456 days = 1 }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - The Fall of Nikopol
+country_event = {
+	id = eastern_crisis.455
+	title = eastern_crisis.455.t
+	desc = eastern_crisis.455.d
+	picture = GFX_report_event_nikopol_liberation
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.455.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.01
+	}
+	
+	option = {
+		name = eastern_crisis.455.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.01
+	}
+}
+
+#RUS - The Siege of Pleven
+country_event = {
+	id = eastern_crisis.456
+	title = eastern_crisis.456.t
+	desc = eastern_crisis.456.d
+	picture = GFX_report_event_siege_of_pleven_artillery
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.456.a
+		activate_mission = eastern_crisis_mission_siege_of_pleven
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.457 } }
+		}
+	}
+}
+
+#OTO - The Siege of Pleven
+country_event = {
+	id = eastern_crisis.457
+	title = eastern_crisis.457.t
+	desc = eastern_crisis.457.d
+	picture = GFX_report_event_siege_of_pleven_artillery
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.457.a
+		add_war_support = 0.01
+	}
+}
+
+#Pleven Falls
+country_event = {
+	id = eastern_crisis.458
+	title = eastern_crisis.458.t
+	desc = eastern_crisis.458.d
+	picture = GFX_report_event_osman_pasha_surrenders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.458.a
+		trigger = {
+			tag = RUS
+		}
+		add_war_support = 0.05
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.458 } }
+			country_event = { id = eastern_crisis.460 days = 14 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.458.b
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.05
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Pleven Holds
+country_event = {
+	id = eastern_crisis.459
+	title = eastern_crisis.459.t
+	desc = eastern_crisis.459.d
+	picture = GFX_report_event_siege_of_pleven
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.459.a
+		trigger = {
+			tag = RUS
+		}
+		add_war_support = -0.03
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.459 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.459.b
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = 0.05
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The Death March
+country_event = {
+	id = eastern_crisis.460
+	title = eastern_crisis.460.t
+	desc = eastern_crisis.460.d
+	picture = GFX_report_event_death_march_pleven
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.460.a
+		trigger = {
+			tag = RUS
+		}
+		add_war_support = -0.01
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.460 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.460.b
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+		add_manpower = -15000
+	}
+}
+
+#RUS - Battle of Shipka
+country_event = {
+	id = eastern_crisis.461
+	title = eastern_crisis.461.t
+	desc = eastern_crisis.461.d
+	picture = GFX_report_event_battle_of_shipka
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 13863 } }
+	}
+	
+	option = {
+		name = eastern_crisis.461.a
+		add_war_support = 0.02
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.462 } }
+			ROM = { country_event = { id = eastern_crisis.462 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.462 } }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - Battle of Shipka
+country_event = {
+	id = eastern_crisis.462
+	title = eastern_crisis.462.t
+	desc = eastern_crisis.462.d
+	picture = GFX_report_event_battle_of_shipka
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.462.a
+		trigger = {
+			tag = OTO
+		}
+		add_war_support = -0.02
+	}
+	
+	option = {
+		name = eastern_crisis.462.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.01
+	}
+}
+
+#RUS - The Horrors at Stara Zagora
+country_event = {
+	id = eastern_crisis.463
+	title = eastern_crisis.463.t
+	desc = eastern_crisis.463.d
+	picture = GFX_report_event_stara_zagora_horrors
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 6814 } }
+	}
+	
+	option = {
+		name = eastern_crisis.463.a
+		1023 = {
+			add_manpower = -15000
+			damage_building = {
+				type = infrastructure
+				damage = 0.6
+			}
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.464 } }
+			ROM = { country_event = { id = eastern_crisis.464 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.464 } }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - The Horrors at Stara Zagora
+country_event = {
+	id = eastern_crisis.464
+	title = eastern_crisis.464.t
+	desc = eastern_crisis.464.d
+	picture = GFX_report_event_stara_zagora_horrors
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.464.a
+		trigger = {
+			tag = OTO
+		}
+		add_political_power = -25
+		add_stability = -0.01
+		add_war_support = -0.01
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.464.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = -0.01
+		add_stability = -0.01
+	}
+}
+
+#RUS/BUL - The Samara Flag
+country_event = {
+	id = eastern_crisis.465
+	title = eastern_crisis.465.t
+	desc = eastern_crisis.465.d
+	picture = GFX_report_event_samara_flag
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.465.a
+		trigger = {
+			tag = RUS
+		}
+		add_war_support = 0.01
+		if = {
+			limit = {
+				BUL = { exists = yes }
+			}
+			add_opinion_modifier = { target = BUL modifier = eoanb_om_RUS_samara_flag }
+			hidden_effect = {
+				BUL = { country_event = { id = eastern_crisis.465 } }
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.465.b
+		trigger = {
+			tag = BUL
+		}
+		add_political_power = 25
+		add_war_support = 0.025
+		add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_samara_flag }
+	}
+}
+
+#RUS - The Capture of Sofia
+country_event = {
+	id = eastern_crisis.466
+	title = eastern_crisis.466.t
+	desc = eastern_crisis.466.d
+	picture = GFX_report_event_capture_of_sofia
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 949 } }
+	}
+	
+	option = {
+		name = eastern_crisis.466.a
+		add_stability = 0.01
+		add_war_support = 0.03
+		set_temp_variable = { eoanb_prestige_change = 1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.467 } }
+			ROM = { country_event = { id = eastern_crisis.467 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.467 } }
+			}
+		}
+	}
+}
+
+#OTO/ROM/BUL - The Capture of Sofia
+country_event = {
+	id = eastern_crisis.467
+	title = eastern_crisis.467.t
+	desc = eastern_crisis.467.d
+	picture = GFX_report_event_capture_of_sofia
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.467.a
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.03
+		add_war_support = -0.04
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.467.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_war_support = 0.03
+		add_stability = 0.03
+	}
+}
+
+#RUS - The Truce of Adrianople
+country_event = {
+	id = eastern_crisis.468
+	title = eastern_crisis.468.t
+	desc = eastern_crisis.468.d
+	picture = GFX_report_event_adrianople_truce
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_russo_turkish_war
+			OTO = {
+				remove_mission = eastern_crisis_mission_russo_turkish_war
+				white_peace = BUL
+				white_peace = MNT
+				white_peace = ROM
+				white_peace = SER
+				country_event = { id = eastern_crisis.469 }
+			}
+			MNT = { country_event = { id = eastern_crisis.469 } }
+			ROM = { country_event = { id = eastern_crisis.469 } }
+			SER = { country_event = { id = eastern_crisis.469 } }
+			if = {
+				limit = {
+					BUL = { exists = yes }
+				}
+				BUL = { country_event = { id = eastern_crisis.469 } }
+			}
+		}
+	}
+	
+	timeout_days = 5
+	
+	option = {
+		name = eastern_crisis.468.a
+		custom_effect_tooltip = eastern_crisis_adrianople_truce_effect_tt
+		add_stability = 0.05
+		if = {
+			limit = {
+				has_war_support > 0.8
+			}
+			add_war_support = -0.35
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.7
+			}
+			add_war_support = -0.3
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.6
+			}
+			add_war_support = -0.2
+		}
+		else = {
+			add_war_support = -0.15
+		}
+		set_temp_variable = { eoanb_prestige_change = 10 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			country_event = { id = eastern_crisis.470 days = 3 }
+			country_event = { id = eastern_crisis.471 days = 10 }
+			FIN = { country_event = { id = eastern_crisis.474 days = 35 } }
+			if = {
+				limit = {
+					country_exists = TSH
+				}
+				TSH = { country_event = { id = eastern_crisis.476 days = 40 } }
+			}
+			else = {
+				JAP = { country_event = { id = eastern_crisis.476 days = 40 } }
+			}
+			news_event = { id = eastern_crisis.477 days = 1 }
+			country_event = { id = eastern_crisis.478 days = 31 }
+		}
+	}
+}
+
+#OTO/MNT/ROM/SER/BUL - The Truce of Adrianople
+country_event = {
+	id = eastern_crisis.469
+	title = eastern_crisis.469.t
+	desc = eastern_crisis.469.d
+	picture = GFX_report_event_adrianople_truce
+	
+	is_triggered_only = yes
+	
+	timeout_days = 5
+	
+	option = {
+		name = eastern_crisis.469.a
+		trigger = {
+			tag = OTO
+		}
+		custom_effect_tooltip = eastern_crisis_adrianople_truce_effect_tt
+		add_stability = -0.15
+		if = {
+			limit = {
+				has_war_support > 0.8
+			}
+			add_war_support = -0.35
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.7
+			}
+			add_war_support = -0.3
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.6
+			}
+			add_war_support = -0.2
+		}
+		else = {
+			add_war_support = -0.15
+		}
+		set_temp_variable = { eoanb_prestige_change = -5 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			#set_country_flag = eastern_crisis_war_participant
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.469.b
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		custom_effect_tooltip = eastern_crisis_adrianople_truce_effect_tt
+		add_stability = 0.1
+		if = {
+			limit = {
+				has_war_support > 0.8
+			}
+			add_war_support = -0.35
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.7
+			}
+			add_war_support = -0.3
+		}
+		else_if = {
+			limit = {
+				has_war_support > 0.6
+			}
+			add_war_support = -0.2
+		}
+		else = {
+			add_war_support = -0.15
+		}
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			#set_country_flag = eastern_crisis_war_participant
+		}
+	}
+}
+
+#The Liberation of Burgas
+country_event = {
+	id = eastern_crisis.470
+	title = eastern_crisis.470.t
+	desc = eastern_crisis.470.d
+	picture = GFX_report_event_liberation_of_burgas
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.470.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_stability = 0.02
+	}
+	
+	option = {
+		name = eastern_crisis.470.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.01
+		navy_experience = -5
+	}
+}
+
+#The Liberation of Burgas
+country_event = {
+	id = eastern_crisis.470
+	title = eastern_crisis.470.t
+	desc = eastern_crisis.470.d
+	picture = GFX_report_event_liberation_of_burgas
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.470.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		add_stability = 0.02
+	}
+	
+	option = {
+		name = eastern_crisis.470.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.01
+		navy_experience = -5
+	}
+}
+
+#The Armenian Question
+country_event = {
+	id = eastern_crisis.471
+	title = eastern_crisis.471.t
+	desc = eastern_crisis.471.d
+	picture = GFX_report_event_armenian_migration
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.471.a
+		trigger = {
+			tag = RUS
+		}
+		add_stability = -0.02
+		if = {
+			limit = {
+				owns_state = 230
+			}
+			230 = {
+				add_dynamic_modifier = {
+					modifier = mass_immigration
+				}
+				add_manpower = 2000
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 231
+			}
+			231 = {
+				add_dynamic_modifier = {
+					modifier = mass_immigration
+				}
+				add_manpower = 2000
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 1119
+			}
+			1119 = {
+				add_dynamic_modifier = {
+					modifier = mass_immigration
+				}
+				add_manpower = 1000
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 1120
+			}
+			1120 = {
+				add_dynamic_modifier = {
+					modifier = mass_immigration
+				}
+				add_manpower = 1000
+			}
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.471 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.471.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.03
+		if = {
+			limit = {
+				owns_state = 353
+			}
+			353 = {
+				add_dynamic_modifier = {
+					modifier = mass_emigration
+				}
+				add_manpower = -5000
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 1122
+			}
+			1122 = {
+				add_dynamic_modifier = {
+					modifier = mass_emigration
+				}
+				add_manpower = -1000
+			}
+		}
+	}
+}
+
+#RUS - Harmanli Massacre
+country_event = {
+	id = eastern_crisis.472
+	title = eastern_crisis.472.t
+	desc = eastern_crisis.472.d
+	picture = GFX_report_event_harmanli_massacre
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		has_active_mission = eastern_crisis_mission_russo_turkish_war
+		OTO = { NOT = { controls_province = 9862 } }
+	}
+	
+	option = {
+		name = eastern_crisis.472.a
+		add_political_power = -10
+		add_stability = -0.03
+		add_war_support = -0.01
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.473 } }
+		}
+	}
+}
+
+#OTO - Harmanli Massacre
+country_event = {
+	id = eastern_crisis.473
+	title = eastern_crisis.473.t
+	desc = eastern_crisis.473.d
+	picture = GFX_report_event_harmanli_massacre
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.473.a
+		add_stability = -0.02
+		add_war_support = 0.01
+		1023 = { add_manpower = -3000 }
+	}
+}
+
+#Finnish Involvement in the Russo-Turkish War
+country_event = {
+	id = eastern_crisis.474
+	title = eastern_crisis.474.t
+	desc = eastern_crisis.474.d
+	picture = GFX_report_event_finnish_guard
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.474.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
+	}
+}
+
+#Nikolay Pirogov
+country_event = {
+	id = eastern_crisis.475
+	title = eastern_crisis.475.t
+	desc = eastern_crisis.475.d
+	picture = GFX_report_event_nikolay_pirogov
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.475.a
+		army_experience = 5
+		add_tech_bonus = { bonus = 0.25 uses = 2 category = health_tech }
+	}
+}
+
+#A Japanese Samurai in the Russo-Turkish War
+country_event = {
+	id = eastern_crisis.476
+	title = eastern_crisis.476.t
+	desc = eastern_crisis.476.d
+	picture = GFX_report_event_japanese_samurai_yamazawa
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.476.a
+		if = {
+			limit = {
+				OR = {
+					tag = JAP
+					tag = TSH
+				}
+			}
+			army_experience = 5
+			hidden_effect = {
+				RUS = { country_event = { id = eastern_crisis.476 } }
+				MNT = { country_event = { id = eastern_crisis.476 } }
+				SER = { country_event = { id = eastern_crisis.476 } }
+				ROM = { country_event = { id = eastern_crisis.476 } }
+				OTO = { country_event = { id = eastern_crisis.476 } }
+				if = {
+					limit = {
+						BUL = { exists = yes }
+					}
+					BUL = { country_event = { id = eastern_crisis.476 } }
+				}
+			}
+		}
+	}
+}
+
+#The Truce of Adrianople
+news_event = {
+	id = eastern_crisis.477
+	title = eastern_crisis.477.t
+	desc = eastern_crisis.477.d
+	picture = GFX_news_event_adrianople_truce
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.477.a
+	}
+}
+
+#The Treaty of San Stefano
+country_event = {
+	id = eastern_crisis.478
+	title = eastern_crisis.478.t
+	desc = eastern_crisis.478.d
+	picture = GFX_report_event_treaty_of_san_stefano
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.478.a
+		trigger = {
+			tag = RUS
+		}
+		#Greater Bulgaria
+		BUL = {
+			transfer_state = 48
+			transfer_state = 77
+			transfer_state = 106
+			transfer_state = 211
+			transfer_state = 212
+			transfer_state = 731
+			transfer_state = 810
+			transfer_state = 963
+			transfer_state = 965
+			transfer_state = 1023
+			transfer_state = 1199
+			transfer_state = 1273
+			set_cosmetic_tag = BUL_Principality
+		}
+		#Montenegro
+		MNT = {
+			transfer_state = 225
+			transfer_state = 1202
+			transfer_state = 1204
+		}
+		#Serbia
+		SER = {
+			transfer_state = 108
+		}
+		#Romania
+		ROM = {
+			transfer_state = 748
+			transfer_state = 1241
+		}
+		#Russia
+		RUS = {
+			transfer_state = 1116
+			transfer_state = 1122
+			transfer_state = 1126
+		}
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.478 days = 1 } }
+			news_event = { id = eastern_crisis.479 days = 1 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.478.b
+		trigger = {
+			tag = OTO
+		}
+		OTO_sicker_man_of_europe = yes
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 48
+						owns_state = 77
+						owns_state = 106
+						owns_state = 211
+						owns_state = 963
+						owns_state = 1023
+						owns_state = 1116
+						owns_state = 1122
+						owns_state = 1241
+						tag = OTO
+					}
+				}
+				country_event = { id = eastern_crisis.480 days = 7 }
+			}
+		}
+	}
+}
+
+#The Treaty of San Stefano
+news_event = {
+	id = eastern_crisis.479
+	title = eastern_crisis.479.t
+	desc = eastern_crisis.479.d
+	picture = GFX_news_event_san_stefano_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.479.a
+		if = {
+			limit = {
+				OR = {
+					tag = AUS
+					tag = ENG
+				}
+			}
+			add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_san_stefano_treaty }
+			reverse_add_opinion_modifier = { target = RUS modifier = eoanb_om_RUS_san_stefano_treaty }
+		}
+	}
+}
+
+#A Wave of Turkish Migration
+country_event = {
+	id = eastern_crisis.480
+	title = eastern_crisis.480.t
+	desc = eastern_crisis.480.d
+	picture = GFX_report_event_turkish_migration
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.480.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 48
+					state = 77
+					state = 106
+					state = 211
+					state = 963
+					state = 1023
+					state = 1116
+					state = 1122
+					state = 1241
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = mass_emigration
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.480.b
+		trigger = {
+			tag = OTO
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 184
+					state = 341
+					state = 354
+					state = 355
+					state = 957
+					state = 1275
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = mass_immigration
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 48
+						owns_state = 77
+						owns_state = 106
+						owns_state = 211
+						owns_state = 963
+						owns_state = 1023
+						owns_state = 1116
+						owns_state = 1122
+						owns_state = 1241
+						tag = OTO
+					}
+				}
+				country_event = { id = eastern_crisis.481 days = 2 } #730
+			}
+		}
+	}
+}
+
+#The End of the Migration Wave
+country_event = {
+	id = eastern_crisis.481
+	title = eastern_crisis.481.t
+	desc = eastern_crisis.481.d
+	picture = GFX_report_event_turkish_migration
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = eastern_crisis.481.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+		every_owned_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = mass_emigration
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = mass_emigration
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.481.b
+		trigger = {
+			tag = OTO
+		}
+		every_owned_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = mass_immigration
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = mass_immigration
+			}
+		}
+	}
+}
+
+##### ALBANIA EVENTS (eastern_crisis.601-700) #####
+
+#Albanians Rebel Against Tax Collection
+country_event = {
+	id = eastern_crisis.601
+	title = eastern_crisis.601.t
+	desc = eastern_crisis.601.d
+	picture = GFX_report_event_albanian_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ALB = { exists = no }
+	}
+		
+	option = {
+		name = eastern_crisis.601.a
+		every_owned_state = {
+			limit = {
+				is_core_of = ALB
+			}
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			set_resistance = 10
+			set_garrison_strength = 0.5
+		}
+		hidden_effect = {
+			country_event = { id = eastern_crisis.602 days = 150 random_days = 100 }
+		}
+	}
+}
+
+#Albanians Rebel Against Tax Collection Again
+country_event = {
+	id = eastern_crisis.602
+	title = eastern_crisis.602.t
+	desc = eastern_crisis.602.d
+	picture = GFX_report_event_albanian_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ALB = { exists = no }
+	}
+		
+	option = {
+		name = eastern_crisis.602.a
+		every_owned_state = {
+			limit = {
+				is_core_of = ALB
+			}
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			set_resistance = 10
+			set_garrison_strength = 0.5
+		}
+		hidden_effect = {
+			country_event = { id = eastern_crisis.603 days = 200 random_days = 100 }
+		}
+	}
+}
+
+#Albanians Rebel Against Conscription
+country_event = {
+	id = eastern_crisis.603
+	title = eastern_crisis.603.t
+	desc = eastern_crisis.603.d
+	picture = GFX_report_event_albanian_uprising
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ALB = { exists = no }
+		has_war = yes
+	}
+		
+	option = {
+		name = eastern_crisis.603.a
+		add_manpower = -2000
+		every_owned_state = {
+			limit = {
+				is_core_of = ALB
+			}
+			force_enable_resistance = OTO
+			start_resistance = OTO
+			set_resistance = 10
+			set_garrison_strength = 0.5
+		}
+	}
+}
+
+##### GREECE EVENTS (eastern_crisis.701-800) #####
+
+#The Haliacmon–Aoös Line
+country_event = {
+	id = eastern_crisis.701
+	title = eastern_crisis.701.t
+	desc = eastern_crisis.701.d
+	picture = GFX_report_event_greece_haliacmon_aoös_line
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			owns_state = 185
+			owns_state = 811
+		}
+	}
+	
+	#We should seize this opportunity
+	option = {
+		name = eastern_crisis.701.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 20
+				has_war_support > 0.7
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_stability = -0.02
+		add_war_support = 0.05
+		unlock_decision_tooltip = eastern_crisis_decision_declare_war_on_the_ottomans_greece
+		hidden_effect = {
+			set_country_flag = eastern_crisis_greek_involvement_flag
+		}
+	}
+
+	#We could do it with Russian help
+	option = {
+		name = eastern_crisis.701.b
+		ai_chance = {
+			base = 15
+			modifier = {
+				add = 10
+				has_war_support > 0.6
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_war_support = 0.025
+		custom_effect_tooltip = GRE_seek_russian_support_effect_tt
+		RUS = { country_event = { id = eastern_crisis.702 days = 3 } }
+	}
+
+	#It's best to remain neutral at the moment
+	option = {
+		name = eastern_crisis.701.c
+		ai_chance = {
+			base = 80
+			modifier = {
+				add = -20
+				has_war_support > 0.7
+			}
+			modifier = {
+				add = -10
+				has_war_support > 0.6
+			}
+		}
+		add_stability = 0.02
+		add_war_support = -0.05
+		custom_effect_tooltip = historical_option
+	}
+}
+
+#RUS - Greece Offers Support for Territorial Gains
+country_event = {
+	id = eastern_crisis.702
+	title = eastern_crisis.702.t
+	desc = eastern_crisis.702.d
+	picture = GFX_report_event_greece_haliacmon_aoös_line
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_war_with = OTO
+	}
+	
+	#Accept their offer
+	option = {
+		name = eastern_crisis.702.a
+		ai_chance = {
+			base = 75
+			modifier = {
+				add = 10
+				has_opinion = {
+					target = GRE
+					value > 49
+				}
+			}
+			modifier = {
+				add = 10
+				has_opinion = {
+					target = GRE
+					value > 0
+				}
+			}
+		}
+		add_war_support = 0.02
+		GRE = { country_event = { id = eastern_crisis.703 days = 2 } }
+	}
+
+	#Reject their offer
+	option = {
+		name = eastern_crisis.702.b
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = -10
+				has_opinion = {
+					target = GRE
+					value > 49
+				}
+			}
+			modifier = {
+				add = -10
+				has_opinion = {
+					target = GRE
+					value > 0
+				}
+			}
+		}
+		add_war_support = -0.02
+		GRE = { country_event = { id = eastern_crisis.704 days = 2 } }
+	}
+}
+
+#GRE - Russia Accepts our Offer
+country_event = {
+	id = eastern_crisis.703
+	title = eastern_crisis.703.t
+	desc = eastern_crisis.703.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.703.a
+		add_war_support = 0.02
+		unlock_decision_tooltip = eastern_crisis_decision_declare_war_on_the_ottomans_greece
+		hidden_effect = {
+			set_country_flag = eastern_crisis_russian_support_flag
+		}
+	}
+}
+
+#GRE - Russia Rejects our Offer
+country_event = {
+	id = eastern_crisis.704
+	title = eastern_crisis.704.t
+	desc = eastern_crisis.704.d
+	picture = GFX_report_event_peterhof_palace
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Let's do it on our own then
+	option = {
+		name = eastern_crisis.704.a
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 25
+				has_war_support > 0.7
+			}
+		}
+		add_stability = -0.02
+		add_war_support = 0.03
+		unlock_decision_tooltip = eastern_crisis_decision_declare_war_on_the_ottomans_greece
+		hidden_effect = {
+			set_country_flag = eastern_crisis_greek_involvement_flag
+		}
+	}
+
+	#Too bad, best to remain neutral then
+	option = {
+		name = eastern_crisis.704.b
+		ai_chance = {
+			base = 75
+			modifier = {
+				add = -25
+				has_war_support > 0.7
+			}
+		}
+		add_stability = 0.01
+	}
+}
+
+#The Greco-Ottoman War
+country_event = {
+	id = eastern_crisis.705
+	title = eastern_crisis.705.t
+	desc = eastern_crisis.705.d
+	picture = GFX_report_event_cretan_revolution
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.705.a
+		declare_war_on = {
+			target = OTO
+			type = wargoal_greco_ottoman_war
+		}
+		activate_mission = eastern_crisis_mission_greco_ottoman_war
+		if = {
+			limit = {
+				country_exists = CET
+			}
+			create_faction = faction_greek_allies
+			CET = { country_event = { id = eastern_crisis.707 days = 2 } }
+		}
+		hidden_effect = {
+			set_global_flag = eastern_crisis_greco_ottoman_war_ongoing_flag
+			OTO = { activate_mission = eastern_crisis_mission_greco_ottoman_war }
+			news_event = { id = eastern_crisis.706 }
+		}
+	}
+}
+
+#The Greco-Ottoman War
+news_event = {
+	id = eastern_crisis.706
+	title = eastern_crisis.706.t
+	desc = eastern_crisis.706.d
+	picture = GFX_news_event_cretan_revolution
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.706.a
+		trigger = {
+			NOT = { tag = OTO }
+		}
+	}
+
+	option = {
+		name = eastern_crisis.706.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.02
+		add_war_support = -0.02
+	}
+}
+
+#CET - Join the War Against the Ottomans?
+country_event = {
+	id = eastern_crisis.707
+	title = eastern_crisis.707.t
+	desc = eastern_crisis.707.d
+	picture = GFX_report_event_cretan_revolution
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Join our brothers
+	option = {
+		name = eastern_crisis.707.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				add = 5
+				has_war_support > 0.7
+			}
+			modifier = {
+				add = -15
+				has_war_support < 0.6
+			}
+		}
+		if = {
+			limit = {
+				GRE = { has_active_mission = eastern_crisis_mission_greco_ottoman_war }
+			}
+			GRE = { add_to_faction = CET }
+			add_to_war = {
+				targeted_alliance = GRE
+				enemy = OTO
+			}
+		}
+		else = {
+			RUS = { add_to_faction = CET }
+			add_to_war = {
+				targeted_alliance = RUS
+				enemy = OTO
+			}
+		}
+		hidden_effect = {
+			GRE = { country_event = { id = eastern_crisis.708 } }
+			OTO = { country_event = { id = eastern_crisis.708 } }
+		}
+	}
+
+	#We need to consolidate our independence for now
+	option = {
+		name = eastern_crisis.707.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -5
+				has_war_support > 0.7
+			}
+			modifier = {
+				add = 15
+				has_war_support < 0.6
+			}
+		}
+		hidden_effect = {
+			GRE = { country_event = { id = eastern_crisis.709 } }
+		}
+	}
+}
+
+#GRE/OTO - Crete Joins the War Against the Ottomans
+country_event = {
+	id = eastern_crisis.708
+	title = eastern_crisis.708.t
+	desc = eastern_crisis.708.d
+	picture = GFX_report_event_cretan_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.708.a
+		trigger = {
+			tag = GRE
+		}
+		add_war_support = 0.03
+	}
+
+	option = {
+		name = eastern_crisis.708.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.01
+		add_war_support = -0.01
+	}
+}
+
+#GRE - Crete Refuses to Join the War
+country_event = {
+	id = eastern_crisis.709
+	title = eastern_crisis.709.t
+	desc = eastern_crisis.709.d
+	picture = GFX_report_event_cretan_revolution
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.709.a
+		add_war_support = -0.01
+	}
+}
+
+#Greece Wins the War Against the Ottomans
+country_event = {
+	id = eastern_crisis.710
+	title = eastern_crisis.710.t
+	desc = eastern_crisis.710.d
+	picture = GFX_report_event_cretan_revolution
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_greco_ottoman_war
+			OTO = { remove_mission = eastern_crisis_mission_greco_ottoman_war }
+			news_event = { id = eastern_crisis.711 days = 1 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.710.a
+		transfer_state = 185
+		transfer_state = 811
+		increase_ps_by_one = yes
+		add_stability = 0.05
+		add_war_support = -0.25
+		set_temp_variable = { eoanb_prestige_change = 5 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#Greece Wins the War Against the Ottomans
+news_event = {
+	id = eastern_crisis.711
+	title = eastern_crisis.711.t
+	desc = eastern_crisis.711.d
+	picture = GFX_news_event_cretan_revolution
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.711.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = CET
+					tag = OTO
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.711.b
+		trigger = {
+			tag = OTO
+		}
+		add_stability = -0.05
+		add_war_support = -0.05
+		OTO_sicker_man_of_europe = yes
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.711.c
+		trigger = {
+			tag = CET
+		}
+		add_stability = 0.03
+		add_war_support = -0.1
+	}
+}
+
+#The Ottomans Win the War Against Greece
+country_event = {
+	id = eastern_crisis.712
+	title = eastern_crisis.712.t
+	desc = eastern_crisis.712.d
+	picture = GFX_report_event_cretan_revolution
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_mission = eastern_crisis_mission_greco_ottoman_war
+			GRE = { remove_mission = eastern_crisis_mission_greco_ottoman_war }
+			news_event = { id = eastern_crisis.713 days = 1 }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.712.a
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Together for Victory"
+					has_dlc = "Waking the Tiger"
+					has_dlc = "Death or Dishonor"
+				}
+			}
+			set_autonomy = {
+				target = GRE
+				autonomous_state = autonomy_khedive
+				freedom_level = 0.7
+			}
+		}
+		increase_ps_by_one = yes
+		add_stability = 0.05
+		add_war_support = -0.1
+		set_temp_variable = { eoanb_prestige_change = 3 }
+		eoanb_change_prestige_score = yes
+	}
+}
+
+#The Ottomans Win the War Against Greece
+news_event = {
+	id = eastern_crisis.713
+	title = eastern_crisis.713.t
+	desc = eastern_crisis.713.d
+	picture = GFX_news_event_cretan_revolution
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	fire_for_sender = no
+	
+	option = {
+		name = eastern_crisis.713.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = CET
+					tag = GRE
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.713.b
+		trigger = {
+			tag = GRE
+		}
+		add_stability = -0.15
+		add_war_support = -0.25
+		set_temp_variable = { eoanb_prestige_change = -3 }
+		eoanb_change_prestige_score = yes
+	}
+	
+	option = {
+		name = eastern_crisis.713.c
+		trigger = {
+			tag = CET
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+	}
+}
+
+#The Greco-Ottoman War Ends in a Stalemate
+country_event = {
+	id = eastern_crisis.714
+	title = eastern_crisis.714.t
+	desc = eastern_crisis.714.d
+	picture = GFX_report_event_cretan_revolution
+
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.714.a
+		trigger = {
+			tag = GRE
+		}
+		add_stability = -0.05
+		add_war_support = -0.3
+		set_temp_variable = { eoanb_prestige_change = -1 }
+		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			OTO = { country_event = { id = eastern_crisis.714 } }
+		}
+	}
+	
+	option = {
+		name = eastern_crisis.714.b
+		trigger = {
+			tag = CET
+		}
+		add_stability = -0.02
+		add_war_support = -0.05
+	}
+	
+	option = {
+		name = eastern_crisis.714.c
+		trigger = {
+			tag = OTO
+		}
+		add_stability = 0.02
+		add_war_support = -0.05
+	}
+}
+
+#The Macedonian Rebellion
+country_event = {
+	id = eastern_crisis.715
+	title = eastern_crisis.715.t
+	desc = eastern_crisis.715.d
+	picture = GFX_report_event_macedonian_rebellion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = eastern_crisis.715.a
+		add_war_support = -0.01
+	}
+}

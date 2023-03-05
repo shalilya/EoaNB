@@ -12,14 +12,14 @@ ideas = {
 			picture = generic_renovated_school
 			
 			modifier = {
-				research_speed_factor = 0.03
+				research_speed_factor = 0.02
 			}
     	}
 		SER_idea_educated_austrian_serbs = {
 			picture = SER_educated_austrian_serb
 			
 			modifier = {
-				research_speed_factor = 0.05
+				research_speed_factor = 0.04
 			}
     	}
 		SER_idea_serbian_welfare = {
@@ -54,7 +54,14 @@ ideas = {
 				stability_factor = -0.25
 			}
     	}
-		
+		SER_idea_1838constitution_3 = {
+			picture = generic_bad_constitution
+			
+			modifier = {
+				stability_factor = -0.35
+				political_power_gain = 0.2
+			}
+    	}
 		SER_idea_strengthen_mihailo_regim = {
 			picture = SER_strengthen_mihailo_reign
 			
@@ -373,6 +380,14 @@ ideas = {
 				production_speed_buildings_factor = 0.03
 			}
     	}
+		SER_idea_navigate_morava_river1 = {
+			picture = SER_navigate_morava_river
+			
+			modifier = {
+				production_speed_buildings_factor = 0.03
+				political_power_gain = 0.05
+			}
+    	}
 		SER_idea_salt_monopoly = {
 			picture = generic_monopoly
 			
@@ -627,6 +642,31 @@ ideas = {
 				max_dig_in_factor = 0.05
 			}
 		}
+		
+		SER_idea_legacy_of_the_serbian_uprisings1 = {
+			picture = SER_serbian_uprising_legacy
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			targeted_modifier = {
+				tag = OTO
+				attack_bonus_against = 0.5
+			}
+			
+			targeted_modifier = {
+				tag = OTO
+				defense_bonus_against = 0.5
+			}
+			
+			modifier = {
+				experience_gain_army = 0.25
+				land_reinforce_rate	= 0.5
+				max_dig_in_factor = 0.25
+			}
+		}
+		
 		SER_idea_understaffed_government = {
 			picture = generic_widespread_bankrupcy
 		
@@ -645,6 +685,17 @@ ideas = {
 				drift_defence_factor = -0.2
 			}
 		
+		}
+		SER_idea_civil_war = {
+			picture = generic_widespread_bankrupcy
+		
+			modifier = {
+				stability_weekly = -0.1
+				surrender_limit = 1
+			}
+			cancel = {
+				has_civil_war = no
+			}
 		}
 		SER_idea_military_operation = {
 			picture = generic_widespread_bankrupcy
@@ -845,6 +896,17 @@ ideas = {
 				consumer_goods_factor = 0.02
 				political_power_gain = -0.05
 				production_speed_buildings_factor = -0.12
+			}
+    	}
+		
+		SER_idea_slavic_friendship = {
+			picture = generic_widespread_bankrupcy
+			
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				recruitable_population = 0.02
 			}
     	}
 	}

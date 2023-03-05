@@ -439,6 +439,14 @@ spriteTypes = {
 ### Germany ###
 	#News Events
 	spriteType = {
+		name = "GFX_news_event_basf_1900"
+		texturefile = "gfx/event_pictures/germany/news_event_basf_1900.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_duden"
+		texturefile = "gfx/event_pictures/germany/news_event_duden.png"
+	}
+	spriteType = {
 		name = "GFX_news_event_kiel_canal_built"
 		texturefile = "gfx/event_pictures/germany/news_event_kiel_canal_built.dds"
 	}
@@ -451,6 +459,26 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/germany/news_event_priams_treasure.png"
 	}
 	#Report Events
+	spriteType = {
+		name = "GFX_report_event_bismarck_desk"
+		texturefile = "gfx/event_pictures/germany/report_event_bismarck_desk.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_duden_orthographic_dictionary"
+		texturefile = "gfx/event_pictures/germany/report_event_duden_orthographic_dictionary.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_duden_portrait_old"
+		texturefile = "gfx/event_pictures/germany/report_event_duden_portrait_old.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_duden_portrait_young"
+		texturefile = "gfx/event_pictures/germany/report_event_duden_portrait_young.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_engelhorn_basf"
+		texturefile = "gfx/event_pictures/germany/report_event_engelhorn_basf.png"
+	}
 	spriteType = {
 		name = "GFX_report_event_ger_dual_alliance"
 		texturefile = "gfx/event_pictures/germany/report_event_ger_dual_alliance.dds"
@@ -644,6 +672,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_event_ITA_generic_port"
 		texturefile = "gfx/event_pictures/italy/event_ITA_generic_port.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Florence_deputies"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Florence_deputies.png"
 	}
 	spriteType = {
 		name = "GFX_event_ITA_il_piemonte"
@@ -882,6 +914,22 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/italy/event_ITA_napoleon_victor.png"
 	}
 	spriteType = {
+		name = "GFX_event_ITA_Don_Bosco"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Don_Bosco.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Greek_Recognition"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Greek_Recognition.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_turin_massacre"
+		texturefile = "gfx/event_pictures/italy/event_ITA_turin_massacre.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_Marmora"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Marmora.png"
+	}
+	spriteType = {
 		name = "GFX_news_event_ITA_cavour_speech"
 		texturefile = "gfx/event_pictures/italy/news_event_ITA_cavour_speech.png"
 	}
@@ -962,6 +1010,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/italy/event_ITA_luigi_farini.png"
 	}
 	spriteType = {
+		name = "GFX_event_ITA_Lanza_Law"
+		texturefile = "gfx/event_pictures/italy/event_ITA_Lanza_Law.png"
+	}
+	spriteType = {
 		name = "GFX_event_ITA_brigands"
 		texturefile = "gfx/event_pictures/italy/event_ITA_brigands.png"
 	}
@@ -981,6 +1033,15 @@ spriteTypes = {
 		name = "GFX_event_ITA_marco_minghetti"
 		texturefile = "gfx/event_pictures/italy/event_ITA_marco_minghetti.png"
 	}
+	spriteType = {
+		name = "GFX_event_ITA_deputy_chamber"
+		texturefile = "gfx/event_pictures/italy/event_ITA_deputy_chamber.png"
+	}
+	spriteType = {
+		name = "GFX_event_ITA_brigands_2"
+		texturefile = "gfx/event_pictures/italy/event_ITA_brigands_2.png"
+	}
+	
 	
 	spriteType = {
 		name = "GFX_event_ITA_Victor_Emanuel"

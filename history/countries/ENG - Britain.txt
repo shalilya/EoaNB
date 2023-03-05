@@ -16,6 +16,14 @@
 	add_to_variable = { prestige_score = 110 }
 	set_cosmetic_tag = ENG_British_Empire
 
+	set_power_balance = {
+		id = ENG_Balance_of_Power_Parliament
+		left_side = ENG_BOP_House_of_Commons_Strength
+		right_side = ENG_BOP_House_of_Lords_Strength
+
+		set_value = 0.4
+	}
+
 	add_ideas = {
 		#STATE OF COUNTRY
 	 	ENG_Victoria
@@ -119,8 +127,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 65
 		traditional_conservatism = 35
@@ -338,11 +346,6 @@
 			freedom_level = 0.2
 		}
 		set_autonomy = {
-			target = NEP
-			autonomous_state = autonomy_princely_state
-			freedom_level = 0.1
-		}
-		set_autonomy = {
 			target = RAJ
 			autonomous_state = autonomy_afr_colonial_company
 			freedom_level = 0.35
@@ -396,11 +399,6 @@
 			target = VIC
 			autonomous_state = autonomy_british_self_gov
 			freedom_level = 0.2
-		}
-		set_autonomy = {
-			target = TCS
-			autonomous_state = autonomy_afr_colony
-			freedom_level = 0.1
 		}
 		set_autonomy = {
 			target = HBC
@@ -706,7 +704,7 @@
 		}
 		create_equipment_variant = {
 			name = "Gunboat Class"
-			type = ship_hull_gunboat_0
+			type = ship_hull_gunboat_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -743,7 +741,7 @@
 			}
 			create_equipment_variant = {
 				name = "Gunboat Class"
-				type = ship_lineship_0
+				type = ship_gunboat_1
 				name_group = GER_CA_HISTORICAL
 				parent_version = 0
 			}
@@ -844,7 +842,7 @@
 	unlock_national_focus = ENG_focus_wolseley_plan
 	unlock_national_focus = ENG_focus_command_structure_organization
 	unlock_national_focus = ENG_focus_address_political_economic_matters
-	unlock_national_focus = ENG_focus_the_calais_question
+	unlock_national_focus = ENG_focus_the_ionion_question
 	unlock_national_focus = ENG_focus_imperialist_economic_interests
 	unlock_national_focus = ENG_focus_demand_japanese_trade_port
 	unlock_national_focus = ENG_focus_the_economic_debate
@@ -972,8 +970,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 65
 		traditional_conservatism = 35
@@ -1201,7 +1199,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments
@@ -1293,11 +1291,6 @@
 			freedom_level = 0.2
 		}
 		set_autonomy = {
-			target = NEP
-			autonomous_state = autonomy_princely_state
-			freedom_level = 0.1
-		}
-		set_autonomy = {
 			target = RAJ
 			autonomous_state = autonomy_british_crown_colony
 			freedom_level = 0.35
@@ -1310,16 +1303,6 @@
 		set_autonomy = {
 			target = NFL
 			autonomous_state = autonomy_british_self_gov
-			freedom_level = 0.2
-		}
-		set_autonomy = {
-			target = BRK
-			autonomous_state = autonomy_british_crown_colony
-			freedom_level = 0.2
-		}
-		set_autonomy = {
-			target = NVS
-			autonomous_state = autonomy_british_crown_colony
 			freedom_level = 0.2
 		}
 		set_autonomy = {
@@ -1361,11 +1344,6 @@
 			target = QNL
 			autonomous_state = autonomy_british_self_gov
 			freedom_level = 0.2
-		}
-		set_autonomy = {
-			target = TCS
-			autonomous_state = autonomy_british_crown_colony
-			freedom_level = 0.1
 		}
 		set_autonomy = {
 			target = HBC

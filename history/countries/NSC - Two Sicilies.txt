@@ -70,8 +70,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -156,6 +156,16 @@
 	recruit_character = NSC_carlo_filangieri
 	recruit_character = NSC_vincenzo_polizzy
 	recruit_character = NSC_prince_louis_count_of_aquila
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_intelligence_agency = { 
+			name = "Sezione Servizi Segreti" 
+			icon = "GFX_intelligence_agency_logo_nsc" 
+		  }
+	}
 
 	if = {
 		limit = { has_dlc = "Man the Guns" }

@@ -6,12 +6,6 @@ difficulty_settings = {
 		multiplier = 4.0
 	}
 	difficulty_setting = {
-		key = "custom_diff_strong_aden"
-		modifier = diff_strong_ai_generic
-		countries = { ADN }
-		multiplier = 4.0
-	}
-	difficulty_setting = {
 		key = "custom_diff_strong_andorra"
 		modifier = diff_strong_ai_generic
 		countries = { ADR }
@@ -588,9 +582,9 @@ difficulty_settings = {
 		multiplier = 4.0
 	}
 	difficulty_setting = {
-		key = "custom_diff_strong_florida"
+		key = "custom_diff_strong_assiniboine"
 		modifier = diff_strong_ai_generic
-		countries = { FLO }
+		countries = { ASI }
 		multiplier = 4.0
 	}
 	difficulty_setting = {
@@ -1259,12 +1253,6 @@ difficulty_settings = {
 		countries = { MMA }
 		multiplier = 4.0
 	}
-	# difficulty_setting = {
-	# 	key = "custom_diff_strong_meru"
-	# 	modifier = diff_strong_ai_generic
-	# 	countries = { MER }
-	# 	multiplier = 4.0
-	# }
 	difficulty_setting = {
 		key = "custom_diff_strong_monaco"
 		modifier = diff_strong_ai_generic
@@ -1467,12 +1455,6 @@ difficulty_settings = {
 		key = "custom_diff_strong_novascotia"
 		modifier = diff_strong_ai_generic
 		countries = { NVS }
-		multiplier = 4.0
-	}
-	difficulty_setting = {
-		key = "custom_diff_strong_northwesternterritories"
-		modifier = diff_strong_ai_generic
-		countries = { NWT }
 		multiplier = 4.0
 	}
 	difficulty_setting = {
@@ -2310,12 +2292,6 @@ difficulty_settings = {
 		multiplier = 4.0
 	}
 	difficulty_setting = {
-		key = "custom_diff_weak_aden"
-		modifier = diff_weak_ai_generic
-		countries = { ADN }
-		multiplier = 4.0
-	}
-	difficulty_setting = {
 		key = "custom_diff_weak_andorra"
 		modifier = diff_weak_ai_generic
 		countries = { ADR }
@@ -2892,9 +2868,9 @@ difficulty_settings = {
 		multiplier = 4.0
 	}
 	difficulty_setting = {
-		key = "custom_diff_weak_florida"
+		key = "custom_diff_weak_assiniboine"
 		modifier = diff_weak_ai_generic
-		countries = { FLO }
+		countries = { ASI }
 		multiplier = 4.0
 	}
 	difficulty_setting = {
@@ -3563,12 +3539,6 @@ difficulty_settings = {
 		countries = { MMA }
 		multiplier = 4.0
 	}
-	# difficulty_setting = {
-	# 	key = "custom_diff_weak_meru"
-	# 	modifier = diff_weak_ai_generic
-	# 	countries = { MER }
-	# 	multiplier = 4.0
-	# }
 	difficulty_setting = {
 		key = "custom_diff_weak_monaco"
 		modifier = diff_weak_ai_generic
@@ -3771,12 +3741,6 @@ difficulty_settings = {
 		key = "custom_diff_weak_novascotia"
 		modifier = diff_weak_ai_generic
 		countries = { NVS }
-		multiplier = 4.0
-	}
-	difficulty_setting = {
-		key = "custom_diff_weak_northwesternterritories"
-		modifier = diff_weak_ai_generic
-		countries = { NWT }
 		multiplier = 4.0
 	}
 	difficulty_setting = {

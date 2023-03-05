@@ -70,6 +70,40 @@ opinion_modifiers = {
 		value = 10
 	}
 	
+	om_war_support = {
+		value = 50
+		months = 60
+		decay = 0.5
+	}
+	
+	om_war_support_for_enemy = {
+		value = -50
+		months = 60
+		decay = 0.5
+	}
+
+	om_military_operation = {
+		value = -25
+		months = 12
+		decay = 2
+	}
+
+	om_military_occupation = {
+		value = -50
+		months = 120
+		decay = 0.1
+	}
+	
+	om_rejected_reforms = {
+		value = -30
+		decay = 0.5
+	}
+	
+	om_supports_reform_plan = {
+		value = 10
+		months = 12
+	}
+	
 	defaulted_on_loan = {
 		value = -100
 		months = 100
@@ -877,9 +911,6 @@ opinion_modifiers = {
 	eoanb_om_GER_crisis_warinsight_goodover = {
 		value = 25
 		decay = 1
-	}
-	CET_Opinion_Arkadi_Explosion = {
-		value = 25
 	}
 	eoanb_om_repealed_gse_act_ENG_RAJ = {
 		value = 20

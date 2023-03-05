@@ -164,8 +164,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 5
 		centrism = 20
 		traditional_conservatism = 20
@@ -285,6 +285,7 @@
 		food_preserving_icebox = 1 #Icebox Preservation
 		#Agriculture
 		early_artificial_fertilizer = 1 #Early Artificial Fertilizer
+		pre_industrial_farms = 1 #Pre-Industrial Farms
 		
 		###Electronics and Instruments
 		#Alternating Current
@@ -564,7 +565,7 @@
 		}
 		create_equipment_variant = {
 			name = "Early Gunboat Class"
-			type = ship_hull_gunboat_0
+			type = ship_hull_gunboat_1
 			name_group = GER_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -775,8 +776,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 5
 		centrism = 20
 		traditional_conservatism = 20
@@ -1004,7 +1005,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments

@@ -220,28 +220,37 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_DIPLOMACY
+			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		available = {
-			has_government = centrism
+			OR = {
+				has_government = centrism
+				has_government = ideology_social_liberalism
+			}
 		}
 		prerequisite = { focus = SAX_focus_our_place_in_germany }
 		ai_will_do = { base = 500 }
 
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 100
 			unlock_decision_category_tooltip = SAX_decision_category_trias_policy
+			activate_mission_tooltip = SAX_mission_trias_policy
+			hidden_effect = {
+				activate_mission = SAX_mission_trias_policy
+			}
 		}
 	}
-
-	#Legacy of the Bamberg Conference
+	
+	#Legacy of the Four Kings' Alliance
 	focus = {
-		id = SAX_focus_legacy_of_bamberg_conference
-		icon = GFX_Focus_Law_revision
+		id = SAX_focus_legacy_of_four_kings_alliance
+		icon = GFX_goal_liberal_alliance
 		relative_position_id = SAX_focus_attempt_to_reform_confederation
-		x = 0
+		x = -1
 		y = 1
-		cost = 60
+		cost = 30
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
@@ -249,20 +258,101 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_attempt_to_reform_confederation }
-		ai_will_do = { base = 400 }
+		ai_will_do = { base = 500 }
 
 		completion_reward = {
-			add_political_power = 100
-			if = {
-				limit = {
-					OR = { 
-						has_country_flag = SAX_decision_notify_the_middle_states_failure_flag
-						has_country_flag = SAX_decision_notify_the_middle_states_small_majority_flag
-						has_country_flag = SAX_decision_notify_the_middle_states_large_majority_flag
-						has_country_flag = SAX_decision_notify_the_middle_states_unanimity_flag
-					}
+			add_political_power = 50
+			add_opinion_modifier = { target = BAV modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_REL }
+			reverse_add_opinion_modifier = { target = BAV modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_REL }
+			add_opinion_modifier = { target = HAN modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_WEAK_REL }
+			reverse_add_opinion_modifier = { target = HAN modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_WEAK_REL }
+			add_opinion_modifier = { target = WUR modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_REL }
+			reverse_add_opinion_modifier = { target = WUR modifier = SAX_LEGACY_OF_THE_FOUR_KINGS_ALLIANCE_REL }
+			add_power_balance_value = {
+				id = SAX_Balance_of_Power_Trias
+				value = 0.05
+			}
+		}
+	}
+	
+	#Legacy of the Bamberg Conference
+	focus = {
+		id = SAX_focus_legacy_of_bamberg_conference
+		icon = GFX_Focus_Law_revision
+		relative_position_id = SAX_focus_attempt_to_reform_confederation
+		x = 1
+		y = 1
+		cost = 30
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_DIPLOMACY
+		}
+		available_if_capitulated = no
+		prerequisite = { focus = SAX_focus_attempt_to_reform_confederation }
+		ai_will_do = { base = 500 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_opinion_modifier = { target = BAD modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			reverse_add_opinion_modifier = { target = BAD modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			add_opinion_modifier = { target = BAV modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			reverse_add_opinion_modifier = { target = BAV modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			add_opinion_modifier = { target = HES modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			reverse_add_opinion_modifier = { target = HES modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			add_opinion_modifier = { target = HSD modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			reverse_add_opinion_modifier = { target = HSD modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			add_opinion_modifier = { target = WUR modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			reverse_add_opinion_modifier = { target = WUR modifier = SAX_LEGACY_OF_BAMBERG_REL }
+			add_power_balance_value = {
+				id = SAX_Balance_of_Power_Trias
+				value = 0.05
+			}
+		}
+	}
+	
+	#The Würzburg Conference
+	focus = {
+		id = SAX_focus_wurzburg_conference
+		icon = GFX_Focus_Government_Reform
+		relative_position_id = SAX_focus_attempt_to_reform_confederation
+		x = 0
+		y = 2
+		cost = 30
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+			FOCUS_FILTER_DIPLOMACY
+		}
+		available_if_capitulated = no
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAX_focus_wurzburg_conference_trigger_tt
+				hidden_trigger = {
+					has_country_flag = SAX_decision_wurzburg_conference_ready
+					BAD = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
+					BAV = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
+					HAN = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
+					HES = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
+					HSD = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
+					WUR = { NOT = { has_opinion_modifier = SAX_GC_BUNDESREFORM_NEGATIVE_REL } }
 				}
-				custom_effect_tooltip = SAX_focus_legacy_of_bamberg_conference_effect_tt
+			}
+		}
+		prerequisite = { focus = SAX_focus_legacy_of_four_kings_alliance }
+		prerequisite = { focus = SAX_focus_legacy_of_bamberg_conference }
+		ai_will_do = { base = 500 }
+
+		completion_reward = {
+			custom_effect_tooltip = SAX_focus_wurzburg_conference_effect_tt
+			BAD = { country_event = { id = saxony.307 } }
+			BAV = { country_event = { id = saxony.307 } }
+			HAN = { country_event = { id = saxony.307 } }
+			HES = { country_event = { id = saxony.307 } }
+			HSD = { country_event = { id = saxony.307 } }
+			WUR = { country_event = { id = saxony.307 } }
+			hidden_effect = {
+				clr_country_flag = SAX_decision_wurzburg_conference_ready
+				country_event = { id = saxony.310 days = 30 }
 			}
 		}
 	}
@@ -273,7 +363,7 @@ focus_tree = {
 		icon = GFX_goal_focus_extend_trias
 		relative_position_id = SAX_focus_attempt_to_reform_confederation
 		x = 0
-		y = 2
+		y = 3
 		cost = 30
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
@@ -281,74 +371,17 @@ focus_tree = {
 			FOCUS_FILTER_DIPLOMACY
 		}
 		available_if_capitulated = no
-		prerequisite = { focus = SAX_focus_legacy_of_bamberg_conference }
-		ai_will_do = { base = 400 }
+		available = {
+			has_country_flag = SAX_third_wurzburg_conference_flag
+		}
+		prerequisite = { focus = SAX_focus_wurzburg_conference }
+		ai_will_do = { base = 500 }
 
 		completion_reward = {
 			add_political_power = 100
-			unlock_decision_tooltip = SAX_decision_develop_trias_idea
-		}
-	}
-
-	#The Würzburg Conference
-	focus = {
-		id = SAX_focus_wurzburg_conference
-		icon = GFX_Focus_Government_Reform
-		relative_position_id = SAX_focus_attempt_to_reform_confederation
-		x = 0
-		y = 3
-		cost = 30
-		search_filters = {
-			FOCUS_FILTER_HISTORICAL
-			FOCUS_FILTER_DIPLOMACY
-		}
-		available_if_capitulated = no
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SAX_focus_wurzburg_conference_trigger_tt_1
-				hidden_trigger = {
-					OR = {
-						has_country_flag = SAX_decision_refine_trias_idea_unanimity_flag
-						has_country_flag = SAX_decision_trias_conference_ready_flag
-					}
-				}
-			}
-		}
-		prerequisite = { focus = SAX_focus_idea_of_german_trias }
-		ai_will_do = { base = 400 }
-
-		completion_reward = {
-			BAD = { country_event = { id = saxony.307 } }
-			BAV = { country_event = { id = saxony.307 } }
-			HAN = { country_event = { id = saxony.307 } }
-			HES = { country_event = { id = saxony.307 } }
-			HSD = { country_event = { id = saxony.307 } }
-			WUR = { country_event = { id = saxony.307 } }
-			if = {
-				limit = {
-					SCH = { 
-						exists = yes
-						is_subject = no 
-					}
-					NOT = {
-						HLS = { 
-							exists = yes
-							is_subject = no 
-						}
-					}
-				}
-				SCH = { country_event = { id = saxony.307 } }
-			}
-			else_if = {
-				limit = {
-					HLS = { 
-						exists = yes
-						is_subject = no 
-					}
-				}
-				HLS = { country_event = { id = saxony.307 } }
-			}
+			custom_effect_tooltip = SAX_focus_idea_of_german_trias_effect_tt
 			custom_effect_tooltip = SAX_focus_unfinished_warning_effect_tt
+			#unlock_decision_tooltip = SAX_decision_develop_trias_idea
 		}
 	}
 	
@@ -372,7 +405,7 @@ focus_tree = {
 				always = no
 			}
 		}
-		prerequisite = { focus = SAX_focus_wurzburg_conference }
+		prerequisite = { focus = SAX_focus_idea_of_german_trias }
 		ai_will_do = { base = 1 }
 
 		completion_reward = {
@@ -443,11 +476,20 @@ focus_tree = {
 			FOCUS_FILTER_DIPLOMACY
 		}
 		available_if_capitulated = no
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAX_focus_common_goal_trigger_tt
+				hidden_trigger = {
+					has_country_flag = SAX_decision_trias_conference_ready_flag
+				}
+			}
+		}
 		prerequisite = { focus = SAX_focus_trias_succeeds }
 		ai_will_do = { base = 300 }
 
 		completion_reward = {
 			add_political_power = 100
+			#unlock_decision_tooltip = 
 		}
 	}
 	
@@ -986,7 +1028,7 @@ focus_tree = {
 	
 	#Reform the Leipzig University
 	focus = {
-		id = SAX_focus_reform_the_universitat_leipzig
+		id = SAX_focus_expand_the_universitat_leipzig
 		icon = GFX_Focus_SAX_Uni_Leipzig
 		relative_position_id = SAX_focus_scientific_progress
 		x = 0
@@ -1046,10 +1088,14 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		available = {
-			has_government = centrism
+			OR = {
+				has_government = centrism
+				has_government = ideology_social_liberalism
+			}
 		}
 		prerequisite = { focus = SAX_focus_political_realities }
 		mutually_exclusive = { focus = SAX_focus_conserve_the_status_quo }
@@ -1075,7 +1121,7 @@ focus_tree = {
 		}
 	}
 	
-	#Thorough Reforms
+	#Thorough Reforms - Social Liberalism Path
 	focus = {
 		id = SAX_focus_thorough_reforms
 		icon = GFX_Focus_Government_Reform_Administration
@@ -1086,9 +1132,27 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
-			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
+		available = {
+			OR = {
+				AND = {
+					ideology_social_liberalism > 0.449
+					centrism > 0.049
+				}
+				AND = {
+					ideology_social_liberalism < 0.45
+					ideology_social_liberalism > 0.399
+					centrism > 0.099
+				}
+				AND = {
+					ideology_social_liberalism < 0.40
+					ideology_social_liberalism > 0.349
+					centrism > 0.149
+				}
+			}
+		}
 		prerequisite = { focus = SAX_focus_liberalize_saxony }
 		mutually_exclusive = { focus = SAX_focus_moderate_reforms }
 		ai_will_do = { 
@@ -1102,40 +1166,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					centrism < 0.6
+					ideology_social_liberalism < 0.35
 				}
 				add_political_power = -25
 				add_stability = -0.05
 			}
 			else_if = {
 				limit = {
-					centrism > 0.6
+					ideology_social_liberalism > 0.349
 				}
 				add_political_power = 50
 				add_stability = 0.02
 			}
-			add_popularity = { ideology = centrism popularity = 0.05 }
+			set_politics = { ruling_party = ideology_social_liberalism elections_allowed = yes election_frequency = 36 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.05 }
 			decrease_ps_by_two = yes
-			SAX_hermann_joseph = {
-				add_advisor_role = {
-					advisor = {
-						slot = political_advisor
-						idea_token = SAX_advisor_hermann_joseph
-						allowed = {
-							original_tag = SAX
-						}
-						available = {
-							has_government = centrism
-						}
-						traits = {
-							SAX_trait_Hermann_Joseph
-						}
-						ai_will_do = {
-							factor = 1
-						}
-					}
-				}
-			}
 			SAX_otto_leonhard_heubner = {
 				add_advisor_role = {
 					advisor = {
@@ -1145,7 +1190,10 @@ focus_tree = {
 							original_tag = SAX
 						}
 						available = {
-							has_government = centrism
+							OR = {
+								has_government = centrism
+								has_government = ideology_social_liberalism
+							}
 						}
 						traits = {
 							SAX_trait_Otto_Leonhard_Heubner
@@ -1170,6 +1218,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_thorough_reforms }
@@ -1214,12 +1263,14 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_universal_male_franchise }
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
+			add_popularity = { ideology = ideology_social_liberalism popularity = 0.02 }
 			remove_ideas = SAX_idea_ethnic_tensions_1
 			if = {
 				limit = {
@@ -1232,7 +1283,7 @@ focus_tree = {
 		}
 	}
 	
-	#Moderate Reforms
+	#Moderate Reforms - Conservative Liberalism Path
 	focus = {
 		id = SAX_focus_moderate_reforms
 		icon = GFX_Focus_Government_Reform
@@ -1246,6 +1297,24 @@ focus_tree = {
 			FOCUS_FILTER_CENTRISM
 		}
 		available_if_capitulated = no
+		available = {
+			OR = {
+				AND = {
+					centrism > 0.449
+					ideology_social_liberalism > 0.049
+				}
+				AND = {
+					centrism < 0.45
+					centrism > 0.399
+					ideology_social_liberalism > 0.099
+				}
+				AND = {
+					centrism < 0.40
+					centrism > 0.349
+					ideology_social_liberalism > 0.149
+				}
+			}
+		}
 		prerequisite = { focus = SAX_focus_liberalize_saxony }
 		mutually_exclusive = { focus = SAX_focus_thorough_reforms }
 		ai_will_do = { base = 100 }
@@ -1253,40 +1322,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					centrism < 0.45
+					centrism < 0.35
 				}
 				add_political_power = -25
 				add_stability = -0.05
 			}
 			else_if = {
 				limit = {
-					centrism > 0.45
+					centrism > 0.349
 				}
 				add_political_power = 50
 				add_stability = 0.02
 			}
-			add_popularity = { ideology = centrism popularity = 0.03 }
+			set_politics = { ruling_party = centrism elections_allowed = yes election_frequency = 36 }
+			add_popularity = { ideology = centrism popularity = 0.05 }
 			decrease_ps_by_one = yes
-			SAX_karl_braun = {
-				add_advisor_role = {
-					advisor = {
-						slot = political_advisor
-						idea_token = SAX_advisor_karl_braun
-						allowed = {
-							original_tag = SAX
-						}
-						available = {
-							has_government = centrism
-						}
-						traits = {
-							SAX_trait_Karl_Braun
-						}
-						ai_will_do = {
-							factor = 2
-						}
-					}
-				}
-			}
 			SAX_martin_gotthard_oberlander = {
 				add_advisor_role = {
 					advisor = {
@@ -1296,7 +1346,10 @@ focus_tree = {
 							original_tag = SAX
 						}
 						available = {
-							has_government = centrism
+							OR = {
+								has_government = centrism
+								has_government = ideology_social_liberalism
+							}
 						}
 						traits = {
 							SAX_trait_Martin_Gotthard_Oberlander
@@ -1329,9 +1382,9 @@ focus_tree = {
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
-			remove_ideas = SAX_idea_land_owners_prevalence_1
+			swap_ideas = { remove_idea = SAX_idea_land_owners_prevalence_1 add_idea = SAX_idea_land_owners_prevalence_2 }
 			add_political_power = -50
-			add_popularity = { ideology = centrism popularity = 0.05 }
+			add_popularity = { ideology = centrism popularity = 0.03 }
 		}
 	}
 	
@@ -1346,12 +1399,14 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_CENTRISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_adapt_sufferage_law }
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
+			add_popularity = { ideology = centrism popularity = 0.01 }
 			swap_ideas = { remove_idea = SAX_idea_ethnic_tensions_1 add_idea = SAX_idea_ethnic_tensions_2 }
 			decrease_ps_by_one = yes
 			eoanb_sorbian_recognised = yes
@@ -1369,6 +1424,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_full_equality_for_sorbs focus = SAX_focus_accept_sorbian_identity }
@@ -1413,6 +1470,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_end_press_censorship }
@@ -1427,6 +1486,8 @@ focus_tree = {
 			}
 			add_political_power = -50
 			add_stability = -0.02
+			set_temp_variable = { eoanb_prestige_change = 1 }
+			eoanb_change_prestige_score = yes
 			custom_effect_tooltip = SAX_decision_grant_partial_amnesty_to_richard_wagner_effect_tt
 		}
 	}
@@ -1442,6 +1503,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_CENTRISM
+			FOCUS_FILTER_SOCIAL_LIBERALISM
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_amnesty_for_insurgents_of_48_49 }
@@ -1451,6 +1514,18 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.05
 			increase_ps_by_one = yes
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				add_popularity = { ideology = centrism popularity = 0.02 }
+			}
+			if = {
+				limit = {
+					has_government = ideology_social_liberalism
+				}
+				add_popularity = { ideology = ideology_social_liberalism popularity = 0.02 }
+			}
 		}
 	}
 	
@@ -1486,20 +1561,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = SAX_focus_conserve_the_status_quo_effect_tt
 			if = {
 				limit = {
 					has_government = traditional_conservatism
 				}
 				if = {
 					limit = {
-						traditional_conservatism < 0.5
+						traditional_conservatism < 0.35
 					}
 					add_political_power = -50
 					add_stability = -0.05
 				}
 				else_if = {
 					limit = {
-						traditional_conservatism > 0.5
+						traditional_conservatism > 0.349
 					}
 					add_political_power = 25
 					add_stability = 0.02
@@ -1512,14 +1588,14 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						autocracy < 0.4
+						autocracy < 0.35
 					}
 					add_political_power = -50
 					add_stability = -0.05
 				}
 				else_if = {
 					limit = {
-						autocracy > 0.4
+						autocracy > 0.349
 					}
 					add_political_power = 25
 					add_stability = 0.02
@@ -1549,7 +1625,7 @@ focus_tree = {
 		}
 	}
 	
-	#Create Elitist Preponderance
+	#Create Elitist Preponderance - Traditional Conservatism Path
 	focus = {
 		id = SAX_focus_create_elitist_preponderance
 		icon = GFX_Focus_Elite
@@ -1564,6 +1640,24 @@ focus_tree = {
 			FOCUS_FILTER_TRAD_CONSERV
 		}
 		available_if_capitulated = no
+		available = {
+			OR = {
+				AND = {
+					traditional_conservatism > 0.449
+					autocracy > 0.049
+				}
+				AND = {
+					traditional_conservatism < 0.45
+					traditional_conservatism > 0.399
+					autocracy > 0.099
+				}
+				AND = {
+					traditional_conservatism < 0.40
+					traditional_conservatism > 0.349
+					autocracy > 0.149
+				}
+			}
+		}
 		prerequisite = { focus = SAX_focus_conserve_the_status_quo }
 		mutually_exclusive = { focus = SAX_focus_noble_autocracy }
 		ai_will_do = { base = 100 }
@@ -1571,45 +1665,19 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_government = traditional_conservatism
+					traditional_conservatism < 0.35
 				}
-				if = {
-					limit = {
-						traditional_conservatism < 0.6
-					}
-					add_political_power = -25
-					add_stability = -0.05
-				}
-				else_if = {
-					limit = {
-						traditional_conservatism > 0.6
-					}
-					add_political_power = 50
-					add_stability = 0.02
-				}
-				add_popularity = { ideology = traditional_conservatism popularity = 0.05 }
+				add_political_power = -25
 			}
 			else_if = {
 				limit = {
-					has_government = autocracy
+					traditional_conservatism > 0.349
 				}
-				if = {
-					limit = {
-						autocracy < 0.5
-					}
-					add_political_power = -25
-					add_stability = -0.05
-				}
-				else_if = {
-					limit = {
-						autocracy > 0.5
-					}
-					add_political_power = 50
-					add_stability = 0.02
-				}
-				add_popularity = { ideology = autocracy popularity = 0.05 }
+				add_political_power = 50
 			}
 			add_stability = -0.1
+			set_politics = { ruling_party = traditional_conservatism elections_allowed = yes election_frequency = 36 }
+			add_popularity = { ideology = traditional_conservatism popularity = 0.05 }
 			decrease_ps_by_two = yes
 		}
 	}
@@ -1658,7 +1726,7 @@ focus_tree = {
 		}
 	}
 	
-	#A Noble Autocracy
+	#A Noble Autocracy - Autocracy Path
 	focus = {
 		id = SAX_focus_noble_autocracy
 		icon = GFX_Focus_consolidate_power
@@ -1674,17 +1742,21 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			if = {
-				limit = {
-					has_government = traditional_conservatism
+			OR = {
+				AND = {
+					autocracy > 0.449
+					traditional_conservatism > 0.049
 				}
-				traditional_conservatism > 0.5
-			}
-			if = {
-				limit = {
-					has_government = autocracy
+				AND = {
+					autocracy < 0.45
+					autocracy > 0.399
+					traditional_conservatism > 0.099
 				}
-				traditional_conservatism > 0.4
+				AND = {
+					autocracy < 0.40
+					autocracy > 0.349
+					traditional_conservatism > 0.149
+				}
 			}
 		}
 		prerequisite = { focus = SAX_focus_conserve_the_status_quo }
@@ -1694,46 +1766,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_government = traditional_conservatism
+					autocracy < 0.4
 				}
-				if = {
-					limit = {
-						traditional_conservatism < 0.7
-					}
-					add_political_power = -25
-					add_stability = -0.05
-				}
-				else_if = {
-					limit = {
-						traditional_conservatism > 0.7
-					}
-					add_political_power = 50
-					add_stability = 0.02
-				}
-				add_popularity = { ideology = traditional_conservatism popularity = 0.05 }
+				add_political_power = -25
 			}
 			else_if = {
 				limit = {
-					has_government = autocracy
+					autocracy > 0.399
 				}
-				if = {
-					limit = {
-						autocracy < 0.6
-					}
-					add_political_power = -25
-					add_stability = -0.05
-				}
-				else_if = {
-					limit = {
-						autocracy > 0.6
-					}
-					add_political_power = 50
-					add_stability = 0.02
-				}
-				add_popularity = { ideology = autocracy popularity = 0.05 }
+				add_political_power = 50
 			}
 			add_stability = -0.25
+			set_politics = { ruling_party = autocracy elections_allowed = no }
+			add_popularity = { ideology = autocracy popularity = 0.05 }
 			decrease_ps_by_three = yes
+			#mission to avoid a revolution
 		}
 	}
 	
@@ -1755,8 +1802,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = -350
-			add_stability = -0.25
-			decrease_ps_by_three = yes
+			add_stability = -0.2
+			decrease_ps_by_two = yes
 			SAX = {
 				if = {
 					limit = {
@@ -1817,7 +1864,7 @@ focus_tree = {
 					swap_ideas = { remove_idea = property_owners_suffrage add_idea = absolutism }
 				}
 			}
-			swap_ideas = { remove_idea = SAX_idea_land_owners_prevalence_1 add_idea = SAX_idea_land_owners_prevalence_2 }
+			swap_ideas = { remove_idea = SAX_idea_land_owners_prevalence_1 add_idea = SAX_idea_land_owners_prevalence_3 }
 		}
 	}
 	
@@ -1845,7 +1892,7 @@ focus_tree = {
 				}
 				swap_ideas = { remove_idea = limited_equality add_idea = segregation }
 			}
-			decrease_ps_by_two = yes
+			decrease_ps_by_one = yes
 		}
 	}
 	
@@ -1860,6 +1907,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_AUTOCRACY
+			FOCUS_FILTER_TRAD_CONSERV
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_the_sorbian_question focus = SAX_focus_forced_assimilation }
@@ -1898,7 +1947,7 @@ focus_tree = {
 	#Renew Warrants for Insurgents of 1848/49
 	focus = {
 		id = SAX_focus_renew_warrents_for_insurgents_of_48_49
-		icon = GFX_Focus_Weapon_Revolver_1
+		icon = GFX_Focus_Partisans_Elimination_2
 		relative_position_id = SAX_focus_conserve_the_status_quo
 		x = 0
 		y = 5
@@ -1906,6 +1955,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_AUTOCRACY
+			FOCUS_FILTER_TRAD_CONSERV
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_toughen_press_censorship }
@@ -1914,6 +1965,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			add_stability = 0.05
+			set_temp_variable = { eoanb_prestige_change = -1 }
+			eoanb_change_prestige_score = yes
 		}
 	}
 	
@@ -1928,6 +1981,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ALTHISTORY
 			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_AUTOCRACY
+			FOCUS_FILTER_TRAD_CONSERV
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_renew_warrents_for_insurgents_of_48_49 }
@@ -2345,7 +2400,7 @@ focus_tree = {
 	
 	#Field Marshall Kronprinz Albert
 	focus = {
-		id = SAX_focus_field_marshall_kronpinz_albert
+		id = SAX_focus_field_marshal_kronpinz_albert
 		icon = GFX_Focus_SAX_Albert
 		relative_position_id = SAX_focus_new_military_leadership
 		x = -1
@@ -2357,7 +2412,7 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_new_military_leadership }
-		mutually_exclusive = { focus = SAX_focus_field_marshall_prinz_georg }
+		mutually_exclusive = { focus = SAX_focus_field_marshal_prinz_georg }
 		ai_will_do = { base = 100 }
 		
 		completion_reward = {
@@ -2378,7 +2433,7 @@ focus_tree = {
 	
 	#Field Marshall Prinz Georg
 	focus = {
-		id = SAX_focus_field_marshall_prinz_georg
+		id = SAX_focus_field_marshal_prinz_georg
 		icon = GFX_Focus_SAX_Georg
 		relative_position_id = SAX_focus_new_military_leadership
 		x = 1
@@ -2390,7 +2445,7 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		prerequisite = { focus = SAX_focus_new_military_leadership }
-		mutually_exclusive = { focus = SAX_focus_field_marshall_kronpinz_albert }
+		mutually_exclusive = { focus = SAX_focus_field_marshal_kronpinz_albert }
 		ai_will_do = { 
 			base = 100
 			modifier = {
@@ -2458,6 +2513,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = SAX_idea_state_railways_1
 			custom_effect_tooltip = SAX_customeffect_infra_bonus_one
+			custom_effect_tooltip = SAX_customeffect_rail_bonus_two
 			activate_mission_tooltip = SAX_mission_railway_expansion
 			SAX_otto_von_tschirschky_bogendorff = {
 				add_advisor_role = {
@@ -2476,15 +2532,26 @@ focus_tree = {
 					}
 				}
 			}
-			hidden_effect = {
+			hidden_effect = {				
+				#Bonus for Infra
 				set_variable = { infra_total = 0 }
 				every_owned_state = {
 					add_to_variable = { ROOT.infra_total = infrastructure_level }
 				}
 				set_variable = { infra_total_bonus = infra_total }
 				add_to_variable = { infra_total_bonus = 1 }
-				activate_mission = SAX_mission_railway_expansion
 				add_ideas = SAX_idea_boost_infra
+
+				#Bonus for Railway
+				set_variable = { rail_total = 0 }
+				every_owned_state = {
+					add_to_variable = { ROOT.rail_total = building_level@rail_way }
+				}
+				set_variable = { rail_total_bonus = rail_total }
+				add_to_variable = { rail_total_bonus = 2 }
+				add_ideas = SAX_idea_boost_rail
+
+				activate_mission = SAX_mission_railway_expansion
 			}
 		}
 	}
@@ -2794,8 +2861,7 @@ focus_tree = {
 					NOT = {
 						OR = {
 							has_government = social_egalitarianism
-							has_government = collectivist_socialism
-							has_government = vanguard_communism
+							has_government = ideology_radical_socialism
 							has_government = anarchism
 						}
 					}
@@ -2831,8 +2897,7 @@ focus_tree = {
 					NOT = {
 						OR = {
 							has_government = social_egalitarianism
-							has_government = collectivist_socialism
-							has_government = vanguard_communism
+							has_government = ideology_radical_socialism
 							has_government = anarchism
 							has_government = chauvinist_populism
 						}

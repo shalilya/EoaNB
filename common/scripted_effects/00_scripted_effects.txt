@@ -473,21 +473,17 @@ ITA_Formation_of_Italy = {
 				FRA = {
 					mark_focus_tree_layout_dirty = yes
 				}
-				set_variable = {
-					southern_revolt_risk = 10
-				}
-				add_ideas = ITA_Southern_Revolt_Risk_Idea
 				set_popularities = {
-					anarchism = 8
-					vanguard_communism = 1
-					collectivist_socialism = 1
-					social_egalitarianism = 1
-					centrism = 52
-					traditional_conservatism = 25
+					anarchism = 6
+					ideology_social_liberalism = 28
+					ideology_radical_socialism = 1
+					social_egalitarianism = 3
+					centrism = 40
+					traditional_conservatism = 12
 					radical_democracy = 2
-					chauvinist_populism = 0
-					autocracy = 10
-					fundamentalism = 0
+					chauvinist_populism = 1
+					autocracy = 5
+					fundamentalism = 2
 				}
 				set_politics = {
 					ruling_party = centrism
@@ -583,20 +579,16 @@ ITA_Formation_of_Italy = {
 			#	remove_state_core = 1380
 			#}
 			####Focus Tree
-			load_focus_tree = italy_focus
+			#load_focus_tree = italy_focus
 			###Politics and related things
 			hidden_effect = {
 				FRA = {
 					mark_focus_tree_layout_dirty = yes
 				}
-				set_variable = {
-					southern_revolt_risk = 10
-				}
-				add_ideas = ITA_Southern_Revolt_Risk_Idea
 				#set_popularities = {
 				#	anarchism = 8
-				#	vanguard_communism = 1
-				#	collectivist_socialism = 1
+				#	ideology_social_liberalism = 1
+				#	ideology_radical_socialism = 1
 				#	social_egalitarianism = 1
 				#	centrism = 52
 				#	traditional_conservatism = 25
@@ -776,19 +768,19 @@ ruling_party_lose_1_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.01
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.01
 		}
 	}
@@ -869,19 +861,19 @@ ruling_party_lose_2_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.02
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.02
 		}
 	}
@@ -962,19 +954,19 @@ ruling_party_lose_3_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.03
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.03
 		}
 	}
@@ -1055,19 +1047,19 @@ ruling_party_lose_4_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.04
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.04
 		}
 	}
@@ -1148,19 +1140,19 @@ ruling_party_lose_5_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.05
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.05
 		}
 	}
@@ -1241,19 +1233,19 @@ ruling_party_lose_10_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = -0.1
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = -0.1
 		}
 	}
@@ -1334,19 +1326,19 @@ ruling_party_gain_1_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.01
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.01
 		}
 	}
@@ -1427,19 +1419,19 @@ ruling_party_gain_2_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.02
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.02
 		}
 	}
@@ -1520,19 +1512,19 @@ ruling_party_gain_3_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.03
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.03
 		}
 	}
@@ -1613,19 +1605,19 @@ ruling_party_gain_4_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.04
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.04
 		}
 	}
@@ -1706,19 +1698,19 @@ ruling_party_gain_5_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.05
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.05
 		}
 	}
@@ -1799,19 +1791,19 @@ ruling_party_gain_10_popularity = {
 	}
 	if = {
 		limit = {
-			has_government = collectivist_socialism
+			has_government = ideology_radical_socialism
 		}
 		add_popularity = {
-			ideology = collectivist_socialism
+			ideology = ideology_radical_socialism
 			popularity = 0.1
 		}
 	}
 	if = {
 		limit = {
-			has_government = vanguard_communism
+			has_government = ideology_social_liberalism
 		}
 		add_popularity = {
-			ideology = vanguard_communism
+			ideology = ideology_social_liberalism
 			popularity = 0.1
 		}
 	}

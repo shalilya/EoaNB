@@ -209,6 +209,7 @@
  austria.76.t: "Croatian Railway Line to Zagreb in Service"
  austria.76.d: "As part of the railway concessions agreed upon by the state and the investors, the railway line to Zagreb (Agram) and further southeast to the Bosnian border has been completed. This concludes the public and semi-public railway development plans currently underway."
  austria.76.a: "Gute Reise!"
+ AUS_stop_funding_railways_effect_tt: "§RIn case you decide to stop funding the railway projects, you will have to finish or build some of the lines yourself to unlock all content.§!"
  
  ###DIPLOMACY AND GEC EVENTS
  #CRIMEAN WAR AFTERMATH EVENTS
@@ -734,7 +735,7 @@
  
  #GENERALS EVENTS
  austria.701.t: "Dismissing Feldmarschall Ferenc Gyulay"
- austria.701.d: "Count Ferenc Gyulay who was named Feldmarschall only a few years ago has proven to be an incompetent military commander with his crushing defeat in the Battle of Magenta against the Italians and their French Allies. It is wise that he is to be recalled back to Wien, and instead let the Emperor take direct control of the situation to avoid demoralizing entirely the Austrian army. Should Ferenc Gyulay remain as Feldmarschall, this will surely anger the people and the army."
+ austria.701.d: "Count Ferenc Gyulay, who was named Feldmarschall only a few years ago, has proven to be an incompetent military commander. His crushing defeat in the Battle of Magenta against the Italians and their allies puts us in a bad spot. It would be wise to recall him back to Wien, and instead let the Emperor decide how to handle the situation to avoid demoralizing the army entirely. Should Ferenc Gyulay remain as Feldmarschall, or should he be recalled from his command? Keeping him there will surely anger both the people and the army."
  austria.701.a: "Dismiss him, Heinrich von Heß will take over."
  austria.701.b: "Keep him."
  austria.702.t: "The Retirement of Heinrich von Heß"
@@ -1740,6 +1741,8 @@
  AUS_idea_italian_league_desc: "This country is a member of the §YItalian League§!.\n\nThe Italian League is an economic and political organization tasked with promotiong cooperation amongst the Italian states under Austrian overlordship."
  AUS_idea_enhanced_centralization: "Enhanced Centralization"
  AUS_idea_enhanced_centralization_desc: ""
+ AUS_idea_croatian_refugee_crisis: "Croatian Refugee Crisis"
+ AUS_idea_croatian_refugee_crisis_desc: ""
  AUS_idea_PRS_boost_socialism: "Socialist Influences"
  AUS_idea_PRS_boost_socialism_desc: "Prussia is supporting Socialism in Austria."
  GC_idea_south_german_bund: "Member of the South German Association"
@@ -1756,11 +1759,11 @@
  AUS_idea_modified_operational_structure_desc: ""
  AUS_idea_new_infantry_regulations_degenfeld_1: "New Infantry Regulations"
  AUS_idea_new_infantry_regulations_degenfeld_1_desc: ""
- AUS_idea_new_infantry_regulations_degenfeld_2: "Established New Infantry Regulations"
+ AUS_idea_new_infantry_regulations_degenfeld_2: "Reinforced New Infantry Regulations"
  AUS_idea_new_infantry_regulations_degenfeld_2_desc: ""
  AUS_idea_new_infantry_regulations_benedek_1: "New Infantry Regulations"
  AUS_idea_new_infantry_regulations_benedek_1_desc: ""
- AUS_idea_new_infantry_regulations_benedek_2: "Established New Infantry Regulations"
+ AUS_idea_new_infantry_regulations_benedek_2: "Reinforced New Infantry Regulations"
  AUS_idea_new_infantry_regulations_benedek_2_desc: ""
  AUS_idea_austrian_general_staff_1: "Austrian General Staff"
  AUS_idea_austrian_general_staff_1_desc: ""

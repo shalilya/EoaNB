@@ -1950,6 +1950,18 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/generic/report_event_generic_telegraph.png"
 	}
 
+	spriteType = {
+		name = "GFX_report_event_generic_aid_relief"
+		texturefile = "gfx/event_pictures/generic/report_event_generic_aid_relief.png"
+	}
+
+	spriteType = {
+		name = "GFX_event_generic_WIP_content"
+		texturefile = "gfx/event_pictures/generic/event_generic_WIP_content.png"
+	}
+
+	
+
 	## USA Events ##
 
 	spriteType = {

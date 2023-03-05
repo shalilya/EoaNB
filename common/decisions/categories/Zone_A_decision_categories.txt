@@ -107,6 +107,14 @@ ENG_decision_category_royal_navy = {
 	allowed = { tag = ENG }
 }
 
+ENG_houses_of_parliament_category_decisions = {
+	icon = generic_political_actions
+	priority = 10
+	allowed = {
+		tag = ENG
+	}
+}
+
 ### Great Lakes ###
 
 # MIN_Defend_Kentucky = {
@@ -228,6 +236,21 @@ ACW_American_Civil_War_Decisions = {
 	}
 }
 
+USA_Elections_Decisions_Category = {
+	icon = power_struggle
+
+	priority = 10000
+
+	allowed = {
+		tag = USA
+		is_debug = yes
+	}
+
+	available = {
+		is_debug = yes
+	}
+}
+
 USA_reconstruction_period = {
 	icon = generic_independence
 
@@ -280,7 +303,6 @@ USA_return_from_ashes = {
 			tag = MIO
 			tag = MIN
 			tag = LOU
-			tag = FLO
 			tag = MIS
 			tag = USG
 			tag = NCA

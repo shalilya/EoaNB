@@ -1,24 +1,24 @@
 state = {
 	id = 1357
-	name = "STATE_1357"
+	name = "STATE_1357" # Danish West Indies/Virgin Islands
 	manpower = 40800
 	state_category = rural
 
 	provinces = {
-		4155 13946
+		13946
 	}
 
-	history =	{
+	history = {
 		owner = DEN
+		
 		buildings = {
 			infrastructure = 1
-			4155 = {
+			13946 = {
 				naval_base = 1
-
 			}
 		}
 
-		victory_points = { 4155 1 } #Charlotte Amalie
+		victory_points = { 13946 1 } #Charlotte Amalie
 
 		add_to_array = { state_culture_array = 418 } # Afro-Caribbean
 		add_to_array = { state_culture_array_num = 0.73 }
@@ -44,6 +44,5 @@ state = {
 		add_to_array = { state_religion_array = 25 } # Anglican-Protestant
 		add_to_array = { state_religion_array_num = 0.01 }
 	}
-
-	local_supplies=0.0 
+	local_supplies=0.0
 }

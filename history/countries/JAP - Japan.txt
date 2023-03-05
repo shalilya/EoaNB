@@ -85,16 +85,16 @@
 				modules = {
 					fixed_ship_battery_slot = ship_cannon_battery_0
 					fixed_ship_fire_control_system_slot = fire_control_system_0
-					fixed_ship_engine_slot = ship_engine_paddle_gunboat
+					fixed_ship_engine_slot = ship_engine_sail_1
 					fixed_ship_armor_slot = ship_armor_capital_hardwood_0
 					mid_1_custom_slot = ship_cannon_battery_0
-					mid_2_custom_slot = ship_cannon_battery_1
+					mid_2_custom_slot = ship_cannon_battery_0
 				}
 			}
 
 			create_equipment_variant = {
 				name = "Frigate Class"
-				type = ship_hull_frigate_1
+				type = ship_hull_frigate_0
 				name_group = GER_CA_HISTORICAL
 				parent_version = 0
 				modules = {
@@ -161,8 +161,8 @@
 
 		set_popularities = {
 			anarchism = 0
-			vanguard_communism = 0
-			collectivist_socialism = 0
+			ideology_social_liberalism = 0
+			ideology_radical_socialism = 0
 			social_egalitarianism = 0
 			centrism = 0
 			traditional_conservatism = 0
@@ -208,9 +208,9 @@
 
 	load_focus_tree = jap_mac_imperial_ft
 	unlock_national_focus = JAP_imperalist_victory
-	unlock_national_focus = JAP_five_charter_oath
-	unlock_national_focus = JAP_abolish_the_han_system
-	unlock_national_focus = JAP_appoint_daimyos_as_govenors
+	#unlock_national_focus = JAP_five_charter_oath
+	#unlock_national_focus = JAP_abolish_the_han_system
+	#unlock_national_focus = JAP_appoint_daimyos_as_govenors
 	unlock_national_focus = JAP_formalize_plans
 	unlock_national_focus = JAP_adopt_the_yen
 	
@@ -295,8 +295,8 @@
 
 	set_popularities = {
 		anarchism = 0
-		vanguard_communism = 0
-		collectivist_socialism = 0
+		ideology_social_liberalism = 0
+		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
@@ -524,7 +524,7 @@
 		copper_salts_pesticides = 1
 		fungicides = 1
 		mechanized_farming = 1
-		agricultural_engineering = 1 #Threshing Machine
+		threshing_machine = 1 #Threshing Machine
 		manufactured_seed_drill = 1
 		
 		###Electronics and Instruments
