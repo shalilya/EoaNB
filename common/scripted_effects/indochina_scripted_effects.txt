@@ -12,11 +12,11 @@ VIN_Nguyen_Dynasty_No_Heir_Update = {
 	if = {
 		limit = {
 			has_government = autocracy
-			has_idea = absolute_monarchy
-			OR = {
-				has_idea = no_heir
-				has_idea = weak_heir
-			}
+			#has_idea = absolute_monarchy
+			#OR = {
+			#	has_idea = no_heir
+			#	has_idea = weak_heir
+			#}
 		}
 		randomize_temp_variable = {
 			var = VIN_Dynasty_Concubines_Count_Change
@@ -319,11 +319,11 @@ INDOC_Colonial_Aggression_Setup = {
 		}
 		set_variable = { var = INDOC_Influence_Frame_Var value = 5 }
 	}
-	1390 = { set_variable = { var = INDOC_Influence_Frame_Var value = 1 } }
-	1391 = { set_variable = { var = INDOC_Influence_Frame_Var value = 2 } }
-	1392 = { set_variable = { var = INDOC_Influence_Frame_Var value = 2 } }
+	780 = { set_variable = { var = INDOC_Influence_Frame_Var value = 1 } }
+	778 = { set_variable = { var = INDOC_Influence_Frame_Var value = 2 } }
+	777 = { set_variable = { var = INDOC_Influence_Frame_Var value = 2 } }
 	288 = { set_variable = { var = INDOC_Influence_Frame_Var value = 3 } }
-	1386 = { 
+	784 = { 
 		set_variable = { var = INDOC_Influence_Frame_Var value = 4 }
 		set_state_flag = INDOC_Colonial_Mission_State_Flag
 	}

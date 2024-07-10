@@ -1,13 +1,11 @@
 ideas = {
 
 	### Country Ideas ###
-
 	country = {
-
 		### STARTING IDEAS
 		JAP_riots_of_rights = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			available = {
@@ -30,7 +28,7 @@ ideas = {
 		}
 		JAP_zaibatsu = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			available = {
@@ -40,7 +38,7 @@ ideas = {
 			picture = jap_zaibatsu
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				political_power_factor = -0.15
 				research_speed_factor = 0.04
 				production_speed_buildings_factor = 0.08
@@ -48,7 +46,7 @@ ideas = {
 		}
 		JAP_samurai_spirit_western_weapons = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -67,7 +65,7 @@ ideas = {
 		### Base
 		JAP_recovering_from_boshin_war = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -87,7 +85,7 @@ ideas = {
 		### Removed Politics
 		JAP_recovering_from_boshin_war_1 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -106,7 +104,7 @@ ideas = {
 		### Morale-ed Army
 		JAP_recovering_from_boshin_war_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -124,7 +122,7 @@ ideas = {
 		### Training
 		JAP_recovering_from_boshin_war_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -141,7 +139,7 @@ ideas = {
 		### Logistics
 		JAP_recovering_from_boshin_war_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -157,7 +155,7 @@ ideas = {
 		### INDUSTRIAL REVOLUTION ###
 		JAP_dutch_accept = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -167,13 +165,13 @@ ideas = {
 			picture = JAP_foreign_trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				
 			}
 		}
 		JAP_prussia_accept = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -183,13 +181,13 @@ ideas = {
 			picture = JAP_foreign_trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				
 			}
 		}
 		JAP_british_accept = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -199,13 +197,13 @@ ideas = {
 			picture = JAP_foreign_trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				
 			}
 		}
 		JAP_french_accept = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -215,13 +213,13 @@ ideas = {
 			picture = JAP_foreign_trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				
 			}
 		}
 		JAP_usa_accept = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -231,24 +229,15 @@ ideas = {
 			picture = JAP_foreign_trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				
-			}
-		}
-		lacking_industry = {
-			allowed = {
-				original_tag = JAP
-			}
-
-			modifier = {
-				consumer_goods_factor = 50
 			}
 		}
 		
 		### Well Oiled Economy Spirits
 		JAP_well_oiled_economy_base = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -261,7 +250,7 @@ ideas = {
 		}
 		JAP_well_oiled_economy_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -278,7 +267,7 @@ ideas = {
 		}
 		JAP_well_oiled_economy_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			} 
 
 			available = {
@@ -296,7 +285,7 @@ ideas = {
 		}
 		JAP_well_oiled_economy_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -314,7 +303,7 @@ ideas = {
 		
 		JAP_well_oiled_economy_1 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			available = {
@@ -332,7 +321,7 @@ ideas = {
 		## CIVILIAN ECONOMY ## 
 		failed_civ = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = GFX_goal_focus_merchants_british
@@ -344,15 +333,11 @@ ideas = {
 				production_speed_industrial_complex_factor = -0.2
 				political_power_gain = -0.6
 			}
-			on_remove = {
-				# add_ideas = JAP_industrial_revolution_part2
-				# complete_national_focus = JAP_our_military_economy
-			}
 		}
 
 		JAP_industrial_revolution_part1 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -368,7 +353,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part1_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -384,7 +369,7 @@ ideas = {
 
 		JAP_industrial_revolution_part1_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -401,7 +386,7 @@ ideas = {
 
 		JAP_industrial_revolution_part1_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -418,7 +403,7 @@ ideas = {
 
 		JAP_industrial_revolution_part1_5 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -435,7 +420,7 @@ ideas = {
 
 		JAP_industrial_revolution_part1_6 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -452,7 +437,7 @@ ideas = {
 
 		JAP_privately_owned_idea = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -466,7 +451,7 @@ ideas = {
 
 		JAP_imperial_owned_idea = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -480,7 +465,7 @@ ideas = {
 		## MILITARY ECONOMY ###
 		failed_mil = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_goods_red_bonus
@@ -491,19 +476,15 @@ ideas = {
 				political_power_gain = -0.6
 			}
 			equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = 0.1 instant = yes
-					}
+				infantry_equipment = {
+					build_cost_ic = 0.1 instant = yes
 				}
-			on_remove = {
-				add_ideas = JAP_industrial_revolution_part2
-				#complete_national_focus = JAP_kaigun_industry
 			}
 		}
 
 		JAP_industrial_revolution_part2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -522,7 +503,7 @@ ideas = {
 
 		JAP_industrial_revolution_part2_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -541,7 +522,7 @@ ideas = {
 
 		JAP_industrial_revolution_part2_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -560,7 +541,7 @@ ideas = {
 
 		JAP_industrial_revolution_arsenal_1 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -572,7 +553,7 @@ ideas = {
 
 		JAP_industrial_revolution_arsenal_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -584,7 +565,7 @@ ideas = {
 		### NAVY ECONOMY ###
 		failed_navy = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = JAP_food_cart
@@ -595,15 +576,11 @@ ideas = {
 				industrial_capacity_dockyard = -0.15
 				political_power_gain = -0.6
 			}
-			on_remove = {
-				# add_ideas = JAP_industrial_revolution_part3
-				# complete_national_focus = JAP_tetsudou_industry
-			}
 		}
 
 		JAP_industrial_revolution_part3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -618,7 +595,7 @@ ideas = {
 
 		JAP_industrial_revolution_part3_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -633,7 +610,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -648,7 +625,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -663,7 +640,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_5 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -678,7 +655,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_6 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -693,7 +670,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_7 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -708,7 +685,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_8 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -723,7 +700,7 @@ ideas = {
 		
 		JAP_industrial_revolution_part3_9 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -738,7 +715,7 @@ ideas = {
 
 		JAP_industrial_revolution_part3_10 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -754,7 +731,7 @@ ideas = {
 		### RAILROAD ECONOMY ###
 		JAP_failed_railroads = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_goods_red_bonus
@@ -765,14 +742,11 @@ ideas = {
 				production_speed_rail_way_factor = -0.02
 				political_power_gain = -0.30
 			}
-			on_remove = {
-				#complete_national_focus = JAP_end_of_the_industrial_revolution
-			}
 		}
 
 		JAP_industrial_revolution_part4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -787,7 +761,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -802,7 +776,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -817,7 +791,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -832,7 +806,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_5 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -847,7 +821,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_6 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -862,7 +836,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_7 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -877,7 +851,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_8 = { 
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -892,7 +866,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_9 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -907,7 +881,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_10 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -922,7 +896,7 @@ ideas = {
 
 		JAP_industrial_revolution_part4_11 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = BAD_rise_of_industry
@@ -937,7 +911,7 @@ ideas = {
 
 		JAP_nationalization_of_railways = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = Railway_inter_state
@@ -948,82 +922,118 @@ ideas = {
 				political_power_gain = -0.15
 			}
 		}
-		### MINISTRY OF INDUSTRY ###
-		JAP_preparation_ministry_of_industry_1 = {
+		### MINISTRY OF PUBLICK WORKS ###
+		JAP_formed_mpw = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
-				political_power_gain = -0.5
+				political_power_gain = -0.1
+				production_speed_steel_mill_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				production_speed_radar_station_factor = 0.1
+				#production_speed_electronics_factory_factor = 0.1
+				production_speed_coal_mine_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
 			}
 		}
-
-		JAP_preparation_ministry_of_industry_2 = {
+		JAP_formed_mpw_90 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
-				political_power_gain = -0.5
-				production_speed_rail_way_factor = 0.06
+				political_power_gain = -0.2
+				production_speed_steel_mill_factor = 0.09
+				production_speed_dockyard_factor = 0.09
+				production_speed_radar_station_factor = 0.09
+				#production_speed_electronics_factory_factor = 0.09
+				production_speed_coal_mine_factor = 0.09
+				production_speed_rail_way_factor = 0.09
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.09 instant = yes
+				}	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.09 instant = yes
+				}
 			}
 		}
-
-		JAP_preparation_ministry_of_industry_3 = {
+		JAP_formed_mpw_80 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
-				political_power_gain = -0.5
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
+				political_power_gain = -0.3
+				production_speed_steel_mill_factor = 0.08
+				production_speed_dockyard_factor = 0.08
+				production_speed_radar_station_factor = 0.08
+				#production_speed_electronics_factory_factor = 0.08
+				production_speed_coal_mine_factor = 0.08
+				production_speed_rail_way_factor = 0.08
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.08 instant = yes
+				}	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.08 instant = yes
+				}
 			}
 		}
-
-		JAP_preparation_ministry_of_industry_4 = {
+		JAP_formed_mpw_70 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
-				political_power_gain = -0.5
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
+				political_power_gain = -0.4
+				production_speed_steel_mill_factor = 0.07
+				production_speed_dockyard_factor = 0.07
+				production_speed_radar_station_factor = 0.07
+				#production_speed_electronics_factory_factor = 0.07
+				production_speed_coal_mine_factor = 0.07
+				production_speed_rail_way_factor = 0.07
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.07 instant = yes
+				}	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.07 instant = yes
+				}
 			}
 		}
-
-		JAP_preparation_ministry_of_industry_5 = {
+		JAP_formed_mpw_60 = {
 			allowed = {
-				original_tag = JAP
-			}
-
-			picture = NOR_storting
-
-			modifier = {
-				political_power_gain = -0.5
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-			}
-		}
-
-		JAP_preparation_ministry_of_industry_6 = {
-			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
@@ -1033,221 +1043,193 @@ ideas = {
 				production_speed_steel_mill_factor = 0.06
 				production_speed_dockyard_factor = 0.06
 				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
+				#production_speed_electronics_factory_factor = 0.06
 				production_speed_coal_mine_factor = 0.06
 				production_speed_rail_way_factor = 0.06
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.06 instant = yes
+				}	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.06 instant = yes
+				}
 			}
 		}
-
-		JAP_preparation_ministry_of_industry_7 = {
+		JAP_formed_mpw_50 = {
 			allowed = {
-				original_tag = JAP
-			}
-
-			picture = NOR_storting
-
-			modifier = {
-				political_power_gain = -0.5
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
-					}	
-				}
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
-					}
-				}
-			}
-
-		preparation_extended1 = {
-			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
 				political_power_gain = -0.6
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
+				production_speed_steel_mill_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				production_speed_radar_station_factor = 0.05
+				#production_speed_electronics_factory_factor = 0.05
+				production_speed_coal_mine_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.05 instant = yes
 				}	
 			}
-				
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05 instant = yes
 				}
 			}
 		}
-
-		preparation_extended2 = {
+		JAP_formed_mpw_40 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
 				political_power_gain = -0.7
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
+				production_speed_steel_mill_factor = 0.04
+				production_speed_dockyard_factor = 0.04
+				production_speed_radar_station_factor = 0.04
+				#production_speed_electronics_factory_factor = 0.04
+				production_speed_coal_mine_factor = 0.04
+				production_speed_rail_way_factor = 0.04
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.04 instant = yes
 				}	
 			}
-				
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.04 instant = yes
 				}
 			}
 		}
-
-		preparation_extended3 = {
+		JAP_formed_mpw_30 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
 				political_power_gain = -0.8
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
+				production_speed_steel_mill_factor = 0.03
+				production_speed_dockyard_factor = 0.03
+				production_speed_radar_station_factor = 0.03
+				#production_speed_electronics_factory_factor = 0.03
+				production_speed_coal_mine_factor = 0.03
+				production_speed_rail_way_factor = 0.03
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.03 instant = yes
 				}	
 			}
-				
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.03 instant = yes
 				}
 			}
 		}
-
-		preparation_extended4 = {
+		JAP_formed_mpw_20 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
 				political_power_gain = -0.9
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
+				production_speed_steel_mill_factor = 0.02
+				production_speed_dockyard_factor = 0.02
+				production_speed_radar_station_factor = 0.02
+				#production_speed_electronics_factory_factor = 0.02
+				production_speed_coal_mine_factor = 0.02
+				production_speed_rail_way_factor = 0.02
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.02 instant = yes
 				}	
-			} 
-				
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.02 instant = yes
 				}
 			}
 		}
-
-		preparation_extended5 = {
+		JAP_formed_mpw_10 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = NOR_storting
 
 			modifier = {
 				political_power_gain = -1.0
-				production_speed_steel_mill_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-				production_speed_radar_station_factor = 0.06
-				production_speed_electronics_factory_factor = 0.06
-				production_speed_coal_mine_factor = 0.06
-				production_speed_rail_way_factor = 0.06
-				}
-				equipment_bonus = {
-					uniform_equipment = {
-						build_cost_ic = -0.06 instant = yes
+				production_speed_steel_mill_factor = 0.01
+				production_speed_dockyard_factor = 0.01
+				production_speed_radar_station_factor = 0.01
+				#production_speed_electronics_factory_factor = 0.01
+				production_speed_coal_mine_factor = 0.01
+				production_speed_rail_way_factor = 0.01
+			}
+			equipment_bonus = {
+				uniform_equipment = {
+					build_cost_ic = -0.01 instant = yes
 				}	
 			}
-				
-				equipment_bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.06 instant = yes
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.01 instant = yes
 				}
 			}
-		}
+		}	
 
 		JAP_military_industry = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_goods_red_bonus
 
 			modifier = {
-				production_speed_arms_factory_factor = 0.02
-				industrial_capacity_factory = 0.02
+				production_speed_arms_factory_factor = -0.02
+				industrial_capacity_factory = -0.02
 			}
 		}	
 
 		JAP_military_industry_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_goods_red_bonus
 
 			modifier = {
-				consumer_goods_factor = 0.05
-				production_speed_arms_factory_factor = 0.04
-				industrial_capacity_factory = 0.04
+				consumer_goods_expected_value = 0.05
+				production_speed_arms_factory_factor = 0.02
+				industrial_capacity_factory = 0.02
 			}
 		}	
 
 		JAP_military_industry_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_goods_red_bonus
 
 			modifier = {
-				consumer_goods_factor = 0.03
+				consumer_goods_expected_value = 0.03
 				production_speed_arms_factory_factor = 0.4
 				industrial_capacity_factory = 0.04
 			}
@@ -1262,38 +1244,38 @@ ideas = {
 			picture = budget_scientific_funding_regular_state_sponsorship
 
 			modifier = {
-				consumer_goods_factor = 0.05	
+				consumer_goods_expected_value = 0.05	
 			}
 		}
 
 		JAP_french_funds = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = budget_scientific_funding_regular_state_sponsorship
 
 			modifier = {
-				consumer_goods_factor = -0.05	
+				consumer_goods_expected_value = -0.05	
 			}
 		}
 
 		JAP_british_funds = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = budget_scientific_funding_regular_state_sponsorship
 
 			modifier = {
-				consumer_goods_factor = -0.05	
+				consumer_goods_expected_value = -0.05	
 			}
 		}
 		### POLITICAL IDEAS
 		## Iwakura Expedition
 		Iwakura = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_kaiseito
@@ -1304,7 +1286,7 @@ ideas = {
 		}
 		Iwakura_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_kaiseito
@@ -1316,7 +1298,7 @@ ideas = {
 		}
 		Iwakura_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_kaiseito
@@ -1329,7 +1311,7 @@ ideas = {
 		}
 		Iwakura_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_kaiseito
@@ -1344,7 +1326,7 @@ ideas = {
 		### Gakusei
 		gakusei_mission_1 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_shihaisho_development
@@ -1355,7 +1337,7 @@ ideas = {
 		}
 		gakusei_mission_2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_shihaisho_development
@@ -1367,7 +1349,7 @@ ideas = {
 		}
 		gakusei_mission_3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_shihaisho_development
@@ -1380,7 +1362,7 @@ ideas = {
 		}
 		gakusei_mission_4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_shihaisho_development
@@ -1395,7 +1377,7 @@ ideas = {
 		### Women at Home
 		no_women_learning = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = SWE_no_voting_women
@@ -1409,7 +1391,7 @@ ideas = {
 		### Co-Ed Education
 		coed_learning = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = TSH_shihaisho_development
@@ -1423,7 +1405,7 @@ ideas = {
 		### imperial universities
 		imperial_universities = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_idea_technical_school
@@ -1435,59 +1417,59 @@ ideas = {
 		### imperial universities2
 		imperial_universities2 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_idea_technical_school
 
 			modifier = {
 				research_speed_factor = 0.03
-				consumer_goods_factor = 0.02
+				consumer_goods_expected_value = 0.02
 			}
 		}
 		### imperial universities3
 		imperial_universities3 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_idea_technical_school
 
 			modifier = {
 				research_speed_factor = 0.04
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 		}
 		### imperial universities4
 		imperial_universities4 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_idea_technical_school
 
 			modifier = {
 				research_speed_factor = 0.05
-				consumer_goods_factor = -0.02	
+				consumer_goods_expected_value = -0.02	
 			}
 		}
 		### imperial universities5
 		imperial_universities5 = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = generic_idea_technical_school
 
 			modifier = {
 				research_speed_factor = 0.06
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 		}
 		### Reward Loyal Domains
 		loyal_domains_rewarded = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			#picture = 
@@ -1500,7 +1482,7 @@ ideas = {
 		### Five Charter Oath
 		five_charter_oath_idea = {
 			allowed = {
-				original_tag = JAP
+				always = no
 			}
 
 			picture = JAP_imperial_seal
@@ -1515,7 +1497,7 @@ ideas = {
 		### New Marketing Strategies
 		JAP_idea_new_marketing_strategies = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = -1
@@ -1523,13 +1505,13 @@ ideas = {
 			picture = generic_foreign_capital
 
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_expected_value = -0.1
 			}
 		}
 		### Gold Standard
 		JAP_idea_gold_standard = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = -1
@@ -1544,7 +1526,7 @@ ideas = {
 		### Silver Standard
 		JAP_idea_silver_standard = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = -1
@@ -1560,7 +1542,7 @@ ideas = {
 		### Increase Wages
 		JAP_wage_increase = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1569,14 +1551,14 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.01
-				consumer_goods_factor = -0.005
+				consumer_goods_expected_value = -0.005
 				industrial_capacity_factory = 0.015
 			}
 		}
 		### Increase Wages
 		JAP_bank_note_system = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1585,14 +1567,14 @@ ideas = {
 			
 			modifier = {
 				line_change_production_efficiency_factor = 0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				industry_repair_factor = 0.03
 			}
 		}
 		### Increase Wages
 		JAP_bank_note_system_2 = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1602,14 +1584,14 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.03
 				line_change_production_efficiency_factor = 0.05
-				consumer_goods_factor = 0.03
+				consumer_goods_expected_value = 0.03
 				industry_repair_factor = 0.03
 			}
 		}
 		### British Banking System
 		JAP_british_banking = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1619,14 +1601,14 @@ ideas = {
 			modifier = {
 				min_export = 0.04
 				line_change_production_efficiency_factor = 0.05
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				trade_opinion_factor = 0.1
 			}
 		}
 		### American Banking System
 		JAP_american_banking = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1636,13 +1618,13 @@ ideas = {
 			modifier = {
 				min_export = -0.06
 				line_change_production_efficiency_factor = 0.07
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 			}
 		}
 		### Domestic Banking System
 		JAP_domestic_banking = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1657,7 +1639,7 @@ ideas = {
 		### liberal
 		JAP_liberal_japan = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1671,7 +1653,7 @@ ideas = {
 		### Military Foreign
 		JAP_foreign_military = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1685,7 +1667,7 @@ ideas = {
 		### British Style
 		JAP_british_military = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1702,7 +1684,7 @@ ideas = {
 		### Russian Style
 		JAP_russian_military = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1719,7 +1701,7 @@ ideas = {
 		### French Style
 		JAP_french_military = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1736,7 +1718,7 @@ ideas = {
 		### German Style
 		JAP_german_military = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
@@ -1747,57 +1729,63 @@ ideas = {
 				army_org_factor = 0.06
 				army_morale_factor = 0.04
 				army_speed_factor = 0.04
-				offensive_war_stability_factor = 0.05
+				offensive_war_stability_factor = 0.05 
 				pocket_penalty = 0.06
 			}
 		}
-		### Japanese Taiwan Expedition
-		JAP_taiwan_exp = {
+		### FORMOSA EXPEDITION BUDGET
+		JAP_formosa_expedition_budget_idea = {
 			allowed = {
-				always = yes
+				always = no
 			}
 
 			removal_cost = 0
 
-			picture = TSH_sankoku_army
+			picture = TSH_fading_fiscal_crisis
 			
 			modifier = {
-			
+				war_support_factor = -0.15
+				consumer_goods_expected_value = 0.15
+				political_power_gain = 0.25
 			}
 		}
 	### MILITARY ###
 	### Imperial Rescript
-	imperial_rescript = {
-		allowed = {
-			original_tag = JAP
-		}
+		imperial_rescript = {
+			allowed = {
+				always = no
+			}
 
-		picture = generic_idea_modern_army
+			picture = generic_idea_modern_army
 
-		modifier = {
-			experience_gain_army = 0.05
-			army_core_attack_factor = 0.05
-			army_core_defence_factor = 0.05
-			army_leader_cost_factor = -0.25
+			modifier = {
+				experience_gain_army = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_leader_cost_factor = -0.25
 			}
 		}
 	### Educate Conscripts
-	educate_conscripts = {
-		allowed = {
-			original_tag = JAP
-		}
+		educate_conscripts = {
+			allowed = {
+				always = no
+			}
 
-		picture = generic_idea_educate_new_staff
+			picture = generic_idea_educate_new_staff
 
-		modifier = {
-			research_speed_factor = 0.03
-			army_leader_cost_factor = -0.15
-			army_org_regain = 0.02
+			modifier = {
+				research_speed_factor = 0.03
+				army_leader_cost_factor = -0.15
+				army_org_regain = 0.02
 			}
 		}
 	### Ordiance Conscription
 	conscription_ordinance = {
 		allowed = {
+			always = no
+		}
+		
+		available = {
 			original_tag = JAP
 			NOT = {
 				has_war_with = is_great_power

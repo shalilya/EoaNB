@@ -27,32 +27,6 @@ GEC_decision_category_domestic_policy = {
 
 		visible = {
 			has_completed_focus = GEC_focus_constitutional_amendments
-			if = {
-				limit = {
-					NOT = { has_idea = free_city }
-				}
-				OR = {
-					NOT = { has_idea = constitutional_monarchy }
-					NOT = { has_idea = constitution_adopted }
-					NOT = { has_idea = limited_elections }
-					NOT = { has_idea = limited_independence }
-					NOT = { has_idea = free_press }
-					has_idea = foa_banned
-					NOT = { has_idea = lp_land_purchase }
-					has_idea = absolutism
-				}
-			}
-			else = {
-				OR = {
-					NOT = { has_idea = constitution_adopted }
-					NOT = { has_idea = limited_elections }
-					NOT = { has_idea = limited_independence }
-					NOT = { has_idea = free_press }
-					has_idea = foa_banned
-					NOT = { has_idea = lp_land_purchase }
-					has_idea = absolutism
-				}
-			}
 		}
 		
 		fire_only_once = yes
@@ -78,7 +52,7 @@ GEC_decision_category_domestic_policy = {
         remove_effect = {
 			if = {
 				limit = {
-					has_idea = non_monarchical_system
+					#has_idea = non_monarchical_system
 					NOT = { tag = LCK }
 				}
 				add_popularity = {
@@ -88,7 +62,7 @@ GEC_decision_category_domestic_policy = {
 			}
 			else_if = {
 				limit = {
-					has_idea = non_monarchical_system
+					#has_idea = non_monarchical_system
 					tag = LCK
 				}
 				add_popularity = {
@@ -109,31 +83,31 @@ GEC_decision_category_domestic_policy = {
 					ideology = autocracy
 					popularity = 0.03
 				}
-				if = {
-					limit = {
-						NOT = { has_idea = constitutional_monarchy }
-					}
-					add_ideas = constitutional_monarchy
-				}
+				#if = {
+				#	limit = {
+				#		NOT = { has_idea = constitutional_monarchy }
+				#	}
+				#	add_ideas = constitutional_monarchy
+				#}
 			}
-			if = {
-				limit = {
-					NOT = {	has_idea = constitution_adopted }
-				}
-				add_ideas = constitution_adopted
-			}
+			#if = {
+			#	limit = {
+			#		NOT = {	has_idea = constitution_adopted }
+			#	}
+			#	add_ideas = constitution_adopted
+			#}
 			if = {
 				limit = {
 					NOT = {	has_idea = limited_elections }
 				}
 				add_ideas = limited_elections
 			}
-			if = {
-				limit = {
-					NOT = {	has_idea = limited_independence }
-				}
-				add_ideas = limited_independence
-			}
+			#if = {
+			#	limit = {
+			#		NOT = {	has_idea = limited_independence }
+			#	}
+			#	add_ideas = limited_independence
+			#}
 			if = {
 				limit = {
 					NOT = {	has_idea = free_press }
@@ -146,12 +120,12 @@ GEC_decision_category_domestic_policy = {
 				}
 				add_ideas = foa_non_socialist
 			}
-			if = {
-				limit = {
-					NOT = {	has_idea = lp_land_purchase }
-				}
-				add_ideas = lp_land_purchase
-			}
+			#if = {
+			#	limit = {
+			#		NOT = {	has_idea = lp_land_purchase }
+			#	}
+			#	add_ideas = lp_land_purchase
+			#}
 			if = {
 				limit = {
 					has_idea = absolutism
@@ -198,7 +172,7 @@ GEC_decision_category_domestic_policy = {
 
 		visible = {
 			has_completed_focus = GEC_focus_peace_and_quiet
-			NOT = { has_idea = free_city }
+			#NOT = { has_idea = free_city }
 			OR = {
 				has_idea = free_press
 				NOT = { has_idea = foa_banned }
@@ -380,7 +354,7 @@ GEC_decision_category_domestic_policy = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
         }
 		
 		complete_effect = {
@@ -911,7 +885,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -982,7 +956,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -1053,7 +1027,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -1295,7 +1269,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -1366,7 +1340,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -1437,7 +1411,7 @@ GEC_decision_category_our_armed_forces = {
         days_remove = 90
          
         modifier = {
-            consumer_goods_factor = 0.25
+            consumer_goods_expected_value = 0.25
         }
 		
 		complete_effect = {			
@@ -1506,7 +1480,7 @@ GEC_decision_category_our_armed_forces = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_idea = non_monarchical_system
+					#has_idea = non_monarchical_system
 					NOT = { tag = LCK }
 				}
 				add_popularity = {
@@ -1516,7 +1490,7 @@ GEC_decision_category_our_armed_forces = {
 			}
 			else_if = {
 				limit = {
-					has_idea = non_monarchical_system
+					#has_idea = non_monarchical_system
 					tag = LCK
 				}
 				add_popularity = {
@@ -1993,7 +1967,7 @@ GEC_decision_category_our_armed_forces = {
 		days_remove = 365
          
         modifier = {
-            consumer_goods_factor = 0.05
+            consumer_goods_expected_value = 0.05
 			political_power_gain = -0.05
 			experience_gain_navy_factor = -0.1
         }
@@ -2188,28 +2162,28 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.05
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 			production_speed_buildings_factor = -0.05
         }
 		
 		complete_effect = {
 			if = {  
 				limit = { 
-					has_idea = inframain_no_subsidies_infrastructure 
+					has_idea = road_spending_level_1 
 				} 
-				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+				swap_ideas = { remove_idea = road_spending_level_1 add_idea = road_spending_level_2 }
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_basic_maintenance_infrastructure
+					has_idea = road_spending_level_2
 				}
-				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure } 
+				swap_ideas = { remove_idea = road_spending_level_2 add_idea = road_spending_level_3 } 
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_well_maintaned_infrastructure
+					has_idea = road_spending_level_3
 				}
-				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion } 
+				swap_ideas = { remove_idea = road_spending_level_3 add_idea = road_spending_level_4 } 
 			}
 		}
        
@@ -2270,7 +2244,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
         }
 		
 		complete_effect = {
@@ -2282,27 +2256,27 @@ GEC_decision_category_industrialization = {
         remove_effect = {
 			if = {
 				limit = {
-					has_idea = navinfra_good_naval_infrastructure
+					has_idea = navy_spending_level_4
 				}
-				swap_ideas = { remove_idea = navinfra_good_naval_infrastructure add_idea = navinfra_excellent_naval_infrastructure }
+				swap_ideas = { remove_idea = navy_spending_level_4 add_idea = navy_spending_level_5 }
 			}
 			else_if = {
 				limit = {
-					has_idea = navinfra_decent_naval_infrastructure
+					has_idea = navy_spending_level_3
 				}
-				swap_ideas = { remove_idea = navinfra_decent_naval_infrastructure add_idea = navinfra_good_naval_infrastructure }
+				swap_ideas = { remove_idea = navy_spending_level_3 add_idea = navy_spending_level_4 }
 			}
 			else_if = {
 				limit = {
-					has_idea = navinfra_low_naval_infrastructure
+					has_idea = navy_spending_level_2
 				}
-				swap_ideas = { remove_idea = navinfra_low_naval_infrastructure add_idea = navinfra_decent_naval_infrastructure }
+				swap_ideas = { remove_idea = navy_spending_level_2 add_idea = navy_spending_level_3 }
 			}
 			else_if = {
 				limit = {
-					has_idea = navinfra_no_naval_infrastructure
+					has_idea = navy_spending_level_1
 				}
-				swap_ideas = { remove_idea = navinfra_no_naval_infrastructure add_idea = navinfra_low_naval_infrastructure }
+				swap_ideas = { remove_idea = navy_spending_level_1 add_idea = navy_spending_level_2 }
 			}
 			add_timed_idea = { idea = GEC_idea_investments_in_naval_infrastructure days = 1080 }
 			unlock_decision_tooltip = GEC_decision_invest_in_our_naval_ports
@@ -2355,7 +2329,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
         }
 		
 		complete_effect = {
@@ -2378,30 +2352,27 @@ GEC_decision_category_industrialization = {
 	}
 	
 	GEC_decision_invest_in_our_naval_ports = {
-
 		icon = naval_base
 		
 		#allowed = {
-		#	OR = {
-        #       tag = BRE
-		#		tag = FRK
-		#		tag = HAN
-		#		tag = HES
-		#		tag = HSD
-		#		tag = LCK
-		#		tag = MCK
-		#		tag = NAS
-		#		tag = OLD
-		#		tag = THU
-		#	}
+		#   OR = {
+		#       tag = BRE
+		#       tag = FRK
+		#       tag = HAN
+		#       tag = HES
+		#       tag = HSD
+		#       tag = LCK
+		#       tag = MCK
+		#       tag = NAS
+		#       tag = OLD
+		#       tag = THU
+		#   }
 		#}
-
 		available = {
 			has_completed_focus = GEC_focus_ports_and_docks
 			#has_idea = GEC_idea_investments_in_naval_infrastructure
 			NOT = { has_country_flag = GEC_economic_investment_flag }
 		}
-
 		visible = {
 			any_owned_state = {
 				is_coastal = yes
@@ -2416,12 +2387,12 @@ GEC_decision_category_industrialization = {
 		}
 		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
 		
-        days_remove = 180
-         
-        modifier = {
-            political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-        }
+		days_remove = 180
+		 
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_expected_value = 0.05
+		}
 		
 		complete_effect = {
 			add_political_power = -50
@@ -2430,8 +2401,8 @@ GEC_decision_category_industrialization = {
 				set_country_flag = GEC_economic_investment_flag
 			}
 		}
-       
-        remove_effect = {
+	   
+		remove_effect = {
 			if = {
 				limit = {
 					tag = HAN
@@ -2459,7 +2430,10 @@ GEC_decision_category_industrialization = {
 				}
 			}
 			else = {
-				random_owned_controlled_state = {
+				random_owned_state = {
+					limit = {
+						is_coastal = yes
+					}
 					add_building_construction = {
 						type = naval_base
 						level = 1
@@ -2471,78 +2445,8 @@ GEC_decision_category_industrialization = {
 			hidden_effect = {
 				clr_country_flag = GEC_economic_investment_flag
 			}
-	    }
-       
-		ai_will_do = {
-			base = 100
 		}
-	}
-	
-	GEC_decision_invest_in_our_river_ports = {
-
-		icon = naval_base
-		
-		#allowed = {
-		#	OR = {
-        #       tag = BRE
-		#		tag = FRK
-		#		tag = HAN
-		#		tag = HES
-		#		tag = HSD
-		#		tag = LCK
-		#		tag = MCK
-		#		tag = NAS
-		#		tag = OLD
-		#		tag = THU
-		#	}
-		#}
-
-		available = {
-			has_completed_focus = GEC_focus_ports_and_docks
-			#has_idea = GEC_idea_investments_in_naval_infrastructure_inland
-			NOT = { has_country_flag = GEC_economic_investment_flag }
-		}
-
-		visible = {
-			any_owned_state = {
-				is_coastal = no
-			}
-		}
-		
-		fire_only_once = yes
-		
-		custom_cost_trigger = {
-			has_political_power > 49.9
-			has_navy_experience > 9.99
-		}
-		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
-		
-        days_remove = 180
-         
-        modifier = {
-            political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-        }
-		
-		complete_effect = {
-			add_political_power = -50
-			navy_experience = -10
-			hidden_effect = {
-				set_country_flag = GEC_economic_investment_flag
-			}
-		}
-       
-        remove_effect = {
-			add_equipment_to_stockpile = {
-                type = convoy
-                amount = 10
-			}
-			add_timed_idea = { idea = GEC_idea_stimulated_trade_inland days = 1825 }
-			hidden_effect = {
-				clr_country_flag = GEC_economic_investment_flag
-			}
-	    }
-       
+	   
 		ai_will_do = {
 			base = 100
 		}
@@ -2671,7 +2575,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
         }
 		
 		complete_effect = {
@@ -2683,27 +2587,27 @@ GEC_decision_category_industrialization = {
         remove_effect = {
 			if = {
 				limit = {
-					has_idea = inframain_steady_network_expansion
+					has_idea = road_spending_level_4
 				}
-				swap_ideas = { remove_idea = inframain_steady_network_expansion add_idea = inframain_rapid_network_expansion }
+				swap_ideas = { remove_idea = road_spending_level_4 add_idea = road_spending_level_5 }
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_well_maintaned_infrastructure
+					has_idea = road_spending_level_3
 				}
-				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion }
+				swap_ideas = { remove_idea = road_spending_level_3 add_idea = road_spending_level_4 }
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_basic_maintenance_infrastructure
+					has_idea = road_spending_level_2
 				}
-				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure }
+				swap_ideas = { remove_idea = road_spending_level_2 add_idea = road_spending_level_3 }
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_no_subsidies_infrastructure
+					has_idea = road_spending_level_1
 				}
-				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+				swap_ideas = { remove_idea = road_spending_level_1 add_idea = road_spending_level_2 }
 			}
 			add_timed_idea = { idea = GEC_idea_investments_in_terrestrial_infrastructure days = 1080 }
 			unlock_decision_tooltip = GEC_decision_invest_in_our_road_network
@@ -2756,7 +2660,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
         }
 		
 		complete_effect = {
@@ -2818,7 +2722,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
         }
 		
 		complete_effect = {
@@ -2881,7 +2785,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.15
+			consumer_goods_expected_value = 0.15
         }
 		
 		complete_effect = {
@@ -2970,7 +2874,7 @@ GEC_decision_category_industrialization = {
         days_remove = 90
          
         modifier = {
-			consumer_goods_factor = 0.03
+			consumer_goods_expected_value = 0.03
         }
 		
 		complete_effect = {
@@ -3042,7 +2946,7 @@ GEC_decision_category_industrialization = {
         days_remove = 90
          
         modifier = {
-			consumer_goods_factor = 0.03
+			consumer_goods_expected_value = 0.03
         }
 		
 		complete_effect = {
@@ -3120,7 +3024,7 @@ GEC_decision_category_industrialization = {
         days_remove = 180
          
         modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
         }
 		
 		complete_effect = {
@@ -3185,7 +3089,7 @@ GEC_decision_category_industrialization = {
         days_remove = 180
          
         modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
         }
 		
 		complete_effect = {
@@ -3404,7 +3308,7 @@ GEC_decision_category_industrialization = {
         days_remove = 730
          
         modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			political_power_gain = -0.1
 			production_speed_buildings_factor = 0.15
 			production_factory_max_efficiency_factor = 0.05
@@ -3416,23 +3320,23 @@ GEC_decision_category_industrialization = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_idea = sfund_regular_state_sponsorship
+					has_idea = research_spending_level_3
 				}
-				swap_ideas = { remove_idea = sfund_regular_state_sponsorship add_idea = sfund_excellent_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_3 add_idea = research_spending_level_4 }
 				set_country_flag = sfund_regular_state_sponsorship_flag
 			}
 			else_if = {
 				limit = {
-					has_idea = sfund_limited_state_sponsorship
+					has_idea = research_spending_level_2
 				}
-				swap_ideas = { remove_idea = sfund_limited_state_sponsorship add_idea = sfund_regular_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_2 add_idea = research_spending_level_3 }
 				set_country_flag = sfund_limited_state_sponsorship_flag
 			}
 			else_if = {
 				limit = {
-					has_idea = sfund_private_ventures_only
+					has_idea = research_spending_level_1
 				}
-				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_1 add_idea = research_spending_level_2 }
 				set_country_flag = sfund_private_ventures_only_flag
 			}
 		}
@@ -3442,21 +3346,21 @@ GEC_decision_category_industrialization = {
 				limit = {
 					has_country_flag = sfund_regular_state_sponsorship_flag
 				}
-				add_ideas = sfund_regular_state_sponsorship
+				add_ideas = research_spending_level_3
 				clr_country_flag = sfund_regular_state_sponsorship_flag
 			}
 			else_if = {
 				limit = {
 					has_country_flag = sfund_limited_state_sponsorship_flag
 				}
-				add_ideas = sfund_limited_state_sponsorship
+				add_ideas = research_spending_level_2
 				clr_country_flag = sfund_limited_state_sponsorship_flag
 			}
 			else_if = {
 				limit = {
 					has_country_flag = sfund_private_ventures_only_flag
 				}
-				add_ideas = sfund_private_ventures_only
+				add_ideas = research_spending_level_1
 				clr_country_flag = sfund_private_ventures_only_flag
 			}
 	    }
@@ -3490,7 +3394,7 @@ GEC_decision_category_industrialization = {
          
         modifier = {
             political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
         }        
        
@@ -3692,7 +3596,7 @@ GEC_decision_category_trade = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			industrial_capacity_dockyard = -0.1
         }
 
@@ -3808,7 +3712,7 @@ GEC_decision_category_hansa_cities = {
          
         modifier = {
             political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			industrial_capacity_dockyard = -0.1
         }        
        

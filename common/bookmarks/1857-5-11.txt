@@ -29,23 +29,22 @@ bookmarks = {
 				RUS_idea_granary
 			}
 			focuses = {
-				RUS_vic_Industrialise_The_Empire
-				RUS_vic_Tsar_Alexander_II
+				RUS_vic_great_reforms
 				RUS_vic_milyutin_military_reforms
+				RUS_vic_dictatorship_of_the_heart
 			}
 		}
 		"FRA" = {
 			history = "FRA_END_OF_NEW_BEG_DESC"
 			ideology = autocracy
 			ideas = {
-				FRA_idea_authoritarian_empire
 				FRA_idea_republican_spirit
-				FRA_idea_amateur_tacticians
+				FRA_idea_aftermath_crimean_war
 			}
 			focuses = {
-				#FRA_keep_authoritarian_empire
-				#FRA_proclaim_liberal_empire
-				FRA_continue_haussmann_renovations
+				FRA_tradegy_avoided
+				FRA_projecta_impera
+				FRA_the_kabylia_campaign
 			}
 		}
 		"USA" = {
@@ -81,9 +80,9 @@ bookmarks = {
 			history = "PRS_END_OF_NEW_BEG_DESC"
 			ideology = traditional_conservatism
 			ideas = {
-				GER_general_idea_ger_confed
-				PRS_Zollverein
-				PRS_legacy_clausewitz
+				GEC_idea_german_confederation_major_power
+				GEC_idea_zollverein_1
+				PRS_idea_legacy_clausewitz
 			}
 			focuses = {
 				PRS_focus_bismarck
@@ -203,9 +202,7 @@ bookmarks = {
 				OTO_tanzimat_reform_start
 			}
 			focuses = {
-				OTO_vic_ideals_of_the_tanzimatcilar
-				OTO_vic_crimean_debt_question
-				OTO_vic_Internal_Reforms
+				
 			}
 		}
 		"EGY" = {
@@ -288,8 +285,8 @@ bookmarks = {
 			ideology = autocracy
 			minor = yes
 			ideas = {
-				GER_general_idea_ger_confed
-				PRS_Zollverein
+				BAV_reaktion_era
+				BAV_landtaghindrance
 				BAV_russiancampaign
 			}
 			focuses = {
@@ -354,7 +351,7 @@ bookmarks = {
 			}
 			focuses = {
 				GRE_repay_the_1831_loan
-				GRE_industrialization
+				GRE_encourage_the_growth_of_basileiades
 				GRE_Succession_Issue
 			}
 		}
@@ -434,7 +431,7 @@ bookmarks = {
 				MNT_Aftermath_of_assasination_attempt
 			}
 			focuses = {
-				MNT_focus_defend_the_nation
+				#MNT_focus_defend_the_nation   This focus was removed
 				MNT_focus_into_the_new_age
 				MNT_focus_the_reign_of_danilo
 			}
@@ -489,13 +486,14 @@ bookmarks = {
 			ideology = autocracy
 			minor = yes
 			ideas = {
-				QNG_idea_arrow_incident
-				QNG_idea_banner_armies
+				QNG_outdated_army
+				QNG_idea_opium_crissis
+				QNG_idea_devastation_first_opium_war
 			}
 			focuses = {
-				#QNG_dealing_with_our_issues
-				#QNG_fighting_the_opium_war
-				#QNG_dealing_with_xiang_army
+				QNG_focus_prepare_for_the_opium_war
+				QNG_focus_xianfengs_decade_of_reigning
+				QNG_focus_self_strenthening_movement
 			}
 		}
 		"TSH" = {

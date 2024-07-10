@@ -94,6 +94,8 @@ legitimacy_dynamic_modifier = {
 	stability_factor = legitimacy_wsf
 	war_support_factor = legitimacy_wsf
 	political_advisor_cost_factor = legitimacy_pacf
+	tax_efficiency_factor = legitimacy_wsf
+	
 }
 
 #######################
@@ -218,7 +220,7 @@ QNG_army_funding_balance = {
 	icon = "GFX_idea_chi_hyper_inflation"
 	
 	political_power_factor = QNG_army_funding_level_lp #0.025
-	consumer_goods_factor  = QNG_army_funding_level_cg #0.025
+	consumer_goods_expected_value  = QNG_army_funding_level_cg #0.025
 	army_org_factor 	   = QNG_army_funding_level_ao
 	stability_factor = -0.05
 }
@@ -266,7 +268,7 @@ VIN_Cochinchina_Campaign_Investment = {
 
 	stability_factor = VIN_CC_Investment_sf
 	political_power_factor = VIN_CC_Investment_lp
-	consumer_goods_factor = VIN_CC_Investment_cg
+	consumer_goods_expected_value = VIN_CC_Investment_cg
 	war_support_weekly = VIN_CC_Investment_wws
 	planning_speed = VIN_CC_Investment_cg
 	
@@ -299,7 +301,7 @@ dynmod_AUS_naval_reform = {
 
 	icon = "GFX_idea_generic_the_london_naval_treaty"
 
-	consumer_goods_factor = AUS_naval_reform_cgf
+	consumer_goods_expected_value = AUS_naval_reform_cgf
 	political_power_factor = AUS_naval_reform_ppf
 	stability_factor = AUS_naval_reform_sf
 	war_support_factor = AUS_naval_reform_wsf
@@ -364,7 +366,7 @@ dynmod_DEN_swedish_trade = {
 
 	icon = "GFX_idea_money_bad"
 
-	consumer_goods_factor = DEN_swedish_trade_cgf
+	consumer_goods_expected_value = DEN_swedish_trade_cgf
 }
 
 ### Finland Dynamic Modifiers ###
@@ -426,7 +428,7 @@ dynmod_PRS_war_preparations = {
 
 	icon = GFX_idea_generic_war_preparation
 	
-	consumer_goods_factor = PRS_war_preparations_cgf
+	consumer_goods_expected_value = PRS_war_preparations_cgf
 	industrial_capacity_factory = PRS_war_preparations_icf
 	production_factory_max_efficiency_factor = PRS_war_preparations_pfmef
 	production_speed_infrastructure_factor = PRS_war_preparations_psif
@@ -439,7 +441,7 @@ ROM_inefficient_agriculture = {
 	enable = { always = yes }
 
 	icon = ROM_idea_ruined_agriculture
-	consumer_goods_factor = ROM_var_goods
+	consumer_goods_expected_value = ROM_var_goods
 	production_speed_buildings_factor = ROM_var_construct_speed
 	conscription_factor = ROM_var_conscription
 	political_power_gain = ROM_var_pp
@@ -449,7 +451,7 @@ ROM_inefficient_agriculture = {
 ROM_idea_cuza_unrest = {
 	enable = { always = yes }
 	icon = SWE_Toxic_Politics
-	consumer_goods_factor = ROM_cuza_unrest_consumer
+	consumer_goods_expected_value = ROM_cuza_unrest_consumer
 	political_power_gain = ROM_cuza_unrest_stab
 	stability_factor = ROM_cuza_unrest_stab
 }
@@ -473,7 +475,7 @@ dynmod_RUS_naval_situation = {
 
 	icon = "GFX_idea_RUS_state_of_navy"
 
-	consumer_goods_factor = RUS_naval_reform_cgf
+	consumer_goods_expected_value = RUS_naval_reform_cgf
 	political_power_factor = RUS_naval_reform_ppf
 	naval_morale_factor = RUS_naval_reform_nmf
 	war_support_factor = RUS_naval_reform_wsf
@@ -494,7 +496,7 @@ dynmod_RUS_army_situation = {
 	
 	cavalry_attack_factor = RUS_army_reform_caf
 	cavalry_defence_factor = RUS_army_reform_cdf
-	cavalry_speed_factor = RUS_army_reform_csf	
+	modifier_army_sub_unit_camel_cavalry_speed_factor = RUS_army_reform_csf	
 	command_abilities_cost_factor = RUS_army_reform_cacf
 	land_doctrine_cost_factor = RUS_army_reform_ldcf
 	command_power_gain = RUS_army_reform_cpg
@@ -510,6 +512,8 @@ dynmod_RUS_army_situation = {
 dynmod_RUS_moscow = {
 	enable = { always = yes }
 	
+	icon = "GFX_RUS_moscow_regulation"
+
 	state_production_speed_buildings_factor = 0.1
 	state_production_speed_industrial_complex_factor = 0.05
 	monthly_population = 0.05
@@ -518,12 +522,45 @@ dynmod_RUS_moscow = {
 dynmod_RUS_zemstvo = {
 	enable = { always = yes }
 	
-	icon = "GFX_idea_RUS_state_of_army"
+	icon = "GFX_idea_RUS_zemstvo"
 	
 	monthly_population = RUS_zemstvo_mp
 	research_speed_factor = RUS_zemstvo_rsf
 	stability_factor = RUS_zemstvo_sf
 	political_power_gain = RUS_zemstvo_ppg
+}
+
+dynmod_RUS_urbanisation = {
+	enable = { always = yes }
+
+	icon = "GFX_idea_RUS_urban_start"
+
+	remove_trigger = {
+		has_idea = RUS_idea_urbanisation
+	}
+	consumer_goods_expected_value = RUS_urbanisation_cgf
+	political_power_gain = RUS_urbanisation_ppg
+	traditional_conservatism_drift = RUS_urbanisation_tcd
+	centrism_drift = RUS_urbanisation_cd
+}
+
+dynmod_RUS_peasant_reform = {
+	enable = { always = yes }
+
+	icon = "GFX_idea_RUS_peasant_reform"
+
+	monthly_population = RUS_peasant_mp
+	political_power_gain = RUS_peasant_ppg
+	stability_factor = RUS_peasant_sf
+	consumer_goods_factor = RUS_peasant_cgf
+	industrial_capacity_factory = RUS_peasant_icf
+	 	
+	remove_trigger = {
+		OR = {
+			has_idea = RUS_idea_moderate_peasant_reform
+			has_idea = RUS_idea_radical_peasant_reform
+		}
+	}
 }
 
 # Small modifier for the area which Amur Cossacks settle
@@ -536,6 +573,23 @@ dynmod_RUS_amur_cossacks = {
 	supply_consumption_factor = 0.05
 }
 
+### Greece Dynamic Modifiers ###
+
+# Situation of Greek Agriculture
+dynmod_GRE_poor_agriculture = {
+	enable = { always = yes}
+
+    icon = "GFX_idea_GRE_Poor_Land_Reform" 
+
+	state_production_speed_farm_factor = GRE_agriculture_spsff
+	state_production_speed_cotton_farm_factor = GRE_agriculture_spscff
+	money_income = GRE_agriculture_im
+	monthly_population = GRE_agriculture_mp
+	state_resources_factor = GRE_agriculture_srf
+	tax_efficiency_factor = GRE_agriculture_tef
+	money_income_factor = GRE_agriculture_mif
+}
+
 ### Sweden Dynamic Modifiers ###
 
 dynmod_SWE_danish_trade = {
@@ -543,7 +597,7 @@ dynmod_SWE_danish_trade = {
 
 	icon = "GFX_idea_generic_foreign_capital"
 
-	consumer_goods_factor = SWE_danish_trade_cgf
+	consumer_goods_expected_value = SWE_danish_trade_cgf
 }
 
 ### Foreign Influence Modifier ###
@@ -552,7 +606,7 @@ dynmod_foreign_influence = {
 
 	icon = "GFX_idea_generic_fun_administration"
 
-	consumer_goods_factor = total_consumer_goods_gained_from_influence
+	consumer_goods_expected_value = total_consumer_goods_gained_from_influence
 	political_power_gain = total_political_power_spent_on_influence
 }
 
@@ -641,6 +695,28 @@ light_famine = {
 	
 	monthly_population = -0.1
 	resistance_growth = 0.01
+}
+
+#beiyang stuff for QNG 
+prioritizing_the_beiyang_fleet = {
+	enable = { always = yes }
+
+	#icon = "GFX_modifiers_sabotaged_resource"
+	
+	state_production_speed_dockyard_factor = 0.15
+	state_production_speed_naval_base_factor = 0.25
+	#state_production_naval_fort_factor = 0.25    There is no naval fort or this is wrong
+}
+
+#Chinese concession of Incheon  
+chinese_concession_of_incheon = {
+	enable = { always = yes }
+
+	#icon = "GFX_modifiers_sabotaged_resource"
+	
+	state_production_speed_buildings_factor = -0.25
+	monthly_population = 0.25
+	state_resources_factor = -0.3
 }
 
 
@@ -829,6 +905,122 @@ dynmod_BRA_huge_sugar_mills={
 	state_production_speed_buildings_factor = 0.1
 }
 
+BRA_Livestock_Ranch_Modifier = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_dynamic_cattle"
+    local_supplies = 0.05 #tração animal
+    local_monthly_manpower_modifier = 20 #carne
+    temporary_state_resource_fabric = 2 #couro
+    state_production_speed_farm_factor = 0.05 #fertilizante
+    #money_income = 3 #dinheiro por rancho
+}
+
+BRA_Coffee_Plantations_Modifier = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_dynamic_coffee"
+    local_building_slots_factor = 0.05
+    local_resources = 0.05
+    local_org_regain = 0.1
+    state_production_speed_infrastructure_factor = 0.04
+    state_production_speed_rail_way_factor = 0.08
+    state_production_speed_naval_base_factor = 0.06
+    state_production_speed_farm_factor = 0.02
+    #money_income = 5 #money for Coffee
+}
+
+BRA_Sugar_Plantations_Modifier = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_dynamic_sugar"
+    local_monthly_manpower_modifier = 5 #Grocery
+    org_loss_when_moving = -0.05
+    army_morale_factor = 0.01
+    state_production_speed_farm_factor = 0.05 #Sugar Plantations
+    state_production_speed_industrial_complex_factor = 0.03 #sugar factories
+    #money_income = 3 #Money for plantation
+    max_fuel_building = 0.075 #ethyl alcohol
+}
+
+BRA_Tobacco_Plantations_Modifier = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_dynamic_tobacco"
+    army_morale_factor = 0.02
+    local_org_regain = 0.15
+    army_strength_factor = 0.05
+    state_production_speed_farm_factor = 0.05 #Tobacoo Plantations
+    state_production_speed_industrial_complex_factor = 0.03 #Cigarret Factories
+    #money_income = 4 #Money for Tobacco   
+}
+
+BRA_Cocoa_Plantations_Modifier = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_dynamic_cocoa"
+    local_monthly_manpower_modifier = 3 #Chocolate
+    army_morale_factor = 0.02
+    army_strength_factor = 0.05
+    state_production_speed_farm_factor = 0.05 #Cocoa Plantations
+    state_production_speed_industrial_complex_factor = 0.03 #Chocolate Factories
+    #money_income = 5
+}
+
+BRA_Livestock_Ranch_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_cattle"
+	money_income = BRA_Livestock_Country_Money
+}
+
+BRA_Cocoa_Plantations_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_cocoa"
+	money_income = BRA_Cocoa_Country_Money
+}
+
+BRA_Tobacco_Plantations_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_tobacco"
+	money_income = BRA_Tobacco_Country_Money
+}
+
+BRA_Coffee_Plantations_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_coffee"
+	money_income = BRA_Coffee_Country_Money
+}
+
+BRA_Sugar_Plantations_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_sugar"
+	money_income = BRA_Sugar_Country_Money
+}
+
+BRA_Tea_Plantations_Money = {
+	enable = { always = yes }
+	icon = "GFX_Focus_Agriculture_tea"
+	money_income = BRA_Tea_Country_Money
+}
+
+dynmod_BRA_Agriculture_Money = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_Agriculture"
+	money_income = BRA_Agriculture_Country_Money
+}
+
+dynmod_BRA_New_World_Immigrants = {
+	enable = { always = yes }
+	icon = "GFX_idea_BRA_New_World_Immigrants"
+	monthly_population = BRA_New_World_Immigrants_mp
+	trade_opinion_factor = BRA_New_World_Immigrants_tom
+	local_resources_factor = BRA_New_World_Immigrants_lrf 
+	production_cost_max_convoy = BRA_New_World_Immigrants_pcmc
+	research_speed_factor = BRA_New_World_Immigrants_rsf 
+	production_factory_max_efficiency_factor = BRA_New_World_Immigrants_pfmef 
+	line_change_production_efficiency_factor = BRA_New_World_Immigrants_lcpef
+	industrial_capacity_factor = BRA_New_World_Immigrants_icf 
+	production_speed_industrial_complex_factor = BRA_New_World_Immigrants_psicf 
+	production_speed_arms_factory_factor = BRA_New_World_Immigrants_psaff 
+	production_speed_farm_factor = BRA_New_World_Immigrants_psff 
+	production_speed_cotton_farm_factor = BRA_New_World_Immigrants_pscff
+}
+
 dynmod_BRA_cocoa={
 	enable = { always = yes }
 	icon = "GFX_idea_BRA_cocoa"
@@ -836,11 +1028,64 @@ dynmod_BRA_cocoa={
 	local_org_regain = 0.15
 }
 
-#dynmod_BRA_coffee={
-#	enable 
-#
-#}
+BRA_african_workers_strikes = {
+	enable = { always = yes }
+	icon = "GFX_modifiers_local_uprising"
+	local_factory_sabotage = 0.3
+	state_production_speed_buildings_factor = -0.25
+	#state_repair_speed_buildings_factor = -0.3
+	disable_strategic_redeployment = 1
+	recruitable_population_factor = -0.25
+}
 
+BRA_imperial_army = {
+	icon = "GFX_idea_brazil_imperial_army"
+	enable = { always = yes }
+	conscription_factor = BRA_army_cf
+	planning_speed = BRA_army_ps
+	training_time_factor = BRA_army_ttf
+	cavalry_attack_factor = BRA_army_caf
+	cavalry_defence_factor = BRA_army_cdf
+	army_attack_against_minor_factor = BRA_army_aaamif
+	army_attack_against_major_factor = BRA_army_aaamjf
+	army_defence_against_minor_factor = BRA_army_adamif
+	army_defence_against_major_factor = BRA_army_adamjf
+	command_power_gain_mult = BRA_army_cpgm
+	land_doctrine_cost_factor = BRA_army_ldcf
+	army_org_factor = BRA_army_aof
+	army_org_regain = BRA_army_aor
+	army_speed_factor = BRA_army_asf
+	army_attack_factor = BRA_army_aaf
+	army_defence_factor = BRA_army_adf
+	army_morale_factor = BRA_army_amf
+	command_abilities_cost_factor = BRA_army_cacf
+	experience_gain_army_factor = BRA_army_egaf
+	supply_consumption_factor = BRA_army_scf
+	dig_in_speed_factor = BRA_army_disf
+	mobilization_speed = BRA_army_ms
+}
+
+BRA_imperial_navy = {
+	icon = "GFX_idea_brazil_imperial_armada"
+	enable = { always = yes }
+	industrial_capacity_dockyard = BRA_imperial_navy_icd
+	production_speed_dockyard_factor = BRA_imperial_navy_psdf
+	production_speed_naval_base_factor = BRA_imperial_navy_psnbf
+	consumer_goods_expected_value = BRA_imperial_navy_cgev
+	command_power_gain_mult	= BRA_imperial_navy_cpgm
+	experience_gain_navy_factor = BRA_imperial_navy_egnf
+	weekly_manpower = BRA_imperial_navy_wm
+	refit_speed = BRA_imperial_navy_rs
+	naval_doctrine_cost_factor = BRA_imperial_navy_ndcf
+	naval_invasion_capacity = BRA_imperial_navy_nic
+	experience_gain_navy_unit_factor = BRA_imperial_navy_egnuf
+	naval_accidents_chance = BRA_imperial_navy_nac
+	naval_coordination = BRA_imperial_navy_nc
+	naval_has_potf_in_combat_attack = BRA_imperial_navy_nhpica
+	naval_morale_factor = BRA_imperial_navy_nmf
+	navy_org_factor = BRA_imperial_navy_nof
+	naval_torpedo_enemy_critical_chance_factor = BRA_imperial_navy_nteccf
+}
 
 #Ottoman Dynamic Modifiers
 dynmod_OTO_crete_revolt = {
@@ -855,6 +1100,30 @@ dynmod_OTO_crete_revolt = {
 	army_speed_factor_for_controller = -0.9
 }
 
+#France Dynamic Modifiers
+dynmod_FRA_imperial_army = {
+	icon = "GFX_idea_FRA_imperial_army"
+	enable = { always = yes }
+
+	army_attack_factor = FRA_imperial_army_aaf
+	army_defence_factor = FRA_imperial_army_adf
+	army_core_defence_factor = FRA_imperial_army_acdf
+	mobilization_speed = FRA_imperial_army_ms
+	training_time_factor = FRA_imperial_army_ttf
+	army_org_factor = FRA_imperial_army_aof  
+}
+
+dynmod_FRA_imperial_navy = {
+	icon = "GFX_idea_FRA_imperial_navy"
+	enable = { always = yes }
+
+	industrial_capacity_dockyard = FRA_imperial_navy_icd
+	production_speed_dockyard_factor = FRA_imperial_navy_psdf
+	refit_speed = FRA_imperial_navy_nrs
+	experience_gain_navy = FRA_imperial_navy_egn
+	naval_doctrine_cost_factor = FRA_imperial_navy_ndcf
+	naval_damage_factor = FRA_imperial_navy_ndf
+}
 
 #Bulgaria Dynamic Modifiers
 dynmod_BUL_battenbergov_plan = {
@@ -864,6 +1133,32 @@ dynmod_BUL_battenbergov_plan = {
 	
 	state_production_speed_industrial_complex_factor  = 0.05
 }
+
+#Quebec recruitable pop factor
+dynmod_CAN_quebec_autonomy = {
+	icon = GFX_idea_unknown
+	
+	enable = { is_owned_by = CAN }
+	
+	local_manpower = CAN.quebecois_recruitable_factor
+}
+
+ #Portugal Dynamic Modifier
+ dynmod_POR_army = {
+	icon = "GFX_idea_POR_army"
+	enable = { always = yes }
+	conscription = POR_army_c
+ 	planning_speed = POR_army_ps
+	army_org_factor = POR_army_aof
+	army_org_regain = POR_army_aor
+	military_leader_cost_factor = POR_army_mlcf
+	supply_consumption_factor = POR_army_scf
+	training_time_factor = POR_army_ttf
+	army_attack_factor = POR_army_aaf
+	army_defence_factor = POR_army_adf
+	research_speed_factor = POR_army_rsf
+ }
+
 #Culture/Religion Modifiers
 primary_culture = {
 	icon = "placeholder"

@@ -22,6 +22,11 @@ focus_tree = {
 		y = 0
 		completion_reward = {
 			add_political_power = 75
+			OFS = {
+				country_event = {
+					id = boer_states.10 days = 5
+				}
+			}
 		}
 		available_if_capitulated = no
 		ai_will_do = {
@@ -35,7 +40,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		completion_reward = {
-			country_event={id= boer_states.90}
+			country_event={id= boer_states.5}
 		}
 		prerequisite = {
 			focus = OFS_focus_political_reforms
@@ -115,7 +120,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_ideas={
-				trv_idea_god_fairing_people
+				TRV_idea_god_fairing_people
 			}
 		}
 		prerequisite = {
@@ -260,7 +265,7 @@ focus_tree = {
 		x = 8
 		y = 3
 		completion_reward = {
-			country_event={id=boer_states.120}
+			country_event={id=boer_states.9}
 		}
 		prerequisite = {
 			focus = OFS_focus_pro_dutch_policies
@@ -278,10 +283,10 @@ focus_tree = {
 		x = 5
 		y = 5
 		completion_reward = {
-			swap_ideas={
-				add_idea = limited_constitution
-				remove_idea = no_constitution
-			}
+			#swap_ideas={
+			#	add_idea = limited_constitution
+			#	remove_idea = no_constitution
+			#}
 		}
 		prerequisite = {
 			focus = OFS_focus_imergration_reforms
@@ -433,17 +438,14 @@ focus_tree = {
 			focus = OFS_focus_consoladate_internal_governence
 		}
 		relative_position_id = OFS_focus_complete_legal_reforms
-		mutually_exclusive = {
-			focus = OFS_focus_consolidate_power
-		}
 		available = {
 			has_war = no
 		}
 		completion_reward = {
-			swap_ideas={
-				add_idea = limited_constitution
-				remove_idea = no_constitution
-			}
+			#swap_ideas={
+			#	add_idea = limited_constitution
+			#	remove_idea = no_constitution
+			#}
 		}
 	}
 	focus = {
@@ -503,9 +505,8 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
-			swap_ideas={
-				add_idea = normal_taxes
-				remove_idea = low_taxes
+			add_ideas = {
+				ofs_idea_efficient_taxing
 			}
 		}
 	}
@@ -722,7 +723,9 @@ focus_tree = {
 		x = -6
 		y = 3
 		completion_reward = {
-			
+			TRV = {
+				country_event = boer_states.46
+			}
 		}
 	}
 	focus = {
@@ -813,7 +816,6 @@ focus_tree = {
 		x = -2
 		y = 3
 		completion_reward = {
-			add_state_core = 1142
 			add_state_core = 1140
 			every_owned_state={
 				limit={
@@ -827,9 +829,6 @@ focus_tree = {
 		}
 		relative_position_id = OFS_focus_foreign_affars
 		available ={
-			1142 = {
-				is_fully_controlled_by = OFS
-			}
 			1140 = {
 				is_fully_controlled_by = OFS
 			}
@@ -847,7 +846,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		select_effect = {
-			country_event={id=boer_states.92 days = 10}
+			country_event={id=boer_states.6 days = 10}
 		}
 		cancel = {
 		}
@@ -909,22 +908,10 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			ENG = {
-				if = {
-					limit = {
-						OR = {
-							has_dlc = "Together for Victory"
-							has_dlc = "Waking the Tiger"
-							has_dlc = "Death or Dishonor"
-						}
-					}
-					set_autonomy = {
-						target = OFS
-						autonomous_state = autonomy_british_self_gov
-						freedom_level = 0.2
-					}
-				}
-				else = {
-					puppet = OFS
+				set_autonomy = {
+					target = OFS
+					autonomous_state = autonomy_british_self_gov
+					freedom_level = 0.2
 				}
 			}
 		}
@@ -1675,13 +1662,6 @@ focus_tree = {
 		x = 31
 		y = 3
 		completion_reward = {
-			777={
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
 			776={
 				add_building_construction = {
 					type = infrastructure
@@ -1707,14 +1687,7 @@ focus_tree = {
 		x = 33
 		y = 3
 		completion_reward = {
-			780={
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			778={
+			747={
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1780,7 +1753,7 @@ focus_tree = {
 		x = 36
 		y = 2
 		completion_reward = {
-			777={
+			776={
 				add_resource = {
 					type = coal
 					amount = 12

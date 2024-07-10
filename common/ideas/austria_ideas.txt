@@ -153,7 +153,7 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.05
 				stability_factor = 0.05
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				drift_defence_factor = -0.2
 			}
 		}
@@ -231,7 +231,7 @@ ideas = {
 			picture = money_bad
 			
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				political_power_factor = -0.05
 			}
 		}
@@ -251,7 +251,7 @@ ideas = {
 			picture = money_bad
 			
 			modifier = {
-				consumer_goods_factor = 0.03
+				consumer_goods_expected_value = 0.03
 				political_power_factor = -0.03
 			}
 		}
@@ -337,7 +337,7 @@ ideas = {
 			picture = generic_epidemic
 			
 			modifier = {
-				consumer_goods_factor = 0.04
+				consumer_goods_expected_value = 0.04
 				stability_factor = -0.03
 			}
 			
@@ -905,7 +905,7 @@ ideas = {
 			picture = generic_build_infrastructure
 
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 				production_speed_rail_way_factor = 0.15
 			}
 		}
@@ -925,10 +925,35 @@ ideas = {
 			picture = AUS_newspaper_tax
 
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				political_power_factor = 0.03
 			}
 		}
+		
+		#AUS_idea_1873_stock_exchange_crash = {
+		#
+		#	allowed = {
+		#		always = yes
+		#	}
+		#	
+		#	allowed_civil_war = {
+		#		always = no
+		#	}
+		#
+		#	removal_cost = -1
+		#	
+		#	picture = chi_hyper_inflation3
+		#
+		#	modifier = {
+		#		stability_factor = -0.05
+		#		political_power_factor = -0.3
+		#		production_speed_buildings_factor = -0.3
+		#		industrial_capacity_factory = -0.1
+		#		industrial_capacity_dockyard = -0.1
+		#		consumer_goods_expected_value = 0.1
+		#		research_speed_factor = -0.05
+		#	}
+		#}
 		
 		#Debt Management
 		
@@ -943,7 +968,7 @@ ideas = {
 			picture = SWE_lumber_boom
 
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 				industrial_capacity_factory = -0.05
 				production_speed_buildings_factor = -0.05
 			}
@@ -959,10 +984,10 @@ ideas = {
 
 			removal_cost = -1
 			
-			picture = free_trade
+			picture = GENERIC_Free_Trade
 
 			modifier = {
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 			
 			targeted_modifier = {
@@ -998,10 +1023,10 @@ ideas = {
 
 			removal_cost = -1
 			
-			picture = free_trade
+			picture = GENERIC_Free_Trade
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 			
 			targeted_modifier = {
@@ -1037,10 +1062,10 @@ ideas = {
 
 			removal_cost = -1
 			
-			picture = free_trade
+			picture = GENERIC_Free_Trade
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 			}
 			
 			targeted_modifier = {
@@ -1076,10 +1101,10 @@ ideas = {
 
 			removal_cost = -1
 			
-			picture = free_trade
+			picture = GENERIC_Free_Trade
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 			
 			targeted_modifier = {
@@ -1115,10 +1140,10 @@ ideas = {
 
 			removal_cost = -1
 			
-			picture = free_trade
+			picture = GENERIC_Free_Trade
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 			
 			targeted_modifier = {
@@ -1186,7 +1211,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				political_power_gain = 0.05
 			}
 		}
@@ -1206,7 +1231,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				trade_laws_cost_factor = -0.1
 				trade_opinion_factor = 0.05
 			}
@@ -1613,7 +1638,7 @@ ideas = {
 
 
 			equipment_bonus = {
-				tech_category_uniforms = {
+				uniform_equipment = {
 					build_cost_ic = -0.05
 					instant = yes
 				}
@@ -1800,7 +1825,7 @@ ideas = {
 		}
 	}
 
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 
@@ -1863,7 +1888,7 @@ ideas = {
 		}
 	}
 
-	materiel_manufacturer = {
+	materiel_manufacturers = {
 
 		designer = yes
 

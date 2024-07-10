@@ -5,7 +5,7 @@ state = {
 	state_category = city
 
 	resources = {
-		coal = 4
+		coal = 10
 		wood = 2
 	}
 
@@ -21,7 +21,7 @@ state = {
 			add_claim_by = DEN
 
 			buildings = {
-				infrastructure = 5
+				infrastructure = 6
 				industrial_complex = 1
 				dockyard = 1
 				11215 = {

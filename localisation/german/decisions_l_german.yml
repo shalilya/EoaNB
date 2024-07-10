@@ -611,6 +611,9 @@
  eoanb_ttt_ENG_decision_improve_worker_conditions: "Requires a §RWorker Unrest§! level of at least §R1§!"
  eoanb_ttt_ENG_decision_shorten_workday: "Requires a §RWorker Unrest§! level of at least §R10§!"
  eoanb_ttt_ENG_decision_trade_unions_reallow: "Requires a §RWorker Unrest§! level of at least §R5§!"
+ BHA_uprising_decision_category: "War of Independence"
+ BHA_mission_recruit_in_Bahia: "Recruitment"
+ BHA_mission_recruit_in_Bahia_desc: "We must seize the hinterlands of Salvador!"
  eoanb_decision_RAJ_core_ceylon: "Administration of Ceylon"
  eoanb_decision_RAJ_core_ceylon_desc: "The Island of Ceylon in the South of India has gone without proper governance for far too long. We need to establish an administrative presence on there."
  eoanb_decision_minors_join_sepoy: "Join the Sepoy Rebellion"
@@ -837,7 +840,7 @@ NSW_New_South_Wales_Government_Railway_desc: "The Next train to arrive on Platfo
  debug_decision_break_the_qing_desc: "Balkanize [QNG.GetNameDef]"
  debug_decision_break_russia: "Putin's Nightmare"
  debug_decision_break_russia_desc: "Balkanize [RUS.GetNameDef]"
- debug_decision_unite_germany: "Bismark does a Jig"
+ debug_decision_unite_germany: "Bismarck does a Jig"
  debug_decision_unite_germany_desc: "Oh, boi. Time for World Wars"
  debug_decision_unite_germany_tt: "[PRS.GetNameDef] forms Germany"
 
@@ -851,7 +854,7 @@ NSW_New_South_Wales_Government_Railway_desc: "The Next train to arrive on Platfo
 eoanb_category_eastereggs: "Easter Egg Decisions"
 eoanb_decision_easteregg_geracwse: "South German Confederation"
 eastereggse.1.t: "Formation of the South German Confederation"
-eastereggse.1.d: "Following the German victory in the Civil War, Chancellor of the German Confederation - Otto Von Bismark - has announced the formal creation of the Southern German Confederation on this date. This comes after a hard fought war against the so called Union. Many look on with wonder as to what this new German state could accomplish."
+eastereggse.1.d: "Following the German victory in the Civil War, Chancellor of the German Confederation - Otto Von Bismarck - has announced the formal creation of the Southern German Confederation on this date. This comes after a hard fought war against the so called Union. Many look on with wonder as to what this new German state could accomplish."
 eastereggse.1.a: "How... Strange"
 GER_ACW_SUPEREVENT_FLAG: "Germany hasn't won the Civil War"
 

@@ -116,13 +116,13 @@ country_event = {
 		ENG = {
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 30
 			}
 		}
 		QNG = {
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 30
 			}
 		}
 		if = {
@@ -132,7 +132,7 @@ country_event = {
 			FRA = {
 				country_event = {
 					id = secondopiumwarnew.5
-					days = 15
+					days = 30
 				}
 			}
 		}
@@ -157,6 +157,7 @@ country_event = {
 			set_global_flag = eoanb_flag_sow_canton
 		}
 		custom_effect_tooltip = historical_option
+		custom_effect_tooltip = eoanb_tt_QNG_canton_garrison_tooltip
 		custom_effect_tooltip = QNG_tooltip_defend_canton
 	}
 }
@@ -182,9 +183,10 @@ country_event = {
 			hidden_effect = {
 				country_event = {
 					id = secondopiumwarnew.15
-					days = 3
+					days = 358
 				}
 			}
+			complete_national_focus = QNG_focus_defeat_of_the_second_opium_war
 		}
 		if = {
 			limit = {
@@ -266,7 +268,7 @@ country_event = {
 	}
 }
 
-#ALL: ENG Fails to take Canton
+#ALL: Battle of Canton - ENG Fails to take Canton
 country_event = {
 	id = secondopiumwarnew.7
 	title = secondopiumwarnew.7.t
@@ -296,6 +298,13 @@ country_event = {
 				country_event = secondopiumwarnew.8
 			}
 		}
+		else = {
+			ENG = {
+				add_political_power = -25
+				add_war_support = -0.025
+				activate_decision = eoanb_decision_sow_LEG_assault_taku1
+			}
+		}
 	}
 }
 
@@ -314,6 +323,13 @@ country_event = {
 		add_opinion_modifier = { 
 			target = ENG
 			modifier = small_increase
+		}
+		ENG = {
+			hidden_effect = {
+				add_political_power = 50
+				add_war_support = 0.05
+				activate_decision = eoanb_decision_sow_LEG_assault_taku1
+			}
 		}
 	}
 
@@ -344,6 +360,7 @@ country_event = {
 	option = { #yes
 		name = secondopiumwarnew.9.a
 		ai_chance = { factor = 50  }
+		activate_decision = eoanb_decision_sow_LEG_assault_taku1
 	}
 
 	option = { #no
@@ -362,7 +379,7 @@ news_event = {
 	id = secondopiumwarnew.10
 	title = secondopiumwarnew.10.t
 	desc = secondopiumwarnew.10.d
-	picture = GFX_report_event_military_planning
+	picture = GFX_news_event_parliamnet1
 
 	is_triggered_only = yes
 
@@ -379,7 +396,7 @@ news_event = {
 	}
 }
 
-#ALL: ENG takes Canton
+#ALL: Battle of Canton - ENG takes Canton
 country_event = {
 	id = secondopiumwarnew.11
 	title = secondopiumwarnew.11.t
@@ -394,15 +411,19 @@ country_event = {
 		QNG = {
 			add_political_power = -50
 			add_war_support = -0.05
+			hidden_effect = {
+				country_event = {
+					id = qing.201
+					days = 365
+				}	
+			}
 		}
 		ENG = {
-			add_political_power = 50
-			add_war_support = 0.05
-			country_event = {
-				id = secondopiumwarnew.5
-				days = 15
+			hidden_effect = {
+				add_political_power = 50
+				add_war_support = 0.05
+				activate_decision = eoanb_decision_sow_LEG_assault_taku1
 			}
-			activate_decision = eoanb_decision_sow_LEG_assault_taku1
 		}
 		if = {
 			limit = {
@@ -413,6 +434,7 @@ country_event = {
 				add_war_support = 0.05
 			}
 		}
+		custom_effect_tooltip = eoanb_tt_QNG_tianjin_garrison_tooltip
 	}
 }
 
@@ -446,10 +468,12 @@ country_event = {
 		QNG = {
 			add_political_power = 50
 			add_war_support = 0.05
+			country_event = secondopiumwarnew.10
 		}
 		ENG = {
 			add_political_power = -50
 			add_war_support = -0.05
+			country_event = secondopiumwarnew.10
 		}
 		if = {
 			limit = {
@@ -458,12 +482,13 @@ country_event = {
 			FRA = {
 				add_political_power = -50
 				add_war_support = -0.05
+				country_event = secondopiumwarnew.10
 			}
 		}
 	}
 }
 
-#ALL: ENG takes taku 1
+#ALL: 1st Battle of Taku Forts - ENG takes taku 1
 country_event = {
 	id = secondopiumwarnew.14
 	title = secondopiumwarnew.14.t
@@ -480,7 +505,7 @@ country_event = {
 			add_war_support = -0.05
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 39
 			}
 			add_manpower = -424
 		}
@@ -489,22 +514,25 @@ country_event = {
 			add_war_support = 0.05
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 39
 			}
 			add_manpower = -21
 		}
 		USA = {
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 39
 			}
 		}
 		RUS = {
 			country_event = {
 				id = secondopiumwarnew.5
-				days = 15
+				days = 39
 			}
-			activate_mission = eoanb_mission_sow_RUS_send_ultimatum
+			country_event = {
+				id = secondopiumwarnew.38
+				days = 3
+			}
 		}
 		if = {
 			limit = {
@@ -515,7 +543,7 @@ country_event = {
 				add_war_support = 0.05
 				country_event = {
 					id = secondopiumwarnew.5
-					days = 15
+					days = 39
 				}
 				add_manpower = -67
 			}
@@ -545,6 +573,9 @@ country_event = {
 		add_ideas = CHI_idea_unequal_treaties
 		add_political_power = -50
 		add_stability = -0.05
+		hidden_effect = {
+			complete_national_focus = QNG_focus_honor_the_treaty_of_tientsin
+		}
 	}
 
 	option = { #Refuse
@@ -552,7 +583,7 @@ country_event = {
 		ai_chance = { factor = 95 }
 		ENG = {
 			country_event = secondopiumwarnew.16
-			remove_ideas = CHI_idea_tianjin_treaty
+			remove_ideas = CHI_idea_tianjin_treaty_euro
 		}
 		if = {
 			limit = {
@@ -560,23 +591,24 @@ country_event = {
 			}
 			FRA = {
 				country_event = secondopiumwarnew.16
-				remove_ideas = CHI_idea_tianjin_treaty
+				remove_ideas = CHI_idea_tianjin_treaty_euro
 			}
 		}
 		remove_ideas = CHI_idea_tianjin_treaty
 		RUS = {
-			remove_ideas = CHI_idea_tianjin_treaty
+			remove_ideas = CHI_idea_tianjin_treaty_euro
 			country_event = secondopiumwarnew.16
 		}
 		USA = {
-			remove_ideas = CHI_idea_tianjin_treaty
+			remove_ideas = CHI_idea_tianjin_treaty_euro
 			country_event = secondopiumwarnew.16
 		}
 		hidden_effect = {
 			country_event = { 
 				id = secondopiumwarnew.12
-				days = 200
+				days = 419
 			}
+			complete_national_focus = QNG_focus_break_the_treaty_of_tientsin
 		}
 		custom_effect_tooltip = historical_option
 		custom_effect_tooltip = QNG_tooltip_defend_taku
@@ -595,11 +627,61 @@ country_event = {
 	option = {
 		name = secondopiumwarnew.16.a
 		ai_chance = { factor = 95 }
-		activate_decision = eoanb_decision_sow_LEG_assault_taku2_3
+		ENG = {
+			activate_decision = eoanb_decision_sow_LEG_assault_taku_2
+		}
 	}
 }
 
-#ENG: ENG takes Taku 2
+#QNG: ENG fails to take Taku 2
+country_event = {
+	id = secondopiumwarnew.39
+	title = secondopiumwarnew.39.t
+	desc = secondopiumwarnew.39.d
+	picture = GFX_report_event_british_army2
+
+	fire_only_once = yes 
+	is_triggered_only = yes
+
+	option = { #Westerners will try again
+		name = secondopiumwarnew.39.a
+		ai_chance = { factor = 95  }
+		QNG = {
+			add_political_power = 50
+			add_war_support = 0.05
+		}
+	}
+}
+
+#ENG: Defeat in 2nd Battle of Taku
+country_event = {
+	id = secondopiumwarnew.40
+	title = secondopiumwarnew.40.t
+	desc = secondopiumwarnew.40.d
+	picture = GFX_report_event_british_army2
+
+	is_triggered_only = yes
+
+	option = { #We will try again
+		name = secondopiumwarnew.40.a
+		ai_chance = { factor = 95  }
+		ENG = {
+			add_political_power = -50
+			add_war_support = -0.05
+			activate_decision = eoanb_decision_sow_LEG_assault_taku_3
+		}
+		if = {
+			limit = {
+				has_global_flag = SOW_anglo_french_yes
+			}
+			FRA = {
+				add_political_power = -50
+				add_war_support = -0.05
+			}
+		}
+	}
+}
+#ENG: ENG takes Taku 2/3
 country_event = {
 	id = secondopiumwarnew.17
 	title = secondopiumwarnew.17.t
@@ -622,7 +704,7 @@ country_event = {
 			add_war_support = 0.05
 			country_event = {
 				id = secondopiumwarnew.18
-				days = 15
+				days = 26
 			}
 			add_manpower = -627
 		}
@@ -683,7 +765,7 @@ country_event = {
 	option = { #No
 		name = secondopiumwarnew.18.b
 		ai_chance = { factor = 95 }
-		add_political_power = -25
+		add_political_power = 25
 		hidden_effect = {
 			QNG = {
 				country_event = {
@@ -834,11 +916,12 @@ country_event = {
 		ai_chance = { factor = 95 }
 		add_political_power = 100
 		add_stability = 0.1
+		#country_event = { id = secondopiumwarnew.23 days = 0}
 		hidden_effect = {
 			ENG = {
 				country_event = {
 					id = secondopiumwarnew.21
-					days = 3
+					days = 1
 				}
 			}
 		}
@@ -898,7 +981,7 @@ country_event = {
 		}
 	}
 
-	option = { #No
+	option = { #Yes
 		name = secondopiumwarnew.21.b
 		ai_chance = { factor = 95 }
 		add_political_power = 50
@@ -906,7 +989,7 @@ country_event = {
 		QNG = {
 			country_event = {
 				id = secondopiumwarnew.22
-				days = 3
+				days = 14
 			}
 		}
 		custom_effect_tooltip = historical_option
@@ -961,7 +1044,7 @@ country_event = {
 					id = secondopiumwarnew.19
 					days = 3
 				}
-			}
+			}	
 		}
 	}
 
@@ -1078,6 +1161,36 @@ country_event = {
 					days = 3
 				}
 			}
+			QNG = {
+				country_event = {
+					id = secondopiumwarnew.25
+					days = 3
+				}
+			}
+			ENG = {
+				country_event = {
+					id = secondopiumwarnew.25
+					days = 3
+				}
+			}
+			FRA = {
+				country_event = {
+					id = secondopiumwarnew.25
+					days = 3
+				}
+			}
+			USA = {
+				country_event = {
+					id = secondopiumwarnew.25
+					days = 3
+				}
+			}
+			RUS = {
+				country_event = {
+					id = secondopiumwarnew.25
+					days = 3
+				}
+			}
 			#if = {
 			#	limit = {
 			#		has_global_flag = SOW_anglo_french_yes
@@ -1108,32 +1221,19 @@ country_event = {
 		ai_chance = {
 			factor = 95
 		}
-		ENG = {
-			country_event = secondopiumwarnew.26
-			add_manpower = -31
+		QNG = {
+			country_event = {
+				id = secondopiumwarnew.28
+				days = 1
+			}
+			add_manpower = -1200
 		}
-		# QNG = {
-			# add_manpower = -1224
-			# if = {
-				# limit = {
-					# has_idea = CHI_idea_army_defeated
-				# }
-				# swap_ideas = {
-					# remove_idea = CHI_idea_army_defeated
-					# add_idea = CHI_idea_army_destroyed
-				# }
-				# random_list = {
-					# 80 = {
-						# country_event = secondopiumwarnew.28
-					# }
-					# 20 = {
-					# }
-				# }
-			# }
-			# else = {
-				# add_ideas = CHI_idea_army_defeated
-			# }	
-		# }
+		ENG = {
+			country_event = {
+				id = secondopiumwarnew.26
+				days = 1
+			}
+		}
 		if = {
 			limit = {
 				has_global_flag = SOW_anglo_french_yes
@@ -1238,6 +1338,36 @@ country_event = {
 				days = 150
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = secondopiumwarnew.29
+				days = 3
+			}
+			QNG = {
+				country_event = {
+					id = secondopiumwarnew.29
+					days = 3
+				}
+			}
+			FRA = {
+				country_event = {
+					id = secondopiumwarnew.29
+					days = 3
+				}
+			}
+			USA = {
+				country_event = {
+					id = secondopiumwarnew.29
+					days = 3
+				}
+			}
+			RUS = {
+				country_event = {
+					id = secondopiumwarnew.29
+					days = 3
+				}
+			}
+		}
 	}
 }
 
@@ -1248,6 +1378,7 @@ country_event = {
 	desc = secondopiumwarnew.28.d
 	picture = GFX_report_event_second_opium_war_tianjin_treaty
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -1258,6 +1389,10 @@ country_event = {
 		add_stability = -0.05
 		add_war_support -0.05
 		add_political_power = -200
+		set_capital = {
+ 			 state = 610
+			remember_old_capital = no
+		}	
 	}
 }
 
@@ -1275,11 +1410,16 @@ country_event = {
 		name = secondopiumwarnew.29.a
 		ai_chance = { factor = 95  }
 		QNG = {
+			set_capital = {
+				state = 608
+				remember_old_capital = no
+		    }
 			add_timed_idea = {
 				idea = CHI_idea_bejing_convention
 				days = 365
 			}
 			add_ideas = CHI_idea_unequal_treaties
+			complete_national_focus = QNG_focus_defeat_from_the_west_again
 		}
 		ENG = {
 			add_timed_idea = {
@@ -1312,12 +1452,6 @@ country_event = {
 				}
 				transfer_state = 408
 			}
-			if = {
-				limit = {
-					NOT = { RUS = { owns_state = 409 } }
-				}
-				transfer_state = 409
-			}
 		}
 		
 		hidden_effect = {
@@ -1331,17 +1465,11 @@ country_event = {
 				remove_core_of = FER 
 				add_claim_by = QNG 
 			}
-			409 = { 
-				remove_core_of = QNG 
-				add_claim_by = QNG 
-				remove_core_of = FER 
-			}
 			FER={
 				drop_cosmetic_tag = yes
 			}
 			RUS = { 
 				add_state_core = 408 
-				add_state_core = 409 
 			}
 		}
 	}
@@ -1391,7 +1519,7 @@ country_event = {
 			country_event = secondopiumwarnew.33
 		}
 		activate_mission = eoanb_mission_sow_defend_manchuria
-		custom_effect_tooltip = QNG_tooltip_defend_man
+		custom_effect_tooltip = eoanb_tt_QNG_kalgan_garrison_tooltip
 	}
 }
 
@@ -1410,51 +1538,29 @@ country_event = {
 		ai_chance = {
 			factor = 95
 		}
-		RUS = { transfer_state = 561 }
-		RUS = { transfer_state = 1244 }
 		RUS = { transfer_state = 560 }
-		RUS = { transfer_state = 1247 }
-		RUS = { transfer_state = 657 }
-		RUS = { transfer_state = 1373 }
 		RUS = { transfer_state = 1375 }
 		custom_effect_tooltip = eoanb_tt_sow_event_32_a
 		hidden_effect = {
-			561 = { remove_core_of = QNG }
-			561 = { add_claim_by = QNG }
-			1244 = { remove_core_of = QNG }
-			1244 = { add_claim_by = QNG }
 			560 = { remove_core_of = QNG }
 			560 = { add_claim_by = QNG }
-			1247 = { remove_core_of = QNG }
-			1247 = { add_claim_by = QNG }
-			657 = { remove_core_of = QNG }
-			657 = { add_claim_by = QNG }
-			1373 = { remove_core_of = QNG }
-			1373 = { add_claim_by = QNG }
 			1375 = { 
 				remove_core_of = QNG 
 				add_claim_by = QNG 
 			}
 			RUS = { 
 				set_country_flag = RUS_treaty_aigun
-				add_state_core = 561 
-				add_state_core = 1244 
 				add_state_core = 560 
-				add_state_core = 1247
-				add_state_core = 657 
-				add_state_core = 1373 
 				add_state_core = 1375 
 			}
 			FER={
 				set_cosmetic_tag = FER_condominium
-				add_state_core = 409
 				add_state_core = 408
 			}
 		}
 		RUS={give_guarantee = FER}
 		QNG={give_guarantee = FER}
 		FER = { 
-			transfer_state = 409
 			transfer_state = 408
 		}
 	}
@@ -1513,7 +1619,7 @@ country_event = {
 	}
 }
 
-#QNG: ENG takes Taku 2
+#QNG: ENG takes Taku 
 country_event = {
 	id = secondopiumwarnew.35
 	title = secondopiumwarnew.35.t
@@ -1562,10 +1668,11 @@ country_event = {
 #QNG: Summer Palace Looted and Burned Down
 country_event = {
 	id = secondopiumwarnew.37
-	title = secondopiumwarnew.27.t
-	desc = secondopiumwarnew.27.d
+	title = secondopiumwarnew.37.t
+	desc = secondopiumwarnew.37.d
 	picture = GFX_report_event_second_opium_war_tianjin_treaty
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -1578,6 +1685,71 @@ country_event = {
 				idea = CHI_idea_summer_palace_burned
 				days = 150
 			}
+			clr_country_flag = summer_palace_flag
+		}
+	}
+}
+
+#RUS: Take addvantage of SOW
+country_event = {
+	id = secondopiumwarnew.38
+	title = secondopiumwarnew.38.t
+	desc = secondopiumwarnew.38.d
+	picture = GFX_report_event_second_opium_war_5
+
+	is_triggered_only = yes
+
+	option = {
+		name = secondopiumwarnew.38.a
+		ai_chance = {
+			factor = 95
+		}
+		activate_mission = eoanb_mission_sow_RUS_send_ultimatum
+	}
+}
+
+#QNG: Aftermath of the SOW 
+country_event = {
+	id = secondopiumwarnew.41
+	title = secondopiumwarnew.41.t
+	desc = secondopiumwarnew.41.d
+	picture = GFX_report_event_second_opium_war_tianjin_treaty
+
+	trigger = {
+		NOT = {
+			has_global_flag = eoanb_flag_sow_ongoing
+		}
+		if={
+			limit={
+				QNG = {
+					has_idea = CHI_idea_tianjin_treaty
+				}
+				OR = {
+					QNG = {
+						has_idea = CHI_idea_bejing_convention
+					}
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes 
+
+	option = {
+		name = secondopiumwarnew.41.a
+		ai_chance = {
+			factor = 95
+		}
+		QNG = {
+			#swap_ideas = {  ##Commented out due to error
+			#	remove_idea = QNG_idea_devastation_first_opium_war 
+			#	add_idea = QNG_idea_century_of_humiliation  ### This Idea Doesn't Exist
+			#}
+			set_capital = {
+ 			 state = 608
+			remember_old_capital = no
+			}
+			complete_national_focus = QNG_focus_council_takeover
 		}
 	}
 }

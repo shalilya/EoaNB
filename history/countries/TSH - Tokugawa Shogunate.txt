@@ -3,21 +3,33 @@
 	capital = 282 # Edo
 	set_research_slots = 2
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 30 }
+
 	# Laws & Ideas
 	add_ideas = {
 		# State & Country
-		hos_is_leader
-		no_heir
+		#hos_is_leader
+		#no_heir
 		agrarian
 		pre_industrial_era
 		law_pre_industrial_army
 		#religion_shinto
 		# Government
-		military_junta
-		no_constitution
+		#military_junta
+		#no_constitution
 		no_elections
-		no_separation
-		federalist
+		#no_separation
+		#federalist
 		# Culture
 		privileged_education
 		state_religion
@@ -28,10 +40,10 @@
 		# Economic
 		closed_economy
 		undisturbed_isolation
-		very_high_taxes
+		taxation_level_5
 		cl_legal
-		unlimited_work_day
-		lp_serfdom
+		
+		
 		# Population
 		#stagnation_growth
 		closed_borders
@@ -40,12 +52,12 @@
 		absolutism
 		pp_limited_party_freedom
 		# Budget
-		hc_no_healthcare
-		law_military_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_2
+		road_spending_level_1
+		navy_spending_level_1
+		army_spending_level_3
+		research_spending_level_1
 
 		# National Spirits
 		TSH_spirit_vic_bakufu_shogunate_unconfidence

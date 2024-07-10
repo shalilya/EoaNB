@@ -6,65 +6,66 @@
 	set_convoys = 0
 	
 	set_research_slots = 3
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 3 }
+	set_variable = { current_loans_sum = 6 }
 	
 	add_ideas = {
-		#STATE OF COUNTRY
-		BAD_Friedrich_I_young
-		no_heir
-		industrializing
-		victorian_era
-		law_victorian_army
-		#religion_catholic
-		
-		#GOVERNMENTAL POLICIES
-		constitutional_monarchy
-		constitution_adopted
-		no_elections
-		no_separation
-		federal_control
-		
-		#CULTURE AND EDUCATION
+		#POLITICAL LIBERTIES
 		compulsory_education
-		state_religion
 		free_press
 		foa_non_socialist
+		pp_ban_extremist_parties
 		tu_free_unions
-		high_judge_courtroom
+		limited_elections
 		
-		#ECONOMY
-		limited_exports
-		normal_taxes
-		cl_restricted
-		fourteen_hour_work_day
-		lp_land_purchase
-		civilian_economy
-		
-		#DEMOGRAPHICS
-		#stagnation_growth
+		#INDIVIDUAL LIBERTIES
 		border_control
 		limited_equality
 		property_owners_suffrage
 		early_conscription
-		pp_ban_extremist_parties
+		state_religion
+		high_judge_courtroom
+
+		#ECONOMIC POLICY
+		mixed_economy
+		limited_exports
+		taxation_level_3
+		civilian_economy
+		cl_restricted
+		industrializing
 		
-		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_no_naval_infrastructure
-		two_percent
-		sfund_limited_state_sponsorship
+		#INTERNAL BUDGET
+		social_spending_level_1
+		law_spending_level_3
+		road_spending_level_2
+		navy_spending_level_3
+		army_spending_level_2
+		research_spending_level_1
 		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		BAD_Friedrich_I_young
+		victorian_era
+		law_victorian_army
+		GEC_idea_german_confederation_middle_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
+		GEC_idea_weakened_zunftwesen
 		GEC_idea_polizeiverein_member
 		BAD_russiancampaign
 		BAD_era_reaktion
 		BAD_development
 		BAD_badische_tuftler
-		GEC_idea_weakened_zunftwesen
 		NA_B_small_scale_railways
 	}
 	
@@ -301,12 +302,12 @@
 	
 	remove_ideas = {
 		#STATE OF COUNTRY
-		no_heir
+		#no_heir
 		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		GEC_idea_german_confederation_middle_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_polizeiverein_member
 		BAD_russiancampaign
 		BAD_era_reaktion
@@ -318,7 +319,7 @@
 	
 	add_ideas = {
 		#STATE OF COUNTRY
-		has_heir
+		#has_heir
 
 		#GOVERNMENTAL POLICIES
 
@@ -332,8 +333,8 @@
 
 		#NATIONAL SPIRITS
 		GC_idea_schutz_und_trutz
-		PRS_Zollverein_2
-		BAD_currency_reform
+		GEC_idea_zollverein_3
+		GEC_idea_vienna_monetary_treaty
 		BAD_era_reaktion
 		BAD_development
 		BAD_badische_tuftler

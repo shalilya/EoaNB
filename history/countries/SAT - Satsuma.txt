@@ -6,14 +6,14 @@
 	# Laws & Ideas
 	add_ideas = {
 		# State & Country
-		hos_is_leader
-		has_heir
+		#hos_is_leader
+		#has_heir
 		agrarian
 		pre_industrial_era
 		#religion_shinto
 		# Government
-		absolute_monarchy
-		no_constitution
+		#absolute_monarchy
+		#no_constitution
 		no_elections
 		# Culture
 		privileged_education
@@ -25,10 +25,10 @@
 		# Economic
 		closed_economy
 		undisturbed_isolation
-		very_high_taxes
+		taxation_level_5
 		cl_legal
-		unlimited_work_day
-		lp_serfdom
+		
+		
 		# Population
 		#stagnation_growth
 		closed_borders
@@ -37,11 +37,11 @@
 		absolutism
 		pp_ban_extremist_parties
 		# Budget
-		hc_no_healthcare
-		law_military_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_2
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		# National Ideas
 		SAT_the_prestige_of_ryukyu

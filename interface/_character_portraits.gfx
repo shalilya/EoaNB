@@ -314,18 +314,18 @@ spriteTypes = {
 		texturefile = "gfx/leaders/CET/Portrait_CET_Hadjimichail_Giannaris.png"
 	}
 
-	### CLN
-	
-	spriteType = {
-		name = "GFX_Portrait_CLN_Young_France"
-		texturefile = "gfx/leaders/CLN/portrait_Young_France.png"
-	}
-
 	### WSH
 
 	spriteType = {
 		name = "GFX_portrait_WSH_isaac_stevens"
 		texturefile = "gfx/leaders/WSH/Portrait_WSH_Isaac_Stevens.png"
+	}
+
+	### IOF
+
+	spriteType = {
+		name = "GFX_portrait_TUA_malietoa_moli"
+		texturefile = "gfx/leaders/TUA/Portrait_TUA_Malietoa_Moli.png"
 	}
 
 	### CPR
@@ -749,6 +749,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_Portrait_GRE_Andreas_Miaoulis"
+		texturefile = "gfx/leaders/GRE/Portrait_GRE_Andreas_Miaoulis.png"
+	}
+
+	spriteType = {
 		name = "GFX_Portrait_GRE_George_I"
 		texturefile = "gfx/leaders/GRE/Portrait_GRE_George_I.png"
 	}
@@ -913,8 +918,23 @@ spriteTypes = {
 	### MNT
 
 	spriteType = {
+		name = "GFX_Portrait_MNT_marko_miljanov"
+		texturefile = "gfx/leaders/MNT/portrait_MNT_marko_miljanov.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_MNT_mirko_petrovic"
+		texturefile = "gfx/leaders/MNT/Portait_MNT_mirko_petrovic.png"
+	}
+	
+	spriteType = {
 		name = "GFX_Portrait_MNT_Danilo_I"
 		texturefile = "gfx/leaders/MNT/Portrait_MNT_Danilo_I.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_MNT_petar_vukotic"
+		texturefile = "gfx/leaders/MNT/Portrait_MNT_petar_vukotic.png"
 	}
 
 	### MOD
@@ -964,6 +984,66 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_POR_Eudoxio_Cesar_Azedo_Gneco"
 		texturefile = "gfx/leaders/POR/Portrait_POR_Eudoxio_Cesar_Azedo_Gneco.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Rodrigo_de_Andrade_Barbosa"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Rodrigo_de_Sousa_Coutinho.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Joao_Carlos_de_Brito_Capelo"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Joao_Carlos_de_Brito_Capelo.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Antonio_Cesar_Correia"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Antonio_Cesar_Correia.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Guilherme_Augusto_Capelo"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Guilherme_Augusto_Capelo.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Francisco_Teixeira_da_Silva"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Francisco_Teixeira_da_Silva.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Francisco_Ferreira_do_Amarel"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Francisco_Ferreira_do_Amarel.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Joao_Baptista_de_Andrade"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Joao_Baptista_de_Andrade.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Carlos_Eugenio_da_Silva"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Carlos_Eugenio_da_Silva.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Joao_Carlos_de_Saldanha"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Joao_Carlos_de_Saldanha.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Fontes_Pereira_de_Melo"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Fontes_Pereira_de_Melo.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Carlos_Maria_De_Coulo"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Carlos_Maria_De_Coulo.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_POR_Fontes_Pereira_de_Melo"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Fontes_Pereira_de_Melo.png"
 	}
 
 	### PRM
@@ -1186,9 +1266,26 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_Portrait_RUS_Grand_Duke_Konstantin_Nikolayevich_of_Russia"
-		texturefile = "gfx/leaders/RUS/Portrait_RUS_Grand_Duke_Konstantin_Nikolayevich_of_Russia.png"
+		texturefile = "gfx/leaders/RUS/Portrait_RUS_Grand_Duke_Konstantin_Nikolayevich_of_Russia.png" 
 	}
 	
+	### ALK
+
+	spriteType = {
+		name = "GFX_Portrait_ALK_Stepan_Vasilyevich_Voevodskiy"
+		texturefile = "gfx/leaders/ALK/Portrait_ALK_Stepan_Vasilyevich_Voevodskiy.png"
+	}	
+
+	spriteType = {
+		name = "GFX_Portrait_ALK_Johan_Hampus_Furuhjelm"
+		texturefile = "gfx/leaders/ALK/Portrait_ALK_Johan_Hampus_Furuhjelm.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_ALK_Dmitry_Petrovich_Maksutov"
+		texturefile = "gfx/leaders/ALK/Portrait_ALK_Dmitry_Petrovich_Maksutov.png"
+	}	
+
 	### SAX
 	
 	spriteType = {

@@ -109,7 +109,7 @@ country_event = {
 		add_political_power = -50
 		add_stability = -0.03
 		decrease_ps_by_one = yes
-		swap_ideas = { remove_idea = PRS_Wilhelm_I add_idea = hos_is_leader }
+		#swap_ideas = { remove_idea = PRS_Wilhelm_I add_idea = hos_is_leader }
 		PRS = { country_event = { days = 2 id = prussia.5 } }
 	}
 }
@@ -129,7 +129,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 25
 		add_stability = 0.01
-		swap_ideas = { remove_idea = hos_is_leader add_idea = PRS_Friedrich_III }
+		#swap_ideas = { remove_idea = hos_is_leader add_idea = PRS_Friedrich_III }
 		if = {
 			limit = {
 				has_idea = PRS_idea_new_era
@@ -2311,8 +2311,8 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 25
 		add_stability = 0.01
-		swap_ideas = { remove_idea = two_percent add_idea = three_percent }
-		hidden_effect = { 
+		swap_ideas = { remove_idea = army_spending_level_2 add_idea = army_spending_level_3 }
+		hidden_effect = {
 			set_country_flag = PRS_budget_approved
 			country_event = { days = 300 id = prussia.211 }
 		}
@@ -2334,8 +2334,8 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = -25
 		add_stability = -0.01
-		swap_ideas = { remove_idea = two_percent add_idea = three_percent }
-		hidden_effect = { 
+		swap_ideas = { remove_idea = army_spending_level_2 add_idea = army_spending_level_3 }
+		hidden_effect = {
 			set_country_flag = PRS_budget_approved_provisionally
 			country_event = { days = 300 id = prussia.212 }
 		}
@@ -2357,7 +2357,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 25
 		add_stability = 0.01
-		swap_ideas = { remove_idea = three_percent add_idea = five_percent }
+		swap_ideas = { remove_idea = army_spending_level_3 add_idea = army_spending_level_4 }
 	}
 }
 
@@ -2376,7 +2376,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = -25
 		add_stability = -0.01
-		swap_ideas = { remove_idea = three_percent add_idea = five_percent }
+		swap_ideas = { remove_idea = army_spending_level_3 add_idea = army_spending_level_4 }
 	}
 }
 
@@ -2524,20 +2524,20 @@ country_event = {
 		if = {
 			limit = { has_completed_focus = PRS_focus_promote_landwehr }
 			add_popularity = {
-				ideology = centrism
+				ideology = ideology_social_liberalism
 				popularity = 0.05
 			}
 		}
 		if = {
 			limit = { has_completed_focus = PRS_focus_expand_draft }
 			add_popularity = {
-				ideology = centrism
+				ideology = ideology_social_liberalism
 				popularity = 0.15
 			}
 		}
 		else = {
 			add_popularity = {
-				ideology = centrism
+				ideology = ideology_social_liberalism
 				popularity = 0.1
 			}
 		}
@@ -2702,8 +2702,12 @@ country_event = {
 		name = prussia.223.a
 		ai_chance = { base = 100 }
 		add_popularity = {
-				ideology = centrism
-				popularity = 0.15
+				ideology = ideology_social_liberalism
+				popularity = 0.10
+		}
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.05
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
@@ -2726,8 +2730,12 @@ country_event = {
 		name = prussia.224.a
 		ai_chance = { base = 100 }
 		add_popularity = {
-				ideology = centrism
-				popularity = 0.1
+			ideology = ideology_social_liberalism
+			popularity = 0.08
+		}
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.02
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
@@ -2750,8 +2758,12 @@ country_event = {
 		name = prussia.225.a
 		ai_chance = { base = 100 }
 		add_popularity = {
-				ideology = centrism
-				popularity = 0.05
+				ideology = ideology_social_liberalism
+				popularity = 0.04
+		}
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.01
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
@@ -3517,7 +3529,7 @@ country_event = {
 		custom_effect_tooltip = historical_option
 		custom_effect_tooltip = modifiers_not_immediate_effect_tt
 		add_to_variable = { PRS_NGC_Constitution_sf = 0.05 tooltip = stability_factor_tooltip }
-		set_variable = { PRS_NGC_Constitution_cgf = 0.05 tooltip = consumer_goods_factor_tooltip }
+		set_variable = { PRS_NGC_Constitution_cgf = 0.05 tooltip = consumer_goods_expected_value_tooltip }
 		hidden_effect = {
 			set_country_flag = PRS_constitution_draft_imminent_flag
 		}
@@ -3550,7 +3562,7 @@ country_event = {
 		}
 		custom_effect_tooltip = modifiers_not_immediate_effect_tt
 		add_to_variable = { PRS_NGC_Constitution_sf = -0.05 tooltip = stability_factor_tooltip }
-		set_variable = { PRS_NGC_Constitution_cgf = 0.1 tooltip = consumer_goods_factor_tooltip }
+		set_variable = { PRS_NGC_Constitution_cgf = 0.1 tooltip = consumer_goods_expected_value_tooltip }
 		hidden_effect = {
 			set_country_flag = PRS_constitution_draft_imminent_flag
 			set_country_flag = PRS_ngc_constitution_more_taxes_flag
@@ -3597,18 +3609,18 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				has_idea = PRS_Wilhelm_I
-			}
-			swap_ideas = { remove_idea = PRS_Wilhelm_I add_idea = hos_is_leader }
-		}
-		else_if = {
-			limit = {
-				has_idea = PRS_Friedrich_III
-			}
-			swap_ideas = { remove_idea = PRS_Friedrich_III add_idea = hos_is_leader }
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = PRS_Wilhelm_I
+		#	}
+		#	swap_ideas = { remove_idea = PRS_Wilhelm_I add_idea = hos_is_leader }
+		#}
+		#else_if = {
+		#	limit = {
+		#		has_idea = PRS_Friedrich_III
+		#	}
+		#	swap_ideas = { remove_idea = PRS_Friedrich_III add_idea = hos_is_leader }
+		#}
 		PRS = { country_event = { id = prussia.248 } }
 	}
 }
@@ -4362,26 +4374,26 @@ country_event = {
 				}
 				add_ideas = PRS_idea_rule_of_law
 			}
-			PRS = {
-				if = {
-					limit = {
-						has_idea = no_constitution
-					}
-					swap_ideas = { remove_idea = no_constitution add_idea = constitution_adopted }
-				}
-				else_if = {
-					limit = {
-						has_idea = limited_constitution
-					}
-					swap_ideas = { remove_idea = limited_constitution add_idea = constitution_adopted }
-				}
-				else_if = {
-					limit = {
-						has_idea = human_rights
-					}
-					swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
-				}
-			}
+			#PRS = {
+			#	if = {
+			#		limit = {
+			#			has_idea = no_constitution
+			#		}
+			#		swap_ideas = { remove_idea = no_constitution add_idea = constitution_adopted }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = limited_constitution
+			#		}
+			#		swap_ideas = { remove_idea = limited_constitution add_idea = constitution_adopted }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = human_rights
+			#		}
+			#		swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
+			#	}
+			#}
 		}
 		else = {
 			if = {
@@ -4390,35 +4402,35 @@ country_event = {
 				}
 				add_ideas = PRS_idea_prussian_constitutionalism
 			}
-			PRS = {
-				if = {
-					limit = {
-						has_idea = no_constitution
-					}
-					swap_ideas = { remove_idea = no_constitution add_idea = limited_constitution }
-				}
-				else_if = {
-					limit = {
-						has_idea = limited_constitution
-					}
-					swap_ideas = { remove_idea = limited_constitution add_idea = human_rights }
-				}
-				else_if = {
-					limit = {
-						has_idea = human_rights
-					}
-					swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
-				}
-			}
+			#PRS = {
+			#	if = {
+			#		limit = {
+			#			has_idea = no_constitution
+			#		}
+			#		swap_ideas = { remove_idea = no_constitution add_idea = limited_constitution }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = limited_constitution
+			#		}
+			#		swap_ideas = { remove_idea = limited_constitution add_idea = human_rights }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = human_rights
+			#		}
+			#		swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
+			#	}
+			#}
 		}
-		PRS = {
-			if = {
-				limit = {
-					has_idea = absolute_monarchy
-				}
-				swap_ideas = { remove_idea = absolute_monarchy add_idea = constitutional_monarchy }
-			}
-		}
+		#PRS = {
+		#	if = {
+		#		limit = {
+		#			has_idea = absolute_monarchy
+		#		}
+		#		swap_ideas = { remove_idea = absolute_monarchy add_idea = constitutional_monarchy }
+		#	}
+		#}
 		hidden_effect = {
 			clr_country_flag = PRS_liberalization_in_progress_flag
 		}
@@ -4494,7 +4506,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.301.a
 		ai_chance = { base = 100 }
 		add_opinion_modifier = { target = TSH modifier = eoanb_om_PRS_eulenburg_expedition }
@@ -4518,7 +4530,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.302.a
 		ai_chance = { base = 100 }
 		if = {
@@ -4562,7 +4574,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.303.a
 		ai_chance = { base = 100 }
 		add_opinion_modifier = { target = QNG modifier = eoanb_om_PRS_eulenburg_expedition }
@@ -4581,7 +4593,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.304.a
 		ai_chance = { base = 100 }
 		add_opinion_modifier = { target = SIA modifier = eoanb_om_PRS_eulenburg_expedition }
@@ -4600,7 +4612,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.305.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_eulenburg_expedition_effect_tt
@@ -4922,13 +4934,13 @@ country_event = {
 				tag = PIE 
 			}
 		}
-		add_ideas = PRS_Zollverein_associate
+		add_ideas = GEC_idea_zollverein_associate
 		every_country = {
 			limit = {
 				OR = {
-					has_idea = PRS_Zollverein
-					has_idea = PRS_Zollverein_1
-					has_idea = PRS_Zollverein_2
+					has_idea = GEC_idea_zollverein_1
+					has_idea = GEC_idea_zollverein_2
+					has_idea = GEC_idea_zollverein_3
 				}
 			} 
 			add_opinion_modifier = { target = ROOT modifier = eoanb_om_zv_foreign_trade }
@@ -4936,21 +4948,21 @@ country_event = {
 		}
 		hidden_effect = {
 			PRS = { country_event = { days = 1 id = prussia.503 } }
-			PRS = { add_to_variable = { var = PRS_zollverein_associates value = 1 } }
+			PRS = { add_to_variable = { var = var_zollverein_associates value = 1 } }
 			PRS = {
 				if = {
 					limit = {
 						AND = {
-							check_variable = { var = PRS_zollverein_associates value = 3 compare = equals }
-							PRS = { NOT = { has_idea = PRS_Zollverein_foreign_treaties_1 } }
+							check_variable = { var = var_zollverein_associates value = 3 compare = equals }
+							PRS = { NOT = { has_idea = GEC_idea_zollverein_foreign_treaties_1 } }
 						}
 					}
 					every_country = {
 						limit = {
 							OR = {
-								has_idea = PRS_Zollverein
-								has_idea = PRS_Zollverein_1
-								has_idea = PRS_Zollverein_2
+								has_idea = GEC_idea_zollverein_1
+								has_idea = GEC_idea_zollverein_2
+								has_idea = GEC_idea_zollverein_3
 							}
 						} 
 						country_event = { days = 3 id = prussia.502 }
@@ -4959,16 +4971,16 @@ country_event = {
 				else_if = {
 					limit = {
 						AND = {
-							check_variable = { var = PRS_zollverein_associates value = 6 compare = greater_than_or_equals }
-							PRS = { has_idea = PRS_Zollverein_foreign_treaties_1 }
+							check_variable = { var = var_zollverein_associates value = 6 compare = greater_than_or_equals }
+							PRS = { has_idea = GEC_idea_zollverein_foreign_treaties_1 }
 						}
 					}
 					every_country = {
 						limit = {
 							OR = {
-								has_idea = PRS_Zollverein
-								has_idea = PRS_Zollverein_1
-								has_idea = PRS_Zollverein_2
+								has_idea = GEC_idea_zollverein_1
+								has_idea = GEC_idea_zollverein_2
+								has_idea = GEC_idea_zollverein_3
 							}
 						} 
 						country_event = { days = 3 id = prussia.502 }
@@ -4976,9 +4988,9 @@ country_event = {
 				}
 				else_if = {
 					limit = {
-						PRS = { has_idea = PRS_Zollverein_foreign_treaties_2 }
+						PRS = { has_idea = GEC_idea_zollverein_foreign_treaties_2 }
 					}
-					clear_variable = PRS_zollverein_associates
+					clear_variable = var_zollverein_associates
 				}
 			}
 		}
@@ -5026,25 +5038,25 @@ country_event = {
 				ROOT = { 
 					NOT = { 
 						OR = {
-							has_idea = PRS_Zollverein_foreign_treaties_1
-							has_idea = PRS_Zollverein_foreign_treaties_2
+							has_idea = GEC_idea_zollverein_foreign_treaties_1
+							has_idea = GEC_idea_zollverein_foreign_treaties_2
 						}
 					}
 				}
 			}
-			add_ideas = PRS_Zollverein_foreign_treaties_1
+			add_ideas = GEC_idea_zollverein_foreign_treaties_1
 		}
 		else_if = {
 			limit = {
-				ROOT = { has_idea = PRS_Zollverein_foreign_treaties_1 }
+				ROOT = { has_idea = GEC_idea_zollverein_foreign_treaties_1 }
 			}
-			swap_ideas = { remove_idea = PRS_Zollverein_foreign_treaties_1 add_idea = PRS_Zollverein_foreign_treaties_2 }
+			swap_ideas = { remove_idea = GEC_idea_zollverein_foreign_treaties_1 add_idea = GEC_idea_zollverein_foreign_treaties_2 }
 			hidden_effect = {
 				if = {
 					limit = {
 						tag = PRS
 					}
-					clear_variable = PRS_zollverein_associates
+					clear_variable = var_zollverein_associates
 				}
 			}
 		}
@@ -5064,7 +5076,7 @@ country_event = {
 		name = prussia.503.a
 		ai_chance = { base = 100 }
 		hidden_effect = {
-			PRS = { clr_country_flag = PRS_zollverein_trade_treaty_negotiating_flag }
+			PRS = { clr_country_flag = zollverein_trade_treaty_negotiating_flag }
 		}
 	}
 }
@@ -5083,7 +5095,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = -10
 		hidden_effect = {
-			PRS = { clr_country_flag = PRS_zollverein_trade_treaty_negotiating_flag }
+			PRS = { clr_country_flag = zollverein_trade_treaty_negotiating_flag }
 		}
 	}
 }
@@ -5102,21 +5114,21 @@ country_event = {
 		ai_chance = { base = 95 }
 		if = {
 			limit = {
-				PRS = { has_idea = PRS_Zollverein }
+				PRS = { has_idea = GEC_idea_zollverein_1 }
 			}
-			add_ideas = PRS_Zollverein
+			add_ideas = GEC_idea_zollverein_1
 		}
 		else_if = {
 			limit = {
-				PRS = { has_idea = PRS_Zollverein_1 }
+				PRS = { has_idea = GEC_idea_zollverein_2 }
 			}
-			add_ideas = PRS_Zollverein_1
+			add_ideas = GEC_idea_zollverein_2
 		}
 		else_if = {
 			limit = {
-				PRS = { has_idea = PRS_Zollverein_2 }
+				PRS = { has_idea = GEC_idea_zollverein_3 }
 			}
-			add_ideas = PRS_Zollverein_2
+			add_ideas = GEC_idea_zollverein_3
 		}
 		hidden_effect = {
 			PRS = { country_event = { days = 7 id = prussia.506 } }
@@ -5153,7 +5165,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 10
 		hidden_effect = {
-			PRS = { clr_country_flag = PRS_zollverein_trade_treaty_negotiating_ngc_flag }
+			PRS = { clr_country_flag = zollverein_trade_treaty_negotiating_ngc_flag }
 		}
 	}
 }
@@ -5172,7 +5184,7 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = -10
 		hidden_effect = {
-			PRS = { clr_country_flag = PRS_zollverein_trade_treaty_negotiating_ngc_flag }
+			PRS = { clr_country_flag = zollverein_trade_treaty_negotiating_ngc_flag }
 		}
 	}
 }
@@ -5187,6 +5199,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
+	#Accept
 	option = {
 		name = prussia.508.a
 		ai_chance = { base = 95 }
@@ -5197,9 +5210,9 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					has_idea = PRS_Zollverein
-					has_idea = PRS_Zollverein_1
-					has_idea = PRS_Zollverein_2
+					has_idea = GEC_idea_zollverein_1
+					has_idea = GEC_idea_zollverein_2
+					has_idea = GEC_idea_zollverein_3
 				}
 			} 
 			add_timed_idea = {
@@ -5213,6 +5226,7 @@ country_event = {
 		}
 	}
 	
+	#Reject
 	option = {
 		name = prussia.508.b
 		ai_chance = {
@@ -5275,9 +5289,9 @@ country_event = {
 			every_country = {
 				limit = {
 					OR = {
-						has_idea = PRS_Zollverein
-						has_idea = PRS_Zollverein_1
-						has_idea = PRS_Zollverein_2
+						has_idea = GEC_idea_zollverein_1
+						has_idea = GEC_idea_zollverein_2
+						has_idea = GEC_idea_zollverein_3
 					}
 				}
 				country_event = { id = prussia.512 }
@@ -5324,7 +5338,7 @@ country_event = {
 	}
 }
 
-#Prussia - Weapons Deal with the Americans - Which Side to Approach?
+#USA/CSA - Buy Guns Offered by Prussia?
 country_event = {
 	id = prussia.513
 	title = prussia.513.t
@@ -5333,23 +5347,19 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	#Accept
 	option = {
 		name = prussia.513.a
-		trigger = {
-			PRS = { NOT = { has_country_flag = PRS_USA_sell_guns_rejected_flag } }
-		}
 		ai_chance = { base = 80 }
 		add_political_power = -10
 		hidden_effect = {
-			USA = { country_event = { days = 7 id = prussia.514 } }
+			PRS = { country_event = { days = 7 id = prussia.514 } }
 		}
 	}
 	
+	#Reject
 	option = {
 		name = prussia.513.b
-		trigger = {
-			PRS = { NOT = { has_country_flag = PRS_CSA_sell_guns_rejected_flag } }
-		}
 		ai_chance = { 
 			base = 20
 			modifier = {
@@ -5357,14 +5367,14 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		add_political_power = -10
+		add_political_power = 10
 		hidden_effect = {
-			CSA = { country_event = { days = 7 id = prussia.514 } }
+			PRS = { country_event = { days = 7 id = prussia.515 } }
 		}
 	}
 }
 
-#USA/CSA - Buy Guns Offered by Prussia?
+#PRS - The Americans Agree to Buy Our Guns
 country_event = {
 	id = prussia.514
 	title = prussia.514.t
@@ -5375,30 +5385,28 @@ country_event = {
 	
 	option = {
 		name = prussia.514.a
-		ai_chance = { base = 80 }
-		add_political_power = -10
+		ai_chance = { base = 100 }
+		custom_effect_tooltip = PRS_weapons_deal_ACW_effect_tt
 		hidden_effect = {
-			PRS = { country_event = { days = 7 id = prussia.515 } }
-		}
-	}
-	
-	option = {
-		name = prussia.514.b
-		ai_chance = { 
-			base = 20
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+			if = {
+				limit = {
+					FROM = { tag = USA }
+				}
+				USA = { country_event = { days = 30 id = prussia.516 } }
 			}
-		}
-		add_political_power = 10
-		hidden_effect = {
-			PRS = { country_event = { days = 7 id = prussia.516 } }
+			else_if = {
+				limit = {
+					FROM = { tag = CSA }
+				}
+				CSA = { country_event = { days = 30 id = prussia.516 } }
+			}
+			clr_country_flag = PRS_weapons_deal_proposed
+			set_country_flag = PRS_weapons_deal_successful
 		}
 	}
 }
 
-#Prussia - The Americans Agree to Buy Our Guns
+#PRS - The Americans Don't Want Our Guns
 country_event = {
 	id = prussia.515
 	title = prussia.515.t
@@ -5409,37 +5417,6 @@ country_event = {
 	
 	option = {
 		name = prussia.515.a
-		ai_chance = { base = 100 }
-		unlock_decision_tooltip = PRS_decision_sell_guns_USA
-		hidden_effect = {
-			if = {
-				limit = {
-					FROM = { tag = USA }
-				}
-				PRS = { set_country_flag = PRS_USA_sell_guns_flag }
-			}
-			else_if = {
-				limit = {
-					FROM = { tag = CSA }
-				}
-				PRS = { set_country_flag = PRS_CSA_sell_guns_flag }
-			}
-			PRS = { clr_country_flag = PRS_weapons_deal_proposed }
-		}
-	}
-}
-
-#Prussia - The Americans Don't Want Our Guns
-country_event = {
-	id = prussia.516
-	title = prussia.516.t
-	desc = prussia.516.d
-	picture = GFX_event_wilhelmstrasse_staatsministerium
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = prussia.516.a
 		ai_chance = { base = 100 }
 		add_political_power = -10
 		hidden_effect = {
@@ -5462,19 +5439,19 @@ country_event = {
 
 #USA/CSA - Prussian Guns Have Arrived
 country_event = {
-	id = prussia.517
-	title = prussia.517.t
-	desc = prussia.517.d
+	id = prussia.516
+	title = prussia.516.t
+	desc = prussia.516.d
 	picture = GFX_report_event_soldiers_marching
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = prussia.517.a
+		name = prussia.516.a
 		ai_chance = { base = 100 }
 		add_timed_idea = {
-			idea = PRS_USA_guns_deal_ACW
+			idea = PRS_idea_buy_weapons_ACW
 			days = 365
 		}
 		if = {
@@ -5499,6 +5476,30 @@ country_event = {
 					producer = PRS
 				}
 			}
+		}
+		hidden_effect = {
+			PRS = { country_event = { days = 7 id = prussia.517 } }
+		}
+	}
+}
+
+#PRS - Weapons Deal Payments Received
+country_event = {
+	id = prussia.517
+	title = prussia.517.t
+	desc = prussia.517.d
+	picture = GFX_event_wilhelmstrasse_staatsministerium
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.517.a
+		ai_chance = { base = 100 }
+		add_political_power = 5
+		add_timed_idea = {
+			idea = PRS_idea_sell_weapons_ACW
+			days = 365
 		}
 	}
 }
@@ -6156,7 +6157,7 @@ country_event = {
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_effect_tt
 			add_political_power = -25
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_parliament_reform_1
 				add_manpower = -11000
 				PRS = { country_event = { days = 180 id = prussia.753 } } 
@@ -6178,7 +6179,7 @@ country_event = {
 				ideology = centrism
 				popularity = 0.01
 			}
-			hidden_effect = { 
+			hidden_effect = {
 				delete_unit_template_and_units = {
 					division_template = "Landwehr-Regiment"
 					disband = yes
@@ -6248,7 +6249,7 @@ country_event = {
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_effect_tt
 			add_political_power = -25
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_parliament_reform_2
 				add_manpower = -11000
 				PRS = { country_event = { days = 180 id = prussia.754 } } 
@@ -6268,7 +6269,7 @@ country_event = {
 				ideology = centrism
 				popularity = 0.01
 			}
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_roon_reform_2
 				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussia.754 } } 
@@ -6324,7 +6325,7 @@ country_event = {
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_effect_tt
 			add_political_power = -25
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_parliament_reform_3
 				add_manpower = -11000
 				PRS = { country_event = { days = 180 id = prussia.755 } } 
@@ -6344,7 +6345,7 @@ country_event = {
 				ideology = centrism
 				popularity = 0.01
 			}
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_roon_reform_3
 				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussia.755 } } 
@@ -6400,7 +6401,7 @@ country_event = {
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_effect_tt
 			add_political_power = -25
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_parliament_reform_4
 				add_manpower = -11000
 				PRS = { country_event = { days = 180 id = prussia.756 } } 
@@ -6420,7 +6421,7 @@ country_event = {
 				ideology = centrism
 				popularity = 0.01
 			}
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_roon_reform_4
 				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussia.756 } } 
@@ -6476,7 +6477,7 @@ country_event = {
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_effect_tt
 			add_political_power = -25
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_parliament_reform_5
 				add_manpower = -11000
 				set_country_flag = PRS_army_expansion_finished
@@ -6496,7 +6497,7 @@ country_event = {
 				ideology = centrism
 				popularity = 0.01
 			}
-			hidden_effect = { 
+			hidden_effect = {
 				load_oob = PRS_roon_reform_5
 				add_manpower = -14600
 				set_country_flag = PRS_army_expansion_finished
@@ -6908,20 +6909,22 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.826.a
 		ai_chance = { base = 90 }
 		add_political_power = -100
 		add_stability = -0.02
+		set_temp_variable = { loans_amount = 1 }
+		take_loan_without_inflation_effect = yes
 		unlock_decision_tooltip = PRS_decision_order_warships_domestically_1
 		unlock_decision_tooltip = PRS_decision_order_warships_domestically_2
 		custom_effect_tooltip = historical_option
-		hidden_effect = { 
+		hidden_effect = {
 			set_country_flag = PRS_issue_bonds_for_navy
 		}
 	}
 	
-	option = { 
+	option = {
 		name = prussia.826.b
 		ai_chance = { 
 			base = 10
@@ -6946,12 +6949,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.827.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_domestically_1_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -6988,12 +6991,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.828.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_domestically_2_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -7028,7 +7031,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.829.a
 		ai_chance = { base = 95 }
 		custom_effect_tooltip = PRS_accepted_ship_purchase_event_tt
@@ -7052,7 +7055,7 @@ country_event = {
 		}
 	}
 	
-	option = { 
+	option = {
 		name = prussia.829.b
 		ai_chance = { 
 			base = 5
@@ -7078,7 +7081,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.830.a
 		ai_chance = { base = 100 }
 		if = {
@@ -7097,7 +7100,7 @@ country_event = {
 		else = { 
 			unlock_decision_tooltip = PRS_decision_order_ships_from_ENG_3
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { date < 1864.1.1 }
 				PRS = { set_country_flag = PRS_britain_agrees_navy_flag_1 }
@@ -7122,7 +7125,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.831.a
 		ai_chance = { base = 100 }
 		if = {
@@ -7137,7 +7140,7 @@ country_event = {
 			}
 			unlock_decision_tooltip = PRS_decision_order_ships_from_FRA_2
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { date < 1866.1.1 }
 				PRS = { set_country_flag = PRS_france_agrees_navy_flag_1 }
@@ -7158,7 +7161,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.832.a
 		ai_chance = { base = 100 }
 		add_political_power = 25
@@ -7177,7 +7180,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { 
+	option = {
 		name = prussia.833.a
 		ai_chance = { base = 100 }
 		add_offsite_building = {
@@ -7197,12 +7200,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.834.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_from_britain_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				load_oob = PRS_new_ships_ENG_1
@@ -7225,12 +7228,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.835.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_from_france_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -7267,12 +7270,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.836.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_from_britain_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -7312,12 +7315,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.837.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_from_france_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -7357,12 +7360,12 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.838.a
 		ai_chance = { base = 100 }
 		custom_effect_tooltip = PRS_event_order_ships_from_britain_3_tt
 		navy_experience = 5
-		hidden_effect = { 
+		hidden_effect = {
 			if = {
 				limit = { has_dlc = "Man the Guns" }
 				create_equipment_variant = {
@@ -7443,7 +7446,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.840.a
 		ai_chance = { base = 100 }
 		swap_ideas = {
@@ -7462,7 +7465,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { 
+	option = {
 		name = prussia.841.a
 		ai_chance = { base = 100 }
 		swap_ideas = {

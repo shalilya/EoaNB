@@ -309,10 +309,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			swap_ideas = {
-				remove_idea = socialist_state
-				add_idea = presidential_republic
-			}
+			#swap_ideas = {
+			#	remove_idea = socialist_state
+			#	add_idea = presidential_republic
+			#}
 		}
 	}
 	focus = {
@@ -336,10 +336,10 @@ focus_tree = {
 				remove_idea = universal_male_suffrage
 				add_idea = absolutism
 			}
-			swap_ideas = {
-				remove_idea = lp_land_purchase
-				add_idea = lp_collectivization
-			}
+			#swap_ideas = {
+			#	remove_idea = lp_land_purchase
+			#	add_idea = lp_collectivization
+			#}
 		}
 	}
 	focus = {
@@ -380,10 +380,10 @@ focus_tree = {
 			focus = USA_mhc_marx_ruler
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = constitution_adopted
-				add_idea = limited_constitution
-			}
+			#swap_ideas = {
+			#	remove_idea = constitution_adopted
+			#	add_idea = limited_constitution
+			#}
 		}
 	}
 	focus = {
@@ -459,21 +459,21 @@ focus_tree = {
 			focus = USA_mhc_proletariat_democracy
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					has_idea = twelve_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = eight_hour_work_day
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = ten_hour_work_day
-					add_idea = eight_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = twelve_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = eight_hour_work_day
+			#	}
+			#}
+			#else = {
+			#	swap_ideas = {
+			#		remove_idea = ten_hour_work_day
+			#		add_idea = eight_hour_work_day
+			#	}
+			#}
 			if = {
 				limit = {
 					has_idea = cl_restricted
@@ -504,10 +504,10 @@ focus_tree = {
 			focus = USA_mhc_proletariat_democracy
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = socialist_state
-				add_idea = socialist_republic
-			}
+			#swap_ideas = {
+			#	remove_idea = socialist_state
+			#	add_idea = socialist_republic
+			#}
 			swap_ideas = {
 				remove_idea = universal_male_suffrage
 				add_idea = universal_suffrage
@@ -527,10 +527,10 @@ focus_tree = {
 			focus = USA_mhc_socialist_policies
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = lp_land_purchase
-				add_idea = lp_collectivization
-			}
+			#swap_ideas = {
+			#	remove_idea = lp_land_purchase
+			#	add_idea = lp_collectivization
+			#}
 		}
 	}
 	focus = {
@@ -581,27 +581,27 @@ focus_tree = {
 			focus = USA_mhc_social_democracy
 		}
 		completion_reward = {
-			if = {
-				limit = { has_idea = twelve_hour_work_day }
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = { has_idea = fourteen_hour_work_day }
-				swap_ideas = {
-					remove_idea = fourteen_hour_work_day
-					add_idea = twelve_hour_work_day
-				}
-			}
-			if = {
-				limit = { has_idea = unlimited_work_day }
-				swap_ideas = {
-					remove_idea = unlimited_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = { has_idea = twelve_hour_work_day }
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = { has_idea = fourteen_hour_work_day }
+			#	swap_ideas = {
+			#		remove_idea = fourteen_hour_work_day
+			#		add_idea = twelve_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = { has_idea = unlimited_work_day }
+			#	swap_ideas = {
+			#		remove_idea = unlimited_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
 		}
 	}
 	focus = {

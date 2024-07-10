@@ -1564,7 +1564,6 @@ focus_tree = {
 
 		available = {
 			OR = {
-				country_exists = SEM
 				country_exists = SIX
 			}
 		}
@@ -1588,7 +1587,6 @@ focus_tree = {
 
 		available = {
 			OR = {
-				country_exists = SEM
 				country_exists = SIX
 			}
 		}
@@ -1695,16 +1693,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_increased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = 4 }
 			every_state = {
 				limit = { 
 					OR = {
@@ -1723,10 +1716,8 @@ focus_tree = {
 						STATE = 1092
 					}
 				}
-				custom_effect_tooltip = DCI_increase_by_1_tooltip
 				custom_effect_tooltip = USA_FN_aggressive2_tooltip
 				hidden_effect = { add_manpower = 1326 }
-				hidden_effect = { USA = { STATE_TAG_DCI_increase_by_1 = yes } }
 			}
 		}
 	}
@@ -1756,16 +1747,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_decreased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = -2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = -2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = -2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = -2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = -2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = -2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = -2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = -2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = -2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = -2 }
 			#add_to_variable = { var = USA.FNT_raid_likelihood_var@OKL value = -2 }
 		}
 	}
@@ -1831,16 +1817,11 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_decreased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = -4 }
 			#add_to_variable = { var = USA.FNT_raid_likelihood_var@OKL value = -4 }
 		}
 	}
@@ -1994,11 +1975,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-			every_state = {
-				limit = { OWNER = { is_first_nations_tribe_allowed = yes } }
-				hidden_effect = { USA = { STATE_TAG_DCI_decrease_by_1 = yes } }
-				custom_effect_tooltip = DCI_decrease_by_1_tooltip
-			}
+
 		}
 	}
 	focus = {
@@ -2016,21 +1993,14 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_increased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = 2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = 2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = 2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = 2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = 2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = 2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = 2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = 2 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = 2 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = 2 }
 			1051 = {
-				custom_effect_tooltip = DCI_increase_by_1_tooltip
 				custom_effect_tooltip = USA_FN_pike_peak_gold_rush_tooltip
 				hidden_effect = { add_manpower = 8700 }
-				hidden_effect = { USA = { STATE_TAG_DCI_increase_by_1 = yes } }	
 			}
 		}
 	}
@@ -2071,10 +2041,8 @@ focus_tree = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_increased
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = 2 }
 			1074 = {
-				custom_effect_tooltip = DCI_increase_by_1_tooltip
 				custom_effect_tooltip = USA_FN_orofino_creek_gold_rush_tooltip
 				hidden_effect = { add_manpower = 2000 }
-				hidden_effect = { USA = { STATE_TAG_DCI_increase_by_1 = yes } }
 			}
 		}
 	}
@@ -2113,16 +2081,11 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_increased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = 4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = 4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = 4 }
 			every_state = {
 				limit = { 
 					OR = {           #Bison Extermination Date by State
@@ -2151,10 +2114,8 @@ focus_tree = {
 						STATE = 1048 #1883
 					}
 				}
-				custom_effect_tooltip = DCI_increase_by_1_tooltip
 				custom_effect_tooltip = USA_FN_the_growing_bison_industry_tooltip
 				hidden_effect = { add_manpower = 632 }
-				hidden_effect = { USA = { STATE_TAG_DCI_increase_by_1 = yes } }
 			}
 		}
 	}
@@ -2219,16 +2180,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALTHISTORY }
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_decreased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = -4 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = -4 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = -4 }
 		}
 		ai_will_do = {
 			base = 10
@@ -7112,11 +7068,10 @@ focus_tree = {
 			has_completed_focus = USA_both_pass_15th
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
 				add = 100
 				AND = {
-					has_completed_focus = USA_diplomacy_alaska
 					has_completed_focus = USA_diplomacy_pig_war
 					has_completed_focus = USA_research_wartime_finish
 					has_completed_focus = USA_research_civilian_finish

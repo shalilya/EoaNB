@@ -58,7 +58,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			hidden_effect = { add_ideas = five_percent }
+			hidden_effect = { add_ideas = army_spending_level_4 }
 			custom_effect_tooltip = afr_jihad_drums_of_war_tooltip
 			if = {
 				limit = {
@@ -645,7 +645,7 @@ focus = {
 			factor = 1
 		}
 		completion_reward = {
-			hidden_effect = { add_ideas = lp_land_purchase }
+			#hidden_effect = { add_ideas = lp_land_purchase }
 			custom_effect_tooltip = afr_jihadist_regional_power_introduction_of_private_property_tooltip
 			add_stability = -0.05
 		}
@@ -677,7 +677,7 @@ focus = {
 			factor = 1
 		}
 		completion_reward = {
-			hidden_effect = { add_ideas = lp_african_communalism }
+			#hidden_effect = { add_ideas = lp_african_communalism }
 			custom_effect_tooltip = afr_jihadist_regional_power_retain_african_communalism_tooltip
 			add_stability = 0.03
 			hidden_effect = {
@@ -716,7 +716,7 @@ focus = {
 			factor = 1
 		}
 		completion_reward = {
-			hidden_effect = { add_ideas = lp_land_estates }
+			#hidden_effect = { add_ideas = lp_land_estates }
 			custom_effect_tooltip = afr_jihadist_regional_power_retain_land_estates_tooltip
 			add_stability = 0.05
 		}
@@ -2762,10 +2762,6 @@ focus = {
 				tooltip = skt_jihad_bab_is_opppressed
 				any_country = {
 					OR = {
-						custom_trigger_tooltip = {
-							tooltip = DCI_is_greater_than_15
-							check_variable = { var = detrimental_colonial_impact value > 15 }
-						}
 						if = {
 							limit = { TAG = EPD }
 							EPD = { has_country_flag = ALG_france_dont_care }
@@ -2875,10 +2871,6 @@ focus = {
 				tooltip = skt_jihad_jihadist_cell_is_ready
 				any_country = {
 					OR = {
-						custom_trigger_tooltip = {
-							tooltip = DCI_is_greater_than_15
-							check_variable = { var = detrimental_colonial_impact value > 15 }
-						}
 						if = {
 							limit = { TAG = EPD }
 							EPD = { has_country_flag = ALG_france_dont_care }

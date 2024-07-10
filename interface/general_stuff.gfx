@@ -136,7 +136,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_generic_text_bg_88"
 		texturefile = "gfx/interface/generic_text_bg_88.dds"
-	}	
+	}
+	
+	spriteType = {
+		name = "GFX_generic_text_bg_48"
+		texturefile = "gfx/interface/stateview/generic_text_bg_48.dds"
+	}
 
 	spriteType = {
 		name = "GFX_generic_text_bg_60"
@@ -158,6 +163,11 @@ spriteTypes = {
 		name = "GFX_header_bg"
 		texturefile = "gfx/interface/country_interface/general/header_bg.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_budget_diplomacy_bg"
+		texturefile = "gfx/interface/country_interface/general/budget_diplomacy.dds"
+	}
 
 	spriteType = {
 		name = "GFX_header_bg_medium"
@@ -174,6 +184,11 @@ spriteTypes = {
 		name = "GFX_missing_resources_strip"
 		texturefile = "gfx/interface/missing_resources_strip.dds"
 		noOfFrames = 19
+	}
+
+	spriteType = {
+		name = "GFX_closebuttonframe"
+		texturefile = "gfx//interface//closebuttonframe.dds"
 	}
 	
 	spriteType = {

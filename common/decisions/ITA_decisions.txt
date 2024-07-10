@@ -152,7 +152,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			has_active_mission = ITA_War_Mission_TUS_2IP
 		}
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 			production_factory_efficiency_gain_factor = 0.05
 			army_org_regain = 0.1
 		}
@@ -426,7 +426,7 @@ ITA_decisions_category_wars_and_conflicts = {
 			has_active_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 		}
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 			production_factory_efficiency_gain_factor = 0.05
 			army_org_regain = 0.1
 		}
@@ -1111,20 +1111,6 @@ ITA_decisions_category_wars_and_conflicts = {
 								white_peace = LVN
 							}
 						}
-						SNG = {
-							if = {
-								limit = {
-									has_war_with = AUS
-								}
-								white_peace = AUS
-							}
-							if = {
-								limit = {
-									has_war_with = LVN
-								}
-								white_peace = LVN
-							}
-						}
 						GAB = {
 							if = {
 								limit = {
@@ -1372,6 +1358,42 @@ ITA_decisions_category_wars_and_conflicts = {
 					}
 				}
 				AUS = {
+					if = {
+						limit = {
+							PIE = {
+								has_idea = ITA_2IP_War_Leader
+							}
+						}
+						PIE = {
+							remove_ideas = {
+								ITA_2IP_War_Leader
+							}
+						}
+					}
+					if = {
+						limit = {
+							FRA = {
+								has_idea = ITA_2IP_War_Leader
+							}
+						}
+						FRA = {
+							remove_ideas = {
+								ITA_2IP_War_Leader
+							}
+						}
+					}
+					if = {
+						limit = {
+							LVN = {
+								has_idea = PIE_Encourage_Resistance_Idea
+							}
+						}
+						LVN = {
+							remove_ideas = {
+								PIE_Encourage_Resistance_Idea
+							}
+						}
+					}
 					remove_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 					white_peace = PIE
 					white_peace = PRM
@@ -1543,6 +1565,30 @@ ITA_decisions_category_wars_and_conflicts = {
 					}
 					if = {
 						limit = {
+							PIE = {
+								has_idea = ITA_2IP_Idea
+							}
+						}
+						PIE = {
+							remove_ideas = {
+								ITA_2IP_Idea
+							}
+						}
+					}
+					if = {
+						limit = {
+							FRA = {
+								has_idea = ITA_2IP_Idea
+							}
+						}
+						FRA = {
+							remove_ideas = {
+								ITA_2IP_Idea
+							}
+						}
+					}
+					if = {
+						limit = {
 							LVN = {
 								has_idea = PIE_Encourage_Resistance_Idea
 							}
@@ -1613,25 +1659,8 @@ ITA_decisions_category_wars_and_conflicts = {
 							white_peace = LVN
 						}
 						dismantle_faction = yes
-						remove_ideas = {
-							ITA_2IP_Idea
-						}
 					}
 					EPD = {
-						if = {
-							limit = {
-								has_war_with = AUS
-							}
-							white_peace = AUS
-						}
-						if = {
-							limit = {
-								has_war_with = LVN
-							}
-							white_peace = LVN
-						}
-					}
-					SNG = {
 						if = {
 							limit = {
 								has_war_with = AUS
@@ -1682,9 +1711,6 @@ ITA_decisions_category_wars_and_conflicts = {
 					country_event = {
 						id = risorgimento.125
 						days = 2
-					}
-					remove_ideas = {
-						ITA_2IP_Idea
 					}
 				}
 				PIE = {
@@ -1851,6 +1877,66 @@ ITA_decisions_category_wars_and_conflicts = {
 						tag = AUS
 					}
 					AUS = {
+						if = {
+							limit = {
+								PIE = {
+									has_idea = ITA_2IP_War_Leader
+								}
+							}
+							PIE = {
+								remove_ideas = {
+									ITA_2IP_War_Leader
+								}
+							}
+						}
+						if = {
+							limit = {
+								FRA = {
+									has_idea = ITA_2IP_War_Leader
+								}
+							}
+							FRA = {
+								remove_ideas = {
+									ITA_2IP_War_Leader
+								}
+							}
+						}
+						if = {
+							limit = {
+								PIE = {
+									has_idea = ITA_2IP_Idea
+								}
+							}
+							PIE = {
+								remove_ideas = {
+									ITA_2IP_Idea
+								}
+							}
+						}
+						if = {
+							limit = {
+								FRA = {
+									has_idea = ITA_2IP_Idea
+								}
+							}
+							FRA = {
+								remove_ideas = {
+									ITA_2IP_Idea
+								}
+							}
+						}
+						if = {
+							limit = {
+								LVN = {
+									has_idea = PIE_Encourage_Resistance_Idea
+								}
+							}
+							LVN = {
+								remove_ideas = {
+									PIE_Encourage_Resistance_Idea
+								}
+							}
+						}
 						remove_mission = ITA_Mission_AUS_PIE_Peace_Treaty_1860
 						white_peace = PIE
 						white_peace = PRM
@@ -3416,6 +3502,98 @@ ITA_brigindage_category_decisions = {
 			}
 		}
 	}
+	ITA_Bersaglieri_Campaign_Abruzzo = {
+		ai_will_do = {
+			base = 1
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 812
+			}
+		}
+		icon = generic_political_actions
+		cost = 50
+		fire_only_once = yes
+		available = {
+			has_active_mission = ITA_decision_deal_with_brigindage
+			has_completed_focus = ITA_PIE_focus_Law_no_143
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
+			}
+		}
+	}
+	ITA_Bersaglieri_Campaign_Campania = {
+		ai_will_do = {
+			base = 1
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 117
+			}
+		}
+		icon = generic_political_actions
+		cost = 50
+		fire_only_once = yes
+		available = {
+			has_active_mission = ITA_decision_deal_with_brigindage
+			has_completed_focus = ITA_PIE_focus_Law_no_143
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
+			}
+		}
+	}
+	ITA_Bersaglieri_Campaign_Apulia = {
+		ai_will_do = {
+			base = 1
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 997
+			}
+		}
+		icon = generic_political_actions
+		cost = 50
+		fire_only_once = yes
+		available = {
+			has_active_mission = ITA_decision_deal_with_brigindage
+			has_completed_focus = ITA_PIE_focus_Law_no_143
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
+			}
+		}
+	}
+	ITA_Bersaglieri_Campaign_Calabria = {
+		ai_will_do = {
+			base = 1
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 156
+			}
+		}
+		icon = generic_political_actions
+		cost = 50
+		fire_only_once = yes
+		available = {
+			has_active_mission = ITA_decision_deal_with_brigindage
+			has_completed_focus = ITA_PIE_focus_Law_no_143
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_Balance_of_Power_Brigandage
+				value = 0.05
+			}
+		}
+	}
 }
 
 ITA_decisions_category_artisan_industry = {
@@ -3430,7 +3608,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 80
 		modifier = {
-			consumer_goods_factor = 0.03
+			consumer_goods_expected_value = 0.03
 		}
 		days_remove = 100
 		remove_effect = {
@@ -3454,7 +3632,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 100
 		modifier = {
-			consumer_goods_factor = 0.03
+			consumer_goods_expected_value = 0.03
 		}
 		days_remove = 100
 		remove_effect = {
@@ -3482,7 +3660,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 100
 		modifier = {
-			consumer_goods_factor = 0.07
+			consumer_goods_expected_value = 0.07
 		}
 		days_remove = 200
 		remove_effect = {
@@ -3582,16 +3760,30 @@ ITA_decisions_category_artisan_industry = {
 		visible = {
 			has_completed_focus = TUS_focus_textile_industry
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 60
-		modifier = {
-			civilian_factory_use = 1
-		}
 		ai_will_do = {
 			base = 25
 		}
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		custom_cost_text = eoanb_money_and_political_power_50
 		days_remove = 200
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		remove_effect = {
 			162 = {
 				add_extra_state_shared_building_slots = 1
@@ -3610,16 +3802,30 @@ ITA_decisions_category_artisan_industry = {
 		visible = {
 			has_completed_focus = TUS_focus_textile_industry
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 50
-		modifier = {
-			civilian_factory_use = 1
-		}
 		ai_will_do = {
 			base = 25
 		}
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		custom_cost_text = eoanb_money_and_political_power_50
 		days_remove = 200
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		remove_effect = {
 			162 = {
 				add_extra_state_shared_building_slots = 1
@@ -3638,16 +3844,30 @@ ITA_decisions_category_artisan_industry = {
 		visible = {
 			has_completed_focus = TUS_focus_textile_industry
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 50
-		modifier = {
-			civilian_factory_use = 1
-		}
 		ai_will_do = {
 			base = 25
 		}
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		custom_cost_text = eoanb_money_and_political_power_50
 		days_remove = 200
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		remove_effect = {
 			162 = {
 				add_extra_state_shared_building_slots = 1
@@ -3667,17 +3887,31 @@ ITA_decisions_category_artisan_industry = {
 			has_completed_focus = TUS_focus_the_artisans
 		}
 		ai_will_do = {
-			base = 25
+			base = 35
 		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 50
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 3
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -3 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		modifier = {
 			production_factory_efficiency_gain_factor = 0.05
 			production_factory_max_efficiency_factor = 0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_income_factor = 0.25
+			hidden_modifier = {
+				consumer_goods_income_factor_from_decisions  = 0.25
+			}
 		}
-		days_remove = 200
+		days_remove = 365
 	}
 	ITA_TUS_Expand_Workshops_Artisans = {
 		allowed = {
@@ -3688,14 +3922,22 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 75
-		modifier = {
-			civilian_factory_use = 1
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 3
+			}
+			has_political_power > 49.99
 		}
 		ai_will_do = {
 			base = 25
 		}
 		days_remove = 150
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -3 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		remove_effect = {
 			162 = {
 				add_extra_state_shared_building_slots = 1
@@ -3716,9 +3958,17 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 50
-		modifier = {
-			consumer_goods_factor = 0.15
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
 		}
 		ai_will_do = {
 			base = 25
@@ -3741,9 +3991,17 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = generic_construction
 		fire_only_once = yes
-		cost = 50
-		modifier = {
-			civilian_factory_use = 1
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
 		}
 		ai_will_do = {
 			base = 25
@@ -3769,9 +4027,20 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = railway
 		fire_only_once = yes
-		cost = 80
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3797,9 +4066,20 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = railway
 		fire_only_once = yes
-		cost = 80
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3838,9 +4118,20 @@ ITA_decisions_category_artisan_industry = {
 		}
 		icon = railway
 		fire_only_once = yes
-		cost = 80
+		custom_cost_text = eoanb_money_and_political_power_50
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_political_power > 49.99
+		}
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+			add_political_power = -50
+		}
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3881,7 +4172,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 80
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3912,7 +4203,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 80
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3942,7 +4233,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 40
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -3969,7 +4260,7 @@ ITA_decisions_category_artisan_industry = {
 		fire_only_once = yes
 		cost = 65
 		modifier = {
-			consumer_goods_factor = 0.04
+			consumer_goods_expected_value = 0.04
 		}
 		ai_will_do = {
 			base = 25
@@ -4181,7 +4472,7 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 			}
 		}
 		modifier = {
-			consumer_goods_factor = -0.1
+			consumer_goods_expected_value = -0.1
 		}
 	}
 	ITA_TUS_form_volunteer_regiment = {
@@ -4496,6 +4787,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		visible = {
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
 		cost = 20
@@ -4504,6 +4801,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		complete_effect = {
 			army_experience = 10
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 		}
 	}
 	ITA_PIE_legislative_turin_hospital = {
@@ -4512,6 +4811,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		visible = {
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
 		cost = 20
@@ -4520,6 +4825,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		complete_effect = {
 			army_experience = 10
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 		}
 	}
 	ITA_PIE_legislative_military_draft_law = {
@@ -4527,6 +4834,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 			tag = PIE
 		}
 		visible = {
+		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
 		}
 		icon = generic_political_actions
 		fire_only_once = yes
@@ -4537,6 +4850,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		complete_effect = {
 			army_experience = 5
 			add_manpower = 1000
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 		}
 	}
 	ITA_PIE_legislative_military_academy = {
@@ -4544,6 +4859,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 			tag = PIE
 		}
 		visible = {
+		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
 		}
 		icon = generic_political_actions
 		fire_only_once = yes
@@ -4554,6 +4875,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		days_remove = 100
 		complete_effect = {
 			army_experience = 5
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 		}
 		modifier = {
 			war_support_weekly = 0.01
@@ -4566,6 +4889,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		visible = {
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_political_actions
 		fire_only_once = yes
 		cost = 30
@@ -4574,6 +4903,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		complete_effect = {
 			add_manpower = 2500
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 		}
 	}
 	ITA_PIE_legislative_railway_concessions = {
@@ -4591,7 +4922,8 @@ ITA_decisions_category_PIE_legislative_actions = {
 		days_remove = 400
 		modifier = {
 			production_speed_rail_way_factor = 0.25
-			consumer_goods_Factor = 0.1
+			consumer_goods_expected_value = 0.1
+			monthly_unemployment_change = -0.01
 		}
 	}
 	ITA_PIE_legislative_ademprivi_sardinia = {
@@ -4616,6 +4948,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		visible = {
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
 		cost = 30
@@ -4623,9 +4961,16 @@ ITA_decisions_category_PIE_legislative_actions = {
 			base = 10
 		}
 		days_remove = 400
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+		}
 		modifier = {
 			research_speed_factor = 0.05
-			consumer_goods_Factor = 0.02
+			research_spending_cost_factor = 0.05
+			hidden_modifier = {
+				research_spending_cost_factor_from_decisions  = 0.05
+			}
 		}
 	}
 	ITA_PIE_legislative_alessandria_college = {
@@ -4634,6 +4979,12 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 		visible = {
 		}
+		available = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+			has_specific_amount_of_money_with_inflation_included = yes
+		}
 		icon = generic_construction
 		fire_only_once = yes
 		cost = 30
@@ -4641,9 +4992,16 @@ ITA_decisions_category_PIE_legislative_actions = {
 			base = 10
 		}
 		days_remove = 250
+		complete_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
+		}
 		modifier = {
 			research_speed_factor = 0.03
-			consumer_goods_Factor = 0.03
+			research_spending_cost_factor = 0.05
+			hidden_modifier = {
+				research_spending_cost_factor_from_decisions  = 0.05
+			}
 		}
 	}
 }
@@ -5035,6 +5393,29 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		timeout_effect = {
 			country_event = {
 				id = ita.119
+			}
+		}
+	}
+	ITA_QNG_Far_East_Expedition_part3 = {
+		activation = {
+			always = no
+		}
+		allowed = {
+			original_tag = PIE
+		}
+		available = {
+			always = no
+		}
+		icon = QNG
+		fire_only_once = yes
+		selectable_mission = no
+		ai_will_do = {
+			base = 10
+		}
+		days_mission_timeout = 60
+		timeout_effect = {
+			country_event = {
+				id = ita.120
 			}
 		}
 	}

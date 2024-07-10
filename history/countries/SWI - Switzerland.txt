@@ -5,23 +5,23 @@
 
 	set_convoys = 0
 
-	set_research_slots = 3
+	set_research_slots = 2
 
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		non_monarchical_system
-		parliamentary_republic
+		#non_monarchical_system
+		#parliamentary_republic
 
 		civilian_economy
 		export_focus
-		two_percent
-		low_taxes
+		army_spending_level_2
+		taxation_level_2
 		cl_restricted
-		ten_hour_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -29,24 +29,28 @@
 		limited_equality
 		universal_male_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 
 		open_schools
 		secular_state
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		SWI_The_Neuchatel_Crisis
 		SWI_The_Federal_Constitution
 		SWI_Neutrality
 		SWI_Sonderbund_War
+		SWI_Legacy_Of_Jomini
+		SWI_Trained_Population
+		SWI_Multicultural_nation
+		SWI_Religious_Divide
 	}
 
 	#Foreign Influence
@@ -183,5 +187,13 @@
 	recruit_character = SWI_jean_ulrich_de_salis_soglio
 	recruit_character = SWI_louis_henri_delarageaz
 	recruit_character = SWI_hans_herzog
+	recruit_character = SWI_elie_ducommun
+	recruit_character = SWI_albert_gobat
+	recruit_character = SWI_ludwig_schlafli
+	recruit_character = SWI_antoine_henry_jomini
+	recruit_character = SWI_henry_dunant
+	recruit_character = SWI_louis_wenger
+	recruit_character = SWI_paul_ceresole
+	recruit_character = SWI_johann_jakob_stehlin
 
 }

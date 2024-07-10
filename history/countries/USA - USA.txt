@@ -42,13 +42,10 @@
 			add_to_variable = { var = USA.FNT_raid_likelihood_varSHO value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varNEZ value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varBFT value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varCRW value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varSIX value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varCHY value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varCOM value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varAPA value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varNAV value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varSEM value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varOKL value = 12 }
 
 			# Utah War
@@ -64,7 +61,6 @@
 
 			# Spirits
 			add_ideas = {
-				USA_Spirit_Seminole_War
 				USA_Spirit_Anti_Irish
 				NA_B_Spirit_New_World_Democracies
 				USA_Spirit_Memories_of_Confederation
@@ -81,21 +77,35 @@
 		}
 		### CORES ###
 	}
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.04 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 15 }
+	set_variable = { current_loans_sum = 11 }
+
 	# Laws
 	add_ideas = {
 		#State of the Country
-		hos_is_leader
-		non_monarchical_system
+		#hos_is_leader
+		#non_monarchical_system
 		industrializing
 		victorian_era
 		law_victorian_army
 
 		#Matters of Constitution
-		presidential_republic
-		constitution_adopted
+		#presidential_republic
+		#constitution_adopted
 		free_elections
-		balanced_powers
-		federalist
+		#balanced_powers
+		#federalist
 
 		#Political Liberties
 		open_schools
@@ -114,19 +124,19 @@
 
 		#Economic Policies
 		free_trade
-		very_low_taxes
+		taxation_level_2
 		cl_legal
-		unlimited_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#Internal Budget Laws
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_good_naval_infrastructure
-		five_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_4
+		army_spending_level_4
+		research_spending_level_1
 
 		### National Spirits
 
@@ -334,14 +344,7 @@
 			active = yes
 		}
 
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
+		
 			set_autonomy = {
 				target = UTA
 				autonomous_state = autonomy_organized_incorporated_territory
@@ -375,31 +378,13 @@
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
-				target = COM
+				target = CIM
 				autonomous_state = autonomy_unorganized_territory
 			}
-		}
-		if = {
-			limit = {
-				NOT = { OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				} }
-			}
-			puppet = UTA
-			#puppet = NMX
-			#puppet = ORE
-			#puppet = DAK
-			#puppet = WSH
-			#puppet = MIN
-			#puppet = KNS
-			#puppet = OKL
-		}
 	}
 
 	#Technology
-	set_research_slots = 4
+	set_research_slots = 3
 	set_technology = {
 		#Tribal Techs
 		tribal_carrier_birds = 1
@@ -562,6 +547,7 @@
 		else = { # Legacy tech
 			set_technology = {
 				tech_naval_corvette = 1
+				tech_naval_corvette_1 = 1
 				tech_naval_early_frigate = 1
 				tech_naval_1850_frigate = 1
 				tech_naval_early_gunboat = 1
@@ -640,11 +626,6 @@
 			exporter = USA
 		}
 	}
-	# add_ai_strategy = {
-	# 	type = consider_weak
-	# 	id = "SEM"
-	# 	value = 75
-	# }
 
 	#How to set up initial debt_level
 	#USA = {
@@ -655,6 +636,8 @@
 	# Starting
 	recruit_character = USA_character_winfield_scott
 	recruit_character = USA_character_john_e_wool
+	recruit_character = USA_character_david_e_twiggs
+	recruit_Character = USA_character_persifor_f_smith
 	##########
 	recruit_character = USA_character_george_b_mcclellan
 	recruit_character = USA_character_ulysses_s_grant
@@ -716,17 +699,16 @@
 		}
 		create_equipment_variant = {
 			name = "Frigate Class" #this class shall represent the ships of the USN that might not be much bigger but their armaments sound bigger
-			type = ship_hull_frigate_1
+			type = ship_hull_frigate_0
 			name_group = USA_FRIGATES
 			parent_version = 0
 			modules = {
-				fixed_ship_battery_slot = ship_cannon_battery_1
+				fixed_ship_battery_slot = ship_cannon_battery_0
 				fixed_ship_fire_control_system_slot = fire_control_system_0
 				fixed_ship_engine_slot = ship_engine_sail_1
 				fixed_ship_armor_slot = empty
-				mid_1_custom_slot = ship_cannon_battery_1
-				mid_2_custom_slot = ship_cannon_battery_1
-				mid_3_custom_slot = ship_cannon_battery_1
+				mid_1_custom_slot = ship_cannon_battery_0
+				mid_2_custom_slot = ship_cannon_battery_0
 				front_1_custom_slot = empty
 				rear_1_custom_slot = empty
 			}
@@ -854,13 +836,10 @@
 			add_to_variable = { var = USA.FNT_raid_likelihood_varSHO value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varNEZ value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varBFT value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varCRW value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varSIX value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varCHY value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varCOM value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varAPA value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varNAV value = 12 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_varSEM value = 12 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_varOKL value = 12 }
 
 			# Slavery Debate
@@ -870,7 +849,6 @@
 
 			# Spirits
 			add_ideas = {
-				USA_Spirit_Seminole_War
 				USA_Spirit_Anti_Irish
 				NA_B_Spirit_New_World_Democracies
 				USA_Spirit_Memories_of_Confederation
@@ -890,22 +868,22 @@
 	# Laws
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		non_monarchical_system
-		presidential_republic
-		balanced_powers
-		federalist
+		#non_monarchical_system
+		#presidential_republic
+		#balanced_powers
+		#federalist
 
 		#Economic
 		civilian_economy
 		export_focus
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#Population
 		#stagnation_growth
@@ -914,7 +892,7 @@
 		usa_slavery_law
 		universal_male_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 
 		#Culture
@@ -1050,14 +1028,6 @@
 			active = yes
 		}
 
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
 			set_autonomy = {
 				target = UTA
 				autonomous_state = autonomy_organized_incorporated_territory
@@ -1067,11 +1037,11 @@
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
-				target = ORE
+				target = ASI
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
-				target = DAK
+				target = SHO
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
@@ -1083,31 +1053,25 @@
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
-				target = KNS
+				target = TAF
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
 			set_autonomy = {
 				target = OKL
 				autonomous_state = autonomy_organized_incorporated_territory
 			}
-		}
-		if = {
-			limit = {
-				NOT = { OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				} }
+			set_autonomy = {
+				target = BFT
+				autonomous_state = autonomy_organized_incorporated_territory
 			}
-			puppet = UTA
-			puppet = NMX
-			puppet = ORE
-			puppet = DAK
-			puppet = WSH
-			puppet = MIN
-			puppet = KNS
-			puppet = OKL
-		}
+			set_autonomy = {
+				target = APA
+				autonomous_state = autonomy_organized_incorporated_territory
+			}
+			set_autonomy = {
+				target = ALK
+				autonomous_state = autonomy_organized_incorporated_territory
+			}
 	}
 
 	#Technology
@@ -1428,6 +1392,7 @@
 		else = { # Legacy tech
 			set_technology = {
 				tech_naval_corvette = 1
+				tech_naval_corvette_1 = 1
 				tech_naval_early_frigate = 1
 				tech_naval_1850_frigate = 1
 				tech_naval_early_gunboat = 1
@@ -1505,11 +1470,6 @@
 			amount = 8
 			exporter = USA
 		}
-	}
-	add_ai_strategy = {
-		type = consider_weak
-		id = "SEM"
-		value = 75
 	}
 
 	#How to set up initial debt_level

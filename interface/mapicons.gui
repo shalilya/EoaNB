@@ -36,7 +36,7 @@ guiTypes = {
 		iconType = {
 			name = "counter_ideology"
 			spriteType = "GFX_onmap_unit_counter_ideology"
-			position = { x=45 y=9 }
+			position = { x=37 y=0 }
 			alwaystransparent = yes
 		}
 
@@ -691,6 +691,24 @@ guiTypes = {
 			name = "flag"
 			quadTextureSprite ="GFX_flag_smallest"
 			position = { x= 20 y = -22 }
+		}
+	}
+
+	#### STATE MODIFIER MAP ICON
+
+	containerWindowType = {
+		name = "state_modifier_mapicon"
+		position = { x = 0 y = 0 }
+		size = { width = 0 height = 0 }
+		orientation = center
+
+		gridboxtype = {
+			name = "modifiers_list"
+			position = { x = 0 y = 0 }
+			max_slots_vertical = 1
+			size = { width = 100%% height = 100%% }
+			slotsize = { width = 40 height = 40 }
+			format = "UPPER_LEFT"
 		}
 	}
 

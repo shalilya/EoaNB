@@ -1,27 +1,29 @@
 ﻿1857.1.1 = {
-	capital = 1148
+	capital = 1144
 
-	oob = "afr_1857"
+	oob = "Africa_1857"
 
 	set_convoys = 0
 
 	set_research_slots = 2
-			add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 100 producer = STL }
+	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 100 producer = STL }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 100 producer = STL }
+
+	set_cosmetic_tag = STL_utrecht
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		parliamentary_republic
+		#non_monarchical_system
+		#parliamentary_republic
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -30,18 +32,18 @@
 		slavery
 		parliamentary_suffrage
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_protestant
 
-		 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 

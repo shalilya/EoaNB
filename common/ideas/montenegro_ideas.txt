@@ -28,6 +28,18 @@ ideas = {
 			}
 		}
 		
+			MNT_idea_withheld_taxes = {
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+			line_change_production_efficiency_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		
 		MNT_Montenegrin_Support = {
 			allowed = {
 				always = yes
@@ -283,7 +295,7 @@ ideas = {
 			removal_cost = -1
 			picture = generic_pp_unity_bonus
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				political_power_gain = 0.05
 			}
 			research_bonus = {
@@ -302,7 +314,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				political_power_gain = 0.05
 				production_speed_buildings_factor = 0.03
 			}
@@ -507,7 +519,7 @@ ideas = {
 			picture = MNT_Outdated_Economy
 			
 			modifier = {
-				consumer_goods_factor = 0.25
+				consumer_goods_expected_value = 0.25
                 production_speed_buildings_factor = -0.25
 				line_change_production_efficiency_factor = -0.25
 				production_speed_steel_mill_factor = -0.25
@@ -527,7 +539,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
                 production_speed_buildings_factor = -0.2
 				line_change_production_efficiency_factor = -0.25
 				production_speed_steel_mill_factor = -0.25
@@ -547,7 +559,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.25
 				production_speed_steel_mill_factor = -0.25
@@ -567,7 +579,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.25
 				production_speed_steel_mill_factor = -0.25
@@ -586,7 +598,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.25
 				production_speed_machine_parts_factory_factor = -0.25
@@ -604,7 +616,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.05
 				production_speed_machine_parts_factory_factor = -0.25
@@ -622,7 +634,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.05
 				production_speed_machine_parts_factory_factor = -0.25
@@ -639,7 +651,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
                 production_speed_buildings_factor = -0.15
 				line_change_production_efficiency_factor = -0.05
 				production_speed_machine_parts_factory_factor = -0.25
@@ -653,7 +665,7 @@ ideas = {
 			removal_cost = -1
 			picture = MNT_Outdated_Economy
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
                 production_speed_buildings_factor = -0.1
 				line_change_production_efficiency_factor = -0.05
 				production_speed_machine_parts_factory_factor = -0.15
@@ -773,7 +785,7 @@ ideas = {
 			picture = MNT_crops_export
 				
 			modifier = {
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 				production_speed_buildings_factor = 0.05
             }
 		}
@@ -907,7 +919,7 @@ ideas = {
 				political_power_gain = 0.05
 				trade_opinion_factor = 0.05
 				min_export = 0.03
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 			}
 			targeted_modifier = {
 				tag = AUS
@@ -925,7 +937,7 @@ ideas = {
 				political_power_gain = 0.1
 				trade_opinion_factor = 0.07
 				min_export = 0.05
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 			}
 			targeted_modifier = {
 				tag = AUS
@@ -941,7 +953,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			modifier = {
 				political_power_gain = 0.05
-				consumer_goods_factor =  0.05
+				consumer_goods_expected_value =  0.05
 				supply_consumption_factor = 0.3
 				monthly_population = -0.1
 			}
@@ -1085,7 +1097,7 @@ ideas = {
 			picture = MNT_beef_exports_profit
 			
 			modifier = {
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 		}
 	   
@@ -1416,7 +1428,7 @@ ideas = {
 				max_dig_in = 6
 				production_speed_bunker_factor = 0.60
 				political_power_gain = -0.15
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		}
 		   
@@ -1431,7 +1443,7 @@ ideas = {
 				max_dig_in = 6
 				production_speed_bunker_factor = 0.85
 				political_power_gain = -0.15
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		 }
 		   
@@ -1446,7 +1458,7 @@ ideas = {
 				max_dig_in = 6
 				production_speed_bunker_factor = 1
 				political_power_gain = -0.15
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 			}
 		}
 		   
@@ -1461,7 +1473,7 @@ ideas = {
 				max_dig_in = 10
 				production_speed_bunker_factor = 0.75
 				political_power_gain = -0.15
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		}
 		   
@@ -1928,5 +1940,145 @@ ideas = {
 			political_power_gain = 0.025
 			}
 		}
+			MNT_workshop_manual_production_of_weapons  = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+			production_factory_max_efficiency_factor = -0.35
+			production_lack_of_resource_penalty_factor = -0.2
+			}
+		}
+		
+			MNT_repaying_Ottoman_debt  = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = MNT_oto_debt
+			
+			modifier = {
+			consumer_goods_factor = 0.1
+			production_factory_max_efficiency_factor = -0.20
+			production_speed_buildings_factor = -0.20
+			}
+		}
 	}	
+	hidden_ideas = {
+	
+			AUS_arms_export_to_montenegro_1 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.01
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.01
+			custom_modifier_tooltip = loss_of_15_rifles_per_month_m
+			}
+		}
+		
+			AUS_arms_export_to_montenegro_2 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.02
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.02
+			custom_modifier_tooltip = loss_of_30_rifles_per_month_m
+			}
+		}
+		
+			AUS_arms_export_to_montenegro_3 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.03
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.03
+			custom_modifier_tooltip = loss_of_45_rifles_per_month_m
+			}
+		}
+		
+			AUS_arms_export_to_herzegovina_1 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.01
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.01
+			custom_modifier_tooltip = loss_of_15_rifles_per_month
+			}
+		}
+		
+			AUS_arms_export_to_herzegovina_2 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.02
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.02
+			custom_modifier_tooltip = loss_of_30_rifles_per_month
+			}
+		}
+		
+			AUS_arms_export_to_herzegovina_3 = {
+			
+			allowed = {
+			     always = yes
+			}
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			research_bonus = {
+			rifle_equipment_techs = 0.03
+			}
+			modifier = {
+			production_speed_buildings_factor = 0.03
+			custom_modifier_tooltip = loss_of_45_rifles_per_month
+			}
+		}
+	}
 }

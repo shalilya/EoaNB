@@ -288,11 +288,6 @@ WVG_reformed_virginia = {
 	color_ui = rgb { 135 85 55 }
 }
 
-PHL_USA_state = {
-	color = rgb { 86 104 160 }
-	color_ui = rgb { 86 104 180 }
-}
-
 MHC_USA_state = {
 	color = rgb { 86 104 160 }
 	color_ui = rgb { 86 104 180 }
@@ -389,16 +384,6 @@ NMX_USA_state = {
 }
 
 CHY_USA_state = {
-	color = rgb { 86 104 160 }
-	color_ui = rgb { 86 104 180 }
-}
-
-CRW_USA_state = {
-	color = rgb { 86 104 160 }
-	color_ui = rgb { 86 104 180 }
-}
-
-CRW_USA_state = {
 	color = rgb { 86 104 160 }
 	color_ui = rgb { 86 104 180 }
 }
@@ -594,6 +579,10 @@ NVS_Nova_Scotia_Colony_Cosmetic = {
 	color = rgb { 145  37  50 }
 	color_ui = rgb { 145  37  50 }
 }
+NZL_UK = {
+	color = rgb { 176 0 0  }
+	color_ui = rgb { 176 0 0  }
+}
 NAT_UK = {
 	color = rgb { 201 56 93 }
 	color_ui = rgb { 201 56 93 }
@@ -643,6 +632,10 @@ ORE_US = {
 	color_ui = rgb { 20 133 237 }
 }
 WSH_US = {
+	color = rgb { 20 133 237 }
+	color_ui = rgb { 20 133 237 }
+}
+NMX_US = {
 	color = rgb { 20 133 237 }
 	color_ui = rgb { 20 133 237 }
 }

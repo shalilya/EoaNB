@@ -10,23 +10,25 @@
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 2000 producer = NMX }
 	add_equipment_to_stockpile = { type = cannon_equipment_0 amount = 250 producer = NMX }
 
+	set_cosmetic_tag = NMX_US
+
 	add_ideas = {
 
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		non_monarchical_system
-		presidential_republic
+		#non_monarchical_system
+		#presidential_republic
 
 		civilian_economy
 		export_focus
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -34,18 +36,18 @@
 		usa_slavery_law
 		universal_male_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 
 		open_schools
 		secular_state
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		NA_B_early_scale_railways
@@ -97,5 +99,5 @@
 	}
 
 	## Political Leaders
-	recruit_character = NMX_abraham_rencher
+	recruit_character = NMX_william_davis
 }

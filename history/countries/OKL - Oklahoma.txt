@@ -3,26 +3,26 @@
 
 	set_convoys = 0
 
-	set_research_slots = 1
+	set_research_slots = 2
 
 	set_cosmetic_tag = OKL_US
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		chiefdom
+		#non_monarchical_system
+		#chiefdom
 	law_army_tribal_advanced
 
 		civilian_economy
 		limited_exports
-		two_percent
-		very_low_taxes
+		army_spending_level_2
+		taxation_level_2
 	cl_legal
-	lp_tribal_communalism
+	
 
 		#stagnation_growth
 		no_borders
@@ -30,18 +30,18 @@
 
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		oral_tradition
 		theocratic_state
 	#religion_shamanism
 
-	 hc_no_healthcare
-		law_mercenary_groups
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_1
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 			FN_T_nomadic_tribal_nation
@@ -57,7 +57,7 @@
 	}
 
 	set_politics = {
-		ruling_party = fundamentalism
+		ruling_party = traditional_conservatism
 }
 
 set_popularities = {
@@ -66,11 +66,11 @@ set_popularities = {
 		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
-		traditional_conservatism = 0
+		traditional_conservatism = 100
 		radical_democracy = 0
 		chauvinist_populism = 0
 		autocracy = 0
-		fundamentalism = 100
+		fundamentalism = 0
 }
 
 	set_technology = {
@@ -90,5 +90,7 @@ set_popularities = {
 
 	# POLITICAL LEADERS
 
-	recruit_character = OKL_character_council_of_oklahoma
+	recruit_character = OKL_james_denver
+	recruit_character = OKL_charles_mix
+	recruit_character = OKL_alfred_greenwood
 }

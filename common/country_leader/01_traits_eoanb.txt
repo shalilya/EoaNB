@@ -225,7 +225,7 @@ leader_traits = {
 	oil_magnate = {
 		random = yes
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		production_oil_factor = 0.05
 
 		ai_will_do = {
@@ -236,7 +236,7 @@ leader_traits = {
 	clever_buisnessman = {
 		random = yes
 		
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 
 		ai_will_do = {
 			factor = 1
@@ -246,7 +246,7 @@ leader_traits = {
 	libertarian_economist = {
 		random = yes
 
-		consumer_goods_factor = -0.15
+		consumer_goods_expected_value = -0.15
 		political_power_factor = -0.05
 		war_support_factor = -0.05
 	}
@@ -306,7 +306,7 @@ leader_traits = {
 	administrative_genius = {
 		random = yes
 		
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 
 		ai_will_do = {
 			factor = 1
@@ -382,7 +382,7 @@ leader_traits = {
 	friend_of_capitalism = {
 		random = yes
 		
-		consumer_goods_factor = -0.1
+		consumer_goods_expected_value = -0.1
 		political_power_factor = -0.15
 
 		ai_will_do = {
@@ -393,7 +393,7 @@ leader_traits = {
 	aristocrat = {
 		random = yes
 
-		consumer_goods_factor = 0.1
+		consumer_goods_expected_value = 0.1
 		political_power_factor = 0.15
 
 		ai_will_do = {
@@ -498,7 +498,7 @@ leader_traits = {
 		random = no
 		
 		political_power_factor = -0.05  
-		consumer_goods_factor = -0.1
+		consumer_goods_expected_value = -0.1
 		
 		ai_will_do = {
 			factor = 1
@@ -557,7 +557,7 @@ leader_traits = {
 
 		trade_laws_cost_factor = -0.33
 		trade_opinion_factor = 0.25
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = {
 			factor = 1
@@ -575,6 +575,33 @@ leader_traits = {
 		        }
 	        }
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	eoanb_fra_governor_senegal = {
+		random = no
+
+		political_power_factor = 0.01
+		acclimatization_hot_climate_gain_factor = 0.1
+		heat_attrition = -0.25
+		supply_consumption_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	eoanb_fra_governor_algeria = {
+		random = no
+
+		political_power_factor = 0.01
+		production_speed_farm_factor = 0.05
+		non_core_manpower = 0.02
+		resistance_damage_to_garrison = -0.05 
+
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -613,6 +640,29 @@ leader_traits = {
 		drift_defence_factor = 0.1
 		political_advisor_cost_factor = -0.1
 		resistance_growth = -0.5
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ruler_trait_stabilizing_figure = {
+		random = no
+		
+		political_power_factor = 0.1
+		stability_factor = 0.15
+		stability_weekly = 0.001
+		political_advisor_cost_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ruler_trait_magnanimus = {
+		random = no
+		
+		research_speed_factor = 0.1
 
 		ai_will_do = {
 			factor = 1
@@ -782,7 +832,7 @@ leader_traits = {
 	eoanb_philanthropist = {
 		random = no
 
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		stability_factor = 0.15
 
 		ai_will_do = {
@@ -1028,7 +1078,7 @@ leader_traits = {
 		
 		production_speed_steel_mill_factor = 0.04
 		production_speed_machine_parts_factory_factor = 0.04
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = { factor = 5 }
 	}
@@ -1055,7 +1105,7 @@ leader_traits = {
 	AUS_trait_Anselm_Salomon_von_Rothschild = {
 		random = no
 		
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		trade_opinion_factor = 0.15
 		
 		ai_will_do = { factor = 8 }
@@ -1098,7 +1148,7 @@ leader_traits = {
 		
 		research_speed_factor = 0.01
 		monthly_population = 0.1
-		consumer_goods_factor = 0.05
+		consumer_goods_expected_value = 0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1107,7 +1157,7 @@ leader_traits = {
 		random = no
 		
 		research_speed_factor = 0.02
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		
 		ai_will_do = { factor = 3 }
 	}
@@ -1199,7 +1249,7 @@ leader_traits = {
 		
 		political_power_gain = 0.05
 		industrial_capacity_dockyard = 0.03
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 
 		ai_will_do = { factor = 1 }
 	}
@@ -1217,7 +1267,7 @@ leader_traits = {
 	GRE_trait_aristeidis_dosios = {
 		random = no
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		trade_laws_cost_factor = -0.05
 		political_power_factor = 0.03
 		stability_factor = -0.03
@@ -1247,8 +1297,55 @@ leader_traits = {
 	GRE_trait_karl_johann_fix = {
 		random = no
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		monthly_population = -0.02
+
+		ai_will_do = { factor = 1 }
+	}
+
+	GRE_trait_emmanuel_han = {
+		random = no
+		
+		army_org_factor = 0.025
+		max_dig_in_factor = -0.1
+
+		ai_will_do = { factor = 1 }
+	}
+
+	GRE_trait_leonidas_smolents = {
+		random = no
+
+		experience_gain_army = 0.05
+
+		ai_will_do = { factor = 1 }
+	}
+
+	GRE_trait_Christodoulos_Hatzipetros = {
+		random = no
+
+		coordination_bonus = -0.1
+		experience_loss_factor = -0.15
+		land_night_attack = 0.15
+
+		ai_will_do = { factor = 1 }
+	}
+
+	GRE_trait_Dimitrios_Skalistiris = {
+		random = no
+
+		production_speed_infrastructure_factor = 0.05	
+		production_speed_supply_node_factor = 0.05	
+		production_speed_arms_factory_factor = -0.1
+
+		ai_will_do = { factor = 1 }
+	}
+	
+	GRE_trait_lysandros_kaftanzoglou = {
+		random = no
+
+		stability_factor = 0.05
+		production_speed_buildings_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
 
 		ai_will_do = { factor = 1 }
 	}
@@ -1295,7 +1392,7 @@ leader_traits = {
 		
 		monthly_population = 0.01
 		production_speed_farm_factor = 0.05
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1305,7 +1402,7 @@ leader_traits = {
 		
 		political_power_gain = 0.5 
 		research_speed_factor = 0.01
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1341,7 +1438,7 @@ leader_traits = {
 	ROM_trait_Great_Compromiser = {
 		random = no
 
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 		stability_factor = 0.05
 		
 		ai_will_do = { factor = 1 }
@@ -1372,9 +1469,24 @@ leader_traits = {
 	RUS_trait_Imperial_Finance_Minister = {
 		random = no
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		trade_laws_cost_factor = -0.05
 		political_power_gain = -0.1
+	}
+
+	RUS_trait_Advocate_For_Peasant_Emancipation = {
+		random = no
+
+		stability_factor = 0.05
+		monthly_population = 0.05
+		consumer_goods_expected_value = -0.01
+	}
+
+	RUS_trait_Liberal_Education_Reformer = {
+		random = no
+
+        research_speed_factor = 0.03
+	    centrism_drift = 0.01
 	}
 	
 	RUS_trait_Marian_Albertovich_Kowalski = {
@@ -1403,7 +1515,7 @@ leader_traits = {
 	RUS_trait_Artemy_Yakovlevich_Tereshchenko = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		production_factory_max_efficiency_factor = 0.03
 		stability_factor = 0.03
 	}
@@ -1429,7 +1541,7 @@ leader_traits = {
 		
 		production_speed_buildings_factor = 0.03
 		production_speed_cotton_farm_factor = 0.03
-		consumer_goods_factor = 0.03
+		consumer_goods_expected_value = 0.03
 	}
 	
 	RUS_trait_Nikolay_Putilov = {
@@ -1438,7 +1550,7 @@ leader_traits = {
 		production_speed_industrial_complex_factor = 0.02
 		production_speed_steel_mill_factor = 0.04
 		production_speed_machine_parts_factory_factor = 0.04
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 	}
 	
 	RUS_trait_Eduard_Ivanovich_Gerstfeld = {
@@ -1446,7 +1558,7 @@ leader_traits = {
 		
 		production_speed_rail_way_factor = 0.05
 		production_speed_infrastructure_factor = 0.05
-		consumer_goods_factor = 0.05
+		consumer_goods_expected_value = 0.05
 	}
 	
 	RUS_trait_Vasily_Ivanovich_Berkov = {
@@ -1454,7 +1566,7 @@ leader_traits = {
 		
 		industrial_capacity_dockyard = 0.05
 		industrial_capacity_factory = 0.05
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 	}
 	
 	RUS_trait_Nikolai_Arkas = {
@@ -1483,7 +1595,7 @@ leader_traits = {
 	RUS_trait_Horace_Gunzburg = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		trade_opinion_factor = 0.1
 	}
 	
@@ -1499,8 +1611,39 @@ leader_traits = {
 		
 		political_power_factor = 0.03
 		political_power_gain = 0.05
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		opinion_gain_monthly_same_ideology_factor = 0.2
+	}
+	RUS_trait_Konstantin_Groth = {
+		random = no
+		
+		consumer_goods_expected_value = -0.01
+		political_power_factor = 0.05
+	}
+	RUS_trait_reformist_education_minister = {
+		random = no
+
+		research_speed_factor = 0.05
+		stability_factor = 0.05
+	}
+	RUS_trait_conservative_education_minister = {
+		random = no
+
+		research_speed_factor = 0.02
+		autocracy_drift = 0.01
+	}
+	RUS_trait_reformist_justice_minister = {
+		random = no
+
+		political_power_cost = -0.05
+		drift_defence_factor = 0.1
+	}
+	RUS_trait_reformist_dictator = {
+		random = no
+
+		political_power_cost = 0.15
+		drift_defence_factor = 0.3
+		centrism_drift = 0.01
 	}
 	
 	### Prussian/German Leader Traits ###
@@ -1523,26 +1666,25 @@ leader_traits = {
 		random = no
 		production_speed_infrastructure_factor = 0.05
 		production_speed_rail_way_factor = 0.15
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 10 }
 	}
 
 	PRS_trait_Alexander_von_Humboldt = {
 		random = no
-		political_power_factor = 0.05
+		political_power_factor = 0.06
 		research_speed_factor = 0.02
 
-		
 		ai_will_do = { factor = 6 }
 	}
 	
 	PRS_trait_Alexander_von_Schleinitz = {
 		random = no
 		political_power_factor = -0.02
-		opinion_gain_monthly_factor = 0.15
-		trade_opinion_factor = 0.15
-		centrism_drift = 0.05
+		opinion_gain_monthly_factor = 0.2
+		trade_opinion_factor = 0.2
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1560,43 +1702,43 @@ leader_traits = {
 		political_power_factor = 0.07
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		ideology_radical_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
 	
 	PRS_trait_August_von_der_Heydt = {
 		random = no
-		consumer_goods_factor = -0.05
-		traditional_conservatism_drift = 0.05
+		consumer_goods_expected_value = -0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
 	
 	PRS_trait_Carl_von_Bodelschwingh = {
 		random = no
-		trade_laws_cost_factor = -0.05
-        political_power_factor = -0.05	
-        stability_factor = 0.05
+		trade_laws_cost_factor = -0.1
+		political_power_factor = -0.03
+		stability_factor = 0.05
 		
 		ai_will_do = { factor = 5 }
 	}
 	
 	PRS_trait_Ernst_Gerlach = {
 		random = no
-		political_power_factor = 0.05
+		political_power_factor = 0.03
 		war_support_factor = 0.02
 		opinion_gain_monthly_same_ideology_factor = 0.15
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 5 }
 	}
 	
 	PRS_trait_Ernst_Moritz_Arndt = {
 		random = no
-		political_power_factor = 0.08
-		war_support_factor = 0.02
-		mobilization_speed = 0.03
+		political_power_factor = 0.05
+		war_support_factor = 0.04
+		mobilization_speed = 0.05
 		
 		ai_will_do = { factor = 5 }
 	}
@@ -1606,7 +1748,7 @@ leader_traits = {
 		political_power_factor = 0.08
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		social_egalitarianism_drift = 0.05
+		social_egalitarianism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1616,25 +1758,25 @@ leader_traits = {
 		political_power_factor = -0.02
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
 	
 	PRS_trait_Friedrich_Raiffeisen = {
 		random = no
-		political_power_factor = -0.07
-		consumer_goods_factor = -0.05
-		social_egalitarianism_drift = 0.05
+		political_power_factor = -0.1
+		consumer_goods_expected_value = -0.07
+		social_egalitarianism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
 	
 	PRS_trait_Friedrich_Stahl = {
 		random = no
-		political_power_factor = 0.1
-		stability_factor = 0.01
-		traditional_conservatism_drift = 0.05
+		political_power_factor = 0.05
+		stability_factor = 0.02
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 5 }
 	}
@@ -1643,25 +1785,25 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.05
 		opinion_gain_monthly_factor = 0.25
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 5 }
 	}
 	
 	PRS_trait_Friedrich_von_Wrangel = {
 		random = no
-		political_power_factor = -0.03
-		training_time_factor = -0.1
+		political_power_factor = -0.05
+		training_time_factor = -0.15
 		war_support_factor = 0.05
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 2 }
 	}
 	
 	PRS_trait_Friedrich_zu_Eulenburg = {
 		random = no
-		political_power_factor = 0.1
-		stability_factor = 0.02
+		political_power_factor = 0.08
+		stability_factor = 0.03
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -1670,7 +1812,7 @@ leader_traits = {
 		random = no
 		political_power_gain = 0.015
 		political_power_factor = 0.03
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1680,7 +1822,7 @@ leader_traits = {
 		political_power_factor = -0.03
 		stability_factor = 0.03
 		stability_weekly = 0.001
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1689,8 +1831,8 @@ leader_traits = {
 		random = no
 		political_power_factor = -0.05
 		production_speed_infrastructure_factor = 0.05
-		production_speed_rail_way_factor = 0.05
-		traditional_conservatism_drift = 0.05
+		production_speed_rail_way_factor = 0.1
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 2 }
 	}
@@ -1698,10 +1840,10 @@ leader_traits = {
 	PRS_trait_Hermann_Schulze_Delitzsch = {
 		random = no
 		political_power_factor = 0.05
-		consumer_goods_factor = 0.04
+		consumer_goods_expected_value = 0.03
 		stability_factor = 0.02
 		stability_weekly = 0.001
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1716,25 +1858,25 @@ leader_traits = {
 	PRS_trait_James_Hobrecht = {
 		random = no
 		production_speed_infrastructure_factor = 0.05
-		production_speed_industrial_complex_factor = 0.05
+		production_speed_industrial_complex_factor = 0.03
 		
 		ai_will_do = { factor = 3 }
 	}
 	
 	PRS_trait_Johannes_Quistorp = {
 		random = no
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.01
 		stability_factor = 0.01
-		production_speed_buildings_factor = 0.03
+		production_speed_buildings_factor = 0.02
 		
 		ai_will_do = { factor = 3 }
 	}
 	
 	PRS_trait_Ludwig_Bamberger = {
 		random = no
-		consumer_goods_factor = -0.1
+		consumer_goods_expected_value = -0.1
 		political_power_factor = -0.15
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1744,7 +1886,7 @@ leader_traits = {
 		political_power_factor = 0.03
 		stability_factor = 0.02
 		war_support_factor = 0.02
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1753,25 +1895,26 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.05
 		production_speed_buildings_factor = 0.03
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
 	
 	PRS_trait_Moritz_Bethmann_Hollweg = {
 		random = no
-		political_power_factor = 0.07
+		political_power_factor = 0.03
 		war_support_factor = 0.03
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
 	
 	PRS_trait_Rudolf_Virchow = {
 		random = no
+		political_power_factor = 0.03
 		research_speed_factor = 0.03
-		consumer_goods_factor = 0.01
-		ideology_social_liberalism_drift = 0.05
+		consumer_goods_expected_value = 0.01
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 3 }
 	}
@@ -1780,7 +1923,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.03
 		research_speed_factor = 0.01
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 2 }
 	}
@@ -1788,17 +1931,17 @@ leader_traits = {
 	PRS_trait_Werner_Siemens = {
 		random = no
 		production_speed_industrial_complex_factor = 0.05
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		
 		ai_will_do = { factor = 10 }
 	}
 	
 	PRS_trait_Wilhelm_Liebknecht = {
 		random = no
-		political_power_factor = 0.06
+		political_power_factor = 0.05
 		stability_factor = 0.01
 		stability_weekly = 0.001
-		ideology_radical_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1809,6 +1952,16 @@ leader_traits = {
 		agency_upgrade_time = -0.15
 		
 		ai_will_do = { factor = 1 }
+	}
+
+	### Luxembourg Advisor Traits ###
+	
+	LUX_trait_Jean_Jacques_Willmar = {
+		random = no
+		political_power_factor = 0.02
+		
+		
+		ai_will_do = { factor = 3 }
 	}
 
 	### Saxon Leader Traits ###
@@ -1825,7 +1978,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.02
 		trade_opinion_factor = 0.2
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = { factor = 3 }
 	}
@@ -1834,7 +1987,7 @@ leader_traits = {
 		random = no
 		political_power_factor = -0.02
 		monthly_population = 0.02
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 4 }
 	}
@@ -1843,7 +1996,7 @@ leader_traits = {
 		random = no
 		production_speed_buildings_factor = 0.02
 		political_power_factor = 0.04
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 4 }
 	}
@@ -1853,7 +2006,7 @@ leader_traits = {
 		political_power_factor = 0.07
 		opinion_gain_monthly_factor = 0.1
 		opinion_gain_monthly_same_ideology_factor = 0.2
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 12 }
 	}
@@ -1870,7 +2023,7 @@ leader_traits = {
 		random = no
 		production_speed_infrastructure_factor = 0.03
 		production_speed_rail_way_factor = 0.15
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 6 }
 	}
@@ -1881,7 +2034,7 @@ leader_traits = {
 		opinion_gain_monthly_same_ideology_factor = 0.15
 		war_support_factor = 0.05
 		war_support_weekly_factor = 0.1
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1899,7 +2052,7 @@ leader_traits = {
 		political_power_gain = 0.02
 		political_power_factor = 0.03
 		stability_weekly = 0.001
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -1908,7 +2061,7 @@ leader_traits = {
 		random = no
 		political_power_gain = 0.01
 		political_power_factor = 0.04
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 3 }
 	}
@@ -1918,7 +2071,7 @@ leader_traits = {
 		political_power_factor = 0.05
 		drift_defence_factor = -0.1
 		stability_weekly = 0.001
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 2 }
 	}
@@ -1927,7 +2080,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.08
 		drift_defence_factor = 0.15
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 2 }
 	}
@@ -1944,7 +2097,7 @@ leader_traits = {
 		political_power_factor = 0.02
 		drift_defence_factor = 0.1
 		war_support_weekly_factor = 0.25
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -1963,7 +2116,7 @@ leader_traits = {
 		production_speed_industrial_complex_factor = 0.02
 		production_speed_steel_mill_factor = 0.04
 		production_speed_machine_parts_factory_factor = 0.04
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -1971,9 +2124,9 @@ leader_traits = {
 	SAX_trait_Richard_von_Friesen = {
 		random = no
 		political_power_factor = 0.03
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		trade_opinion_factor = 0.05
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -1981,7 +2134,7 @@ leader_traits = {
 	SAX_trait_Wilhelm_Pfotenhauer = {
 		random = no
 		production_speed_industrial_complex_factor = 0.05
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 8 }
 	}
@@ -2000,7 +2153,7 @@ leader_traits = {
 	
 	FIN_trait_Carl_Magnus_Dahlstrom = {
 		random = no
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		trade_opinion_factor = 0.02
 		trade_laws_cost_factor = -0.05
 		ai_will_do = { factor = 5 }
@@ -2016,7 +2169,7 @@ leader_traits = {
 	FIN_trait_Carl_Robert_Mannerheim = {
 		random = no
 		political_power_gain = 0.05
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		production_speed_logging_camp_factor = 0.05
 		ai_will_do = { factor = 5 }
 	}
@@ -2054,7 +2207,7 @@ leader_traits = {
 		stability_factor = -0.15
 		justify_war_goal_time = 0.1
 		political_power_factor = -0.02
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		trade_opinion_factor = 0.1
 		
 		ai_will_do = { factor = 5 }
@@ -2065,7 +2218,7 @@ leader_traits = {
 		weekly_manpower = -100
 		stability_factor = -0.15
 		political_power_factor = -0.02
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		trade_opinion_factor = 0.2
 		
 		ai_will_do = { factor = 5 }
@@ -2092,7 +2245,7 @@ leader_traits = {
 		random = no
 		production_speed_fabric_weavery_factor = 0.05
 		production_speed_cotton_farm_factor = 0.05
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2112,7 +2265,7 @@ leader_traits = {
 		trade_laws_cost_factor = -0.05
         political_power_factor = 0.05
         stability_factor = 0.05
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 6 }
 	}
@@ -2122,7 +2275,7 @@ leader_traits = {
 		political_power_factor = 0.05
 		political_power_gain = 0.02
 		trade_opinion_factor = 0.1
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 6 }
 	}
@@ -2130,7 +2283,7 @@ leader_traits = {
 	DEN_trait_Anker_Heegaard = {
 		random = no
 		trade_laws_cost_factor = -0.2
-        consumer_goods_factor = -0.03
+        consumer_goods_expected_value = -0.03
 		min_export = 0.05
 		trade_opinion_factor = 0.15
 		
@@ -2145,14 +2298,14 @@ leader_traits = {
 		production_speed_arms_factory_factor = 0.05
 		production_speed_bunker_factor = 0.25
 		production_speed_coastal_bunker_factor = 0.25
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 7 }
 	}
 	
 	DEN_trait_Carl_Frederik_Tietgen = {
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		production_speed_industrial_complex_factor = 0.05
 		
 		ai_will_do = { factor = 8 }
@@ -2163,8 +2316,8 @@ leader_traits = {
 		political_power_factor = 0.1
 		stability_weekly = 0.001
 		opinion_gain_monthly_factor = 0.2
-		consumer_goods_factor = 0.03
-		traditional_conservatism_drift = 0.05
+		consumer_goods_expected_value = 0.03
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2180,10 +2333,10 @@ leader_traits = {
 	DEN_trait_Jacob_Christian_Jacobsen = {
 		random = no
 		production_speed_industrial_complex_factor = 0.03
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		research_speed_factor = 0.01
 		political_power_factor = 0.05
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2194,14 +2347,14 @@ leader_traits = {
 		stability_weekly = 0.001
 		stability_factor = 0.03
 		local_resources_factor = 0.03
-		ideology_social_liberalism_drift = 0.05
+		ideology_social_liberalism_drift = 0.02
 		
 		ai_will_do = { factor = 3 }
 	}
 	
 	DEN_trait_Johan_Fridolin_Hassel = {
 		random = no
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		production_speed_machine_parts_factory_factor = 0.1
 		
 		ai_will_do = { factor = 5 }
@@ -2211,7 +2364,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.1
 		research_speed_factor = 0.02
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 8 }
 	}
@@ -2221,7 +2374,7 @@ leader_traits = {
 		political_power_factor = 0.06
 		stability_factor = 0.01
 		stability_weekly = 0.001
-		ideology_radical_socialism_drift = 0.05
+		ideology_radical_socialism_drift = 0.02
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -2239,8 +2392,8 @@ leader_traits = {
 		political_power_factor = 0.03
 		political_power_gain = 0.01
 		war_support_factor = 0.05
-		consumer_goods_factor = -0.02
-		centrism_drift = 0.05
+		consumer_goods_expected_value = -0.02
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 9 }
 	}
@@ -2256,7 +2409,7 @@ leader_traits = {
 	
 	SWE_trait_Goran_Fredrik_Goransson = {
 		random = no
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		production_speed_steel_mill_factor = 0.1
 		production_speed_machine_parts_factory_factor = 0.1
 		
@@ -2273,7 +2426,7 @@ leader_traits = {
 	SWE_trait_Andre_Oscar_Wallenberg = {
 		random = no
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		stability_factor = 0.05
 		political_power_gain = -0.05
 		ai_will_do = { factor = 5 }
@@ -2313,7 +2466,7 @@ leader_traits = {
 	SWE_trait_Henrik_Gerhard_Lagerstrale = {
 		random = no
 		
-		consumer_goods_factor = 0.02
+		consumer_goods_expected_value = 0.02
 		stability_factor = 0.05
 		centrism_drift = 0.05
 		
@@ -2325,7 +2478,7 @@ leader_traits = {
 	SWE_trait_Pehr_von_Ehrenheim = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		trade_opinion_factor = 0.05
 		subjects_autonomy_gain = 0.05
 		
@@ -2337,7 +2490,7 @@ leader_traits = {
 	SWE_trait_Carl_Fredrik_Waern = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		trade_opinion_factor = 0.05
 		centrism_drift = 0.05
 		
@@ -2349,7 +2502,7 @@ leader_traits = {
 	SWE_trait_Lave_Beck_Friis = {
 		random = no
 		
-		consumer_goods_factor = 0.01
+		consumer_goods_expected_value = 0.01
 		opinion_gain_monthly_factor = 0.05
 		
 		ai_will_do = {
@@ -2381,7 +2534,7 @@ leader_traits = {
 	SWE_trait_Johan_August_Gripenstedt = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		trade_opinion_factor = 0.05
 		min_export = 0.05
 		production_speed_rail_way_factor = 0.05
@@ -2451,7 +2604,7 @@ leader_traits = {
 	NOR_trait_banker = {
 		random = no
 
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 
 		ai_will_do = { factor = 1 }
 	}
@@ -2468,7 +2621,7 @@ leader_traits = {
 	NOR_trait_merchant = {
 		random = no
 
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		trade_opinion_factor = 0.05
 		
 		ai_will_do = { factor = 1 }
@@ -2479,7 +2632,7 @@ leader_traits = {
 
 		production_speed_buildings_factor = 0.05
 		political_power_factor = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		stability_weekly = -0.005
 		
 		ai_will_do = { factor = 1 }
@@ -2524,12 +2677,12 @@ leader_traits = {
 
 	NOR_trait_et_dukkehjem = {
 		production_speed_buildings_factor = 0.05
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 	}
 
 	NOR_trait_hero_of_working_man = {
 		production_speed_buildings_factor = 0.15
-		consumer_goods_factor = 0.04
+		consumer_goods_expected_value = 0.04
 	}
 
 	NOR_trait_hjemmets_dikter = {
@@ -2560,7 +2713,7 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.08
 		drift_defence_factor = 0.15
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2570,7 +2723,7 @@ leader_traits = {
 		production_speed_infrastructure_factor = 0.03
 		production_speed_steel_mill_factor = 0.03
 		production_speed_machine_parts_factory_factor = 0.03
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2579,14 +2732,14 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.1
 		drift_defence_factor = -0.05
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
 	
 	BAD_trait_Friedrich_Engelhorn = {
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2596,7 +2749,7 @@ leader_traits = {
 		political_power_factor = 0.05
 		political_power_gain = 0.03
 		trade_opinion_factor = 0.15
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2606,7 +2759,7 @@ leader_traits = {
 		army_morale_factor = 0.05
 		experience_gain_army_factor = 0.05
 		opinion_gain_monthly_same_ideology_factor = 0.15
-		traditional_conservatism_drift = 0.05
+		traditional_conservatism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2632,14 +2785,14 @@ leader_traits = {
 		political_power_gain = 0.05
 		drift_defence_factor = 0.15
 		opinion_gain_monthly_factor = 0.2
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
 	
 	BAD_trait_Karl_Benz = {
 		random = no
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2648,7 +2801,7 @@ leader_traits = {
 		random = no
 		political_advisor_cost_factor = -0.05
 		political_power_factor = 0.05
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2658,7 +2811,7 @@ leader_traits = {
 		political_power_factor = 0.07
 		production_speed_infrastructure_factor = 0.1
 		production_speed_rail_way_factor = 0.05
-		centrism_drift = 0.05
+		centrism_drift = 0.02
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2675,7 +2828,7 @@ leader_traits = {
 	
 	QNG_trait_Zuo_Zongtang = {
 		random = no
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		local_resources_factor = 0.03
 		production_speed_farm_factor = 0.05
 		
@@ -2687,6 +2840,25 @@ leader_traits = {
 		political_power_gain = 0.05
 		stability_factor = 0.1
 		
+		ai_will_do = { factor = 10 }
+	}
+
+	QNG_trait_prince_gong = {
+		random = no
+		stability_factor = -0.01
+		consumer_goods_expected_value = -0.05
+		production_speed_buildings_factor = 0.1
+		power_balance_weekly = 0.001
+
+		ai_will_do = { factor = 10 }
+	}
+
+	QNG_trait_weng_tonghe = {
+		random = no
+		research_speed_factor = 0.05
+		stability_weekly = 0.01
+		political_power_gain = 0.15
+
 		ai_will_do = { factor = 10 }
 	}
 	
@@ -2715,10 +2887,11 @@ leader_traits = {
 		ai_will_do = { factor = 10 }
 	}
 	
-	QNG_trait_Keying = {
+	QNG_trait_cixi = {
 		random = no
-		improve_relations_maintain_cost_factor = 0.1
-		opinion_gain_monthly_factor = 0.05
+		political_power_gain = -0.25
+		political_advisor_cost_factor = 1.5
+		power_balance_weekly = -0.005
 		
 		ai_will_do = { factor = 10 }
 	}
@@ -2829,7 +3002,7 @@ leader_traits = {
 
 	SER_trait_misha_anastasijevic = {
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		political_power_factor = 0.15
 		traditional_conservatism_drift = 0.05
 
@@ -2841,7 +3014,7 @@ leader_traits = {
 	SER_trait_felix_hoffman = {
 		random = no
 		production_factory_efficiency_gain_factor = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 
 		ai_will_do = { 
 			factor = 10 
@@ -2887,7 +3060,7 @@ leader_traits = {
 	SER_trait_sima_andreevic = {
 		random = no
 
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		production_speed_buildings_factor = 0.02
 		political_power_gain = 0.05
 
@@ -2899,7 +3072,7 @@ leader_traits = {
 	SER_trait_konstantin_cukic = {
 		random = no
 
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		trade_laws_cost_factor = -0.05
         political_power_factor = -0.05	
 
@@ -3047,7 +3220,7 @@ leader_traits = {
 	
 	MNT_diplomat_and_treasury_keeper= {
         opinion_gain_monthly = 0.01
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		production_speed_buildings_factor = 0.025
 		
 		random = no
@@ -3330,7 +3503,7 @@ leader_traits = {
 		political_power_factor = 0.1
 		war_support_factor = 0.15
 		party_popularity_stability_factor = 0.5
-		consumer_goods_factor = 0.05
+		consumer_goods_expected_value = 0.05
 		political_advisor_cost_factor = -0.3
 		compliance_growth = 0.1
 
@@ -3365,7 +3538,7 @@ leader_traits = {
 	trait_secretary_of_the_treasury = {
 		random = no
 
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 		production_speed_industrial_complex_factor = 0.05
 	}
 	trait_secretary_of_war = {
@@ -3403,31 +3576,31 @@ leader_traits = {
 		random = no
 
 		production_speed_farm_factor = 0.05
-		consumer_goods_factor = 0.015
+		consumer_goods_expected_value = 0.015
 	}
 	trait_secretary_of_commerce = {
 		random = no
 
 		trade_opinion_factor = 0.10
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 	}
 	trait_secretary_of_labor = {
 		random = no
 
 		production_factory_efficiency_gain_factor = 0.05
-		consumer_goods_factor = 0.02
+		consumer_goods_expected_value = 0.02
 	}
 	trait_secretary_of_health_and_human_services = {
 		random = no
 
 		monthly_population = 0.025
-		consumer_goods_factor = 0.01
+		consumer_goods_expected_value = 0.01
 	}
 	trait_secretary_of_housing_and_urban_development = {
 		random = no
 
 		production_speed_buildings_factor = 0.025
-		consumer_goods_factor = 0.01
+		consumer_goods_expected_value = 0.01
 	}
 	trait_secretary_of_transportation = {
 		random = no
@@ -3453,7 +3626,7 @@ leader_traits = {
 
 		war_support_factor = 0.02
 		conscription_factor = 0.01
-		consumer_goods_factor = 0.02
+		consumer_goods_expected_value = 0.02
 	}
 	trait_secretary_of_homeland_security = {
 		random = no
@@ -3478,6 +3651,41 @@ leader_traits = {
 		# siam unique
 		random = no
 	}
+
+	HAW_trait_foreign_affairs_minister = {
+		random = no
+		
+		war_support_factor = 0.2
+		production_speed_bunker_factor = 0.2
+	}
+	HAW_trait_interior_minister = {
+		random = no
+		
+		industrial_capacity_factory = 0.1
+	}
+	HAW_trait_finance_minister = {
+		random = no
+		
+		improve_relations_maintain_cost_factor = -0.1
+		opinion_gain_monthly_same_ideology_factor = 0.5
+	}
+	HAW_trait_chief_justice = {
+		random = no
+		
+		research_speed_factor = 0.05
+		political_power_factor = -0.05
+	}
+	HAW_trait_governor = {
+		random = no
+
+		stability_factor = -0.05
+		industrial_capacity_factory = 0.05
+	}
+	HAW_trait_kuhina_hui = {
+		random = no
+		
+		stability_factor = 0.1
+	}
 	
 	#BRA traits
 	
@@ -3501,7 +3709,7 @@ leader_traits = {
 		random = no
 		
         stability_factor = 0.025
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		political_power_gain = -0.025  
 	}
 	
@@ -3545,14 +3753,14 @@ leader_traits = {
 		production_speed_farm_factor = 0.1
 		production_speed_logging_camp_factor = 0.1
 		production_speed_cotton_farm_factor = 0.1
-		consumer_goods_factor = 0.01
+		consumer_goods_expected_value = 0.01
 	}
 	
 	BRA_trait_minister_of_commerce = {
 		random = no
 		
 		trade_opinion_factor = 0.15
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 	}
 	
 	BRA_trait_minister_of_public_works = {
@@ -3621,5 +3829,169 @@ leader_traits = {
 		drift_defence_factor = 0.1
 		traditional_conservatism_drift = 0.01
 	}
+	
+	#FRA traits
+	
+	FRA_trait_empress_eugenie = {
+		random = no
+		
+		traditional_conservatism_drift = 0.03
+		stability_factor = 0.05
+	}
+	
+	FRA_trait_jules_baroche = {
+		random = no
+		
+		resistance_growth = 0.02
+		compliance_gain = 0.03
+	}
+	
+	FRA_trait_gustave_rouland = {
+		random = no
+		
+		research_speed_factor = 0.02
+		political_power_gain = -0.05
+	}
+	
+	FRA_trait_prosper_laubat = {
+		random = no
+		
+		justify_war_goal_time = -0.02
+		naval_speed_factor = 0.02
+		floating_harbor_supply = 1
+		navy_max_range_factor = 0.05
+	}
+	
+	FRA_trait_claude_delangle = {
+		random = no
+		
+		resistance_decay_on_our_occupied_states = 0.02
+		autocracy_drift = 0.02
+		compliance_gain = 0.03
+	}
 
+	FRA_trait_pereire_brothers_1 = {
+		random = no
+		
+		money_income_factor = 0.02
+		consumer_goods_factor = 0.01
+	}
+
+	FRA_trait_pereire_brothers_2 = {
+		random = no
+
+		money_income_factor = 0.06
+		consumer_goods_factor = 0.02
+	}
+
+	POR_trait_joao_crisostomo = {
+		random = no
+
+		research_speed_factor = 0.07
+		war_support_factor = 0.03
+	}
+
+	POR_trait_carlos_teixeira_de_aragoa = {
+		random = no
+
+		attrition = -0.07
+		army_morale_factor = 0.03
+	}
+
+	POR_trait_jose_estevao = {
+		random = no
+
+		stability_factor = 0.05
+		political_power_gain = 0.05
+	}
+
+	POR_trait_casal_ribeiro = {
+		random = no 
+
+		political_power_gain = 0.07
+		war_support_factor = 0.03
+		traditional_conservatism_drift = 0.02
+	}
+
+	POR_trait_francisco_maria_de_sousa_brandao = {
+		random = no
+
+		ideology_radical_socialism_drift = 0.03
+		production_speed_rail_way_factor = 0.1
+	}
+
+	POR_trait_rodrigo_de_andrade = {
+		random = no 
+
+		production_speed_dockyard_factor = 0.05
+		production_speed_naval_base_factor = 0.05
+		industrial_capacity_dockyard = 0.1
+	}
+
+
+	SWI_trait_elie_ducommun = {
+		random = no
+		
+		surrender_limit = 0.3
+		join_faction_tension = 0.15
+	}
+
+	SWI_trait_albert_gobat = {
+		random = no
+		
+		justify_war_goal_time = 0.2
+		enemy_justify_war_goal_time = 0.3
+	}
+	
+	SWI_trait_ludwig_schlafli = {
+		random = no
+		
+		production_speed_buildings_factor = 0.1
+		production_cost_arms_factory_factor = -0.1
+		production_cost_industrial_complex_factor = -0.1
+		production_cost_dockyard_factor = -0.1
+	}
+
+	SWI_trait_antoine_henry_jomini = {
+		random = no
+		
+		land_bunker_effectiveness_factor = 0.2
+		production_cost_bunker_factor = -0.1
+		production_speed_bunker_factor = 0.1
+		experience_gain_army = 0.1
+	}
+
+	SWI_trait_hans_herzog = {
+		random = no
+		
+		army_artillery_attack_factor = 0.1
+		experience_gain_army = 0.06
+	}
+
+	SWI_trait_henry_dunant = {
+		random = no
+
+		attrition = -0.05
+		army_morale_factor = 0.1
+	}
+
+	SWI_trait_louis_wenger = {
+		random = no
+
+		stability_factor = 0.15
+		political_legitimacy_factor = 0.15
+	}
+
+	SWI_trait_paul_ceresole = {
+		random = no
+
+		money_expenses_factor = -0.25
+	}
+
+	SWI_trait_johann_jakob_stehlin = {
+		random = no
+
+		political_power_gain = 0.25
+		political_legitimacy_factor = 0.05
+	}
 }

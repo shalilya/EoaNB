@@ -7,19 +7,32 @@
 
 	set_research_slots = 2
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.19 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 12 }
+	set_variable = { current_loans_sum = 60 }
+
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_3
+		taxation_level_4
 		cl_legal
 
 		#stagnation_growth
@@ -28,26 +41,28 @@
 		slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_hindu
 
-	 	hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 	social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
-				 #NATIONAL SPIRITS
+		#NATIONAL SPIRITS
 		AFR_british_colony
 		ENG_idea_RAJ_civil_unrest
 		ENG_idea_RAJ_gse_act
 		EIC_idea_army_muntinies
+		RAJ_idea_taken_by_surprise
+		RAJ_idea_universities_in_chaos
+		EIC_idea_pro_profits_corruption
 	}
-
 
 	set_politics = {
 		ruling_party = autocracy
@@ -112,14 +127,6 @@
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 5000 producer = RAJ }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 5000 producer = RAJ }
 
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
 		set_autonomy = {
 			target = SGP
 			autonomous_state = autonomy_afr_colonial_company
@@ -190,33 +197,10 @@
 			autonomous_state = autonomy_princely_state
 			freedom_level = 0.1
 		}
-	}
-	if = {
-		limit = {
-			NOT = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-		}
-		puppet = SGP
-		puppet = HYD
-		puppet = KAS
-		puppet = KAR
-		puppet = BIK
-		puppet = REW
-		puppet = TRA
-		puppet = BTR
-		puppet = ORS
-		puppet = JPR
-		puppet = MYS
-		puppet = GUJ
-		puppet = RJP
-		puppet = SKK
-	}
-
+	
 	# POLITICAL LEADERS
 	recruit_character = RAJ_charles_canning
+	recruit_character = RAJ_frederick_currie
 	recruit_character = RAJ_James_Bruce
 	recruit_character = RAJ_Council_of_India
 	recruit_character = RAJ_John_Lawrence
@@ -252,16 +236,16 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -270,18 +254,18 @@
 		slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_hindu
 
-	 	hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 	social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		 #NATIONAL SPIRITS
 		AFR_british_colony

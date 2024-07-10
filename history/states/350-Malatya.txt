@@ -4,7 +4,7 @@ state = {
 	name = "STATE_350"
 
 	local_supplies=0.0 
-	manpower = 691122
+	manpower = 601122
 
 	resources = {
 		
@@ -15,13 +15,14 @@ state = {
 	history = {
 		owner = OTO
 		victory_points = {
-			11759 1
+			11739 5
 		}
 		victory_points = {
-			7620 1
+			9823 1
 		}
+
 		victory_points = {
-			11871 5
+			12416 1
 		}
 		buildings = {
 			infrastructure = 3
@@ -31,33 +32,35 @@ state = {
 		add_claim_by = ASY 	
 		
 		add_to_array = { state_culture_array = 140 }
-		add_to_array = { state_culture_array_num = 0.389 }
-		add_to_array = { state_culture_array = 172 }
-		add_to_array = { state_culture_array_num = 0.23 }
-		add_to_array = { state_culture_array = 136 }
-		add_to_array = { state_culture_array_num = 0.212 }
-		add_to_array = { state_culture_array = 159 }
-		add_to_array = { state_culture_array_num = 0.12 }
+		add_to_array = { state_culture_array_num = 0.312 }
 		add_to_array = { state_culture_array = 104 }
-		add_to_array = { state_culture_array_num = 0.031 }
+		add_to_array = { state_culture_array_num = 0.255 }
+		add_to_array = { state_culture_array = 136 }
+		add_to_array = { state_culture_array_num = 0.235 }
+		add_to_array = { state_culture_array = 172 }
+		add_to_array = { state_culture_array_num = 0.068 }
+		add_to_array = { state_culture_array = 159 }
+		add_to_array = { state_culture_array_num = 0.020 }
 		add_to_array = { state_culture_array = 199 }
-		add_to_array = { state_culture_array_num = 0.011 }
-		add_to_array = { state_culture_array = 123 }
 		add_to_array = { state_culture_array_num = 0.007 }
+		add_to_array = { state_culture_array = 123 }
+		add_to_array = { state_culture_array_num = 0.003 }
 
 		add_to_array = { state_religion_array = 8 }
-		add_to_array = { state_religion_array_num = 0.529 }
+		add_to_array = { state_religion_array_num = 0.634 }
 		add_to_array = { state_religion_array = 4 }
-		add_to_array = { state_religion_array_num = 0.324 }
-		add_to_array = { state_religion_array = 2 }
-		add_to_array = { state_religion_array_num = 0.118 }
+		add_to_array = { state_religion_array_num = 0.215 }
 		add_to_array = { state_religion_array = 17 }
-		add_to_array = { state_religion_array_num = 0.022 }
+		add_to_array = { state_religion_array_num = 0.072 }
+		add_to_array = { state_religion_array = 9 }
+		add_to_array = { state_religion_array_num = 0.056 }
+		add_to_array = { state_religion_array = 2 }
+		add_to_array = { state_religion_array_num = 0.020 }
 		add_to_array = { state_religion_array = 7 }
-		add_to_array = { state_religion_array_num = 0.007 }
+		add_to_array = { state_religion_array_num = 0.003 }
 	}
 
 	provinces = {
-		4512 7620 9823 9912 11739 11759 11871 12387 12416 
+		876 4512 9823 9860 11739 11759 11871 11797 12387 12416 14445 14446 14447
 	}
 }

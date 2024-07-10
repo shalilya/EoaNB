@@ -2439,12 +2439,6 @@ country_event = {
 		eoanb_change_prestige_score = yes
 		hidden_effect = {
 			BUL = { country_event = { id = eastern_crisis.229 } }
-			every_other_country = {
-				limit = {
-					NOT = { tag = BUL }
-				}
-				news_event = { id = eastern_crisis.230 days = 1 }
-			}
 		}
 	}
 	
@@ -2457,6 +2451,9 @@ country_event = {
 		add_stability = 0.05
 		set_temp_variable = { eoanb_prestige_change = 5 }
 		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			news_event = { id = eastern_crisis.230 days = 1 }
+		}
 	}
 }
 
@@ -3388,22 +3385,10 @@ country_event = {
 					transfer_state = 1272
 				}
 				OTO = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Together for Victory"
-								has_dlc = "Waking the Tiger"
-								has_dlc = "Death or Dishonor"
-							}
-						}
-						set_autonomy = {
-							target = HRZ
-							autonomous_state = autonomy_khedive
-							freedom_level = 0.7
-						}
-					}
-					else = {
-						puppet = HRZ
+					set_autonomy = {
+						target = HRZ
+						autonomous_state = autonomy_khedive
+						freedom_level = 0.7
 					}
 				}
 			}
@@ -3434,22 +3419,10 @@ country_event = {
 					transfer_state = 1274
 				}
 				OTO = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Together for Victory"
-								has_dlc = "Waking the Tiger"
-								has_dlc = "Death or Dishonor"
-							}
-						}
-						set_autonomy = {
-							target = BUL
-							autonomous_state = autonomy_khedive
-							freedom_level = 0.7
-						}
-					}
-					else = {
-						puppet = BUL
+					set_autonomy = {
+						target = BUL
+						autonomous_state = autonomy_khedive
+						freedom_level = 0.7
 					}
 				}
 			}
@@ -3469,22 +3442,10 @@ country_event = {
 					set_cosmetic_tag = BUL_Western_Bulgaria
 				}
 				OTO = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Together for Victory"
-								has_dlc = "Waking the Tiger"
-								has_dlc = "Death or Dishonor"
-							}
-						}
-						set_autonomy = {
-							target = BUL
-							autonomous_state = autonomy_eyalet
-							freedom_level = 0.7
-						}
-					}
-					else = {
-						puppet = BUL
+					set_autonomy = {
+						target = BUL
+						autonomous_state = autonomy_eyalet
+						freedom_level = 0.7
 					}
 				}
 				ERU = {
@@ -3496,22 +3457,10 @@ country_event = {
 					set_cosmetic_tag = BUL_Eastern_Bulgaria
 				}
 				OTO = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Together for Victory"
-								has_dlc = "Waking the Tiger"
-								has_dlc = "Death or Dishonor"
-							}
-						}
-						set_autonomy = {
-							target = ERU
-							autonomous_state = autonomy_eyalet
-							freedom_level = 0.7
-						}
-					}
-					else = {
-						puppet = ERU
+					set_autonomy = {
+						target = ERU
+						autonomous_state = autonomy_eyalet
+						freedom_level = 0.7
 					}
 				}
 			}
@@ -3620,24 +3569,24 @@ country_event = {
 		add_stability = 0.025
 		hidden_effect = {
 			set_country_flag = OTO_first_constitutional_era_flag 	### Enable Ottoman ft content later
-			if = {
-				limit = {
-					has_idea = human_rights
-				}
-				swap_ideas = {
-					remove_idea = human_rights
-					add_idea = limited_constitution
-				}
-			}
-			if = {
-				limit = {
-					has_idea = no_constitution
-				}
-				swap_ideas = {
-					remove_idea = no_constitution
-					add_idea = human_rights
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = human_rights
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = human_rights
+			#		add_idea = limited_constitution
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = no_constitution
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = no_constitution
+			#		add_idea = human_rights
+			#	}
+			#}
 			news_event = { id = OTO_events.29 days = 1 }
 		}
 	}
@@ -4867,7 +4816,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					OTO = { NOT = { controls_province = 14380 } }
+					OTO = { NOT = { controls_province = 13740 } }
 				}
 				country_event = { id = eastern_crisis.456 days = 1 }
 			}
@@ -4956,7 +4905,7 @@ country_event = {
 	trigger = {
 		tag = RUS
 		has_active_mission = eastern_crisis_mission_russo_turkish_war
-		OTO = { NOT = { controls_province = 14380 } }
+		OTO = { NOT = { controls_province = 13740 } }
 	}
 	
 	option = {
@@ -9222,22 +9171,10 @@ country_event = {
 				add_state_core = 1202
 			}
 		}
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = ALB
-				autonomous_state = autonomy_eyalet
-				freedom_level = 0.5
-			}
-		}
-		else = {
-			puppet = ALB
+		set_autonomy = {
+			target = ALB
+			autonomous_state = autonomy_eyalet
+			freedom_level = 0.5
 		}
 		hidden_effect = {
 			ALB = { country_event = { id = eastern_crisis.611 days = 1 } }
@@ -9975,19 +9912,10 @@ country_event = {
 	
 	option = {
 		name = eastern_crisis.712.a
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = GRE
-				autonomous_state = autonomy_khedive
-				freedom_level = 0.7
-			}
+		set_autonomy = {
+			target = GRE
+			autonomous_state = autonomy_khedive
+			freedom_level = 0.7
 		}
 		increase_ps_by_one = yes
 		add_stability = 0.05
@@ -10669,22 +10597,10 @@ country_event = {
 		trigger = {
 			tag = OTO
 		}
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = CET
-				autonomous_state = autonomy_khedive
-				freedom_level = 0.6
-			}
-		}
-		else = {
-			puppet = CET
+		set_autonomy = {
+			target = CET
+			autonomous_state = autonomy_khedive
+			freedom_level = 0.6
 		}
 	}
 }

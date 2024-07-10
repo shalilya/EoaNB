@@ -27,18 +27,18 @@ country_event = {
 				ideology = chauvinist_populism
 				popularity = 0.35
 			}
-			swap_ideas = {
-				add_idea = totalitarian_dictatorship 
-				remove_idea = semi_presidential_republic 
-			}
+			#swap_ideas = {
+			#	add_idea = totalitarian_dictatorship 
+			#	remove_idea = semi_presidential_republic 
+			#}
 			swap_ideas = {
 				add_idea = no_elections  
 				remove_idea = limited_elections  
 			}
-			swap_ideas = {
-				add_idea = has_heir   
-				remove_idea = no_heir 
-			}
+			#swap_ideas = {
+			#	add_idea = has_heir   
+			#	remove_idea = no_heir 
+			#}
 			mark_focus_tree_layout_dirty = yes
 		}
 			
@@ -119,10 +119,10 @@ country_event = {
 				TAG = PAR
 				has_government = chauvinist_populism
 				ARG = { has_government = centrism }
-				#OR = {
+				OR = {
 					BRA = { has_completed_focus	 =  BRA_uruguayan_intervention }
-					#BRA = { has_completed_focus = BRA_reclaim_the_cisplatine_province }
-				#}
+					BRA = { has_completed_focus = BRA_reclaim_the_cisplatine_province }
+				}
 			}
 		}
 		
@@ -148,10 +148,10 @@ country_event = {
 		AND = {
 			TAG = PAR
 			has_government = chauvinist_populism
-            #OR = {
+            OR = {
 				BRA = { has_completed_focus	 =  BRA_challenge_the_blanco_government }
-				#BRA = { has_completed_focus = BRA_artigas_border_crisis }
-			#}	
+				BRA = { has_completed_focus = BRA_artigas_border_crisis }
+			}	
 		}
 	}
 		
@@ -188,10 +188,10 @@ country_event = {
 		AND = {
 			TAG = BRA
 			PAR = {has_government = chauvinist_populism}
-            #OR = {
+            OR = {
 				BRA = { has_completed_focus	 =  BRA_challenge_the_blanco_government }
-				#BRA = { has_completed_focus = BRA_artigas_border_crisis }
-			#}	
+				BRA = { has_completed_focus = BRA_artigas_border_crisis }
+			}	
 		}
 	}
 	option = {
@@ -536,12 +536,6 @@ country_event = { #Paraguay Responds to Denial
 						is_in_faction = no 
 					}
 				}
-				AND={
-					NOM = {
-						has_war_with = PAR
-						is_in_faction = no
-					}
-				}
 			}
 		}
 		#immediate = {
@@ -567,7 +561,6 @@ country_event = { #Paraguay Responds to Denial
 			}
 			create_faction = "Triple Alliance"
 			add_to_faction = ARG
-			add_to_faction = NOM
 			hidden_effect = {
 				news_event = { id = par_news.2 }
 			}
@@ -713,13 +706,6 @@ country_event = { #Formation of the Paraguayan Legion
 					set_global_flag = Imperial_Alliance_Faction
 					if = {
 						limit = { BRA = { has_completed_focus = BRA_the_second_cisplatine_war } }
-						add_to_faction = NOM
-						NOM = {
-							add_to_war = {
-								targeted_alliance = BRA
-								enemy = PAR
-							}
-						}
 					}
 					else_if = {
 						limit = { BRA = { has_completed_focus = BRA_direct_intervention } }
@@ -1103,10 +1089,6 @@ country_event = { #Formation of the Paraguayan Legion
 			}
 			URG = {
 				set_country_flag = Paraguayan_War
-			}
-			if = {
-				limit = { NOM = { exists = yes } }
-				NOM = { set_country_flag = Paraguayan_War }
 			}
 			activate_mission = Paraguayan_War_Peace_Treaty_Mission
 		}

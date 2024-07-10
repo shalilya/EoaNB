@@ -1,6 +1,281 @@
 ideas = {
 	country = {
 	
+	QNG_inspiration_from_the_ever_victorious_army = {
+      allowed = {
+        always = yes
+      }
+
+      allowed_civil_war = {
+        always = no
+      }
+
+		removal_cost = -1
+
+		picture = generic_coastal_defense_ships
+
+		modifier = {
+			army_morale_factor = 0.5
+			land_reinforce_rate = 0.1
+		}
+	}
+
+	QNG_idea_harsh_reduction_for_expenses = {
+		allowed = {
+			always = yes 
+		}
+
+		removal_cost = -1 
+
+		#picture = 
+		
+		modifier = {
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = -0.05
+			industrial_capacity_factory = -0.05
+			industrial_capacity_dockyard = -0.05
+			army_org_factor = -0.1
+		}
+	 }	
+
+	 QNG_idea_perks_of_the_education_mission_to_USA = {
+		allowed = {
+			always = yes 
+		}
+
+		removal_cost = -1 
+
+		#picture = generic_USA
+		
+		modifier = {
+			improve_relations_maintain_cost_factor = -0.25
+			research_speed_factor = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.05
+			industrial_capacity_dockyard = 0.05
+			army_org_factor = 0.07
+		}
+	 }
+	 QNG_lijin_tax_system = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			production_speed_buildings_factor = 0.05
+			consumer_goods_factor = -0.1
+		  }
+	 }
+
+	QNG_economy_liberalization = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			consumer_goods_factor = 0.02
+			stability_factor = 0.10
+			political_power_gain = 0.15
+		  }
+	}
+
+	QNG_heavy_opposition = {
+		allowed = {
+			always = yes 
+		}
+
+		allowed_civil_war = {
+			always = yes 
+		}
+
+		removal_cost = -1 
+		
+		#picture = 
+		
+		modifier = {
+			political_power_gain = -0.25
+			stability_factor = -0.1
+			stability_weekly_factor = -0.2
+			
+		}
+	}
+
+	QNG_western_advisors = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			research_speed_factor = 0.05
+			experience_gain_army_factor = 0.1
+		  }
+	}
+
+	QNG_western_advisors_2 = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			research_speed_factor = 0.05
+			experience_gain_army_factor = 0.15
+			army_leader_start_planning_level = 1 
+		  }
+	}
+
+	QNG_western_advisors_3 = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			research_speed_factor = 0.05
+			experience_gain_army_factor = 0.15
+			army_leader_start_planning_level = 1 
+			training_time_army_factor = -0.1
+		  }
+	}
+
+	QNG_imperial_chinese_telegraph_administration_idea = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			political_power_gain = 0.1
+			stability_factor = 0.05
+			army_org_factor = 0.07
+		  }
+	}
+
+	QNG_merchant_steam_navigation_company_idea = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			political_power_gain = 0.25
+			stability_factor = 0.1
+			consumer_goods_factor = -0.05
+			production_factory_efficiency_gain_factor = 0.05
+		  }
+	}
+
+QNG_imperial_maritime_custom_service_idea = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			political_power_gain = 0.15
+			command_power_gain = 0.1
+			trade_opinion_factor = 0.2
+			consumer_goods_factor = -0.05
+		  }
+	}	
+
+	QNG_prioritize_beiyang_fleet = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+
+		  }
+	}
+	
+	QNG_light_industry_subsidies = {
+		allowed = {
+		  always = yes
+		}
+  
+		allowed_civil_war = {
+		  always = no
+		}
+  
+		  removal_cost = -1
+  
+		  picture = generic_coastal_defense_ships
+  
+		  modifier = {
+			consumer_goods_factor = 0.02
+			stability_factor = 0.10
+			political_power_gain = 0.15
+		  }
+	}	
+
 	QNG_foochow_arsenal = {
       allowed = {
         always = yes
@@ -54,7 +329,7 @@ ideas = {
 		picture = generic_coastal_defense_ships
 
 		modifier = {
-			consumer_goods_factor = 0.02
+			consumer_goods_expected_value = 0.02
 			industrial_capacity_dockyard = 0.1
 			equipment_conversion_speed = 0.05
 			ships_at_battle_start = 0.05
@@ -96,7 +371,7 @@ ideas = {
 		modifier = {
 			industrial_capacity_factory = 0.05
 			line_change_production_efficiency_factor = 0.05
-			consumer_goods_factor = 0.02
+			consumer_goods_expected_value = 0.02
 		}
 	}
 	
@@ -133,7 +408,7 @@ ideas = {
 		#picture = generic_coastal_defense_ships
 
 		modifier = {
-			consumer_goods_factor = -0.01
+			consumer_goods_expected_value = -0.01
 			political_power_gain = 0.05
 		}
 		
@@ -214,7 +489,7 @@ ideas = {
 			picture = generic_central_management
 
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_buildings_factor = 0.1
 			}
@@ -236,7 +511,7 @@ ideas = {
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				convoy_escort_efficiency = 0.05
 			}
 		}
@@ -257,7 +532,7 @@ ideas = {
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = 0.075
+				consumer_goods_expected_value = 0.075
 				local_resources_factor = 0.10
 				convoy_escort_efficiency = 0.05
 			}
@@ -279,7 +554,7 @@ ideas = {
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = 0.075
+				consumer_goods_expected_value = 0.075
 				production_factory_start_efficiency_factor = 0.05
 				local_resources_factor = 0.10
 				min_export = 0.10
@@ -505,11 +780,11 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = chi_incompetent_officers
+			picture = QNG_outdated_army
 
 			modifier = {
-				offence = -0.1
-				defence = -0.1
+				offence = -0.15
+				defence = -0.15
 			}
 		}
 		
@@ -528,11 +803,11 @@ ideas = {
 
 			modifier = {
 				offence = -0.1
-				defence = -0.075
+				defence = -0.1
 			}
 		}
 		
-		QNG_outdated_army1a = {
+		QNG_outdated_army2 = {
 			allowed = {
 				always = yes
 			}
@@ -551,7 +826,7 @@ ideas = {
 			}
 		}
 		
-		QNG_outdated_army1b = {
+		QNG_outdated_army3 = {
 			allowed = {
 				always = yes
 			}
@@ -565,13 +840,11 @@ ideas = {
 			picture = chi_incompetent_officers
 
 			modifier = {
-				army_org_factor = 0.05
 				offence = -0.1
-				defence = -0.05
 			}
 		}
 		
-		QNG_outdated_army2a = {
+		QNG_outdated_army4 = {
 			allowed = {
 				always = yes
 			}
@@ -585,73 +858,34 @@ ideas = {
 			picture = chi_incompetent_officers
 
 			modifier = {
-				offence = -0.075
-				defence = -0.075
-			}
-		}
-		
-		QNG_outdated_army2b = {
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = chi_incompetent_officers
-
-			modifier = {
-				supply_consumption_factor = -0.1
-				offence = -0.075
-				defence = -0.075
-			}
-		}
-		
-		QNG_outdated_army1c = {
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = chi_incompetent_officers
-
-			modifier = {
-				army_org_factor = 0.05
-				offence = -0.075
-				defence = -0.05
-			}
-		}
-		
-		QNG_outdated_army2c = {
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = chi_incompetent_officers
-
-			modifier = {
-				supply_consumption_factor = -0.1
 				offence = -0.05
-				defence = -0.075
+				
 			}
 		}
+		
+		QNG_outdated_army5 = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = chi_incompetent_officers
+
+			modifier = {
+				army_org_factor = 0.05
+	
+			
+			}
+		}
+		
 		
 		QNG_idea_opium_crissis = {
-			#picture = ast_volunteer_defence_corps
+			picture = QNG_opium_crisis
 			
 			modifier = {
 				army_org_factor = -0.05
@@ -661,19 +895,84 @@ ideas = {
 		}
 		
 		QNG_idea_han_nationalism = {
-			#picture = ast_volunteer_defence_corps
+			picture = QNG_rising_han
 			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
 			modifier = {
-				stability_weekly_factor = -0.001
+				stability_weekly_factor = -0.004
 			}
 		}
+
 		
 		QNG_idea_devastation_first_opium_war = {
-			#picture = ast_volunteer_defence_corps
+			picture = QNG_devastaion
 			
 			modifier = {
 				stability_factor = -0.1
 				war_support_factor = -0.1
+			}
+		}
+
+		###Corruption
+		QNG_idea_corutpion1 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				stability_factor = -0.25
+				consumer_goods_factor = 0.45
+			}
+		}
+
+		QNG_idea_corutpion2 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				stability_factor = -0.2
+				consumer_goods_factor = 0.35
+			}
+		}
+
+		QNG_idea_corutpion3 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				stability_factor = -0.15
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		QNG_idea_corutpion4 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		QNG_idea_corutpion5 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		QNG_idea_corutpion6 = {
+			picture = QNG_corruption1
+
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.5
 			}
 		}
 		
@@ -820,8 +1119,41 @@ ideas = {
 			
 			modifier = {
 				conscription = 0.03
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				offence = 0.025
+			}
+		}
+
+		QNG_reduced_rural_tax = {
+			allowed = {
+				original_tag = QNG 
+			}
+
+			removal_cost = -1
+
+			#picture = 
+
+			modifier = {
+				consumer_goods_factor = 0.02
+				stability_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		QNG_abolished_agarian_product_tax = {
+			allowed = {
+				original_tag = QNG 
+			}
+
+			removal_cost = -1
+
+			#picture = 
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_gain = 0.15
+				stability_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
 		
@@ -964,7 +1296,7 @@ ideas = {
 				stability_factor = -0.1
 				political_power_factor = -0.2
 				political_power_gain = -0.2
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
 			}
 		}
 		QNG_sushans_party_remnants_2= {
@@ -984,7 +1316,7 @@ ideas = {
 				stability_factor = -0.1
 				political_power_factor = -0.1
 				political_power_gain = -0.1
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
 			}
 		}
 		QNG_sushans_party_remnants_3= {
@@ -1061,7 +1393,7 @@ ideas = {
 				stability_factor = -0.1
 				political_power_factor = -0.2
 				political_power_gain = -0.2
-				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.2
 			}
 		}
 		QNG_burecratic_issues_2= {
@@ -1081,7 +1413,7 @@ ideas = {
 				stability_factor = -0.05
 				political_power_factor = -0.1
 				political_power_gain = -0.1
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 			}
 		}
 		QNG_empresses_support= {
@@ -1190,7 +1522,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.20
-				consumer_goods_factor = 0.10 
+				consumer_goods_expected_value = 0.10 
 				political_power_gain = -0.05
 				stability_factor = -0.1
 			}
@@ -1211,7 +1543,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.15
-				consumer_goods_factor = 0.075 
+				consumer_goods_expected_value = 0.075 
 				political_power_gain = -0.05
 				stability_factor = -0.075
 			}
@@ -1232,7 +1564,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.10
-				consumer_goods_factor = 0.05 
+				consumer_goods_expected_value = 0.05 
 				political_power_gain = -0.05
 				stability_factor = -0.05
 			}
@@ -1253,7 +1585,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = -0.05
-				consumer_goods_factor = 0.025 
+				consumer_goods_expected_value = 0.025 
 				political_power_gain = -0.05
 				stability_factor = -0.025
 			}
@@ -1302,7 +1634,7 @@ ideas = {
 	
 	##### COMPANIES #####
 	
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 
@@ -1313,7 +1645,7 @@ ideas = {
 			}
 			
 			available = {
-				owns_state = 1159
+				owns_state = 595
 				has_completed_focus = QNG_focus_construct_the_fuzhou_navy_shipyard
 			}
 

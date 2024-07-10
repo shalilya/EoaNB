@@ -1,10 +1,7 @@
 ideas = {
 	country = {	
-		SAF_divided_administration = {
-			allowed = {
-				original_tag = SAF
-			}
-			
+		SAF_idea_divided_administration = {
+
 			removal_cost = -1
 			
 			picture = generic_reserve_divisions
@@ -14,10 +11,7 @@ ideas = {
 				political_power_factor = -0.1
 			}
 		}
-		SAF_afrikkan_agitation = {
-			allowed = {
-				original_tag = SAF
-			}
+		SAF_idea_afrikkan_agitation = {
 			
 			removal_cost = -1
 			
@@ -28,16 +22,200 @@ ideas = {
 				surrender_limit = -0.10
 			}
 		}
-		SAF_resourse_rich = {	
+		SAF_idea_qualified_franchise = {
+			removal_cost = -1
+			
+			picture = HUN_treaty_of_triannon
+		
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = -0.05
+			}
+		}
+		SAF_idea_reorg_state = {
+			removal_cost = -1
+			
+			picture = generic_improve_credit_organisation
+		
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.25
+			}
+		}
+		SAF_idea_imperial_interference = {
+			removal_cost = -1
+			
+			picture = eng_guided_by_britain
+		
+			modifier = {
+				stability_factor = -0.05
+				war_stability_factor = -0.15
+				political_power_factor = -0.15
+			}
+		}
+		SAF_idea_drought = {
+			removal_cost = -1
+			
+			picture = GENERIC_Drought
+		
+			modifier = {
+				stability_factor = -0.05
+				tax_efficiency_factor = -0.025
+				monthly_population = 0.01
+			}
+		}
+		SAF_idea_governor_power= {
+			removal_cost = -1
+			
+			picture = eng_guided_by_britain
+
+			cancel = {
+				NOT = {
+					has_country_leader = {	
+						character = SAF_Philip_Edmond_Wodehouse
+					}
+				}
+			}
+		
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = 0.05
+			}
+		}
+		SAF_idea_confed_forced = {
+			removal_cost = -1
+			
+			picture = eng_guided_by_britain
+		
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = -0.05
+			}
+		}
+		SAF_idea_defy_london = {
+			removal_cost = -1
+			
+			picture = eng_guided_by_britain
+		
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = -0.1
+			}
+		}
+
+
+		TRV_idea_annoyed_church={
 			allowed_civil_war = {
 				always = yes
 			}
+
+			picture = generic_purge
 			
-			picture = generic_production_bonus
+			modifier = {
+				stability_weekly = -0.002
+			}
+		}
+		TRV_idea_god_fairing_people={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_purge
+			
+			modifier = {
+				defensive_war_stability_factor = 0.20
+				offensive_war_stability_factor = 0.15
+			}
+		}
+		TRV_idea_disjointed_government={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_unstable_government
+			
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.02
+			}
+		}
+		TRV_idea_occupied_swazi_territory={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+				conscription_factor = -0.05
+				political_power_gain = -0.02
+			}
+		}
+		TRV_idea_economic_aftermath={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = great_depression
+			
+			modifier = {
+				production_speed_buildings_factor = -0.25
+				consumer_goods_factor = 0.1
+				stability_factor = -0.25
+			}
+		}
+		TRV_idea_political_aftermath={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = great_depression
+			
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.25
+				stability_factor = -0.15
+			}
+		}
+		TRV_idea_useless_volksraad ={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_unstable_government
+			
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.25
+				stability_factor = -0.15
+			}
+		}
+		TRV_idea_uk_assistance ={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = eng_guided_by_britain
 			
 			modifier = {
 				political_power_factor = 0.05
-                state_resources_factor = 0.15
+				war_support_factor = -0.25
+				stability_factor = 0.1
+				tax_efficiency_factor = 0.02
+			}
+		}
+		TRV_idea_uk_occupation ={
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = eng_guided_by_britain
+			
+			modifier = {
+				political_power_factor = -0.05
+				war_support_factor = 0.25
+				stability_factor = -0.1
+				tax_efficiency_factor = -0.01
 			}
 		}
 	}

@@ -18,25 +18,38 @@
 
 	set_convoys = 50
 
-	set_research_slots = 4
+	set_research_slots = 2
 	
 	add_to_variable = { prestige_score = 20 }
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 12 }
+	set_variable = { current_loans_sum = 142 }
 
 	add_ideas = {
 		#POLITICS
 		SPR_Isabella_II
-		weak_heir
+		#weak_heir
 		agrarian
 		victorian_era
 		law_victorian_army
 		#religion_catholic
 
 		#GOVERNMENTAL POLICIES
-		parliamentary_monarchy
-		human_rights
+		#parliamentary_monarchy
+		#human_rights
 		limited_elections
-		no_separation
-		federal_control
+		#no_separation
+		#federal_control
 
 		#CULTURE AND EDUCATION
 		privileged_education
@@ -48,10 +61,10 @@
 
 		#ECONOMY
 		limited_exports
-		normal_taxes
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#DEMOGRAPHICS
@@ -63,12 +76,12 @@
 		pp_ban_extremist_parties
 
 		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_decent_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_3
+		army_spending_level_3
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		egy_vic_debt
@@ -162,6 +175,8 @@
 		tech_naval_mtg_repair_crews = 1
 		tech_naval_mtg_merchant_ship_requisitioning = 1
 		tech_naval_capital_ship_naval_transportation = 1
+		tech_naval_corvette = 1
+		tech_naval_early_frigate = 1		
 		tech_infantry_special_infantry_corps = 1
 		tech_infantry_colonial_marines = 1
 		gw_artillery = 1

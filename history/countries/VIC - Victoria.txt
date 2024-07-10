@@ -5,7 +5,7 @@
 
 	set_convoys = 70
 
-	set_research_slots = 3
+	set_research_slots = 2
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 100 producer = VIC }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 100 producer = VIC }
 
@@ -13,18 +13,18 @@
 		#STATE OF COUNTRY#
 
 		ENG_colonial_victoria
-		non_monarchical_system
+		#non_monarchical_system
 		industrializing
 		Victorian_era
 		law_victorian_army
 		#religion_catholic
 
 		#GOVERNMENTAL POLICIES#
-		absolute_monarchy
-		no_constitution
+		#absolute_monarchy
+		#no_constitution
 		limited_elections
-		no_separation
-		federal_control
+		#no_separation
+		#federal_control
 
 		#CULTURAL AND EDUCATION POLICIES#
 		privileged_education
@@ -36,10 +36,10 @@
 
 		#ECONOMIC POLICIES#
 		limited_exports
-		normal_taxes
+		taxation_level_3
 		cl_legal
-		ten_hour_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#DEMOGRAPHIC POLICIES#
@@ -51,12 +51,12 @@
 		pp_ban_extremist_parties
 
 		#INTERNAL BUDGET LAWS#
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_low_naval_infrastructure
-		two_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_2
+		army_spending_level_2
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		AFR_british_colony

@@ -29,17 +29,12 @@ autonomy_state = {
 	}
 
 	allowed = {
-		if = {
-			limit = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
 			if = {
 				limit = {
 					OR = {
 						OVERLORD = {
 							OR = {
+								tag = ENG
 								tag = OTO
 								has_variable = has_afr_empire_mechanic_system
 								has_idea = NA_B_Spirit_New_World_Democracies
@@ -78,8 +73,6 @@ autonomy_state = {
 				}
 				always = no
 			}
-		}
-		else = { always = no }
 	}
 	
 	can_take_level = {

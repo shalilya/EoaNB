@@ -203,7 +203,7 @@ leader_traits = {
 		sprite = 10		
 		political_power_factor = -0.1
 		stability_factor = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -228,7 +228,7 @@ leader_traits = {
 	humble = {
 		random = no
 		##neutrality  _drift = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = { factor = 1 }
 	}
@@ -336,7 +336,7 @@ leader_traits = {
 		random = no
 		ai_strategy = {
 			type = antagonize
-			id = "GER"			
+			id = "PRS"			
 			value = 200
 		}
 		
@@ -600,7 +600,7 @@ leader_traits = {
 	}
 		the_silver_president = { #Juan Andreu
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		#fascism_acceptance = 50
 		ai_will_do = {
 			factor = 1
@@ -867,14 +867,14 @@ leader_traits = {
 		random = no
 		trade_laws_cost_factor = -0.33
 		economic_mobilization_cost_factor = -0.33
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 	}
 
 	strict_austerity_adherent = {
 		random = no
 		stability_factor = -0.15
 		economic_mobilization_cost_factor = 0.5
-		consumer_goods_factor = -0.1
+		consumer_goods_expected_value = -0.1
 	}
 
 	defeatist = {
@@ -1002,7 +1002,7 @@ leader_traits = {
 
 	disgraced_monarch = {
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		stability_factor = -0.1
 	}
 
@@ -1146,7 +1146,7 @@ leader_traits = {
 		random = no
 
 		#communism_drift = 0.1
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -1275,7 +1275,7 @@ leader_traits = {
 	financial_expert = {
 		#sprite = 10
 		random = yes
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = {
 			factor = 2
@@ -1445,7 +1445,7 @@ leader_traits = {
 	}
 	finance_graduate = {
 		random = yes
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = {
 			factor = 2
@@ -1568,7 +1568,7 @@ leader_traits = {
 		sprite = 10
 
 		stability_factor = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_expected_value = -0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -1600,7 +1600,7 @@ leader_traits = {
 		random = no
 		sprite = 10
 
-		consumer_goods_factor = -0.1
+		consumer_goods_expected_value = -0.1
 		resistance_growth_on_our_occupied_states = 0.1 
 		
 		ai_will_do = {
@@ -1674,10 +1674,10 @@ leader_traits = {
 	
 	dive_bomber = {
 		equipment_bonus = {
-			CAS_equipment = {
-					instant = yes
-					air_ground_attack = 0.1 
-			}
+			#CAS_equipment = {
+			#		instant = yes
+			#		air_ground_attack = 0.1 
+			#}
 		}
 		experience_gain_air = 0.05
 		
@@ -1761,12 +1761,12 @@ leader_traits = {
 	light_aircraft_manufacturer = {
 		random = no
 		equipment_bonus = {
-			fighter_equipment = {
+			small_plane_airframe = {
 				air_agility = 0.1 maximum_speed = 0.1
 			}
-			cv_fighter_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1
-			}
+			#cv_fighter_equipment = {
+			#	air_agility = 0.1 maximum_speed = 0.1
+			#}
 		}
 		
 		ai_will_do = {
@@ -1777,12 +1777,12 @@ leader_traits = {
 	light_aircraft_manufacturer_2 = { 
 		random = no
 		equipment_bonus = {
-			fighter_equipment = {
-				air_agility = 0.2 maximum_speed = 0.1
-			}
-			cv_fighter_equipment = {
-				air_agility = 0.2 maximum_speed = 0.1
-			}
+			#small_plane_airframe = {
+			#	air_agility = 0.2 maximum_speed = 0.1
+			#}
+			#cv_fighter_equipment = {
+			#	air_agility = 0.2 maximum_speed = 0.1
+			#}
 		}
 		
 		ai_will_do = {
@@ -1794,12 +1794,12 @@ leader_traits = {
 	CAS_manufacturer = {
 		random = no
 		equipment_bonus = {
-			CAS_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1
-			}
-			cv_CAS_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1
-			}		
+			#CAS_equipment = {
+			#	air_ground_attack = 0.1 reliability = 0.1
+			#}
+			#cv_CAS_equipment = {
+			#	air_ground_attack = 0.1 reliability = 0.1
+			#}		
 		}
 		
 		ai_will_do = {
@@ -1810,12 +1810,12 @@ leader_traits = {
 	medium_aircraft_manufacturer = {
 		random = no
 		equipment_bonus = {
-			heavy_fighter_equipment = {
-				reliability = 0.2
-			}
-			tac_bomber_equipment = {
-				reliability = 0.2
-			}
+			#heavy_fighter_equipment = {
+			#	reliability = 0.2
+			#}
+			#tac_bomber_equipment = {
+			#	reliability = 0.2
+			#}
 		}
 		
 		ai_will_do = {
@@ -1826,16 +1826,16 @@ leader_traits = {
 	fuel_efficient_aircraft_manufacturer = { 
 		random = no
 		equipment_bonus = {
-			fighter_equipment = {
+			small_plane_airframe = {
 				air_range = 0.1
 			}
-			heavy_fighter_equipment = {
-				air_range = 0.1
-				reliability = 0.2
-			}
-			tac_bomber_equipment = {
-				reliability = 0.2
-			}
+			#heavy_fighter_equipment = {
+			#	air_range = 0.1
+			#	reliability = 0.2
+			#}
+			#tac_bomber_equipment = {
+			#	reliability = 0.2
+			#}
 		}
 		
 		ai_will_do = {
@@ -1847,9 +1847,9 @@ leader_traits = {
 		random = no
 		equipment_bonus = {
 
-			strat_bomber_equipment = {
-				air_bombing = 0.1
-			}
+			#strat_bomber_equipment = {
+			#	air_bombing = 0.1
+			#}
 		}
 		
 		ai_will_do = {
@@ -1861,18 +1861,18 @@ leader_traits = {
 		random = no
 		equipment_bonus = {
 			# TODO: how about we boost all carrier plane versions here a bit?
-			nav_bomber_equipment = {
-				air_range = 0.1 naval_strike_attack = 0.1
-			}
-			cv_nav_bomber_equipment = {
-				air_range = 0.1 naval_strike_attack = 0.1
-			}
-			cv_fighter_equipment = {
-				air_range = 0.1 air_agility = 0.1
-			}
-			cv_CAS_equipment = {
-				air_range = 0.1 naval_strike_attack = 0.1
-			}
+			#nav_bomber_equipment = {
+			#	air_range = 0.1 naval_strike_attack = 0.1
+			#}
+			#cv_nav_bomber_equipment = {
+			#	air_range = 0.1 naval_strike_attack = 0.1
+			#}
+			#cv_fighter_equipment = {
+			#	air_range = 0.1 air_agility = 0.1
+			#}
+			#cv_CAS_equipment = {
+			#	air_range = 0.1 naval_strike_attack = 0.1
+			#}
 		}
 		
 		ai_will_do = {
@@ -2359,14 +2359,28 @@ leader_traits = {
 	
 	#German Company Traits
 	
+	GER_trait_concern_aeg = {
+		random = no
+		
+		production_factory_efficiency_gain_factor = 0.03
+		production_factory_start_efficiency_factor = 0.03
+		production_factory_max_efficiency_factor = 0.03
+		production_speed_industrial_complex_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	GER_trait_concern_siemens = {
 		random = no
 		
 		line_change_production_efficiency_factor = 0.05
 		production_speed_industrial_complex_factor = 0.05
+		production_speed_machine_parts_factory_factor = 0.15
 		
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 	}
 	
@@ -2374,9 +2388,11 @@ leader_traits = {
 		random = no
 		
 		local_resources_factor = 0.05
+		production_speed_synthetic_refinery_oil_factor = 0.25
+		production_speed_synthetic_refinery_rubber_factor = 0.25
 		
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 	}
 	
@@ -2421,7 +2437,7 @@ leader_traits = {
 	DEN_trait_concern_royal_copenhagen = {
 		random = no
 		
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = {
 			factor = 2
@@ -2431,7 +2447,7 @@ leader_traits = {
 	DEN_trait_concern_dfds = {
 		random = no
 		
-		consumer_goods_factor = -0.01
+		consumer_goods_expected_value = -0.01
 		convoy_escort_efficiency = 0.25
 		transport_capacity = -0.25
 		
@@ -2443,7 +2459,7 @@ leader_traits = {
 	DEN_trait_concern_carlsberg = {
 		random = no
 		
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		
 		ai_will_do = {
 			factor = 5
@@ -2476,7 +2492,7 @@ leader_traits = {
 		random = no
 		
 		MONTHLY_POPULATION = 0.02
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		
 		ai_will_do = {
 			factor = 1
@@ -2607,7 +2623,7 @@ leader_traits = {
 		random = no
 		
 		production_speed_fabric_weavery_factor = 0.03
-		consumer_goods_factor = -0.02
+		consumer_goods_expected_value = -0.02
 		min_export = 0.03
 		
 		ai_will_do = {
@@ -2620,7 +2636,7 @@ leader_traits = {
 	PIE_trait_ansaldo_company = {
 		random = no
 
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 		production_speed_buildings_factor = 0.025
 		production_speed_rail_way_factor = 0.05
 
@@ -2637,7 +2653,7 @@ leader_traits = {
 		}
 
 		production_speed_dockyard_factor = 0.025
-		consumer_goods_factor = -0.025
+		consumer_goods_expected_value = -0.025
 	}
 
 	PIE_trait_experienced_minister = {
@@ -2659,7 +2675,7 @@ leader_traits = {
 			factor = 1
 		}
 
-		consumer_goods_factor = -0.03
+		consumer_goods_expected_value = -0.03
 		research_speed_factor = 0.025
 	}
 
@@ -3778,140 +3794,159 @@ leader_traits = {
 	}
 	
 	
-	air_bomber_interception_1 = { # Bomber Interception mission efficiency increased by 4%
+	air_bomber_interception_1 = {
 		sprite = 1
-		air_interception_attack_factor = 0.02
-		air_interception_defence_factor = 0.02
-		air_interception_agility_factor = 0.02
-		experience_gain_air = 0.06
-		
+		air_intercept_efficiency = 0.05
+		#experience_gain_air = @experience_gain_low
+
 		command_cap = @tier1
-		
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
-	
-	air_bomber_interception_2 = { # Bomber Interception mission efficiency increased by 8%
+
+	air_bomber_interception_2 = {
 		sprite = 1
-		air_interception_attack_factor = 0.03
-		air_interception_defence_factor = 0.03
-		air_interception_agility_factor = 0.03
-		experience_gain_air = 0.09
-		
+		air_intercept_efficiency = 0.10
+		#experience_gain_air = @experience_gain_medium
+
 		command_cap = @tier2
-		
+
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
-	
-	air_bomber_interception_3 = { # Bomber Interception mission efficiency increased by 12%
+
+	air_bomber_interception_3 = {
 		sprite = 1
-		air_interception_attack_factor = 0.05
-		air_interception_defence_factor = 0.05
-		air_interception_agility_factor = 0.05		
-		experience_gain_air = 0.12
-		
+		air_intercept_efficiency = 0.15
+		#experience_gain_air = @experience_gain_high
+
 		command_cap = @tier3
-		
+
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 	
 	
-	air_air_superiority_1 = { # Air Superiority mission efficiency increased by 4%
+	air_air_superiority_1 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.02
-		air_air_superiority_defence_factor = 0.02
-		air_air_superiority_agility_factor = 0.02
-		experience_gain_air = 0.06
-		
+		air_superiority_efficiency = 0.05
+		#experience_gain_air = @experience_gain_low
+
 		command_cap = @tier1
-		
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
-	
-	air_air_superiority_2 = { # Air Superiority mission efficiency increased by 8%
+
+	air_air_superiority_2 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.03
-		air_air_superiority_defence_factor = 0.03
-		air_air_superiority_agility_factor = 0.03
-		experience_gain_air = 0.09
-		
+		air_superiority_efficiency = 0.1
+		#experience_gain_air = @experience_gain_medium
+
 		command_cap = @tier2
-		
+
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
-	
-	air_air_superiority_3 = { # Air Superiority mission efficiency increased by 12%
+
+	air_air_superiority_3 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.05
-		air_air_superiority_defence_factor = 0.05
-		air_air_superiority_agility_factor = 0.05		
-		experience_gain_air = 0.12
-		
+		air_superiority_efficiency = 0.15
+		#experience_gain_air = @experience_gain_high
+
 		command_cap = @tier3
-		
+
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 	
 	
-	air_close_air_support_1 = { # Close Air Support mission efficiency increased by 4%
+	air_close_air_support_1 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.02
-		air_close_air_support_defence_factor = 0.02
-		air_close_air_support_agility_factor = 0.02
-		experience_gain_air = 0.06
-		
+		air_cas_efficiency = 0.05
+		ground_attack_factor = 0.03
+		#experience_gain_air = @experience_gain_low
+
 		command_cap = @tier1
-		
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
-	
-	air_close_air_support_2 = { # Close Air Support mission efficiency increased by 8%
+
+	air_close_air_support_2 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.03
-		air_close_air_support_defence_factor = 0.03
-		air_close_air_support_agility_factor = 0.03
-		experience_gain_air = 0.09
-		
+		air_cas_efficiency = 0.1
+		ground_attack_factor = 0.05
+		#experience_gain_air = @experience_gain_medium
+
 		command_cap = @tier2
-		
+
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
-	
-	air_close_air_support_3 = { # Close Air Support mission efficiency increased by 12%
+
+	air_close_air_support_3 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.05
-		air_close_air_support_defence_factor = 0.05
-		air_close_air_support_agility_factor = 0.05		
-		experience_gain_air = 0.12
-		
+		air_cas_efficiency = 0.15
+		ground_attack_factor = 0.08
+		#experience_gain_air = @experience_gain_high
+
 		command_cap = @tier3
-		
+
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 	
 	
 	air_strategic_bombing_1 = { # Strategic Bombing mission efficiency increased by 4%
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.01
 		air_strategic_bomber_defence_factor = 0.01
-		air_strategic_bomber_agility_factor = 0.01
 		air_strategic_bomber_bombing_factor = 0.03
 		experience_gain_air = 0.06
 		
@@ -3924,9 +3959,7 @@ leader_traits = {
 	
 	air_strategic_bombing_2 = { # Strategic Bombing mission efficiency increased by 8%
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.02
 		air_strategic_bomber_defence_factor = 0.02
-		air_strategic_bomber_agility_factor = 0.02
 		air_strategic_bomber_bombing_factor = 0.05
 		experience_gain_air = 0.09
 		
@@ -3939,9 +3972,7 @@ leader_traits = {
 	
 	air_strategic_bombing_3 = { # Strategic Bombing mission efficiency increased by 12%
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.03
 		air_strategic_bomber_defence_factor = 0.03
-		air_strategic_bomber_agility_factor = 0.03
 		air_strategic_bomber_bombing_factor = 0.09		
 		experience_gain_air = 0.12
 		
@@ -3990,45 +4021,54 @@ leader_traits = {
 	}
 	
 	
-	air_airborne_1 = { # Paratrooper drop efficiency increased by 4%
+	air_airborne_1 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.01
-		air_paradrop_defence_factor = 0.03
-		air_paradrop_agility_factor = 0.03
-		experience_gain_air = 0.06
-		
+		paradrop_organization_factor = 1.2
+		paratrooper_aa_defense = 0.1
+		#experience_gain_air = @experience_gain_low
+
 		command_cap = @tier1
-		
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
-	
-	air_airborne_2 = { # Paratrooper drop efficiency increased by 8%
+
+	air_airborne_2 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.02
-		air_paradrop_defence_factor = 0.05
-		air_paradrop_agility_factor = 0.05
-		experience_gain_air = 0.09
-		
+		paradrop_organization_factor = 1.5
+		paratrooper_aa_defense = 0.15
+		#experience_gain_air = @experience_gain_medium
+
 		command_cap = @tier2
-		
+
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
-	
-	air_airborne_3 = { # Paratrooper drop efficiency increased by 12%
+
+	air_airborne_3 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.03
-		air_paradrop_defence_factor = 0.07
-		air_paradrop_agility_factor = 0.07				
-		experience_gain_air = 0.12
-		
+		paradrop_organization_factor = 1.8
+		paratrooper_aa_defense = 0.25
+		#experience_gain_air = @experience_gain_high
+
 		command_cap = @tier3
-		
+
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 

@@ -8,28 +8,15 @@
 	VIN = { set_variable = { var = has_afr_empire_mechanic_system value = 1 } }
 
 	VIN = {
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = JAI
-				autonomous_state = autonomy_afr_empire_level_4
-				freedom_level = 0.79
-			}
-			set_autonomy = {
-				target = VNM
-				autonomous_state = autonomy_afr_empire_level_4
-				freedom_level = 0.79
-			}
+		set_autonomy = {
+			target = JAI
+			autonomous_state = autonomy_afr_empire_level_4
+			freedom_level = 0.79
 		}
-		else = {
-			puppet = JAI
-			puppet = VNM
+		set_autonomy = {
+			target = VNM
+			autonomous_state = autonomy_afr_empire_level_4
+			freedom_level = 0.79
 		}
 		JAI = {
 			set_variable = { var = afr_empire_subject_overlord value = VIN.id }
@@ -45,16 +32,16 @@
 
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		closed_economy
-		one_percent
-		very_low_taxes
+		army_spending_level_1
+		taxation_level_2
 		cl_legal
 
 		#stagnation_growth
@@ -64,18 +51,18 @@
 		absolutism
 
 		law_pre_industrial_army
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_confucian
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		Oceania_eastern_oriented_regional_power

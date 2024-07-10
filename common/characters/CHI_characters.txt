@@ -1,6 +1,6 @@
 characters={
 	QNG_Xianfeng_Emperor={
-		name="Emperor Xianfeng"
+		name="Xianfeng Emperor"
 		portraits={
 			civilian={
 				large="gfx/leaders/QNG/Portrait_QNG_Xianfeng_Emperor.dds"
@@ -24,26 +24,26 @@ characters={
 		corps_commander = {
 			traits = {politically_connected}
 			skill = 3
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
 			legacy_id=3500
 		}
 	}
-	QNG_Zhang_Guoliang={
-		name="Zhang Guoliang"
+	QNG_Feng_Zicai={
+		name="Feng Zicai"
 		portraits={
 			army={
-				large="gfx/leaders/QNG/Portrait_QNG_Zhang_Guoliang.dds"
+				large="gfx/leaders/QNG/Portrait_QNG_Feng_Zicai.dds"
 			}
 		}
-		corps_commander = {
+		corps_commander = { # was promoted to general in 1864but you need generals as china
 			traits = {politically_connected}
-			skill = 3
-			attack_skill = 1
+			skill = 2
+			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 1
 			legacy_id=3501
 		}
@@ -52,17 +52,17 @@ characters={
 		name="Zuo Zongtang"
 		portraits = {
 			army={
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_zuo_zongtzng"
 				large="gfx/leaders/QNG/Portrait_QNG_Zuo_Zongtang.dds"
 			}
 		}
 		corps_commander = {
-			traits = {politically_connected}
+			traits = {politically_connected trait_reckless}
 			skill = 3
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
 			legacy_id=3502
 		}
 		advisor = {
@@ -83,19 +83,110 @@ characters={
 		name="Nie Shicheng"
 		portraits={
 			army={
-				large="gfx/leaders/QNG/Portrait_QNG_Nie_Shicheng.dds"
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
 			}
 		}
 		corps_commander = {
-			traits = {politically_connected}
-			skill = 3
-			attack_skill = 1
+			#traits = 
+			skill = 2
+			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 1
 			legacy_id=3504
 		}
 	}
+
+	QNG_zhu_hongzhang={
+		name="Zhu Hongzhang"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
+			}
+		}
+		corps_commander = {
+			#traits = {politically_connected}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id=3511
+		}
+	}
+
+	QNG_bao_chao={
+		name="Bao Chao"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
+			}
+		}
+		corps_commander = {
+			#traits = {politically_connected}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id=3512
+		}
+	}
+
+	QNG_guanwen={
+		name="Guanwen"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
+			}
+		}
+		field_marshal = {
+			#traits = {politically_connected}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=3513
+		}
+	}
+
+	QNG_luo_bingzhang={
+		name="Luo Bingzhang"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
+			}
+		}
+		corps_commander = {
+			#traits = {politically_connected}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id=3514
+		}
+	}
+
+	QNG_zhang_guoliang={
+		name="Zhang Guoliang"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_rengency.png" #Need fix
+			}
+		}
+		field_marshal = {
+			#traits = {politically_connected}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id=3515
+		}
+	}
+
 	QNG_Song_Qing={
 		name="Song Qing"
 		portraits={
@@ -121,8 +212,8 @@ characters={
 				large="gfx/leaders/QNG/Portrait_QNG_Zeng_Guofan.dds"
 			}
 		}
-		corps_commander = {
-			traits = {politically_connected}
+		field_marshal = {
+			traits = {politically_connected trait_cautious }
 			skill = 3
 			attack_skill = 1
 			defense_skill = 1
@@ -161,6 +252,23 @@ characters={
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id=3508
+		}
+	}	
+QNG_ronglu={
+		name="Ronglu"
+		portraits={
+			army={
+				large="gfx/leaders/QNG/Portrait_QNG_Ronglu.png"
+			}
+		}
+		corps_commander = {
+			traits = {politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=3509
 		}
 	}
 	QNG_great_regency_council={
@@ -219,6 +327,23 @@ characters={
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 1
+			legacy_id=3404
+		}
+	}
+	TAI_Cheng_Xueqi={
+		name="Cheng Xueqi"
+		portraits={
+			army={
+				large="gfx/leaders/TAI/TAI_cheng_xueqi.png"
+			}
+		}
+		corps_commander = {
+			traits = {war_hero brilliant_strategist bearer_of_artillery}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
 			legacy_id=3405
 		}
 	}
@@ -230,11 +355,11 @@ characters={
 			}
 		}
 		corps_commander = {
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
 			legacy_id=3406
 		}
 	}
@@ -246,11 +371,11 @@ characters={
 			}
 		}
 		corps_commander = {
-			skill = 1
+			skill = 2
 			attack_skill = 1
-			defense_skill = 1
+			defense_skill = 2
 			planning_skill = 1
-			logistics_skill = 1
+			logistics_skill = 2
 			legacy_id=3407
 		}
 	}
@@ -263,7 +388,7 @@ characters={
 		}
 		corps_commander = {
 			skill = 1
-			attack_skill = 1
+			attack_skill = 2
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
@@ -640,18 +765,18 @@ characters={
 		name = QNG_Tongzhi_emperor_name
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_QNG_Tongzhi_Emperor
+				large = "gfx/leaders/QNG/Portrait_QNG_Tongzhi_child.png"
 			}
 			army = {
-				large = GFX_Portrait_QNG_Tongzhi_Emperor
+				large = "gfx/leaders/QNG/Portrait_QNG_Tongzhi_child.png"
 			}
 		}
 	}
 	QNG_Guangxu_Emperor = {
-		name = QNG_Tongzhi_emperor_name
+		name = QNG_Guangxu_emperor_name
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_QNG_Guangxu_Emperor
+				large = "gfx/leaders/QNG/Portrait_QNG_Guangxu_Emperor.png"
 			}
 		}
 	}
@@ -753,7 +878,7 @@ characters = {
 			logistics_skill = 1
 		}
 	}
-	NIE_character_lai_wenguang = {
+	TAI_lai_wenguang = {
 		name = "Lai Wenguang"
 		portraits = {
 			army = {
@@ -1098,7 +1223,7 @@ characters = {
 		name = "Weng Tonghe"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_weng_tonghe"
 			}
 		}
 		advisor = {
@@ -1108,7 +1233,7 @@ characters = {
 				original_tag = QNG
 			}
 			traits = {
-				
+				QNG_trait_weng_tonghe
 			}
 			ai_will_do = {
 				factor = 7
@@ -1116,33 +1241,44 @@ characters = {
 		}
 	}
 	
-	QNG_keying = {
-		name = "Keying"
+	QNG_cixi = {
+		name = "Cixi"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_cixi_advisor"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = QNG_advisor_keying
+			idea_token = QNG_advisor_cixi
 			allowed = {
 				original_tag = QNG
 			}
 			traits = {
-				QNG_trait_Keying
+				QNG_trait_cixi
 			}
 			ai_will_do = {
 				factor = 7
 			}
+			visible = {
+				NOT = {
+					has_country_flag = QNG_prince_gong1_flag
+					has_country_flag = QNG_prince_gong_flag
+					has_country_flag = QNG_sushun_council_flag
+					has_country_flag = xianfeng_universal_prosperity_flag
+				}
+				has_country_flag = QNG_Cixi_1_flag
+				has_completed_focus = QNG_focus_power_empress_dowager
+			}
+		can_be_fired = no
 		}
 	}
 	
 	QNG_yixuan_princ_chun = {
-		name = "Yixuan Prince Chun"
+		name = "Yixuan, Prince Chun"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_Prince_Yixuan"
 			}
 		}
 		advisor = {
@@ -1161,10 +1297,10 @@ characters = {
 	}
 	
 	QNG_duan = {
-		name = "Duan"
+		name = "Zaiyi, Prince Duan"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_Prince_Duan"
 			}
 		}
 		advisor = {
@@ -1186,7 +1322,7 @@ characters = {
 		name = "Sushun"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_sushun"
 			}
 		}
 		advisor = {
@@ -1204,14 +1340,17 @@ characters = {
 			ai_will_do = {
 				factor = 7
 			}
+			available = {
+				has_completed_focus = QNG_focus_promotion_of_sushun
+			}
 		}
 	}
 	
 	QNG_prince_gong = {
-		name = "Prince Gong"
+		name = "Yixin, Prince Gong"
 		portraits = {
 			civilian = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_Prince_Gong"
 			}
 		}
 		advisor = {
@@ -1221,13 +1360,13 @@ characters = {
 				original_tag = QNG
 			}
 			traits = {
-				
+				QNG_trait_prince_gong	
 			}
 			research_bonus = {
 				
 			}
 			ai_will_do = {
-				factor = 7
+				factor = 100
 			}
 		}
 	}
@@ -1255,8 +1394,18 @@ characters = {
 		name = "Li Hongzhang"
 		portraits = {
 			army = {
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_QNG_Li_Hongzhang"
+				large = "gfx/leaders/QNG/Portrait_QNG_Li_Hongzhang.png"
 			}
+		}
+		corps_commander = {
+			traits = {politically_connected war_hero}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=3510
 		}
 		advisor = {
 			slot = political_advisor

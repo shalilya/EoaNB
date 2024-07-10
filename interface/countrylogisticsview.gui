@@ -18,16 +18,16 @@ guiTypes = {
 		}
 
 		iconType = {
-			name = "logistics_header_bg"
+			name = "army_header_bg"
 			spriteType = "GFX_header_bg"
-			position = { x = 5 y = 07 }
+			position = { x = 5 y = 4 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		instantTextboxType = {
 			name = "logistics_title"
-			position = { x = 195 y = 8 }
-			font = "hoi_36header"
+			position = { x = 45 y = 9 }
+			font = "vic_36s"
 			borderSize = { x = 0 y = 0 }
 			text = "LOGISTICS_LOGISTICS_LABEL"
 			maxWidth = 240
@@ -55,11 +55,6 @@ guiTypes = {
 			size = { width = 550 height = -98 }
 			margin = { top = 33 bottom = 123 }
 			verticalScrollbar = "right_vertical_slider"
-
-			background = {
-				name = "Background"
-				spriteType = "GFX_tiled_window2_1b_border"
-			}
 
 			background = {
 				name = "Background"
@@ -561,7 +556,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = { x = -43 y = 10 }
+			position = { x = -29 y = 10 }
 			quadTextureSprite = "GFX_closebutton"
 			buttonFont = "hoi_16mbs"
 			shortcut = "ESCAPE"
@@ -576,8 +571,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "logistics_info_window"
-		position = { x = -356 y = 78 }
-		show_position = { x = 539 y = 78 }
+		position = { x = -356 y = 138 }
+		show_position = { x = 539 y = 138 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300
@@ -812,8 +807,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "logistics_fuel_window"
-		position = { x = -356 y = 78 }
-		show_position = { x = 539 y = 78 }
+		position = { x = -356 y = 138 }
+		show_position = { x = 539 y = 138 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300

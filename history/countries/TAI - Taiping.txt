@@ -43,23 +43,23 @@
 
 	declare_war_on = {
 		target = QNG
-		type = annex_everything
+		type = wargoal_expel_manchu
 	}
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		absolute_monarchy
+		#non_monarchical_system
+		#absolute_monarchy
 	law_pre_industrial_army_chinese
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -68,18 +68,18 @@
 		limited_equality
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		theocratic_state
 		#religion_catholic
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 	TAI_infantry_equipment_manufacturer
 
@@ -110,11 +110,13 @@ set_popularities = {
 	# POLITICAL LEADERS
 	recruit_character = TAI_Hong_Xiuquan
 	recruit_character = TAI_Hong_Tianguifu
-	
+
 
 	# GENERALS
 	recruit_character = TAI_Shi_Dakai
 	recruit_character = TAI_Li_Xiucheng
 	recruit_character = TAI_Li_Shixian
 	recruit_character = TAI_Chen_Yucheng
+	recruit_character = TAI_Cheng_Xueqi # who will later defect to Qing in 1861
+	recruit_character = TAI_lai_wenguang
 }

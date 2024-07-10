@@ -20,10 +20,39 @@ ideas = {
 	        picture = GRE_Bavarocracy
 	
 	        modifier = { 
-			    stability_factor = -0.2
+			    stability_factor = -0.1
+				political_power_gain = -0.2
 			}
 		}
 
+		GRE_idea_outdated_army = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			#picture = generic_idea_outdated_army
+
+			modifier = {
+				army_org_factor = -0.15
+				army_org_regain = -0.15
+				experience_gain_army_unit_factor = -0.15
+				max_planning_factor = -0.15
+				planning_speed = -0.15
+				army_spending_cost_factor = 0.45
+				hidden_modifier = {
+					army_spending_cost_factor_from_ideas = 0.45
+				}
+			}
+
+		}
+		
 		GRE_idea_Megali_Idea = {
 			
 			allowed = { 
@@ -119,58 +148,7 @@ ideas = {
 	
 	        removal_cost = -1
 	
-	        picture = placeholder
-	
-	        modifier = {}
-		}
-
-		GRE_idea_Disorganised_Army = {
-
-			allowed = { 
-			    always = no 
-			}
-			
-			allowed_civil_war = {
-				always = no 
-			}
-	
-	        removal_cost = -1
-	
-	        picture = placeholder
-	
-	        modifier = {}
-		}
-
-		GRE_idea_Underdeveloped_Agriculture = {
-
-			allowed = { 
-			    always = no 
-			}
-			
-			allowed_civil_war = {
-				always = no 
-			}
-	
-	        removal_cost = -1
-	
-	        picture = placeholder
-	
-	        modifier = {}
-		}
-
-		GRE_idea_Poor_Land_Reform = {
-
-			allowed = { 
-			    always = no 
-			}
-			
-			allowed_civil_war = {
-				always = no 
-			}
-	
-	        removal_cost = -1
-	
-	        picture = placeholder
+	        picture = GRE_New_Generation_Politicians
 	
 	        modifier = {}
 		}
@@ -187,10 +165,11 @@ ideas = {
 	
 	        removal_cost = -1
 	
-	        picture = placeholder
+	        picture = GRE_Greek_Trade
 	
 	        modifier = {
 				transport_capacity = 0.25
+				tax_efficiency_factor = 0.05
 			}
 		}
 		
@@ -209,7 +188,7 @@ ideas = {
 			picture = SWE_workers_economy
 	
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				political_power_factor = -0.03
 			}
 		}
@@ -229,7 +208,8 @@ ideas = {
 	        picture = GRE_occupation_athens
 	
 	        modifier = { 
-			    army_org_Factor = -0.1 
+			    army_org_Factor = -0.1
+				
 			}
 		}
 
@@ -379,7 +359,7 @@ ideas = {
 				industrial_capacity_factory = -0.1
 				stability_weekly = 0.01
 				political_power_gain = -0.5
-				consumer_goods_factor = 0.25
+				consumer_goods_expected_value = 0.25
 			}
 		}
 	   
@@ -415,7 +395,7 @@ ideas = {
 	
 	        removal_cost = -1
 	
-	        picture = placeholder
+	        picture = GRE_King_Otto_Army
 	
 	        modifier = { 
 			    stability_factor = -0.1
@@ -445,6 +425,299 @@ ideas = {
 				political_power_gain = 0
 				army_org = 10
 				army_org_regain = 0.1
+			}
+		}
+
+		###Military Reforms
+
+		##Army Reform - Hoplite
+
+		#Hoplite Traditions
+		GRE_idea_hoplite_traditions = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_modern_army
+
+			modifier = {
+				experience_gain_army_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+
+		#Spartan Layout
+		GRE_idea_spartan_layout = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_modern_army
+
+			modifier = {
+				army_core_defence_factor = 0.15
+				training_time_army_factor = 0.1
+			}
+		}
+
+		#Improved Oficier Training 
+		GRE_idea_improved_oficier_training = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_war_plans
+
+			modifier = {
+				experience_gain_army_factor = 0.075
+			}
+		}
+
+		#Improved Infantry Discipline
+		GRE_idea_improved_infantry_discilpline = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_mandatory_conscription
+
+			modifier = {
+				army_org_factor = 0.05
+				army_org_regain = 0.05
+			}
+		}
+
+		#Organised Planning Staff
+		GRE_idea_improved_planning_staff = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_educate_new_staff
+
+			modifier = {
+				max_planning_factor = 0.1
+				planning_speed = 0.05
+			}
+		}
+
+		#Mountain Training
+		GRE_idea_mountain_training = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_idea_mountain_training
+
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+			}
+		}
+
+		#Westernised Army
+		GRE_idea_westernised_army = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = GRE_westernized_army
+
+			modifier = {
+				army_org_factor = -0.05
+				army_org_regain = -0.05
+				training_time_army_factor = 0.1
+				max_planning_factor = 0.15
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_cap = 0.1
+				experience_gain_army_factor = 0.1
+			}
+		}
+
+		##Partisan Reform
+
+		#Partisan Doctrine
+		GRE_idea_partisan_doctrine = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_mandatory_conscription
+
+			modifier = {
+				experience_gain_army_factor = -0.05
+				army_speed_factor = 0.05
+			}
+		}
+
+		#Decentralised Staff
+		GRE_idea_decentrlised_staff = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_educate_new_staff
+
+			modifier = {
+				planning_speed = 0.1
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		#Guerilla Experts
+		GRE_idea_guerilla_experts = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_war_plans
+
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		#Partisan-based Army
+		GRE_idea_partisan_army = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = GRE_partisan_army
+
+			modifier = {
+				army_org_factor = -0.15
+				army_org_regain = -0.15
+				max_planning_factor = -0.15
+				experience_gain_army_factor = -0.1
+				army_speed_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		##Marine Doctrine
+
+		#Organised Marine Trining
+		GRE_idea_marine_training = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_mandatory_conscription
+
+			modifier = {
+				special_forces_attack_factor = 0.1
+			}
+		}
+
+		#Maritime Army
+		GRE_idea_maritime_army = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = GRE_maritime_army
+
+			modifier = {
+				army_org_factor = -0.1
+				army_org_regain = -0.1
+				max_planning_factor = 0.05
+				planning_speed = 0.05
+				special_forces_attack_factor = 0.1
+				invasion_preparation = -0.1
+				naval_invasion_penalty = -0.15
+				special_forces_cap = 0.1
+			}
+		}
+
+		#Naval Operations Coordination
+		GRE_idea_naval_operations_coordination = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_war_plans
+
+			modifier = {
+				invasion_preparation = -0.1
+				naval_invasion_penalty = -0.1
+			}
+		}
+
+		#Rising Navy Influence
+		GRE_idea_rising_navy_influence = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_coastal_navy
+
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.05
+			}
+		}
+
+		#Artillery Department Disbanded
+		GRE_idea_artillery_pepartment_disbanded ={
+			
+			allowed = {
+				always = no
+			}
+
+			picture = army_spending_cuts
+
+			modifier = {
+				army_artillery_defence_factor = -0.1
+				army_artillery_attack_factor = -0.1
+			}
+		}
+
+		#Three Regions
+		GRE_idea_three_regions ={
+			
+			allowed = {
+				always = no
+			}
+
+			picture = placeholder
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				
+			}
+		}
+
+		#Justice Division Removed
+		GRE_idea_justice_department_removed ={
+			
+			allowed = {
+				always = no
+			}
+
+			picture = army_spending_cuts
+
+			modifier = {
+				army_org_regain = -0.15
 			}
 		}
 
@@ -551,6 +824,11 @@ ideas = {
 				trade_opinion_factor = -0.25
 				political_power_gain = -0.2
 				stability_factor = -0.15
+				tax_efficiency_factor = -0.25
+				consumer_goods_income_factor = -0.25
+				hidden_modifier = {
+					consumer_goods_income_factor_from_ideas = -0.25
+				}	
 			}
 		}
 
@@ -572,6 +850,11 @@ ideas = {
 				trade_opinion_factor = -0.15
 				political_power_gain = -0.1
 				stability_factor = -0.05
+				tax_efficiency_factor = -0.15
+				consumer_goods_income_factor = -0.15
+				hidden_modifier = {
+					consumer_goods_income_factor_from_ideas = -0.15
+				}
 			}
 		}
 
@@ -759,7 +1042,7 @@ ideas = {
 	        picture = placeholder
 	
 	        modifier = { 
-			    consumer_goods_factor = -0.05 
+			    consumer_goods_expected_value = -0.05 
 				production_factory_max_efficiency_factor = 0.05 
 			}
         }
@@ -817,7 +1100,7 @@ ideas = {
 	
 	        removal_cost = -1
 			
-	        picture = placeholder
+	        picture = GFX_idea_generic_educate_new_staff
 	
 	        modifier = { 
 			    planning_speed = 0.05 
@@ -840,7 +1123,6 @@ ideas = {
 	        picture = GRE_International_Economic_Comittee
 	
 	        modifier = { 
-			    political_power_gain = -0.5
 				stability_weekly = -0.005
 				production_speed_buildings_factor = -0.05
 				industrial_capacity_factory = -0.05
@@ -883,6 +1165,25 @@ ideas = {
 	
 	        modifier = { 
 				MONTHLY_POPULATION = 0.05
+			}
+		}
+
+		GRE_idea_demobilized_peoples_fund = {
+			
+			allowed = {
+	            always = no 
+	        }
+			
+			allowed_civil_war = {
+				always = no 
+			}
+	
+	        removal_cost = -1
+			
+	        picture = GRE_demobilized_peoples_fund
+	
+	        modifier = { 
+				MONTHLY_POPULATION = 0.1
 			}
 		}
 		
@@ -969,7 +1270,11 @@ ideas = {
 		
 			modifier = { 
 				production_speed_farm_factor = 0.05
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
+				money_income_factor = 0.03
+				hidden_modifier = {
+					money_income_factor_from_ideas = 0.03
+				}
 			}
 		}
 
@@ -988,8 +1293,12 @@ ideas = {
 	        picture = placeholder
 		
 			modifier = { 
-				production_speed_cotton_farm_factor = 0.1
-				production_speed_fabric_weavery_factor = 0.1
+				production_speed_cotton_farm_factor = 0.05
+				production_speed_fabric_weavery_factor = 0.05
+				money_income_factor = 0.01
+				hidden_modifier = {
+					money_income_factor_from_ideas = 0.01
+				}
 			}
 		}
 
@@ -1027,7 +1336,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = -0.15
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				production_speed_buildings_factor = 0.15
 			}
 		}
@@ -1047,7 +1356,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = -0.10
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				production_speed_buildings_factor = 0.10
 			}
 		}
@@ -1067,7 +1376,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = -0.05
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				production_speed_buildings_factor = 0.05
 			}
 		}
@@ -1107,7 +1416,7 @@ ideas = {
 		
 			modifier = { 
 				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 			
 		}
@@ -1328,7 +1637,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = 0.1
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 			}
 		}
 		
@@ -1347,7 +1656,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = 0.25
-				consumer_goods_factor = 0.075
+				consumer_goods_expected_value = 0.075
 			}
 		}
 		
@@ -1366,7 +1675,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = 0.2
-				consumer_goods_factor = 0.075
+				consumer_goods_expected_value = 0.075
 			}
 		}
 		
@@ -1387,7 +1696,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = -0.1
-				consumer_goods_factor = -0.025
+				consumer_goods_expected_value = -0.025
 			}
 		}
 		
@@ -1408,7 +1717,7 @@ ideas = {
 		
 			modifier = { 
 				political_power_gain = -0.2
-				consumer_goods_factor = -0.075
+				consumer_goods_expected_value = -0.075
 			}
 		}
 		
@@ -1503,7 +1812,7 @@ ideas = {
 		}	
     }
 	
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 
@@ -1551,7 +1860,7 @@ ideas = {
 		}
 	}
 
-	materiel_manufacturer = {
+	materiel_manufacturers = {
 		
 		GRE_pyrkal = {
 
@@ -1603,6 +1912,59 @@ ideas = {
 	}
 	
 	industrial_concern = {
+	
+		GRE_rallis_binney_company = {
+
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				tag = GRE
+			}
+			
+			available = {
+				has_completed_focus = GRE_telecomunication
+			}
+
+			cost = 150
+			removal_cost = 10
+			
+			modifier = {
+			    
+		    }
+
+			research_bonus = {
+				
+			}
+
+			traits = {  }
+		}
+	
+		GRE_piraeus_railway_works = {
+
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				tag = GRE
+			}
+			
+			available = {
+				
+			}
+
+			cost = 150
+			removal_cost = 10
+			
+			modifier = {
+			    production_speed_infrastructure_factor = 0.05
+				production_speed_rail_way_factor = 0.15
+		    }
+
+			research_bonus = {
+				trains_tech = 0.1
+			}
+
+			traits = { industrial_concern_1 }
+		}
 
 		GRE_basileiades = {
 
@@ -1615,7 +1977,7 @@ ideas = {
 			available = {
 				OR = {
 					has_completed_focus = GRE_land_reform
-					has_completed_focus = GRE_industrialization
+					has_completed_focus = GRE_encourage_the_growth_of_basileiades
 				}
 			}
 

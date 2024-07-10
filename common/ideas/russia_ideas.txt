@@ -82,8 +82,8 @@ ideas = {
 			picture = RUS_caucasian_war
 
             modifier = {
-				attrition = -0.05
-				supply_consumption_factor = -0.05
+				attrition = -0.15
+				supply_consumption_factor = -0.15
 				army_attack_factor = 0.15
             }
         }
@@ -100,6 +100,7 @@ ideas = {
 				experience_gain_army = 0.02
 				production_speed_buildings_factor = 0.03
 				research_speed_factor = 0.01
+				autocracy_drift = 0.03
             }
         }
 		
@@ -140,7 +141,7 @@ ideas = {
 
             modifier = {
                 stability_factor = 0.1
-                consumer_goods_factor = -0.03
+                consumer_goods_expected_value = -0.03
                 industrial_capacity_factory = -0.05
                 industrial_capacity_dockyard = -0.05
                 production_speed_buildings_factor = -0.05
@@ -158,7 +159,7 @@ ideas = {
 
             modifier = {
                 stability_factor = -0.04
-                consumer_goods_factor = 0.01
+                consumer_goods_expected_value = 0.01
                 industrial_capacity_factory = 0.02
                 industrial_capacity_dockyard = 0.02
                 production_speed_buildings_factor = 0.02
@@ -175,7 +176,7 @@ ideas = {
 			picture = RUS_trade_rus
             
             modifier = {
-			    consumer_goods_factor = -0.01
+			    consumer_goods_expected_value = -0.01
 			    trade_opinion_factor = 0.05
 			    political_power_gain = 0.25
 			}
@@ -238,89 +239,37 @@ ideas = {
 			}
         }
 		
-		RUS_idea_peasant_reform = {
+		RUS_idea_radical_peasant_reform = {
 		
             allowed = {
 				always = no
 			}
 			
-			picture = RUS_peasants
+			picture = RUS_radical_peasant_reform
             
             modifier = {
-			   stability_factor = -0.2
-			   war_support_factor = -0.1
-			   political_power_gain = 0.05
-			   monthly_population = 0.25
+				monthly_population = 0.3
+				stability_factor = 0.2
+				consumer_goods_factor = 0.03
 			}
-			
-			research_bonus = {
-				
+			on_remove = {
+				country_event = rossiya.641
 			}
         }
-		
-		RUS_idea_peasant_reform2 = {
-		
-            allowed = {
-				always = no
-			}
-			
-			picture = RUS_peasants
-            
-            modifier = {
-			   production_speed_buildings_factor = 0.1
-			   stability_factor = -0.2
-			   war_support_factor = -0.1
-			   political_power_gain = 0.1
-			   monthly_population = 0.25
-			}
-			
-			research_bonus = {
-				
-			}
-        }
-		
-		RUS_idea_peasant_reform3 = {
+
+		RUS_idea_moderate_peasant_reform = {
 		
             allowed = {
 				always = no
 			}
 			
-			picture = RUS_peasants
+			picture = RUS_peasant_reform
             
             modifier = {
-			   local_building_slots_factor = 0.3
-			   production_speed_buildings_factor = 0.1
-			   stability_factor = -0.15
-			   war_support_factor = -0.1
-			   political_power_gain = 0.15
-			   monthly_population = 0.25
-			}
-			
-			research_bonus = {
-				farming_tech = 0.05
-			}
-        }
-		
-		RUS_idea_peasant_reform4 = {
-		
-            allowed = {
-				always = no
-			}
-			
-			picture = RUS_peasants
-            
-            modifier = {
-			   local_resources_factor = 0.1
-			   local_building_slots_factor = 0.3
-			   production_speed_buildings_factor = 0.1
-			   stability_factor = -0.1
-			   war_support_factor = -0.1
-			   political_power_gain = 0.15
-			   monthly_population = 0.25
-			}
-			
-			research_bonus = {
-				farming_tech = 0.05
+				monthly_population = 0.3
+				political_power_gain = 0.15
+				stability_factor = -0.2
+				industrial_capacity_factory = 0.05
 			}
         }
 		
@@ -423,7 +372,7 @@ ideas = {
 				supply_consumption_factor = 0.1
 			}
 		}
-		
+		#Idea lacked the icon in-game @Skoodge
 		RUS_idea_military_districts = {
 
 			allowed = {
@@ -435,6 +384,8 @@ ideas = {
 			}
 
 			removal_cost = -1
+
+			picture = generic_war_preparation
 
 			modifier = {
 				army_org_factor = -0.05
@@ -494,7 +445,7 @@ ideas = {
 			
             modifier = {
                 stability_factor = 0.05
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
             }
 			
 			research_bonus = {
@@ -522,7 +473,7 @@ ideas = {
 				always = no
 			}
 		
-            picture = generic_pp_unity_bonus
+            picture = GFX_idea_RUS_zemstvo
 			
             modifier = {
                 local_resources_factor = 0.02
@@ -532,6 +483,54 @@ ideas = {
             }
         }   
         
+		### Terrorism and Such
+
+		RUS_idea_revolutionary_terrorism_low = {
+			
+			allowed = {
+				always = no
+			}
+		
+            picture = RUS_revolutionary_terrorism_low
+			
+            modifier = {
+				stability_weekly_factor = -0.001
+				social_egalitarianism_drift = 0.02
+            }
+		}
+
+		RUS_idea_revolutionary_terrorism_high = {
+			allowed = {
+				always = no
+			}
+		
+            picture = RUS_revolutionary_terrorism_high
+			
+            modifier = {
+            	stability_weekly_factor = -0.003
+				social_egalitarianism_drift = 0.03
+            }
+		}
+
+		RUS_idea_dictatorship_of_the_heart = {
+			allowed = {
+				always = no
+			}
+		
+            picture = RUS_dictatorship_of_the_heart
+			
+            modifier = {
+            	stability_weekly_factor = 0.002
+				social_egalitarianism_drift = -0.01
+				centrism_drift = 0.01
+				#add_power_balance_modifier = {
+				#	id = RUS_Balance_of_Power_Russian_Establishment
+				#	modifier = RUS_Balance_of_Power_dictatorship_of_the_heart
+				#}
+				political_power_gain = -0.5
+            }
+		}
+
         RUS_idea_assassination_of_alexander = {
 		
 			allowed = {
@@ -577,6 +576,49 @@ ideas = {
             }
         }
 		
+		###Female Education
+		RUS_idea_female_education1 = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = RUS_female_education1
+
+			modifier = {
+				political_power_gain = 0.01
+				research_speed_factor = 0.01
+			}
+		}
+
+		RUS_idea_female_education2 = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = RUS_female_education2
+
+			modifier = {
+				political_power_gain = 0.03
+				research_speed_factor = 0.03
+			}
+		}
+
+		RUS_idea_female_education3 = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = RUS_female_education3
+
+			modifier = {
+				political_power_gain = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+
 		###Russian Corruption
 		RUS_idea_russian_corruption1 = {
 		
@@ -689,7 +731,7 @@ ideas = {
 			
             modifier = {
                stability_factor = -0.05
-			   consumer_goods_factor = -0.01
+			   consumer_goods_expected_value = -0.01
 			   research_speed_factor = 0.005
 			   trade_opinion_factor = 0.05
             }
@@ -710,7 +752,7 @@ ideas = {
 			
             modifier = {
                stability_factor = -0.15
-			   consumer_goods_factor = -0.02
+			   consumer_goods_expected_value = -0.02
 			   research_speed_factor = 0.01
 			   trade_opinion_factor = 0.075
             }
@@ -720,6 +762,7 @@ ideas = {
 				economics_tech = 0.04
 			}
         }
+
         
 		###For Future
         RUS_idea_hand_out_arrests = {
@@ -863,7 +906,7 @@ ideas = {
 
             modifier = {
                 production_speed_infrastructure_factor = 0.12
-                consumer_goods_factor = 0.03
+                consumer_goods_expected_value = 0.03
             }
         }
 
@@ -880,7 +923,7 @@ ideas = {
             }
 
             modifier = {
-                consumer_goods_factor = 0.03
+                consumer_goods_expected_value = 0.03
             }
         }
 
@@ -897,7 +940,7 @@ ideas = {
             }
 
             modifier = {
-                consumer_goods_factor = 0.02
+                consumer_goods_expected_value = 0.02
                 production_speed_buildings_factor = 0.04
                 research_speed_factor = 0.02 
             }
@@ -913,7 +956,7 @@ ideas = {
 			
             modifier = {
                 political_power_gain = 0.10
-                consumer_goods_factor = 0.02
+                consumer_goods_expected_value = 0.02
                 production_factory_efficiency_gain_factor = -0.03       
                 production_speed_buildings_factor = -0.03
 				production_factory_max_efficiency_factor = -0.03
@@ -930,7 +973,7 @@ ideas = {
 			
             modifier = {
                 political_power_gain = -0.05
-                consumer_goods_factor = -0.02
+                consumer_goods_expected_value = -0.02
                 production_factory_efficiency_gain_factor = 0.05                
             }
         }
@@ -950,57 +993,15 @@ ideas = {
             }
         }
 		
-        RUS_idea_urbanisation0 = {
-		
-            picture = RUS_urban_start
-			
-            modifier = {
-                consumer_goods_factor = 0.03
-				political_power_gain = -0.05
-            } 
-        }
-		
-		RUS_idea_urbanisation1 = {
-		
-            picture = RUS_urban_start
-			
-            modifier = {
-                consumer_goods_factor = 0.03
-				political_power_gain = 0.1
-            } 
-        }
-		
-		RUS_idea_urbanisation2 = {
-		
-            picture = RUS_urban_start
-			
-            modifier = {
-                consumer_goods_factor = -0.03
-				political_power_gain = 0.1
-            } 
-        }
-		
-		RUS_idea_urbanisation3 = {
-		
-            picture = RUS_urban_start
-			
-             modifier = {
-                consumer_goods_factor = -0.03
-				political_power_gain = 0.1
-				traditional_conservatism_drift = 0.01
-				centrism_drift = 0.01
-            } 
-        }
-		
-		RUS_idea_urbanisation4 = {
+		RUS_idea_urbanisation = {
 		
             picture = RUS_urban_end
 			
              modifier = {
-                consumer_goods_factor = -0.08
-				political_power_gain = 0.2
-				traditional_conservatism_drift = 0.02
-				centrism_drift = 0.02
+                consumer_goods_expected_value = -0.08
+				political_power_gain = 0.15
+				traditional_conservatism_drift = 0.005
+				centrism_drift = 0.005
             } 
         }
 		
@@ -1088,7 +1089,7 @@ ideas = {
             
             modifier = {
                political_power_gain = 0.05
-               consumer_goods_factor = -0.02         
+               consumer_goods_expected_value = -0.02         
             }
 		}
 		
@@ -1111,7 +1112,7 @@ ideas = {
 		
     }
 	
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 
@@ -1316,7 +1317,7 @@ ideas = {
             traits = { RUS_trait_R_A_C }
 			
 			equipment_bonus = {
-				convoy_equipment = {
+				convoy = {
 					build_cost_ic = -0.05
                     instant = yes					
 		        }
@@ -1347,7 +1348,7 @@ ideas = {
         }
     }
 
-    materiel_manufacturer = {
+    materiel_manufacturers = {
 
         designer = yes
 
@@ -1424,7 +1425,7 @@ ideas = {
             traits = { artillery_manufacturer_1 }
 			
 			equipment_bonus = {
-				artillery_equipment = {
+				artillery = {
 					build_cost_ic = -0.05
 		        }
 	        }

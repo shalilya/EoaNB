@@ -7,21 +7,33 @@
 
 	set_research_slots = 2
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		non_monarchical_system
-		presidential_republic
+		#non_monarchical_system
+		#presidential_republic
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -30,18 +42,18 @@
 		segregation
 		universal_male_suffrage
 
-		limited_constitution
+		#limited_constitution
 		limited_elections
 
 		open_schools
 		state_religion
 		#religion_catholic
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 	}

@@ -1724,7 +1724,6 @@ country_event = {
 			if = {
 				limit = { tag = USA }
 				remove_state_core = 364
-				364 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 				
 				hidden_effect = {
 					add_state_claim = 364
@@ -1958,7 +1957,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			375 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2008,7 +2006,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			371 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2059,7 +2056,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			372 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2123,7 +2119,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			383 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2179,7 +2174,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			373 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2230,7 +2224,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			368 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2280,8 +2273,7 @@ country_event = {
 		}
 		option = {
 			name = usa_slavery_debate.49.b
-			trigger = { tag = CSA }
-			370 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }	
+			trigger = { tag = CSA }	
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2332,7 +2324,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			367 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2383,7 +2374,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			366 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2434,7 +2424,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			365 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2485,7 +2474,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			363 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2550,7 +2538,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			362 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -2627,7 +2614,6 @@ country_event = {
 		option = {
 			name = usa_slavery_debate.49.b
 			trigger = { tag = CSA }
-			315 = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 			set_temp_variable = { eoanb_prestige_change = 1 }
 			eoanb_change_prestige_score = yes
 		}
@@ -4153,15 +4139,6 @@ news_event = {
 			target = USA
 			type = acw_civil_war_wargoal
 		}
-		hidden_effect = {
-			if = {
-				limit = { SEM = { exists = yes } }
-				declare_war_on = {
-					target = SEM
-					type = acw_civil_war_wargoal
-				}
-			}
-		}
 		add_named_threat = {
 			threat = 5
 			name = "The American Civil War"
@@ -5338,22 +5315,12 @@ country_event = {
 	hidden = yes
 
 	immediate = {
-		if = {
-			limit = { 
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Death or Dishonor"
-					has_dlc = "Waking the Tiger"
-				}
-			}
-			USA = {
-				set_autonomy = {
-					target = WVG
-					autonomous_state = autonomy_organized_unincorporated_territory
-				}
+		USA = {
+			set_autonomy = {
+				target = WVG
+				autonomous_state = autonomy_organized_unincorporated_territory
 			}
 		}
-		else = { USA = { puppet = WVG } }
 		WVG = {
 			set_politics = {
 				ruling_party = ideology_social_liberalism
@@ -6840,18 +6807,6 @@ country_event = {
 # 				}
 # 				if = {
 # 					limit = {
-# 						country_exists = SHO
-# 						SHO = { is_subject = no }
-# 					}
-# 					ORE = {
-# 						set_variable = { rival_country = SHO.id }
-# 					}
-# 					SHO = {
-# 						set_variable = { rival_country = ORE.id }
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
 # 						country_exists = NEZ
 # 						NEZ = { is_subject = no }
 # 					}
@@ -7173,18 +7128,6 @@ country_event = {
 # 					fundamentalism = 37
 # 					centrism = 35
 # 					traditional_conservatism = 28
-# 				}
-# 				if = {
-# 					limit = {
-# 						country_exists = SHO
-# 						SHO = { is_subject = no }
-# 					}
-# 					SHO = {
-# 						set_variable = { rival_country = UTA.id }
-# 					}
-# 					UTA = {
-# 						set_variable = { rival_country = SHO.id }
-# 					}
 # 				}
 # 				if = {
 # 					limit = {
@@ -7625,18 +7568,6 @@ country_event = {
 # 				}
 # 				if = {
 # 					limit = {
-# 						country_exists = COM
-# 						COM = { is_subject = no }
-# 					}
-# 					TEX = {
-# 						set_variable = { rival_country = COM.id }
-# 					}
-# 					COM = {
-# 						set_variable = { rival_country = TEX.id }
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
 # 						country_exists = MEX
 # 						TEX = { is_subject = no }
 # 					}
@@ -7863,30 +7794,6 @@ country_event = {
 # 					}
 # 					OKL = {
 # 						set_variable = { most_favoured_country = MIO.id }
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
-# 						country_exists = CHY
-# 						MIO = { is_subject = no }
-# 					}
-# 					CHY = {
-# 						set_variable = { most_favoured_country = OKL.id }
-# 					}
-# 					OKL = {
-# 						set_variable = { most_favoured_country = CHY.id }
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
-# 						country_exists = COM
-# 						COM = { is_subject = no }
-# 					}
-# 					COM = {
-# 						set_variable = { most_favoured_country = CHY.id }
-# 					}
-# 					CHY = {
-# 						set_variable = { most_favoured_country = COM.id }
 # 					}
 # 				}
 # 			}
@@ -9246,82 +9153,6 @@ country_event = {
 # 	}
 # }
 
-# # Alaska
-# country_event = {
-# 	id = acw_generic.77
-# 	title = acw_generic.77.t
-# 	desc = acw_generic.77.d
-# 	picture = GFX_news_event_south_carolina
-
-# 	is_triggered_only = yes
-# 	fire_only_once = yes
-# 	trigger = {
-# 		OR = {
-# 			owns_state = 463
-# 		}
-# 	}
-
-# 	immediate = {
-# 		hidden_effect = {
-# 			if = {
-# 				limit = { has_war_with = CAL }
-# 				every_owned_state = {
-# 					if = {
-# 						limit = { is_controlled_by = CAL }
-# 						CAL = {
-# 							transfer_state = PREV
-# 							add_state_core = PREV
-# 						}
-# 						USA = {
-# 							remove_state_core = PREV
-# 							add_state_claim = PREV
-# 						}
-# 					}
-# 				}
-# 			}
-# 			if = {
-# 				limit = { owns_state = 463 }
-# 				463 = {
-# 					remove_core_of = USA
-# 					add_claim_by = USA
-# 					ALK = { transfer_state = PREV }
-# 					add_core_of = ALK
-# 				}
-# 				ALK = {
-# 					hidden_effect = {
-# 						set_variable = { var = ALK.NA_B_idea_working_class_exploitation_score_var@ALK value = USA.NA_B_idea_working_class_exploitation_score_var@USA }
-# 						set_variable = { var = ALK.NA_B_idea_working_class_organization_score_var@ALK value = USA.NA_B_idea_working_class_organization_score_var@USA }
-# 						country_event = { id = balkanized_usa.10 }
-# 					}
-# 					country_event = { id = balkanized_usa.6 days = 2 }
-# 					if = {
-# 						limit = { country_exists = ORE }
-# 						ORE = {
-# 							set_variable = { most_favoured_country = ALK.id }
-# 						}
-# 						ALK = {
-# 							set_variable = { most_favoured_country = ORE.id }
-# 						}
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	option = {
-# 		name = acw_generic.62.a
-# 		custom_effect_tooltip = 01_ACW_GENERIC_tt
-# 	}
-# 	option = {
-# 		name = acw_generic.62.b
-# 		trigger = { is_ai = no }
-# 		custom_effect_tooltip = 45_ACW_GENERIC_tt
-# 		hidden_effect = {
-# 			ALK = { change_tag_from = ROOT }
-# 		}
-# 	}
-# }
-
 # # Atlantic States (usa.141)
 # country_event = {
 # 	id = acw_generic.78
@@ -10159,19 +9990,19 @@ country_event = {
 						producer = USA
 					}
 					add_ideas = {
-						hos_is_leader
+						#hos_is_leader
 						victorian_era
 						law_victorian_army
 						industrializing
-						non_monarchical_system
-						presidential_republic
+						#non_monarchical_system
+						#presidential_republic
 
 						civilian_economy
 						export_focus
-						two_percent
+						army_spending_level_2
 						normal_taxes
 						cl_restricted
-						twelve_hour_work_day
+						#twelve_hour_work_day
 
 						#stagnation_growth
 						border_control
@@ -10179,7 +10010,7 @@ country_event = {
 						racial_laws
 						universal_male_suffrage
 
-						constitution_adopted
+						#constitution_adopted
 						free_elections
 
 						privileged_education
@@ -11997,8 +11828,7 @@ news_event = {
 			clr_global_flag = ACW_American_Civil_War
 			set_global_flag = ACW_American_Civil_War_Happened
 			PRS = {
-				clr_country_flag = PRS_USA_sell_guns_flag
-				clr_country_flag = PRS_CSA_sell_guns_flag
+				clr_country_flag = PRS_weapons_deal_successful
 				clr_country_flag = PRS_USA_sell_guns_rejected_flag
 				clr_country_flag = PRS_CSA_sell_guns_rejected_flag
 			}
@@ -12296,15 +12126,8 @@ news_event = {
 	option = { # Reaction
 		name = acw_peace_deal.1.b
 		trigger = {
-			OR = {
-				tag = ENG
-				tag = FRA
-				tag = SPR
-				tag = PRS
-				tag = RUS
-				tag = TSH
-				tag = CAN
-				tag = MEX
+			NOT = {
+				tag = USA
 			}
 		}
 		if = {
@@ -12780,18 +12603,18 @@ news_event = {
 			}
 			white_peace = CAL
 		}
-		swap_ideas = {
-			remove_idea = non_monarchical_system
-			add_idea = no_heir
-		}
-		swap_ideas = {
-			remove_idea = presidential_republic
-			add_idea = absolute_monarchy
-		}
-		swap_ideas = {
-			remove_idea = constitution_adopted
-			add_idea = human_rights
-		}
+		#swap_ideas = {
+		#	remove_idea = non_monarchical_system
+		#	add_idea = no_heir
+		#}
+		#swap_ideas = {
+		#	remove_idea = presidential_republic
+		#	add_idea = absolute_monarchy
+		#}
+		#swap_ideas = {
+		#	remove_idea = constitution_adopted
+		#	add_idea = human_rights
+		#}
 		swap_ideas = {
 			remove_idea = free_elections
 			add_idea = no_elections
@@ -12809,8 +12632,8 @@ news_event = {
 			add_idea = pp_limited_party_freedom
 		}
 		swap_ideas = {
-			remove_idea = law_police_force
-			add_idea = law_military_police_force
+			remove_idea = law_spending_level_5
+			add_idea = law_spending_level_3
 		}
 	}
 	option = {
@@ -13669,16 +13492,11 @@ country_event = {
 					limit = {
 						exists = yes
 						OR = {
-							TAG = SHO
 							TAG = NEZ
 							TAG = BFT
-							TAG = CRW
 							TAG = SIX
-							TAG = CHY
-							TAG = COM
 							TAG = APA
 							TAG = NAV
-							TAG = SEM
 							TAG = OKL
 						}
 					}

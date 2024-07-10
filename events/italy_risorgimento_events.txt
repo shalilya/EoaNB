@@ -7,6 +7,41 @@
 
 ##### risorgimento 900-999 news events
 
+#Società Geografica Italiana
+country_event = {
+	id = risorgimento.998
+	title = risorgimento.998.t
+	desc = risorgimento.998.d
+	picture = GFX_event_ITA_Geographic_Society
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = risorgimento.998.a
+		add_stability = 0.025
+		set_temp_variable = { eoanb_prestige_change = 2 }
+        eoanb_change_prestige_score = yes
+	}
+}
+#Gallery Opening
+country_event = {
+	id = risorgimento.999
+	title = risorgimento.999.t
+	desc = risorgimento.999.d
+	picture = GFX_event_ITA_Gallery_Opening
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = risorgimento.999.a
+		add_stability = 0.025
+		set_temp_variable = { eoanb_prestige_change = 2 }
+        eoanb_change_prestige_score = yes
+	}
+	option = {
+		name = risorgimento.999.b
+		add_political_power = -20
+	}
+}
+
 #### CRIMEAN WAR DIPLOMATIC EVENTS ####
 country_event = {
 	id = risorgimento.1
@@ -240,6 +275,10 @@ country_event = {
 			country_event = {
 				id = risorgimento.250
 				days = 3
+			}
+			country_event = {
+				id = risorgimento.276
+				days = 370
 			}
 		}
 	}
@@ -2095,7 +2134,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = risorgimento.68.a
+		name = risorgimento.68.b
 		trigger = {
 			PIE = {
 				has_completed_focus = PIE_The_Russian_Alliance
@@ -2315,6 +2354,29 @@ country_event = {
 				add = 7
 				is_historical_focus_on = no
 			}
+			modifier = {
+				add = 1
+				AND = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_ALLIANCE
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_ASSISTANCE
+					}
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_NEUTRALITY
+					}
+				}
+			}
 		}
 		trigger = {
 			NOT = {
@@ -2338,6 +2400,19 @@ country_event = {
 				add = 4
 				is_historical_focus_on = no
 			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_ALLIANCE
+					}
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_NEUTRALITY
+					}
+				}
+			}
 		}
 		set_country_flag = PIE_RUS_Assistance_2IP
 		PIE = {
@@ -2354,6 +2429,29 @@ country_event = {
 			modifier = {
 				add = 3
 				is_historical_focus_on = no
+			}
+			modifier = {
+				add = 1
+				AND = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_NEUTRALITY
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_ALLIANCE
+					}
+					has_game_rule = {
+						rule = PIE_RISORGIMENTO_RUSSIA
+						option = PIE_RISORGIMENTO_RUSSIA_ASSISTANCE
+					}
+				}
 			}
 		}
 		trigger = {
@@ -2378,6 +2476,9 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = risorgimento.83.a
+		ai_chance = {
+			base = 1
+		}
 		trigger = {
 			PIE = {
 				has_country_flag = PIE_RUS_Alliance_2IP
@@ -2389,6 +2490,16 @@ country_event = {
 	}
 	option = {
 		name = risorgimento.83.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = PIE_RISORGIMENTO_RUSSIA 
+					option = PIE_RISORGIMENTO_RUSSIA_ALLIANCE 
+				}
+			}
+		}
 		trigger = {
 			has_country_flag = PIE_RUS_Alliance_2IP
 		}
@@ -2407,6 +2518,9 @@ country_event = {
 	}
 	option = {
 		name = risorgimento.83.b
+		ai_chance = {
+			base = 1
+		}
 		trigger = {
 			has_country_flag = PIE_RUS_Assistance_2IP
 		}
@@ -5476,7 +5590,7 @@ country_event = {
 			CBI = {
 				PIE_giuseppe_maria_garibaldi = {
 					add_country_leader_role = {
-						promote_leader = Yes
+						promote_leader = yes
 						country_leader = {
 							ideology = republicanism
 							expire = "1950.1.1"
@@ -5759,7 +5873,7 @@ country_event = {
 			}
 			PIE_giuseppe_maria_garibaldi = {
 				add_country_leader_role = {
-					promote_leader = Yes
+					promote_leader = yes
 					country_leader = {
 						ideology = military_goverment
 						expire = "1950.1.1"
@@ -6148,6 +6262,8 @@ country_event = {
 		981 = {
 			add_extra_state_shared_building_slots = 2
 		}
+		set_temp_variable = { money_to_gain = -1 }
+		add_money_with_tooltip_effect = yes
 	}
 }
 
@@ -7488,6 +7604,7 @@ country_event = {
 	}
 }
 
+
 ###Flavor Events###
 country_event = {
 	id = risorgimento.33
@@ -7516,6 +7633,20 @@ country_event = {
 		add_political_power = 5
 		add_stability = 0.005
 		add_ideas = Owner_of_University_Garden1
+	}
+}
+
+###Chocolate Company ####
+country_event = {
+	id = risorgimento.276
+	title = risorgimento.276.t
+	desc = risorgimento.276.d
+	picture = GFX_event_ITA_baratti_milano_chocolate
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = risorgimento.276.a
+
 	}
 }
 
@@ -7738,10 +7869,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = risorgimento.510.a
-		swap_ideas = {
-			remove_idea = hos_is_leader
-			add_idea = TUS_hos_Leopold_II
-		}
+		#swap_ideas = {
+		#	remove_idea = hos_is_leader
+		#	add_idea = TUS_hos_Leopold_II
+		#}
 		swap_ideas = {
 			remove_idea = no_elections
 			add_idea = limited_elections
@@ -7762,10 +7893,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = risorgimento.511.a
-		swap_ideas = {
-			remove_idea = human_rights
-			add_idea = constitution_adopted
-		}
+		#swap_ideas = {
+		#	remove_idea = human_rights
+		#	add_idea = constitution_adopted
+		#}
 	}
 }
 
@@ -8778,21 +8909,9 @@ country_event = {
 	option = {
 		name = risorgimento.705.a
 		PIE = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Death or Dishonor"
-						has_dlc = "Waking the Tiger"
-					}
-				}
-				set_autonomy = {
-					target = MNC
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = MNC
+			set_autonomy = {
+				target = MNC
+				autonomy_state = autonomy_free
 			}
 		}
 		###war
@@ -8886,21 +9005,9 @@ country_event = {
 	option = {
 		name = risorgimento.707.b
 		PIE = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Death or Dishonor"
-						has_dlc = "Waking the Tiger"
-					}
-				}
-				set_autonomy = {
-					target = MNC
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = MNC
+			set_autonomy = {
+				target = MNC
+				autonomy_state = autonomy_free
 			}
 		}
 		##war
@@ -9007,21 +9114,9 @@ country_event = {
 			}
 		}
 		PIE = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Death or Dishonor"
-						has_dlc = "Waking the Tiger"
-					}
-				}
-				set_autonomy = {
-					target = MNC
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = MNC
+			set_autonomy = {
+				target = MNC
+				autonomy_state = autonomy_free
 			}
 		}
 		news_event = {
@@ -9111,7 +9206,7 @@ news_event = {
 	id = risorgimento.900
 	title = risorgimento.900.t
 	desc = risorgimento.900.d
-	picture = GFX_news_event_ITA_2IP_generic
+	picture = GFX_news_event_ITA_2IP_generic_generic
 	major = yes
 	is_triggered_only = yes
 	option = {
@@ -9183,7 +9278,7 @@ news_event = {
 	id = risorgimento.903
 	title = risorgimento.903.t
 	desc = risorgimento.903.d
-	picture = GFX_news_event_ITA_2IP
+	picture = GFX_news_event_ITA_2IP_generic
 	major = yes
 	is_triggered_only = yes
 	option = {

@@ -3,6 +3,9 @@
 
 	oob = "CAN_1857"
 
+	add_ideas = { sphere_member_level_3 }
+	set_variable = { sphere_overlord = ENG.id }
+
 	set_convoys = 25
 
 	set_research_slots = 3
@@ -10,23 +13,35 @@
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = CAN }
 	set_cosmetic_tag = CAN_province
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		foa_restricted_attendance
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -34,18 +49,18 @@
 		volunteer_only
 		parliamentary_suffrage
 
-		no_constitution
+		#no_constitution
 		limited_elections
 
 		privileged_education
 		state_religion
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 		AFR_british_colony
@@ -197,21 +212,21 @@
 
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		foa_restricted_attendance
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -219,18 +234,18 @@
 		volunteer_only
 		parliamentary_suffrage
 
-		no_constitution
+		#no_constitution
 		limited_elections
 
 		privileged_education
 		state_religion
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 		AFR_british_colony

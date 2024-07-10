@@ -5,62 +5,62 @@
 
 	set_convoys = 0
 
-	set_research_slots = 3
+	set_research_slots = 2
 	
 	add_manpower = 2800
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
-		#STATE OF COUNTRY
-		HOL_William_III
-		weak_heir
-		agrarian
-		victorian_era
-		law_victorian_army
-		#religion_catholic
-
-		#GOVERNMENTAL POLICIES
-		absolute_monarchy
-		no_constitution
-		no_elections
-		no_separation
-		federal_control
-
-		#CULTURE AND EDUCATION
+		#POLITICAL LIBERTIES
 		privileged_education
-		state_religion
 		free_press
 		foa_restricted_attendance
+		pp_ban_extremist_parties
 		tu_non_political
-		high_judge_courtroom
-
-		#ECONOMY
-		limited_exports
-		normal_taxes
-		cl_legal
-		fourteen_hour_work_day
-		lp_land_purchase
-		civilian_economy
-
-		#DEMOGRAPHICS
-		#stagnation_growth
+		no_elections
+		
+		#INDIVIDUAL LIBERTIES
 		border_control
 		limited_equality
 		absolutism
 		volunteer_only
-		pp_ban_extremist_parties
+		state_religion
+		high_judge_courtroom
 
-		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_no_naval_infrastructure
-		two_percent
-		sfund_private_ventures_only
-
+		#ECONOMIC POLICY
+		mixed_economy
+		limited_exports
+		taxation_level_3
+		civilian_economy
+		cl_legal
+		agrarian
+		
+		#INTERNAL BUDGET
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		army_spending_level_2
+		research_spending_level_1
+		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		HOL_William_III
+		victorian_era
+		law_victorian_army
+		GEC_idea_german_confederation_minor_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
 		LUX_bank
 		LUX_the_coup
 	}
@@ -192,19 +192,25 @@
 
 	recruit_character = LUX_charles_mathias_simons
 	recruit_character = LUX_willem_hendrik_van_oranje_nassau
+	recruit_character = LUX_jean_antoine_zinnen
+	recruit_character = LUX_augustin_letellier
+	recruit_character = LUX_jean_jacques_willmar
+	recruit_character = LUX_michel_bernard_haal
+	recruit_character = LUX_gaspard_fontaine
+	recruit_character = LUX_jean_krombach
 }
 
 1870.5.19 = {
 	
 	remove_ideas = {
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
+		GEC_idea_german_confederation_minor_power
+		GEC_idea_zollverein_1
 	}
 	
 	add_ideas = {
 		#NATIONAL SPIRITS
-		PRS_Zollverein_2
+		GEC_idea_zollverein_3
 	}
 	
 	ENG = { give_guarantee = LUX } #London Treaty of 1867

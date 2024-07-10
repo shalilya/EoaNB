@@ -2908,7 +2908,7 @@ country_event = {
 		LVN = { 
 			is_puppet_of = AUS
 			OR = {
-				NOT = { has_idea = human_rights }
+				#NOT = { has_idea = human_rights }
 				NOT = {	has_idea = free_press }
 			}
 		}
@@ -2921,7 +2921,7 @@ country_event = {
 			limit = {
 				LVN = {
 					OR = {
-						has_idea = human_rights
+						#has_idea = human_rights
 						has_idea = free_press
 					}
 				}
@@ -2944,7 +2944,7 @@ country_event = {
 			limit = {
 				LVN = {
 					AND = {
-						NOT = { has_idea = human_rights }
+						#NOT = { has_idea = human_rights }
 						NOT = { has_idea = free_press }
 					}
 				}
@@ -4820,24 +4820,24 @@ country_event = {
 		add_ideas = AUS_idea_constitutional_diploma_1
 		add_political_power = 25
 		add_stability = 0.02
-		if = {
-			limit = {
-				has_idea = absolute_monarchy
-			}
-			swap_ideas = {
-				remove_idea = absolute_monarchy
-				add_idea = constitutional_monarchy
-			}
-		}
-		if = {
-			limit = {
-				has_idea = no_constitution
-			}
-			swap_ideas = {
-				remove_idea = no_constitution
-				add_idea = human_rights
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = absolute_monarchy
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = absolute_monarchy
+		#		add_idea = constitutional_monarchy
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		has_idea = no_constitution
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = no_constitution
+		#		add_idea = human_rights
+		#	}
+		#}
 		if = {
 			limit = {
 				has_idea = no_elections
@@ -4847,15 +4847,15 @@ country_event = {
 				add_idea = limited_elections
 			}
 		}
-		if = {
-			limit = {
-				has_idea = federal_control
-			}
-			swap_ideas = {
-				remove_idea = federal_control
-				add_idea = federalist
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = federal_control
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = federal_control
+		#		add_idea = federalist
+		#	}
+		#}
 		hidden_effect = {
 			set_country_flag = AUS_constitutional_diploma_enacted_flag
 		}
@@ -4874,24 +4874,24 @@ country_event = {
 		add_ideas = AUS_idea_constitutional_diploma_1
 		add_political_power = 25
 		add_stability = 0.02
-		if = {
-			limit = {
-				has_idea = absolute_monarchy
-			}
-			swap_ideas = {
-				remove_idea = absolute_monarchy
-				add_idea = constitutional_monarchy
-			}
-		}
-		if = {
-			limit = {
-				has_idea = no_constitution
-			}
-			swap_ideas = {
-				remove_idea = no_constitution
-				add_idea = human_rights
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = absolute_monarchy
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = absolute_monarchy
+		#		add_idea = constitutional_monarchy
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		##		has_idea = no_constitution
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = no_constitution
+		#		add_idea = human_rights
+		#	}
+		#}
 		if = {
 			limit = {
 				has_idea = no_elections
@@ -4901,15 +4901,15 @@ country_event = {
 				add_idea = limited_elections
 			}
 		}
-		if = {
-			limit = {
-				has_idea = federal_control
-			}
-			swap_ideas = {
-				remove_idea = federal_control
-				add_idea = federalist
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = federal_control
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = federal_control
+		#		add_idea = federalist
+		#	}
+		#}
 		hidden_effect = {
 			set_country_flag = AUS_constitutional_diploma_enacted_flag
 		}
@@ -5131,24 +5131,24 @@ country_event = {
 			remove_idea = AUS_idea_constitutional_diploma_2
 			add_idea = AUS_idea_imperial_constitution_of_1861
 		}
-		if = {
-			limit = {
-				has_idea = absolute_monarchy
-			}
-			swap_ideas = {
-				remove_idea = absolute_monarchy
-				add_idea = constitutional_monarchy
-			}
-		}
-		if = {
-			limit = {
-				has_idea = no_constitution
-			}
-			swap_ideas = {
-				remove_idea = no_constitution
-				add_idea = human_rights
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = absolute_monarchy
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = absolute_monarchy
+		#		add_idea = constitutional_monarchy
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		has_idea = no_constitution
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = no_constitution
+		#		add_idea = human_rights
+		#	}
+		#}
 		if = {
 			limit = {
 				has_idea = no_elections
@@ -5158,24 +5158,24 @@ country_event = {
 				add_idea = limited_elections
 			}
 		}
-		if = {
-			limit = {
-				has_idea = federalist
-			}
-			swap_ideas = {
-				remove_idea = federalist
-				add_idea = states_restricted
-			}
-		}
-		if = {
-			limit = {
-				has_idea = federal_control
-			}
-			swap_ideas = {
-				remove_idea = federal_control
-				add_idea = states_restricted
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = federalist
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = federalist
+		#		add_idea = states_restricted
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		has_idea = federal_control
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = federal_control
+		#		add_idea = states_restricted
+		#	}
+		#}
 	}
 }
 
@@ -5606,24 +5606,24 @@ country_event = {
 		ai_chance = { base = 100 }
 		add_political_power = 25
 		add_stability = 0.02
-		if = {
-			limit = {
-				has_idea = human_rights
-			}
-			swap_ideas = {
-				remove_idea = human_rights
-				add_idea = constitution_adopted
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = no_constitution
-			}
-			swap_ideas = {
-				remove_idea = no_constitution
-				add_idea = human_rights
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = human_rights
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = human_rights
+		#		add_idea = constitution_adopted
+		#	}
+		#}
+		#else_if = {
+		#	limit = {
+		#		has_idea = no_constitution
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = no_constitution
+		#		add_idea = human_rights
+		#	}
+		#}
 		custom_effect_tooltip = AUS_decrease_all_nationalisms_by_three_tt
 		hidden_effect = {
 			subtract_from_variable = {
@@ -5758,33 +5758,33 @@ country_event = {
 			}
 			remove_ideas = AUS_idea_imperial_constitution_of_1861
 		}
-		if = {
-			limit = {
-				has_idea = constitutional_monarchy
-			}
-			swap_ideas = {
-				remove_idea = constitutional_monarchy
-				add_idea = absolute_monarchy
-			}
-		}
-		if = {
-			limit = {
-				has_idea = human_rights
-			}
-			swap_ideas = {
-				remove_idea = human_rights
-				add_idea = no_constitution
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = constitution_adopted
-			}
-			swap_ideas = {
-				remove_idea = constitution_adopted
-				add_idea = no_constitution
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = constitutional_monarchy
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = constitutional_monarchy
+		#		add_idea = absolute_monarchy
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		has_idea = human_rights
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = human_rights
+		#		add_idea = no_constitution
+		#	}
+		#}
+		#else_if = {
+		#	limit = {
+		#		has_idea = constitution_adopted
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = constitution_adopted
+		#		add_idea = no_constitution
+		#	}
+		#}
 		if = {
 			limit = {
 				has_idea = limited_elections
@@ -5794,24 +5794,24 @@ country_event = {
 				add_idea = no_elections
 			}
 		}
-		if = {
-			limit = {
-				has_idea = federalist
-			}
-			swap_ideas = {
-				remove_idea = federalist
-				add_idea = federal_control
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = states_restricted
-			}
-			swap_ideas = {
-				remove_idea = states_restricted
-				add_idea = federal_control
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_idea = federalist
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = federalist
+		#		add_idea = federal_control
+		#	}
+		#}
+		#else_if = {
+		#	limit = {
+		#		has_idea = states_restricted
+		#	}
+		#	swap_ideas = {
+		#		remove_idea = states_restricted
+		#		add_idea = federal_control
+		#	}
+		#}
 		hidden_effect = {
 			subtract_from_variable = {
 				var = HUN_REVOLT_RISK
@@ -6240,10 +6240,10 @@ country_event = {
 			set_country_flag = AUS_flag_hun_dual_monarchy
 			set_country_flag = AUS_flag_karl_auesperg_aus_mp
 			load_focus_tree = aus_hun_focus_1
-			swap_ideas = {
-				remove_idea = AUS_Franz_Joseph_I
-				add_idea = hos_is_leader
-			}
+			#swap_ideas = {
+			#	remove_idea = AUS_Franz_Joseph_I
+			#	add_idea = hos_is_leader
+			#}
 			clear_variable = HUN_REVOLT_RISK
 			if = {
 				limit = {
@@ -6813,67 +6813,30 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
+					country_exists = MOD
 				}
-				if = {
-					limit = {
-						country_exists = MOD
-					}
-					set_autonomy = {
-						target = MOD
-						autonomy_state = autonomy_puppet
-					}
-				}
-				if = {
-					limit = {
-						country_exists = PRM
-					}
-					set_autonomy = {
-						target = PRM
-						autonomy_state = autonomy_puppet
-					}
-				}
-				if = {
-					limit = {
-						country_exists = TUS
-					}
-					set_autonomy = {
-						target = TUS
-						autonomy_state = autonomy_puppet
-					}
+				set_autonomy = {
+					target = MOD
+					autonomy_state = autonomy_puppet
 				}
 			}
-			else = {
-				if = {
-					limit = {
-						country_exists = MOD
-					}
-					puppet = MOD
+			if = {
+				limit = {
+					country_exists = PRM
 				}
-				if = {
-					limit = {
-						country_exists = PRM
-					}
-					puppet = PRM
-				}
-				if = {
-					limit = {
-						country_exists = TUS
-					}
-					puppet = TUS
+				set_autonomy = {
+					target = PRM
+					autonomy_state = autonomy_puppet
 				}
 			}
-			add_to_variable = {
-				ITA_UPROAR_RISK = 0.02
-			}
-			clamp_variable = {
-				var = ITA_UPROAR_RISK
-				min = 0
-				max = 1
+			if = {
+				limit = {
+					country_exists = TUS
+				}
+				set_autonomy = {
+					target = TUS
+					autonomy_state = autonomy_puppet
+				}
 			}
 		}
 	}
@@ -6943,23 +6906,11 @@ country_event = {
 				swap_ideas = { remove_idea = ITA_hos_Victor_Emmanuel_II add_idea = AUS_Franz_Joseph_I }
 			}
 			AUS = {
-				if = {
-					limit = {
-						OR = {
-							has_dlc = "Together for Victory"
-							has_dlc = "Waking the Tiger"
-							has_dlc = "Death or Dishonor"
-						}
-					}
-					PIE = { set_country_flag = is_junior_personal_union_member }
-					set_autonomy = {
-						target = PIE
-						autonomy_state = autonomy_personal_union_2
-						freedom_level = 0.1
-					}
-				}
-				else = {
-					puppet = PIE
+				PIE = { set_country_flag = is_junior_personal_union_member }
+				set_autonomy = {
+					target = PIE
+					autonomy_state = autonomy_personal_union_2
+					freedom_level = 0.1
 				}
 			}
 		}
@@ -7149,13 +7100,6 @@ country_event = {
 	
 	option = { #TfV - Give more freedom
 		name = austria.532.c
-		trigger = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -7201,12 +7145,12 @@ country_event = {
 		name = austria.533.a
 		ai_chance = {
 			base = 90
-			modifier = {
-				add = 10
-				FRA = {
-					has_completed_focus = FRA_close_relations_austria
-				}
-			}
+			#modifier = {  ###This focused was removed, however if the new French tree includes a way to get diplomatically closer to Austria this can be readded
+			#	add = 10
+			#	FRA = {
+			#		has_completed_focus = FRA_close_relations_austria
+			#	}
+			#}
 		}
 		add_opinion_modifier = {
 			target = FRA
@@ -7246,12 +7190,12 @@ country_event = {
 		}
 		ai_chance = {
 			base = 10
-			modifier = {
-				add = -10
-				FRA = {
-					has_completed_focus = FRA_close_relations_austria
-				}
-			}
+			#modifier = {  ###This focused was removed, however if the new French tree includes a way to get diplomatically closer to Austria this can be readded
+			#	add = 10
+			#	FRA = {
+			#		has_completed_focus = FRA_close_relations_austria
+			#	}
+			#}
 		}
 	}
 	
@@ -7265,14 +7209,14 @@ country_event = {
 		}
 		ai_chance = {
 			base = 0
-			modifier = {
-				add = 10
-				NOT = {
-					FRA = {
-						has_completed_focus = FRA_close_relations_austria
-					}
-				}
-			}
+			#modifier = {  ### See Above comment
+			#	add = 10
+			#	NOT = {
+			#		FRA = {
+			#			has_completed_focus = FRA_close_relations_austria
+			#		}
+			#	}
+			#}
 		}
 		custom_effect_tooltip = AUS_unrest_in_italy_minus_one_effect_tt
 		hidden_effect = {
@@ -10064,9 +10008,9 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			has_idea = five_percent
-			has_idea = three_percent
-			has_idea = two_percent
+			has_idea = army_spending_level_4
+			has_idea = army_spending_level_3
+			has_idea = army_spending_level_2
 		}
 		OR = {
 			has_country_flag = AUS_army_budget_was_three_percent
@@ -10134,9 +10078,9 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			has_idea = five_percent
-			has_idea = three_percent
-			has_idea = two_percent
+			has_idea = army_spending_level_4
+			has_idea = army_spending_level_3
+			has_idea = army_spending_level_2
 		}
 		OR = {
 			has_country_flag = AUS_army_budget_was_three_percent
@@ -10253,8 +10197,8 @@ country_event = {
 	trigger = {
 		NOT = {
 			OR = {
-				has_idea = two_percent
-				has_idea = three_percent
+				has_idea = army_spending_level_2
+				has_idea = army_spending_level_3
 			}
 		}
 		has_idea = egy_vic_debt
@@ -10413,523 +10357,301 @@ country_event = {
 	id = austria.951
 	title = austria.951.t
 	desc = austria.951.d
-	picture = GFX_report_event_german_reichstag_gathering
+	picture = GFX_report_event_vienna_stock_exchange_crash
 	
+	fire_only_once = yes
 	is_triggered_only = yes
 	
-	option = { 
-		name = austria.951.a 
-		add_stability = -0.17
-		custom_effect_tooltip = AUS_tt_the_panic_of_1873_damage
+	option = {
+		name = austria.951.a
+		add_stability = -0.15
+		custom_effect_tooltip = eighteenseventhreecrisis_panic_of_1873_damage_tt
 		hidden_effect = {
-		### Civilian ind.
-		random_owned_controlled_state = {
-		    prioritize = { 956 }
-			limit = { industrial_complex > 0 }
-			damage_building = {
-                type = industrial_complex
-                damage = 1
-            }
-            if = {
-                limit = { industrial_complex > 1 }
-                damage_building = {
-                    type = industrial_complex
-                    damage = 0.87
-                }
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		# Rem.
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_civ
-				    has_state_flag = AUS_the_panic_of_1873_civr
-				    }
+			### Civilian Industry - Businesses in trouble
+			random_owned_controlled_state = {
+				prioritize = { 956 }
+				if = {
+					limit = { industrial_complex > 0 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.95
+					}
 				}
-			}
-			remove_building = {
-                type = industrial_complex
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_civ
-				    has_state_flag = AUS_the_panic_of_1873_civr
-				    }
+				if = {
+					limit = { industrial_complex > 1 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.65
+					}
 				}
+				set_state_flag = AUS_the_panic_of_1873_civ
 			}
-			remove_building = {
-                type = industrial_complex
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_civ
-				    has_state_flag = AUS_the_panic_of_1873_civr
-				    }
+			random_owned_controlled_state = {
+				if = {
+					limit = { industrial_complex > 0 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.95
+					}
 				}
-			}
-			remove_building = {
-                type = industrial_complex
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_civ
-				    has_state_flag = AUS_the_panic_of_1873_civr
-				    }
+				if = {
+					limit = { industrial_complex > 1 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.65
+					}
 				}
+				set_state_flag = AUS_the_panic_of_1873_civ
 			}
-			remove_building = {
-                type = industrial_complex
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_civ
-				    has_state_flag = AUS_the_panic_of_1873_civr
-				    }
+			random_owned_controlled_state = {
+				if = {
+					limit = { industrial_complex > 0 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.95
+					}
 				}
-			}
-			remove_building = {
-                type = industrial_complex
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civr
-		}
-		# End rem.
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 0.97
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 0.95
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 1
-            }
-            if = {
-                limit = { industrial_complex > 1 }
-                damage_building = {
-                    type = industrial_complex
-                    damage = 0.94
-                }
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 0.94
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 0.97
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 0.98
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				industrial_complex > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_civ } 
-			}
-			damage_building = {
-                type = industrial_complex
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_civ
-		}
-		### Infrastructure
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.85
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.79
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.95
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.87
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.91
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.86
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
-			}
-			damage_building = {
-                type = infrastructure
-                damage = 0.84
-            }
-            set_state_flag = AUS_the_panic_of_1873_inf
-		}
-		# Rem.
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+				if = {
+					limit = { industrial_complex > 1 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.65
+					}
 				}
+				set_state_flag = AUS_the_panic_of_1873_civ
 			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+			random_owned_controlled_state = {
+				if = {
+					limit = { industrial_complex > 0 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.95
+					}
 				}
-			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+				if = {
+					limit = { industrial_complex > 1 }
+					damage_building = {
+						type = industrial_complex
+						damage = 0.65
+					}
 				}
+				set_state_flag = AUS_the_panic_of_1873_civ
 			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+			### Civilian Industry - Businesses going bankrupt
+			random_owned_controlled_state = {
+				limit = { 
+					industrial_complex > 0 
+					NOT = { 
+						OR = {
+							has_state_flag = AUS_the_panic_of_1873_civ
+							has_state_flag = AUS_the_panic_of_1873_civr
+						}
+					}
 				}
-			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+				remove_building = {
+					type = industrial_complex
+					level = 1
 				}
+				set_state_flag = AUS_the_panic_of_1873_civr
 			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				infrastructure > 3 
-				NOT = { 
-				    OR = {
-				    has_state_flag = AUS_the_panic_of_1873_inf
-				    has_state_flag = AUS_the_panic_of_1873_infr
-				    }
+			random_owned_controlled_state = {
+				limit = { 
+					industrial_complex > 0 
+					NOT = { 
+						OR = {
+							has_state_flag = AUS_the_panic_of_1873_civ
+							has_state_flag = AUS_the_panic_of_1873_civr
+						}
+					}
 				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_civr
 			}
-			remove_building = {
-                type = infrastructure
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_infr
-		}
-		### Military ind.
-		# Rem.
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			### Railways in trouble
+			random_owned_controlled_state = {
+				limit = { 
+					rail_way > 3 
+				}
+				damage_building = {
+					type = rail_way
+					damage = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_inf
 			}
-			remove_building = {
-                type = arms_factory
-                level = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
+			random_owned_controlled_state = {
+				limit = { 
+					rail_way > 3 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
+				}
+				damage_building = {
+					type = rail_way
+					damage = 0.85
+				}
+				set_state_flag = AUS_the_panic_of_1873_inf
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			random_owned_controlled_state = {
+				limit = { 
+					rail_way > 3 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
+				}
+				damage_building = {
+					type = rail_way
+					damage = 0.79
+				}
+				set_state_flag = AUS_the_panic_of_1873_inf
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			random_owned_controlled_state = {
+				limit = { 
+					rail_way > 3 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
+				}
+				damage_building = {
+					type = rail_way
+					damage = 0.95
+				}
+				set_state_flag = AUS_the_panic_of_1873_inf
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			random_owned_controlled_state = {
+				limit = { 
+					rail_way > 3 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_inf } 
+				}
+				damage_building = {
+					type = rail_way
+					damage = 0.87
+				}
+				set_state_flag = AUS_the_panic_of_1873_inf
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            if = {
-                limit = { arms_factory > 1 }
-                damage_building = {
-                    type = arms_factory
-                    damage = 0.94
-                }
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			### Military Industry - Businesses in trouble
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            if = {
-                limit = { arms_factory > 1 }
-                damage_building = {
-                    type = arms_factory
-                    damage = 0.86
-                }
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		random_owned_controlled_state = {
-			limit = { 
-				arms_factory > 0 
-				NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
 			}
-			damage_building = {
-                type = arms_factory
-                damage = 1
-            }
-            set_state_flag = AUS_the_panic_of_1873_mil
-		}
-		### Naval ind.
-		random_owned_controlled_state = {
-			limit = { 
-			    dockyard > 0 
-			    NOT = { has_state_flag = AUS_the_panic_of_1873_nav } 
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
 			}
-			damage_building = {
-                type = dockyard
-                damage = 0.91
-            }
-            set_state_flag = AUS_the_panic_of_1873_nav
-		}
-		random_owned_controlled_state = {
-			limit = { 
-			    dockyard > 0 
-			    NOT = { has_state_flag = AUS_the_panic_of_1873_nav } 
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
 			}
-			damage_building = {
-                type = dockyard
-                damage = 0.54
-            }
-            set_state_flag = AUS_the_panic_of_1873_nav
-		}
-		### Flags Removed, inf removed in focuses
-		every_owned_state = {
-		    limit = { 
-		      OR = {
-		    	has_state_flag = AUS_the_panic_of_1873_civ
-		    	has_state_flag = AUS_the_panic_of_1873_mil
-		    	has_state_flag = AUS_the_panic_of_1873_nav
-		      }
-		    }
-		    clr_state_flag = AUS_the_panic_of_1873_civ
-		    clr_state_flag = AUS_the_panic_of_1873_mil
-		    clr_state_flag = AUS_the_panic_of_1873_nav
-		}
-		complete_national_focus = AUS_HUN_Stock_Market_Crashes
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				if = {
+					limit = { arms_factory > 1 }
+					damage_building = {
+						type = arms_factory
+						damage = 0.94
+					}
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				if = {
+					limit = { arms_factory > 1 }
+					damage_building = {
+						type = arms_factory
+						damage = 0.86
+					}
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					arms_factory > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_mil } 
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+				set_state_flag = AUS_the_panic_of_1873_mil
+			}
+			### Naval Industry
+			random_owned_controlled_state = {
+				limit = { 
+					dockyard > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_nav } 
+				}
+				damage_building = {
+					type = dockyard
+					damage = 0.91
+				}
+				set_state_flag = AUS_the_panic_of_1873_nav
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					dockyard > 0 
+					NOT = { has_state_flag = AUS_the_panic_of_1873_nav } 
+				}
+				damage_building = {
+					type = dockyard
+					damage = 0.54
+				}
+				set_state_flag = AUS_the_panic_of_1873_nav
+			}
+			### Flags Removed, inf removed in focuses
+			every_owned_state = {
+				limit = { 
+				OR = {
+					has_state_flag = AUS_the_panic_of_1873_civ
+					has_state_flag = AUS_the_panic_of_1873_mil
+					has_state_flag = AUS_the_panic_of_1873_nav
+				}
+				}
+				clr_state_flag = AUS_the_panic_of_1873_civ
+				clr_state_flag = AUS_the_panic_of_1873_mil
+				clr_state_flag = AUS_the_panic_of_1873_nav
+			}
 		}
     }		     
 }

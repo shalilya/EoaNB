@@ -39,11 +39,7 @@ political_actions = {
 		available = {
 			has_war_support > 0.25
 			has_war = no
-			RAJ = {
-				has_army_manpower = {
-					size > 49999
-				}
-			}
+			RAJ = { has_army_manpower = { size > 49999 } }
 			custom_trigger_tooltip = {
 				tooltip = eoanb_tt_decision_ENG_RAJ_revolt_risk_annex
 				RAJ = {
@@ -61,12 +57,11 @@ political_actions = {
 			1317 = { is_owned_by = KAS }
 			1317 = { is_core_of = RAJ }
 			KAS = { is_subject_of = RAJ }
+			NOT = { has_completed_focus = ENG_focus_stop_lapse_doctrine }
 		}
 
 		fire_only_once = yes
-
 		cost = 25
-
 		days_remove = 90
 
 		complete_effect = {
@@ -76,51 +71,30 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = KAS
-					autonomy_state = autonomy_free
-				}
+			set_autonomy = {
+				target = KAS
+				autonomy_state = autonomy_free
 			}
-			else = {
+			RAJ = {
 				end_puppet = KAS
 			}
 			if = {
-				limit = {
-					RAJ = { is_ai = yes }
-				}
+				limit = { RAJ = { is_ai = yes } }
 				RAJ = {
-					declare_war_on = {
-						target = KAS
-						type = annex_everything
-					}
+					declare_war_on = { target = KAS type = annex_everything }
 					increase_ps_by_one = yes
 				}
 			}
-			if = {
-				limit = {
-					RAJ = { is_ai = no }
-				}
+			else_if = {
+				limit = { RAJ = { is_ai = no } }
 				RAJ = {
-					create_wargoal = {
-						type = annex_everything
-						target = KAS
-					}
+					create_wargoal = { type = annex_everything target = KAS }
 					increase_ps_by_one = yes
 				}
 			}
 		}
 
-		modifier = {
-			political_power_gain = -0.25
-		}
+		modifier = { political_power_gain = -0.25 }
 
 		ai_will_do = {
 			base = 1000
@@ -140,6 +114,8 @@ political_actions = {
 			}
 		}
 	}
+
+
 
 	#ENG: Prepare to annex Indian Minor (KAR)
 	eoanb_decision_ENG_RAJ_prepare_against_KAR = {
@@ -171,6 +147,9 @@ political_actions = {
 			440 = { is_owned_by = KAR }
 			440 = { is_core_of = RAJ }
 			KAR = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -187,21 +166,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = KAR
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = KAR
+			set_autonomy = {
+				target = KAR
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -282,6 +249,9 @@ political_actions = {
 			BIK = { is_subject_of = RAJ }
 			1376 = { is_owned_by = BIK }
 			1376 = { is_core_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -298,21 +268,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = BIK
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = BIK
+			set_autonomy = {
+				target = BIK
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -393,6 +351,9 @@ political_actions = {
 			754 = { is_owned_by = GWA }
 			754 = { is_core_of = RAJ }
 			GWA = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -409,21 +370,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = GWA
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = GWA
+			set_autonomy = {
+				target = GWA
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -503,6 +452,9 @@ political_actions = {
 			427 = { is_owned_by = HYD }
 			427 = { is_core_of = RAJ }
 			HYD = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -519,21 +471,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = HYD
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = HYD
+			set_autonomy = {
+				target = HYD
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -614,6 +554,9 @@ political_actions = {
 			758 = { is_owned_by = TRA }
 			758 = { is_core_of = RAJ }
 			TRA = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -630,21 +573,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = TRA
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = TRA
+			set_autonomy = {
+				target = TRA
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -725,6 +656,9 @@ political_actions = {
 			756 = { is_owned_by = OUD }
 			756 = { is_core_of = RAJ }
 			OUD = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -741,21 +675,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = OUD
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = OUD
+			set_autonomy = {
+				target = OUD
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -836,6 +758,9 @@ political_actions = {
 			580 = { is_owned_by = REW }
 			580 = { is_core_of = RAJ }
 			REW = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -852,21 +777,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = REW
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = REW
+			set_autonomy = {
+				target = REW
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -947,6 +860,9 @@ political_actions = {
 			433 = { is_owned_by = RJP }
 			433 = { is_core_of = RAJ }
 			RJP = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -963,21 +879,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = RJP
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = RJP
+			set_autonomy = {
+				target = RJP
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1058,6 +962,9 @@ political_actions = {
 			1007 = { is_owned_by = GUJ }
 			1007 = { is_core_of = RAJ }
 			GUJ = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1074,21 +981,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = GUJ
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = GUJ
+			set_autonomy = {
+				target = GUJ
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1169,6 +1064,9 @@ political_actions = {
 			759 = { is_owned_by = JPR }
 			759 = { is_core_of = RAJ }
 			JPR = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1185,21 +1083,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = JPR
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = JPR
+			set_autonomy = {
+				target = JPR
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1280,6 +1166,9 @@ political_actions = {
 			755 = { is_owned_by = BTR }
 			755 = { is_core_of = BTR }
 			BTR = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1296,21 +1185,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = BTR
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = BTR
+			set_autonomy = {
+				target = BTR
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1391,6 +1268,9 @@ political_actions = {
 			425 = { is_owned_by = MYS }
 			425 = { is_core_of = RAJ }
 			MYS = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1407,21 +1287,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = MYS
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = MYS
+			set_autonomy = {
+				target = MYS
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1499,9 +1367,12 @@ political_actions = {
 
 		visible = {
 			RAJ = { is_subject_of = ENG }
-			1397 = { is_owned_by = SKK }
-			1397 = { is_core_of = RAJ }
+			1169 = { is_owned_by = SKK }
+			1169 = { is_core_of = RAJ }
 			SKK = { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1518,21 +1389,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = SKK
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = SKK
+			set_autonomy = {
+				target = SKK
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -1613,6 +1472,9 @@ political_actions = {
 			1030 = { is_owned_by = ORS }
 			1030 = { is_core_of = RAJ }
 			ORS= { is_subject_of = RAJ }
+			NOT = {
+				has_completed_focus = ENG_focus_stop_lapse_doctrine
+			}
 		}
 		allowed = { TAG = ENG }
 
@@ -1629,21 +1491,9 @@ political_actions = {
 		}
 
 		remove_effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = ORS
-					autonomy_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = ORS
+			set_autonomy = {
+				target = ORS
+				autonomy_state = autonomy_free
 			}
 			if = {
 				limit = {
@@ -2118,6 +1968,1056 @@ political_actions = {
 		}
 	}
 
+	#Prepare to absorb Indian Minor (KAS)
+	eoanb_decision_RAJ_absorb_KAS = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			1317 = { is_owned_by = KAS }
+			1317 = { is_core_of = RAJ }
+			KAS = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = KAS
+				transfer_troops = no
+			}
+			1317 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (KAR)
+	eoanb_decision_RAJ_absorb_KAR = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			440 = { is_owned_by = KAR }
+			440 = { is_core_of = RAJ }
+			KAR = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = KAR
+				transfer_troops = no
+			}
+			440 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (BIK)
+	eoanb_decision_RAJ_absorb_BIK = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			BIK = { is_subject_of = RAJ }
+			1376 = { is_owned_by = BIK }
+			1376 = { is_core_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = BIK
+				transfer_troops = no
+			}
+			1376 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (GWA)
+	eoanb_decision_RAJ_absorb_GWA = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			754 = { is_owned_by = GWA }
+			754 = { is_core_of = RAJ }
+			GWA = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = GWA
+				transfer_troops = no
+			}
+			754 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (HYD)
+	eoanb_decision_RAJ_absorb_HYD = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			427 = { is_owned_by = HYD }
+			427 = { is_core_of = RAJ }
+			HYD = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = HYD
+				transfer_troops = no
+			}
+			427 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (TRA)
+	eoanb_decision_RAJ_absorb_TRA = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			758 = { is_owned_by = TRA }
+			758 = { is_core_of = RAJ }
+			TRA = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = TRA
+				transfer_troops = no
+			}
+			758 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (OUD)
+	eoanb_decision_RAJ_absorb_OUD = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			756 = { is_owned_by = OUD }
+			756 = { is_core_of = RAJ }
+			OUD = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = OUD
+				transfer_troops = no
+			}
+			756 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (REW)
+	eoanb_decision_RAJ_absorb_REW = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			580 = { is_owned_by = REW }
+			580 = { is_core_of = RAJ }
+			REW = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = REW
+				transfer_troops = no
+			}
+			580 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (RJP)
+	eoanb_decision_RAJ_absorb_RJP = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			433 = { is_owned_by = RJP }
+			433 = { is_core_of = RAJ }
+			RJP = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = RJP
+				transfer_troops = no
+			}
+			433 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (GUJ)
+	eoanb_decision_RAJ_absorb_GUJ = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			1007 = { is_owned_by = GUJ }
+			1007 = { is_core_of = RAJ }
+			GUJ = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = GUJ
+				transfer_troops = no
+			}
+			1007 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (JPR)
+	eoanb_decision_RAJ_absorb_JPR = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			759 = { is_owned_by = JPR }
+			759 = { is_core_of = RAJ }
+			JPR = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = JPR
+				transfer_troops = no
+			}
+			759 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (BTR)
+	eoanb_decision_RAJ_absorb_BTR = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			755 = { is_owned_by = BTR }
+			755 = { is_core_of = BTR }
+			BTR = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = BTR
+				transfer_troops = no
+			}
+			755 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (MYS)
+	eoanb_decision_RAJ_absorb_MYS = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			425 = { is_owned_by = MYS }
+			425 = { is_core_of = RAJ }
+			MYS = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = MYS
+				transfer_troops = no
+			}
+			425 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (SKK)
+	eoanb_decision_RAJ_absorb_SKK = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			1397 = { is_owned_by = SKK }
+			1397 = { is_core_of = RAJ }
+			SKK = { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = SKK
+				transfer_troops = no
+			}
+			1397 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
+	#Prepare to absorb Indian Minor (ORS)
+	eoanb_decision_RAJ_absorb_ORS = {
+
+		icon = generic_nationalism
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = RAJ_absorbing_princely
+			}
+		}
+
+		visible = {
+			RAJ = { is_subject_of = ENG }
+			1030 = { is_owned_by = ORS }
+			1030 = { is_core_of = RAJ }
+			ORS= { is_subject_of = RAJ }
+			has_completed_focus = RAJ_focus_lapse_abandoned
+		}
+
+		allowed = { TAG = RAJ }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 90
+
+		complete_effect = {
+			RAJ = { add_political_power = -50 }
+			set_country_flag = RAJ_absorbing_princely
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = ORS
+				transfer_troops = no
+			}
+			1030 = {
+				add_province_modifier = {
+					static_modifiers = { RAJ_princely_state }
+					province = {
+						all_provinces = yes
+						limit_to_coastal = no
+						limit_to_border = no
+						limit_to_naval_base = no
+					}
+				}
+			}
+			clr_country_flag = RAJ_absorbing_princely
+		}
+
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1858.3.3
+			}
+			modifier = {
+				factor = 0
+				RAJ = { has_war_with = SRS }
+			}
+		}
+	}
+
 }
 
 eoanb_category_sepoy_rebellion = {
@@ -2168,21 +3068,9 @@ eoanb_category_sepoy_rebellion = {
 		complete_effect = {
 			add_stability = -0.1
 			RAJ={
-				if = {
-					limit = {
-						OR = {
-							has_dlc = "Together for Victory"
-							has_dlc = "Waking the Tiger"
-							has_dlc = "Death or Dishonor"
-						}
-					}
-					set_autonomy = {
-						target = ROOT
-						autonomy_state = autonomy_free
-					}
-				}
-				else = {
-					end_puppet = ROOT
+				set_autonomy = {
+					target = ROOT
+					autonomy_state = autonomy_free
 				}
 			}
 			ROOT = { add_to_war = { targeted_alliance = SRS enemy = RAJ } }
@@ -2366,6 +3254,148 @@ eoanb_category_war_measures = {
 		}
 	}
 
+	eoanb_decision_RAJ_raise_militias = {
+
+		icon = generic_army_support
+
+		available = {
+			has_army_experience > 5
+			has_war = yes
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_raise_militia
+			NOT = {
+				has_country_flag = RAJ_militia_raised
+			}
+		}
+		allowed = { TAG = RAJ }
+
+		fire_only_once = no
+
+		cost = 50
+
+		days_remove = 0
+
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = RAJ_militia_raised
+				division_template = {
+					name = "Indian Local Militia"
+					is_locked = yes
+					priority = 0
+					template_counter = 0
+					regiments = {
+						light_infantry = {
+							x = 0
+							y = 0
+						}
+						light_infantry = {
+							x = 0
+							y = 1
+						}
+						light_infantry = {
+							x = 0
+							y = 2
+						}
+						light_infantry = {
+							x = 1
+							y = 0
+						}
+					}
+				}
+			}
+			add_manpower = -13000
+			977 = {
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+			}
+			424 = {
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+			}
+			431 = {
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+			}
+			1392 = {
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}
+			}
+			436 = {
+				create_unit = {
+					division = "name = \"Local Militia' Rebels\" division_template = \"Indian Local Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = RAJ
+				}	
+			}
+		}
+
+		modifier = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_disband_militias = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = RAJ_militia_raised
+		}
+
+		visible = {
+			has_country_flag = RAJ_militia_raised
+		}
+		allowed = { TAG = RAJ }
+
+		fire_only_once = no
+
+		cost = 0
+
+		days_remove = 0
+
+		complete_effect = {
+			add_manpower = 13000
+			delete_unit_template_and_units = {
+				division_template = "Indian Local Militia"
+				disband = yes
+			}
+			hidden_effect = {
+				clr_country_flag = RAJ_militia_raised
+			}
+		}
+
+		modifier = {
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
 }
 
 eoanb_category_economic={
@@ -2402,6 +3432,302 @@ eoanb_category_economic={
 					instant_build = yes
 				}
 			}
+		}
+	}
+
+	eoanb_decision_RAJ_rail_infrastructure = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_rail_infra
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_rail_infra
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			977 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+			757 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+			758 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+			755 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+			436 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_south_industry = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_establish_industries_south
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_establish_industries_south
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 185
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			424 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = fabric_weavery level = 1 instant_build = yes }
+			}
+			429 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = steel_mill level = 1 instant_build = yes }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_confiscate_workshops = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_confiscate_workshops
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_confiscate_workshops
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+
+		days_remove = 100
+
+		modifier = {
+			political_power_factor = -0.1
+			war_stability_factor = -0.05
+		}
+
+		remove_effect = {
+			add_offsite_building = { type = arms_factory level = 2 }
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_tea_plantations = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_tea_plantations
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_tea_plantations
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+
+		days_remove = 125
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			757 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = farm level = 2 instant_build = yes }
+			}
+			432 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = farm level = 1 instant_build = yes }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_bombay_uni = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_uni_bombay
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_uni_bombay
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_local_learning = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_learn_from_locals
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_learn_from_locals
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+
+		days_remove = 160
+
+		modifier = {
+			
+		}
+
+		remove_effect = {
+			add_research_slot = 1
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	eoanb_decision_RAJ_revamp_industry = {
+
+		icon = generic_construction
+
+        allowed = {
+            tag = RAJ
+        }
+
+		available = {
+			has_completed_focus = RAJ_focus_revamp_industry
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			has_completed_focus = RAJ_focus_revamp_industry
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 205
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			423 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			429 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			429 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
 		}
 	}
 

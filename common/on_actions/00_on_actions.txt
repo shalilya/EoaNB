@@ -43,8 +43,8 @@ on_actions = {
 						priority = 0
 						division_names_group = SPR_STATE_MILITIA_01
 						regiments = {
-							spanish_militia_infantry = { x = 0 y = 0 }
-							spanish_militia_infantry = { x = 1 y = 0 }
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 1 y = 0 }
 						}
 						is_locked = yes
 					}
@@ -64,7 +64,8 @@ on_actions = {
 				SWE = { country_event = { id = eoanb_sweden.57 } } #Starting Situation: Railway Concessions
 				GEO = { country_event = { id = rossiya.312 days = 1 } }
 				SER = { country_event = { id = SERmisc.5 days = 1 } }
-				BRA = { country_event = {id = brazil.minister.actions.0 days = 2 } }
+				BRA = { country_event = {id = brazil.900 days = 22 } }
+				BRA = { country_event = {id = brazil.69 } }
 				#FRA = { country_event = { id = nap_france.21 } }
 				every_country = {
 					country_event = { id = pssystem.16 days = 365 }
@@ -1007,19 +1008,19 @@ on_actions = {
 		                transfer_troops = yes
 		            }
 		            add_ideas = {
-	                    hos_is_leader
+	                    #hos_is_leader
 	                    victorian_era
 	                    law_victorian_army
 	                    industrializing
-	                    non_monarchical_system
-	                    presidential_republic
+	                    #non_monarchical_system
+	                    #presidential_republic
 
 	                    civilian_economy
 	                    export_focus
-	                    two_percent
-	                    normal_taxes
+	                    army_spending_level_2
+	                    taxation_level_3
 	                    cl_restricted
-	                    twelve_hour_work_day
+	                    #twelve_hour_work_day
 
 	                    #stagnation_growth
 	                    border_control
@@ -1027,7 +1028,7 @@ on_actions = {
 	                    racial_laws
 	                    universal_male_suffrage
 
-	                    constitution_adopted
+	                    #constitution_adopted
 	                    free_elections
 
 	                    privileged_education
@@ -1045,19 +1046,19 @@ on_actions = {
 	                    ideology = radical_liberal
 	                }
 		            add_ideas = {
-	                    hos_is_leader
+	                    #hos_is_leader
 	                    victorian_era
 	                    law_victorian_army
 	                    industrializing
-	                    non_monarchical_system
-	                    presidential_republic
+	                    #non_monarchical_system
+	                    #presidential_republic
 
 	                    civilian_economy
 	                    export_focus
-	                    two_percent
-	                    normal_taxes
+	                    army_spending_level_2
+	                    taxation_level_3
 	                    cl_restricted
-	                    twelve_hour_work_day
+	                    #twelve_hour_work_day
 
 	                    #stagnation_growth
 	                    border_control
@@ -1065,7 +1066,7 @@ on_actions = {
 	                    racial_laws
 	                    universal_male_suffrage
 
-	                    constitution_adopted
+	                    #constitution_adopted
 	                    free_elections
 
 	                    privileged_education
@@ -1241,6 +1242,30 @@ on_actions = {
 					DEN = { has_country_flag = DEN_wartime_battalion_duplication_flag }
 				}
 				DEN = { add_ideas = DEN_idea_wartime_battalion_duplication }
+			}
+		}
+	}
+
+	# I can only guess this is Luxembourg Crisis stuff
+	on_annex = { 
+		effect = {
+			if = {
+				limit = { 
+					FROM = { tag = LUX }
+					ROOT = { tag = FRA }
+				}
+				FRA = { country_event = { id = nap_france.320 } }
+			}
+		}
+	}
+	on_puppet = { 
+		effect = {
+			if = {
+				limit = { 
+					FROM = { tag = LUX }
+					ROOT = { tag = FRA }
+				}
+				FRA = { country_event = { id = nap_france.320 } }
 			}
 		}
 	}

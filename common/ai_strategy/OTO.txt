@@ -3,6 +3,8 @@ OTO_area_priority = {
 		original_tag = OTO
 	}
 
+	abort = { always = no }
+	
 	ai_strategy = {
 		type = area_priority
 		id = europe
@@ -36,7 +38,7 @@ OTO_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = africa
-		value = 10
+		value = -10
 	}
 
 	ai_strategy = {
@@ -66,7 +68,7 @@ OTO_area_priority = {
     id = KUW
   }
   ai_strategy = {
- 	type = ignore
+ 	type = consider_weak
   	id = SNS
   }
   ai_strategy = {

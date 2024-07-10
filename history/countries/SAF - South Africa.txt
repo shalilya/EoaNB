@@ -10,23 +10,35 @@
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = SAF }
 	set_cosmetic_tag = SAF_CC
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 2 }
+
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		foa_restricted_attendance
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -34,23 +46,23 @@
 		volunteer_only
 		parliamentary_suffrage
 
-		no_constitution
+		#no_constitution
 		limited_elections
 
 		privileged_education
 		state_religion
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		AFR_british_colony
 		ENG_colonial_Victoria
-		afr_total_detrimental_colonial_impact_idea
+		SAF_idea_qualified_franchise
 	}
 	#Favored
 	set_variable = { most_favoured_country = ENG.id }
@@ -66,7 +78,6 @@
 	add_opinion_modifier = { target = ZUL modifier = AFR_colonial_conflict }
 	add_opinion_modifier = { target = FRA modifier = AFR_foreign_colony }
 	add_opinion_modifier = { target = EPD modifier = AFR_foreign_colony }
-	add_opinion_modifier = { target = SNG modifier = AFR_foreign_colony }
 	add_opinion_modifier = { target = NAT modifier = AFR_british_colony }
 
 set_popularities = {
@@ -121,5 +132,6 @@ set_popularities = {
 	recruit_character = SAF_Robert_Henry_Wynyard
 	recruit_character = SAF_Philip_Edmond_Wodehouse
 	recruit_character = SAF_Henry_Barkly
+	recruit_character = SAF_Henry_Bartle_Frere
 	recruit_character = SAF_John_Molteno
 }

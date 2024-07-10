@@ -15,11 +15,12 @@ focus_tree = {
 		id = BRA_the_rise_of_the_empire
 		icon = GFX_goal_focus_brazil
 		cost = 35
-		x = 20
+		x = 12
 		y = 0
 		
 		completion_reward = {
 			add_political_power = 50
+			country_event = { id = brazil.70 }
 		}
 	}
 	
@@ -102,7 +103,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-			add_ideas = BRA_generic_portuguese
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_mp = 0.01 tooltip = monthly_population_tooltip }
+			#add_ideas = BRA_generic_portuguese
+
 		}
 	}
 	
@@ -118,7 +122,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-			add_ideas = BRA_generic_spanish
+			#add_ideas = BRA_generic_spanish
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_mp = 0.01 tooltip = monthly_population_tooltip }
 		}
 	}
 	
@@ -134,7 +140,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-			add_ideas = BRA_generic_german
+			#add_ideas = BRA_generic_german
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_mp = 0.01 tooltip = monthly_population_tooltip }
 		}
 	}
 	
@@ -150,7 +158,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-			add_ideas = BRA_generic_swiss
+			#add_ideas = BRA_generic_swiss
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_mp = 0.01 tooltip = monthly_population_tooltip }
 		}
 	}
 	
@@ -166,7 +176,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-			add_ideas = BRA_generic_italian
+			#add_ideas = BRA_generic_italian
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_mp = 0.01 tooltip = monthly_population_tooltip }
 		}
 	}
 	
@@ -204,9 +216,7 @@ focus_tree = {
 				days = 70
 				idea = Generic_Investigation_Proceeding_1
 			}
-			custom_effect_tooltip = AFR_Racial_Tension_plus_2
 			hidden_effect = { 
-				501 = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 				country_event = { id = brazil.68 days = 70 }
 			}
 		}
@@ -229,9 +239,8 @@ focus_tree = {
 				days = 70
 				idea = eoanb_random_event_17_idea
 			}
-			custom_effect_tooltip = AFR_Racial_Tension_minus_1
+			
 			hidden_effect = {
-				501 = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
 				country_event = { id = brazil.67 days = 70 }
 			}
 		}
@@ -252,35 +261,33 @@ focus_tree = {
 			#portuguese immigration 1857-1871 = 45.73% = 81661.8902
 			1037 = {
 				add_manpower = 25000
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#Rio de Janeiro City
 			500 = {
 				add_manpower = 10000
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#Rio de Janeiro State
 			501 = {
 				add_manpower = 15000
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#São Paulo
 			1038 = {
 				add_manpower = 12500
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#Minas Gerais
 			496 = {
 				add_manpower = 8500
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#Pará
 			495 = {
 				add_manpower = 6500
-				custom_effect_tooltip = AFR_Racial_Tension_minus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 } }
+
 			}	#Amazonas
-			add_ideas = BRA_portuguese_merchants
+			#add_ideas = BRA_portuguese_merchants
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_tom = 0.15 tooltip = trade_opinion_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_lrf = 0.05 tooltip = local_resources_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_pcmc = -0.03 tooltip = production_cost_max_convoy_tooltip }
 			add_political_power = 15
 		}
 	}
@@ -309,7 +316,10 @@ focus_tree = {
 			1072 = { add_manpower = 75 }	#Soutern Mato Grosso
 			496 = {	add_manpower = 150 }	#Pará
 			499 = { add_manpower = 150 }	#Bahia
-			add_ideas = BRA_spanish_farmers
+			#add_ideas = BRA_spanish_farmers
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_psff = 0.2 tooltip = production_speed_farm_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_pscff= 0.05 tooltip = production_speed_cotton_farm_factor_tooltip }
 			add_political_power = 15
 		}
 	}
@@ -335,7 +345,12 @@ focus_tree = {
 			1036 = { add_manpower = 1500 }	#Paraná
 			301 = {	add_manpower = 500 }	#West Paraná
 			1039 = { add_manpower = 2000 }	#Espirito Santo
-			add_ideas = BRA_german_efficiency
+			#add_ideas = BRA_german_efficiency
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_rsf = 0.02 tooltip = research_speed_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_pfmef = 0.1 tooltip = production_factory_max_efficiency_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_lcpef = 0.1 tooltip = line_change_production_efficiency_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_icf = 0.1 tooltip = industrial_capacity_factory_tooltip }
 			add_political_power = 15
 		}
 	}
@@ -361,7 +376,10 @@ focus_tree = {
 			301 = { add_manpower = 75 }		#West Paraná
 			503 = { add_manpower = 100 }	#Santa Catarina
 			1064 = { add_manpower = 75 }	#East Misiones
-			add_ideas = BRA_italian_workforce
+			#add_ideas = BRA_italian_workforce
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_psicf = 0.1 tooltip = production_speed_industrial_complex_factor_tooltip }
+			add_to_variable = { BRA_New_World_Immigrants_psaff = 0.1 tooltip = production_speed_arms_factory_factor_tooltip }
 			add_political_power = 15
 		}
 	}
@@ -395,8 +413,6 @@ focus_tree = {
 					instant_build = yes
 				}
 				add_manpower = 4160
-				custom_effect_tooltip = AFR_Racial_Tension_minus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.2 } }
 			}
 			custom_effect_tooltip = BRA_construction_1
 		}
@@ -674,7 +690,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = BRA_generic_other_europeans
+			#add_ideas = BRA_generic_other_europeans
+			custom_effect_tooltip = dynmod_BRA_New_World_Immigrants_effect_tt
+			add_to_variable = { BRA_New_World_Immigrants_rsf = 0.05 tooltip = research_speed_factor_tooltip }
 		}
 	}
 
@@ -793,14 +811,12 @@ focus_tree = {
 			500 = {
 				add_extra_state_shared_building_slots = 3
 				add_manpower = 7000
-				custom_effect_tooltip = AFR_Racial_Tension_plus_3
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
+
 			}
 			1037 = {
 				add_extra_state_shared_building_slots = 2
 				add_manpower = 3000
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
+
 			}
 		}
 	}
@@ -825,14 +841,14 @@ focus_tree = {
 			501 = {
 				add_manpower = 7000
 				add_extra_state_shared_building_slots = 3
-				custom_effect_tooltip = AFR_Racial_Tension_plus_3
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
+
+
 			}
 			1038 = {
 				add_manpower = 3000
 				add_extra_state_shared_building_slots = 2
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
+
+
 			}
 		}
 	}
@@ -868,8 +884,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_large_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			498 = {
 				#add_building_construction = {
@@ -880,15 +895,13 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_small_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			499 = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_huge_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			1040 = {
 				#add_building_construction = {
@@ -899,8 +912,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_medium_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			add_political_power = -15
 			custom_effect_tooltip = BRA_construction_3
@@ -952,8 +964,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_large_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			add_political_power = -5			
 			custom_effect_tooltip = BRA_construction_1
@@ -1018,8 +1029,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			1038 = {
 				add_building_construction = {
@@ -1027,8 +1037,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			501 = {
 				add_building_construction = {
@@ -1036,8 +1045,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			add_political_power = -5
 			custom_effect_tooltip = BRA_construction_3
@@ -1073,8 +1081,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			504 = {
 				add_building_construction = {
@@ -1082,8 +1089,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			1041 = {
 				add_building_construction = {
@@ -1091,8 +1097,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			add_political_power = -15
 			custom_effect_tooltip = BRA_construction_3
@@ -1140,8 +1145,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_small_livestock
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			496 = {
 				add_dynamic_modifier = {
@@ -1153,8 +1157,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			497 = {
 				add_dynamic_modifier = {
@@ -1166,8 +1169,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			498 = {
 				add_dynamic_modifier = {
@@ -1179,8 +1181,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			499 = {
 				add_dynamic_modifier = {
@@ -1192,8 +1193,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_4
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.4 } }
+
 			}
 			504 = {
 				add_dynamic_modifier = {
@@ -1205,8 +1205,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_3
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
+
 			}
 			505 = {
 				add_dynamic_modifier = {
@@ -1218,8 +1217,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
+
 			}
 			1038 = {
 				set_state_flag = large_livestock_farms
@@ -1231,8 +1229,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_3
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
+
 			}
 			1041 = {
 				set_state_flag = small_livestock_farms
@@ -1244,8 +1241,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			1044 = {
 				set_state_flag = medium_livestock_farms
@@ -1257,8 +1253,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
+
 			}
 			1072 = {
 				set_state_flag = large_livestock_farms
@@ -1270,8 +1265,8 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_3
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.3 } }
+
+
 			}
 			add_ideas = BRA_livestock_1
 			add_political_power = -100
@@ -1306,8 +1301,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			add_political_power = -5
 			custom_effect_tooltip = BRA_construction_1
@@ -1378,24 +1372,24 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = -5000
 			280 = {
-				add_resource = {
-					type = rare_earth_metals
-					amount = 2
-				}
+				#add_resource = {
+				#	type = rare_earth_metals
+				#	amount = 2
+				#}
 				add_manpower = 2000
 			}
 			505 = {
-				add_resource = {
-					type = rare_earth_metals
-					amount = 1
-				}
+				#add_resource = {
+				#	type = rare_earth_metals
+				#	amount = 1
+				#}
 				add_manpower = 1000
 			}
 			1038 = {
-				add_resource = {
-					type = rare_earth_metals
-					amount = 3
-				}
+				#add_resource = {
+				#	type = rare_earth_metals
+				#	amount = 3
+				#}
 				add_manpower = 3000
 			}
 			add_ideas = BRA_idea_new_gold_rush
@@ -1431,8 +1425,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			1037 = {
 				add_building_construction = {
@@ -1443,8 +1436,7 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_medium_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			custom_effect_tooltip = BRA_construction_2
 		}
@@ -1477,8 +1469,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			custom_effect_tooltip = BRA_construction_1
 		}
@@ -1576,8 +1567,6 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = dynmod_BRA_huge_sugar_mills
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_4
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.4 } }
 			}
 			custom_effect_tooltip = BRA_construction_2
 		}
@@ -1669,8 +1658,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			499 = {
 				add_dynamic_modifier = {
@@ -1681,8 +1669,7 @@ focus_tree = {
 				#	level = 1
 				#	instant_build = yes
 				#}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			custom_effect_tooltip = BRA_construction_2
 		}
@@ -1721,8 +1708,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_1
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
+
 			}
 			custom_effect_tooltip = BRA_construction_2
 		}
@@ -1789,38 +1775,38 @@ focus_tree = {
 		
 		completion_reward = {
 			if = { 
-				limit = { BRA = { has_idea =  inframain_no_subsidies_infrastructure } }
+				limit = { BRA = { has_idea =  road_spending_level_1 } }
 				BRA = {
 					swap_ideas = {
-						remove_idea = inframain_no_subsidies_infrastructure
-						add_idea = inframain_basic_maintenance_infrastructure 
+						remove_idea = road_spending_level_1
+						add_idea = road_spending_level_2 
 					}
 				}
 			}
 			if = { 
-				limit = { BRA = { has_idea =  inframain_basic_maintenance_infrastructure } }
+				limit = { BRA = { has_idea =  road_spending_level_2 } }
 				BRA = {
 					swap_ideas = {
-						remove_idea = inframain_basic_maintenance_infrastructure 
-						add_idea = inframain_well_maintaned_infrastructure
+						remove_idea = road_spending_level_2 
+						add_idea = road_spending_level_3
 					}
 				}
 			}
 			if = { 
-				limit = { BRA = { has_idea =  inframain_well_maintaned_infrastructure } }
+				limit = { BRA = { has_idea =  road_spending_level_3 } }
 				BRA = {
 					swap_ideas = {
-						remove_idea = inframain_well_maintaned_infrastructure
-						add_idea = inframain_steady_network_expansion 
+						remove_idea = road_spending_level_3
+						add_idea = road_spending_level_4 
 					}
 				}
 			}
 			if = { 
-				limit = { BRA = { has_idea =  inframain_steady_network_expansion } }
+				limit = { BRA = { has_idea =  road_spending_level_4 } }
 				BRA = {
 					swap_ideas = {
-						remove_idea = inframain_steady_network_expansion
-						add_idea = inframain_rapid_network_expansion
+						remove_idea = road_spending_level_4
+						add_idea = road_spending_level_5
 					}
 				}
 			}
@@ -2128,12 +2114,12 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = 45
-			497 = {
-				add_resource = {
-					type = rare_earth_metals
-					amount = 4
-				}
-			}
+			#497 = {
+			#	add_resource = {
+			#		type = rare_earth_metals
+			#		amount = 4
+			#	}
+			#}
 		}
 	}
 	
@@ -3394,1215 +3380,6 @@ focus_tree = {
 		}	
 	}
 	
-	
-	focus = {
-		id = BRA_discuss_our_politics
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 35
-		x = 40
-		y = 1
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		prerequisite = {
-			focus = BRA_the_rise_of_the_empire
-		}
-	
-
-		completion_reward = {
-			add_political_power = 45
-		}
-	
-	}
-	
-	focus = {
-		id = BRA_prepare_the_cabinet
-		icon = GFX_Focus_Elite
-		cost = 35
-		x = 40
-		y = 2
-
-		prerequisite = {
-			focus = BRA_discuss_our_politics
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_political_power = 30
-		}
-	
-	}
-	
-	focus = {
-		id = BRA_reorganize_the_parliament
-		icon = GFX_focus_ITA_local_gov
-		cost = 35
-		x = 40
-		y = 3
-
-		prerequisite = {
-			focus = BRA_prepare_the_cabinet
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_political_power = 15
-			country_event = brazil.5
-		}
-	}
-	
-	focus = {
-		id = BRA_hold_the_elections
-		icon = GFX_Focus_Vote_Election
-		cost = 35
-		x = 40
-		y = 4
-
-		prerequisite = {
-			focus = BRA_reorganize_the_parliament
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			date > 1858.01.01
-		}
-
-		completion_reward = {
-			add_political_power = 10
-		}
-	
-	}
-	
-	focus = {
-		id = BRA_elect_a_progressive_minister
-		icon = GFX_Focus_Ideology_Support_Democracy
-		cost = 35
-		x = 40
-		y = 5
-
-		prerequisite = {
-		focus = BRA_hold_the_elections
-		}
-	   
-		mutually_exclusive = {
-		   focus = BRA_elect_a_liberal_minister
-		   focus = BRA_elect_a_conservative_minister
-	   	}
-
-		completion_reward = {
-			add_political_power = 10
-			set_country_flag = brazil_progressive
-		}
-	}
-	
-	focus = {
-		id = BRA_elect_a_conservative_minister
-		icon = GFX_Focus_Ideology_Support_Liberty
-		cost = 35
-		x = 50
-		y = 5
-       
-	   
-		available = {
-			has_country_flag = BRA_conservative
-		}
-		prerequisite = {
-			focus = BRA_hold_the_elections
-		}
-		
-		mutually_exclusive = {
-			focus = BRA_elect_a_liberal_minister
-			focus = BRA_elect_a_progressive_minister
-		}
-
-		completion_reward = {
-			add_political_power = 10
-			set_country_flag = brazil_conservative
-		}
-	}
-	
-	focus = {
-		id = BRA_elect_a_liberal_minister
-		icon = GFX_Focus_Ideology_Support_Liberalism
-		cost = 35
-		x = 35
-		y = 5
-	   
-		available = {
-			has_country_flag = BRA_liberal
-		}
-		prerequisite = {
-			focus = BRA_hold_the_elections
-		}
-	   
-		mutually_exclusive = {
-			focus = BRA_elect_a_conservative_minister
-			focus = BRA_elect_a_progressive_minister
-		}
-
-		completion_reward = {
-			add_political_power = 10
-			set_country_flag = brazil_liberal
-		}
-	}
-	
-	focus = {
-		id = BRA_progress_and_prosperity
-		icon = GFX_goal_focus_separation_queensland
-		cost = 35
-		x = 40
-		y = 6
-
-		prerequisite = {
-			focus = BRA_elect_a_progressive_minister
-		}
-		
-		completion_reward = {
-			add_political_power = 15
-		}
-	}
-	
-	focus = {
-		id = BRA_centrist_ideas_towards_issues
-		icon = GFX_focus_generic_diplomatic_treaty
-		cost = 35
-		x = 40
-		y = 7
-
-		prerequisite = {
-			focus = BRA_progress_and_prosperity
-		}
-
-		completion_reward = {
-			add_stability = 0.01
-			add_popularity = {
-				ideology = centrism
-				popularity = 0.1
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_support_our_parliamentary_system
-		icon = GFX_goal_focus_haussmann
-		cost = 35
-		x = 40
-		y = 8
-
-		prerequisite = {
-			focus = BRA_centrist_ideas_towards_issues
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = BRA_parliament
-				add_idea = BRA_parliament2
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_declare_south_american_status_quo
-		icon = GFX_goal_generic_neutrality_focus
-		cost = 35
-		x = 40
-		y = 9
-
-		prerequisite = {
-			focus = BRA_support_our_parliamentary_system
-		}
-
-		completion_reward = {
-			every_country = { country_event = brazil.6 }
-			add_stability = 0.01
-			add_war_support = 0.01
-		}
-	}
-	
-	focus = {
-		id = BRA_dom_pedro_diplomatic_travels
-		icon = GFX_goal_diplomatic_travels
-		cost = 35
-		x = 40
-		y = 10
-
-		prerequisite = {
-			focus = BRA_declare_south_american_status_quo
-		}
-
-		completion_reward = {
-			add_political_power = 15
-		}
-	}
-	
-	focus = {
-		id = BRA_diplomatic_visit_to_britain
-		icon = GFX_Focus_Diplomatic_Ally_ENG
-		cost = 35
-		x = 41
-		y = 11
-
-		prerequisite = {
-			focus = BRA_dom_pedro_diplomatic_travels
-		}
-
-		completion_reward = {
-			ENG = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = offered_support 
-				}
-			}
-			BRA = {
-				add_opinion_modifier = {
-				target = ENG
-				modifier = offered_support 
-				}
-			}
-		}
-	}
-	
-	
-	focus = {
-		id = BRA_learn_from_european_infrastructure
-		icon = GFX_goal_generic_construct_infrastructure
-		cost = 35
-		x = 41
-		y = 12
-
-		prerequisite = {
-			focus = BRA_diplomatic_visit_to_britain
-		}
-
-		completion_reward = {
-			add_timed_idea = { 
-				idea = BRA_european_infrastructure
-				days = 90
-			}
-		}
-	}
-
-	focus = {
-		id = BRA_trade_relations_with_our_neighbors
-		icon = GFX_goal_generic_positive_trade_relations
-		cost = 35
-		x = 39
-		y = 11
-
-		prerequisite = {
-			focus = BRA_dom_pedro_diplomatic_travels
-		}
-
-		completion_reward = {
-			BOL = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}
-			ARG = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}
-
-			URG = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}
-			hidden_effect = {
-				URC = {
-					add_opinion_modifier = {
-						target = BRA
-						modifier = FRA_cobden_chevalier_treaty
-					}
-				}
-			}
-			VEN = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}	
-			COL = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}
-
-			PRU = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}			
-			
-		}
-	}
-	
-	
-	focus = {
-		id = BRA_trade_relations_with_north_america
-		icon = GFX_goal_generic_positive_trade_relations
-		cost = 35
-		x = 39
-		y = 12
-
-		prerequisite = {
-			focus = BRA_trade_relations_with_our_neighbors
-		}
-
-		completion_reward = {
-			MEX = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = FRA_cobden_chevalier_treaty
-				}
-			}
-			hidden_effect = {
-				MXE = {
-					add_opinion_modifier = {
-						target = BRA
-						modifier = FRA_cobden_chevalier_treaty
-					}
-				}
-			}
-		}
-	}
-	
-	
-	
-	focus = {
-		id = BRA_careful_cooperation
-		icon = GFX_goal_generic_position_armies
-		cost = 35
-		x = 40
-		y = 13
-
-		prerequisite = {
-			focus = BRA_trade_relations_with_north_america
-		}
-	    prerequisite = {
-			focus = BRA_learn_from_european_infrastructure
-		}
-
-		completion_reward = {
-			add_political_power = 50		
-		}
-	}
-	
-	
-	focus = {
-		id = BRA_a_new_foreign_policy
-		icon = GFX_goal_generic_alliance
-		cost = 35
-		x = 40
-		y = 14
-
-		prerequisite = {
-			focus = BRA_careful_cooperation
-		}
-
-		completion_reward = {
-			add_stability = 0.01
-			add_political_power = 35	
-		}
-	}
-	
-   focus = {
-		id = BRA_mend_relations_with_argentina
-		icon = GFX_Focus_Diplomatic_Ally_ARG_2
-		cost = 35
-		x = 40
-		y = 15
-          
-		available = {
-			ARG = { has_government = centrism }
-		}
-		
-		prerequisite = {
-			focus = BRA_a_new_foreign_policy
-		}
-		
-		completion_reward = {
-			BRA = {
-				add_opinion_modifier = {
-					target = ARG
-					modifier = usa_improved_relations
-				}
-			}
-			ARG = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = usa_improved_relations
-				}
-			}		
-		}
-	}
-	
-	focus = {
-		id = BRA_mend_relations_with_uruguay
-		icon = GFX_Focus_Diplomatic_Ally_URG
-		cost = 35
-		x = 39
-		y = 16
-          		
-		prerequisite = {
-			focus = BRA_mend_relations_with_argentina
-		}
-
-		completion_reward = {
-			URC = {
-				add_opinion_modifier = {
-    				target = BRA
-    				modifier = usa_improved_relations
-				}
-			}
-			BRA = {
-				add_opinion_modifier = {
-    				target = URC
-    				modifier = usa_improved_relations
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_mend_relations_with_peru
-		icon = GFX_Focus_Diplomatic_Deal
-		cost = 35
-		x = 41
-		y = 16
-		
-		available = {
-			PRU = { has_government = centrism }
-		}	
-		prerequisite = {
-			focus = BRA_mend_relations_with_argentina
-		}
-
-		completion_reward = {
-			PRU = {
-				add_opinion_modifier = {
-    				target = BRA
-    				modifier = usa_improved_relations
-				}
-			}
-			BRA = {
-				add_opinion_modifier = {
-    				target = PRU
-    				modifier = usa_improved_relations
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_ambition_and_tradition
-		icon = GFX_Focus_imperialism
-		cost = 35
-		x = 50
-		y = 6
-        
-		prerequisite = {
-			focus = BRA_elect_a_conservative_minister
-		}
-
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-
-		completion_reward = {
-			add_political_power = 10
-		}
-	}
-	
-	focus = {
-		id = BRA_preserve_royal_power
-		icon = GFX_focus_rom_royal_dictatorship
-		cost = 35
-		x = 50
-		y = 7
-        
-		prerequisite = {
-			focus = BRA_ambition_and_tradition
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-		
-		completion_reward = {
-			add_popularity = {
-				ideology = autocracy
-				popularity = 0.05
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_declare_south_american_ambition
-		icon = GFX_Focus_Continent_South_America
-		cost = 35
-		x = 50
-		y = 8
-        
-		prerequisite = {
-			focus = BRA_preserve_royal_power
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_war_support = 0.10
-			every_country = { country_event = brazil.14	}
-			add_ideas = {
-				BRA_divided_parliament
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_tame_the_progressives
-		icon = GFX_Focus_Ideology_Republicanism
-		cost = 35
-		x = 47
-		y = 9
-
-		prerequisite = {
-			focus = BRA_declare_south_american_ambition
-		}
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_political_power = -10
-			add_stability = 0.015
-		}
-	}
-	
-	
-	focus = {
-		id = BRA_appease_liberal_entrepreneurs
-		icon = GFX_goal_generic_intelligence_exchange
-		cost = 35
-		x = 49
-		y = 9
-
-		prerequisite = {
-			focus = BRA_declare_south_american_ambition
-		}
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_political_power = -5 
-		}
-	}
-	
-	focus = {
-		id = BRA_centralize_government_power
-		icon = GFX_Focus_Monarchy_Usurp_Throne
-		cost = 35
-		x = 50
-		y = 10
-        
-		prerequisite = {
-			focus = BRA_appease_liberal_entrepreneurs
-		}
-		prerequisite = {
-			focus = BRA_tame_the_progressives
-		}
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			remove_ideas = BRA_divided_parliament
-		}
-	}
-	
-	focus = {
-		id = BRA_ally_the_church
-		icon = GFX_Focus_Diplomatic_Ally_Pope
-		cost = 35
-		x = 51
-		y = 11
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		prerequisite = {
-			focus = BRA_centralize_government_power
-		}	
-
-		completion_reward = {
-			add_war_support = 0.025
-		}
-	}
-	
-	focus = {
-		id = BRA_pro_war_propaganda
-		icon = GFX_Focus_Freedom_Press_newspapers
-		cost = 35
-		x = 49
-		y = 11
-
-		prerequisite = {
-			focus = BRA_centralize_government_power
-		}
-
-		ai_will_do = {
-			factor = 100
-		}		
-
-		completion_reward = {
-			add_war_support = 0.015
-		}
-	}
-	
-	focus = {
-		id = BRA_restore_our_imperial_might
-		icon = GFX_
-		cost = 35
-		x = 50
-		y = 12
-        
-		prerequisite = {
-			focus = BRA_pro_war_propaganda
-		}	
-		
-		prerequisite = {
-			focus = BRA_ally_the_church
-		}
-
-		ai_will_do = {
-			factor = 100
-		}		
-		
-		completion_reward = {
-			add_war_support = 0.035
-			add_political_power = 25
-		}
-	}
-	
-	focus = {
-		id = BRA_reclaim_the_caiena_colony
-		icon = GFX_focus_generic_support_the_left_right
-		cost = 35
-		x = 50
-		y = 13
-
-		prerequisite = {
-			focus = BRA_restore_our_imperial_might
-		}
-
-		completion_reward = {
-			add_state_claim = 310
-		}
-	}
-
-	focus = {
-		id = BRA_discredit_the_paris_treaty
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 35
-		x = 50
-		y = 14
-       	
-		prerequisite = {
-			focus = BRA_reclaim_the_caiena_colony
-		}
-
-		completion_reward = {
-			FRA = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = protest_action_light
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = BRA_demand_french_guyana
-		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
-		cost = 35
-		x = 50
-		y = 15
-
-		prerequisite = {
-			focus = BRA_discredit_the_paris_treaty
-		}
-		ai_will_do={
-			base = 1000
-			modifier = {
-				has_war = yes
-				factor = 0
-			}
-		}
-		completion_reward = {
-	  		add_political_power = -15
-   			FRA = { country_event = brazil.19 }
-		}
-	}
-
-	focus = {
-		id = BRA_ave_imperio
-		icon = GFX_goal_focus_ave_imperio
-		cost = 30
-		x = 50
-		y = 16
-		
-		available = {
-			controls_state = 300
-			controls_state = 310
-		}
-       	
-		prerequisite = {
-			focus = BRA_demand_french_guyana
-		}
-		
-		#prerequisite = {
-		#	focus = BRA_the_second_cisplatine_war
-		#}
-		completion_reward = {
-			hidden_effect = {
-				310 = {
-					add_manpower = 5000
-				}
-			}
-			custom_effect_tooltip = 1_Brazil_TT
-		}
-	}
-
-	focus = {
-		id = BRA_change_and_reformation
-		icon = GFX_Focus_Government_Reform_Administration
-		cost = 35
-		x = 35
-		y = 6
-
-		prerequisite = {
-			focus = BRA_elect_a_liberal_minister
-		}
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		completion_reward = {
-			add_political_power = 40
-			add_stability = -0.01
-		}
-	}
-	
-	
-	focus = {
-		id = BRA_popularize_democracy
-		icon = GFX_Focus_Partisans_Popularize
-		cost = 35
-		x = 35
-		y = 7
-
-		prerequisite = {
-			focus = BRA_change_and_reformation
-		}
-		
-		completion_reward = {
-			add_political_power = -35
-			add_popularity = {
-				ideology = centrism
-				popularity = 0.1
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_question_our_parliamentary_system
-		icon = GFX_goal_generic_forceful_treaty
-		cost = 35
-		x = 35
-		y = 8
-
-		prerequisite = {
-			focus = BRA_popularize_democracy
-		}
-
-		completion_reward = {
-			add_political_power = -105
-		}	
-	}
-	
-	focus = {
-		id = BRA_question_the_emperors_power
-		icon = GFX_goal_tfv_sever_ties_with_uk
-		cost = 35
-		x = 35
-		y = 9
-		available = {
-			date > 1858.9.22
-		}
-		prerequisite = {
-			focus = BRA_question_our_parliamentary_system
-		}
-		completion_reward = {
-			add_political_power = 70
-			country_event = brazil.23
-			hidden_effect={country_event = {id=brazil.election.0 days=2}}
-			add_popularity = {
-				ideology = autocracy
-				popularity = -0.15
-			}
-		}
-	}
-	
-	
-   focus = {
-		id = BRA_a_deal_with_the_emperor
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 2
-		x = 34
-		y = 10
-		prerequisite = {
-			focus = BRA_question_the_emperors_power
-		}
-		
-		available = {
-			has_country_flag = brazil_emperor_allowed
-		}
-		mutually_exclusive = {
-			focus = BRA_power_to_the_commons
-		}
-		completion_reward = {
-			add_political_power = 210
-			swap_ideas = {
-				add_idea = BRA_parliament3
-				remove_idea = BRA_parliament
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_power_to_the_commons
-		icon = GFX_focus_rom_abdicate
-		cost = 2
-		x = 36
-		y = 10
-		prerequisite = {
-			focus = BRA_question_the_emperors_power
-		}
-		mutually_exclusive = {
-			focus = BRA_a_deal_with_the_emperor
-		}
-		available = {
-			has_country_flag = brazil_emperor_retired
-		}	   
-		completion_reward = {
-			add_political_power = 100
-			remove_ideas = BRA_parliament
-		}
-	}
-	
-	focus = {
-		id = BRA_fight_the_elites
-		icon = GFX_Focus_Elite_Arrested
-		cost = 35
-		x = 36
-		y = 11
-
-		prerequisite = {
-			focus = BRA_power_to_the_commons
-			focus = BRA_a_deal_with_the_emperor
-		}
-
-		completion_reward = {
-			add_political_power = 50
-			unlock_decision_tooltip = BRA_decision_weaken_the_elites
-		}
-	
-	}
-	
-	focus = {
-		id = BRA_road_to_reforms
-		icon = GFX_Focus_Law_Vote_1
-		cost = 35
-		x = 35
-		y = 12
-
-		prerequisite = {
-			focus = BRA_fight_the_elites
-		}
-		
-		prerequisite = {
-			focus = BRA_propose_the_slavery_act
-		}
-
-		completion_reward = {
-			add_political_power = -80
-		}	
-	}
-	
-	focus = {
-		id = BRA_liberalize_the_market
-		icon = GFX_goal_generic_trade
-		cost = 35
-		x = 37
-		y = 13
-
-		prerequisite = {
-			focus = BRA_road_to_reforms
-		}
-
-		completion_reward = {
-			add_political_power = 35
-			swap_ideas = {
-				remove_idea = limited_exports
-				add_idea = free_trade
-			}
-		}
-	}
-	
-   focus = {
-		id = BRA_liberalize_the_suffrage
-		icon = GFX_Focus_Ideology_Liberty
-		cost = 35
-		x = 35
-		y = 13
-
-		prerequisite = {
-			focus = BRA_road_to_reforms
-		}
-		completion_reward = {
-			add_political_power = 35
-			swap_ideas = {
-				remove_idea = property_owners_suffrage
-				add_idea = universal_male_suffrage
-			}
-		}
-	}
-
-	
-	focus = {
-		id = BRA_a_new_constitution
-		icon = GFX_Focus_Government_Decentralized
-		cost = 35
-		x = 35
-		y = 14
-		
-		prerequisite = {
-			focus = BRA_liberalize_the_suffrage
-		}
-		prerequisite = {
-			focus = BRA_liberalize_the_market
-		}
-		prerequisite = {
-			focus = BRA_educate_the_masses
-		}
-		completion_reward = {
-			add_political_power = -150
-			swap_ideas = {
-				remove_idea = limited_constitution
-				add_idea = constitution_adopted
-			}
-		}
-	}
-	
-	focus = {
-		id = BRA_inspiration_from_the_british_model
-		icon = GFX_goal_focus_house_commons
-		cost = 35
-		x = 37
-		y = 14
-		
-		prerequisite = {
-			focus = BRA_liberalize_the_market
-		}
-		completion_reward = {
-			add_political_power = 35
-			add_stability = 0.01
-			ENG = {
-				add_opinion_modifier = {
-					target = BRA
-					modifier = offered_support
-				}
-			}
-		}
-	}
-	
-    focus = {
-		id = BRA_strenghten_the_parliament
-		icon = GFX_Focus_Government_Centralized
-		cost = 35
-		x = 38
-		y = 15
-
-		prerequisite = {
-			focus = BRA_inspiration_from_the_british_model
-		}
-		completion_reward = {
-			add_stability = 0.01
-			add_political_power = 35
-			add_war_support = 0.01
-			add_popularity = {
-				ideology = autocracy
-				popularity = -0.15
-			}
-		}
-    }
-	
-	focus = {
-		id = BRA_rethink_the_economy
-		icon = GFX_Focus_stimulate_economy
-		cost = 35
-		x = 36
-		y = 15
-
-		prerequisite = {
-			focus = BRA_inspiration_from_the_british_model
-		}
-		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_reformed_economy
-				days = 70
-			}
-		}
-    }
-	
-	focus = {
-		id = BRA_propose_the_slavery_act
-		icon = GFX_focus_generic_treaty
-		cost = 35
-		x = 34
-		y = 11
- 
-		prerequisite = {
-			focus = BRA_power_to_the_commons
-			focus = BRA_a_deal_with_the_emperor
-		}	
-
-		completion_reward = {
-			add_political_power = 55
-		}
-	}
-	
-	focus = {
-		id = BRA_educate_the_masses
-		icon = GFX_AUS_focus_public_schools
-		cost = 35
-		x = 33
-		y = 13
-
-		prerequisite = {
-			focus = BRA_road_to_reforms
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = privileged_education
-				add_idea = open_schools
-			}
-			add_political_power = 15
-		}
-	}
-	
-	focus = {
-		id = BRA_advancements_on_science
-		icon = GFX_focus_research2
-		cost = 35
-		x = 33
-		y = 14
-
-		prerequisite = {
-			focus = BRA_educate_the_masses
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_timed_idea = {
-				idea = POR_Research 
-				days = 85
-			}
-		}	
-	}
-	
-	focus = {
-		id = BRA_invite_prussian_intellectuals
-		icon = GFX_Focus_Diplomatic_Invitation_PRS
-		cost = 35
-		x = 34
-		y = 15
-
-		prerequisite = {
-			focus = BRA_advancements_on_science
-		}
-		completion_reward = {
-			add_political_power = 35
-		}
-	}
-	
-	focus = {
-		id = BRA_invite_french_intellectuals
-		icon = GFX_Focus_Diplomatic_Invitation_FRA
-		cost = 35
-		x = 32
-		y = 15
-
-		prerequisite = {
-			focus = BRA_advancements_on_science
-		}
-		completion_reward = {
-			add_political_power = 35
-		}
-	}
-	
-	focus = {
-		id = BRA_research_on_electrical_engineering
-		icon = GFX_Focus_Telegraph_Lines
-		cost = 35
-		x = 35
-		y = 16
-
-		prerequisite = {
-			focus = BRA_rethink_the_economy
-		}
-		prerequisite = {
-			focus = BRA_invite_prussian_intellectuals
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.6
-				uses = 1
-				category = electronics_devices_tech
-			}
-		}
-	}
-	
     focus = {
 		id = BRA_uruguayan_intervention
 		icon = GFX_Focus_Attack_URG
@@ -4611,13 +3388,6 @@ focus_tree = {
 		y = 0
 		available = {
 			date > 1863.04.18	#1863.10.10
-			AND={
-				OR={
-					has_country_flag = brazil_liberal
-					has_country_flag = brazil_conservative
-					has_country_flag = brazil_progressive
-				}
-			}
 			custom_trigger_tooltip = {
 				tooltip = GENERIC_Triggered_By_Event_tt
 				always = no 
@@ -4634,7 +3404,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_support_brazilians_living_in_uruguay
-		icon = GFX_goal_continuous_increase_nu
+		icon = GFX_Focus_Army_Reformed
 		cost = 35
 		x = 62
 		y = 1
@@ -4688,19 +3458,12 @@ focus_tree = {
 						modifier = protest_action_strong
 					}
 					if = {
-						limit = {
-							OR = {
-								BRA = { has_country_flag = brazil_liberal }
-								BRA = { has_country_flag = brazil_progressive }
-							}
-						}
 						add_opinion_modifier = {
 							target = BRA
 							modifier = offered_support 
 						}
 					}
 					else_if = {
-						limit = { BRA = { has_country_flag = brazil_conservative } }
 						add_opinion_modifier = {
 							target = BRA
 							modifier = protest_action_light
@@ -4806,11 +3569,6 @@ focus_tree = {
 			focus = BRA_reclaim_the_cisplatine_province
 		}
 		available = {
-			NOT = {has_country_flag = brazil_conservative}
-			OR={
-				has_country_flag=brazil_liberal
-				has_country_flag=brazil_progressive
-			}
 			date > 1864.7.29
 			custom_trigger_tooltip = {
 				tooltip = GENERIC_Triggered_By_Event_tt
@@ -4867,7 +3625,6 @@ focus_tree = {
 			focus = BRA_support_the_colorado_party
 		}
 		available = {
-			has_country_flag = brazil_conservative
 			date > 1864.7.29
 			custom_trigger_tooltip = {
 				tooltip = GENERIC_Triggered_By_Event_tt
@@ -4920,9 +3677,6 @@ focus_tree = {
 		}		
 		completion_reward = {
 			add_political_power = 25
-			every_country = {
-				country_event = brazil.25
-			}
 			hidden_effect = { 
 				add_ideas = { BRA_UCW_volunteers }
 			}
@@ -4952,7 +3706,7 @@ focus_tree = {
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
-					state = 502
+					state = 1389
 					num_provinces = 3
 				}
 				defender = {
@@ -4990,47 +3744,511 @@ focus_tree = {
 				always = no 
 			}
 		}
+		completion_reward = {
+			add_political_power = 5
+		}
 		ai_will_do = {
 			factor = 1000
 		}
-		completion_reward = {
-			every_country = {
-				country_event = brazil.25
-			}
-		}
 	}
-	
+
 	focus = {
-		id = BRA_reorganize_the_imperial_army
+		id = BRA_reform_armed_forces
 		icon = GFX_goal_focus_brazilian_army
 		cost = 35
-		x = 63
-		y = 7
+		x = 15
+		y = 12
 
 		completion_reward = {
 			army_experience = 15
 		}
 	}
-	
-	focus = {
-		id = BRA_abolish_the_national_guard
-		icon = GFX_goal_generic_position_armies
-		cost = 35
-		x = 65
-		y = 8
-    
-		prerequisite = {
-		focus = BRA_reorganize_the_imperial_army
-		}
 
-		mutually_exclusive = {
-		focus = BRA_keep_the_national_guard
+	focus = {
+		id = BRA_the_imperial_army
+		icon = GFX_goal_focus_brazilian_army
+		cost = 35
+		x = 6
+		y = 1
+
+		relative_position_id = BRA_reform_armed_forces
+
+		prerequisite = {
+		focus = BRA_reform_armed_forces
 		}
 
 		completion_reward = {
-			add_political_power = -35
-			add_stability = -0.05
-			remove_ideas = BRA_national_guard
+			army_experience = 15
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = BRA_study_foreign_conflicts
+		icon = GFX_Focus_Diplomatic_foreign_military
+		cost = 35
+		x = -4
+		y = 1
+
+		relative_position_id = BRA_the_imperial_army
+
+		prerequisite = {
+		focus = BRA_the_imperial_army
+		}
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_egaf = 0.03 tooltip = experience_gain_army_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_study_peruvian_civil_war
+		icon = GFX_Focus_Army_Cavalry_Sabers
+		cost = 35
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_study_foreign_conflicts
+
+		prerequisite = {
+			focus = BRA_study_foreign_conflicts
+		}
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aof = 0.01 tooltip = army_org_factor_tooltip }
+			add_to_variable = { BRA_army_disf = 0.03 tooltip = dig_in_speed_tooltip  }
+		}
+	}
+
+	focus = {
+		id = BRA_study_mexican_civil_war
+		icon = GFX_Focus_victory_mexico
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_study_peruvian_civil_war
+
+		prerequisite = {
+			focus = BRA_study_peruvian_civil_war
+		}
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aof = 0.02 tooltip = army_org_factor_tooltip }
+			add_to_variable = { BRA_army_disf = 0.02 tooltip = dig_in_speed_tooltip  }
+		}
+	}
+
+	focus = {
+		id = BRA_study_european_intervention_mexico
+		icon = GFX_Focus_mexican_intervention
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_study_mexican_civil_war
+
+		prerequisite = {
+			focus = BRA_study_mexican_civil_war
+		}
+
+		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aaamjf = 0.05 tooltip = attack_army_against_major_factor_tooltip }
+			add_to_variable = { BRA_army_adamjf = 0.05 tooltip = defence_army_against_major_factor_tooltip }
+			add_to_variable = { BRA_army_aof = 0.02 tooltip = army_org_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_study_platine_war
+		icon = GFX_focus_BUE_unitario_government
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_study_foreign_conflicts
+
+		prerequisite = {
+			focus = BRA_study_foreign_conflicts
+		}
+
+		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aor = 0.03 tooltip = army_org_regain_tooltip }
+			add_to_variable = { BRA_army_aof = 0.01 tooltip = army_org_factor_tooltip }
+			
+		}
+	}
+
+	focus = {
+		id = BRA_study_argentinian_civil_war
+		icon = GFX_focus_ARG_united_government
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_study_platine_war
+
+		prerequisite = {
+			focus = BRA_study_platine_war
+		}
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aof = 0.01 tooltip = army_org_factor_tooltip }
+			add_to_variable = { BRA_army_adamif = 0.05 tooltip = defence_army_against_minor_factor_tooltip}
+		}
+	}
+
+	focus = {
+		id = BRA_study_american_civil_war
+		icon = GFX_Focus_War_American_Civil_War
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_study_argentinian_civil_war
+
+		prerequisite = {
+			focus = BRA_study_argentinian_civil_war
+		}
+
+		completion_reward = {
+			army_experience = 20
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_asf = 0.05 tooltip = speed_army_factor_tooltip }
+			add_to_variable = { BRA_army_caf = -0.05 tooltip = attack_cavalry_factor_tooltip }
+			add_to_variable = { BRA_army_amf = 0.05 tooltip = army_morale_factor_tooltip }
+			add_to_variable = { BRA_army_scf = 0.05 tooltip = supply_consumption_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_study_paraguayan_war
+		icon = GFX_goal_focus_brazil
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_study_european_intervention_mexico
+
+		prerequisite = {
+			focus = BRA_study_european_intervention_mexico
+		}
+		prerequisite = {
+			focus = BRA_study_american_civil_war
+		}
+
+		completion_reward = {
+			army_experience = 25
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aaamif = 0.05 tooltip = attack_army_against_minor_factor_tooltip }
+			add_to_variable = { BRA_army_adamif = 0.05 tooltip = defence_army_against_minor_factor_tooltip}
+			add_to_variable = { BRA_army_egaf = 0.05 tooltip = experience_gain_army_factor_tooltip }
+			#add_to_variable = { BRA_army_amf = 0.05 tooltip = army_morale_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_modernize_tactics
+		icon = GFX_Focus_adapt_new_doctrines
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_the_imperial_army
+
+		prerequisite = {
+		focus = BRA_the_imperial_army
+		}
+
+		completion_reward = {
+			army_experience = 10
+			#add_doctrine_cost_reduction = { cost_reduction = 1 uses = 1 category = land_doctrine }
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_innovative_tactics
+		icon = GFX_Focus_Mass_Assault_Doctrine
+		cost = 35
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_modernize_tactics
+
+		prerequisite = {
+			focus = BRA_modernize_tactics
+		}
+
+		mutually_exclusive = {
+			focus = BRA_traditional_tactics
+		}
+
+		completion_reward = {
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 3 category = doctrine_victorian_innovative_tech }
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+			add_to_variable = { BRA_army_aaf = 0.05 tooltip = attack_army_factor_tooltip }
+			add_to_variable = { BRA_army_caf = 0.05 tooltip = attack_cavalry_factor_tooltip }
+			add_to_variable = { BRA_army_asf = 0.05 tooltip = speed_army_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_traditional_tactics
+		icon = GFX_Focus_Army_Victorian_Traditional
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_modernize_tactics
+
+		prerequisite = {
+		focus = BRA_modernize_tactics
+		}
+	
+		mutually_exclusive = {
+			focus = BRA_innovative_tactics
+		}
+
+		completion_reward = {
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 3 category = doctrine_victorian_traditional_tech }
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+			add_to_variable = { BRA_army_adf = 0.05 tooltip = defence_army_factor_tooltip }
+			add_to_variable = { BRA_army_cdf = 0.05 tooltip = defence_cavalry_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_invest_royal_military_academy
+		icon = GFX_Focus_military_law_academy
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_innovative_tactics
+
+		prerequisite = {
+			focus = BRA_innovative_tactics
+			focus = BRA_traditional_tactics
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aof = 0.05 tooltip = army_org_factor_tooltip }
+			add_to_variable = { BRA_army_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+			add_to_variable = { BRA_army_ttf = 0.05 tooltip = training_time_factor_tooltip }
+			add_to_variable = { BRA_army_cacf = -0.05 tooltip = command_abilities_cost_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_use_reconaissance_balloons
+		icon = GFX_Focus_Air_baloon
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_invest_royal_military_academy
+
+		prerequisite = {
+			focus = BRA_invest_royal_military_academy
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ps = 0.05 tooltip = planning_speed_tooltip }
+			add_tech_bonus = { bonus = 0.5 uses = 5 category = aviation_tech }
+		}
+	}
+
+	focus = {
+		id = BRA_legacy_1852
+		icon = GFX_Focus_Army_Generic_Coalition_Army
+		cost = 35
+		x = 3
+		y = 1
+
+		relative_position_id = BRA_the_imperial_army
+
+		prerequisite = {
+			focus = BRA_the_imperial_army
+		}
+
+		completion_reward = {
+			BRA = { country_event = { id = brazil.701 } }
+		}
+	}
+
+	focus = {
+		id = BRA_purchase_foreign_equipment
+		icon = GFX_Focus_Rifle_Production
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_legacy_1852
+
+		prerequisite = {
+			focus = BRA_legacy_1852
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = BRA_invest_national_arms_production
+		icon = GFX_Focus_military_district
+		cost = 35
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_purchase_foreign_equipment
+
+		prerequisite = {
+		focus = BRA_purchase_foreign_equipment
+		}
+		prerequisite = {
+		focus = BRA_innovative_tactics
+		focus = BRA_traditional_tactics
+		}
+
+		completion_reward = {
+			1037 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = BRA_increase_army_spending
+		icon = GFX_Focus_Army_Budget
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_purchase_foreign_equipment
+
+		prerequisite = {
+		focus = BRA_purchase_foreign_equipment
+		}
+
+		completion_reward = {
+			swap_ideas = { remove_idea = army_spending_level_2 add_idea = army_spending_level_3 }
+		}
+	}
+
+	focus = {
+		id = BRA_study_foreign_blueprints
+		icon = GFX_Goal_modernized_army_equipment
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_invest_national_arms_production
+
+		prerequisite = {
+			focus = BRA_invest_national_arms_production
+		}
+		prerequisite = {
+			focus = BRA_increase_army_spending
+		}
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 4 category = infantry_weapons }
+		}
+	}
+
+	focus = {
+		id = BRA_army_renewed
+		icon = GFX_Goal_Focus_Victorian_Soldiers
+		cost = 35
+		x = 2
+		y = 1
+
+		relative_position_id = BRA_use_reconaissance_balloons
+
+		prerequisite = {
+		focus = BRA_use_reconaissance_balloons
+		}
+		prerequisite = {
+		focus = BRA_study_foreign_blueprints
+		}
+
+		completion_reward = {
+			army_experience = 20
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_egaf = 0.05 tooltip = experience_gain_army_factor_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_national_guard_question
+		icon = GFX_goal_focus_brazilian_army
+		cost = 35
+		x = 8
+		y = 1
+
+		relative_position_id = BRA_the_imperial_army
+
+		prerequisite = {
+		focus = BRA_the_imperial_army
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_political_power = 50
+			BRA = { country_event = { id = brazil.702 } }
+		}
+	}
+	
+	focus = {
+		id = BRA_abolish_the_national_guard
+		icon = GFX_Focus_decentrailized_militia
+		cost = 35
+		x = 2
+		y = 1
+    
+		relative_position_id = BRA_national_guard_question
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no 
+			}
+		}
+
+		prerequisite = {
+			focus = BRA_national_guard_question
+		}
+
+		mutually_exclusive = {
+			focus = BRA_maintain_the_national_guard
+		}
+
+		completion_reward = {
+			add_political_power = -80
+			add_stability = -0.1
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_cf = -0.005 tooltip = conscription_factor_tooltip }
+			add_to_variable = { BRA_army_ttf = 0.05 tooltip = training_time_factor_tooltip }
+			add_to_variable = { BRA_army_ps = 0.05 tooltip = planning_speed_tooltip }
 		}
 	}
 	
@@ -5038,16 +4256,20 @@ focus_tree = {
 		id = BRA_recruit_british_advisors
 		icon = GFX_goal_focus_british_military_government
 		cost = 35
-		x = 65
-		y = 9
-    
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_abolish_the_national_guard
+
 		prerequisite = {
 			focus = BRA_abolish_the_national_guard
 		} 
 	 
 		completion_reward = {
-			army_experience = 55
-			add_timed_idea = { idea = eoanb_idea_generic_focus_staff days = 200 }
+			
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ldcf = -0.05 tooltip = land_doctrine_cost_factor_tooltip }
+			add_to_variable = { BRA_army_aof = 0.05 tooltip = army_org_factor_tooltip }
 		}	
 	}
 	
@@ -5055,15 +4277,18 @@ focus_tree = {
 		id = BRA_review_our_tactics
 		icon = GFX_goal_generic_army_doctrines
 		cost = 35
-		x = 64
-		y = 10
+		x = -1
+		y = 1
     
+		relative_position_id = BRA_recruit_british_advisors
+
 		prerequisite = {
 			focus = BRA_recruit_british_advisors
 		}
 	 
 		completion_reward = {
-			add_doctrine_cost_reduction = { cost_reduction = 0.75 uses = 1 category = land_doctrine }
+			army_experience = 15
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 2 category = land_doctrine }
 		}
 	}
 	
@@ -5071,15 +4296,17 @@ focus_tree = {
 		id = BRA_produce_new_weaponry
 		icon = GFX_focus_secret_rearmament
 		cost = 35
-		x = 66
-		y = 10
+		x = 1
+		y = 1
     
+		relative_position_id = BRA_recruit_british_advisors
+
 		prerequisite = {
 			focus = BRA_recruit_british_advisors
 		}
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = infantry_weapons }
 		}	
 	}
 
@@ -5087,8 +4314,10 @@ focus_tree = {
 		id = BRA_implement_a_new_army
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 35
-		x = 65
-		y = 11
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_review_our_tactics
 
 		prerequisite = {
 			focus = BRA_review_our_tactics
@@ -5099,23 +4328,31 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_new_army
-				days = 150
-			}
-			add_stability = 0.02
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_aof = 0.05 tooltip = army_org_factor_tooltip }
+			add_to_variable = { BRA_army_adf = 0.05 tooltip = defence_army_factor_tooltip }
+			add_to_variable = { BRA_army_aaf = 0.05 tooltip = attack_army_factor_tooltip }
 		}
 	}
 	
 	focus = {
-		id = BRA_keep_the_national_guard
-		icon = GFX_goal_generic_army_doctrines
+		id = BRA_maintain_the_national_guard
+		icon = GFX_Focus_Make_a_Man_Out_Of_You
 		cost = 35
-		x = 61
-		y = 8
+		x = -2
+		y = 1
     
+		relative_position_id = BRA_national_guard_question
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GENERIC_Triggered_By_Event_tt
+				always = no 
+			}
+		}
+
 		prerequisite = {
-			focus = BRA_reorganize_the_imperial_army
+			focus = BRA_national_guard_question
 		}
 
 		mutually_exclusive = {
@@ -5123,8 +4360,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_stability = -0.01
-			add_political_power = 55
+			add_stability = -0.05
+			add_political_power = 70
 		}
 	}
 	
@@ -5132,17 +4369,20 @@ focus_tree = {
 		id = BRA_rely_on_the_military_academy
 		icon = GFX_goal_focus_medicine_school
 		cost = 35
-		x = 61
-		y = 9
+		x = 0
+		y = 1
     
+		relative_position_id = BRA_maintain_the_national_guard
+
 		prerequisite = {
-			focus = BRA_keep_the_national_guard
+			focus = BRA_maintain_the_national_guard
 		}
 
 		completion_reward = {
-			army_experience = 5
-			add_manpower = 2000
-			add_political_power = 50
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_ps = 0.05 tooltip = planning_speed_tooltip }
+			add_to_variable = { BRA_army_egaf = 0.05 tooltip = experience_gain_army_factor_tooltip }
+			
 		}
 	}
 	
@@ -5151,15 +4391,17 @@ focus_tree = {
 		id = BRA_appease_the_coroneis
 		icon = GFX_goal_focus_BEL_Defense_Captiol
 		cost = 35
-		x = 62
-		y = 10
+		x = 1
+		y = 1
     
+		relative_position_id = BRA_rely_on_the_military_academy
+
 		prerequisite = {
 			focus = BRA_rely_on_the_military_academy
 		}
 		
 		completion_reward = {
-			army_experience = 8
+			army_experience = 10
 			add_manpower = 1000
 			add_political_power = -25
 		}	
@@ -5167,18 +4409,20 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_decentralize_the_army
-		icon = GFX_goal_generic_army_artillery
+		icon = GFX_Focus_dissolve_cantonist
 		cost = 35
-		x = 60
-		y = 10
+		x = -1
+		y = 1
     
+		relative_position_id = BRA_rely_on_the_military_academy
+
 		prerequisite = {
 			focus = BRA_rely_on_the_military_academy
 		}
 		completion_reward = {
-			army_experience = -10
-			add_political_power = 15
-			add_stability = 0.01
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_asf = 0.05 tooltip = speed_army_factor_tooltip }
+			add_to_variable = { BRA_army_egaf = 0.05 tooltip = experience_gain_army_factor_tooltip }
 		}	
 	}
 	
@@ -5186,9 +4430,11 @@ focus_tree = {
 		id = BRA_quantity_over_quality
 		icon = GFX_focus_chi_army_reform
 		cost = 35
-		x = 61
-		y = 11
+		x = 1
+		y = 1
     
+		relative_position_id = BRA_decentralize_the_army
+
 		prerequisite = {
 			focus = BRA_appease_the_coroneis
 		} 
@@ -5196,35 +4442,67 @@ focus_tree = {
 			focus = BRA_decentralize_the_army
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = BRA_national_guard
-				add_idea = BRA_national_guard2
-			}
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_cf = 0.005 tooltip = conscription_factor_tooltip }
+			add_to_variable = { BRA_army_ttf = -0.05 tooltip = training_time_factor_tooltip }
+			add_to_variable = { BRA_army_ps = -0.05 tooltip = planning_speed_tooltip }
 		}
-	}	
-	
+	}
 
-	
+	focus = {
+		id = BRA_army_reinvigorated
+		icon = GFX_goal_focus_brazilian_army
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_army_renewed
+
+		prerequisite = {
+			focus = BRA_army_renewed
+		}
+		prerequisite = {
+			focus = BRA_study_paraguayan_war
+		}
+		prerequisite = {
+			focus = BRA_implement_a_new_army
+			focus = BRA_quantity_over_quality
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = BRA_imperial_army_effect_tt
+			add_to_variable = { BRA_army_egaf = 0.05 tooltip = experience_gain_army_factor_tooltip }
+			add_to_variable = { BRA_army_aaf = 0.05 tooltip = attack_army_factor_tooltip }
+			add_to_variable = { BRA_army_adf = 0.05 tooltip = defence_army_factor_tooltip }
+		}
+	}
+
 	focus = {
 		id = BRA_expand_the_imperial_navy
 		icon = GFX_goal_BRA_imperial_navy
 		cost = 35
-		x = 57
-		y = 7
+		x = -8
+		y = 1
+
+		relative_position_id = BRA_reform_armed_forces
+
+		prerequisite = {
+			focus = BRA_reform_armed_forces
+		}
     
 		completion_reward = {
 			navy_experience = 15
 		}	
 	}
 	
-	
 	focus = {
-		id = BRA_improve_our_ports
+		id = BRA_improve_naval_infrastructure
 		icon = GFX_AUS_focus_docks_2
 		cost = 70
-		x = 58
-		y = 8
+		x = 6
+		y = 1
     
+		relative_position_id = BRA_expand_the_imperial_navy
 		prerequisite = {
 			focus = BRA_expand_the_imperial_navy
 		}
@@ -5233,7 +4511,6 @@ focus_tree = {
 			controls_state = 501
 			controls_state = 499
 			num_of_civilian_factories_available_for_projects > 2
-			NOT = { has_idea = BRA_generic_construction_3 }
 		}
 		select_effect = {
 			add_timed_idea = {
@@ -5270,21 +4547,21 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = BRA_build_new_dockyards
+		id = BRA_expand_dockyards_rio_de_janeiro
 		icon = GFX_AUS_focus_docks_1
 		cost = 140
-		x = 58
-		y = 9
+		x = 1
+		y = 1
     
+		relative_position_id = BRA_improve_naval_infrastructure
 		prerequisite = {
-			focus = BRA_improve_our_ports
+			focus = BRA_improve_naval_infrastructure
 		} 
 		available = {
 			controls_state = 500
 			controls_state = 1037
 			controls_state = 499
 			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_idea = BRA_generic_construction_5 }
 		}
 		select_effect = {
 			add_timed_idea = {
@@ -5316,23 +4593,42 @@ focus_tree = {
 			}
 		}	
 	}
+
+	focus = {
+		id = BRA_fortify_guanabara_bay
+		icon = GFX_Focus_Defence_Fort_Gate
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_expand_dockyards_rio_de_janeiro
+
+		prerequisite = {
+			focus = BRA_expand_dockyards_rio_de_janeiro
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
 	
 	focus = {
-		id = BRA_southern_dockyards
-		icon = GFX_goal_generic_navy_cruiser
+		id = BRA_expand_port_santos
+		icon = GFX_goal_VEN_maracaibo_urbanization
 		cost = 140
-		x = 58
-		y = 10
+		x = -1
+		y = 1
     
+		relative_position_id = BRA_improve_naval_infrastructure
+
 		prerequisite = {
-			focus = BRA_build_new_dockyards
+			focus = BRA_improve_naval_infrastructure
 		} 
 		available = {
 			controls_state = 502
 			controls_state = 503
 			controls_state = 1036
 			num_of_civilian_factories_available_for_projects > 2
-			NOT = { has_idea = BRA_generic_construction_3 }
 		}
 		select_effect = {
 			add_timed_idea = {
@@ -5367,13 +4663,72 @@ focus_tree = {
 		}	
 	}
 	
+	focus = {
+		id = BRA_fortify_southern_ports
+		icon = GFX_AUS_focus_fortify_italy
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_expand_port_santos
+
+		prerequisite = {
+			focus = BRA_expand_port_santos
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
 
 	focus = {
-		id = BRA_innovate_the_arsenal_of_the_court
+		id = BRA_expand_northern_ports
+		icon = GFX_Focus_Row_Boat
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_fortify_southern_ports
+
+		prerequisite = {
+			focus = BRA_fortify_southern_ports
+		}
+		prerequisite = {
+			focus = BRA_fortify_guanabara_bay
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_fortify_northern_ports
+		icon = GFX_Focus_SER_Search_For_Experienced_Engineers
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_expand_northern_ports
+
+		prerequisite = {
+			focus = BRA_expand_northern_ports
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+
+	focus = {
+		id = BRA_modernize_our_fleet
 		icon = GFX_focus_ITA_Ships2
 		cost = 35
-		x = 56
-		y = 8
+		x = 2
+		y = 1
+
+		relative_position_id = BRA_expand_the_imperial_navy
 
 		prerequisite = {
 			focus = BRA_expand_the_imperial_navy
@@ -5382,54 +4737,441 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_equipment }
 			navy_experience = 50
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_nof = 0.02 tooltip = navy_org_factor_tooltip }
 		}
 	}
 
 	focus = {
-		id = BRA_improve_naval_quality
-		icon = GFX_goal_continuous_naval_production
+		id = BRA_recruit_national_engineers
+		icon = GFX_Focus_Soldier_send_abroad_cadets
 		cost = 35
-		x = 56
-		y = 9
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_modernize_our_fleet
+
+		available = { date > 1860.1.1 }
 
 		prerequisite = {
-			focus = BRA_innovate_the_arsenal_of_the_court
+			focus = BRA_modernize_our_fleet
 		}
 
 		completion_reward = {
-			add_timed_idea = { idea = eoanb_idea_generic_focus_fleet_infra days = 50 }
+			add_advisor_role = {
+				character = BRA_Napoleao_Joao_Baptista_Level
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 0
+					idea_token = BRA_Napoleao_Joao_Baptista_Level_advisor
+					traits = {
+						innovative_engineer
+						chief_engineer
+					}
+				}
+			}
+			#add timed decision for other chief engineer
+			#add_timed_idea = { idea = eoanb_idea_generic_focus_fleet_infra days = 50 }
 		}	
 	}
 
 	focus = {
-		id = BRA_improve_ship_production
-		icon = GFX_Focus_Production_Mass
+		id = BRA_develop_new_ironclads
+		icon = GFX_Goal_ironclad_focus
 		cost = 35
-		x = 56
-		y = 10
-    
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_recruit_national_engineers
+
 		prerequisite = {
-			focus = BRA_improve_naval_quality
-		} 
-	 
+			focus = BRA_recruit_national_engineers
+		}
+    
 		completion_reward = {
-			add_ideas = BRA_production
-			custom_effect_tooltip = BRA_custom_effect_naval_production_tt
+			navy_experience = 15
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 4
+				technology = tech_naval_mtg_prototype_ironclad
+				technology = tech_naval_mtg_ironclad_corvette_hull
+				technology = tech_naval_mtg_ironclad
+				technology = ironclad_frigate
+			}
+			add_tech_bonus = { bonus = 0.75 uses = 2 technology = tech_naval_mtg_late_ironclad }
+			
+		}	
+	}
+
+	focus = {
+		id = BRA_establish_torpedo_practical_school
+		icon = GFX_Goal_early_submarine_focus
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_develop_new_ironclads
+
+		prerequisite = {
+			focus = BRA_develop_new_ironclads
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_mtg_submarine_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = naval_mtg_module_torpedoes_tech }
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_nteccf = 0.03 tooltip = naval_torpedo_enemy_critical_chance_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_nc = 0.03 tooltip = naval_coordination_tooltip }
+			add_to_variable = { BRA_imperial_navy_cgev = 0.01 tooltip = consumer_goods_expected_value_tooltip }
+			add_to_variable = { BRA_imperial_navy_nof = 0.01 tooltip = navy_org_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_wm = 25 tooltip = weekly_manpower_tooltip }
+		}	
+	}
+
+	focus = {
+		id = BRA_develop_early_cruisers
+		icon = GFX_focus_shipyard
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_establish_torpedo_practical_school
+
+		prerequisite = {
+			focus = BRA_establish_torpedo_practical_school
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			add_tech_bonus = { bonus = 0.5 uses = 3 category = naval_mtg_cruiser_tech }
+		}	
+	}
+
+	focus = {
+		id = BRA_renew_tactics
+		icon = GFX_Focus_Navy_Tactics
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_modernize_our_fleet
+
+		prerequisite = {
+			focus = BRA_modernize_our_fleet
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_nof = 0.02 tooltip = navy_org_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_ndcf = -0.05 tooltip = naval_doctrine_cost_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_egnuf = 0.01 tooltip = experience_gain_navy_factor_tooltip }
+		}	
+	}
+
+	focus = {
+		id = BRA_invest_naval_school
+		icon = GFX_Focus_naval_school
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_renew_tactics
+
+		prerequisite = {
+			focus = BRA_renew_tactics
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_nc = 0.02 tooltip = naval_coordination_tooltip }
+			add_to_variable = { BRA_imperial_navy_nof = 0.02 tooltip = navy_org_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_egnuf = 0.01 tooltip = experience_gain_navy_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_cgev = 0.01 tooltip = consumer_goods_expected_value_tooltip }
+			add_to_variable = { BRA_imperial_navy_wm = 25 tooltip = weekly_manpower_tooltip }
 		}
 	}
 
 	focus = {
-		id = BRA_pride_of_the_imperial_fleet
-		icon = GFX_focus_generic_coastal_fort
+		id = BRA_naval_exercise_atlantic
+		icon = GFX_goal_focus_RUS_armoured_steam_fleet_tactic
 		cost = 35
-		x = 57
-		y = 11
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_invest_naval_school
 
 		prerequisite = {
-			focus = BRA_improve_ship_production
+			focus = BRA_invest_naval_school
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_naval_exercise_plata
+		icon = GFX_jap_naval_construction_3
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_naval_exercise_atlantic
+
+		prerequisite = {
+			focus = BRA_naval_exercise_atlantic
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_expand_the_armada
+		icon = GFX_Focus_Production_Mass
+		cost = 35
+		x = -4
+		y = 1
+    
+		relative_position_id = BRA_expand_the_imperial_navy
+
+		prerequisite = {
+			focus = BRA_expand_the_imperial_navy
+		} 
+	 
+		completion_reward = {
+			#add_ideas = BRA_production
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_icd = 0.02 tooltip = industrial_capacity_dockyard_tooltip }
+			add_to_variable = { BRA_imperial_navy_psnbf = 0.02 tooltip = production_speed_naval_base_factor_tooltip }
+			add_to_variable = { BRA_imperial_navy_icd = 0.02 tooltip = industrial_capacity_dockyard_tooltip }
+		}
+	}
+
+	focus = {
+		id = BRA_tamandare_acquisition
+		icon = GFX_goal_focus_brazil_tamandre_acquisition
+		cost = 35
+		x = -3
+		y = 1
+
+		relative_position_id = BRA_expand_the_armada
+
+		prerequisite = {
+			focus = BRA_expand_the_armada
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_purchase_foreign_ships
+		icon = GFX_Focus_new_fiscal_system
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_expand_the_armada
+
+		prerequisite = {
+			focus = BRA_expand_the_armada
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_purchase_paraguay_order
+		icon = GFX_goal_focus_brazil_paraguay-british_order
+		cost = 35
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_purchase_foreign_ships
+
+		prerequisite = {
+			focus = BRA_purchase_foreign_ships
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_purchase_british_ships
+		icon = GFX_ENG_focus_royal_navy_2
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_purchase_paraguay_order
+
+		prerequisite = {
+			focus = BRA_purchase_paraguay_order
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_purchase_french_ships
+		icon = GFX_Focus_FRA_imperial_fleet
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_purchase_foreign_ships
+
+		prerequisite = {
+			focus = BRA_purchase_foreign_ships
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_purchase_dutch_ships
+		icon = GFX_goal_focus_brazil_dutch_ship
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_purchase_french_ships
+
+		prerequisite = {
+			focus = BRA_purchase_french_ships
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_switch_steamers
+		icon = GFX_Focus_Screw_Engine
+		cost = 35
+		x = 3
+		y = 1
+
+		relative_position_id = BRA_expand_the_armada
+
+		prerequisite = {
+			focus = BRA_expand_the_armada
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_cgev = 0.01 tooltip = consumer_goods_expected_value_tooltip }
+			add_to_variable = { BRA_imperial_navy_icd = 0.01 tooltip = industrial_capacity_dockyard_tooltip }
+			add_to_variable = { BRA_imperial_navy_rs = 0.05 tooltip = navy_refit_speed_tooltip }
+		}	
+	}
+
+	focus = {
+		id = BRA_build_new_vessels
+		icon = GFX_Goal_monitor_focus
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_switch_steamers
+
+		prerequisite = {
+			focus = BRA_switch_steamers
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_icd = 0.01 tooltip = industrial_capacity_dockyard_tooltip }
+			add_to_variable = { BRA_imperial_navy_rs = 0.03 tooltip = navy_refit_speed_tooltip }
+		}	
+	}
+
+	focus = {
+		id = BRA_build_cruisers
+		icon = GFX_focus_steam_armour_ships
+		cost = 35
+		x = 0
+		y = 1
+
+		relative_position_id = BRA_build_new_vessels
+
+		prerequisite = {
+			focus = BRA_build_new_vessels
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+			custom_effect_tooltip = BRA_imperial_navy_effect_tt
+			add_to_variable = { BRA_imperial_navy_icd = 0.01 tooltip = industrial_capacity_dockyard_tooltip }
+			add_to_variable = { BRA_imperial_navy_rs = 0.02 tooltip = navy_refit_speed_tooltip }
+		}	
+	}
+
+	focus = {
+		id = BRA_incorporate_riachuelo_aquidaba
+		icon = GFX_goal_focus_brazil_riachuelo_acquisition
+		cost = 35
+		x = 1
+		y = 1
+
+		relative_position_id = BRA_purchase_british_ships
+
+		prerequisite = {
+			focus = BRA_tamandare_acquisition
+		}
+		prerequisite = {
+			focus = BRA_purchase_british_ships
+		}
+		prerequisite = {
+			focus = BRA_purchase_dutch_ships
+		}
+		prerequisite = {
+			focus = BRA_build_cruisers
+		}
+    
+		completion_reward = {
+			navy_experience = 15
+		}	
+	}
+
+	focus = {
+		id = BRA_fourth_strongest_fleet
+		icon = GFX_focus_generic_coastal_fort
+		cost = 35
+		x = -1
+		y = 1
+
+		relative_position_id = BRA_develop_early_cruisers
+
+		prerequisite = {
+			focus = BRA_incorporate_riachuelo_aquidaba
+		}
+		prerequisite = {
+			focus = BRA_develop_early_cruisers
 		} 
 		prerequisite = {
-			focus = BRA_southern_dockyards
+			focus = BRA_naval_exercise_plata
+		}
+		prerequisite = {
+			focus = BRA_fortify_northern_ports
 		}
 		completion_reward = {
 			add_ideas = BRA_pride
@@ -5442,7 +5184,7 @@ focus_tree = {
 		id = BRA_american_civil_war
 		icon = GFX_Focus_War_American_Civil_War
 		cost = 35
-		x = 48
+		x = 55
 		y = 0
 		available = {
 			OR = {
@@ -5463,7 +5205,7 @@ focus_tree = {
 		id = BRA_honor_our_alliance
 		icon = GFX_focus_chi_mission_to_the_us
 		cost = 35
-		
+		relative_position_id = BRA_american_civil_war
 		available = {
 			NOT= { has_country_flag = BRA_conservative }
 		}
@@ -5473,7 +5215,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BRA_recognize_csa
 		}
-		x = 47
+		x = -1
 		y = 1
 		completion_reward = {
 			CSA = {
@@ -5496,8 +5238,9 @@ focus_tree = {
 		id = BRA_ensure_our_neutrality
 		icon = GFX_goal_generic_neutrality_focus
 		cost = 35
-		x = 47
-		y = 2
+		relative_position_id = BRA_honor_our_alliance
+		x = 0
+		y = 1
 		prerequisite = {
 			focus = BRA_honor_our_alliance
 		}
@@ -5511,8 +5254,9 @@ focus_tree = {
 		id = BRA_take_in_refugees
 		icon = GFX_goal_continuous_boost_freedom
 		cost = 35
-		x = 47
-		y = 3
+		relative_position_id = BRA_ensure_our_neutrality
+		x = 0
+		y = 1
 		prerequisite = {
 			focus = BRA_ensure_our_neutrality
 		}
@@ -5527,7 +5271,8 @@ focus_tree = {
 		id = BRA_recognize_csa
 		icon = GFX_Focus_Diplomacy_CSA
 		cost = 35
-		x = 49
+		relative_position_id = BRA_american_civil_war
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = BRA_american_civil_war
@@ -5559,8 +5304,9 @@ focus_tree = {
 		id = BRA_support_the_south
 		icon = GFX_Focus_Diplomatic_Ally_CSA_2
 		cost = 35
-		x = 49
-		y = 2
+		relative_position_id = BRA_recognize_csa
+		x = 0
+		y = 1
 		prerequisite = {
 			focus = BRA_recognize_csa
 		}
@@ -5587,8 +5333,9 @@ focus_tree = {
 		id = BRA_covert_slave_trade
 		icon = GFX_Focus_confederate_slave_trade
 		cost = 35
-		x = 49
-		y = 3
+		relative_position_id = BRA_support_the_south
+		x = 0
+		y = 1
 		prerequisite = {
 			focus = BRA_support_the_south
 		}
@@ -5926,7 +5673,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_brave_and_reorganized_army
-		icon = GFX_goal_SAX_Authoritarian
+		icon = GFX_goal_focus_brazilian_army
 		cost = 45
 		x = 70
 		y = 8
@@ -6018,58 +5765,49 @@ focus_tree = {
 	focus = {
 		id = BRA_olinda_1857
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 1
-		x = 104
+		cost = 7
+		x = 40
 		y = 0
-		
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = GENERIC_Triggered_By_Event_tt
-				always = no 
-			}
-		}
 		
 		ai_will_do = {
 			factor = 1000
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			BRA = { country_event = { id = brazil.minister.actions.1 } }
+			add_political_power = 125
+			BRA = { country_event = { id = brazil.minister.actions.0 } }
 			#unlock_decision_tooltip = BRA_decision_olinda_1857_ministers
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_mixed_cabinet
-		x = 104
+		x = 0
 		y = 1
 		icon = GFX_focus_generic_self_management
-		cost = 1
+		cost = 7
+		relative_position_id = BRA_olinda_1857
 		prerequisite = { 
 			focus = BRA_olinda_1857
 		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = GENERIC_Triggered_By_Event_tt
-				always = no 
-			}
-		}
+		
 		ai_will_do = {
 			base = 1000
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 25
+			add_political_power = 75
+			country_event = {id = brazil.minister.actions.1 }
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_government_program_conciliatory
-		x = 97
-		y = 2
+		x = 4
+		y = 1
 		icon = GFX_Focus_Government_Reform_3
 		cost = 7
+		relative_position_id = BRA_1857_mixed_cabinet
 		prerequisite = {
 			focus = BRA_1857_mixed_cabinet
 		}
@@ -6081,10 +5819,11 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1857_olinda_propose_acts
-		x = 108
-		y = 2
+		x = -4
+		y = 1
 		icon = GFX_Focus_Law_Vote_1
 		cost = 7
+		relative_position_id = BRA_1857_mixed_cabinet
 		prerequisite = {
 			focus = BRA_1857_mixed_cabinet
 		}
@@ -6095,324 +5834,292 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = BRA_1857_british_money
-		x = 95
-		y = 3
-		cost = 7
-		icon = GFX_Focus_Diplomacy_UK
-		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
-		}
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
-		completion_reward = {
-			country_event = { id = brazil.310 }
-			#unlock_decision_tooltip = BRA_decision_english_money_in_public_station_1857
-		}
-	}
-	
-	focus = {
 		id = BRA_1857_rethink_the_taxes
-		x = 96
-		y = 4
+		x = -4
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_government_program_conciliatory
 		icon = GFX_Focus_Economy_Tax
 		prerequisite = {
 			focus = BRA_1857_government_program_conciliatory
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_1857_taxes_act
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_rethink_taxes_1857	}
+			unlock_decision_tooltip = BRA_decision_rethink_taxes_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_reform_mortgage_system
-		x = 97
-		y = 3
+		x = 0
+		y = 1
 		icon = GFX_focus_ITA_Farms
 		cost = 7
+		relative_position_id = BRA_1857_rethink_the_taxes
 		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
+			focus = BRA_1857_rethink_the_taxes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_reform_mortgage_land_act
-				days = 90
-			}
-			hidden_effect = {
-				unlock_decision_tooltip = BRA_decision_mortgage_land_act_1857
-			}
+			unlock_decision_tooltip = BRA_decision_mortgage_land_act_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_courts_police_force
-		x = 98
-		y = 4
+		x = -6
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_government_program_conciliatory
 		icon = GFX_goal_generic_national_unity
 		prerequisite = {
 			focus = BRA_1857_government_program_conciliatory
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_court_police_corps
-				days = 90
-			}
-			hidden_effect = {
-				unlock_decision_tooltip = BRA_decision_court_police_corps_1857
-			}
+			unlock_decision_tooltip = BRA_decision_court_police_corps_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_improve_criminal_law
-		x = 99
-		y = 3
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_courts_police_force
+
 		icon = GFX_Focus_Justice
 		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
+			focus = BRA_1857_courts_police_force
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_improve_criminal_laws
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_improve_criminal_law_1857 }
+			unlock_decision_tooltip = BRA_decision_improve_criminal_law_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_friendship_treaty_with_ottoman
-		x = 101
-		y = 3
+		x = -2
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_government_program_conciliatory
 		icon = GFX_goal_focus_tun_befriend_turkey
 		prerequisite = {
 			focus = BRA_1857_government_program_conciliatory
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
-			country_event = { id = brazil.302 }
-			#unlock_decision_tooltip = BRA_decision_friendship_treaty_Brazil_Ottoman_1857
+			unlock_decision_tooltip = BRA_decision_friendship_treaty_Brazil_Ottoman_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_trade_treaty_with_uruguay
-		x = 102
-		y = 4
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_reform_mortgage_system
 		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
+			focus = BRA_1857_reform_mortgage_system
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
-			country_event = { id = brazil.300 }
-			#unlock_decision_tooltip = BRA_decision_trade_treaty_Brazil_Uruguay_1857
+			unlock_decision_tooltip = BRA_decision_trade_treaty_Brazil_Uruguay_1857
 		}
 	}
 	
-	focus = {
-		id = BRA_1857_disputes_with_UK
-		x = 103
-		y = 3
-		cost = 7
-		icon = GFX_focus_generic_diplomatic_treaty
-		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
-		}
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
-		completion_reward = {
-			country_event = { id = brazil.308 }
-			#unlock_decision_tooltip = BRA_decision_disputes_with_UK_1857
-		}
-	}
-	
-	focus = {
+	focus =  {
 		id = BRA_1857_treaty_with_argentina
-		x = 101
-		y = 5
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_friendship_treaty_with_ottoman
 		icon = GFX_Focus_Diplomatic_Ally_ARG_2
 		prerequisite = {
-			focus = BRA_1857_trade_treaty_with_uruguay
+			focus = BRA_1857_friendship_treaty_with_ottoman
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
-			country_event = { id = brazil.306 }
-			#unlock_decision_tooltip = BRA_decision_trade_treaty_Brazil_Uruguay_1857
+			ARG = {
+				country_event = { id = brazil.306 }
+			}
 		}
 	}
-	
-	focus = {
+
+	focus =  {
 		id = BRA_1857_treaty_with_paraguay
-		x = 103
-		y = 5
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_treaty_with_argentina
 		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = {
-			focus = BRA_1857_trade_treaty_with_uruguay
+			focus = BRA_1857_treaty_with_argentina
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
 			country_event = { id = brazil.304 }
-			#unlock_decision_tooltip = BRA_decision_trade_treaty_Brazil_Uruguay_1857
+		}
+	}
+
+	#focus = {
+		#id = BRA_diplomatic_mission_platinean
+		#x = 0
+		#y = 1
+		#cost = 7
+		#relative_position_id = BRA_1857_friendship_treaty_with_ottoman
+		#icon = GFX_Focus_Diplomatic_Ally_ARG_2
+
+		#prerequisite = {
+			#focus = BRA_1857_friendship_treaty_with_ottoman
+		#}
+
+		#search_filters = { FOCUS_FILTER_DIPLOMACY }
+		#completion_reward = {
+			#unlock_decision_tooltip = BRA_platinean_diplomacy_category
+		#}
+	#}
+
+	focus = {
+		id = BRA_1857_disputes_with_UK
+		x = 0
+		y = 1
+		cost = 7
+		relative_position_id = BRA_1857_treaty_with_paraguay
+		#relative_position_id = BRA_diplomatic_mission_platinean
+		icon = GFX_focus_generic_diplomatic_treaty
+
+		prerequisite = {
+			focus = BRA_1857_treaty_with_paraguay
+		}
+
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_disputes_with_UK_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_promotion_naval_officers
-		x = 104
-		y = 4
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_government_program_conciliatory
 		icon = GFX_goal_SWE_mariner
 		prerequisite = {
 			focus = BRA_1857_government_program_conciliatory
 		}
 		search_filters = { FOCUS_FILTER_MILITARY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_navy_leader_promotion
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_navy_leader_promotion_act_1857 }
+			unlock_decision_tooltip = BRA_decision_navy_leader_promotion_act_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_improve_military_discipline
-		x = 105
-		y = 3
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_promotion_naval_officers
 		icon = GFX_Focus_Army_Reformed
 		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
+			focus = BRA_1857_promotion_naval_officers
 		}
 		search_filters = { FOCUS_FILTER_MILITARY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_army_discipline
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_army_discipline_1857 }
+			unlock_decision_tooltip = BRA_decision_army_discipline_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_recruitment_regulation
-		x = 106
-		y = 4
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_improve_military_discipline
 		icon = GFX_Focus_conscription
 		prerequisite = {
-			focus = BRA_1857_government_program_conciliatory
+			focus = BRA_1857_improve_military_discipline
 		}
 		search_filters = { FOCUS_FILTER_MILITARY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_reformed_conscription
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_reformed_conscription_act_1857 }
-		}
-	}
-	
-	focus = {
-		id = BRA_1857_medical_school_policy
-		x = 107
-		y = 3
-		cost = 7
-		icon = GFX_Focus_Education_Facultate_Medicina
-		prerequisite = {
-			focus = BRA_1857_olinda_propose_acts
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
-		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_medical_school_reform
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_medical_school_reform_1857 }
+			unlock_decision_tooltip = BRA_decision_reformed_conscription_act_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_livestock_regulation
-		x = 108
-		y = 4
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_olinda_propose_acts
 		icon = GFX_focus_SPR_increase_cattle_land
 		prerequisite = {
 			focus = BRA_1857_olinda_propose_acts
 		}
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
-			#unlock_decision_tooltip = BRA_decision_livestock_regulation_1857
-			add_timed_idea = {
-				idea = BRA_livestock_regulation
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_livestock_regulation_1857 }
+			unlock_decision_tooltip = BRA_decision_livestock_regulation_1857
 		}
 	}
 	
 	focus = {
-		id = BRA_1857_encourage_immigration
-		x = 109
-		y = 3
+		id = BRA_1857_medical_school_policy
+		x = 0
+		y = 1
 		cost = 7
+		relative_position_id = BRA_1857_livestock_regulation
+		icon = GFX_Focus_Education_Facultate_Medicina
+		prerequisite = {
+			focus = BRA_1857_livestock_regulation
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_medical_school_reform_1857
+		}
+	}
+
+	focus = {
+		id = BRA_1857_encourage_immigration
+		x = 0
+		y = 1
+		cost = 7
+		relative_position_id = BRA_1857_medical_school_policy
 		icon = GFX_goal_generic_forceful_treaty
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		prerequisite = {
-			focus = BRA_1857_olinda_propose_acts
+			focus = BRA_1857_medical_school_policy
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = BRA_improve_immigration_act
-				days = 90
-			}
-			hidden_effect = { unlock_decision_tooltip = BRA_decision_immigration_act_1857 }
+			unlock_decision_tooltip = BRA_decision_immigration_act_1857
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_panic
-		x = 112
-		y = 2
-		cost = 1
+		x = 49
+		y = 0
+		cost = 85
 		icon = GFX_focus_generic_concessions
 		
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = GENERIC_Triggered_By_Event_tt
-				always = no 
-			}
+			has_global_flag = Panic_of_1857
 		}
 		search_filters = { FOCUS_FILTER_CHI_INFLATION }
-		prerequisite = {
-			focus = BRA_1857_mixed_cabinet
-		}
 		
 		completion_reward = {
-			custom_effect_tooltip = BRA_branch_has_no_effect
+			add_political_power = -50
 		}
 	}
 	
 	focus = {
 		id = BRA_1857_paper_vs_metal
-		x = 112
-		y = 3
-		cost = 75
+		x = 0
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_panic
 		icon = GFX_Focus_banks
 		prerequisite = {
 			focus = BRA_1857_panic
@@ -6422,33 +6129,130 @@ focus_tree = {
 			BRA = { country_event = { id = brazil.65 } }
 		}
 	}
-	
+
+	focus = {
+		id = BRA_1857_metal_money_wins
+		x = -1
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_paper_vs_metal
+		icon = GFX_Focus_Economy_Increase_Wages
+		available = {
+			has_country_flag = brazil_metalist
+		}
+		prerequisite = {
+			focus = BRA_1857_paper_vs_metal
+		}
+		mutually_exclusive = { focus = BRA_1857_paper_money_wins }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			add_power_balance_value = {
+				id = BRA_Balance_of_Power_1857
+				value = 0.12
+				tooltip_side = BRA_BOP_opposition
+			}
+		}
+	}
+
+	focus = {
+		id = BRA_1857_collaborate_national_bank
+		x = 0
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_metal_money_wins
+		icon = GFX_Focus_Economy_Increase_Wages
+		prerequisite = {
+			focus = BRA_1857_metal_money_wins
+		}
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		
+		completion_reward = {
+			add_power_balance_value = {
+				id = BRA_Balance_of_Power_1857
+				value = 0.12
+				tooltip_side = BRA_BOP_opposition
+			}
+		}
+	}
+
+	focus = {
+		id = BRA_1857_treasury_reserves
+		x = 0
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_collaborate_national_bank
+		icon = GFX_Focus_Economy_Increase_Wages
+		prerequisite = {
+			focus = BRA_1857_collaborate_national_bank
+		}
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			add_power_balance_value = {
+				id = BRA_Balance_of_Power_1857
+				value = 0.12
+				tooltip_side = BRA_BOP_opposition
+			}
+		}
+	}
+
+	focus = {
+		id = BRA_1857_minting_new_currencies
+		x = -2
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_metal_money_wins
+		icon = GFX_Focus_Economy_Increase_Wages
+		prerequisite = {
+			focus = BRA_1857_metal_money_wins
+		}
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			set_temp_variable = {
+				money_to_gain = 5
+			}
+			add_money_with_tooltip_effect = yes
+			set_temp_variable = {
+				inflation_to_gain = 0.05
+			}
+			add_inflation_with_tooltip_effect  = yes
+			add_power_balance_value = {
+				id = BRA_Balance_of_Power_1857
+				value = 0.12
+				tooltip_side = BRA_BOP_opposition
+			}
+		}
+	}
+
 	focus = {
 		id = BRA_1857_paper_money_wins
-		x = 112
-		y = 4
-		cost = 1
+		x = 1
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_paper_vs_metal
 		icon = GFX_Focus_Economy_Increase_Wages
 		prerequisite = {
 			focus = BRA_1857_paper_vs_metal
 		}
-		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = GENERIC_Triggered_By_Event_tt
-				always = no 
-			}
+			has_country_flag = brazil_papelist
 		}
+		mutually_exclusive = { focus = BRA_1857_metal_money_wins }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
-			custom_effect_tooltip = BRA_branch_has_no_effect
+			add_power_balance_value = {
+				id = BRA_Balance_of_Power_1857
+				value = -0.12
+				tooltip_side = BRA_BOP_government
+			}
 		}
 	}
 	
 	focus = { 
 		id = BRA_1857_press_national_bank
-		x = 111
-		y = 5
-		cost = 75
+		x = 0
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_paper_money_wins
 		icon = GFX_Focus_banks2
 		prerequisite = {
 			focus = BRA_1857_paper_money_wins
@@ -6459,6 +6263,11 @@ focus_tree = {
 				40 = {
 					add_stability = -0.03
 					BRA = { country_event = { id = brazil.501 } }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = 0.12
+						tooltip_side = BRA_BOP_opposition
+					}
 				}
 				30 = {
 					add_political_power = -50
@@ -6468,6 +6277,11 @@ focus_tree = {
 						add_idea = Panic_of_1857_3
 					}
 					BRA = { country_event = { id = brazil.502 } }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = 0.12
+						tooltip_side = BRA_BOP_opposition
+					}
 				}
 				20 = {
 					add_political_power = -100
@@ -6477,6 +6291,11 @@ focus_tree = {
 						add_idea = Panic_of_1857_2
 					}
 					BRA = { country_event = { id = brazil.503 } }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = -0.12
+						tooltip_side = BRA_BOP_government
+					}
 				}
 				10 = {
 					add_political_power = -150
@@ -6486,6 +6305,11 @@ focus_tree = {
 						add_idea = Panic_of_1857_1
 					}
 					BRA = { country_event = { id = brazil.504 } }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = -0.12
+						tooltip_side = BRA_BOP_government
+					}
 				}
 			}
 		}
@@ -6493,31 +6317,74 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1857_guarantee_bank_securities
-		x = 113
-		y = 5
-		cost = 75
+		x = 0
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_press_national_bank
 		icon = GFX_Focus_Reform_Economy
 		prerequisite = {
-			focus = BRA_1857_paper_money_wins
+			focus = BRA_1857_press_national_bank
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = -100
+			set_temp_variable = {
+				loans_amount = 2
+			}
+			take_loan_effect = yes
+			random_list = {
+				50 = {
+					add_political_power = 50
+					add_popularity = { ideology = traditional_conservatism popularity = -0.02 }
+					add_popularity = { ideology = centrism popularity = 0.02 }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = -0.12
+						tooltip_side = BRA_BOP_government
+					}
+				}
+				50 = {
+					add_political_power = 50
+					add_popularity = { ideology = traditional_conservatism popularity = -0.02 }
+					add_popularity = { ideology = radical_democracy popularity = 0.02 }
+					add_power_balance_value = {
+						id = BRA_Balance_of_Power_1857
+						value = 0.12
+						tooltip_side = BRA_BOP_opposition
+					}
+				}
+			}
 		}
 	}
-	
+
+	focus = {
+		id = BRA_1857_british_money
+		x = 2
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_paper_money_wins
+		icon = GFX_Focus_Diplomacy_UK
+		prerequisite = {
+			focus = BRA_1857_paper_money_wins
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
+		completion_reward = {
+			#country_event = { id = brazil.310 }
+			unlock_decision_tooltip = BRA_decision_english_money_in_public_station_1857
+		}
+	}
+
 	focus = {
 		id = BRA_1857_panic_recovery
-		x = 112
-		y = 6
-		cost = 75
+		x = -1
+		y = 1
+		cost = 85
+		relative_position_id = BRA_1857_guarantee_bank_securities
 		icon = GFX_focus_generic_the_giant_wakes
 		prerequisite = {
 			focus = BRA_1857_guarantee_bank_securities
-		}
-		prerequisite = {
-			focus = BRA_1857_press_national_bank
+			focus = BRA_1857_treasury_reserves
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_CHI_INFLATION }
 		completion_reward = {
@@ -6545,6 +6412,10 @@ focus_tree = {
 				}
 				remove_ideas = Panic_of_1857_1
 			}
+			add_timed_idea = {
+				idea = BRA_aftermath_panic_of_1857
+				days = 1825
+			}
 			custom_effect_tooltip = BRA_panic_recovery
 			add_political_power = 50
 			add_stability = 0.07
@@ -6553,8 +6424,8 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_president_of_council_of_ministers
-		x = 105
-		y = 8
+		x = 48
+		y = 7
 		cost = 1
 		icon = GFX_Focus_Vote_Election
 		available = {
@@ -6570,9 +6441,12 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_ultra_conservative_cabinet
-		x = 112
-		y = 9
+		x = 8
+		y = 1
 		cost = 1
+
+		relative_position_id = BRA_1858_president_of_council_of_ministers
+
 		icon = GFX_Focus_Government_Struggle #GFX_Focus_Ideology_Imperialism
 		available = {
 			custom_trigger_tooltip = {
@@ -6602,28 +6476,16 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BRA_1858_government_program_ultra_conservative
-		x = 112
-		y = 10
-		icon = GFX_Focus_Government_Reform
-		cost = 7
-		prerequisite = {
-			focus = BRA_1858_ultra_conservative_cabinet
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ALTHISTORY }
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-
-	focus = {
 		id = BRA_1858_ban_slave_trade
-		x = 110
-		y = 11
+		x = 4
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_ultra_conservative_cabinet
+
 		icon = GFX_Focus_Slavery_question
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_ultra_conservative_cabinet
 		}
 		search_filters = { FOCUS_FILTER_ALTHISTORY FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
@@ -6638,12 +6500,15 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_protectionist_fees
-		x = 110
-		y = 12
+		x = 0
+		y = 1
 		cost = 7
+	
+		relative_position_id = BRA_1858_ban_slave_trade
+
 		icon = GFX_Focus_Economy_Tax
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_ban_slave_trade
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -6656,12 +6521,15 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_lands_law
-		x = 110
-		y = 13
+		x = 0
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_protectionist_fees
+
 		icon = GFX_focus_KNS_homestead_act
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_protectionist_fees
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -6674,12 +6542,15 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_increase_food_production
-		x = 110
-		y = 14
+		x = 0
+		y = 1
 		cost = 7
+	
+		relative_position_id = BRA_1858_lands_law
+
 		icon = GFX_focus_look_dawn
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_lands_law
 		}
 		completion_reward = {
 			add_ideas = BRA_1858_food_production
@@ -6688,12 +6559,36 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_military_reform
-		x = 112
-		y = 11
+		x = 2
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_ultra_conservative_cabinet
+
 		icon = GFX_Focus_Army_Reforms
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_ultra_conservative_cabinet
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = BRA_1858_army_reform
+				days = 90
+			}
+			hidden_effect = { unlock_decision_tooltip = BRA_decision_military_reform_1858 }
+		}
+	}
+
+	focus = {
+		id = BRA_1858_increase_arms_production
+		x = 0
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_military_reform
+
+		icon = GFX_Focus_Army_Reforms
+		prerequisite = {
+			focus = BRA_1858_military_reform
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -6706,12 +6601,36 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_navy_promotion
-		x = 112
-		y = 12
+		x = -2
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_ultra_conservative_cabinet
+
 		icon = GFX_Focus_Army_Leadership
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_ultra_conservative_cabinet
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = BRA_1858_navy_officer_promotion
+				days = 90
+			}
+			hidden_effect = { unlock_decision_tooltip = BRA_decision_navy_officer_promotion_1858 }
+		}
+	}
+
+	focus = {
+		id = BRA_1858_increase_navy_production
+		x = 0
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_navy_promotion
+
+		icon = GFX_Focus_Army_Leadership
+		prerequisite = {
+			focus = BRA_1858_navy_promotion
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -6724,12 +6643,15 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_commerce_regulation
-		x = 114
-		y = 11
+		x = 0
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_ultra_conservative_cabinet
+
 		icon = GFX_Focus_Economy_Reforms
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_ultra_conservative_cabinet
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -6739,15 +6661,35 @@ focus_tree = {
 			hidden_effect = { unlock_decision_tooltip = BRA_decision_commerce_regulation_1858 }
 		}
 	}
-	
+
+	focus = {
+		id = BRA_1858_reverse_bank_plurality
+		x = 0
+		y = 1
+		icon = GFX_Focus_banks2
+		cost = 7
+
+		relative_position_id = BRA_1858_commerce_regulation
+
+		prerequisite = {
+			focus = BRA_1858_commerce_regulation
+		}
+		completion_reward = {
+			add_ideas = BRA_1858_gold_standard
+		}
+	}
+
 	focus = {
 		id = BRA_1858_minning_gold
-		x = 114
-		y = 12
+		x = -1
+		y = 1
 		cost = 35
+
+		relative_position_id = BRA_1858_reverse_bank_plurality
+
 		icon = GFX_Focus_Resource_Gold
 		prerequisite = {
-			focus = BRA_1858_government_program_ultra_conservative
+			focus = BRA_1858_reverse_bank_plurality
 		}
 		completion_reward = {
 			unlock_decision_tooltip = BRA_decision_gold_mines_1858
@@ -6756,12 +6698,15 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_increase_gold_reserves
-		x = 113
-		y = 13
+		x = 0
+		y = 1
 		cost = 70
+
+		relative_position_id = BRA_1858_minning_gold
+
 		icon = GFX_Focus_Resource_Gold_2
 		prerequisite = {
-			focus = BRA_1858_national_bank_monopoly
+			focus = BRA_1858_minning_gold
 		}
 		available = {
 			BRA = { has_idea = BRA_1858_minas_gerais_gold }
@@ -6771,27 +6716,14 @@ focus_tree = {
 		}
 	}
 	
-	
-	
-	focus = {
-		id = BRA_1858_reverse_bank_plurality
-		x = 115
-		y = 13
-		icon = GFX_Focus_banks2
-		cost = 7
-		prerequisite = {
-			focus = BRA_1858_national_bank_monopoly
-		}
-		completion_reward = {
-			add_ideas = BRA_1858_gold_standard
-		}
-	}
-	
 	focus = {
 		id = BRA_1858_centralized_bank
-		x = 115
-		y = 14
+		x = 1
+		y = 1
 		cost = 70
+
+		relative_position_id = BRA_1858_reverse_bank_plurality
+
 		icon = GFX_Focus_banks
 		prerequisite = {
 			focus = BRA_1858_reverse_bank_plurality
@@ -6803,13 +6735,103 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_national_bank_monopoly
-		x = 113
-		y = 14
+		x = 0
+		y = 1
 		cost = 7
+
+		relative_position_id = BRA_1858_centralized_bank
+
 		icon = GFX_Focus_Economy_Monopoly
 		
 		prerequisite = {
-			focus = BRA_1858_minning_gold
+			focus = BRA_1858_centralized_bank
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_national_bank_monopoly_1858
+		}
+	}
+
+	focus = {
+		id = BRA_1858_backed_currency
+		x = 1
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_increase_gold_reserves
+
+		icon = GFX_Focus_Economy_Monopoly
+		
+		prerequisite = {
+			focus = BRA_1858_centralized_bank
+		}
+		prerequisite = {
+			focus = BRA_1858_increase_gold_reserves
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_national_bank_monopoly_1858
+		}
+	}
+
+	focus = {
+		id = BRA_1858_bimetallism
+		x = -2
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_backed_currency
+
+		icon = GFX_Focus_Economy_Monopoly
+		
+		prerequisite = {
+			focus = BRA_1858_backed_currency
+		}
+		mutually_exclusive = { 
+			focus = BRA_1858_gold
+			focus = BRA_1858_silver
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_national_bank_monopoly_1858
+		}
+	}
+
+	focus = {
+		id = BRA_1858_gold
+		x = 0
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_backed_currency
+
+		icon = GFX_Focus_Economy_Monopoly
+		
+		prerequisite = {
+			focus = BRA_1858_backed_currency
+		}
+		mutually_exclusive = { 
+			focus = BRA_1858_bimetallism
+			focus = BRA_1858_silver
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BRA_decision_national_bank_monopoly_1858
+		}
+	}
+
+	focus = {
+		id = BRA_1858_silver
+		x = 2
+		y = 1
+		cost = 7
+
+		relative_position_id = BRA_1858_backed_currency
+
+		icon = GFX_Focus_Economy_Monopoly
+		
+		prerequisite = {
+			focus = BRA_1858_backed_currency
+		}
+		mutually_exclusive = { 
+			focus = BRA_1858_gold
+			focus = BRA_1858_bimetallism
 		}
 		completion_reward = {
 			unlock_decision_tooltip = BRA_decision_national_bank_monopoly_1858
@@ -6818,9 +6840,10 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_conservative_cabinet
-		x = 107
-		y = 9
+		x = 2
+		y = 1
 		cost = 1
+		relative_position_id = BRA_1858_president_of_council_of_ministers
 		icon = GFX_goal_SWE_secure_vote #GFX_Focus_Ideology_Imperialism
 		available = {
 			custom_trigger_tooltip = {
@@ -6850,41 +6873,33 @@ focus_tree = {
 		}
 	}
 	
-	#Change to 1858 conservative Cabinet
-	focus = {
-		id = BRA_1858_government_program_conservative
-		x = 107
-		y = 10
-		icon = GFX_Focus_Government_Reform_2_blue
-		cost = 7
-		prerequisite = {
-			focus = BRA_1858_conservative_cabinet
-		}
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
 	focus = {
 		id = BRA_1858_treasury_reform
-		x = 108
-		y = 11
+		x = -4
+		y = 1
 		icon = GFX_Focus_Government_Reform_3
 		cost = 7
+
+		relative_position_id = BRA_1858_conservative_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_government_program_conservative
+			focus = BRA_1858_conservative_cabinet
+			focus = BRA_1858_conciliatory_cabinet
 		}
 		completion_reward = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_ballast_the_money
-		x = 108
-		y = 12
-		icon = GFX_focus_usa_reestablish_the_gold_standard
+		id = BRA_1858_confiscate_money_from_deads
+		x = 0
+		y = 1
+		icon = GFX_Focus_Economy_Increase_Wages
 		cost = 7
+
+		relative_position_id = BRA_1858_treasury_reform
+
 		prerequisite = {
 			focus = BRA_1858_treasury_reform
 		}
@@ -6892,13 +6907,52 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
+
+	focus = {
+		id = BRA_1858_encourage_immigration
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_population_growth
+		cost = 7
+
+		relative_position_id = BRA_1858_confiscate_money_from_deads
+
+
+		prerequisite = {
+			focus = BRA_1858_confiscate_money_from_deads
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
 	
 	focus = {
-		id = BRA_1858_confiscate_money_from_deads
-		x = 108
-		y = 13
-		icon = GFX_Focus_Economy_Increase_Wages
+		id = BRA_1858_ballast_the_money
+		x = 0
+		y = 1
+		icon = GFX_focus_usa_reestablish_the_gold_standard
 		cost = 7
+
+		relative_position_id = BRA_1858_conservative_cabinet
+
+		prerequisite = {
+			focus = BRA_1858_conservative_cabinet
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_acquisition_foodstuffs
+		x = 0
+		y = 1
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 7
+
+		relative_position_id = BRA_1858_ballast_the_money
+
 		prerequisite = {
 			focus = BRA_1858_ballast_the_money
 		}
@@ -6909,12 +6963,16 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_shooting_school
-		x = 106
-		y = 11
+		x = -2
+		y = 1
 		icon = GFX_Focus_Army_Reformed
 		cost = 7
+
+		relative_position_id = BRA_1858_conservative_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_government_program_conservative
+			focus = BRA_1858_conservative_cabinet
+			focus = BRA_1858_conciliatory_cabinet
 		}
 		completion_reward = {
 			add_political_power = 100
@@ -6923,10 +6981,13 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_decorate_military_officers
-		x = 106
-		y = 12
+		x = 0
+		y = 1
 		icon = GFX_Focus_Army_Leadership
 		cost = 7
+
+		relative_position_id = BRA_1858_shooting_school
+
 		prerequisite = {
 			focus = BRA_1858_shooting_school
 		}
@@ -6935,13 +6996,16 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_reform_navy_recruitment_and_promotion
-		x = 106
-		y = 13
-		icon = GFX_Focus_Army_Conscription
+		id = BRA_1858_improve_communication
+		x = 0
+		y = 1
+		icon = GFX_Focus_Telegraph_Lines
 		cost = 7
+
+		relative_position_id = BRA_1858_decorate_military_officers
+
 		prerequisite = {
 			focus = BRA_1858_decorate_military_officers
 		}
@@ -6952,60 +7016,34 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = BRA_1858_encourage_immigration
-		x = 104
-		y = 11
-		icon = GFX_focus_generic_population_growth
+		id = BRA_1858_reform_navy_recruitment_and_promotion
+		x = 2
+		y = 1
+		icon = GFX_Focus_Army_Conscription
 		cost = 7
+
+		relative_position_id = BRA_1858_conservative_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_government_program_conservative
-			focus = BRA_1858_government_program_conciliatory
+			focus = BRA_1858_conservative_cabinet
 		}
 
 		completion_reward = {
 			add_political_power = 100
 		}
 	}
-	
-	focus = {
-		id = BRA_1858_river_treaty_with_peru
-		x = 104
-		y = 13
-		icon = GFX_focus_Diplomatic_foreign_central
-		cost = 7
-		prerequisite = {
-			focus = BRA_1858_encourage_immigration
-		}
 
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
 	focus = {
-		id = BRA_1858_improve_communication
-		x = 103
-		y = 12
-		icon = GFX_focus_generic_radio_telegraph
+		id = BRA_1858_armada_promotions
+		x = 0
+		y = 1
+		icon = GFX_Focus_Army_Conscription
 		cost = 7
-		prerequisite = {
-			focus = BRA_1858_government_program_conservative
-			focus = BRA_1858_government_program_conciliatory
-		}
 
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = BRA_1858_public_health_in_ports
-		x = 103
-		y = 14
-		icon = GFX_Focus_Naval_Supplies
-		cost = 7
+		relative_position_id = BRA_1858_reform_navy_recruitment_and_promotion
+
 		prerequisite = {
-			focus = BRA_1858_improve_communication
+			focus = BRA_1858_reform_navy_recruitment_and_promotion
 		}
 
 		completion_reward = {
@@ -7015,26 +7053,32 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_civil_code
-		x = 102
-		y = 11
-		icon = Focus_Electorate_crowd
+		x = -6
+		y = 1
+		icon = GFX_goal_BRA_1858_civil_code
 		cost = 7
+
+		relative_position_id = BRA_1858_conservative_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_government_program_conservative
-			focus = BRA_1858_government_program_conciliatory
+			focus = BRA_1858_conservative_cabinet
+			focus = BRA_1858_conciliatory_cabinet
 		}
 
 		completion_reward = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_regulate_civil_registry
-		x = 102
-		y = 13
-		icon = GFX_Focus_Freedom_Marriage
+		id = BRA_1858_river_treaty_with_peru
+		x = 0
+		y = 1
+		icon = GFX_goal_BRA_1858_river_treaty_with_peru
 		cost = 7
+
+		relative_position_id = BRA_1858_civil_code
+
 		prerequisite = {
 			focus = BRA_1858_civil_code
 		}
@@ -7045,10 +7089,30 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = BRA_1858_public_health_in_ports
+		x = 0
+		y = 1
+		icon = GFX_Focus_Naval_Supplies
+		cost = 7
+
+		relative_position_id = BRA_1858_river_treaty_with_peru
+
+		prerequisite = {
+			focus = BRA_1858_river_treaty_with_peru
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
 		id = BRA_1858_conciliatory_cabinet
-		x = 102
-		y = 9
+		x = -4
+		y = 1
 		cost = 1
+		relative_position_id = BRA_1858_president_of_council_of_ministers
+
 		icon = GFX_Focus_Ideology_Liberal_comprimise #GFX_Focus_Ideology_Imperialism
 		available = {
 			custom_trigger_tooltip = {
@@ -7077,17 +7141,73 @@ focus_tree = {
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_government_program_conciliatory
-		x = 102
-		y = 10
-		icon = GFX_Focus_Government_Reform_3
+		id = BRA_1858_reform_secretary_navy
+		x = -2
+		y = 1
+		icon = GFX_Focus_banks
 		cost = 7
+		relative_position_id = BRA_1858_conciliatory_cabinet
+
 		prerequisite = {
 			focus = BRA_1858_conciliatory_cabinet
 		}
-		search_filters = { FOCUS_FILTER_ALHISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_reform_secretary_empire
+		x = 0
+		y = 1
+		icon = GFX_Focus_banks
+		cost = 7
+		relative_position_id = BRA_1858_reform_secretary_navy
+
+		prerequisite = {
+			focus = BRA_1858_reform_secretary_navy
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_reform_secretary_justice
+		x = 0
+		y = 1
+		icon = GFX_Focus_banks
+		cost = 7
+		relative_position_id = BRA_1858_reform_secretary_empire
+
+		prerequisite = {
+			focus = BRA_1858_reform_secretary_empire
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_reform_secretary_foreign
+		x = 0
+		y = 1
+		icon = GFX_Focus_banks
+		cost = 7
+		relative_position_id = BRA_1858_reform_secretary_justice
+
+		prerequisite = {
+			focus = BRA_1858_reform_secretary_justice
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
@@ -7096,9 +7216,11 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_liberal_cabinet
-		x = 97
-		y = 9
+		x = -10
+		y = 1
 		cost = 1
+		relative_position_id = BRA_1858_president_of_council_of_ministers
+
 		icon = GFX_Focus_Electorate_unity
 		available = {
 			custom_trigger_tooltip = {
@@ -7128,13 +7250,14 @@ focus_tree = {
 		}
 	}
 	
-	#Change to 1858 liberal Cabinet
 	focus = {
-		id = BRA_1858_government_program_liberal
-		x = 97
-		y = 10
-		icon = GFX_Focus_Government_Reform_2
+		id = BRA_1858_ensure_banking_plurality
+		x = -2
+		y = 1
+		icon = GFX_Focus_banks
 		cost = 7
+		relative_position_id = BRA_1858_liberal_cabinet
+
 		prerequisite = {
 			focus = BRA_1858_liberal_cabinet
 		}
@@ -7146,28 +7269,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = BRA_1858_ensure_banking_plurality
-		x = 100
-		y = 11
-		icon = GFX_Focus_banks
+		id = BRA_1858_eliminate_national_bank_monopoly
+		x = 0
+		y = 1
+		icon = GFX_Focus_Justice
 		cost = 7
-		prerequisite = {
-			focus = BRA_1858_government_program_liberal
-			focus = BRA_1858_government_program_conciliatory
-		}
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = BRA_1858_ensure_monetary_issuance
-		x = 100
-		y = 12
-		icon = GFX_Focus_Government_Reform_3
-		cost = 7
+		relative_position_id = BRA_1858_ensure_banking_plurality
+
 		prerequisite = {
 			focus = BRA_1858_ensure_banking_plurality
 		}
@@ -7177,13 +7285,51 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_eliminate_national_bank_monopoly
-		x = 100
-		y = 13
-		icon = focus_banks2
+		id = BRA_1858_eliminate_currency_issuance_tax
+		x = 0
+		y = 1
+		icon = GFX_focus_hol_abandon_the_gold_standard
 		cost = 7
+		relative_position_id = BRA_1858_eliminate_national_bank_monopoly
+
+		prerequisite = {
+			focus = BRA_1858_eliminate_national_bank_monopoly
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_ensure_monetary_issuance
+		x = 0
+		y = 1
+		icon = GFX_Focus_Government_Reform_3
+		cost = 7
+		relative_position_id = BRA_1858_eliminate_currency_issuance_tax
+
+		prerequisite = {
+			focus = BRA_1858_eliminate_currency_issuance_tax
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BRA_1858_fiduciary_currency
+		x = 0
+		y = 1
+		icon = GFX_Focus_Government_Reform_3
+		cost = 7
+		relative_position_id = BRA_1858_ensure_monetary_issuance
+
 		prerequisite = {
 			focus = BRA_1858_ensure_monetary_issuance
 		}
@@ -7193,15 +7339,17 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_eliminate_currency_issuance_tax
-		x = 100
-		y = 14
-		icon = GFX_focus_hol_abandon_the_gold_standard
+		id = BRA_1858_reduce_church_influence_in_schools
+		x = 0
+		y = 1
+		icon = GFX_Focus_reduce_church_power
 		cost = 7
+		relative_position_id = BRA_1858_liberal_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_eliminate_national_bank_monopoly
+			focus = BRA_1858_liberal_cabinet
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -7212,29 +7360,14 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_ensure_religious_freedom
-		x = 98
-		y = 11
+		x = 0
+		y = 1
 		icon = GFX_Focus_Freedom_Public_Liberties
 		cost = 7
+		relative_position_id = BRA_1858_reduce_church_influence_in_schools
+
 		prerequisite = {
-			focus = BRA_1858_government_program_liberal
-			focus = BRA_1858_government_program_conciliatory
-		}
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = BRA_1858_introduce_taxes_to_the_church
-		x = 98
-		y = 12
-		icon = GFX_Focus_Economy_Increase_Wages
-		cost = 7
-		prerequisite = {
-			focus = BRA_1858_ensure_religious_freedom
+			focus = BRA_1858_reduce_church_influence_in_schools
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -7245,12 +7378,14 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_extinguish_parish_elections
-		x = 96
-		y = 11
+		x = 0
+		y = 1
 		icon = GFX_Focus_Vote_arrest_suffragetes
 		cost = 7
+		relative_position_id = BRA_1858_ensure_religious_freedom
+
 		prerequisite = {
-			focus = BRA_1858_government_program_liberal
+			focus = BRA_1858_ensure_religious_freedom
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -7258,13 +7393,15 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
-		id = BRA_1858_reduce_church_influence_in_schools
-		x = 96
-		y = 12
-		icon = GFX_Focus_reduce_church_power
+		id = BRA_1858_introduce_taxes_to_the_church
+		x = 0
+		y = 1
+		icon = GFX_Focus_Economy_Increase_Wages
 		cost = 7
+		relative_position_id = BRA_1858_extinguish_parish_elections
+
 		prerequisite = {
 			focus = BRA_1858_extinguish_parish_elections
 		}
@@ -7277,12 +7414,14 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_reduce_voter_minimum_income
-		x = 94
-		y = 11
+		x = 2
+		y = 1
 		icon = GFX_Focus_Electorate_crowd
 		cost = 7
+		relative_position_id = BRA_1858_liberal_cabinet
+
 		prerequisite = {
-			focus = BRA_1858_government_program_liberal
+			focus = BRA_1858_liberal_cabinet
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -7293,10 +7432,12 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_1858_decentralize_moderator_power
-		x = 94
-		y = 12
+		x = 0
+		y = 1
 		icon = GFX_Focus_Monarchy_Usurp_Throne
 		cost = 7
+		relative_position_id = BRA_1858_reduce_voter_minimum_income
+
 		prerequisite = {
 			focus = BRA_1858_reduce_voter_minimum_income
 		}
@@ -7309,10 +7450,12 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_increase_autonomy_of_ministers
-		x = 94
-		y = 13
+		x = 0
+		y = 1
 		icon = GFX_Focus_Government_Decentralized
 		cost = 7
+		relative_position_id = BRA_1858_decentralize_moderator_power
+
 		prerequisite = {
 			focus = BRA_1858_decentralize_moderator_power
 		}
@@ -7325,10 +7468,12 @@ focus_tree = {
 
 	focus = {
 		id = BRA_1858_strengthen_the_legislature
-		x = 94
-		y = 14
+		x = 0
+		y = 1
 		icon = GFX_focus_government_legislation
 		cost = 7
+		relative_position_id = BRA_1858_increase_autonomy_of_ministers
+
 		prerequisite = {
 			focus = BRA_1858_increase_autonomy_of_ministers
 		}

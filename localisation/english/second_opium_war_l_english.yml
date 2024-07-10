@@ -31,7 +31,8 @@
  eoanb_decision_sow_ENG_ultimatum_1: "Issue an ultimatum to the Qing"
  eoanb_decision_sow_LEG_assault_canton: "Assault Canton"
  eoanb_decision_sow_LEG_assault_taku1: "Assault Taku Forts"
- eoanb_decision_sow_LEG_assault_taku2_3: "Second Assault on Taku Forts"
+ eoanb_decision_sow_LEG_assault_taku_2: "Second Assault on Taku Forts"
+ eoanb_decision_sow_LEG_assault_taku_3: "Third Assault on Taku Forts"
  eoanb_decision_sow_LEG_assault_Bejing: "Assault Peking"
  eoanb_decision_sow_RUS_send_ultimatum: "Send an ultimatum to the Qing"
  eoanb_mission_sow_defend_canton: "Defend Canton"
@@ -43,6 +44,18 @@
  QNG_decision_canton_forts: "Fortify Canton"
  QNG_decision_tianjin_garrison: "Raise Tianjin Garrison"
  QNG_decision_canton_garrison: "Raise Canton Garrison"
+ eoanb_mission_sow_RUS_send_ultimatum: "Send Ultimatum to the Qing"
+
+ # Custon tooltip
+ fortified_taku_tooltip: "Taku Forts will be reinforced!"
+ fortified_canton_tooltip: "Canton Forts will be reinforced!"
+ eoanb_tt_QNG_canton_garrison_tooltip: "§YIt may be wise to reinforce our garrison in Guangzhou§!"
+ eoanb_tt_QNG_tianjin_garrison_tooltip: "§YIt may be wise to reinforce our garrison in Tianjin§!"
+ eoanb_tt_QNG_kalgan_garrison_tooltip: "§YIt may be wise to reinforce our garrison in Kalgan§!"
+
+ #Flags
+ QNG_taku_fortified: "Taku Forts are reinforced"
+ QNG_canton_fortified: "Canton Forts are reinforced"
 
  # Events
  secondopiumwarnew.1.t: "Prepare to Attack Canton"
@@ -103,7 +116,7 @@
  secondopiumwarnew.17.d: "The Second Battle of Taku Forts took place. A British naval force with 2,200 troops and 21 ships, under the command of Admiral Sir James Hope, sailed north from Shanghai to Tianjin with newly appointed European envoys for the embassies in Beijing. British forces blew up the iron obstacles that the Chinese had placed in the Baihe River. The next day, the British forces sought to forcibly sail into the river, and shelled the Taku Forts. Low tide and soft mud prevented their landing, accurate fire from Sengge Rinchen's cannons sank four gunboats and severely damaged two others. American Commodore Josiah Tattnall III, although under orders to maintain neutrality, declared "blood is thicker than water", and provided covering fire to protect the British convoy's retreat.\n\nThe Third Battle of Taku Forts took place. London once more dispatched Lord Elgin with a force of 11,000 British troops under General James Hope Grant. They carried out a landing near Beitang some three kilometers (1.9 mi) from the Taku Forts, which they captured after three weeks.\n\nPeace talks between the West and China will soon begin... again."
  secondopiumwarnew.17.a: "Next Peking..."
  secondopiumwarnew.18.t: "Be Respectful During Peace Talks?"
- secondopiumwarnew.18.d: "We have won once again in China, with peace talks beginning in Beijing soon, we must decide on how to proceed during the talks. The Chinese view western nations as Barbarians… even though we have destroyed their army. Should we act like victors or continue to talk to the Chinese like our superiors? However, the Qing have a record of not responding well to “disrespect”... What's the worst that can happen?"
+ secondopiumwarnew.18.d: "We have won once again in China, with peace talks beginning in Beijing soon, we must decide on how to proceed during the talks. The Chinese view western nations as Barbarians, even though we have destroyed their army. Should we act like victors or continue to talk to the Chinese like our superiors? However, the Qing have a record of not responding well to “disrespect”... What's the worst that can happen?"
  secondopiumwarnew.18.a: "Don't Risk Offending Them..."
  secondopiumwarnew.18.b: "We are the Victors!"
  secondopiumwarnew.19.t: "Treaty of Tianjin"
@@ -127,7 +140,7 @@
  secondopiumwarnew.24.t: "Battle of Zhangjiawan"
  secondopiumwarnew.24.d: "The combined Anglo-French force which had recently occupied Tianjin engaged our army numbering some 30,000-strong at Zhangjiawan. Since infantry was the worst part of the Qing army, the Qing commander-in-chief Sengge Rinchen decided to use his cavalry against the Anglo-French forces. British cavalry won a battle against Mongolian cavalry, French infantry crushed the defence of Chinese troops, and British-French artillery inflicted massive losses on the Chinese Qing army.\n\nShould we accept defeat or try and push the expedition to the sea? However, if we lose again we risk our army being devastated."
  secondopiumwarnew.24.a: "Surrender"
- secondopiumwarnew.24.a: "Carry on the Fight!"
+ secondopiumwarnew.24.b: "Carry on the Fight!"
  secondopiumwarnew.25.t: "Battle of Palikao"
  secondopiumwarnew.25.d: "The Anglo-French force had been trying for two years to get to Peking. The combined Anglo-French force marched in a leisurely manner from the Taku Forts, with the French on one side of the river, the British on the other.\n\nThe army advanced from Tianjin with a cavalry screen and when they reached Chang-Kia-Wan they met a large Chinese army with a five-mile front. There was a skirmish between cavalry, then with the allied artillery silencing the Chinese artillery. The Chinese army scattered and retired.\n\nTwo days later, the cavalry discovered the Chinese army in a strong position in front of a canal connecting Peking with the Peiho River, with two bridges at Palikao. The allied army attacked frontally and the cavalry attacked from the left forcing the Chinese back over the two bridges. The Anglo-French force inflicted massive losses on the Qing army trapped by the canal. Peking was invaded thereafter.\n\nOn the Qing side, Sengge Rinchen's troops, including elite Mongolian cavalry, were completely annihilated after several doomed frontal charges against concentrated firepower from the allied forces."
  secondopiumwarnew.25.a: "Devastating"
@@ -169,4 +182,16 @@
  secondopiumwarnew.37.t: "Summer Palace Looted and Burned Down"
  secondopiumwarnew.37.d: "After the European victories at the battles of Zhangjiawan and Palikao. British soldiers looted and burnt the Summer Palace, the French refusing to assist. The razing of the buildings took two days, with imperial property in the vicinity also destroyed. The British considered doing the same to the Forbidden City. However, decided against it, as burning of the Summer Palaces was the punishment which would fall, not on the people, who may be comparatively innocent, but exclusively on the Emperor, whose direct personal responsibility for the crime committed is established. This ensures the Qing come to the negotiating table and are unable to refuse the demands of the West."
  secondopiumwarnew.37.a: "How Dare They!"
+ secondopiumwarnew.38.t: "Qing Empire is Failing"
+ secondopiumwarnew.38.d: "After the defeat of the Qing army at the hands of the British. It is clear that they are unable to defend their own borders. As a result of this, while China is weak, we should take advantage of this and build a strong foothold in the far-east."
+ secondopiumwarnew.38.a: "Time is of the essence"
+ secondopiumwarnew.39.t: "2nd Battle of Taku Forts won!"
+ secondopiumwarnew.39.d: ""
+ secondopiumwarnew.39.a: "We are great!"
+ secondopiumwarnew.40.t: "2nd Battle of Taku Forts lost!"
+ secondopiumwarnew.40.d: ""
+ secondopiumwarnew.40.a: "We have to try again"
+ secondopiumwarnew.41.t: "Withdrawal of the Western forces"
+ secondopiumwarnew.41.d: "Despite the withdrawal of the western forces from Beijing, Xianfeng chose to deliberately stay in in Chengde, while abandoning emperor duties and leaving them to the Grand Counmcil to handle. With a strong feeling of humiliation and embarrassment, the emperor would overindulge himself in Chengde, leaving not only his health to deteriorate but the empire to slowly crumble as well."
+ secondopiumwarnew.41.a: "A lost cause for the emperor"
  

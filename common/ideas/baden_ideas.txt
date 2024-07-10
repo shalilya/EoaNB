@@ -110,22 +110,6 @@ ideas = {
 			}
 		}
 		
-		BAD_currency_reform = { 
-		    allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = wiener_munzvertrag
-		
-			modifier = {
-				political_power_factor = -0.05
-				trade_opinion_factor = 0.1
-				trade_laws_cost_factor = -0.05
-				min_export = 0.1
-				consumer_goods_factor = -0.05
-			}
-		}
-		
 		BAD_trade_act = { #trade focus
 			allowed_civil_war = {
 				always = yes
@@ -134,7 +118,7 @@ ideas = {
 			picture = BAD_rise_of_industry
 		
 			modifier = {
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 			
 			research_bonus = {
@@ -196,11 +180,11 @@ ideas = {
 		}
 		
 		BAD_new_Zollverein = {
-			picture = PRS_zollverein
+			picture = GER_zollverein
 
 			modifier = {
 				industrial_capacity_factory = 0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				production_speed_infrastructure_factor = 0.05
 				political_power_factor = -0.03
 				trade_laws_cost_factor = 0.2
@@ -213,7 +197,7 @@ ideas = {
 			picture = PRS_eisenbahn
 			
 			modifier = {
-			    consumer_goods_factor = 0.02
+			    consumer_goods_expected_value = 0.02
 				political_power_factor = 0.02
 				production_speed_infrastructure_factor = 0.1
 			}
@@ -223,7 +207,7 @@ ideas = {
 			picture = PRS_eisenbahn
 
 			modifier = {
-			    consumer_goods_factor = 0.03
+			    consumer_goods_expected_value = 0.03
 				political_power_factor = 0.03
 				production_speed_infrastructure_factor = 0.15
 			}
@@ -233,7 +217,7 @@ ideas = {
 			picture = PRS_eisenbahn
 
 			modifier = {
-			    consumer_goods_factor = 0.04
+			    consumer_goods_expected_value = 0.04
 				political_power_factor = 0.04
 				production_speed_infrastructure_factor = 0.2
 			}
@@ -243,7 +227,7 @@ ideas = {
 			picture = PRS_eisenbahn
 			
 			modifier = {
-			    consumer_goods_factor = 0.05
+			    consumer_goods_expected_value = 0.05
 				political_power_factor = 0.05
 				production_speed_infrastructure_factor = 0.25
 			}
@@ -251,7 +235,7 @@ ideas = {
 		
 		BAD_idea_tobacco_industry = {
 			modifier = {
-			    consumer_goods_factor = -0.03
+			    consumer_goods_expected_value = -0.03
 				production_speed_industrial_complex_factor = 0.03
 				political_power_factor = 0.03
 				faction_trade_opinion_factor = 0.1
@@ -261,7 +245,7 @@ ideas = {
 		BAD_idea_freiburg_wine = {
 			modifier = {
 			    monthly_population = 0.03
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				political_power_factor = 0.03
 				faction_trade_opinion_factor = 0.1
 			}
@@ -269,7 +253,7 @@ ideas = {
 		
 		BAD_idea_haslach_mine = {
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				political_power_factor = 0.03
 				production_speed_industrial_complex_factor = 0.05
 			}
@@ -307,7 +291,7 @@ ideas = {
 			}
 
 			modifier = {
-				consumer_goods_factor = -0.03
+				consumer_goods_expected_value = -0.03
 				production_speed_logging_camp_factor = 0.25
 				industrial_capacity_factory = 0.03
 			}
@@ -545,7 +529,7 @@ ideas = {
 				stability_weekly = -0.005
 				political_power_gain = -0.1
 				industrial_capacity_factory = -0.1
-				consumer_goods_factor = 0.01
+				consumer_goods_expected_value = 0.01
 			}
 		}
 		
@@ -558,7 +542,7 @@ ideas = {
 				stability_weekly = 0.005
 				political_power_gain = 0.1
 				industrial_capacity_factory = 0.1
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 			}
 		}
 		
@@ -688,7 +672,7 @@ ideas = {
 		}
 	}
 	
-	materiel_manufacturer = {
+	materiel_manufacturers = {
 			
 		designer = yes
 		

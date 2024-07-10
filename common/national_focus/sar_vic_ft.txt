@@ -35,7 +35,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		completion_reward = {
-			country_event={id= boer_states.90}
+			country_event={id= boer_states.5}
 		}
 		prerequisite = {
 			focus = TRV_focus_political_reforms
@@ -115,7 +115,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_ideas={
-				trv_idea_god_fairing_people
+				TRV_idea_god_fairing_people
 			}
 		}
 		prerequisite = {
@@ -260,7 +260,7 @@ focus_tree = {
 		x = 8
 		y = 3
 		completion_reward = {
-			country_event={id=boer_states.120}
+			country_event={id=boer_states.9}
 		}
 		prerequisite = {
 			focus = TRV_focus_pro_dutch_policies
@@ -278,10 +278,10 @@ focus_tree = {
 		x = 5
 		y = 5
 		completion_reward = {
-			swap_ideas={
-				add_idea = limited_constitution
-				remove_idea = no_constitution
-			}
+			#swap_ideas={
+			#	add_idea = limited_constitution
+			#	remove_idea = no_constitution
+			#}
 		}
 		prerequisite = {
 			focus = TRV_focus_imergration_reforms
@@ -433,17 +433,14 @@ focus_tree = {
 			focus = TRV_focus_consoladate_internal_governence
 		}
 		relative_position_id = TRV_focus_complete_legal_reforms
-		mutually_exclusive = {
-			focus = TRV_focus_consolidate_power
-		}
 		available = {
 			has_war = no
 		}
 		completion_reward = {
-			swap_ideas={
-				add_idea = limited_constitution
-				remove_idea = no_constitution
-			}
+			#swap_ideas={
+			#	add_idea = limited_constitution
+			#	remove_idea = no_constitution
+			#}
 		}
 	}
 	focus = {
@@ -503,9 +500,8 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
-			swap_ideas={
-				add_idea = normal_taxes
-				remove_idea = low_taxes
+			add_ideas = {
+				ofs_idea_efficient_taxing
 			}
 		}
 	}
@@ -717,7 +713,7 @@ focus_tree = {
 		x = -6
 		y = 3
 		completion_reward = {
-			
+			country_event = boer_states.46
 		}
 	}
 	focus = {
@@ -752,18 +748,14 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
-			add_state_core = 775
-			add_state_core = 778
+			add_state_core = 747
 		}
 		prerequisite = {
 			focus = TRV_focus_foreign_affars
 		}
 		relative_position_id = TRV_focus_foreign_affars
 		available ={
-			775 = {
-				is_fully_controlled_by = TRV
-			}
-			778 = {
+			747 = {
 				is_fully_controlled_by = TRV
 			}
 			has_war = no
@@ -780,7 +772,7 @@ focus_tree = {
 		x = -2
 		y = 2
 		completion_reward = {
-			add_state_core = 780
+			add_state_core = 747
 		}
 		prerequisite = {
 			focus = TRV_focus_integration_of_the_OFS
@@ -788,7 +780,7 @@ focus_tree = {
 		relative_position_id = TRV_focus_foreign_affars
 		available ={
 			has_war = no
-			780 = {
+			747 = {
 				is_fully_controlled_by = TRV
 			}
 		}
@@ -805,7 +797,6 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_state_core = 747
-			add_state_core = 777
 			add_state_core = 776
 			every_owned_state={
 				limit={
@@ -821,9 +812,6 @@ focus_tree = {
 		available ={
 			has_war = no
 			747 = {
-				is_fully_controlled_by = TRV
-			}
-			777 = {
 				is_fully_controlled_by = TRV
 			}
 			776 = {
@@ -843,7 +831,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			remove_ideas={trv_idea_occupied_swazi_territory}
+			remove_ideas={TRV_idea_occupied_swazi_territory}
 			SWZ={remove_ideas={SWZ_idea_bigger_than_it_looks}}
 		}
 		prerequisite = {
@@ -943,22 +931,10 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			ENG = {
-				if = {
-					limit = {
-						OR = {
-							has_dlc = "Together for Victory"
-							has_dlc = "Waking the Tiger"
-							has_dlc = "Death or Dishonor"
-						}
-					}
-					set_autonomy = {
-						target = TRV
-						autonomous_state = autonomy_british_self_gov
-						freedom_level = 0.2
-					}
-				}
-				else = {
-					puppet = TRV
+				set_autonomy = {
+					target = TRV
+					autonomous_state = autonomy_british_self_gov
+					freedom_level = 0.2
 				}
 			}
 		}
@@ -1706,13 +1682,6 @@ focus_tree = {
 		x = 31
 		y = 3
 		completion_reward = {
-			1142={
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
 			1140={
 				add_building_construction = {
 					type = infrastructure
@@ -1811,7 +1780,7 @@ focus_tree = {
 		x = 36
 		y = 2
 		completion_reward = {
-			1142={
+			1140={
 				add_resource = {
 					type = coal
 					amount = 12
@@ -1860,6 +1829,305 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = afr_ofs_gold_mines_2
 				remove_idea = afr_ofs_gold_mines_1
+			}
+		}
+	}
+	###########################
+	### CIVIL WAR RECORVERY ###
+	###########################
+
+	focus = {
+		id = TRV_focus_civil_war
+		icon = GFX_Focus_divide_africa
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = TRV_civil_War
+			has_civil_war = no
+		}
+		x = 5
+		y = 6
+		completion_reward = {
+			swap_ideas = {
+				add_idea = afr_ofs_gold_mines_2
+				remove_idea = afr_ofs_gold_mines_1
+			}
+		}
+	}
+	focus = {
+		id = TRV_focus_eco_afternath
+		icon = GFX_Focus_economic_crisis
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_civil_war
+		}
+		available = {
+			has_idea = TRV_idea_economic_aftermath
+		}
+		x = 4
+		y = 7
+		completion_reward = {
+			remove_ideas = TRV_idea_economic_aftermath
+		}
+	}
+	focus = {
+		id = TRV_focus_pol_afternath
+		icon = GFX_focus_politics_government_chaos
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_civil_war
+		}
+		available = {
+			has_idea = TRV_idea_political_aftermath
+		}
+		x = 6
+		y = 7
+		completion_reward = {
+			remove_ideas = TRV_idea_political_aftermath
+		}
+	}
+	focus = {
+		id = TRV_focus_recover_civil_war
+		icon = GFX_Focus_Welfare
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_pol_afternath
+			focus = TRV_focus_eco_afternath
+		}
+		x = 5
+		y = 8
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.5
+			hidden_effect = {
+				clr_country_flag = TRV_civil_War
+			}
+		}
+	}
+
+	#########################
+	### SHEPSTONE ARRIVAL ###
+	#########################
+
+	focus = {
+		id = TRV_focus_shepstone_arrival
+		icon = GFX_goal_theo_shepstone
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = TRV_shepstone_takeover
+		}
+		x = 47
+		y = 4
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = TRV_focus_shepstone_accepted
+		icon = GFX_Focus_Monarchy_Usurp_Throne
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_shepstone_arrival
+		}
+		x = -1
+		y = 1
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		mutually_exclusive = {
+			focus = TRV_focus_shepstone_rejected
+		}
+
+		completion_reward = {
+			add_ideas = TRV_idea_uk_assistance
+		}
+	}
+	focus = {
+		id = TRV_focus_begin_reforming
+		icon = GFX_Focus_Government_Centralisation
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_shepstone_accepted
+		}
+		x = -1
+		y = 2
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			remove_ideas = TRV_idea_useless_volksraad
+		}
+	}
+	focus = {
+		id = TRV_focus_shepstone_rejected
+		icon = GFX_Focus_Monarchy_Violent_Revolution
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_shepstone_arrival
+		}
+		x = 1
+		y = 1
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		mutually_exclusive = {
+			focus = TRV_focus_shepstone_accepted
+		}
+
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.1
+			add_ideas = TRV_idea_uk_occupation
+		}
+	}
+	focus = {
+		id = TRV_focus_push_volksraad
+		icon = GFX_Focus_Government_Struggle
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_shepstone_rejected
+		}
+		x = 1
+		y = 2
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			remove_ideas = TRV_idea_useless_volksraad
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = TRV_focus_encourage_passive_resistance
+		icon = GFX_Focus_Judicial_Reform
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_push_volksraad
+		}
+		x = 0
+		y = 3
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = -0.05
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = TRV_focus_negotiate_uk
+		icon = GFX_Focus_Diplomacy_UK
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_push_volksraad
+		}
+		x = 2
+		y = 3
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TRV_focus_uk_misstreatment
+		icon = GFX_Focus_Ideology_Soviet_crushed
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_encourage_passive_resistance
+		}
+		prerequisite = {
+			focus = TRV_focus_negotiate_uk
+		}
+		available = {
+			SAF = {
+				NOT = {
+					has_completed_focus = SAF_focus_self_government_boer
+				}
+			}
+		}
+		x = 1
+		y = 4
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = TRV_focus_end_passive_resistance
+		icon = GFX_Focus_Soldier_Victorian_USA
+		cost = 70
+		available_if_capitulated = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = TRV_focus_uk_misstreatment
+		}
+		x = 1
+		y = 5
+		relative_position_id = TRV_focus_shepstone_arrival
+
+		completion_reward = {
+			ENG = {
+				end_puppet = TRV
+				#country_event = britishafrica.
+			}
+			remove_ideas = AFR_british_colony
+			remove_ideas = TRV_idea_uk_occupation
+			declare_war_on = {
+				target = SAF
+				type = take_claimed_state
+			}
+			drop_cosmetic_tag = yes
+			ENG = {
+				activate_mission = ENG_mission_first_boer_war
 			}
 		}
 	}

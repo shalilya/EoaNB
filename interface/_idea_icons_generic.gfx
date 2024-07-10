@@ -772,6 +772,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/generic/generic_idea_modern_army.png"
 	}
 	spriteType = {
+		name = "GFX_idea_generic_money_investment"
+		texturefile = "gfx/interface/ideas/generic/generic_idea_money_investment.png"
+	}
+	spriteType = {
 		name = "GFX_idea_generic_monopoly"
 		texturefile = "gfx/interface/ideas/generic/generic_idea_monopoly.png"
 	}
@@ -814,6 +818,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_generic_widespread_bankrupcy"
 		texturefile = "gfx/interface/ideas/generic/generic_idea_widespread_bankrupcy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_idea_outdated_army"
+		texturefile = "gfx/interface/ideas/generic/generic_outdated_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_idea_mountain_training"
+		texturefile = "gfx/interface/ideas/generic/generic_mountain_training.png"
 	}
 
 }

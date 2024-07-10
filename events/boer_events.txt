@@ -1,0 +1,1740 @@
+﻿add_namespace = boer_states
+
+country_event = { #OFS asks for recognition
+	id = boer_states.1
+	title = boer_states.1.t
+	desc = boer_states.1.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.1.a #recognise them
+		ai_chance = { factor = 80 }
+		FROM ={
+			country_event = {days = 1 id=boer_states.2}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = afr_country_was_recognised
+			}
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = afr_recognised_country
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = PRS
+					tag = GER
+				}
+			}
+			set_country_flag = recognised_ofs
+		}
+	}
+}
+
+country_event = { #recognition accepted
+	id = boer_states.2
+	title = boer_states.2.t
+	desc = boer_states.2.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.2.a #ok
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #recognition declined
+	id = boer_states.3
+	title = boer_states.3.t
+	desc = boer_states.3.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.3.a #ok
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #recognition guaranteed
+	id = boer_states.4
+	title = boer_states.4.t
+	desc = boer_states.4.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.4.a #ok
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { #question of church and state
+	id = boer_states.5
+	title = boer_states.5.t
+	desc = boer_states.5.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.5.a #they must be joined
+		ai_chance = { factor = 50 }
+		set_country_flag = trv_settled_church_question
+	}
+	option = {
+		name = boer_states.5.b #there must be seperation
+		ai_chance = { factor = 50 }
+		set_country_flag = trv_settled_church_question
+		swap_ideas={
+			add_idea = secular_state
+			remove_idea = state_religion
+		}
+		add_ideas={
+			TRV_idea_annoyed_church
+		}
+	}
+}
+
+country_event = { #our british policy
+	id = boer_states.6
+	title = boer_states.6.t
+	desc = boer_states.6.d
+	picture = GFX_report_event_british_army4
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.6.a #remain in the british sphere
+		ai_chance = { factor = 50 }
+		set_country_flag = trv_british_loyalty
+	}
+	option = {
+		name = boer_states.6.b #there must be seperation
+		ai_chance = { factor = 50 }
+		set_country_flag = trv_ignore_british
+
+	}
+}
+
+country_event = { # ENG - SAF requests a act of union
+	id = boer_states.7
+	title = boer_states.7.t
+	desc = boer_states.7.d
+	picture = GFX_report_event_british_army4
+	is_triggered_only = yes
+
+	option = { # agree
+		name = boer_states.7.a
+		add_political_power = -100
+		SAF={country_event = {id = boer_states.8 days = 10}}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = { # i see no reason
+		name = boer_states.7.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = { # SAF - Act of union
+	id = boer_states.8
+	title = boer_states.8.t
+	desc = boer_states.8.d
+
+	is_triggered_only = yes
+
+	option = { # We can unite!
+		name = boer_states.8.a
+		SAF={
+			drop_cosmetic_tag = yes
+			add_ideas={
+				SAF_idea_divided_administration
+				SAF_idea_afrikkan_agitation
+
+			}
+			if={
+				limit = {ZUL={exists = yes}}
+				ZUL={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = ZUL
+					}
+				}
+				annex_country = {
+					target = ZUL
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {NAT={exists = yes}}
+				NAT={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = NAT
+					}
+				}
+				annex_country = {
+					target = NAT
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {OFS={exists = yes}}
+				OFS={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = OFS
+					}
+				}
+				annex_country = {
+					target = OFS
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {TRV={exists = yes}}
+				TRV={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = TRV
+					}
+				}
+				annex_country = {
+					target = TRV
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {GQW={exists = yes}}
+				GQW={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = GQW
+					}
+				}
+				annex_country = {
+					target = GQW
+					transfer_troops = yes
+				}
+			}
+			if={
+				limit = {GQE={exists = yes}}
+				GQE={
+					every_owned_state={
+						add_core_of = SAF
+						remove_core_of = GQE
+					}
+				}
+				annex_country = {
+					target = GQE
+					transfer_troops = yes
+				}
+			}
+			set_cosmetic_tag= SAF_union
+			add_to_array = { national_culture_array = global.afrikaans }
+			set_capital = { state = 275 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #question of slavery
+	id = boer_states.9
+	title = boer_states.9.t
+	desc = boer_states.9.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.9.a #slavery is fine
+		ai_chance = { factor = 50 }
+		add_political_power = 100
+	}
+	
+	option = {
+		name = boer_states.9.b #we must end this
+		ai_chance = { factor = 50 }
+		swap_ideas={
+			add_idea = racial_laws
+			remove_idea = slavery
+		}
+	}
+}
+
+#############################################################
+
+###################
+### OFS/TRV WAR ###
+###################
+
+country_event = { #OFS - TRV Conducts Raid
+	id = boer_states.10
+	title = boer_states.10.t
+	desc = boer_states.10.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.10.a
+		ai_chance = { factor = 100 }
+		country_event = boer_states.11
+		add_stability = -0.1
+		add_political_power = -25
+	}
+}
+
+country_event = { #OFS - marshal law declared
+	id = boer_states.11
+	title = boer_states.11.t
+	desc = boer_states.11.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.11.a
+		ai_chance = { factor = 100 }
+		country_event = { 
+			id = boer_states.12 
+			days = 3 
+		}
+		add_stability = 0.05
+		add_political_power -50
+	}
+}
+
+
+country_event = { #OFS - Border War OFS v TRV
+	id = boer_states.12
+	title = boer_states.12.t
+	desc = boer_states.12.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.12.a
+		ai_chance = { factor = 100 }
+
+	    start_border_war = {
+		    change_state_after_war = no
+	     	attacker = {
+				state = 1140
+				num_provinces = 1
+				on_win = boer_states.14
+				on_lose = boer_states.13
+				modifier = 0.1
+				dig_in_factor = 0
+				terrain_factor = 0
+		    }
+
+		    defender = {
+			    state = 747
+			    num_provinces = 1
+		    	on_win = boer_states.13
+		    	on_lose = boer_states.14
+		    	dig_in_factor = 0.1
+		   }
+	    }
+	}
+}
+
+country_event = { #OFS - independence rec by both sides (WIN)
+	id = boer_states.13
+	title = boer_states.13.t
+	desc = boer_states.13.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.13.a
+		ai_chance = { factor = 100 }
+		country_event = { id = boer_states.15 days = 15 }
+	}
+}
+
+country_event = { #OFS - TRV occupies the north (LOSE)
+	id = boer_states.14
+	title = boer_states.14.t
+	desc = boer_states.14.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.14.a
+		ai_chance = { factor = 100 }
+		country_event = { id = boer_states.15 days = 15 }
+		TRV = {
+			transfer_state = 778
+			transfer_state = 775
+		}
+	}
+}
+
+country_event = { #OFS - Boshoff Resigns
+	id = boer_states.15
+	title = boer_states.15.t
+	desc = boer_states.15.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.15.a
+		ai_chance = { factor = }
+		country_event = { id = boer_states.16 days = 15 }
+		add_political_power = -50
+	}
+}
+
+country_event = { #OFS in turmoil
+	id = boer_states.16
+	title = boer_states.16.t
+	desc = boer_states.16.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.16.a
+		ai_chance = { factor = 100 }
+		country_event = { id = boer_states.17 days = 7 }
+		add_stability = -0.1
+	}
+}
+
+country_event = { #OFS - Seek annexation from Cape
+	id = boer_states.17
+	title = boer_states.17.t
+	desc = boer_states.17.d
+
+	is_triggered_only=yes
+	option = {
+		name = boer_states.17.a
+		ai_chance = { factor = 50 }
+		country_event = { id = britain.202 days = 15 }
+	}
+
+	option = {
+		name = boer_states.17.b
+		ai_chance = { factor = 50 }
+		country_event = boer_states.18
+	}
+}
+
+country_event = { #OFS - begin rebuilding on our own
+	id = boer_states.18
+	title = boer_states.18.t
+	desc = boer_states.18.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.18.a
+		ai_chance = { factor = 100 }
+		add_political_power = 100
+	}
+}
+
+country_event = { #OFS - becomes British colony
+	id = boer_states.19
+	title = boer_states.19.t
+	desc = boer_states.19.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.19.a
+		ai_chance = { factor = 100 }
+		add_political_power = 100
+		add_stability = 0.2
+	}
+}
+
+#############################################################
+
+###################
+### OFS/SOT WAR ###
+###################
+
+country_event = { #OFS - Bosotho causes issues
+	id = boer_states.20
+	title = boer_states.20.t
+	desc = boer_states.20.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			NOT = {
+				has_cosmetic_tag = OFS_ENG
+			}
+		}
+	}
+
+	option = {
+		name = boer_states.20.a
+		ai_chance = { factor = 100 }
+		country_event = { id = boer_states.21 days = 2 }
+		add_stability = -0.05
+	}
+}
+
+country_event = { #OFS - Declare war on SOT?
+	id = boer_states.21
+	title = boer_states.21.t
+	desc = boer_states.21.d
+
+	is_triggered_only=yes
+
+	option = { #no
+		name = boer_states.21.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		country_event = { id = boer_states.22 hours = 12 }
+	}
+
+	option = { #yes
+		name = boer_states.21.b
+		ai_chance = { factor = 75 }
+		declare_war_on = {
+			target = SOT
+			type = annex_everything
+		}
+		activate_mission = OFS_mission_defeat_SOT
+		hidden_effect = {
+			country_event = {
+				id = boer_states.23
+				days = 50
+			}
+		}
+	}
+}
+
+country_event = { #OFS - National embarassment
+	id = boer_states.22
+	title = boer_states.22.t
+	desc = boer_states.22.d
+
+	is_triggered_only=yes
+
+	option = { #Continue the war
+		name = boer_states.22.a
+		ai_chance = { factor = 50 }
+		add_stability = -0.25
+		add_political_power = -250
+		add_war_support = -0.15
+	}
+}
+
+country_event = { #OFS - war exhaustion
+	id = boer_states.23
+	title = boer_states.23.t
+	desc = boer_states.23.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		has_active_mission = OFS_mission_defeat_SOT
+	}
+
+	option = {
+		name = boer_states.23.a
+		ai_chance = { factor = 100 }
+		add_war_support = -0.2
+		add_stability = -0.1
+		add_political_power = -200
+	}
+}
+
+country_event = { #OFS - UK Mediates peace
+	id = boer_states.24
+	title = boer_states.24.t
+	desc = boer_states.24.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.24.a
+		ai_chance = { factor = 100 }
+		white_peace = SOT
+		hidden_effect = {
+			country_event = { id = boer_states.26 days = 35 }
+		}
+	}
+}
+
+country_event = { #OFS - Boshoff Resigns... again
+	id = boer_states.26
+	title = boer_states.26.t
+	desc = boer_states.26.d
+	is_triggered_only=yes
+	option = { #
+		name = boer_states.26.a
+		ai_chance = { factor = 100 }
+		add_stability = -0.1
+		add_political_power = -100
+		retire_character = OFS_Jacobus_Nicolaas_Boshoff
+		promote_character = OFS_Volksraad
+	}
+}
+
+#############################################################
+
+#######################
+### 2nd OFS/SOT War ###
+#######################
+
+country_event = { #ENG - besotho requests protection
+	id = boer_states.27
+	title = boer_states.27.t
+	desc = boer_states.27.d
+
+	is_triggered_only=yes
+	option = { 
+		name = boer_states.27.a
+		ai_chance = { factor = 100 }
+		ENG = {
+			country_event = { id = britain.204 days = 15 }
+		}
+	}
+}
+
+country_event = { #OFS - reafirm Warden line
+	id = boer_states.28
+	title = boer_states.28.t
+	desc = boer_states.28.d
+
+	is_triggered_only=yes
+	option = { 
+		name = boer_states.28.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+		SOT = {
+			country_event = { id = boer_states.30 days = 15 }
+		}
+	}
+}
+
+country_event = { #SOT - ENG refuse to protect
+	id = boer_states.29
+	title = boer_states.29.t
+	desc = boer_states.29.d
+
+	is_triggered_only=yes
+	option = { 
+		name = boer_states.29.a
+		ai_chance = { factor = 100 }
+		add_political_power = -100
+		hidden_effect = {
+			OFS = {
+				country_event = { id = boer_states.28 days = 45 }
+			}
+		}
+	}
+}
+
+country_event = { #SOT - OFS reafrims Warden Line
+	id = boer_states.30
+	title = boer_states.30.t
+	desc = boer_states.30.d
+
+	is_triggered_only=yes
+
+	option = { #withdraw
+		name = boer_states.30.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -150
+		add_stability = -0.25
+		OFS = {
+			transfer_state = 779
+		}
+		hidden_effect = {
+			country_event = { id = boer_states.31 days = 1 }
+		}
+	}
+
+	option = { #remain
+		name = boer_states.30.b
+		ai_chance = { factor = 75 }
+		add_political_power = 100
+		add_war_support = 0.3
+		hidden_effect = {
+			country_event = {
+				id = boer_states.32
+				days = 50
+			}
+		}
+	}
+}
+
+country_event = { #OFS - SOT Remains issue
+	id = boer_states.31
+	title = boer_states.31.t
+	desc = boer_states.31.d
+
+	is_triggered_only=yes
+
+	option = { #Declare
+		name = boer_states.31.a
+		ai_chance = { factor = 75 }
+		declare_war_on = {
+			target = SOT
+			type = annex_everything
+		}
+		activate_mission = OFS_mission_defeat_SOT_two
+	}
+
+	option = { #Declare
+		name = boer_states.32.a
+		ai_chance = { factor = 0 }
+		add_political_power = -200
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = britain.205
+					days = 365
+				}
+			}
+		}
+	}
+}
+
+#############################################################
+
+############################################
+### Diamonds Discovered In Cambell Lands ###
+############################################
+
+country_event = { #OFS - Diamonds Discovered
+	id = boer_states.32
+	title = boer_states.32.t
+	desc = boer_states.32.d
+
+	is_triggered_only=yes
+
+	option = { #establish gov
+		name = boer_states.32.a
+		ai_chance = { factor = 75 }
+		transfer_state = 1149
+		add_political_power = -100
+		add_war_support = 0.02
+		hidden_effect = {
+			country_event = {
+				id = boer_states.33
+				days = 60
+			}
+		}
+	}
+
+	option = { #do nothing
+		name = boer_states.32.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -250
+		hidden_effect = {
+			SOT = {
+				country_event = { id = britain.206 days = 15 }
+			}
+		}
+	}
+}
+
+country_event = { #OFS - Deepen integration 
+	id = boer_states.33
+	title = boer_states.33.t
+	desc = boer_states.33.d
+
+	is_triggered_only=yes
+
+	option = { #return land
+		name = boer_states.33.a
+		ai_chance = { factor = 75 }
+		GQW = {
+			transfer_state = 1149
+		}
+		1149 = {
+			add_claim_by = OFS
+		}
+		add_political_power = 150
+		hidden_effect = {
+			SOT = {
+				country_event = { id = britain.206 days = 15 }
+			}
+		}
+	}
+
+	option = { #Keep the land
+		name = boer_states.33.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -200
+		add_stability = -0.05
+		add_war_support = 0.03
+		hidden_effect = {
+			country_event = {
+				id = boer_states.34
+				days = 75
+			}
+			division_template = {
+				name = "Miners Militia"
+				is_locked = yes
+				priority = 0
+				template_counter = 0
+				regiments = {
+					light_infantry = {
+						x = 0
+						y = 0
+					}
+					light_infantry = {
+						x = 0
+						y = 1
+					}
+					light_infantry = {
+						x = 0
+						y = 2
+					}
+					light_infantry = {
+						x = 1
+						y = 0
+					}
+				}
+			}
+			1147 = {
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.7 start_equipment_factor = 1"
+					owner = GQW
+				}
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.7 start_equipment_factor = 1"
+					owner = GQW
+				}
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					owner = GQW
+				}
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GQW
+				}
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					owner = GQW
+				}
+				create_unit = {
+					division = "name = \"Miners Militia\" division_template = \"Miners Militia\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					owner = GQW
+				}
+			}
+		}
+	}
+}
+
+country_event = { #OFS - Miners fight back
+	id = boer_states.34
+	title = boer_states.34.t
+	desc = boer_states.34.d
+
+	is_triggered_only=yes
+
+	option = { #return land
+		name = boer_states.34.a
+		ai_chance = { factor = 75 }
+		GQW = {
+			transfer_state = 1149
+		}
+		1149 = {
+			add_claim_by = OFS
+		}
+		add_political_power = 200
+		hidden_effect = {
+			SOT = {
+				country_event = { id = britain.206 days = 15 }
+			}
+		}
+	}
+
+	option = { #Keep the land
+		name = boer_states.34.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -100
+		add_stability = -0.05
+		start_border_war = {
+    		change_state_after_war = no
+			attacker = { #GQW
+				state = 1149
+				num_provinces = 1
+				on_win = boer_states.35
+				on_lose = boer_states.36
+				on_cancel = boer_states.35
+				modifier = 0.1
+				dig_in_factor = 0
+				terrain_factor = 0
+			}	
+			defender = { #OFS
+				state = 1147
+				num_provinces = 4
+				on_win = boer_states.36
+				on_lose = boer_states.35
+				on_cancel = boer_states.35
+			}
+		}
+	}
+}
+
+country_event = { #OFS - GQW Win
+	id = boer_states.35
+	title = boer_states.35.t
+	desc = boer_states.35.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.35.a
+		ai_chance = { factor = 75 }
+		GQW = {
+			transfer_state = 1149
+		}
+		1149 = {
+			add_claim_by = OFS
+		}
+		add_political_power = -200
+		add_stability = -0.1
+		add_war_support = -0.15
+		hidden_effect = {
+			SOT = {
+				country_event = { id = britain.206 days = 15 }
+			}
+		}
+	}
+}
+
+country_event = { #OFS - GQW lose
+	id = boer_states.36
+	title = boer_states.36.t
+	desc = boer_states.36.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.35.a
+		ai_chance = { factor = 75 }
+		annex_country = {
+			target = GQW
+			transfer_troops = no
+		}
+		add_stability = 0.05
+		add_war_support = 0.1
+	}
+}
+
+#############################################################
+
+############################################
+### Transvaal Civil War ###
+############################################
+
+country_event = { #OFS - Pretorius Eleceted President
+	id = boer_states.37
+	title = boer_states.37.t
+	desc = boer_states.37.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.37.a
+		ai_chance = { factor = 75 }
+		promote_character = OFS_Marthinus_Wessel_Pretorius
+		unlock_decision_tooltip = OFS_decision_boer_unification
+		hidden_effect = {
+			TRV = {
+				country_event = boer_states.45
+			}
+		}
+	}
+}
+
+country_event = { #TRV - Force Pretorius to step down
+	id = boer_states.38
+	title = boer_states.38.t
+	desc = boer_states.38.d
+
+	is_triggered_only=yes
+
+	trigger = {
+		OFS = {
+			exists = yes
+		}
+	}
+
+	option = {
+		name = boer_states.38.a
+		ai_chance = { factor = 75 }
+		hidden_effect = {
+			random_list = {
+				20 = {
+					country_event = boer_states.39
+					OFS = {
+						country_event = boer_states.40
+					}
+				}
+				80 = {
+					country_event = boer_states.41
+				}
+			}
+			set_country_flag = TRV_Pretorius_Booted
+		}
+	}
+}
+
+country_event = { #TRV - Pretorius steps down as OFS President
+	id = boer_states.39
+	title = boer_states.39.t
+	desc = boer_states.39.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.39.a
+		ai_chance = { factor = 75 }
+		add_stability = 0.15
+		add_political_power = 25
+	}
+}
+
+country_event = { #OFS - Pretorius steps down as OFS President
+	id = boer_states.40
+	title = boer_states.40.t
+	desc = boer_states.40.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.40.a
+		ai_chance = { factor = 75 }
+		add_stability = -0.1
+		add_political_power = -50
+		promote_character = OFS_Volksraad
+	}
+}
+
+country_event = { #TRV - Pretorius steps down as TRV President
+	id = boer_states.41
+	title = boer_states.41.t
+	desc = boer_states.41.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.41.a
+		ai_chance = { factor = 75 }
+		add_stability = -0.1
+		add_political_power = -50
+		TRV_Marthinus_Wessel_Pretorius = {
+			set_nationality = OFS
+		}
+		hidden_effect = {
+			country_event = {
+				id = boer_states.42
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = { #TRV - Schoeman attempts coup
+	id = boer_states.42
+	title = boer_states.42.t
+	desc = boer_states.42.d
+
+	is_triggered_only=yes
+
+	option = { #Persuaded to submit to a trial
+		name = boer_states.42.a
+		ai_chance = { factor = 75 }
+		add_political_power = 50
+		promote_character = TRV_Rensburg
+		hidden_effect = {
+			country_event = {
+				id = boer_states.43
+				days = 25
+			}
+		}
+	}
+
+	option = { #Schoeman Remains as President
+		name = boer_states.42.b
+		ai_chance = { factor = 25 }
+		add_stability = -0.1
+		add_political_power = -150
+		set_nationality = {
+			target_country = TRV
+			character = TRV_Stephanus_Schoeman
+		}
+		promote_character = TRV_Stephanus_Schoeman
+		annex_country = {
+			target = NIR
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			1143 = {
+				remove_claim_by = NIR
+			}
+		}
+	}
+}
+
+country_event = { #TRV - Schoeman stars civil war
+	id = boer_states.43
+	title = boer_states.43.t
+	desc = boer_states.43.d
+
+	is_triggered_only=yes
+
+	option = {
+		name = boer_states.43.a
+		ai_chance = { factor = 75 }
+		release_puppet = NIR
+		NIR = {
+			declare_war_on = {
+				target = TRV
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			set_country_flag = TRV_civil_War
+		}
+	}
+}
+
+country_event = { #TRV - Elections are held
+	id = boer_states.44
+	title = boer_states.44.t
+	desc = boer_states.44.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = TRV
+		has_country_flag = TRV_civil_War
+		NIR = {
+			exists = no
+		}
+	}
+
+	option = {
+		name = boer_states.44.a
+		ai_chance = { factor = 75 }
+		promote_character = TRV_Rensburg
+		add_ideas = TRV_idea_economic_aftermath
+		add_ideas = TRV_idea_political_aftermath
+		hidden_effect = {
+			1143 = {
+				remove_claim_by = NIR
+			}
+		}
+	}
+}
+
+country_event = { #TRV - Pretorius Elected Pres in OFS
+	id = boer_states.45
+	title = boer_states.45.t
+	desc = boer_states.45.d
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.45.a
+		ai_chance = { factor = 75 }
+		promote_character = TRV_Johannes_Grobler
+		hidden_effect = {
+			country_event = {
+				id = boer_states.38
+				days = 183
+			}
+		}
+	}
+}
+
+#############################################################
+
+############################################
+### Boer Unification Talks ###
+############################################
+
+country_event = { #TRV - OFS Request Unification Talks
+	id = boer_states.46
+	title = boer_states.46.t
+	desc = boer_states.46.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	#Accept
+	option = {
+		name = boer_states.46.a
+		ai_chance = { factor = 75 }
+		hidden_effect = {
+			OFS = {
+				country_event = {
+					id = boer_states.48
+					days = 3
+				}
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = boer_states.46.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		OFS = {
+			country_event = boer_states.47
+		}
+	}
+}
+
+country_event = { #OFS = Talks Fail
+	id = boer_states.47
+	title = boer_states.47.t
+	desc = boer_states.47.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.47.a
+		ai_chance = { factor = 75 }
+		add_political_power = -100
+	}
+}
+
+country_event = { #OFS = Talks Begin
+	id = boer_states.48
+	title = boer_states.48.t
+	desc = boer_states.48.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	option = {
+		name = boer_states.48.a
+		ai_chance = { factor = 75 }
+		TRV = {
+			country_event = {
+				id = boer_states.49
+				days = 3
+			}
+		}
+		hidden_effect = {
+			set_country_flag = OFS_unification_talks
+		}
+	}
+}
+
+country_event = { #TRV - OFS Requests Economic Investment
+	id = boer_states.49
+	title = boer_states.49.t
+	desc = boer_states.49.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			has_country_flag = OFS_unification_talks
+		}
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	#Accept
+	option = {
+		name = boer_states.49.a
+		ai_chance = { factor = 75 }
+		add_political_power = -100
+		OFS = {
+			country_event = {
+				id = boer_states.50
+				days = 10
+			}
+		}
+		hidden_effect = {
+			OFS = {
+				set_country_flag = OFS_accept_unification
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = boer_states.49.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 100
+		OFS = {
+			country_event = {
+				id = boer_states.50
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = { #OFS - TRV Request Break Uk Relations
+	id = boer_states.50
+	title = boer_states.50.t
+	desc = boer_states.50.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			has_country_flag = OFS_unification_talks
+		}
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	#Accept
+	option = {
+		name = boer_states.50.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -100
+		TRV = {
+			country_event = {
+				id = boer_states.51
+				days = 10
+			}
+		}
+		hidden_effect = {
+			TRV = {
+				set_country_flag = TRV_accept_unification
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = boer_states.50.b
+		ai_chance = { factor = 75 }
+		add_political_power = 100
+		TRV = {
+			country_event = {
+				id = boer_states.51
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = { #TRV - OFS Requests Help with SOT
+	id = boer_states.51
+	title = boer_states.51.t
+	desc = boer_states.51.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			has_country_flag = OFS_unification_talks
+		}
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	#Accept
+	option = {
+		name = boer_states.51.a
+		ai_chance = { factor = 50 }
+		add_political_power = -100
+		OFS = {
+			country_event = {
+				id = boer_states.52
+				days = 10
+			}
+		}
+		hidden_effect = {
+			OFS = {
+				set_country_flag = OFS_accept_unification
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = boer_states.51.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 100
+		OFS = {
+			country_event = {
+				id = boer_states.52
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = { #ofs = TRV Request Pretoria as Capital
+	id = boer_states.52
+	title = boer_states.52.t
+	desc = boer_states.52.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			has_country_flag = OFS_unification_talks
+		}
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	#Accept
+	option = {
+		name = boer_states.52.a
+		ai_chance = { factor = 75 }
+		add_political_power = -100
+		OFS = {
+			country_event = {
+				id = boer_states.53
+				days = 15
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = boer_states.52.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 100
+		OFS = {
+			country_event = {
+				id = boer_states.52
+				days = 15
+			}
+		}
+	}
+}
+
+country_event = { #OFS - Talk Results
+	id = boer_states.53
+	title = boer_states.53.t
+	desc = boer_states.53.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	trigger = {
+		OFS = {
+			has_country_flag = OFS_unification_talks
+		}
+		TRV = {
+			NOT = {
+				has_country_flag = TRV_Pretorius_Booted
+			}
+		}
+	}
+
+	option = {
+		name = boer_states.53.a
+		ai_chance = { factor = 75 }
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = OFS_accept_unification
+					TRV = {
+						has_country_flag = TRV_accept_unification
+					}
+				}
+				country_event = boer_states.54 #Unification
+			}
+			else = {
+				country_event = boer_states.55 #Failure
+			}
+			add_political_power = 1
+		}
+	}
+}
+
+country_event = { #OFS - Unification
+	id = boer_states.54
+	title = boer_states.54.t
+	desc = boer_states.54.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.54.a
+		ai_chance = { factor = 75 }
+		TRV = {change_tag_from = OFS }
+		TRV = {
+			annex_country = {
+				target = OFS
+				transfer_troops = yes
+			}
+		}
+		hidden_effect = {
+			TRV = {
+				clr_country_flag = TRV_accept_unification
+			}
+			clr_country_flag = OFS_accept_unification
+		}
+	}
+}
+
+country_event = { #OFS - Unification Failure
+	id = boer_states.55
+	title = boer_states.55.t
+	desc = boer_states.55.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.55.a
+		ai_chance = { factor = 75 }
+		add_political_power = -100
+		hidden_effect = {
+			TRV = {
+				clr_country_flag = TRV_accept_unification
+				country_event = {
+					id = boer_states.56
+					days = 2
+				}
+			}
+			clr_country_flag = OFS_accept_unification
+			clr_country_flag = OFS_unification_talks
+		}
+	}
+}
+
+country_event = { #TRV - National Flag
+	id = boer_states.56
+	title = boer_states.56.t
+	desc = boer_states.56.d
+	picture = GFX_report_event_unified_flags
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.56.a
+		ai_chance = { factor = 5 }
+		hidden_effect = {
+			set_cosmetic_tag = TRV_united_1
+		}
+	}
+
+	option = {
+		name = boer_states.56.b
+		ai_chance = { factor = 5 }
+		hidden_effect = {
+			set_cosmetic_tag = TRV_united_2
+		}
+	}
+
+	option = {
+		name = boer_states.56.c
+		ai_chance = { factor = 5 }
+		hidden_effect = {
+			set_cosmetic_tag = TRV_united_3
+		}
+	}
+
+	option = {
+		name = boer_states.56.e
+		ai_chance = { factor = 5 }
+	}
+}
+
+country_event = { #OFS - GQE Migrates East
+	id = boer_states.57
+	title = boer_states.57.t
+	desc = boer_states.57.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.57.a
+		ai_chance = { factor = 75 }
+		transfer_state = 776
+		GQE = {
+			transfer_state = 1150
+		}
+		hidden_effect = {
+			776 = {
+				remove_claim_by = GQE
+			}
+			1150 = {
+				remove_claim_by = RHO
+			}
+		}
+	}
+}
+
+country_event = { #Lydenburg & Utrecht Merge
+	id = boer_states.58
+	title = boer_states.58.t
+	desc = boer_states.58.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.58.a
+		ai_chance = { factor = 75 }
+		annex_country = {
+			target = STL
+			transfer_troops = yes
+		}
+		1144 = {
+			remove_claim_by = STL
+			add_claim_by = GOS
+		}
+	}
+}
+
+country_event = { #Lydenburg & Utrecht join TRV
+	id = boer_states.59
+	title = boer_states.59.t
+	desc = boer_states.59.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.59.a
+		ai_chance = { factor = 75 }
+		annex_country = {
+			target = GOS
+			transfer_troops = yes
+		}
+		1144 = {
+			remove_claim_by = GOS
+		}
+		1140 = {
+			remove_claim_by = GOS
+		}
+	}
+}
+
+country_event = { #Shepstone Arrives in TRV
+	id = boer_states.60
+	title = boer_states.60.t
+	desc = boer_states.60.d
+	picture = GFX_report_event_south_africa
+
+	is_triggered_only=yes
+	fire_only_once = yes
+
+	option = {
+		name = boer_states.60.a
+		ai_chance = { factor = 75 }
+		ENG = {
+			set_autonomy = {
+				target = TRV
+				autonomy_state = autonomy_british_crown_colony
+			}
+		}
+		set_cosmetic_tag = TRV_ENG_dominated
+		add_ideas = AFR_british_colony
+		add_ideas = TRV_idea_useless_volksraad
+		add_popularity = { ideology = autocracy popularity = 0.03 }
+		set_politics = { ruling_party = autocracy elections_allowed = no }
+		hidden_effect = {
+			set_country_flag = TRV_shepstone_takeover
+			complete_national_focus = TRV_focus_shepstone_arrival
+		}
+	}
+}

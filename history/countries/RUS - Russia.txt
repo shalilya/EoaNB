@@ -29,30 +29,43 @@
 
 	add_to_variable = { prestige_score = 75 }
 
-	set_research_slots = 4
+	set_research_slots = 3
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 35 }
+	set_variable = { current_loans_sum = 138 }
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
+		#has_heir
 
-		absolute_monarchy
-		no_constitution
+		#absolute_monarchy
+		#no_constitution
 		no_elections
 
 		state_controlled_press
-		foa_restricted_attendance
+		foa_banned
 
 		civilian_economy
 		limited_exports
-		five_percent
-		normal_taxes
+		army_spending_level_4
+		taxation_level_1
 		cl_legal
-		lp_serfdom
+		
 
 		#stagnation_growth
 		border_control
@@ -64,11 +77,11 @@
 		state_religion
 		#religion_orthodox
 
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_low_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_2
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		RUS_idea_russian_corruption1
@@ -79,7 +92,6 @@
 		RUS_idea_tsarist_vodka_monopoly
 		RUS_WUR_politica_isolation
 		RUS_idea_caucasuswar
-		RUS_idea_urbanisation0
 		egy_vic_debt
 	}
 
@@ -136,6 +148,12 @@
 	#Most Favoured Country
 	set_variable = { most_favoured_country = FIN.id }
 
+	###Urban Reform
+	set_variable = { RUS_urbanisation_cgf = 0.03 }
+	set_variable = { RUS_urbanisation_ppg = -0.05 }
+	set_variable = { RUS_urbanisation_tcd = 0 }
+	set_variable = { RUS_urbanisation_cd = 0 }
+	add_dynamic_modifier = { modifier = dynmod_RUS_urbanisation }
 	###Situation of Navy 
 	
 	set_variable = { RUS_naval_reform_cgf = 0.05 }
@@ -164,6 +182,13 @@
 	set_variable = { RUS_army_reform_egaf = -0.4 }
 	set_variable = { RUS_army_reform_mlcf = -0.5 }
 	add_dynamic_modifier = { modifier = dynmod_RUS_army_situation }
+	#Balance of Power
+	set_power_balance = {
+		id = RUS_Balance_of_Power_Russian_Establishment
+		left_side = RUS_reactionary_side
+		right_side = RUS_progressive_side
+		set_value = 0
+	}
 
 	set_politics = {
 		ruling_party = autocracy
@@ -244,13 +269,13 @@
 		tech_naval_mtg_1850_gunboat = 1
 		tech_naval_mtg_1860_gunboat = 1
 		tech_naval_mtg_gunboat_engineering_1 = 1
-		tech_naval_mtg_1868_gunboat = 1
+		#tech_naval_mtg_1868_gunboat = 1
 		tech_naval_mtg_prototype_monitor = 1 #Prototype Monitor
 		#Corvettes and Destroyers
 		tech_naval_mtg_simple_corvette_hull = 1 #Early Corvette
 		tech_naval_mtg_1857_corvette_hull = 1 #1857 Corvette
 		tech_naval_mtg_1860_corvette_hull = 1
-		tech_naval_mtg_ironclad_corvette_hull = 1 #1868 Ironclad Corvette
+		#tech_naval_mtg_ironclad_corvette_hull = 1 #1868 Ironclad Corvette
 		#Mainline Ships
 		tech_naval_mtg_early_frigate = 1 #Early Frigate
 		tech_naval_mtg_1850_frigate = 1 #1850 Frigate
@@ -259,7 +284,7 @@
 		tech_naval_mtg_1857_lineship = 1
 		tech_naval_mtg_hardwood_capital_ship_hulls = 1 #Hardwood Capital Ship Hulls
 		tech_naval_mtg_prototype_ironclad = 1 #Early Ironclad
-		tech_naval_ironclad_frigate = 1 #Ironclad
+		#tech_naval_ironclad_frigate = 1 #Ironclad
 		#Armament
 		tech_naval_mtg_24_pounder_battery = 1 #24-Pounder Battery
 		tech_naval_mtg_32_pounder_battery = 1 #32-Pounder Battery
@@ -285,6 +310,16 @@
 		tech_naval_mtg_capital_ship_naval_transportation = 1 #Capital Ship Naval Transportation
 		tech_naval_mtg_merchant_ship_requisitioning = 1 #Merchant Requisitioning
 		
+		###Naval Legacy
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
+		tech_naval_corvette = 1
+		tech_naval_corvette_1 = 1
+		tech_naval_early_gunboat = 1
+		tech_naval_lineship = 1
+		tech_naval_early_gunboat = 1
+		tech_naval_1857_lineship = 1
+
 		###Flight Technology
 		
 		###Mechanical Engineering
@@ -440,6 +475,11 @@
 	recruit_character = RUS_valerian_tatarinov					#no pic
 	recruit_character = RUS_dmitry_bludov						#no pic
 	recruit_character = RUS_yakov_rostovcev
+	recruit_character = RUS_konstantin_groth
+	recruit_character = RUS_alexander_golovnin 
+	recruit_character = RUS_dmitry_tolstoy 
+	recruit_character = RUS_dmitry_zamyatin
+	recruit_character = RUS_michael_loris_melikov
 	
 	#Theorists
 	recruit_character = RUS_alexander_kvist						#no pic
@@ -912,6 +952,9 @@ if = {
 
 1870.5.19 = {
 	oob = "RUS_1870"
+
+	end_puppet = ALK
+
 
 if = {
 		limit = { has_dlc = "Man the Guns" }

@@ -6,20 +6,32 @@
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1500 producer = EZO }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = EZO }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		# State & Country
-		hos_is_leader
-		non_monarchical_system
+		#hos_is_leader
+		#non_monarchical_system
 		industrializing
 		pre_industrial_era
 		law_victorian_army
 		#religion_shinto
 		# Government
-		presidential_republic
-		no_constitution
+		#presidential_republic
+		#no_constitution
 		limited_elections
-		executive_influence
-		federal_control
+		#executive_influence
+		#federal_control
 		# Culture
 		privileged_education
 		state_religion
@@ -30,10 +42,10 @@
 		# Economic
 		closed_economy
 		limited_exports
-		high_taxes
+		taxation_level_4
 		cl_legal
-		unlimited_work_day
-		lp_serfdom
+		
+		
 		# Population
 		#stagnation_growth
 		border_control
@@ -42,12 +54,12 @@
 		absolutism
 		pp_limited_party_freedom
 		# Budget
-		hc_no_healthcare
-		law_military_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_2
+		road_spending_level_1
+		navy_spending_level_1
+		army_spending_level_3
+		research_spending_level_1
 	}
 
 	set_politics = {

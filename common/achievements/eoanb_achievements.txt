@@ -51,7 +51,6 @@ oh_canada ={
         owns_state = 473
         owns_state = 740
         owns_state = 471
-        owns_state = 739
 	}
 }
 
@@ -100,7 +99,7 @@ avanti_italia ={
 		tag = PIE
 	}
 	happened={
-        has_global_flag = is_literally_italy
+        has_country_flag = is_literally_italy
 	}
 }
 
@@ -144,7 +143,7 @@ etruria_ascendant ={
 		tag = TUS
 	}
 	happened={
-        has_global_flag = is_literally_italy
+        has_country_flag = is_literally_italy
 	}
 }
 
@@ -195,7 +194,7 @@ chen_kai_long_march ={
 			has_cosmetic_tag = GXC_ming
 			has_cosmetic_tag = GXC_ming_true
 		}
-        controls_state = 608
+        controls_state = 613
 	}
 }
 
@@ -220,20 +219,20 @@ constantinople_glory ={
 		tag = OTO
 	}
 	happened={
-		has_global_flag = eoanb_world_fair_held_flag
+		has_country_flag = eoanb_flag_hold_world_fair_preparations_mainbuildings
 	}
 }
 
-heretics_everywhere ={
-	possible={
-		has_start_date < 1857.5.12
-		game_rules_allow_achievements = yes
-		tag = OTO
-	}
-	happened={
-		has_completed_focus = OTO_vic_traditional_ideals
-	}
-}
+#heretics_everywhere ={
+#	possible={
+#		has_start_date < 1857.5.12
+#		game_rules_allow_achievements = yes
+#		tag = OTO
+#	}
+#	happened={
+#		has_completed_focus = OTO_vic_traditional_ideals
+#	}
+#}
 
 hindustan ={
 	possible={
@@ -287,7 +286,7 @@ future_zimbabwe ={
 		tag = ROZ
 	}
 	happened={
-		owns_state = 1398
+		owns_state = 1159
 	}
 }
 
@@ -321,5 +320,48 @@ army_state ={
 	}
 	happened={
 		num_divisions > 300
+	}
+}
+
+empire_strikes_back ={
+	possible={
+		has_start_date < 1857.5.12
+		game_rules_allow_achievements = yes
+		tag = RAJ
+	}
+	happened={
+		ENG = {
+			has_completed_focus = ENG_focus_humiliation_by_sepoy
+		}
+		SRS ={
+			exists = no
+		}
+	}
+}
+
+once_winner ={
+	possible={
+		has_start_date < 1857.5.12
+		game_rules_allow_achievements = yes
+		tag = SRS
+	}
+	happened={
+		RAJ ={
+			exists = no
+		}
+	}
+}
+
+home_by_xmas ={
+	possible={
+		has_start_date < 1857.5.12
+		game_rules_allow_achievements = yes
+		tag = RAJ
+	}
+	happened={
+		date < 1857.12.25
+		SRS ={
+			exists = no
+		}
 	}
 }

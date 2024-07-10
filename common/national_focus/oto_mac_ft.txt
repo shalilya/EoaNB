@@ -1274,7 +1274,7 @@ focus_tree = {
 	}
 	focus = {
 		id = OTO_mac_fix_wheat_prices
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_wheat
 		cost = 70.00
 		x = 35
 		y = 6
@@ -1487,19 +1487,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			if={
-				limit={
-					OR={
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				add_political_power = 2
-			}
-			else={
-				add_political_power = 1
-			}
+			add_political_power = 2
 		}
 	}
 	focus = {

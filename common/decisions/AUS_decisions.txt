@@ -64,16 +64,16 @@ AUS_decision_category_italian_unrest = {
 						ITA_UPROAR_RISK = -0.01
 					}
 				}
-				if = {
-					limit = {
-						LVN = {
-							has_idea = human_rights
-						}
-					}
-					add_to_variable = {
-						ITA_UPROAR_RISK = -0.005
-					}
-				}
+				#if = {
+				#	limit = {
+				#		LVN = {
+				#			has_idea = human_rights
+				#		}
+				#	}
+				#	add_to_variable = {
+				#		ITA_UPROAR_RISK = -0.005
+				#	}
+				#}
 				if = {
 					limit = {
 						LVN = {
@@ -207,7 +207,7 @@ AUS_decision_category_italian_unrest = {
 			LVN = {
 				is_puppet_of = AUS
 				OR = {
-					NOT = { has_idea = human_rights }
+					#NOT = { has_idea = human_rights }
 					NOT = {	has_idea = free_press }
 				}
 			}
@@ -231,14 +231,14 @@ AUS_decision_category_italian_unrest = {
 		
 		complete_effect = {
 			custom_effect_tooltip = AUS_unrest_in_italy_minus_two_effect_tt
-			if = {
-				limit = {
-					LVN = {
-						NOT = { has_idea = human_rights }
-					}
-				}
-				unlock_decision_tooltip = AUS_decision_grant_human_rights_in_lvn
-			}
+			#if = {
+			#	limit = {
+			#		LVN = {
+			#			NOT = { has_idea = human_rights }
+			#		}
+			#	}
+			#	unlock_decision_tooltip = AUS_decision_grant_human_rights_in_lvn
+			#}
 			if = {
 				limit = {
 					LVN = {
@@ -291,7 +291,7 @@ AUS_decision_category_italian_unrest = {
 		visible = {
 			LVN = {
 				is_puppet_of = AUS
-				NOT = { has_idea = human_rights }
+				#NOT = { has_idea = human_rights }
 			}
 			has_country_flag = AUS_decision_make_promises_of_liberalization_in_italy_complete_effect_flag
 			has_active_mission = AUS_mission_calm_the_unrest_in_italy
@@ -302,7 +302,7 @@ AUS_decision_category_italian_unrest = {
 		complete_effect = {
 			custom_effect_tooltip = AUS_unrest_in_italy_minus_ten_effect_tt
 			LVN = {
-				add_ideas = human_rights
+				#add_ideas = human_rights
 				add_stability = 0.03
 			}
 			hidden_effect = {
@@ -3213,7 +3213,7 @@ AUS_decision_category_domestic_politics = {
 		
 		modifier = {
 			political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -3292,7 +3292,7 @@ AUS_decision_category_domestic_politics = {
 		
 		modifier = {
 			political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -3367,7 +3367,7 @@ AUS_decision_category_domestic_politics = {
 		
 		modifier = {
 			political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -3441,7 +3441,7 @@ AUS_decision_category_domestic_politics = {
 		
 		modifier = {
 			political_power_gain = -0.1
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -5119,9 +5119,9 @@ AUS_decision_category_financial_affairs = {
 		visible = {
 			has_completed_focus = AUS_focus_cut_army_budget
 			OR = {
-				has_idea = ten_percent
-				has_idea = five_percent
-				has_idea = three_percent
+				has_idea = army_spending_level_5
+				has_idea = army_spending_level_4
+				has_idea = army_spending_level_3
 			}
 		}
 		
@@ -5141,29 +5141,29 @@ AUS_decision_category_financial_affairs = {
 			add_stability = -0.02
 			if = {
 				limit = {
-					has_idea = three_percent
+					has_idea = army_spending_level_3
 				}
-				swap_ideas = { remove_idea = three_percent add_idea = two_percent }
+				swap_ideas = { remove_idea = army_spending_level_3 add_idea = army_spending_level_2 }
 				hidden_effect = {
-					set_country_flag = AUS_army_budget_was_three_percent
+					set_country_flag = AUS_army_budget_was_army_spending_level_3
 				}
 			}
 			else_if = {
 				limit = {
-					has_idea = five_percent
+					has_idea = army_spending_level_4
 				}
-				swap_ideas = { remove_idea = five_percent add_idea = three_percent }
+				swap_ideas = { remove_idea = army_spending_level_4 add_idea = army_spending_level_3 }
 				hidden_effect = {
-					set_country_flag = AUS_army_budget_was_five_percent
+					set_country_flag = AUS_army_budget_was_army_spending_level_4
 				}
 			}
 			else_if = {
 				limit = {
-					has_idea = ten_percent
+					has_idea = army_spending_level_5
 				}
-				swap_ideas = { remove_idea = ten_percent add_idea = five_percent }
+				swap_ideas = { remove_idea = army_spending_level_5 add_idea = army_spending_level_4 }
 				hidden_effect = {
-					set_country_flag = AUS_army_budget_was_ten_percent
+					set_country_flag = AUS_army_budget_was_army_spending_level_5
 				}
 			}
 			hidden_effect = {
@@ -5396,7 +5396,7 @@ AUS_decision_category_habsburg_industry = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {
@@ -5467,7 +5467,7 @@ AUS_decision_category_habsburg_industry = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {
@@ -5545,7 +5545,7 @@ AUS_decision_category_habsburg_industry = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {
@@ -5624,7 +5624,7 @@ AUS_decision_category_habsburg_industry = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {
@@ -5696,7 +5696,7 @@ AUS_decision_category_habsburg_industry = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {
@@ -6680,28 +6680,28 @@ AUS_decision_category_habsburg_industry = {
 		 
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 		
 		complete_effect = {
 			if = {
 				limit = { 
-					has_idea = inframain_no_subsidies_infrastructure 
+					has_idea = road_spending_level_1 
 				} 
-				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+				swap_ideas = { remove_idea = road_spending_level_1 add_idea = road_spending_level_2 }
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_basic_maintenance_infrastructure
+					has_idea = road_spending_level_2
 				}
-				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure } 
+				swap_ideas = { remove_idea = road_spending_level_2 add_idea = road_spending_level_3 } 
 			}
 			else_if = {
 				limit = {
-					has_idea = inframain_well_maintaned_infrastructure
+					has_idea = road_spending_level_3
 				}
-				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion } 
+				swap_ideas = { remove_idea = road_spending_level_3 add_idea = road_spending_level_4 } 
 			}
 		}
 			
@@ -6728,8 +6728,8 @@ AUS_decision_category_austrian_army = {
 			has_idea = AUS_theorist_august_von_degenfeld
 			has_completed_focus = AUS_focus_follow_hauslabs_ideas
 			OR = {
-				has_idea = ten_percent
-				has_idea = five_percent
+				has_idea = army_spending_level_5
+				has_idea = army_spending_level_4
 			}
 			has_idea = AUS_idea_modified_operational_structure
 			has_idea = AUS_idea_military_railway_department
@@ -6753,6 +6753,7 @@ AUS_decision_category_austrian_army = {
 		}
 		
 		timeout_effect = {
+			custom_effect_tooltip = AUS_mission_army_reform_timeout_effect_tt
 			decrease_ps_by_one = yes
 			add_political_power = -100
 			add_stability = -0.05
@@ -6760,11 +6761,15 @@ AUS_decision_category_austrian_army = {
 		}
 		
 		complete_effect = {
+			custom_effect_tooltip = AUS_mission_army_reform_complete_effect_tt
 			army_experience = 50
 			add_political_power = 100
 			add_stability = 0.05
 			add_war_support = 0.15
 			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 2 category = doctrine_victorian_innovative_tech }
+			hidden_effect = {
+				set_country_flag = AUS_army_reform_success_flag
+			}
 		}
 	}
 	
@@ -6779,8 +6784,8 @@ AUS_decision_category_austrian_army = {
 			has_idea = AUS_theorist_ludwig_von_benedek
 			has_completed_focus = AUS_focus_implement_the_stosstaktik
 			OR = {
-				has_idea = five_percent
-				has_idea = three_percent
+				has_idea = army_spending_level_4
+				has_idea = army_spending_level_3
 			}
 			has_idea = AUS_idea_modified_operational_structure
 			has_idea = AUS_idea_new_infantry_regulations_benedek_2
@@ -6803,6 +6808,7 @@ AUS_decision_category_austrian_army = {
 		}
 		
 		timeout_effect = {
+			custom_effect_tooltip = AUS_mission_army_reform_timeout_effect_tt
 			decrease_ps_by_one = yes
 			add_political_power = -100
 			add_stability = -0.05
@@ -6810,11 +6816,15 @@ AUS_decision_category_austrian_army = {
 		}
 		
 		complete_effect = {
+			custom_effect_tooltip = AUS_mission_army_reform_complete_effect_tt
 			army_experience = 50
 			add_political_power = 100
 			add_stability = 0.05
 			add_war_support = 0.15
 			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 2 category = doctrine_victorian_traditional_tech }
+			hidden_effect = {
+				set_country_flag = AUS_army_reform_success_flag
+			}
 		}
 	}
 	
@@ -8219,7 +8229,7 @@ AUS_decision_category_austrian_navy = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		cancel_trigger = {
@@ -8306,7 +8316,7 @@ AUS_decision_category_austrian_navy = {
 		
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		cancel_trigger = {
@@ -9355,12 +9365,19 @@ political_actions = {
 		icon = generic_political_discourse
 
 		available = {
-			FRK = { has_idea = GER_general_idea_ger_confed }
+			FRK = {
+				custom_trigger_tooltip = {
+					tooltip = is_part_of_the_german_confederation_trigger_tt
+					hidden_trigger = {
+						is_part_of_the_german_confederation = yes
+					}
+				}
+			}
 		}
 
 		visible = {
 			date > 1863.9.1
-			has_idea = GER_general_idea_ger_confed
+			is_part_of_the_german_confederation = yes
 		}
 
 		fire_only_once = yes
@@ -9372,7 +9389,7 @@ political_actions = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						has_idea = GER_general_idea_ger_confed
+						is_part_of_the_german_confederation = yes
 						NOT = { TAG = AUS }
 					}
 					country_event = { days = 1 id = gerconfed.1 }
@@ -9395,12 +9412,19 @@ political_actions = {
 		icon = generic_political_discourse
 
 		available = {
-			FRK = { has_idea = GER_general_idea_ger_confed }
+			FRK = {
+				custom_trigger_tooltip = {
+					tooltip = is_part_of_the_german_confederation_trigger_tt
+					hidden_trigger = {
+						is_part_of_the_german_confederation = yes
+					}
+				}
+			}
 		}
 
 		visible = {
 			date > 1863.9.1
-			has_idea = GER_general_idea_ger_confed
+			is_part_of_the_german_confederation = yes
 		}
 
 		fire_only_once = yes
@@ -9412,7 +9436,7 @@ political_actions = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						has_idea = GER_general_idea_ger_confed
+						is_part_of_the_german_confederation = yes
 						NOT = { TAG = AUS }
 					}
 					country_event = { days = 1 id = gerconfed.6 }
@@ -9458,7 +9482,7 @@ political_actions = {
 #		}
 #
 #		visible = {
-#			has_idea = GER_general_idea_ger_confed
+#			is_part_of_the_german_confederation = yes
 #			AUS = {
 #				has_war_with = PIE
 #			}

@@ -3113,6 +3113,12 @@ defined_text = {
 		}
 		localization_key = "Mid-Westerner"
 	}
+		text = {
+		trigger = {
+			check_variable = { v = global.westerner }
+		}
+		localization_key = "Westerner"
+	}
 	text = {
 		trigger = {
 			check_variable = { v = global.newyorker }
@@ -3242,9 +3248,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.native_gulf }
+			check_variable = { v = global.muskogean }
 		}
-		localization_key = "Gulf"
+		localization_key = "Muskogean"
 	}
 	text = {
 		trigger = {
@@ -3266,9 +3272,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.pueblo }
+			check_variable = { v = global.tanoan }
 		}
-		localization_key = "Pueblo"
+		localization_key = "Tanoan"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = global.caddoan }
+		}
+		localization_key = "Caddoan"
 	}
 	text = {
 		trigger = {
@@ -3332,9 +3344,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.basin }
+			check_variable = { v = global.numic }
 		}
-		localization_key = "Basin"
+		localization_key = "Numic"
 	}
 	text = {
 		trigger = {
@@ -3473,6 +3485,12 @@ defined_text = {
 			check_variable = { v = global.guianan }
 		}
 		localization_key = "Guianan"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = global.takic }
+		}
+		localization_key = "Takic"
 	}
 
 	text = {
@@ -6277,6 +6295,12 @@ defined_text = {
 		}
 		localization_key = "GFX_culture_anglo_american_midwesterner"
 	}
+		text = {
+		trigger = {
+			check_variable = { v = global.westerner }
+		}
+		localization_key = "GFX_culture_anglo_american_midwesterner"
+	}
 	text = {
 		trigger = {
 			check_variable = { v = global.newyorker }
@@ -6491,9 +6515,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.native_gulf }
+			check_variable = { v = global.muskogean }
 		}
-		localization_key = "GFX_culture_native_american_gulf"
+		localization_key = "GFX_culture_muskogean"
 	}
 	text = {
 		trigger = {
@@ -6515,9 +6539,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.pueblo }
+			check_variable = { v = global.tanoan }
 		}
-		localization_key = "GFX_culture_native_american_pueblo"
+		localization_key = "GFX_culture_native_american_tanoan"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = global.caddoan }
+		}
+		localization_key = "GFX_culture_native_american_caddoan"
 	}
 	text = {
 		trigger = {
@@ -6575,9 +6605,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { v = global.basin }
+			check_variable = { v = global.numic }
 		}
-		localization_key = "GFX_culture_native_american_basin"
+		localization_key = "GFX_culture_native_american_numic"
 	}
 	text = {
 		trigger = {
@@ -6812,6 +6842,12 @@ defined_text = {
 			check_variable = { v = global.guianan }
 		}
 		localization_key = "GFX_culture_guianan_guianan"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = global.takic }
+		}
+		localization_key = "GFX_culture_native_american_nahua"
 	}
 	text = {
 		localization_key = "GFX_culture_unknown"
@@ -8385,24 +8421,6 @@ defined_text = {
 	    localization_key = "[?national_culture_array_2_population^i|0] k"
 	}
 }
-defined_text = {
-	name = GetDciRisk
-	text = {
-		trigger = {
-            check_variable = { detrimental_colonial_impact_value > 24 }
-		}
-		localization_key = DCI_state_value_red
-	}
-	text = {
-		trigger = {
-            check_variable = { detrimental_colonial_impact_value > 9 }
-		}
-	    localization_key = DCI_state_value_yellow
-	}
-	text = {
-	    localization_key = DCI_state_value_normal
-	}
-}
 
 defined_text = {
 	name = GetSubcultureMapmodeMaj
@@ -8568,6 +8586,7 @@ defined_text = {
 			check_variable = { state_culture_array^0 = global.english }
 		}
 		localization_key = "English"
+
 	}
 	text = {
 		trigger = {
@@ -11491,6 +11510,12 @@ defined_text = {
 		}
 		localization_key = "Mid-Westerner"
 	}
+		text = {
+		trigger = {
+			check_variable = { state_culture_array^0 = global.westerner }
+		}
+		localization_key = "Westerner"
+	}
 	text = {
 		trigger = {
 			check_variable = { state_culture_array^0 = global.newyorker }
@@ -11620,9 +11645,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { state_culture_array^0 = global.native_gulf }
+			check_variable = { state_culture_array^0 = global.muskogean }
 		}
-		localization_key = "Gulf"
+		localization_key = "Muskogean"
 	}
 	text = {
 		trigger = {
@@ -11644,9 +11669,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { state_culture_array^0 = global.pueblo }
+			check_variable = { state_culture_array^0 = global.tanoan }
 		}
-		localization_key = "Pueblo"
+		localization_key = "Tanoan"
+	}
+		text = {
+		trigger = {
+			check_variable = { state_culture_array^0 = global.caddoan }
+		}
+		localization_key = "Caddoan"
 	}
 	text = {
 		trigger = {
@@ -11710,9 +11741,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { state_culture_array^0 = global.basin }
+			check_variable = { state_culture_array^0 = global.numic }
 		}
-		localization_key = "Basin"
+		localization_key = "Numic"
 	}
 	text = {
 		trigger = {
@@ -11851,6 +11882,12 @@ defined_text = {
 			check_variable = { state_culture_array^0 = global.guianan }
 		}
 		localization_key = "Guianan"
+	}
+	text = {
+		trigger = {
+			check_variable = { state_culture_array^0 = global.takic }
+		}
+		localization_key = "Takic"
 	}
 
 	text = {

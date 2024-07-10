@@ -1167,10 +1167,10 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = limited_constitution
-				add_idea = constitution_adopted
-			}
+			#swap_ideas = {
+			#	remove_idea = limited_constitution
+			#	add_idea = constitution_adopted
+			#}
 		}
 	}
 
@@ -1428,11 +1428,7 @@ focus_tree = {
 			has_country_flag = SER_obrenovic_dynasty
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
+			base = 5
 		}
 		prerequisite = {
 			focus = SER_create_balkan_alliance
@@ -3345,9 +3341,9 @@ focus_tree = {
 			if = {
 				limit = {
 					OR = {
-						has_idea = one_percent
-						has_idea = two_percent
-						has_idea = three_percent
+						has_idea = army_spending_level_1
+						has_idea = army_spending_level_2
+						has_idea = army_spending_level_3
 					}
 				}
 				unlock_decision_tooltip = DEN_decision_increase_army_budget
@@ -5457,7 +5453,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			effect_increase_cl_laws = yes
-			effect_decrease_workhours = yes
+		#	effect_decrease_workhours = yes
 		#	due to changes I made for better gaming, this will instead unlock decision
 		#	to deal with the working conditions and the spirits given form start
 		}
@@ -5483,8 +5479,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			swap_ideas = {
-				remove_idea = hc_no_healthcare
-				add_idea = hc_low_healthcare
+				remove_idea = social_spending_level_1
+				add_idea = social_spending_level_2
 			}
 		}
 	}  

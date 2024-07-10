@@ -1,4 +1,4 @@
-﻿add_namespace = haiti
+add_namespace = haiti
 
 country_event = {
     id = haiti.1
@@ -47,55 +47,62 @@ country_event = {
     id = haiti.3
     title = haiti.3.t
     desc = haiti.3.desc
-
     fire_only_once = yes
     is_triggered_only = yes
-	# Saget
-	option = {
-		name = haiti.3.a
-		set_capital = { state = 790 }
-		start_civil_war = {
-			ruling_party = autocracy
-			ideology = traditional_conservatism
-			size = 0
-			capital = 318
-			states = { 
-				318
-			}
-			keep_political_leader = no
-		}
-		hidden_effect = { HAI = { 
-			complete_national_focus = HAI_sagets_republic
-			country_event = { id = haiti.4 } 
-			country_event = { id = haiti.5 days = 1 } # marker 1598
-		} }
-	}	
-	# Salnave
-	option = {
-		name = haiti.3.b
-		ai_chance = { 
-			factor = 10 
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		start_civil_war = {
-			ruling_party = autocracy
-			ideology = traditional_conservatism
-			size = 0
-			capital = 790
-			states = { 
-				790
-			}
-			keep_political_leader = no
-		}
-		hidden_effect = {
-			HAI = { 
-				country_event = { id = haiti.4 } 
-			} 
-		}
-	}
+
+    # Saget
+    option = {
+        name = haiti.3.a
+        set_capital = { state = 790 }
+        if = {
+            limit = { NOT = { has_civil_war = yes } }
+            start_civil_war = {
+                ruling_party = autocracy
+                ideology = traditional_conservatism
+                size = 0
+                capital = 318
+                states = { 
+                    318
+                }
+                keep_political_leader = no
+            }
+        }
+        hidden_effect = { HAI = { 
+            complete_national_focus = HAI_sagets_republic
+            country_event = { id = haiti.4 } 
+            country_event = { id = haiti.5 days = 1 } # marker 1598
+        } }
+    }   
+
+    # Salnave
+    option = {
+        name = haiti.3.b
+        ai_chance = { 
+            factor = 10 
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        if = {
+            limit = { NOT = { has_civil_war = yes } }
+            start_civil_war = {
+                ruling_party = autocracy
+                ideology = traditional_conservatism
+                size = 0
+                capital = 790
+                states = { 
+                    790
+                }
+                keep_political_leader = no
+            }
+        }
+        hidden_effect = {
+            HAI = { 
+                country_event = { id = haiti.4 } 
+            } 
+        }
+    }
 }
 
 country_event = {
@@ -202,16 +209,16 @@ country_event = {
 						  
 					add_ideas = {
 
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						no_heir
-						semi_presidential_republic
+						#no_heir
+						#semi_presidential_republic
 
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 
 						#stagnation_growth
@@ -220,18 +227,18 @@ country_event = {
 						segregation
 						absolutism
 
-						limited_constitution
+						#limited_constitution
 						no_elections
 
 						privileged_education
 						state_religion
 						#religion_catholic
 
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 			}
@@ -323,16 +330,16 @@ country_event = {
 					#POLITICS 
 					add_ideas = {
 
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						no_heir
-						semi_presidential_republic
+						#no_heir
+						#semi_presidential_republic
 
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 
 						#stagnation_growth
@@ -341,18 +348,18 @@ country_event = {
 						segregation
 						absolutism
 
-						limited_constitution
+						#limited_constitution
 						no_elections
 
 						privileged_education
 						state_religion
 						#religion_catholic
 
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 		}
@@ -737,16 +744,16 @@ country_event = {
 					#POLITICS 
 						  
 					add_ideas = {				
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						weak_heir
-						absolute_monarchy
+						#weak_heir
+						#absolute_monarchy
 				
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 				
 						#stagnation_growth
@@ -755,18 +762,18 @@ country_event = {
 						segregation
 						absolutism
 				
-						limited_constitution
+						#limited_constitution
 						no_elections
 				
 						privileged_education
 						state_religion
 						#religion_catholic
 				
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 			}
@@ -837,16 +844,16 @@ country_event = {
 					#POLITICS 
 						  
 					add_ideas = {				
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						weak_heir
-						absolute_monarchy
+						#weak_heir
+						#absolute_monarchy
 				
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 				
 						#stagnation_growth
@@ -855,18 +862,18 @@ country_event = {
 						segregation
 						absolutism
 				
-						limited_constitution
+						#limited_constitution
 						no_elections
 				
 						privileged_education
 						state_religion
 						#religion_catholic
 				
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 			}
@@ -1101,16 +1108,16 @@ country_event = {
 					#POLITICS 
 						  
 					add_ideas = {				
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						weak_heir
-						semi_presidential_republic
+						#weak_heir
+						#semi_presidential_republic
 				
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 				
 						#stagnation_growth
@@ -1119,18 +1126,18 @@ country_event = {
 						segregation
 						absolutism
 				
-						limited_constitution
+						#limited_constitution
 						no_elections
 				
 						privileged_education
 						state_religion
 						#religion_catholic
 				
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 			}
@@ -1215,16 +1222,16 @@ country_event = {
 					#POLITICS 
 						  
 					add_ideas = {				
-						hos_is_leader
+						#hos_is_leader
 						pre_industrial_era
 						agrarian
-						weak_heir
-						absolute_monarchy
+						#weak_heir
+						#absolute_monarchy
 				
 						civilian_economy
 						limited_exports
-						two_percent
-						normal_taxes
+						army_spending_level_2
+						#normal_taxes
 						cl_legal
 				
 						#stagnation_growth
@@ -1233,18 +1240,18 @@ country_event = {
 						segregation
 						absolutism
 				
-						limited_constitution
+						#limited_constitution
 						no_elections
 				
 						privileged_education
 						state_religion
 						#religion_catholic
 				
-						hc_no_healthcare
-						law_police_force
-						inframain_no_subsidies_infrastructure
-						navinfra_no_naval_infrastructure
-						sfund_private_ventures_only
+						social_spending_level_1
+						law_spending_level_5
+						road_spending_level_1
+						navy_spending_level_1
+						research_spending_level_1
 					}
 				}
 			}

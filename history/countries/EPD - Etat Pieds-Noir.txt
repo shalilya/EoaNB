@@ -7,6 +7,18 @@
 
 	set_research_slots = 2
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 
 	add_ideas = {
 		#POLITICS
@@ -14,14 +26,14 @@
 			pre_industrial_era
 			law_victorian_army
 			agrarian
-			non_monarchical_system
-			absolute_monarchy
+			#non_monarchical_system
+			#absolute_monarchy
 
 			#Economic
 				civilian_economy
 				limited_exports
-				two_percent
-				normal_taxes
+				army_spending_level_2
+				taxation_level_3
 				cl_legal
 
 			#Population
@@ -31,7 +43,7 @@
 				racial_laws
 				absolutism
 
-				limited_constitution
+				#limited_constitution
 				no_elections
 
 			#Culture
@@ -65,7 +77,6 @@
 	add_opinion_modifier = { target = BAO modifier = AFR_colonial_conflict }
 	add_opinion_modifier = { target = TRZ modifier = AFR_colonial_conflict }
 	add_opinion_modifier = { target = TOU modifier = AFR_colonial_conflict }
-	add_opinion_modifier = { target = SNG modifier = AFR_french_colony }
 	add_opinion_modifier = { target = FRA modifier = AFR_french_colony }
 	add_opinion_modifier = { target = SAF modifier = AFR_foreign_colony }
 	add_opinion_modifier = { target = NAT modifier = AFR_foreign_colony }

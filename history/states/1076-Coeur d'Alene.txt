@@ -3,7 +3,7 @@ state = {
 	name = "STATE_1076"
 
 	state_category = rural
-	manpower = 523
+	manpower = 2680
 	provinces = {
 		1832 3781 4778 12124
 	}
@@ -13,7 +13,9 @@ state = {
 history = {
 		owner = WSH
 		set_state_flag = NA_B_Disregardable_State
-
+		1870.1.1= {
+			owner = ASI
+		}
 		buildings = {
 			infrastructure = 1
 		}
@@ -23,8 +25,14 @@ history = {
 		}
 
 		add_to_array = { state_culture_array = 446 } #Cascadian
-		add_to_array = { state_culture_array_num = 1.0 }
+		add_to_array = { state_culture_array_num = 0.627 }
+		add_to_array = { state_culture_array = 432 } #Salish
+		add_to_array = { state_culture_array_num = 0.373 }
 		add_to_array = { state_religion_array = 3 } #Protestant
-		add_to_array = { state_religion_array_num = 1.0 }
+		add_to_array = { state_religion_array_num = 0.459 }
+		add_to_array = { state_religion_array = 22 } #Shamanism
+		add_to_array = { state_religion_array_num = 0.373 }
+		add_to_array = { state_religion_array = 2 } #Catholicism
+		add_to_array = { state_religion_array_num = 0.168 }
 	}
 }

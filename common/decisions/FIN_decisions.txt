@@ -23,7 +23,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 365
 
 		modifier = {
-			consumer_goods_factor = 0.15
+			consumer_goods_expected_value = 0.15
 		}
 
 		complete_effect = {
@@ -90,7 +90,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 365
 
 		modifier = {
-			consumer_goods_factor = 0.15
+			consumer_goods_expected_value = 0.15
 		}
 
 		complete_effect = {
@@ -142,7 +142,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 365
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -187,7 +187,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 165
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		complete_effect = {
@@ -200,8 +200,12 @@ FIN_decision_category_industrialization = {
 		remove_effect = {
 			random_owned_state = {
 				add_resource = {
-					type = steel
-					amount = 6
+					type = iron
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 4
 				}
 			}
 			hidden_effect = {
@@ -235,7 +239,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 365
 
 		modifier = {
-			consumer_goods_factor = 0.15
+			consumer_goods_expected_value = 0.15
 		}
 
 		complete_effect = {
@@ -274,8 +278,8 @@ FIN_decision_category_industrialization = {
 			has_tech = steam_locomotive_3
 			has_tech = standardized_gauge
 			OR = {
-				has_idea = inframain_well_maintaned_infrastructure
-				has_idea = inframain_steady_network_expansion
+				has_idea = road_spending_level_3
+				has_idea = road_spending_level_4
 			}
 		}
 
@@ -291,7 +295,7 @@ FIN_decision_category_industrialization = {
 
 		modifier = {
 			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -330,7 +334,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -392,7 +396,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -453,7 +457,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -516,7 +520,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -578,7 +582,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			production_speed_buildings_factor = -0.05
 		}
 
@@ -705,7 +709,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 80
 
 		modifier = {
-			consumer_goods_factor = 0.02
+			consumer_goods_expected_value = 0.02
 		}
 
 		remove_effect = {
@@ -748,7 +752,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 80
 
 		modifier = {
-			consumer_goods_factor = 0.02
+			consumer_goods_expected_value = 0.02
 		}
 
 		remove_effect = {
@@ -810,7 +814,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 80
 
 		modifier = {
-			consumer_goods_factor = 0.02
+			consumer_goods_expected_value = 0.02
 		}
 
 		remove_effect = {
@@ -854,7 +858,7 @@ FIN_decision_category_industrialization = {
 		days_remove = 365
 
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 		}
 
 		complete_effect = {
@@ -868,15 +872,15 @@ FIN_decision_category_industrialization = {
 			add_stability = 0.05
 			if = {
 				limit = {
-					has_idea = sfund_private_ventures_only
+					has_idea = research_spending_level_1
 				}
-				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_1 add_idea = research_spending_level_2 }
 			}
 			else_if = {
 				limit = {
-					has_idea = sfund_limited_state_sponsorship
+					has_idea = research_spending_level_2
 				}
-				swap_ideas = { remove_idea = sfund_limited_state_sponsorship add_idea = sfund_regular_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_2 add_idea = research_spending_level_3 }
 			}
 			hidden_effect = {
 				clr_country_flag = SAX_financial_investment_ongoing_flag
@@ -914,7 +918,7 @@ eoanb_category_military = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 		}
 
 		complete_effect = {
@@ -958,7 +962,7 @@ eoanb_category_military = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.2
+			consumer_goods_expected_value = 0.2
 		}
 
 		complete_effect = {
@@ -1002,7 +1006,7 @@ eoanb_category_military = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 		}
 
 		complete_effect = {
@@ -1046,7 +1050,7 @@ eoanb_category_military = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.2
+			consumer_goods_expected_value = 0.2
 		}
 
 		complete_effect = {
@@ -1108,7 +1112,7 @@ eoanb_category_navy = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 		}
 
 		cancel_trigger = {
@@ -1254,7 +1258,7 @@ eoanb_category_navy = {
 				dockyard > 2
 			}
 			custom_trigger_tooltip = {
-				tooltip = DEN_mission_gamla_warfsbolaget_i_abo_trigger_tt
+				tooltip = FIN_mission_gamla_warfsbolaget_i_abo_trigger_tt
 				hidden_trigger = {
 					111 = {
 						any_province_building_level = {
@@ -1392,7 +1396,7 @@ FIN_decision_category_political_reforms = {
 		days_remove = 180
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			political_power_gain = -0.05
 		}
 
@@ -1409,15 +1413,15 @@ FIN_decision_category_political_reforms = {
 			increase_ps_by_one = yes
 			if = {
 				limit = {
-					has_idea = sfund_private_ventures_only
+					has_idea = research_spending_level_1
 				}
-				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_1 add_idea = research_spending_level_2 }
 			}
 			else_if = {
 				limit = {
-					has_idea = sfund_limited_state_sponsorship
+					has_idea = research_spending_level_2
 				}
-				swap_ideas = { remove_idea = sfund_limited_state_sponsorship add_idea = sfund_regular_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_2 add_idea = research_spending_level_3 }
 			}
 			hidden_effect = {
 				clr_country_flag = SAX_financial_investment_ongoing_flag
@@ -1822,7 +1826,7 @@ FIN_decision_category_famine = {
          
         modifier = {
             political_power_gain = -0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
         }
 		
 		complete_effect = {
@@ -1869,7 +1873,7 @@ FIN_decision_category_famine = {
 		days_remove = 280
 		
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 		
 		complete_effect = {

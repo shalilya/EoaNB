@@ -82,6 +82,19 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 
+	spriteType = {
+		name = "GFX_side_tab_bg"
+		texturefile = "gfx/interface/side_tab_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_side_tab_large_bg"
+		texturefile = "gfx/interface/side_tab_large_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_countrytrade_bg"
+		texturefile = "gfx/interface/countrytrade_bg.dds"
+	}
+
 	### Scrollbar ###
 
 	corneredTileSpriteType = {
@@ -102,6 +115,11 @@ spriteTypes = {
 		name = "GFX_career_checkbox"
 		texturefile = "gfx/interface/career_profile/career_checkbox.dds"
 		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_general_check"
+		texturefile = "gfx/interface/check.dds"
 	}
 
 	spriteType = {
@@ -252,6 +270,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_bg_dlc036_owned"
 		texturefile = "gfx/interface/career_profile/bg_bba_owned.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+	spriteType = {
+		name = "GFX_bg_dlc038"
+		texturefile = "gfx/interface/career_profile/bg_tyranny_owned.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+	spriteType = {
+		name = "GFX_bg_dlc038_owned"
+		texturefile = "gfx/interface/career_profile/bg_tyranny_owned.dds"
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 

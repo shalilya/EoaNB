@@ -536,11 +536,11 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			owns_state = 138
+			owns_state = 139
 		}
 		completion_reward = {
-			138 = { add_extra_state_shared_building_slots = 1 }
-			138 = { add_building_construction = { type = logging_camp level = 1 instant_build = yes } }
+			139 = { add_extra_state_shared_building_slots = 1 }
+			139 = { add_building_construction = { type = logging_camp level = 1 instant_build = yes } }
 			add_political_power = -25
 		}
 	}
@@ -1615,8 +1615,8 @@ focus_tree = {
 			custom_trigger_tooltip = {
 			tooltip = SWE_reform_army_tt
 				OR = {
-					has_idea = five_percent
-					has_idea = ten_percent
+					has_idea = army_spending_level_4
+					has_idea = army_spending_level_5
 				}
 			}
 
@@ -1659,10 +1659,10 @@ focus_tree = {
 					add_corps_commander_role = {
 						traits = { cavalry_officer cavalry_leader career_officer }
 						skill = 4
-						attack_skill = 3
-						defense_skill = 1
-						planning_skill = 3
-						logistics_skill = 2
+							attack_skill = 3
+							defense_skill = 1
+							planning_skill = 3
+							logistics_skill = 2
 					}
 				}
 			}

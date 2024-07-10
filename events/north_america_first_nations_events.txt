@@ -1633,22 +1633,6 @@ country_event = {
 		if = {
 			limit = {
 				USA = {
-					has_variable = USA_recently_encroached@SHO
-				}
-			}
-			USA = { clear_variable = USA_recently_encroached@SHO }
-		}
-		if = {
-			limit = {
-				USA = {
-					has_variable = USA_recently_encroached@CRW
-				}
-			}
-			USA = { clear_variable = USA_recently_encroached@CRW }
-		}
-		if = {
-			limit = {
-				USA = {
 					has_variable = USA_recently_encroached@BFT
 				}
 			}
@@ -1661,22 +1645,6 @@ country_event = {
 				}
 			}
 			USA = { clear_variable = USA_recently_encroached@NEZ }
-		}
-		if = {
-			limit = {
-				USA = {
-					has_variable = USA_recently_encroached@CHY
-				}
-			}
-			USA = { clear_variable = USA_recently_encroached@CHY }
-		}
-		if = {
-			limit = {
-				USA = {
-					has_variable = USA_recently_encroached@COM
-				}
-			}
-			USA = { clear_variable = USA_recently_encroached@COM }
 		}
 		if = {
 			limit = {
@@ -1812,9 +1780,6 @@ country_event = {#FN defends but loses, F
 		name = first_nations_tribal_raid.30.a
 		USA = {
 			transfer_state = FROM
-		}
-		FROM = {
-				state_event = { id = afr_rrp_racial_tension_increase.3 }
 		}
 		if = { 
 			limit = { ROOT = { has_border_war = no } }

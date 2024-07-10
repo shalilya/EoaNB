@@ -641,13 +641,13 @@ political_actions = {
 			add_state_core = 431
 			add_state_core = 1289
 			add_state_core = 1315
-			add_state_core = 1397
+			add_state_core = 1169
 			add_state_core = 430
 			add_state_core = 1316
 			add_state_core = 1075
-			add_state_core = 1390
-			add_state_core = 1392
-			add_state_core = 1391
+			add_state_core = 780
+			add_state_core = 777
+			add_state_core = 778
 			add_state_core = 288
 			add_state_core = 432
 			add_state_core = 434
@@ -1036,7 +1036,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {
@@ -1066,7 +1066,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		ai_will_do = {
@@ -1094,7 +1094,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			political_power_cost = 0.05
 		}
 
@@ -1127,7 +1127,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.01
+			consumer_goods_expected_value = 0.01
 			political_power_cost = 0.05
 		}
 
@@ -1156,7 +1156,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {
@@ -1215,7 +1215,7 @@ eoanb_category_economic = {
 
 		modifier = {
 			political_power_cost = 0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {

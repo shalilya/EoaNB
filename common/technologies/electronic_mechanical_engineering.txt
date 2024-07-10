@@ -8,11 +8,7 @@ technologies = {
 			#
 		}
 		enable_subunits = {
-			spanish_militia_infantry
 			state_levy_infantry
-			state_militia_infantry
-			colonial_militia_infantry
-			dutch_colonial_militia_infantry
 		}
 		enable_building = {
 			building = rocket_site
@@ -38,22 +34,22 @@ technologies = {
 			building = nuclear_reactor
 			level = 10
 		}
-		enable_building = {
-			building = electronics_factory
-			level = 5
-		}
-		enable_building = {
-			building = plastics_refinery
-			level = 5
-		}
-		enable_building = {
-			building = ceramic_buners
-			level = 5
-		}
-		enable_building = {
-			building = generator_factory
-			level = 5
-		}
+		#enable_building = {
+		#	building = electronics_factory
+		#	level = 5
+		#}
+		#enable_building = {
+		#	building = plastics_refinery
+		#	level = 5
+		#}
+		#enable_building = {
+		#	building = ceramic_buners
+		#	level = 5
+		#}
+		#enable_building = {
+		#	building = generator_factory
+		#	level = 5
+		#}
 		enable_building = {
 			building = anti_air_building
 			level = 10

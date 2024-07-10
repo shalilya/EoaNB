@@ -15,7 +15,7 @@ state = {
 	history = {
 		owner = HBC
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 		}
 		victory_points = {
 			4872 5
@@ -42,6 +42,6 @@ state = {
 	}
 
 	provinces = {
-		1848 1873 3721 4218 4426 4790 4872 5119 12145 12636 12688
+		1848 1873 3721 4218 4426 4790 4872 5119 12145 12688
 	}
 }

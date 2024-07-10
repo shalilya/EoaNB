@@ -12,21 +12,21 @@
 
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		foa_restricted_attendance
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		unlimited_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -34,27 +34,26 @@
 		volunteer_only
 		parliamentary_suffrage
 
-		no_constitution
+		#no_constitution
 		limited_elections
 
 		privileged_education
 		state_religion
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		AFR_british_colony
 		ENG_colonial_Victoria
-		afr_total_detrimental_colonial_impact_idea
 	}
 	set_cosmetic_tag = NAT_UK
  set_politics = {
-		ruling_party = traditional_conservatism
+		ruling_party = autocracy
 	}
 
 	#Favored
@@ -67,7 +66,6 @@
 	add_opinion_modifier = { target = ZUL modifier = AFR_colonial_conflict }
 	add_opinion_modifier = { target = FRA modifier = AFR_foreign_colony }
 	add_opinion_modifier = { target = EPD modifier = AFR_foreign_colony }
-	add_opinion_modifier = { target = SNG modifier = AFR_foreign_colony }
 	add_opinion_modifier = { target = SAF modifier = AFR_british_colony }
 
 	set_popularities = {
@@ -76,10 +74,10 @@
 		ideology_radical_socialism = 0
 		social_egalitarianism = 0
 		centrism = 0
-		traditional_conservatism = 100
+		traditional_conservatism = 0
 		radical_democracy = 0
 		chauvinist_populism = 0
-		autocracy = 0
+		autocracy = 100
 		fundamentalism = 0
 	}
 

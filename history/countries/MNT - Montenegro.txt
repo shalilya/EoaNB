@@ -9,20 +9,32 @@
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 3000 producer = MNT }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1500 producer = MNT }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_pre_industrial_army
 		agrarian
-		has_heir
-		constitutional_monarchy
+		#has_heir
+		#constitutional_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -31,18 +43,18 @@
 		limited_equality
 		absolutism
 
-		constitution_adopted
+		#constitution_adopted
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_orthodox
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				#NATIONAL SPIRITS
 
@@ -59,6 +71,7 @@
 		MNT_Unsure_positions_of_church
 		MNT_Administrative_chaos
 		MNT_Aftermath_of_assasination_attempt
+		MNT_workshop_manual_production_of_weapons
 	}
 	
 	#Rivals
@@ -81,7 +94,7 @@
 	#Kuči
 	set_variable = {
     var = montenegro_KUCI_power
-    value = 3
+    value = 2
 	}
 	
 	#Kuči
@@ -99,7 +112,7 @@
 	#vasojevíci 
 	set_variable = {
     var = montenegro_VASOJEVICI_power
-    value = 4
+    value = 3
 	}
 	
 	#vasojevíci 
@@ -117,7 +130,7 @@
 	#drobnjaci 
 	set_variable = {
     var = montenegro_DROBNJACI_power
-    value = 2
+    value = 1
 	}
 	
 	#drobnjaci
@@ -135,7 +148,7 @@
 	#piperi
 	set_variable = {
     var = montenegro_PIPERI_power
-    value = 4
+    value = 3
 	}
 	
 	#piperi
@@ -153,7 +166,7 @@
 	#cuce
 	set_variable = {
     var = montenegro_CUCE_power
-    value = 2
+    value = 1
 	}
 	
 	#cuce
@@ -171,7 +184,7 @@
 	#njeguši 
 	set_variable = {
     var = montenegro_NJEGUSI_power
-    value = 3
+    value = 2
 	}
 	#njeguši 
 	set_variable = {
@@ -188,7 +201,7 @@
 	#ceklin
 	set_variable = {
     var = montenegro_CEKLIN_power
-    value = 3
+    value = 2
 	}
 	
 	#ceklin
@@ -206,7 +219,7 @@
 	#bjelice
 	set_variable = {
     var = montenegro_BJELICE_power
-    value = 3
+    value = 2
 	}
 	
 	#bjelice
@@ -255,7 +268,7 @@
 	
 	set_variable = {
     var = herzegovina_rebels
-    value = 450
+    value = 4000
 	}
 	
 	#4= max high 20= max low
@@ -274,24 +287,44 @@
     value = var:herzegovina_rebels        
 	}
 	
+	set_variable = {
+    var = guide_gui_outer_mnt
+    value = 2        
+	}
+	
+	set_variable = {
+    var = guide_gui_outer_hrz
+    value = 1
+	}
+	
+	set_variable = {
+    var = guide_gui_podgorica
+    value = 2
+	}
+	
+	set_variable = {
+    var = guide_gui_herzegovina
+    value = 1
+	}
+	
+	set_variable = {
+    var = grahovo_angry
+    value = 1
+	}
+	set_variable = {
+    var = kuci_angry
+    value = 1
+	}
+	set_variable = {
+    var = vasojevici_angry
+    value = 1
+	}
 	
 	OTO = {
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = MNT
-				autonomous_state = autonomy_khedive
-				freedom_level = 0.7
-			}
-		}
-		else = {
-			puppet = MNT
+		set_autonomy = {
+			target = MNT
+			autonomous_state = autonomy_khedive
+			freedom_level = 0.7
 		}
 	}
 	
@@ -368,7 +401,7 @@
 	recruit_character = MNT_nikanor_ivanovic	
 	recruit_character = MNT_hilarion_ii					        #no pic					
 	recruit_character = MNT_stanislav_radonjic									
-    recruit_character = MNT_jaroslav_cermak
+    	recruit_character = MNT_jaroslav_cermak
 	recruit_character = MNT_novica_cerovic
 	recruit_character = MNT_valtazar_bogisic
 	recruit_character = MNT_milena_vukotic                      #no pic

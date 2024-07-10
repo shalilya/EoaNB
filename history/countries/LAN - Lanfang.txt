@@ -6,22 +6,34 @@
 
 	set_research_slots = 1
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		kongsi_federation
+		#non_monarchical_system
+		#kongsi_federation
     law_pre_industrial_army_chinese
 
 		civilian_economy
 		export_focus
-		one_percent
-		very_low_taxes
+		army_spending_level_1
+		taxation_level_2
     cl_illegal
-    lp_collectivization
+    
 
 		#stagnation_growth
 		border_control
@@ -29,20 +41,19 @@
 		racial_laws
 		universal_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 	  	#religion_confucian
 		open_schools
 		state_religion
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
-			afr_total_detrimental_colonial_impact_idea
 			Oceania_small_kingdom
 			INS_anglo_dutch_treaty
 			Oceania_qing_tributary
@@ -51,7 +62,6 @@
 
 	LAN = {
   	set_country_flag = Oceania_industrializing
-	  add_to_variable = { var = total_detrimental_colonial_impact_value value = 6 }
 	  #Rivals
 		  set_variable = { rival_country = INS.id }
 	  #Favored

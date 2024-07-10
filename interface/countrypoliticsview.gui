@@ -8,6 +8,7 @@ guiTypes = {
 		hide_animation_type = accelerated
 		animation_time = 300
 		size = { width = 550 height = 100%% }
+		clipping = no
 
 		hide_sound = menu_close_window
 		show_sound = menu_open_window
@@ -15,7 +16,7 @@ guiTypes = {
 		# Background
 			background = {
 				name = "Background"
-				quadTextureSprite = "GFX_tiled_plain_bg"
+				quadTextureSprite = "GFX_side_tab_bg"
 			}
 
 			iconType = {
@@ -26,18 +27,12 @@ guiTypes = {
 			}
 
 		# Header
-			iconType = {
-				name = "production_header_bg"
-				spriteType = "GFX_header_bg"
-				position = { x = 5 y = 07 }
-				Orientation = "UPPER_LEFT"
-			}
 
 			instantTextboxType = {
 				name = "political_title"
 				position = { x = 45 y = 8 }
 				textureFile = ""
-				font = "hoi_36header"
+				font = "vic_36s"
 				borderSize = { x = 0 y = 0 }
 				text = "POLITICAL_POLITICAL"
 				maxWidth = 400
@@ -48,12 +43,12 @@ guiTypes = {
 			iconType = {
 				name = "rules"
 				spriteType = "GFX_rules_sum_icon"
-				position = { x = 460 y = 7 }
+				position = { x = 340 y = 7 }
 			}
 
 			buttonType = {
 				name = "close_button"
-				position = { x = -42 y = 9 }
+				position = { x = -29 y = 9 }
 				quadTextureSprite = "GFX_closebutton"
 				buttonFont = "Main_14_black"
 				shortcut = "ESCAPE"
@@ -78,7 +73,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "leader_name"
-				position = { x = 18 y = 277 }
+				position = { x = 18 y = 273 }
 				font = "hoi_18mbs"
 				text = "leader_name"
 				maxWidth = 155
@@ -106,7 +101,7 @@ guiTypes = {
 				background = {
 					name = "Background"
 					spriteType = "GFX_pol_piechart_bg"
-					position = { x = 37 y = 3 }
+					position = { x = 3`7 y = 3 }
 				}
 
 				gridBoxType = {
@@ -181,7 +176,7 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "power_balance_button"
-					position = { x = 350 y = -55 }
+					position = { x = 325 y = -55 }
 					clipping = no
 	
 					buttonType = {
@@ -346,7 +341,7 @@ guiTypes = {
 				buttonType = {
 					name = "show_subjects_button"
 					position = { x = 0 y = 0 }
-					quadTextureSprite = "GFX_government_button"
+					quadTextureSprite = "GFX_government_circle_button"
 					buttonFont = "hoi_16mbs"
 					Orientation = "UPPER_RIGHT"
 				}
@@ -371,7 +366,7 @@ guiTypes = {
 			buttonType = {
 				name = "manage_occupied_button"
 				position = { x = 255 y = 217 }
-				quadTextureSprite = "GFX_government_button"
+				quadTextureSprite = "GFX_government_circle_button"
 				buttonFont = "hoi_16mbs"
 				Orientation = "UPPER_LEFT"
 			}
@@ -388,7 +383,7 @@ guiTypes = {
 			buttonType = {
 				name = "show_exiles_collaborations_button"
 				position = { x = 220 y = 217 }
-				quadTextureSprite = "GFX_government_button"
+				quadTextureSprite = "GFX_government_circle_button"
 				buttonFont = "hoi_16mbs"
 				Orientation = "UPPER_LEFT"
 				format = right
@@ -409,7 +404,7 @@ guiTypes = {
 			buttonType = {
 				name = "show_demographics_button"
 				position = { x = 185 y = 217 }
-				quadTextureSprite = "GFX_government_button"
+				quadTextureSprite = "GFX_government_circle_button"
 				buttonFont = "hoi_16mbs"
 				Orientation = "UPPER_LEFT"
 				format = right
@@ -616,7 +611,7 @@ guiTypes = {
 		iconType = {
 			name = "category_header"
 			spriteType = "GFX_category_header"
-			position = { x = -5 y = 2 }
+			position = { x = -32 y = 2 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
@@ -663,7 +658,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "title"
-			position = { x = 0 y = 4 }
+			position = { x = 0 y = 10 }
 			font = "hoi_20b"
 			text = "Economic Laws"
 			maxWidth = 500
@@ -714,9 +709,9 @@ guiTypes = {
 
 				gridBoxType = {
 					name = "box_list"
-					position = { x = 10 y = 10 }
+					position = { x = 15 y = 10 }
 					size = { width = 500 height = 1 }
-					slotsize = { width = 462 height = 100 }
+					slotsize = { width = 462 height = 80 }
 					add_horizontal = no
 					format = "UPPER_LEFT"
 			}
@@ -810,6 +805,20 @@ guiTypes = {
 		}
 	}
 
+	containerWindowType = {
+		name = "industrial_org_entry"
+		size = { width = 53 height = 53 }
+		clipping = no
+
+		buttonType = {
+			name = "open_roster_button"
+			position = { x = 31 y = 31 }
+			spriteType = "GFX_add_pol_idea_button"
+			centerposition = yes
+			clicksound = click_default
+		}
+	}
+	
 	containerWindowType = {
 		name = "political_selectable_idea_entry_grid"
 		size = { width = 231 height = 74 }
@@ -1032,7 +1041,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite = "GFX_tiled_plain_bg"
+				quadTextureSprite = "GFX_tiled_plain_bg2"
 			}
 
 		containerWindowType = {
@@ -1061,16 +1070,9 @@ guiTypes = {
 			}
 		}
 
-		iconType = {
-			name = "manage_occupied_header_bg"
-			spriteType = "GFX_header_bg"
-			position = { x = 7 y = 5 }
-			Orientation = "UPPER_LEFT"
-		}
-
 		buttonType = {
 			name = "close_button"
-			position = { x = -40 y = 7 }
+			position = { x = -42 y = 9 }
 			quadTextureSprite = "GFX_closebutton"
 			buttonFont = "hoi_16mbs"
 			shortcut = "ESCAPE"
@@ -1079,10 +1081,9 @@ guiTypes = {
 			pdx_tooltip = "CLOSE"
 		}
 
-
 		instantTextboxType = {
 			name = "manage_occupied_title"
-			position = { x = 37 y = 5 }
+			position = { x = 37 y = 6 }
 			font = "hoi_36header"
 			borderSize = { x = 0 y = 0 }
 			text = "MANAGE_SUBJECTS_HEADER"

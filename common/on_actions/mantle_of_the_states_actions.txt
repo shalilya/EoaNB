@@ -1,73 +1,4 @@
 on_actions = {
-	# on_civil_war_end_before_annexation = {
-	#	effect = {
-	#		if = {
-	#			limit = {
-	#				ROOT = { TAG = CHY }
-	#			}
-	#			CHY = {
-	#				if = {
-	#					limit = { 
-	#						has_global_flag = USA_colorado_war
-	#					}
-	#					clr_global_flag = USA_colorado_war
-	#					if = {
-	#						limit = { USA = { exists = yes } }
-	#						if = {
-	#							limit = { ROOT = { has_cosmetic_tag = CHY_USA_state } }
-	#							FROM = {
-	#								annex_country = {
-	#									target = ROOT
-	#									transfer_troops = no
-	#								}
-	#							}
-	#							FROM = { 
-	#								transfer_state = 1052 
-	#								country_event = { id = NA_N_event.89 hours = 2 }
-	#								country_event = { id = NA_N_event.90 days = 1 }
-	#							}
-	#							USA = {
-	#								transfer_state = 1049
-	#								1049 = { remove_core_of = CHY }
-	#								transfer_state = 1051
-	#								1051 = { remove_core_of = CHY }
-	#								transfer_state = 1298
-	#								1298 = { remove_core_of = CHY }
-	#							}
-	#						}
-	#						else = { 
-	#							ROOT = { 
-	#								country_event = { id = NA_N_event.91 days = 1 }
-	#							}
-	#						}
-	#					}
-	#					else = {
-	#						if = {
-	#							limit = { ROOT = { has_cosmetic_tag = CHY_USA_state } }
-	#							FROM = {
-	#								annex_country = {
-	#									target = ROOT
-	#									transfer_troops = no
-	#								}
-	#							}
-	#							FROM = { 
-	#								transfer_state = 1052 
-	#								country_event = { id = NA_N_event.89 hours = 2 }
-	#								country_event = { id = NA_N_event.90 days = 1 }
-	#							}
-	#						}
-	#						else = { 
-	#							ROOT = { 
-	#								country_event = { id = NA_N_event.91 days = 1 }
-	#							}
-	#						}
-	#					}
-	#					ROOT = { white_peace = FROM }
-	#				}
-	#			}
-	#		}
-	#	}
-	#}
 	on_startup = {
 	 	effect = {
 	 		if = {
@@ -323,10 +254,10 @@ on_actions = {
 	# 					limit = { check_variable = { var = THIS.NA_B_state_pop_points@THIS value = 27 compare = equals } }
 	# 					add_to_variable = { THIS.NA_B_mantle_of_the_state_points@THIS = 150 }
 	# 				}
-	# 			}
-	# 		}
-	# 	}
-	# }
+	# 			
+	# 		
+	# 	
+	# 
 	
 	on_monthly = {
 		effect = {
@@ -364,28 +295,6 @@ on_actions = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						ROOT = { has_idea = chiefdom }
-					}
-					ROOT = {
-						set_popularities = {
-							anarchism = 1
-							ideology_social_liberalism = 0
-							ideology_radical_socialism = 0
-							social_egalitarianism = 3
-							centrism = 5
-							traditional_conservatism = 5
-							radical_democracy = 0
-							chauvinist_populism = 0
-							autocracy = 0
-							fundamentalism = 86
-						}
-						set_politics = {
-							ruling_party = fundamentalism
-						}
-					}
-				}
 			}
 		}
 	}
@@ -402,77 +311,7 @@ on_actions = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						ROOT = { has_idea = chiefdom }
-					}
-					ROOT = {
-						set_popularities = {
-							anarchism = 1
-							ideology_social_liberalism = 0
-							ideology_radical_socialism = 0
-							social_egalitarianism = 3
-							centrism = 5
-							traditional_conservatism = 5
-							radical_democracy = 0
-							chauvinist_populism = 0
-							autocracy = 0
-							fundamentalism = 86
-						}
-						set_politics = {
-							ruling_party = fundamentalism
-						}
-					}
-				}
-			}
-			if = {
-				limit = { 
-					TAG = SEM 
-					NOT = { has_global_flag = SEM_puppeted_by_war_flag }
-				}
-				set_global_flag = SEM_puppeted_by_war_flag
-				if = {
-					limit = { 
-						FROM = { TAG = USA } 
-						date < 1861.01.01
-					}
-					USA = { country_event = { id = NA_N_event.30 days = 2 } }
-				}
-				if = {
-					limit = { has_idea = SEM_idea_defend_our_homes }
-					remove_ideas = SEM_idea_defend_our_homes
-				}
-				if = {
-					limit = { has_idea = SEM_idea_defend_the_land }
-					remove_ideas = SEM_idea_defend_the_land
-				}
-			}
-		}
-	}
-	
-	on_annex = {
-		effect = {
-			if = {
-				limit = {
-					FROM = { TAG = SEM }
-					NOT = { has_global_flag = SEM_annexed_by_war_flag }
-				}
-				set_global_flag = SEM_annexed_by_war_flag
-				if = {
-					limit = { 
-						ROOT = { TAG = USA } 
-						date < 1861.01.01
-					}
-					USA = { country_event = { id = NA_N_event.29 days = 2 } }
-				}
-				if = {
-					limit = { FROM = { has_idea = SEM_idea_defend_our_homes } }
-					FROM = { remove_ideas = SEM_idea_defend_our_homes }
-				}
-				if = {
-					limit = { FROM = { has_idea = SEM_idea_defend_the_land } }
-					FROM = { remove_ideas = SEM_idea_defend_the_land }
-				}
+		
 			}
 		}
 	}
@@ -486,28 +325,6 @@ on_actions = {
 						OR = {
 							has_autonomy_state = autonomy_organized_incorporated_territory
 							has_autonomy_state = autonomy_first_nations_reservation
-						}
-					}
-				}
-				if = {
-					limit = {
-						ROOT = { has_idea = chiefdom }
-					}
-					ROOT = { 
-						set_popularities = {
-							anarchism = 1
-							ideology_social_liberalism = 0
-							ideology_radical_socialism = 0
-							social_egalitarianism = 3
-							centrism = 5
-							traditional_conservatism = 5
-							radical_democracy = 0
-							chauvinist_populism = 0
-							autocracy = 0
-							fundamentalism = 86
-						}
-						set_politics = {
-							ruling_party = fundamentalism
 						}
 					}
 				}

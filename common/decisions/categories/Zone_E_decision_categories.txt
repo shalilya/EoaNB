@@ -22,7 +22,7 @@ ARG_decision_category_colonize_lands = {
 
 	visible = {
 		NOT = {
-			has_idea = ARG_civil_war_calm
+			has_idea = ARG_raging_civil_war
 			has_idea = ARG_civil_war_war
 		}
 	}
@@ -39,6 +39,24 @@ BRA_decision_category_coffee_economy = {
 BRA_decision_category_modernize_the_empire = {
 	icon = generic_construction
 	
+	allowed = { original_tag = BRA }
+}
+
+BRA_BOP_decision_category = {
+	icon = category_usa_congress
+	
+	allowed = { original_tag = BRA }
+}
+
+BHA_uprising_decision_category = {
+	icon = generic_crisis
+
+	allowed = { original_tag = CIS}
+}
+
+BRA_platinean_diplomacy_category = {
+	icon = GFX_focus_generic_diplomatic_treaty
+
 	allowed = { original_tag = BRA }
 }
 

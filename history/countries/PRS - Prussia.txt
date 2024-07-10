@@ -3,6 +3,9 @@
 
 	oob = "PRS_1857"
 
+	add_ideas = { sphere_leader }
+	set_variable = { sphere_overlord = PRS.id }
+
 	if = {
 		limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "PRS_1857_naval_mtg"
@@ -22,61 +25,63 @@
 
 	add_to_variable = { prestige_score = 40 }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 18 }
+	set_variable = { current_loans_sum = 38 }
+
 	add_ideas = {
-		#STATE OF COUNTRY
-		PRS_Friedrich_Wilhelm_IV
-		has_heir
-		industrializing
-		victorian_era
-		law_victorian_army_prussia
-		#religion_protestant
-
-		#GOVERNMENTAL POLICIES
-		constitutional_monarchy
-		human_rights
-		limited_elections
-		no_separation
-		federal_control
-
-		#CULTURE AND EDUCATION
+		#POLITICAL LIBERTIES
 		open_schools
-		state_religion
 		free_press
 		foa_restricted_attendance
+		pp_ban_extremist_parties
 		tu_non_political
-		high_judge_courtroom
-
-		#ECONOMY
-		limited_exports
-		normal_taxes
-		cl_restricted
-		fourteen_hour_work_day
-		lp_land_purchase
-		civilian_economy
-
-		#DEMOGRAPHICS
-		#stagnation_growth
+		limited_elections
+		
+		#INDIVIDUAL LIBERTIES
 		border_control
 		limited_equality
 		property_owners_suffrage
 		early_conscription
-		pp_ban_extremist_parties
+		state_religion
+		high_judge_courtroom
 
-		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_no_naval_infrastructure
-		two_percent
-		sfund_private_ventures_only
-
+		#ECONOMIC POLICY
+		mixed_economy
+		limited_exports
+		taxation_level_2
+		civilian_economy
+		cl_restricted
+		industrializing
+		
+		#INTERNAL BUDGET
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_1
+		army_spending_level_2
+		research_spending_level_1
+		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		PRS_Friedrich_Wilhelm_IV
+		victorian_era
+		law_victorian_army
+		GEC_idea_german_confederation_major_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
+		GEC_idea_gewerbefreiheit
 		GEC_idea_polizeiverein_leader_1
 		PRS_idea_three_class_franchise
-		PRS_legacy_clausewitz
+		PRS_idea_legacy_clausewitz
 		PRS_generalstab
 		PRS_landwehr
 		PRS_idea_hohenzollern_castle_rebuild
@@ -220,6 +225,13 @@
 		#Transport Ships
 		tech_naval_mtg_capital_ship_naval_transportation = 1 #Capital Ship Naval Transportation
 		
+		###Navy Legacy
+		tech_naval_corvette = 1
+		tech_naval_corvette_1 = 1
+		tech_naval_early_gunboat = 1
+		tech_naval_early_frigate = 1
+		tech_naval_lineship = 1
+
 		###Flight Technology
 		
 		###Mechanical Engineering
@@ -539,7 +551,7 @@
 	unlock_national_focus = PRS_focus_establish_sewerage_standards
 	unlock_national_focus = PRS_focus_prussian_industrialization
 	unlock_national_focus = PRS_focus_borsig
-	unlock_national_focus = PRS_focus_krupp_cooperation
+	unlock_national_focus = PRS_focus_krupp
 	unlock_national_focus = PRS_focus_siemens_halske
 	unlock_national_focus = PRS_focus_vulcan_ag
 	unlock_national_focus = PRS_focus_dreyse_rifle
@@ -595,16 +607,16 @@
 		PRS_Friedrich_Wilhelm_IV
 		
 		#BUDGET
-		navinfra_no_naval_infrastructure
-		two_percent
+		navy_spending_level_1
+		army_spending_level_2
 		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		GEC_idea_german_confederation_major_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_polizeiverein_leader_1
 		PRS_idea_three_class_franchise
-		PRS_legacy_clausewitz
+		PRS_idea_legacy_clausewitz
 		PRS_generalstab
 		PRS_landwehr
 		PRS_idea_hohenzollern_castle_rebuild
@@ -624,13 +636,13 @@
 		#DEMOGRAPHICS
 
 		#BUDGET
-		navinfra_decent_naval_infrastructure
-		five_percent
+		navy_spending_level_3
+		army_spending_level_4
 
 		#NATIONAL SPIRITS
 		GC_idea_schutz_und_trutz
-		PRS_Zollverein_2
-		BAD_currency_reform
+		GEC_idea_zollverein_3
+		GEC_idea_vienna_monetary_treaty
 		PRS_generalstab_6
 		NA_B_medium_scale_railways
 	}
@@ -798,6 +810,11 @@
 		#Transport Ships
 		tech_naval_mtg_capital_ship_naval_transportation = 1 #Capital Ship Naval Transportation
 		tech_naval_mtg_merchant_ship_requisitioning = 1 #Merchant Requisitioning
+
+		###Navy Legacy
+		tech_naval_corvette = 1
+		tech_naval_corvette_1 = 1
+		tech_naval_early_frigate = 1
 
 		###Flight Technology
 		early_balloon = 1 #Early Recon Balloon
@@ -1010,3 +1027,10 @@
 	retire_character = PRS_peter_reichensperger
 	retire_character = PRS_friedrich_wilhelm_iv
 }
+
+# Vaulted ideas
+		# limited_exports
+		# cl_restricted
+		# 
+		# 
+		# civilian_economy

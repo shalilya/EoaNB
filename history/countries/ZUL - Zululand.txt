@@ -9,17 +9,17 @@
 
 	add_ideas = {
 					#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		has_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 	law_army_tribal_improved
 
 		low_economic_mobilisation
 		limited_exports
-		five_percent
-		high_taxes
+		army_spending_level_4
+		taxation_level_4
 	cl_legal
 
 		#stagnation_growth
@@ -28,18 +28,18 @@
 		limited_conscription
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		oral_tradition
 		state_religion
 		#religion_animist
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		AF_T_small_kingdom
@@ -103,13 +103,6 @@ set_popularities = {
 	}
 
 	# POLITICAL LEADERS
-
-	create_country_leader = {
-		name = "Mpande kaSenzangakhona"
-		desc = "POLITICS_MPANDE_KASENZANGAKHONA_DESC"
-		picture = "Portrait_ZUL_Mpande_kaSenzangakhona.dds"
-		expire = "1872.10.18"
-		ideology = despotism
-		traits = { }
-	}
+	recruit_character = ZUL_Mpande_kaSenzangakhona
+	recruit_character = ZUL_thirteen_chiefs
 }

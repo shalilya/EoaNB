@@ -922,16 +922,12 @@ focus_tree = {
         AND = {
           country_exists = USA_imperial_states_of_america
           country_exists = CAL
-          country_exists = COM
           country_exists = UTA
           country_exists = NEZ
           country_exists = APA
           country_exists = SIX
           country_exists = NAV
           country_exists = BFT
-          country_exists = CRW
-          country_exists = SHO
-          country_exists = CHY
         }
       }
     }
@@ -989,9 +985,6 @@ focus_tree = {
           country_exists = SIX
           country_exists = NAV
           country_exists = BFT
-          country_exists = CRW
-          country_exists = SHO
-          country_exists = CHY
         }
       }
     }

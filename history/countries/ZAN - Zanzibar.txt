@@ -3,12 +3,12 @@
 
 	oob = "ZAN_1857"
 	if = {
-	limit = { has_dlc = "Man the Guns" }
+		limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "ZAN_1857_naval_mtg"
-	else = {
-		set_naval_oob = "ZAN_1857_naval_legacy"
+		else = {
+			set_naval_oob = "ZAN_1857_naval_legacy"
+		}
 	}
-}
 
 	set_convoys = 100
 
@@ -17,19 +17,19 @@
 
 	add_ideas = {
 					#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		has_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 	law_army_tribal_improved
 
 		civilian_economy
 		limited_exports
-		two_percent
-		high_taxes
+		army_spending_level_2
+		taxation_level_4
 	cl_legal
-	lp_land_estates
+	
 
 		#stagnation_growth
 		border_control
@@ -37,18 +37,18 @@
 		limited_conscription
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_sunni
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 		afr_reforming_kingdom
@@ -58,12 +58,6 @@
 	ZAN = { set_variable = { var = has_afr_empire_mechanic_system value = 1 } }
 
 		#AUTONOMY LEVEL IF NEEDED
-		if = {
-		limit = { OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		} }
 		ZAN = {
 			MOM = { store_current_ideologies = yes }
 			set_autonomy = {
@@ -73,17 +67,7 @@
 			}
 			MOM = { load_prevous_ideologies = yes }
 		}
-	}
-	if = {
-		limit = { NOT = { OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Waking the Tiger"
-			has_dlc = "Death or Dishonor"
-		} } }
-		MOM = { store_current_ideologies = yes }
-		ZAN = { puppet = MOM }
-		MOM = { load_prevous_ideologies = yes }
-	}
+	
 	MOM = {
 		set_variable = { var = afr_empire_subject_overlord value = ZAN.id }
 		set_variable = { var = MOM.afr_empire_subject_loyalty_varZAN value = 9 }

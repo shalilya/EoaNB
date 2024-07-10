@@ -1150,6 +1150,30 @@ spriteTypes = {
 			name = "GFX_idea_FRA_idea_latin_monetary_union"
 			texturefile = "gfx/interface/ideas/FRA/FRA_idea_latin_monetary_union.dds"
 		}
+		spriteType = {
+			name = "GFX_idea_FRA_imperial_army"
+			texturefile = "gfx/interface/ideas/FRA/FRA_imperial_army.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_la_lumiere_directrice"
+			texturefile = "gfx/interface/ideas/FRA/FRA_la_lumiere_directrice.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_imperial_navy"
+			texturefile = "gfx/interface/ideas/FRA/FRA_imperial_navy.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_laurier_victoire"
+			texturefile = "gfx/interface/ideas/FRA/FRA_laurier_victoire.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_empire_autoritaire"
+			texturefile = "gfx/interface/ideas/FRA/FRA_empire_autoritaire.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_economie_liberale_projets_imperiaux"
+			texturefile = "gfx/interface/ideas/FRA/FRA_economie_liberale_projets_imperiaux.png"
+		}
 
 	# Advisors
 		spriteType = {
@@ -1163,6 +1187,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_FRA_advisor_baron_haussmann"
 			texturefile = "gfx/interface/ideas/FRA/advisors/FRA_Baron_Haussmann.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_advisor_Louis_Faidherbe"
+			texturefile = "gfx/interface/ideas/FRA/advisors/FRA_Louis_Faidherbe.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_advisor_Louis_Randon"
+			texturefile = "gfx/interface/ideas/FRA/advisors/FRA_Louis_Randon.dds"
 		}
 		spriteType = {
 			name = "GFX_idea_FRA_advisor_ferdinand_de_lesseps"
@@ -1204,6 +1236,14 @@ spriteTypes = {
 			pause_on_loop = 0.0
 			alwaystransparent = yes		
 		}
+		spriteType = {
+			name = "GFX_idea_FRA_advisor_Eugenie_de_Montijo"
+			texturefile = "gfx/interface/ideas/FRA/advisors/FRA_advisor_Eugenie_de_Montijo.png"
+		}
+		spriteType = {
+			name = "GFX_idea_FRA_Napoleon_Charles"
+			texturefile = "gfx/interface/ideas/FRA/advisors/FRA_Napoleon_Charles.png"
+		}		
 	# ARMY CHIEFS
 		spriteType = {
 			name = "GFX_idea_FRA_army_chief_francois_achille_bazaine"
@@ -1304,7 +1344,7 @@ spriteTypes = {
 		}
 }
 spriteTypes = {
-	# (GER) Germany
+	# (GER) German Minors / German Empire
 	# Spirits
 		spriteType = {
 			name = "GFX_idea_ara_der_reaktion"
@@ -1346,6 +1386,7 @@ spriteTypes = {
 			name = "GFX_idea_wiener_munzvertrag"
 			texturefile = "gfx/interface/ideas/GER/wiener_munzvertrag.png"
 		}
+
 	# Advisors
 		spriteType = {
 			name = "GFX_idea_GER_idea_naval_minister_caprivi"
@@ -1354,6 +1395,20 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_GER_idea_naval_minister_stosch"
 			texturefile = "gfx/interface/ideas/GER/GER_idea_naval_minister_stosch.png"
+		}
+
+	# Companies
+		spriteType = {
+			name = "GFX_idea_aeg"
+			texturefile = "gfx/interface/ideas/GER/idea_aeg.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_bayer"
+			texturefile = "gfx/interface/ideas/GER/idea_bayer.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_siemens"
+			texturefile = "gfx/interface/ideas/GER/idea_siemens.dds"
 		}
 }
 spriteTypes = {
@@ -1406,6 +1461,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/GRE/GRE_Bavarocracy.png"
 	}
 	spriteType = {
+		name = "GFX_idea_GRE_Greek_Trade"
+		texturefile = "gfx/interface/ideas/GRE/GRE_Greek_Trade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_New_Generation_Politicians"
+		texturefile = "gfx/interface/ideas/GRE/GRE_New_Generation_Politicians.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_Underdeveloped_Agriculture"
+		texturefile = "gfx/interface/ideas/GRE/GRE_Underdeveloped_Agriculture.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_Poor_Land_Reform"
+		texturefile = "gfx/interface/ideas/GRE/GRE_Poor_Land_Reform.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_King_Otto_Army"
+		texturefile = "gfx/interface/ideas/GRE/GRE_King_Otto_Army.png"
+	}
+	spriteType = {
 		name = "GFX_idea_GRE_Memory_Revolution"
 		texturefile = "gfx/interface/ideas/GRE/GRE_Memory_Revolution.png"
 	}
@@ -1416,6 +1491,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_GRE_1844_Constitution"
 		texturefile = "gfx/interface/ideas/GRE/GRE_1844_Constitution.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_maritime_army"
+		texturefile = "gfx/interface/ideas/GRE/GRE_maritime_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_partisan_army"
+		texturefile = "gfx/interface/ideas/GRE/GRE_partisan_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GRE_westernized_army"
+		texturefile = "gfx/interface/ideas/GRE/GRE_westernized_army.png"
 	}
 
 	# Advisors
@@ -1502,6 +1589,10 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_HAM_Joachim_Friedrich_Martens"
 			texturefile = "gfx/interface/ideas/HAM/HAM_Joachim_Friedrich_Martens.png"
+		}
+		spriteType = {
+			name = "GFX_idea_HAM_William_Lindley"
+			texturefile = "gfx/interface/ideas/HAM/HAM_William_Lindley.png"
 		}
 		
 	# Theorists
@@ -1924,6 +2015,22 @@ spriteTypes = {
 		
 }
 spriteTypes = {	
+	# (LUX) Luxembourg
+	# Advisors
+		spriteType = {
+			name = "GFX_idea_LUX_advisor_jean_antoine_zinnen"
+			texturefile = "gfx/interface/ideas/LUX/LUX_advisor_jean_antoine_zinnen.png"
+		}
+		spriteType = {
+			name = "GFX_idea_LUX_advisor_augustin_letellier"
+			texturefile = "gfx/interface/ideas/LUX/LUX_advisor_augustin_letellier.png"
+		}
+		spriteType = {
+			name = "GFX_idea_LUX_advisor_jean_jacques_willmar"
+			texturefile = "gfx/interface/ideas/LUX/LUX_advisor_jean_jacques_willmar.png"
+		}
+}
+spriteTypes = {	
 	# (PRS) Prussia
 	# Advisors
 		spriteType = {
@@ -2128,7 +2235,7 @@ spriteTypes = {
 			texturefile = "gfx/interface/ideas/PRS/PRS_Helmuth_von_Moltke.png"
 		}
 		
-		# MHC Navy
+	# MHC Navy
 		spriteType = {
 			name = "GFX_idea_PRS_Prinz_Adalbert"
 			texturefile = "gfx/interface/ideas/PRS/PRS_Prinz_Adalbert.png"
@@ -2200,10 +2307,6 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_PRS_legacy_of_clausewitz"
 			texturefile = "gfx/interface/ideas/PRS/PRS_idea_clausewitz_legacy.png"
-		}
-		spriteType = {
-			name = "GFX_idea_PRS_zollverein"
-			texturefile = "gfx/interface/ideas/PRS/idea_PRS_zollverein.png"
 		}
 		spriteType = {
 			name = "GFX_idea_PRS_NGC_constitution"
@@ -2430,6 +2533,10 @@ spriteTypes = {
 			name = "GFX_idea_ROM_idea_bulgarian_refugee_in_romania"
 			texturefile = "gfx/interface/ideas/ROM/ROM_idea_bulgarian_refugee_in_romania.png"
 		}
+		spriteType = {
+			name = "GFX_idea_ROM_idea_carol_I_small"
+			texturefile = "gfx/interface/ideas/ROM/ROM_carol_I_small.png"
+		}		
 	# Advisors
 		spriteType = {
 			name = "GFX_idea_ROM_Ion_Ionescu_Brad"
@@ -2508,6 +2615,14 @@ spriteTypes = {
 			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_army.png"
 		}
 		SpriteType = {
+			name = "GFX_idea_RUS_state_of_army"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_state_of_army.png"
+		}
+		SpriteType = {
+			name = "GFX_RUS_moscow_regulation"
+			texturefile = "gfx/interface/ideas/RUS/RUS_moscow_regulation.png"
+		}
+		SpriteType = {
 			name = "GFX_idea_RUS_political_isolation"
 			texturefile = "gfx/interface/ideas/RUS/idea_RUS_political_isolation.png"
 		}
@@ -2556,8 +2671,44 @@ spriteTypes = {
 			texturefile = "gfx/interface/ideas/RUS/idea_RUS_table_ranks.png"
 		}
 		SpriteType = {
+			name = "GFX_idea_RUS_peasant_reform"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_peasant_reform.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_radical_peasant_reform"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_radical_peasant_reform.png"
+		}
+		SpriteType = {
 			name = "GFX_idea_RUS_peasants"
 			texturefile = "gfx/interface/ideas/RUS/idea_RUS_peasants.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_female_education1"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_female_education1.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_female_education2"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_female_education2.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_female_education3"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_female_education3.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_revolutionary_terrorism_low"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_revolutionary_terrorism_low.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_revolutionary_terrorism_high"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_revolutionary_terrorism_high.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_zemstvo"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_zemstvo.png"
+		}
+		SpriteType = {
+			name = "GFX_idea_RUS_dictatorship_of_the_heart"
+			texturefile = "gfx/interface/ideas/RUS/idea_RUS_dictatorship_of_the_heart.png"
 		}
 	
 	# Advisors
@@ -2721,6 +2872,26 @@ spriteTypes = {
 			name = "GFX_portrait_RUS_eduard_ivanovich_gerstfeld_small"
 			texturefile = "gfx/interface/ideas/RUS/RUS_Gerstfeld.png"
 		}
+		spriteType = {
+			name = "GFX_portrait_RUS_konstantin_groth_small"
+			texturefile = "gfx/interface/ideas/RUS/RUS_Groth.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_RUS_alexander_golovnin_small"
+			texturefile = "gfx/interface/ideas/RUS/RUS_alexander_golovnin.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_RUS_dmitry_tolstoy_small"
+			texturefile = "gfx/interface/ideas/RUS/RUS_dmitry_tolstoy.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_RUS_dmitry_zamyatin_small"
+			texturefile = "gfx/interface/ideas/RUS/RUS_dmitry_zamyatin.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_RUS_michael_loris_melikov_small"
+			texturefile = "gfx/interface/ideas/RUS/RUS_michael_loris_melikov.png"
+		}
 	# Manufacturers
 		spriteType = {
 			name = "GFX_idea_RUS_vic_MGTS"
@@ -2732,7 +2903,7 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_idea_RUS_vic_Putilov_Company"
-			texturefile = "gfx/interface/ideas/RUS/Manufacturers/putilov_factory.dds"
+			texturefile = "gfx/interface/ideas/RUS/Manufacturers/putilov_factory.png"
 		}
 		spriteType = {
 			name = "GFX_idea_RUS_vic_R_A_C"
@@ -2766,6 +2937,23 @@ spriteTypes = {
 			name = "GFX_idea_RUS_vic_Kronstadt"
 			texturefile = "gfx/interface/ideas/RUS/Manufacturers/RUS_vic_Kronstadt.png"
 		}
+}
+
+spriteTypes = {
+
+	# (ALK) Alyaska
+	# Spirits
+
+	SpriteType = {
+		name = "GFX_idea_ALK_ice_treaty"
+		texturefile = "gfx/interface/ideas/ALK/idea_ALK_ice_treaty.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_ALK_tea_trade"
+		texturefile = "gfx/interface/ideas/ALK/idea_ALK_tea_trade.png"
+	}
+
 }
 
 spriteTypes = {
@@ -2998,6 +3186,7 @@ spriteTypes = {
 }
 spriteTypes = {
 	# (SWE) Sweden
+	# Spirits
 		spriteType = {
 			name = "GFX_idea_SWE_swedennor"
 			texturefile = "gfx/interface/ideas/SWE/SWE_swedennor.dds"
@@ -3066,11 +3255,24 @@ spriteTypes = {
 			name = "GFX_idea_SWE_wood"
 			texturefile = "gfx/interface/ideas/SWE/SWE_wood.dds"
 		}
-	# Advisors
 		spriteType = {
-			name = "GFX_idea_SWE_Gustaf_Rudolf_Abelin"
-			texturefile = "gfx/interface/ideas/SWE/SWE_Abelin.dds"
+			name = "GFX_idea_SWE_Gustavus_Adolphus"
+			texturefile = "gfx/interface/ideas/SWE/idea_SWE_Gustavus_Adolphus.dds"
+		}	
+		spriteType = {
+			name = "GFX_idea_SWE_charles_xi"
+			texturefile = "gfx/interface/ideas/SWE/idea_SWE_charles_xi.dds"
 		}
+		spriteType = {
+			name = "GFX_idea_SWE_Gustavus_Vasa"
+			texturefile = "gfx/interface/ideas/SWE/idea_SWE_Gustavus_Vasa.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_SWE_von_Dobeln"
+			texturefile = "gfx/interface/ideas/SWE/idea_SWE_von_Dobeln.dds"
+		}
+
+	# Advisors
 		spriteType = {
 			name = "GFX_idea_SWE_Charles_XV"
 			texturefile = "gfx/interface/ideas/SWE/SWE_Charles_XV.dds"
@@ -3132,10 +3334,6 @@ spriteTypes = {
 			texturefile = "gfx/interface/ideas/SWE/SWE_Michael_Gustaf_Anckarsvard.dds"
 		}
 		spriteType = {
-			name = "GFX_idea_SWE_Claes_Hugo_Raab"
-			texturefile = "gfx/interface/ideas/SWE/SWE_Raab.dds"
-		}
-		spriteType = {
 			name = "GFX_idea_SWE_Carl_Gustaf_Lowenhielm"
 			texturefile = "gfx/interface/ideas/SWE/SWE_Lowenhielm.dds"
 		}
@@ -3167,22 +3365,31 @@ spriteTypes = {
 			name = "GFX_idea_SWE_Carl_Fredrik_Meijer"
 			texturefile = "gfx/interface/ideas/SWE/SWE_Meijer.dds"
 		}
+
+	# MHC Army
 		spriteType = {
-			name = "GFX_idea_SWE_Gustavus_Adolphus"
-			texturefile = "gfx/interface/ideas/SWE/idea_SWE_Gustavus_Adolphus.dds"
-		}	
-		spriteType = {
-			name = "GFX_idea_SWE_charles_xi"
-			texturefile = "gfx/interface/ideas/SWE/idea_SWE_charles_xi.dds"
+			name = "GFX_idea_SWE_Carl_Herman_Leuhusen"
+			texturefile = "gfx/interface/ideas/SWE/SWE_Carl_Herman_Leuhusen.png"
 		}
 		spriteType = {
-			name = "GFX_idea_SWE_Gustavus_Vasa"
-			texturefile = "gfx/interface/ideas/SWE/idea_SWE_Gustavus_Vasa.dds"
+			name = "GFX_idea_SWE_Claes_Hugo_Raab"
+			texturefile = "gfx/interface/ideas/SWE/SWE_Claes_Hugo_Raab.png"
 		}
 		spriteType = {
-			name = "GFX_idea_SWE_von_Dobeln"
-			texturefile = "gfx/interface/ideas/SWE/idea_SWE_von_Dobeln.dds"
+			name = "GFX_idea_SWE_Gustaf_Rudolf_Abelin"
+			texturefile = "gfx/interface/ideas/SWE/SWE_Gustaf_Rudolf_Abelin.png"
 		}
+		spriteType = {
+			name = "GFX_idea_SWE_Johan_Bjornstjerna"
+			texturefile = "gfx/interface/ideas/SWE/SWE_Johan_Bjornstjerna.png"
+		}
+	
+	# MHC Navy
+		spriteType = {
+			name = "GFX_idea_SWE_Christian_Sundin"
+			texturefile = "gfx/interface/ideas/SWE/SWE_Christian_Sundin.png"
+		}
+
 	# Companies
 		spriteType = {
 			name = "GFX_idea_SWE_carl_gustafs"
@@ -3196,6 +3403,42 @@ spriteTypes = {
 			name = "GFX_idea_SWE_finspangs_bruk"
 			texturefile = "gfx/interface/ideas/SWE/idea_finspangs_bruk.png"
 		}
+}
+spriteTypes = {
+	# (SWI) Switzerland
+	# Advisors
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Elie_Ducommun"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Elie_Ducommun.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Hans_Herzog"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Hans_Herzog.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Antoine_Henri_Jomini"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Antoine_Henri_Jomini_01.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Charles_Albert_Gobat"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Charles_Albert_Gobat.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Ludwig_Schlafli"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Ludwig_Schlafli.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Henry_Dunant"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Henry_Dunant.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Paul_Ceresole"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Paul_Ceresole.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SWI_advisor_Johann_Jakob_Stehlin"
+		texturefile = "gfx/interface/ideas/SWI/SWI_advisor_Johan_Jakob_Stehlin_old.png"
+	}
 }
 spriteTypes = {
 	# (THU) Thüringen
@@ -3422,6 +3665,54 @@ spriteTypes={
 	}
 	SpriteType = {
 		name = "GFX_idea_MNT_army_prestige"
-		texturefile = "gfx/interface/ideas/MNT/MNT_army_prestige.png"
+		texturefile = "gfx/interface/ideas/MNT/MNT_army_prestige.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MNT_oto_debt"
+		texturefile = "gfx/interface/ideas/MNT/MNT_oto_debt.dds"
+	}
+}
+spriteTypes = { 	
+ #(POR) Portugal
+	 #Advisors
+	 spriteType = {
+			name = "GFX_idea_POR_Saldanha"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Saldanha.png"
+		}
+
+	 spriteType = {
+			name = "GFX_idea_POR_Fontes_Pereira"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Fontes_Pereira.png"
+		}
+
+	spriteType = {
+			name = "GFX_idea_POR_Rodrigo_de_Andrade"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Rodrigo_de_Andrade_Barbosa.png"
+		}
+
+	spriteType = {
+			name = "GFX_idea_POR_Jose_Estevao"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Jose_Estevao.png"
+		}
+
+	spriteType = {
+			name = "GFX_idea_POR_Sa_Nogueira"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Sa_Nogueira.png"
+		}
+
+	spriteType = {
+			name = "GFX_idea_POR_Jose_Maria_do_Casal_Ribeiro"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Jose_Maria_do_Casal_Ribeiro.png"
+		}
+		
+	spriteType = {
+			name = "GFX_idea_POR_Francisco_Maria_de_Sousa"
+			texturefile = "gfx/interface/ideas/POR/advisor_POR_Francisco_Maria_de_Sousa.png"
+		}	
+
+	# NATIONAL SPIRIT
+	SpriteType = {
+		name = "GFX_idea_POR_army"
+		texturefile = "gfx/interface/ideas/POR/idea_POR_army.png"
 	}
 }

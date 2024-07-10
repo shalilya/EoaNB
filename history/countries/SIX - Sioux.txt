@@ -11,19 +11,19 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		chiefdom
+		#non_monarchical_system
+		#chiefdom
 	law_army_tribal_advanced
 
 		civilian_economy
 		closed_economy
-		two_percent
-		very_low_taxes
+		army_spending_level_2
+		taxation_level_2
 	cl_legal
-	lp_tribal_communalism
+	
 
 		#stagnation_growth
 		no_borders
@@ -31,18 +31,18 @@
 
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		oral_tradition
 		theocratic_state
 	#religion_shamanism
 
-	 hc_no_healthcare
-		law_communal_policing
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_1
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 			FN_T_nomadic_tribal_nation

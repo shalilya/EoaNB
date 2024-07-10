@@ -1267,7 +1267,7 @@ focus_tree = {
 
 		prerequisite = { focus = CAN_Examine_British_Tactics }	
 		prerequisite = { focus = CAN_Small_Ship }
-		prerequisite = { focus = CAN_Start_Shipbuilding_Industry }
+		prerequisite = { focus = CAN_Start_Shipbuilding_Industry } 
 		prerequisite = { focus = CAN_Inspire_Shipbuilding_Industry }	
 
 		completion_reward = {
@@ -1302,7 +1302,7 @@ focus_tree = {
 
 	focus = {
 		id = CAN_Matter_Agriculture
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_agricultural_economy
 		x = 24
 		y = 1
 		cost = 35
@@ -1314,11 +1314,7 @@ focus_tree = {
 		prerequisite = { focus = CAN_Agrarian_Colony }	
 
 		completion_reward = {
-		add_tech_bonus = {
-   	 	bonus = 0.1
-    		uses = 2
-    		category = biochemistry_tech
-			}
+ add_timed_idea = { idea = CAN_idea_agricultural_efforts days = 320 }
 		}
 	}
 
@@ -1341,6 +1337,9 @@ focus_tree = {
 
 		completion_reward = {
 		add_political_power = 25
+1311 = {
+add_extra_state_shared_building_slots = 2
+}
 		}
 	}
 
@@ -1360,7 +1359,7 @@ focus_tree = {
 		mutually_exclusive = { focus = CAN_Support_Shift_stock_raising }	
 
 		completion_reward = {
-		add_stability = 0.01
+swap_ideas = { remove_idea = CAN_idea_agricultural_efforts add_idea = CAN_idea_agricultural_efforts2 }
 		}
 	}
 
@@ -1421,6 +1420,7 @@ focus_tree = {
 
 		completion_reward = {
 		add_stability = -0.01
+swap_ideas = { remove_idea = CAN_idea_agricultural_efforts add_idea = CAN_idea_agricultural_efforts1 }
 		}
 	}
 
@@ -1491,6 +1491,12 @@ focus_tree = {
 
 		completion_reward = {
 		add_political_power = 25
+1310 = {
+add_extra_state_shared_building_slots = 1
+}
+276 = {
+add_extra_state_shared_building_slots = 1
+}
 		}
 	}
 
@@ -1499,7 +1505,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		x = 27
 		y = 3
-		cost = 70
+		cost = 35
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
@@ -1509,7 +1515,7 @@ focus_tree = {
 
 		completion_reward = {
 		add_tech_bonus = {
-   	 	bonus = 0.1
+   	 	bonus = 0.20
     		uses = 1
     		category = biochemistry_tech
 			}
@@ -1590,7 +1596,7 @@ focus_tree = {
 
 	focus = {
 		id = CAN_Promote_Wheat
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_wheat
 		x = 29
 		y = 4
 		cost = 35
@@ -1796,7 +1802,7 @@ focus_tree = {
 
 		completion_reward = {
 		add_tech_bonus = {
-   	 	bonus = 0.1
+   	 	bonus = 0.35
     		uses = 1
     		category = transport_tech
 			}
@@ -1818,10 +1824,11 @@ focus_tree = {
 
 		completion_reward = {
 		add_tech_bonus = {
-   	 	bonus = 0.1
+   	 	bonus = 0.15
     		uses = 1
     		category = mechanical_engineering_tech
 			}
+ add_timed_idea = { idea = CAN_idea_macadam_method days = 500 }
 		}
 	}
 
@@ -1830,7 +1837,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 		x = 36
 		y = 4
-		cost = 70
+		cost = 65
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 3
@@ -1840,7 +1847,7 @@ focus_tree = {
 
 		completion_reward = {
 		add_tech_bonus = {
-   	 	bonus = 0.1
+   	 	bonus = 0.5
     		uses = 1
     		category = mechanical_engineering_tech
 			}
@@ -1862,9 +1869,11 @@ focus_tree = {
 
 		completion_reward = {
 		add_tech_bonus = {
-   	 	bonus = 0.1
-    		uses = 1
-    		category = mechanical_engineering_tech
+   	 	bonus = 0.3
+    		uses = 2
+ahead_reduction = 3
+    		category = electronics_devices_tech
+
 			}
 		}
 	}
@@ -2076,42 +2085,42 @@ focus_tree = {
 		add_popularity = { ideology = social_egalitarianism popularity = 0.05 }
 		decrease_ps_by_one = yes
 		add_ideas = CAN_idea_Productivity_First
-		if = {
-		limit = {
-		has_idea = fourteen_hour_work_day
-		}
-		swap_ideas = {
-		remove_idea = fourteen_hour_work_day
-		add_idea = unlimited_work_day
-			}
-		}	
-		if = {
-		limit = {
-		has_idea = twelve_hour_work_day
-		}
-		swap_ideas = {
-		remove_idea = twelve_hour_work_day
-		add_idea = fourteen_hour_work_day
-			}
-		}
-		if = {
-		limit = {
-		has_idea = ten_hour_work_day
-		}
-		swap_ideas = {
-		remove_idea = ten_hour_work_day
-		add_idea = twelve_hour_work_day
-			}
-		}
-		if = {
-		limit = {
-		has_idea = eight_hour_work_day
-		}
-		swap_ideas = {
-		remove_idea = eight_hour_work_day
-		add_idea = ten_hour_work_day
-				}
-			}
+		#if = {
+		#limit = {
+		#has_idea = fourteen_hour_work_day
+		#}
+		#swap_ideas = {
+			#remove_idea = fourteen_hour_work_day
+			#add_idea = unlimited_work_day
+		#}
+		#}	
+		#if = {
+		#limit = {
+		#has_idea = twelve_hour_work_day
+		#}
+		#swap_ideas = {
+		#remove_idea = twelve_hour_work_day
+		#add_idea = fourteen_hour_work_day
+		#	}
+		#}
+		#if = {
+		#limit = {
+		#has_idea = ten_hour_work_day
+		#}
+		#swap_ideas = {
+		#remove_idea = ten_hour_work_day
+		#add_idea = twelve_hour_work_day
+		#	}
+		#}
+		#if = {
+		#limit = {
+		#has_idea = eight_hour_work_day
+		#}
+		#swap_ideas = {
+		#remove_idea = eight_hour_work_day
+		#add_idea = ten_hour_work_day
+		#		}
+		#	}
 		}
 	}
 
@@ -2132,10 +2141,10 @@ focus_tree = {
 			}
 		}		
 		
-		Bypass = {
-		Has_idea = ten_hour_work_day
-		Has_idea = eight_hour_work_day
-		}
+		#Bypass = {
+		#Has_idea = ten_hour_work_day
+		#Has_idea = eight_hour_work_day
+		#}
 
 		prerequisite = { focus = CAN_Industrialising_Society }
 
@@ -2144,33 +2153,33 @@ focus_tree = {
 		completion_reward = {
 		add_popularity = { ideology = centrism popularity = 0.05 }
 		add_popularity = { ideology = traditional_conservatism popularity = 0.05 }
-			if = {
-				limit = {
-					has_idea = unlimited_work_day
-				}
-				swap_ideas = {
-					remove_idea = unlimited_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = fourteen_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = fourteen_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = twelve_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = unlimited_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = unlimited_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = fourteen_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = fourteen_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = twelve_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
 		}
 	}
 
@@ -2688,13 +2697,13 @@ focus_tree = {
 			}
 		if = {
 			limit = {
-			has_idea = one_percent
+			has_idea = army_spending_level_1
 			}	
 		add_ideas = CAN_idea_lack_funding_1
 			}
 		if = {
 			limit = {
-			has_idea = two_percent
+			has_idea = army_spending_level_2
 			}	
 		add_ideas = CAN_idea_lack_funding_1
 			}				
@@ -2756,8 +2765,8 @@ focus_tree = {
 		
 		Bypass = {
 		NOT = {
-		has_idea = one_percent
-		has_idea = two_percent
+		has_idea = army_spending_level_1
+		has_idea = army_spending_level_2
 			}
 		}
 
@@ -2770,20 +2779,20 @@ focus_tree = {
 		completion_reward = {	
 		if = {
 			limit = {
-			has_idea = one_percent
+			has_idea = army_spending_level_1
 			}
 		swap_ideas = {	
-		remove_idea = one_percent
-		add_idea = three_percent
+		remove_idea = army_spending_level_1
+		add_idea = army_spending_level_3
 				}
 			}	
 		if = {
 			limit = {
-			has_idea = two_percent
+			has_idea = army_spending_level_2
 			}
 		swap_ideas = {	
-		remove_idea = two_percent
-		add_idea = three_percent
+		remove_idea = army_spending_level_2
+		add_idea = army_spending_level_3
 				}
 			}
 		remove_ideas = CAN_idea_lack_funding_1
@@ -4844,38 +4853,38 @@ focus_tree = {
 		completion_reward = {
 		if = {
 			limit = {
-			has_idea = one_percent
+			has_idea = army_spending_level_1
 			}
 		swap_ideas = {	
-		remove_idea = one_percent
-		add_idea = ten_percent
+		remove_idea = army_spending_level_1
+		add_idea = army_spending_level_5
 				}
 			}
 		if = {
 			limit = {
-			has_idea = two_percent
+			has_idea = army_spending_level_2
 			}
 		swap_ideas = {	
-		remove_idea = two_percent
-		add_idea = ten_percent
+		remove_idea = army_spending_level_2
+		add_idea = army_spending_level_5
 				}
 			}
 		if = {
 			limit = {
-			has_idea = three_percent
+			has_idea = army_spending_level_3
 			}
 		swap_ideas = {	
-		remove_idea = three_percent
-		add_idea = ten_percent
+		remove_idea = army_spending_level_3
+		add_idea = army_spending_level_5
 				}
 			}
 		if = {
 			limit = {
-			has_idea = five_percent 
+			has_idea = army_spending_level_4 
 			}
 		swap_ideas = {	
-		remove_idea = five_percent 
-		add_idea = ten_percent
+		remove_idea = army_spending_level_4 
+		add_idea = army_spending_level_5
 				}
 			}
 		else = {
@@ -4933,7 +4942,6 @@ focus_tree = {
 		add_state_claim = 470
 		add_state_claim = 473
 		add_state_claim = 740
-		add_state_claim = 739
 		add_state_claim = 471
 		set_politics = {
 		ruling_party = radical_democracy
@@ -5063,38 +5071,6 @@ focus_tree = {
 			instant_build = yes
 					}
 				}
-			739 = {
-			set_building_level = {
-			type = infrastructure
-			level = 1
-			instant_build = yes
-			}
-			set_building_level = {
-			type = dockyard
-			level = 0
-			instant_build = yes
-			}
-			set_building_level = {
-			type = arms_factory
-			level = 0
-			instant_build = yes
-			}
-			set_building_level = {
-			type = industrial_complex 
-			level = 0
-			instant_build = yes
-			}
-			set_building_level = {
-			type = cotton_farm  
-			level = 0
-			instant_build = yes
-			}
-			set_building_level = {
-			type = logging_camp   
-			level = 0
-			instant_build = yes
-				}
-			}
 			740 = {
 			set_building_level = {
 			type = infrastructure

@@ -2,42 +2,63 @@
 	capital = 981
 	oob = "PIE_1857"
 	set_convoys = 100
-	set_research_slots = 3
+	set_research_slots = 2
 	set_truce = {
 		target = RUS
 		days = 1820
 	}
 	add_to_variable = { prestige_score = 25 }
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 15 }
+	set_variable = { current_loans_sum = 27 }
+	lock_slider_social_spending = yes
+	lock_slider_taxes_spending = yes
+	lock_slider_research_spending = yes
+	lock_slider_army_spending = yes
+
 	add_ideas = {
 		#POLITICS 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 		civilian_economy
 		limited_exports
-		three_percent
-		normal_taxes
+		army_spending_level_3
+		taxation_level_3
 		cl_restricted
-		fourteen_hour_work_day
+		
 		#stagnation_growth
 		border_control
 		early_conscription
 		limited_equality
 		property_owners_suffrage
 		pp_limited_party_freedom
-		limited_constitution
+		#limited_constitution
 		limited_elections
-		open_schools
+		privileged_education
 		state_religion
+		censored_press
+		foa_restricted_attendance
 		#religion_catholic
-		hc_low_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		sfund_limited_state_sponsorship
+		social_spending_level_2
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		research_spending_level_2
+
 		#NATIONAL SPIRITS
 		ITA_hos_Victor_Emmanuel_II
 		PIE_Italian_National_Society
@@ -107,6 +128,12 @@
 		tech_naval_mtg_1850_gunboat = 1
 		tech_naval_mtg_1857_lineship = 1
 		tech_naval_mtg_paddle_wheels = 1
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
+		tech_naval_corvette = 1
+		tech_naval_early_gunboat = 1
+		tech_naval_1850_gunboat = 1
+		tech_naval_1857_lineship = 1
 		gw_artillery = 1
 		rml_field_gun = 1
 		mass_transit_early = 1
@@ -374,34 +401,35 @@
 
 	add_ideas = {
 		#POLITICS 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
+		mixed_economy
 		civilian_economy
 		limited_exports
-		three_percent
-		normal_taxes
+		army_spending_level_3
+		taxation_level_3
 		cl_restricted
-		fourteen_hour_work_day
+		
 		#stagnation_growth
 		border_control
 		early_conscription
 		limited_equality
 		property_owners_suffrage
 		pp_limited_party_freedom
-		limited_constitution
+		#limited_constitution
 		limited_elections
 		open_schools
 		state_religion
 		#religion_catholic
-		hc_low_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		sfund_limited_state_sponsorship
+		social_spending_level_2
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		research_spending_level_2
 		#NATIONAL SPIRITS
 		ITA_hos_Victor_Emmanuel_II
 		#PIE_Italian_National_Society

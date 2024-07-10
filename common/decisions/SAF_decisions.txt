@@ -15,7 +15,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {
@@ -45,7 +45,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		ai_will_do = {
@@ -73,7 +73,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 			political_power_cost = 0.05
 		}
 
@@ -106,7 +106,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.01
+			consumer_goods_expected_value = 0.01
 			political_power_cost = 0.05
 		}
 
@@ -135,7 +135,7 @@ eoanb_category_economic = {
 		allowed = { TAG = SAF }
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {
@@ -194,7 +194,7 @@ eoanb_category_economic = {
 
 		modifier = {
 			political_power_cost = 0.05
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
 		remove_effect = {
@@ -271,7 +271,7 @@ eoanb_category_economic = {
 
 		modifier = {
 			political_power_cost = 0.05
-			consumer_goods_factor = 0.1
+			consumer_goods_expected_value = 0.1
 		}
 
 		ai_will_do = {
@@ -299,8 +299,8 @@ eoanb_category_economic = {
 		}
 
 		remove_effect = {
-			780 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
-			780 = { add_extra_state_shared_building_slots = 1 }
+			747 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			747 = { add_extra_state_shared_building_slots = 1 }
 		}
 
 		ai_will_do = {
@@ -329,6 +329,71 @@ eoanb_category_economic = {
 		remove_effect = {
 			747 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 			747 = { add_extra_state_shared_building_slots = 1 }
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SAF_mission_invest_infra = {
+		icon = generic_construction
+
+		visible = {
+			always = no
+		}
+
+		fire_only_once = yes
+
+		days_remove = 300
+
+		cost = 0
+
+		allowed = { TAG = SAF }
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			751 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			751 = { add_extra_state_shared_building_slots = 1 }
+			681 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			681 = { add_extra_state_shared_building_slots = 1 }
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+
+	SAF_mission_university_good_hope = {
+		icon = university
+
+		visible = {
+			has_completed_focus = SAF_focus_uni_good_hope
+		}
+
+		fire_only_once = yes
+
+		days_remove = 280
+
+		cost = 0
+
+		allowed = { TAG = SAF }
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		remove_effect = {
+			add_stability = 0.05
+			add_political_power = 50
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = biochemistry_tech
+			}
 		}
 
 		ai_will_do = {
@@ -376,6 +441,272 @@ eoanb_category_military = {
 		
 		ai_will_do = {
 			base = 10
+		}
+	}
+}
+
+political_actions = {
+	SAF_decision_OFS_confed_talks = {
+	
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SAF_focus_OFS_talks
+		}
+
+		allowed = { TAG = SAF }	
+
+		visible = {
+			has_completed_focus = SAF_focus_need_federation
+		}
+		
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+
+		complete_effect = {
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+
+		remove_effect = {
+			OFS = {
+				country_event = britishafrica.28
+			}
+		}
+		
+		ai_will_do = {
+			base = 10
+		}
+	}
+	SAF_decision_TRV_confed_talks = {
+	
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_completed_focus = SAF_focus_OFS_talks
+		}
+
+		allowed = { TAG = SAF }	
+
+		visible = {
+			has_completed_focus = SAF_focus_need_federation
+		}
+		
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 14
+
+		complete_effect = {
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+
+		remove_effect = {
+			TRV = {
+				country_event = britishafrica.29
+			}
+		}
+		
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	SAF_decision_annex_GQW = {
+	
+		icon = generic_prepare_civil_war
+
+		available = {
+			GQW = {
+				is_puppet_of = ENG
+			}
+		}
+
+		allowed = { TAG = SAF }	
+
+		visible = {
+			GQW = {
+				exists = yes
+			}
+		}
+		
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 60
+
+		complete_effect = {
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = GQW
+				transfer_troops = no
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1880.1.14
+			}
+		}
+	}
+
+	SAF_decision_annex_SOT= {
+	
+		icon = generic_prepare_civil_war
+
+		available = {
+			SOT = {
+				is_puppet_of = ENG
+			}
+		}
+
+		allowed = { TAG = SAF }	
+
+		visible = {
+			SOT = {
+				exists = yes
+			}
+		}
+		
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 60
+
+		complete_effect = {
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = SOT
+				transfer_troops = no
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	SAF_defeat_anglo_zulu = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			ZUL = {
+				surrender_progress > 0.8
+			}
+		}
+
+		days_mission_timeout = 210
+
+		activation = {
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_war_with = ZUL
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 801
+				state = 803
+				state = 1070
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = fenian_rising_dublin
+		#	tag = ENG
+		#}
+
+		is_good = no
+
+		timeout_effect = {
+			white_peace = {
+				tag = ZUL
+			}
+			NAT = {
+				white_peace = {
+					tag = ZUL
+				}
+				add_war_support = -0.25
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			add_war_support = -0.25
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = SAF_isandlwana
+				}
+				white_peace = {
+					tag = ZUL
+				}
+				NAT = {
+					white_peace = {
+						tag = ZUL
+					}
+				}
+				ZUL = {
+					swap_ideas = {
+						remove_idea = AF_T_small_kingdom
+						add_idea = AF_T_unorganized_tribal_nation
+					}
+					promote_character = ZUL_thirteen_chiefs
+				}
+				ENG = {
+					country_event = {
+						id = britain.219
+						days = 2
+					}
+				}
+				add_stability = 0.02
+				add_political_power = 50
+				clr_country_flag = SAF_isandlwana
+			}
+			else = {
+				NAT = {
+					annex_country = {
+						target = ZUL
+						transfer_troops = no
+					}
+				}
+				add_stability = 0.05
+				add_war_support = 0.1
+				add_political_power = 100
+			}
 		}
 	}
 }

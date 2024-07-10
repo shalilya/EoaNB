@@ -489,10 +489,10 @@ focus_tree = {
 			add_political_power = 50
 			country_event = {id = wallachian_union.21}
 			hidden_effect = {
-				swap_ideas = {
-					remove_idea = no_constitution
-					add_idea = limited_constitution
-				}
+				#swap_ideas = {
+				#	remove_idea = no_constitution
+				#	add_idea = limited_constitution
+				#}
 			}
 		}
 	}
@@ -678,7 +678,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ROM_cuza_reforms
-		icon = placeholder
+		icon = GFX_ROM_focus_cuza_victory
 		ai_will_do = { factor = 100 }
 		relative_position_id = ROM_focus_political_situation
 		x = -5

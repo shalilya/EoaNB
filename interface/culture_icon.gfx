@@ -968,7 +968,7 @@ spriteTypes = {
 			textureFile = "gfx/interface/ideas/culture/culture_native_american_iroquoian.dds"
 		}
 		spriteType = {
-			name = "GFX_culture_native_american_basin"
+			name = "GFX_culture_native_american_numic"
 			textureFile = "gfx//interface//ideas//culture//culture_native_american_basin.dds"
 		}
 		spriteType = {
@@ -1004,7 +1004,11 @@ spriteTypes = {
 			textureFile = "gfx//interface//ideas//culture//culture_native_american_patagonian.dds"
 		}
 		spriteType = {
-			name = "GFX_culture_native_american_pueblo"
+			name = "GFX_culture_native_american_tanoan"
+			textureFile = "gfx//interface//ideas//culture//culture_native_american_pueblo.dds"
+		}
+		spriteType = {
+			name = "GFX_culture_native_american_caddoan"
 			textureFile = "gfx//interface//ideas//culture//culture_native_american_pueblo.dds"
 		}
 		spriteType = {
@@ -1020,7 +1024,7 @@ spriteTypes = {
 			textureFile = "gfx//interface//ideas//culture//culture_native_american_athapaskan.dds"
 		}
 		spriteType = {
-			name = "GFX_culture_native_american_gulf"
+			name = "GFX_culture_muskogean"
 			textureFile = "gfx//interface//ideas//culture//culture_native_american_gulf.dds"
 		}
 		spriteType = {

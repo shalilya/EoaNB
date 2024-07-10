@@ -7,19 +7,19 @@
 
 	add_ideas = { 
 					#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		has_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 	law_army_tribal_basic
 
 		civilian_economy
 		limited_exports
-		two_percent
-		high_taxes
+		army_spending_level_2
+		taxation_level_4
 	cl_legal
-	lp_tribal_communalism
+	
 
 		#stagnation_growth
 		border_control
@@ -27,18 +27,18 @@
 		manpower_tribal_warriors
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		oral_tradition
 		state_religion
 		#religion_animist
 
-	 hc_no_healthcare
-		law_mercenary_groups
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_1
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 		AF_T_organized_tribal_nation

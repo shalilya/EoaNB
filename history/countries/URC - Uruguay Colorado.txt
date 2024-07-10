@@ -12,17 +12,17 @@
 	#Laws
 	add_ideas = { 
 	      	#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		non_monarchical_system
-		presidential_republic
+		#non_monarchical_system
+		#presidential_republic
 
 		#Economic
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#Population
@@ -32,7 +32,7 @@
 		limited_equality
 		universal_male_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		limited_elections
 
 		#Culture

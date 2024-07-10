@@ -92,14 +92,14 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			add_stability = -0.05
-			swap_ideas = {
-				remove_idea = presidential_republic
-				add_idea = absolute_monarchy
-			}
-			swap_ideas = {
-				remove_idea = non_monarchical_system
-				add_idea = no_heir
-			}
+			#swap_ideas = {
+			#	remove_idea = presidential_republic
+			#	add_idea = absolute_monarchy
+			#}
+			#swap_ideas = {
+			#	remove_idea = non_monarchical_system
+			#	add_idea = no_heir
+			#}
 			set_politics = {
 				ruling_party = fundamentalism
 			}
@@ -125,10 +125,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			swap_ideas = {
-				remove_idea = presidential_republic
-				add_idea = absolute_monarchy
-			}
+			#swap_ideas = {
+			#	remove_idea = presidential_republic
+			#	add_idea = absolute_monarchy
+			#}
 
 		}
 	}
@@ -249,10 +249,10 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 30
 			add_stability = -0.02
-			swap_ideas = {
-				remove_idea = limited_constitution
-				add_idea = no_constitution
-			}
+			#swap_ideas = {
+			#	remove_idea = limited_constitution
+			#	add_idea = no_constitution
+			#}
 		}
 	}
 	
@@ -685,7 +685,7 @@ focus_tree = {
 	
 	focus = {
 		id = MEC_land_reform
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_Agriculture_wheat
 		x = 28
 		y = 5
 		cost = 22

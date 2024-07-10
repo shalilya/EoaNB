@@ -3,7 +3,7 @@ characters={
 	##### COUNTRY LEADERS #####
 
 	### GAME START 1857 ###
-	
+
 	#Autocracy
 	FRA_napoleon_iii={
 		name="Charles Louis Napoléon Bonaparte III"
@@ -19,7 +19,7 @@ characters={
 			id=325
 		}
 	}
-	
+
 	#TradCon
 	FRA_eugene_chevandier_de_valdrome={
 		name="Eugène Chevandier de Valdrome"
@@ -35,7 +35,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#Centrism
 	FRA_adolphe_thiers={
 		name="Adolphe Thiers"
@@ -63,7 +63,7 @@ characters={
 			}
 		}
 	}
-	
+
 	#SocEgal
 	FRA_jules_favre={
 		name="Jules Favre"
@@ -79,7 +79,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#CollSoc
 	#FRA_henri_tolain={
 	#	name="Henri Tolain"
@@ -95,7 +95,7 @@ characters={
 	#		id=-1
 	#	}
 	#}
-	
+
 	#RadSoc
 	FRA_auguste_blanqui={
 		name="Auguste Blanqui"
@@ -111,7 +111,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#Peripheral
 	FRA_henri_rochefort={
 		name="Henri Rochefort"
@@ -127,7 +127,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#ChauvPop
 	FRA_georges_ernest_boulanger={
 		name="Georges Ernest Boulanger"
@@ -143,7 +143,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#Fundamentalism
 	FRA_francois_nicholas_madeleine_morlot={
 		name="François-Nicholas-Madeleine Morlot"
@@ -159,7 +159,7 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	#Anarchism
 	FRA_pierre_joseph_proudhon={
 		name="Pierre Joseph Proudhon"
@@ -175,13 +175,13 @@ characters={
 			id=-1
 		}
 	}
-	
+
 	### POSSIBLE CHANGES LATER ###
-	
+
 	#Autocracy
 	FRA_eugenie_i={
 		name="Eugénie I"
-		gender=female 
+		gender=female
 		portraits={
 			civilian={
 				large="GFX_Portrait_FRA_Eugenie_de_Montijo"
@@ -228,7 +228,7 @@ characters={
 			}
 		}
 	}
-	
+
 	#TradCon
 	FRA_provisional_government={
 		name="Provisional Government"
@@ -246,7 +246,7 @@ characters={
 			}
 		}
 	}
-	
+
 	##### ARMY & NAVY #####
 
 	### GAME START 1857 ###
@@ -296,15 +296,15 @@ characters={
 				original_tag = FRA
 			}
 			visible = {
-			   date < 1872.06.4
-			   NOT = {
+				date < 1872.06.4
+				NOT = {
 					has_country_flag = FRA_1870_republic
 				}
 			}
 			traits = {
 				military_theorist
 			}
-			modifier = { 
+			modifier = {
 				defence = 0.05
 				max_dig_in = 0.5
 				production_speed_bunker_factor = 0.05
@@ -316,9 +316,10 @@ characters={
 		portraits={
 			civilian={
 				large="GFX_Portrait_FRA_Jacques_Louis_Randon"
+				small = "GFX_idea_FRA_advisor_Louis_Randon"
 			}
 			army={
-				small = "GFX_idea_europe_generic_1"
+				small = "GFX_idea_FRA_advisor_Louis_Randon"
 				large="GFX_Portrait_FRA_Jacques_Louis_Randon"
 			}
 		}
@@ -330,6 +331,17 @@ characters={
 			planning_skill=1
 			logistics_skill=1
 			legacy_id=178904
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_jacques_louis_randon
+			allowed = {
+				original_tag = FRA
+			}
+			can_be_fired = no
+			traits = {
+				eoanb_fra_governor_algeria
+			}
 		}
 	}
 	FRA_francois_certain_de_canrobert={
@@ -386,7 +398,7 @@ characters={
 			legacy_id=178928
 		}
 	}
-	
+
 	#Generals
 	FRA_francois_achille_bazaine={
 		name="François Achille Bazaine"
@@ -676,7 +688,38 @@ characters={
 			legacy_id=178936
 		}
 	}
-	
+	FRA_Louis_Faidherbe={
+		name="Louis Faidherbe"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/Portrait_SNG_Louis_Faidherbe.dds"
+			}
+			civilian = {
+				small = "GFX_idea_FRA_advisor_Louis_Faidherbe"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer expert_administrator desert_fox eoanb_french_general }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			#legacy_id=178936
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_Louis_Faidherbe
+			allowed = {
+				original_tag = FRA
+			}
+			can_be_fired = no
+			traits = {
+				eoanb_fra_governor_senegal
+			}
+		}
+	}
+
 	#Admirals
 	FRA_ferdinand_hamelin={
 		name="Ferdinand Hamelin"
@@ -784,7 +827,97 @@ characters={
 			legacy_id=178931
 		}
 	}
-	
+	FRA_theogene_page = {
+		name="Théogène François Page"
+		portraits={
+			army={
+				small="GFX_Portrait_France_Generic_navy_1_small"
+				large="gfx/leaders/FRA/Portrait_FRA_Alexandre_Ferdinand_Parseval_Deschenes.png"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=178932
+		}
+	}
+	FRA_jean_jaureguiberry = {
+		name="Jean Bernard Jauréguiberry"
+		portraits={
+			army={
+				small="GFX_Portrait_France_Generic_navy_1_small"
+				large="gfx/leaders/FRA/Portrait_FRA_Alexandre_Ferdinand_Parseval_Deschenes.png"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=178937
+		}
+	}
+	FRA_louis_bonard = {
+		name="Louis Adolphe Bonard"
+		portraits={
+			army={
+				small="GFX_Portrait_France_Generic_navy_1_small"
+				large="gfx/leaders/FRA/Portrait_FRA_Alexandre_Ferdinand_Parseval_Deschenes.png"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=178938
+		}
+	}
+	FRA_pierre_roze = {
+		name="Pierre-Gustave Roze"
+		portraits={
+			army={
+				small="GFX_Portrait_France_Generic_navy_1_small"
+				large="gfx/leaders/FRA/Portrait_FRA_Alexandre_Ferdinand_Parseval_Deschenes.png"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=178939
+		}
+	}
+	FRA_eduard_willaumez = {
+		name="Édouard Bouët-Willaumez"
+		portraits={
+			army={
+				small="GFX_Portrait_France_Generic_navy_1_small"
+				large="gfx/leaders/FRA/Portrait_FRA_Alexandre_Ferdinand_Parseval_Deschenes.png"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=178940
+		}
+	}
+
 	##### ADVISORS AND THEORISTS #####
 
 	### GAME START 1857 ###
@@ -812,7 +945,7 @@ characters={
 				original_tag = FRA
 			}
 			available = {
-				NOT = { 
+				NOT = {
 					has_country_flag = FRA_1870_republic
 				}
 			}
@@ -895,7 +1028,7 @@ characters={
 			}
 			traits = {
 				clever_buisnessman
-				neutral_party
+				#neutral_party
 			}
 		}
 	}
@@ -933,7 +1066,7 @@ characters={
 				original_tag = FRA
 			}
 			available = {
-				NOT = { 
+				NOT = {
 					has_country_flag = FRA_1870_republic
 				}
 			}
@@ -981,7 +1114,102 @@ characters={
 			}
 		}
 	}
-	
+	FRA_empress_eugenie = {
+		name = "Eugénie de Montijo"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FRA_advisor_Eugenie_de_Montijo"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_empress_eugenie
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				FRA_trait_empress_eugenie
+			}
+		}
+	}
+	FRA_jules_baroche = {
+		name = "Pierre Jules Baroche"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FRA_advisor_victor_hugo"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_jules_baroche
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				FRA_trait_jules_baroche
+			}
+		}
+	}
+	FRA_gustave_rouland = {
+		name = "Gustave Rouland"
+		portraits = {
+			civilian = { small = "GFX_idea_FRA_advisor_victor_hugo" }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_gustave_rouland
+			allowed = { original_tag = FRA }
+			traits = { FRA_trait_gustave_rouland }
+			research_bonus = { humanities_tech = 0.02 }
+			on_add = {
+				FROM = {
+					add_opinion_modifier = { target = PAP modifier = small_decrease }
+				}
+				FROM = {
+					reverse_add_opinion_modifier = { target = PAP modifier = small_decrease }
+				}
+			}
+		}
+	}
+
+	FRA_prosper_laubat = {
+		name = "Prosper de Chasseloup-Laubat"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FRA_advisor_victor_hugo"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_prosper_laubat
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				FRA_trait_prosper_laubat
+			}
+			
+		}
+	}
+	FRA_claude_delangle = {
+		name = "Claude Alphonse Delangle"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FRA_advisor_victor_hugo"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRA_advisor_claude_delangle
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				FRA_trait_claude_delangle
+			}
+		}
+	}
+
 	#Theorists (see Vaillant under Field Marshals)
 	FRA_ardant_du_picq = {
 		name = "Ardant du Picq"
@@ -999,12 +1227,12 @@ characters={
 				original_tag = FRA
 			}
 			visible = {
-			   date < 1870.08.18
+				date < 1870.08.18
 			}
 			traits = {
 				military_theorist
 			}
-			modifier = { 
+			modifier = {
 				army_org = 5
 				experience_loss_factor = -0.05
 				max_planning = 0.05
@@ -1027,11 +1255,30 @@ characters={
 				original_tag = FRA
 			}
 			visible = {
-			   date < 1862.12.01
+				date < 1862.12.01
 			}
 			traits = {
 				naval_theorist
 			}
 		}
 	}
+
+	### AFTER 1857 START ###
+
+	FRA_pereire_brothers = {
+		name = "Pereire Brothers"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_AUS_advisor_Anselm_Salomon_von_Rothschild"
+			}
+		}
+	}
+	FRA_napoleon_joseph_charles = {
+		name = "Napoleon Joseph Charles"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FRA_Napoleon_Charles"
+			}
+		}
+	}		
 }

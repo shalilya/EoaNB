@@ -129,7 +129,7 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.03
 				stability_factor = 0.1
-				consumer_goods_factor = 0.01
+				consumer_goods_expected_value = 0.01
 				production_speed_buildings_factor = 0.03
 				war_support_factor = 0.05
 			}
@@ -144,7 +144,7 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.05
 				stability_factor = 0.15
-				consumer_goods_factor = 0.03
+				consumer_goods_expected_value = 0.03
 				production_speed_buildings_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				army_morale_factor = 0.03
@@ -174,7 +174,7 @@ ideas = {
 			picture = generic_secret_police
 			modifier = {
 				political_power_gain = -0.05
-				consumer_goods_factor = 0.02
+				consumer_goods_expected_value = 0.02
 				stability_factor = -0.05
 				army_org_factor = -0.03
 				max_dig_in = 0.03
@@ -189,7 +189,7 @@ ideas = {
 			picture = generic_secret_police
 			modifier = {
 				political_power_gain = -0.10
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				stability_factor = -0.05
 				army_org_factor = -0.05
 				max_dig_in = 0.03
@@ -204,7 +204,7 @@ ideas = {
 			picture = generic_secret_police
 			modifier = {
 				political_power_gain = -0.175
-				consumer_goods_factor = 0.085
+				consumer_goods_expected_value = 0.085
 				stability_factor = -0.05
 				army_org_factor = -0.075
 				max_dig_in = 0.05
@@ -221,7 +221,7 @@ ideas = {
 				political_power_gain = -0.02
 				experience_gain_army_factor = 0.01
 				stability_factor = -0.03
-				consumer_goods_factor = 0.01
+				consumer_goods_expected_value = 0.01
 			}
 		}
 
@@ -233,7 +233,7 @@ ideas = {
 				political_power_gain = 0.04
 				experience_gain_army_factor = 0.02
 				stability_factor = -0.1
-				consumer_goods_factor = 0.04
+				consumer_goods_expected_value = 0.04
 				land_reinforce_rate = -0.075
 				army_speed_factor = -0.02
 			}
@@ -307,7 +307,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		}
 		
@@ -323,7 +323,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 		}
 		
@@ -573,11 +573,6 @@ ideas = {
 			}
 
 			available = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
 				num_subjects > 0
 			}
 
@@ -598,11 +593,6 @@ ideas = {
 			}
 
 			available = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
 				num_subjects > 0
 			}
 
@@ -669,7 +659,175 @@ ideas = {
 
 			modifier = {
 				supply_consumption_factor = -0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		
+		eoanb_bail_out_limited = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_production_bonus
+
+			modifier = {
+				political_power_factor = -0.15
+				consumer_goods_expected_value = 0.1
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		eoanb_bail_out_moderate = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_production_bonus
+
+			modifier = {
+				political_power_factor = -0.3
+				consumer_goods_expected_value = 0.2
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		
+		eoanb_bail_out_extensive = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_production_bonus
+
+			modifier = {
+				political_power_factor = -0.45
+				consumer_goods_expected_value = 0.3
+				production_speed_buildings_factor = 0.3
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.15
+			}
+		}
+
+		eoanb_economic_aid_program = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = SWE_workers_economy
+
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_expected_value = 0.1
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		eoanb_tariffs_limited = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = can_wartime_prices_and_trade_board
+
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+				min_export = -0.1
+				trade_opinion_factor = -0.1
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_lack_of_resource_penalty_factor = 0.1
+			}
+		}
+		
+		eoanb_tariffs_moderate = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = can_wartime_prices_and_trade_board
+
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = 0.1
+				min_export = -0.2
+				trade_opinion_factor = -0.2
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_lack_of_resource_penalty_factor = 0.2
+			}
+		}
+		
+		eoanb_tariffs_restrictive = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = can_wartime_prices_and_trade_board
+
+			modifier = {
+				political_power_factor = -0.15
+				stability_factor = 0.15
+				min_export = -0.3
+				trade_opinion_factor = -0.3
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				production_lack_of_resource_penalty_factor = 0.3
 			}
 		}
 
@@ -805,7 +963,7 @@ ideas = {
 	}
 
 	# TECHNOLOGY
-	tank_manufacturer = {
+	tank_manufacturers = {
 
 		designer = yes
 
@@ -831,7 +989,7 @@ ideas = {
 		}
 	}
 
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 
@@ -891,7 +1049,7 @@ ideas = {
 		}
 	}
 
-	aircraft_manufacturer = {
+	aircraft_manufacturers = {
 
 		designer = yes
 
@@ -903,7 +1061,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = light_aircraft_manufacturer limit = 1 }
 				}
-				NOT = { OR = { tag = PIE tag = TUS tag = USA tag = FRA tag = WUR tag = BAV tag = PRS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = FIN } }
+				NOT = { OR = { tag = PIE tag = TUS tag = USA tag = FRA tag = WUR tag = BAV tag = PRS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = FIN tag = POR } }
 			}
 
 			cost = 150
@@ -1004,7 +1162,7 @@ ideas = {
 		}
 	}
 
-	materiel_manufacturer = {
+	materiel_manufacturers = {
 
 		designer = yes
 
@@ -1016,7 +1174,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = infantry_equipment_manufacturer_1 limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = ENG tag = WUR tag = BAV tag = PRS tag = BAD tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = NOR tag = FIN } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = ENG tag = WUR tag = BAV tag = PRS tag = BAD tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = NOR tag = FIN tag = POR } }
 			}
 
 			cost = 150
@@ -1037,7 +1195,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = artillery_manufacturer_1 limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = ENG tag = WUR tag = BAV tag = PRS tag = BAD tag = RUS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = NOR tag = FIN } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = ENG tag = WUR tag = BAV tag = PRS tag = BAD tag = RUS tag = GRE tag = MEX tag = MXE tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = AUS tag = ROM tag = SWE tag = NAS tag = THU tag = NOR tag = FIN tag = POR } }
 			}
 
 			cost = 150
@@ -1059,7 +1217,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = captain_of_industry_1 limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR tag = POR} }
 			}
 
 			traits = { captain_of_industry_1 }
@@ -1071,7 +1229,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = fortification_engineer_1 limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR tag = POR } }
 			}
 
 			traits = { fortification_engineer_1 }
@@ -1083,7 +1241,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = war_industrialist_1 limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = BAV tag = WUR tag = OLD tag = MCK tag = SCH tag = HAM tag = ENG tag = SWE tag = HOL tag = POL tag = RUS tag = SPR tag = FIN tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = DEN tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = NOR tag = POR} }
 			}
 
 			traits = { war_industrialist_1 }
@@ -1266,7 +1424,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = military_theorist limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = POL tag = ENG tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER original_tag = NOR tag = ROM } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = POL tag = ENG tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER original_tag = NOR tag = ROM tag = POR } }
 			}
 
 			research_bonus = {
@@ -1282,7 +1440,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = naval_theorist limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = ENG tag = POL tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER original_tag = NOR tag = ROM } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = ENG tag = POL tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER original_tag = NOR tag = ROM tag = POR } }
 			}
 
 			research_bonus = {
@@ -1298,7 +1456,7 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = air_warfare_theorist limit = 1 }
 				}
-				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = ENG tag = POL tag = HAM tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM } }
+				NOT = { OR = { tag = USA tag = PRS tag = FRA tag = WUR tag = BAV tag = SWE tag = HOL tag = ENG tag = POL tag = HAM tag = RUS tag = AUS tag = GRE tag = MEX tag = MXE tag = TSH tag = POR tag = TSH tag = SAG tag = CHO tag = SAT tag = TOS tag = DTE tag = HSD tag = MCK tag = BAD tag = FRK tag = HES tag = OLD tag = HAN tag = MCK tag = SAX tag = HAM tag = BRE tag = LCK tag = SER tag = ROM tag = POR } }
 			}
 
 			research_bonus = {

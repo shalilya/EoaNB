@@ -389,7 +389,7 @@ focus_tree = {
 		id = TUS_focus_consumers_exist_not_in_the_countryside
 		icon = GFX_Foreign_investments_focus_2
 		relative_position_id = TUS_focus_continue_with_free_trade
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -414,7 +414,7 @@ focus_tree = {
 		id = TUS_focus_but_outside_the_countryside
 		icon = GFX_Focus_Continent_West_Europe
 		relative_position_id = TUS_focus_consumers_exist_not_in_the_countryside
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -438,7 +438,7 @@ focus_tree = {
 		id = TUS_focus_the_expanding_grain_market
 		icon = GFX_Focus_Agriculture_wheat
 		relative_position_id = TUS_focus_but_outside_the_countryside
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -543,6 +543,7 @@ focus_tree = {
 				uses = 1
 				category = process_engineering_tech
 			}
+			increase_slider_research_spending = yes
 			#rail station decisions
 		}
 	}
@@ -589,8 +590,7 @@ focus_tree = {
 			base = 1
 		}
 		completion_reward = {
-			#temporary idea giving research bonus, maybe event
-			#decisions to improve laws
+			increase_slider_social_spending = yes
 			add_political_power = 100
 		}
 	}
@@ -615,10 +615,10 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.02
 			add_political_power = 30
-			swap_ideas = {
-				remove_idea = lp_land_estates
-				add_idea = lp_land_purchase
-			}
+			#swap_ideas = {
+			#	remove_idea = lp_land_estates
+			#	add_idea = lp_land_purchase
+			#}
 		}
 	}
 	focus = {
@@ -1269,19 +1269,20 @@ focus_tree = {
 		relative_position_id = TUS_focus_memories_of_the_past
 		cost = 35
 		available = {
-			is_ai = yes
+			AND = {
+				has_completed_focus = TUS_focus_not_industrialisation
+				has_completed_focus = TUS_focus_and_for_land_owners
+			}
+			custom_trigger_tooltip = {
+				tooltip = TUS_autocracy_path_ai_TT
+				is_ai = yes
+			}
 		}
 		prerequisite = {
 			focus = TUS_focus_memories_of_the_past
 		}
 		mutually_exclusive = {
 			focus = TUS_focus_de_moderate_liberalism
-		}
-		available = {
-			AND = {
-				has_completed_focus = TUS_focus_not_industrialisation
-				has_completed_focus = TUS_focus_and_for_land_owners
-			}
 		}
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
@@ -1526,6 +1527,11 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = TUS_focus_new_pol_era
+		}
+		bypass = {
+			PIE = {
+				has_global_flag = PIE_2IW_Victory
+			}
 		}
 		completion_reward = {
 			add_war_support = 0.05
@@ -2239,6 +2245,7 @@ focus_tree = {
 			add_state_core = 981
 			add_state_core = 158
 			add_state_core = 159
+			add_state_core = 114
 			if = {
 				limit = {
 					controls_state = 160

@@ -33,7 +33,7 @@ country_event = {
 		name = usa.249.e
 		add_political_power = -5
 		hidden_effect = {
-			360 = { OWNER = { country_event = { id = usa_flavor.2 days = 300 random_days = 100 } } }
+			360 = { OWNER = { country_event = { id = usa.342 days = 300 random_days = 100 } } }
 		}
 	}
 }
@@ -983,31 +983,31 @@ country_event = {
 			limit = { has_country_flag = na_b_economic_panic_temporary_tax_relief_flag }
 			custom_effect_tooltip = na_b_economic_panic_temporary_tax_relief_tooltip
 			if = { 
-				limit = { has_idea = very_low_taxes }
+				limit = { has_idea = taxation_level_1 }
 				swap_ideas = {
-					remove_idea = very_low_taxes
-					add_idea = low_taxes
+					remove_idea = taxation_level_1
+					add_idea = taxation_level_2
 				}
 			}
 			else_if = { 
-				limit = { has_idea = low_taxes }
+				limit = { has_idea = taxation_level_2 }
 				swap_ideas = {
-					remove_idea = low_taxes
-					add_idea = normal_taxes
+					remove_idea = taxation_level_2
+					add_idea = taxation_level_3
 				}
 			}
 			else_if = { 
-				limit = { has_idea = normal_taxes }
+				limit = { has_idea = taxation_level_3 }
 				swap_ideas = {
-					remove_idea = normal_taxes
-					add_idea = high_taxes
+					remove_idea = taxation_level_3
+					add_idea = taxation_level_4
 				}
 			}
 			else_if = { 
-				limit = { has_idea = high_taxes }
+				limit = { has_idea = taxation_level_4 }
 				swap_ideas = {
-					remove_idea = high_taxes
-					add_idea = very_high_taxes
+					remove_idea = taxation_level_4
+					add_idea = taxation_level_5
 				}
 			}
 			clr_country_flag = na_b_economic_panic_temporary_tax_relief_flag
@@ -2038,15 +2038,8 @@ country_event = {
 			}
 		}
 		name = usa.29.c
-		if = {
-			limit = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-			add_autonomy_ratio = {
-				value = 0.05
-			}
+		add_autonomy_ratio = {
+			value = 0.05
 		}
 	}
 }
@@ -2082,15 +2075,8 @@ country_event = {
 			}
 		}
 		name = usa.30.c
-		if = {
-			limit = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-			add_autonomy_ratio = {
-				value = -0.05
-			}
+		add_autonomy_ratio = {
+			value = -0.05
 		}
 	}
 }
@@ -2196,10 +2182,10 @@ country_event = {
 			ruling_party = social_egalitarianism
 		}
 		hidden_effect = {
-			swap_ideas = {
-				remove_idea = presidential_republic
-				add_idea = socialist_republic
-			}
+			#swap_ideas = {
+			#	remove_idea = presidential_republic
+			#	add_idea = socialist_republic
+			#}
 		}
 		remove_ideas = USA_recovery
 		hidden_effect = { news_event = { id = usa_news.10 } }
@@ -2219,14 +2205,14 @@ country_event = {
 	option = {
 		name = usa.35.a
 		hidden_effect = {
-			swap_ideas = {
-				remove_idea = non_monarchical_system
-				add_idea = no_heir
-			}
-			swap_ideas = {
-				remove_idea = presidential_republic
-				add_idea = constitutional_monarchy
-			}
+			#swap_ideas = {
+			#	remove_idea = non_monarchical_system
+			#	add_idea = no_heir
+			#}
+			#swap_ideas = {
+			#	remove_idea = presidential_republic
+			#	add_idea = constitutional_monarchy
+			#}
 		}
 		hidden_effect = { remove_ideas = USA_recovery }
 		set_politics = { ruling_party = autocracy }
@@ -5121,10 +5107,10 @@ country_event = {
 
 	option = {
 		name = usa.96.a
-		swap_ideas = {
-			remove_idea = lp_land_purchase
-			add_idea = lp_land_estates
-		}
+		#swap_ideas = {
+		#	remove_idea = lp_land_purchase
+		#	add_idea = lp_land_estates
+		#}
 	}
 	option = {
 		name = usa.96.b
@@ -5370,19 +5356,19 @@ country_event = {
 		producer = USA
 	}
 		add_ideas = {
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		non_monarchical_system
-		presidential_republic
+		#non_monarchical_system
+		#presidential_republic
 
 		civilian_economy
 		export_focus
-		two_percent
+		army_spending_level_2
 		normal_taxes
 		cl_restricted
-		twelve_hour_work_day
+		#twelve_hour_work_day
 
 		#stagnation_growth
 		border_control
@@ -5390,7 +5376,7 @@ country_event = {
 		racial_laws
 		universal_male_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 		privileged_education
 		state_religion
@@ -5447,19 +5433,19 @@ country_event = {
 				producer = USA
 			}
 			add_ideas = {
-				hos_is_leader
+				#hos_is_leader
 				victorian_era
 				law_victorian_army
 				industrializing
-				non_monarchical_system
-				presidential_republic
+				#non_monarchical_system
+				#presidential_republic
 
 				civilian_economy
 				export_focus
-				two_percent
+				army_spending_level_2
 				normal_taxes
 				cl_restricted
-				twelve_hour_work_day
+				#twelve_hour_work_day
 
 				#stagnation_growth
 				border_control
@@ -5467,7 +5453,7 @@ country_event = {
 				racial_laws
 				universal_male_suffrage
 
-				constitution_adopted
+				#constitution_adopted
 				free_elections
 
 				privileged_education
@@ -5525,19 +5511,19 @@ country_event = {
 				producer = USA
 			}
 			add_ideas = {
-				hos_is_leader
+				#hos_is_leader
 				victorian_era
 				law_victorian_army
 				industrializing
-				non_monarchical_system
-				presidential_republic
+				#non_monarchical_system
+				#presidential_republic
 
 				civilian_economy
 				export_focus
-				two_percent
+				army_spending_level_2
 				normal_taxes
 				cl_restricted
-				twelve_hour_work_day
+				#twelve_hour_work_day
 
 				#stagnation_growth
 				border_control
@@ -5545,7 +5531,7 @@ country_event = {
 				racial_laws
 				universal_male_suffrage
 
-				constitution_adopted
+				#constitution_adopted
 				free_elections
 
 				privileged_education
@@ -5603,19 +5589,19 @@ country_event = {
 				producer = USA
 			}
 			add_ideas = {
-				hos_is_leader
+				#hos_is_leader
 				victorian_era
 				law_victorian_army
 				industrializing
-				non_monarchical_system
-				presidential_republic
+				#non_monarchical_system
+				#presidential_republic
 
 				civilian_economy
 				export_focus
-				two_percent
+				army_spending_level_2
 				normal_taxes
 				cl_restricted
-				twelve_hour_work_day
+				#twelve_hour_work_day
 
 				#stagnation_growth
 				border_control
@@ -5623,7 +5609,7 @@ country_event = {
 				racial_laws
 				universal_male_suffrage
 
-				constitution_adopted
+				#constitution_adopted
 				free_elections
 
 				privileged_education
@@ -5681,19 +5667,19 @@ country_event = {
 				producer = USA
 			}
 			add_ideas = {
-				hos_is_leader
+				#hos_is_leader
 				victorian_era
 				law_victorian_army
 				industrializing
-				non_monarchical_system
-				presidential_republic
+				#non_monarchical_system
+				#presidential_republic
 
 				civilian_economy
 				export_focus
-				two_percent
+				army_spending_level_2
 				normal_taxes
 				cl_restricted
-				twelve_hour_work_day
+				#twelve_hour_work_day
 
 				#stagnation_growth
 				border_control
@@ -5701,7 +5687,7 @@ country_event = {
 				racial_laws
 				universal_male_suffrage
 
-				constitution_adopted
+				#constitution_adopted
 				free_elections
 
 				privileged_education
@@ -6574,7 +6560,6 @@ country_event = {
 		trigger = {
 			tag = RUS
 		}
-		transfer_state = 650
 	}
 }
 #USA Purchase of Iceland/Greenland 1867
@@ -7141,6 +7126,10 @@ country_event = {
 		}
 		hidden_effect = {
 			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.329
+				days = 30
+			}
 		}
 	}
 }
@@ -7166,6 +7155,12 @@ country_event = {
 		}
 		1283 = {
 			transfer_state_to = BFT
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.330
+				days = 2
+			}
 		}
 	}
 }
@@ -7201,6 +7196,12 @@ country_event = {
 		379 = {
 			transfer_state_to = NAV
 		}
+		hidden_effect = {
+			country_event = {
+				id = usa.331
+				days = 499
+			}
+		}
 	}
 }
 country_event = {
@@ -7216,7 +7217,12 @@ country_event = {
 		NAV = {
 			add_state_core = 382
 			transfer_state = 382
-
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.332
+				days = 225
+			}
 		}
 	}
 }
@@ -7239,6 +7245,12 @@ country_event = {
 		}
 		377 = {
 			transfer_state_to = APA
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.333
+				days = 7
+			}
 		}
 	}
 }
@@ -7280,8 +7292,17 @@ country_event = {
 		1049 = {
 			transfer_state_to = ASI
 		}
+		1156 = {
+			transfer_state_to = ASI
+		}
 		1292 = {
 			transfer_state_to = ASI
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.334
+				days = 450
+			}
 		}
 	}
 }
@@ -7317,6 +7338,12 @@ country_event = {
 			add_state_core = 1047
 			transfer_state = 1047
 		}
+		hidden_effect = {
+			country_event = {
+				id = usa.335
+				days = 158
+			}
+		}
 	}
 }
 country_event = {
@@ -7335,6 +7362,10 @@ country_event = {
 		transfer_state = 382
 		hidden_effect = {
 			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.336
+				days = 551
+			}
 		}
 	}
 }
@@ -7350,6 +7381,12 @@ country_event = {
 		name = usa.336.a
 		add_state_core = 1286
 		transfer_state = 1286
+		hidden_effect = {
+			country_event = {
+				id = usa.337
+				days = 258
+			}
+		}
 	}
 }
 country_event = {
@@ -7364,6 +7401,12 @@ country_event = {
 		name = usa.337.a
 		add_state_core = 1093
 		transfer_state = 1093
+		hidden_effect = {
+			country_event = {
+				id = usa.338
+				days = 42
+			}
+		}
 	}
 }
 country_event = {
@@ -7380,22 +7423,25 @@ country_event = {
 		transfer_state = 384
 		hidden_effect = {
 			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.340
+				days = 512
+			}
 		}
 	}
 }
-country_event = {
-	id = usa.339
-	title = usa.339.t
-	desc = usa.339.desc
-	picture = placeholder
-
-	is_triggered_only = yes
-
-	option = {
-		name = usa.339.a
-		puppet = ALK
-	}
-}
+#	country_event = {
+#		id = usa.339
+#		title = usa.339.t
+#		desc = usa.339.desc
+#		picture = placeholder
+#	
+#		is_triggered_only = yes
+#	
+#		option = {
+#			name = usa.339.a
+#		}
+#	}
 country_event = {
 	id = usa.340
 	title = usa.340.t
@@ -7413,6 +7459,9 @@ country_event = {
 		1047 = {
 			transfer_state_to = SHO
 		}
+		1048 = {
+			transfer_state_to = SHO
+		}
 		381 = {
 			transfer_state_to = SHO
 		}
@@ -7421,6 +7470,310 @@ country_event = {
 		}
 		1049 = {
 			transfer_state_to = SHO
+		}
+		1156 = {
+			transfer_state_to = SHO
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.357
+				days = 2929
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.357
+	title = usa.357.t
+	desc = usa.357.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.357.a
+		add_state_core = 1092
+		transfer_state = 1092
+		add_state_core = 1296
+		transfer_state = 1296
+		add_state_core = 1051
+		transfer_state = 1051
+		add_state_core = 1283
+		transfer_state = 1283
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.358
+				days = 4841
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.358
+	title = usa.358.t
+	desc = usa.358.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.358.a
+		add_state_core = 1160
+		transfer_state = 1160
+		add_state_core = 389
+		transfer_state = 389
+		add_state_core = 1045
+		transfer_state = 1045
+		add_state_core = 390
+		transfer_state = 390
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.359
+				days = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.359
+	title = usa.359.t
+	desc = usa.359.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.359.a
+		add_state_core = 388
+		transfer_state = 388
+		add_state_core = 1292
+		transfer_state = 1292
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.360
+				days = 3
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.360
+	title = usa.360.t
+	desc = usa.360.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.360.a
+		add_state_core = 386
+		transfer_state = 386
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.361
+				days = 172
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.361
+	title = usa.361.t
+	desc = usa.361.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.361.a
+		CIM = {
+			add_state_core = 374
+			transfer_state = 374
+			add_state_core = 1279
+			transfer_state = 1279
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.362
+				days = 62
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.362
+	title = usa.362.t
+	desc = usa.362.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.362.a
+			add_state_core = 387
+			transfer_state = 387
+			add_state_core = 1074
+			transfer_state = 1074
+			add_state_core = 1076
+			transfer_state = 1076
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.363
+				days = 7
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.363
+	title = usa.363.t
+	desc = usa.363.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.363.a
+			add_state_core = 1047
+			transfer_state = 1047
+			add_state_core = 1156
+			transfer_state = 1156
+			add_state_core = 1048
+			transfer_state = 1048
+			add_state_core = 1291
+			transfer_state = 1291
+			add_state_core = 381
+			transfer_state = 381
+			add_state_core = 1049
+			transfer_state = 1049
+			add_state_core = 258
+			transfer_state = 258
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.364
+				days = 1164
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.364
+	title = usa.364.t
+	desc = usa.364.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.364.a
+		CIM = {
+			add_state_core = 1285
+			transfer_state = 1285
+		}
+		hidden_effect = {
+			country_event = {
+				id = usa.365
+				days = 840
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.365
+	title = usa.365.t
+	desc = usa.365.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.365.a
+			add_state_core = 380
+			transfer_state = 380
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.366
+				days = 4333
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.366
+	title = usa.366.t
+	desc = usa.366.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.366.a
+			add_state_core = 1288
+			transfer_state = 1288
+			add_state_core = 374
+			transfer_state = 374
+			add_state_core = 1279
+			transfer_state = 1279
+			add_state_core = 1285
+			transfer_state = 1285
+			add_state_core = 1293
+			transfer_state = 1293
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.367
+				days = 1512
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.367
+	title = usa.367.t
+	desc = usa.367.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.367.a
+			add_state_core = 1262
+			transfer_state = 1262
+			add_state_core = 1301
+			transfer_state = 1301
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
+			country_event = {
+				id = usa.368
+				days = 39
+			}
+		}
+	}
+}
+country_event = {
+	id = usa.368
+	title = usa.368.t
+	desc = usa.368.desc
+	picture = placeholder
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.368.a
+			add_state_core = 1297
+			transfer_state = 1297
+			add_state_core = 377
+			transfer_state = 377
+		hidden_effect = {
+			set_country_flag = USA_Add_State_Manual_Flag
 		}
 	}
 }
@@ -8089,9 +8442,9 @@ country_event = { #Recurring Event Check for Person dies from conditions
 		if = {
 			limit = {
 				USA = {
-					NOT = {
-						has_idea = eight_hour_work_day
-					}
+					#NOT = {
+					#	has_idea = eight_hour_work_day
+					#}
 					has_idea = cl_illegal
 				}
 			}
@@ -8107,7 +8460,7 @@ country_event = { #Recurring Event Check for Person dies from conditions
 					NOT = {
 						has_idea = cl_illegal
 					}
-					has_idea = eight_hour_work_day
+					#has_idea = eight_hour_work_day
 				}
 			}
 			country_event = usa.153
@@ -8121,7 +8474,7 @@ country_event = { #Recurring Event Check for Person dies from conditions
 				USA = {
 					NOT = {
 						has_idea = cl_illegal
-						has_idea = eight_hour_work_day
+						#has_idea = eight_hour_work_day
 					}
 				}
 			}
@@ -8142,7 +8495,7 @@ country_event = { #Recurring Event Check for Person dies from conditions
 			limit = {
 				USA = {
 					has_idea = cl_illegal
-					has_idea = eight_hour_work_day
+					#has_idea = eight_hour_work_day
 				}
 			}
 		}
@@ -10860,15 +11213,8 @@ country_event = {
 			}
 		}
 		name = usa.179.c
-		if = {
-			limit = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-			add_autonomy_ratio = {
-				value = 0.05
-			}
+		add_autonomy_ratio = {
+			value = 0.05
 		}
 	}
 }
@@ -10908,15 +11254,8 @@ country_event = {
 			}
 		}
 		name = usa.180.c
-		if = {
-			limit = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-			add_autonomy_ratio = {
-				value = -0.05
-			}
+		add_autonomy_ratio = {
+			value = -0.05
 		}
 	}
 }
@@ -12422,9 +12761,6 @@ country_event = { #Mexico loses
 		add_political_power = -75
 		USA = {
 			transfer_state = FROM
-		}
-		FROM = {
-			state_event = { id = afr_rrp_racial_tension_increase.3 }
 		}
 	}
 }
@@ -14868,4 +15204,429 @@ news_event = {
 		option = {
 			name = usa.247.a
 		}
+}
+
+# Crash of the SS Central America
+country_event = {
+	id = usa.341
+	title = usa.341.t
+	desc = usa.341.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.341.a
+		add_political_power = -20
+	}
+}
+
+# Oil Creek Pennsylvania
+state_event = {
+	id = usa.342
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	immediate = {
+		hidden_effect = {
+			OWNER = {
+				country_event = usa.343
+			}
+		}
+	}
+}
+
+country_event = {
+	id = usa.343
+	title = usa.342.t
+	desc = usa.342.d
+	picture = GFX_report_event_oil_creek
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = usa.342.a
+		if = {
+			limit = { tag = USA }
+			complete_national_focus = USA_pennsylvanian_oil
+		}
+		360 = {
+			add_resource = {
+				type = oil
+				amount = 16
+			}
+		}
+	}
+}
+
+country_event = {
+	id = usa.344
+	title = usa.344.t
+	desc = usa.344.d
+	picture = GFX_event_flavor_usa_rusk_suicide
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.344.a
+	}
+}
+
+country_event = {
+	id = usa.345
+	title = usa.345.t
+	desc = usa.345.d
+	picture = GFX_event_flavor_usa_jones_suicide
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.345.a
+	}
+}
+
+country_event = {
+	id = usa.346
+	title = usa.346.t
+	desc = usa.346.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.346.a
+	}
+}
+
+country_event = {
+	id = usa.347
+	title = usa.347.t
+	desc = usa.347.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.347.a
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = usa.348
+	title = usa.348.t
+	desc = usa.348.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.348.a
+		add_political_power = -20
+	}
+}
+#Pony Express
+country_event = {
+	id = usa.349
+	title = usa.349.t
+	desc = usa.349.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_flavor_usa_pony_express
+	option = {
+		name = usa.349.a
+	}
+}
+#First Continetal Telegraph
+country_event = {
+	id = usa.350
+	title = usa.350.t
+	desc = usa.350.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	#picture = 
+	option = {
+		name = usa.350.a
+	}
+}
+#First Kentucky Derby
+country_event = {
+	id = usa.351
+	title = usa.351.t
+	desc = usa.351.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	#picture = 
+	option = {
+		name = usa.351.a
+	}
+}
+#Jingle Bells
+country_event = {
+	id = usa.352
+	title = usa.352.t
+	desc = usa.352.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	#picture = 
+	option = {
+		name = usa.352.a
+	}
+}
+#Ford Automobile
+country_event = {
+	id = usa.353
+	title = usa.353.t
+	desc = usa.353.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_flavor_model_T
+	option = {
+		name = usa.353.a
+	}
+}
+
+#North Chicago Rolling Mill Introduces Steel 1865
+state_event = {
+	id = usa.354
+	title = usa.354.t
+	desc = usa.354.d
+	#picture = GFX_event_flavor_trans_railway_telegraph
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.354.a
+		OWNER = { 
+			if = { 
+				limit = { NOT = { has_tech = industrial_blast_furnace } }
+				set_technology = {
+					industrial_blast_furnace = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = hot_blast_furnaces } }
+				set_technology = {
+					hot_blast_furnaces = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = cast_iron_industrialization } }
+				set_technology = {
+					cast_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = industrial_finery_forge } }
+				set_technology = {
+					industrial_finery_forge = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = wrought_iron_industrialization } }
+				set_technology = {
+					wrought_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = inorganic_chemistry } }
+				set_technology = {
+					inorganic_chemistry = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = chemical_vapor_deposition } }
+				set_technology = {
+					chemical_vapor_deposition = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = dry_puddling_process } }
+				set_technology = {
+					dry_puddling_process = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = bessemer_process } }
+				set_technology = {
+					bessemer_process = 1
+				}
+			}
+		}
+		add_resource = {
+			type = steel
+			amount = 20
+			state = 395
+		}
+		add_resource = {
+			type = iron
+			amount = 10
+			state = 395
+		}
+		add_victory_points = {
+			province = 9450
+			value = 5
+		}
+	}
+}
+
+#The Union Iron Company 1872 (estimated time)
+#founded in 1863, confirmed 1877 ad for selling steel. Steel mills common in chicago around 1870
+state_event = {
+	id = usa.355
+	title = usa.355.t
+	desc = usa.355.d
+	#picture = GFX_event_flavor_trans_railway_telegraph
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.355.a
+		OWNER = { 
+			if = { 
+				limit = { NOT = { has_tech = industrial_blast_furnace } }
+				set_technology = {
+					industrial_blast_furnace = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = hot_blast_furnaces } }
+				set_technology = {
+					hot_blast_furnaces = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = cast_iron_industrialization } }
+				set_technology = {
+					cast_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = industrial_finery_forge } }
+				set_technology = {
+					industrial_finery_forge = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = wrought_iron_industrialization } }
+				set_technology = {
+					wrought_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = inorganic_chemistry } }
+				set_technology = {
+					inorganic_chemistry = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = chemical_vapor_deposition } }
+				set_technology = {
+					chemical_vapor_deposition = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = dry_puddling_process } }
+				set_technology = {
+					dry_puddling_process = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = bessemer_process } }
+				set_technology = {
+					bessemer_process = 1
+				}
+			}
+		}
+		add_resource = {
+			type = steel
+			amount = 20
+			state = 395
+		}
+		add_resource = {
+			type = iron
+			amount = 10
+			state = 395
+		}
+		add_victory_points = {
+			province = 9450
+			value = 5
+		}
+	}
+}
+
+#Joliet Iron and Steel Company Steel 1879
+#Started 1869, recorganized 1873, actually openes after Panic in 1879
+state_event = {
+	id = usa.356
+	title = usa.356.t
+	desc = usa.356.d
+	#picture = GFX_event_flavor_trans_railway_telegraph
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.356.a
+		OWNER = { 
+			if = { 
+				limit = { NOT = { has_tech = industrial_blast_furnace } }
+				set_technology = {
+					industrial_blast_furnace = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = hot_blast_furnaces } }
+				set_technology = {
+					hot_blast_furnaces = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = cast_iron_industrialization } }
+				set_technology = {
+					cast_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = industrial_finery_forge } }
+				set_technology = {
+					industrial_finery_forge = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = wrought_iron_industrialization } }
+				set_technology = {
+					wrought_iron_industrialization = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = inorganic_chemistry } }
+				set_technology = {
+					inorganic_chemistry = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = chemical_vapor_deposition } }
+				set_technology = {
+					chemical_vapor_deposition = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = dry_puddling_process } }
+				set_technology = {
+					dry_puddling_process = 1
+				}
+			}
+			if = { 
+				limit = { NOT = { has_tech = bessemer_process } }
+				set_technology = {
+					bessemer_process = 1
+				}
+			}
+		}
+		395 = { add_manpower = 2500 }
+		add_resource = {
+			type = steel
+			amount = 20
+			state = 395
+		}
+		add_resource = {
+			type = iron
+			amount = 10
+			state = 395
+		}
+		add_victory_points = {
+			province = 9450
+			value = 5
+		}
+	}
 }

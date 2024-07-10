@@ -2,37 +2,65 @@ state = {
 	id = 1031
 	name = "STATE_1031"
 	manpower = 174620
-
-	local_supplies=0.0 
-	buildings_max_level_factor = 1
+	local_supplies = 0.0 
 	state_category = city
+	buildings_max_level_factor = 1
+
+	provinces = {
+		11830 14434 14435 14436 14437
+	}
 
 	history = {
 		owner = USA
-		set_state_flag = is_USA_state
-		set_state_flag = is_free_USA_state
 		add_core_of = USA
 		add_claim_by = NEG
+		set_state_flag = is_USA_state
+		set_state_flag = is_free_USA_state
 
 		buildings = {
 			infrastructure = 9
 			fabric_weavery = 1
 		}
 
-		victory_points = { 11830 1 }
+		victory_points = { #Bristol: Bristol
+			14435 1
+		}
+		victory_points = { #Kent: East Greenwich
+			11830 1
+		}
+		victory_points = { #Newport: Newport
+			14434 10
+		}
+		victory_points = { #Providence: Providence
+			14436 20
+		}
+		victory_points = { #Washington: South Kingston
+			14437 1
+		}
 
-		add_to_array = { state_culture_array = 413 }
-		add_to_array = { state_culture_array_num = 0.98 }
-		add_to_array = { state_culture_array = 417 }
-		add_to_array = { state_culture_array_num = 0.02 }
-		add_to_array = { state_religion_array = 3 }
-		add_to_array = { state_religion_array_num = 0.82 }
-		add_to_array = { state_religion_array = 2 }
-		add_to_array = { state_religion_array_num = 0.18 }
-
-	}
-
-	provinces = {
-		11830
+		add_to_array = { state_culture_array = 413 } #Yankee
+		add_to_array = { state_culture_array_num = 0.758 }
+		add_to_array = { state_culture_array = 93 } #Irish
+		add_to_array = { state_culture_array_num = 0.145 }
+		add_to_array = { state_culture_array = 16 } #English
+		add_to_array = { state_culture_array_num = 0.036 }
+		add_to_array = { state_culture_array = 417 } #Afro-American
+		add_to_array = { state_culture_array_num = 0.023 }
+		add_to_array = { state_culture_array = 405 } #Canadian
+		add_to_array = { state_culture_array_num = 0.016 }
+		add_to_array = { state_culture_array = 94 } #Highland-Scottish
+		add_to_array = { state_culture_array_num = 0.009 }
+		add_to_array = { state_culture_array = 410 } #Dixie
+		add_to_array = { state_culture_array_num = 0.006 }
+		add_to_array = { state_culture_array = 13 } #Branderburg-Prussian
+		add_to_array = { state_culture_array_num = 0.005 }
+		add_to_array = { state_culture_array = 448 } #Midwesterner
+		add_to_array = { state_culture_array_num = 0.002 }
+		add_to_array = { state_religion_array = 3 } #Protestantism
+		add_to_array = { state_religion_array_num = 0.878 }
+		add_to_array = { state_religion_array = 2 } #Catholicism
+		add_to_array = { state_religion_array_num = 0.12 }
+		add_to_array = { state_religion_array = 7 } #Jewish
+		add_to_array = { state_religion_array_num = 0.002 }
 	}
 }

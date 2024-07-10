@@ -13,26 +13,39 @@
 
 	set_convoys = 16
 
-	set_research_slots = 3
+	set_research_slots = 2
 	set_variable = { debt_level = 5 }
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = POR }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = POR }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 3 }
+	set_variable = { current_loans_sum = 23 }
+
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_restricted
-		ten_hour_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -40,26 +53,26 @@
 		limited_equality
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_catholic
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		POR_Pedro_V
 		POR_Regeneration
 		POR_Morgardios
 		POR_british_military_presence
-		egy_vic_debt
 		NA_B_early_scale_railways
+		POR_Flames_of_the_civilwar
 	}
 
 	#Rivals
@@ -109,11 +122,6 @@
 		basic_cavalry = 1
 		gw_artillery = 1
 		vic_army_cloth = 1
-		tech_naval_mtg_simple_corvette_hull = 1
-		tech_naval_mtg_24_pounder_battery = 1
-		tech_naval_mtg_sails = 1
-		tech_naval_mtg_crows_nest = 1
-		#tech_naval_1830_frigate = 1
 		start_build_tech = 1
 	}
 
@@ -122,7 +130,7 @@
 	#	add_to_variable = {var = debt_level value = 1} #Portugal's National Debt amounted to 97.63bn Réis (158.64m Thaler; 475,93m Mark as of 1871/73 exchange rate = 23.30m Pound Sterling as of 1871) at the end of 1857; income per year 12.62bn Réis (20.51m Thaler = 3.01m Pound Sterling) = 7.74 GDP of debt
 	#}
 
-	# POLITICAL LEADERS
+	### POLITICAL LEADERS
 	recruit_character = POR_Pedro_V
 	recruit_character = POR_joaquim_antonio_de_aguiar
 	recruit_character = POR_nuno_jose_severo
@@ -133,11 +141,50 @@
 	recruit_character = POR_antonio_cesar_de_vasconcelos_correia
 	recruit_character = POR_joao_carlos_de_saldanha
 	recruit_character = POR_jose_jorge_loureiro
-	recruit_character = POR_hermenegildo_capelo
 	recruit_character = POR_vicente_nicolau_de_mesquita
+	recruit_character = POR_carlos_maria_de_caula
+	
+	#NAVY
+	recruit_character = POR_hermenegildo_capelo		
+	recruit_character = POR_joao_aptista_de_andrade
+	recruit_character = POR_carlos_eugenio_correia_da_silva
+	recruit_character = POR_francisco_ferreia_do_amaral
+	recruit_character = POR_francisco_teixera_da_silva
+	recruit_character = POR_guilherme_augusto_de_brito_capelo
+	recruit_character = POR_joao_carlos_de_brito_capelo
+	recruit_character = POR_rodrigo_de_sousa_coutinho_teixeira_de_andrade_barbosa
+	recruit_character = POR_joao_crisostomo
+	recruit_character = POR_carlos_teixeira_de_aragoa 
+
+	#ADVISOR
+	recruit_character = POR_fontes_pereira_de_melo
+	recruit_character = POR_casal_ribeiro
+	recruit_character = POR_jose_estevao
+	recruit_character = POR_francisco_maria_de_sousa_brandao
+
+##### MODIFIER #####
+	add_dynamic_modifier = { modifier = dynmod_POR_army }
+	set_variable = { POR_army_c = -0.0002 }
+	set_variable = { POR_army_ps = -0.1 }
+	set_variable = { POR_army_aof = -0.15 }
+	set_variable = { POR_army_mlcf = -0.1 }
+	set_variable = { POR_army_aor = -0.1 }
+	set_variable = { POR_army_scf = 0.15 }
+	set_variable = { POR_army_ttf = -0.05 }
+	set_variable = { POR_army_aaf = -0.2 }
+	set_variable = { POR_army_adf = -0.2 }
+	set_variable = { POR_army_rsf = -0.1 }
 
 	if = {
 		limit = { has_dlc = "Man the Guns" }
+
+		set_technology = {
+		tech_naval_mtg_simple_corvette_hull = 1
+		tech_naval_mtg_24_pounder_battery = 1
+		tech_naval_mtg_sails = 1
+		tech_naval_mtg_crows_nest = 1
+		}
+
 		create_equipment_variant = {
 			name = "Corvette Class"
 			type = ship_hull_corvette_0
@@ -152,6 +199,19 @@
 				front_1_custom_slot = empty
 			}
 			#obsolete = no
+		}
+		else = {
+
+		set_technology = {
+		tech_naval_corvette = 1
+		}
+
+		create_equipment_variant = {
+			name = "Corvette Class"
+			type = ship_corvette_0
+			name_group = GER_CA_HISTORICAL
+			parent_version = 0
+			}
 		}
 	}
 }

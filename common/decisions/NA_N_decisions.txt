@@ -9,14 +9,9 @@ first_nations_tribal_conflict_category = {
 		visible = {
 			FROM = { 
 				NOT = {
-					TAG = SEM
 					TAG = APA
 					TAG = NAV
-					TAG = COM
-					TAG = CHY
 					TAG = SIX
-					TAG = CRW
-					TAG = SHO
 					TAG = BFT
 					TAG = NEZ
 				}
@@ -28,14 +23,9 @@ first_nations_tribal_conflict_category = {
 		}
 		allowed = { 
 			OR = {
-				TAG = SEM
 				TAG = APA
 				TAG = NAV
-				TAG = COM
-				TAG = CHY
 				TAG = SIX
-				TAG = CRW
-				TAG = SHO
 				TAG = BFT
 				TAG = NEZ
 			}
@@ -52,8 +42,6 @@ first_nations_tribal_conflict_category = {
 	}
 	NA_N_colorado_war_mission = {
 		icon = generic_civil_support
-
-		allowed = { TAG = CHY }
 
 		activation = { has_global_flag = USA_colorado_war }
 
@@ -76,14 +64,6 @@ first_nations_tribal_conflict_category = {
 						transfer_state = 1052 
 						country_event = { id = NA_N_event.89 hours = 2 }
 						country_event = { id = NA_N_event.90 days = 1 }
-						USA = {
-							transfer_state = 1049
-							1049 = { remove_core_of = CHY }
-							transfer_state = 1051
-							1051 = { remove_core_of = CHY }
-							transfer_state = 1298
-							1298 = { remove_core_of = CHY }
-						}
 					}
 				}
 			}
@@ -97,14 +77,9 @@ first_nations_tribal_conflict_category = {
 	#	}
 	#	allowed = { 
 	#		OR = {
-	#			TAG = SEM
 	#			TAG = APA
 	#			TAG = NAV
-	#			TAG = COM
-	#			TAG = CHY
 	#			TAG = SIX
-	#			TAG = CRW
-	#			TAG = SHO
 	#			TAG = BFT
 	#			TAG = NEZ
 	#		}
@@ -147,7 +122,6 @@ first_nations_tribal_conflict_category = {
 	#		if = {
 	#			limit = { has_country_flag = NA_N_remove_resource_rights_accepted_flag }
 	#			FROM = {
-	#				hidden_effect = { add_manpower = -1230 }
 	#				custom_effect_tooltip = NA_N_evict_settlers_tooltip
 	#				hidden_effect = { 
 	#					afr_empire_politics_state_gain_emigration = yes
@@ -160,19 +134,13 @@ first_nations_tribal_conflict_category = {
 	#				random_neighbor_state = {
 	#					limit = { 
 	#						NOT = {
-	#							is_owned_by = SEM
 	#							is_owned_by = APA
 	#							is_owned_by = NAV
-	#							is_owned_by = COM
-	#							is_owned_by = CHY
 	#							is_owned_by = SIX
-	#							is_owned_by = CRW
-	#							is_owned_by = SHO
 	#							is_owned_by = BFT
 	#							is_owned_by = NEZ
 	#						} 
 	#					}
-	#					hidden_effect = { add_manpower = 1230 }
 	#					custom_effect_tooltip = NA_N_settlers_relocation_tooltip
 	#				}
 	#			}
@@ -183,7 +151,6 @@ first_nations_tribal_conflict_category = {
 	#		}
 	#		else = {
 	#			FROM = {
-	#				add_manpower = -1230 hidden_effect = { add_manpower = -1230 }
 	#				custom_effect_tooltip = NA_N_evict_settlers_tooltip
 	#				hidden_effect = { 
 	#					afr_empire_politics_state_gain_emigration = yes
@@ -193,14 +160,9 @@ first_nations_tribal_conflict_category = {
 	#				random_neighbor_state = {
 	#					limit = { 
 	#						NOT = {
-	#							is_owned_by = SEM
 	#							is_owned_by = APA
 	#							is_owned_by = NAV
-	#							is_owned_by = COM
-	#							is_owned_by = CHY
 	#							is_owned_by = SIX
-	#							is_owned_by = CRW
-	#							is_owned_by = SHO
 	#							is_owned_by = BFT
 	#							is_owned_by = NEZ
 	#						}
@@ -269,14 +231,9 @@ first_nations_tribal_conflict_category = {
 		target_trigger = {
 			FROM = { 
 				OR = {
-					TAG = SEM
 					TAG = APA
 					TAG = NAV
-					TAG = COM
-					TAG = CHY
 					TAG = SIX
-					TAG = CRW
-					TAG = SHO
 					TAG = BFT
 					TAG = NEZ
 				}
@@ -369,7 +326,6 @@ first_nations_tribal_conflict_category = {
 	#	allowed = { 
 	#		is_first_nations_tribe_allowed = yes
 	#		NOT = { TAG = MAY }
-	#		NOT = { TAG = YAQ }
 	#	}
 	#	
 	#	target_trigger = {
@@ -669,7 +625,6 @@ first_nations_tribal_conflict_category = {
 		# allowed = { 
 			# is_first_nations_tribe_allowed = yes
 			# NOT = { TAG = MAY }
-			# NOT = { TAG = YAQ }
 		# }
 		
 		# target_trigger = {
@@ -1079,7 +1034,6 @@ first_nations_tribal_american_civil_war_category = {
 		allowed = { 
 			is_first_nations_tribe_allowed = yes
 			NOT = { TAG = MAY }
-			NOT = { TAG = YAQ }
 		}
 		
 		target_trigger = { FROM = { is_neighbor_of = ROOT } }
@@ -1221,295 +1175,6 @@ first_nations_tribal_conflict_category = {
 					country_event = { id = NA_N_event.57 }
 				}
 			}
-		}
-	}
-}
-NA_N_war_operations_category = {
-	operation_smash_and_grab = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_heavens_gate = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_pinewoods = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_puddle_pirates = {
-			allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			hidden_effect = {
-				set_country_flag = NA_N_native_military_flag_2
-			}
-			add_political_power = 100
-		}
-	}
-}
-NA_N_war_operations_category_2 = {
-	operation_golden_gate = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_potato_digger = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_pretzel = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_statten_island = {
-		allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			add_political_power = 100
-		}
-	}
-	operation_tattered_flag = {
-			allowed = { 
-					OR = {
-					TAG = SEM
-					TAG = APA
-					TAG = NAV
-					TAG = COM
-					TAG = CHY
-					TAG = SIX
-					TAG = CRW
-					TAG = SHO
-					TAG = BFT
-					TAG = NEZ
-				}
-			}
-		available = {
-			controls_state = xxx
-		}
-		activation = {
-			has_war_with = USA
-		}
-		is_good = no
-		selectable_mission = yes
-		days_mission_timeout = 150
-		timeout_effect = {
-			add_political_power = -50
-		}
-		complete_effect = {
-			hidden_effect = {
-				set_country_flag = NA_N_native_military_flag_3
-			}
-			add_political_power = 100
 		}
 	}
 }

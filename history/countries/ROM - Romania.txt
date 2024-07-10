@@ -5,22 +5,22 @@
 
 	set_convoys = 0
 
-	set_research_slots = 3
+	set_research_slots = 2
 
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 		ROM_ghika_hos
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -29,18 +29,18 @@
 		limited_equality
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_orthodox
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		ROM_idea_sentiment_of_unity
@@ -57,22 +57,10 @@
 	set_variable = { most_favoured_country = MOL.id }
 
 	OTO = {
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = ROM
-				autonomous_state = autonomy_OTT_vassal
-				freedom_level = 0.2
-			}
-		}
-		else = {
-			puppet = ROM
+		set_autonomy = {
+			target = ROM
+			autonomous_state = autonomy_OTT_vassal
+			freedom_level = 0.2
 		}
 	}
 

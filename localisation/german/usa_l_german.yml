@@ -49,8 +49,6 @@
  operation_annex_british_columbia_usa_loses_tooltip: "§Y[USA.GetName]§!§R loses the conflict!§!\n"
 
 # 1857 Bookmark
- USA_Spirit_Seminole_War: "The Third Seminole War"
- USA_Spirit_Seminole_War_desc: "The tensions between the State of Florida and the Seminoles, alongside the nominal end of the Second Seminole War, have finally blew up in our face. We are once again in open conflict with this native tribe!"
  USA_1857Panic: "Economic Crisis"
  USA_1857Panic_desc: "The Economy in the United States is experiencing instability and rapid decline."
 
@@ -165,7 +163,6 @@
  USA_FN_pike_peak_gold_rush: "Pike's Peak Gold Rush"
  USA_FN_pike_peak_gold_rush_tooltip: "Gain a major §Gpopulation increase§! from settlers."
  USA_FN_treaty_of_fort_wise: "Bribe Negotiations for the Treaty of Fort Wise "
- USA_FN_treaty_of_fort_wise_tooltip: "The federally recognized boarders of the §Y[CHY.GetAdjective] Reservation§! will be §Gsignificantly reduced§!.\n\n"
  USA_FN_orofino_creek_gold_rush: "Orofino Creek Gold Rush"
  USA_FN_orofino_creek_gold_rush_tooltip: "Gain a minor §Gpopulation increase§! from settlers."
  USA_FN_revise_walla_walla_treaty: "Revise the Walla Walla Treaty of 1855"
@@ -927,10 +924,6 @@
  #USA_diplomacy_nav_desc: "The Navajo are clinging to themselves in their nestled little pocket. We must remind them who is in control."
  USA_diplomacy_attack_nav: "Invasion of the Navajo"
  #USA_diplomacy_attack_nav_desc: "The Navajo are resisting our attempts to pressure them, and we cannot allow for this to stand. We must take them out."
- USA_diplomacy_crw: "The Crow Tribes"
- #USA_diplomacy_crw_desc: "The Crow natives hold northern territories that could be of benefit to our people. However, they keep assaulting our people, so we must take certain steps forward..."
- USA_diplomacy_attack_crw: "Crack the Crow"
- #USA_diplomacy_attack_crw_desc: "The Crow Tribes have had enough, and we must teach them which way the wind blows."
  #Norton
  USA_norton_rise: "The Coronation"
  USA_norton_rise_desc: "We have done it, we have marched from San Francisco to Washington D.C., and we have established ourselves as the true United States. We must ensure that the world knows of our glory."

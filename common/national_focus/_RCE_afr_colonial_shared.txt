@@ -925,25 +925,10 @@ shared_focus = {
 	prerequisite = { focus = afr_colony_generic_focus_increase_export_quota }
 	prerequisite = { focus = afr_colony_generic_focus_pay_tribute }
 	completion_reward = {
-		if = {
-			limit = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-			add_political_power = -100
-			add_autonomy_ratio = {
-				value = 0.075
-				localization = afr_colony_generic_focus_strengthen_government
-			}
-		}
-		else = {
-			add_political_power = -50
-			army_experience = 5
-		}
-		if = {
-			limit = { TAG = SNG }
-			complete_national_focus = afr_colony_generic_french_approval
+		add_political_power = -100
+		add_autonomy_ratio = {
+			value = 0.075
+			localization = afr_colony_generic_focus_strengthen_government
 		}
 	}
 	allow_branch = {
@@ -999,10 +984,6 @@ shared_focus = {
 	completion_reward = {
 		add_war_support = 0.15
 		custom_effect_tooltip = afr_colonial_effect_tooltip
-		capital_scope = {
-			custom_effect_tooltip = AFR_Racial_Tension_plus_1
-			hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 trigger_for = controller } }
-		}
 	}
 }
 shared_focus = {
@@ -1105,8 +1086,6 @@ shared_focus = {
 				else = {
 					add_extra_state_shared_building_slots = 2
 				}
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.6 trigger_for = controller } }
-				custom_effect_tooltip = AFR_Racial_Tension_plus_6
 			}
 		}
 		else_if = {
@@ -1132,8 +1111,6 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 trigger_for = controller } }
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
 			}
 		}
 		else_if = {
@@ -1159,8 +1136,6 @@ shared_focus = {
 					level = 1
 					instant_build = yes
 				}
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 trigger_for = controller } }
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
 			}
 		}
 		else = {
@@ -1169,8 +1144,6 @@ shared_focus = {
 					is_core_of = ROOT
 				}
 				add_extra_state_shared_building_slots = 2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 trigger_for = controller } }
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
 			}
 		}
 		debt_level_decrease_by_1 = yes
@@ -1283,11 +1256,6 @@ shared_focus = {
 			popularity = 0.07
 		}
 		add_war_support = -0.1
-		custom_effect_tooltip = afr_colonial_effect_tooltip
-		capital_scope = { 
-			custom_effect_tooltip = AFR_Racial_Tension_minus_1
-			hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 trigger_for = controller } }
-		}
 	}
 }
 shared_focus = {
@@ -1384,10 +1352,6 @@ shared_focus = {
 		any_owned_state = {
 			is_capital = no
 			NOT = { is_core_of = ROOT }
-			custom_trigger_tooltip={
-				tooltip = afr_colony_generic_focus_native_reservations_tooltip_trigger_1
-				check_variable = { detrimental_colonial_impact_value < 11 }
-			}
 		}
 		custom_trigger_tooltip={
 			tooltip= afr_colony_generic_focus_native_reservations_tooltip_trigger_2
@@ -1402,19 +1366,12 @@ shared_focus = {
 		hidden_effect = { add_popularity = { ideology = social_egalitarianism popularity = 0.05 } }
 		if = {
 			limit = {
-				any_owned_state = {
-					check_variable = { detrimental_colonial_impact_value > 5 }
-					NOT = { is_core_of = ROOT }
-					any_country = { PREV = { is_core_of = PREV } }
-				}
 				always = no
 			}
 			add_ideas = AFR_colonial_native_reservations
 			custom_effect_tooltip = afr_colony_generic_focus_native_reservations_tooltip
-			custom_effect_tooltip = afr_colonial_effect_tooltip
 			random_owned_controlled_state = {
 				limit = {
-					check_variable = { detrimental_colonial_impact_value > 5 }
 					NOT = { is_core_of = ROOT }
 					any_country = { PREV = { is_core_of = PREV } }
 					is_capital = no
@@ -1425,8 +1382,6 @@ shared_focus = {
 					add_to_variable = { Oceania_extra_state_shared_building_slots = -1 }
 					add_extra_state_shared_building_slots = -1
 				}
-				custom_effect_tooltip = AFR_Racial_Tension_minus_6
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.6 trigger_for = controller } }
 			}
 		}
 		else_if = {
@@ -1452,41 +1407,6 @@ shared_focus = {
 					limit = { Oceania_infrastructure_for_clearing_building_slots_trigger = yes }
 					add_to_variable = { Oceania_extra_state_shared_building_slots = -1 }
 					add_extra_state_shared_building_slots = -1
-				}
-				if = {
-					limit = { check_variable = { detrimental_colonial_impact_value > 2 } }
-					custom_effect_tooltip = AFR_Racial_Tension_minus_3
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.3 trigger_for = controller } }
-				}
-				else_if = {
-					limit = { check_variable = { detrimental_colonial_impact_value > 1 } }
-					custom_effect_tooltip = AFR_Racial_Tension_minus_2
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.2 trigger_for = controller } }
-				}
-				else_if = {
-					limit = { check_variable = { detrimental_colonial_impact_value > 0 } }
-					custom_effect_tooltip = AFR_Racial_Tension_minus_1
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 trigger_for = controller } }
-				}
-			}
-		}
-		else = {
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			random_owned_controlled_state = {
-				limit = {
-					check_variable = { detrimental_colonial_impact_value > 0 }
-					NOT = { is_core_of = ROOT }
-					is_capital = no
-				}
-				if = {
-					limit = { check_variable = { detrimental_colonial_impact_value > 1 } }
-					custom_effect_tooltip = AFR_Racial_Tension_minus_2
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.2 trigger_for = controller } }
-				}
-				else_if = {
-					limit = { check_variable = { detrimental_colonial_impact_value > 0 } }
-					custom_effect_tooltip = AFR_Racial_Tension_minus_1
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_decrease.1 trigger_for = controller } }
 				}
 			}
 		}
@@ -1553,17 +1473,17 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = { focus = afr_colony_generic_focus_decentralized_government focus = afr_colony_generic_focus_stabilized_centralization }
-	available = {
-		has_idea = no_constitution
-	}
-	bypass = {
-		NOT = {
-			has_idea = no_constitution
-		}
-	}
+	#available = {
+	#	has_idea = no_constitution
+	#}
+	#bypass = {
+	#	NOT = {
+	#		has_idea = no_constitution
+	#	}
+	#}
 	
 	completion_reward = {
-		swap_ideas = { add_idea = limited_constitution remove_idea = no_constitution }
+		#swap_ideas = { add_idea = limited_constitution remove_idea = no_constitution }
 	}
 }
 # 1860 Reforms
@@ -1654,8 +1574,6 @@ shared_focus = {
 				if = {
 					limit = { THIS = { NOT = { is_core_of = ROOT } } }
 					add_core_of = ROOT
-					custom_effect_tooltip = AFR_Racial_Tension_plus_1
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 				}
 				add_manpower = 6325
 			}
@@ -1677,8 +1595,6 @@ shared_focus = {
 				if = {
 					limit = { THIS = { NOT = { is_core_of = ROOT } } }
 					add_core_of = ROOT
-					custom_effect_tooltip = AFR_Racial_Tension_plus_1
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 				}
 				add_manpower = 6325
 			}
@@ -1743,8 +1659,6 @@ shared_focus = {
 				if = {
 					limit = { THIS = { NOT = { is_core_of = ROOT } } }
 					add_core_of = ROOT
-					custom_effect_tooltip = AFR_Racial_Tension_plus_1
-					hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 } }
 				}
 				add_manpower = 6325
 			}
@@ -1752,7 +1666,6 @@ shared_focus = {
 		}
 		add_equipment_to_stockpile = { type = convoy_1 amount = 45 }
 	}
-	bypass = { if = { limit = { TAG = SNG } has_country_flag = FRA_develop_port_dakar_flag } else = { always = no } }
 }
 shared_focus = {
 	id = afr_colony_generic_focus_1860_gov_naval_base
@@ -1835,7 +1748,6 @@ shared_focus = {
 			}
 		}
 	}
-	bypass = { if = { limit = { TAG = SNG } has_country_flag = FRA_develop_port_dakar_flag } else = { always = no } }
 }
 shared_focus = {
 	id = afr_colony_generic_focus_1860_gov_colonial_navy
@@ -1869,7 +1781,6 @@ shared_focus = {
 		}
 		
 	}
-	bypass = { if = { limit = { TAG = SNG } has_country_flag = FRA_develop_port_dakar_flag } else = { always = no } }
 }
 shared_focus = {
 	id = afr_colony_generic_focus_1860_gov_colonial_navy_admiral
@@ -1890,7 +1801,6 @@ shared_focus = {
 	completion_reward = {
 		
 	}
-	bypass = { if = { limit = { TAG = SNG } has_country_flag = FRA_develop_port_dakar_flag } else = { always = no } }
 }
 #1870 Reforms
 shared_focus = {
@@ -3317,166 +3227,6 @@ shared_focus = {
 	}
 }
 
-# French Senegal
-shared_focus = {
-	id = afr_colony_generic_french_approval
-	icon = GFX_goal_focus_french_algeria_citizenship
-	cost = 75
-	available = {
-		is_subject_of = FRA
-		has_completed_focus = afr_colony_generic_focus_strengthen_government
-	}
-	prerequisite = {
-	}
-	x = 24
-	y = 0
-	completion_reward = {	
-		if = {
-			limit = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-			add_political_power = -100
-			add_autonomy_ratio = {
-				value = 0.075
-				localization = afr_colony_generic_focus_strengthen_government
-			}
-		}
-		else = {
-			add_political_power = -50
-			army_experience = 5
-		}
-		FTT = {
-			add_ai_strategy = {
-				type = prepare_for_war
-				id = SNG
-				value = 200
-			}
-		}
-		add_ai_strategy = {
-			type = prepare_for_war
-			id = FTT
-			value = 200
-		}
-	}
-	ai_will_do = {
-		factor = 100000
-	}
-	allow_branch = {
-		TAG = SNG
-	}
-}
-#shared_focus = {
-#	id = afr_colony_generic_french_senegal_trarza_core
-#	icon = GFX_goal_focus_french_algeria_assimilation
-#	cost = 75
-#	available = {
-#		is_subject_of = FRA
-#		OR = {
-#			TRZ = {
-#				custom_trigger_tooltip = {
-#					tooltip = afr_colony_generic_french_senegal_trarza_core_tooltip
-#					OR = {
-#						NOT = { has_country_flag = TRZ_northern_senegal_claims }
-#						exists = no
-#					}
-#				}
-#			}
-#			date > 1870.01.01
-#		}
-#			
-#	}
-#	prerequisite = {
-#		focus = afr_colony_generic_french_approval
-#	}
-#	x = -1
-#	y = 1
-#	relative_position_id = afr_colony_generic_french_approval
-#	completion_reward = {	
-#		866 = {
-#			set_state_name = "Northern Senegal"
-#			add_core_of = SNG
-#		}
-#		custom_effect_tooltip = afr_colonial_effect_tooltip
-#		866 = { 
-#			hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.1 trigger_for = controller } }
-#		}
-#		TRZ = { remove_state_core = 866 }
-#		
-#	}
-#	ai_will_do = {
-#		factor = 100000
-#	}
-#	allow_branch = {
-#		TAG = SNG
-#	}
-#}
-shared_focus = {
-	id = afr_colony_generic_french_senegal_prepare_war
-	icon = GFX_Focus_colonial_empire_FRA
-	cost = 75
-	available = {
-		is_subject_of = FRA
-	}
-	prerequisite = {
-		focus = afr_colony_generic_french_approval
-	}
-	x = 1
-	y = 1
-	relative_position_id = afr_colony_generic_french_approval
-	completion_reward = {	
-		add_war_support = 0.15
-		set_technology = {
-			land_doctrine_victorian = 1
-		}
-		add_state_claim = 865
-		add_state_claim = 864
-	}
-	ai_will_do = {
-		factor = 100000
-	}
-	allow_branch = {
-		TAG = SNG
-	}
-}
-shared_focus = {
-	id = afr_colony_generic_french_senegal_war
-	icon = GFX_goal_focus_expand_french_algeria
-	cost = 75
-	available = {
-		country_exists = FTT
-		is_subject_of = FRA
-	}
-	prerequisite = {
-		focus = afr_colony_generic_french_senegal_prepare_war
-	}
-	x = 1
-	y = 2
-	relative_position_id = afr_colony_generic_french_approval
-	completion_reward = {	
-		declare_war_on = {
-			target = FTT
-			type = annex_everything
-		}
-		custom_effect_tooltip = afr_colonial_effect_tooltip
-		864 = { 
-			custom_effect_tooltip = AFR_Racial_Tension_plus_1
-		}
-		hidden_effect = {
-			ROOT = {
-				#capital_scope = { state_event = { id = afr_rrp_racial_tension_increase.1 trigger_for = controller } }
-			}
-			SNG = { set_country_flag = afr_colony_generic_french_senegal_war_flag }
-		}
-	}
-	ai_will_do = {
-		factor = 10
-	}
-	allow_branch = {
-		TAG = SNG
-	}
-}
 
 #focus = {
 	#	id = afr_colony_generic_recognize_csa

@@ -3,32 +3,44 @@
 
 	oob = "MEX_1857"
 	if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "MEX_1857_naval_mtg"
-	else = {
-		set_naval_oob = "MEX_1857_naval_legacy"
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "MEX_1857_naval_mtg"
+		else = {
+			set_naval_oob = "MEX_1857_naval_legacy"
+		}
 	}
-}
 
 	set_convoys = 10
 
 	set_research_slots = 2
-		add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 10000 producer = MEX }
-		add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 5000 producer = MEX }
+	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 10000 producer = MEX }
+	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 5000 producer = MEX }
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		agrarian
-		non_monarchical_system
-		presidential_republic
+		#non_monarchical_system
+		#presidential_republic
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -36,18 +48,18 @@
 	limited_conscription
 		segregation
 
-		limited_constitution
+		#limited_constitution
 		free_elections
 
 		open_schools
 		state_religion
 		#religion_catholic
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 	MXE_idea_no_banking_system

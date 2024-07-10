@@ -74,7 +74,7 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.05
-				consumer_goods_factor = 0.02
+				consumer_goods_expected_value = 0.02
 				trade_opinion_factor = 0.1
 				autonomy_gain_trade = 0.01
 			}
@@ -123,7 +123,8 @@ ideas = {
 				breakthrough_factor = 0.1
 				ai_focus_aggressive_factor = 0.70
 				out_of_supply_factor = -0.3
-				
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 			}
 		}
    
@@ -144,7 +145,11 @@ ideas = {
 			    weekly_manpower = -100
 				production_factory_start_efficiency_factor = -0.05
 				production_factory_max_efficiency_factor = -0.25
-				consumer_goods_factor = 0.02
+				consumer_goods_expected_value = 0.02
+				consumer_goods_income_factor = -0.02
+				hidden_modifier = {
+					consumer_goods_income_factor_from_ideas = -0.02
+				}
 			}
 		}
 
@@ -427,7 +432,7 @@ ideas = {
 			picture = SWE_Gustavus_Adolphus
 			
 			modifier = {
-			   consumer_goods_factor = 0.05
+			   consumer_goods_expected_value = 0.05
 				max_command_power = -15
 				war_support_factor = 0.05
 			}
@@ -450,7 +455,7 @@ ideas = {
 			    weekly_manpower = 150
 				production_factory_start_efficiency_factor = -0.02
 				production_factory_max_efficiency_factor = -0.10
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 				production_speed_buildings_factor = 0.05
 			}
 		}
@@ -472,7 +477,7 @@ ideas = {
 			    weekly_manpower = 50
 				production_factory_start_efficiency_factor = 0.02
 				production_factory_max_efficiency_factor = -0.05
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 				production_speed_buildings_factor = 0.15
 			}
 		}
@@ -567,6 +572,7 @@ ideas = {
 				trade_opinion_factor = -0.1
 				faction_trade_opinion_factor = -0.1
 				autonomy_gain_trade = -0.1
+				tax_efficiency_factor = -0.1
 			}
 		}
 		
@@ -589,6 +595,7 @@ ideas = {
 				trade_opinion_factor = -0.05
 				faction_trade_opinion_factor = -0.05
 				autonomy_gain_trade = -0.05
+				tax_efficiency_factor = -0.05
 			}
 		}
 		
@@ -606,7 +613,7 @@ ideas = {
 			picture = SWE_workers_economy
 
 			modifier = {
-			    consumer_goods_factor = -0.03
+			    consumer_goods_expected_value = -0.03
 				political_power_factor = -0.02
 			}
 		}
@@ -846,7 +853,7 @@ ideas = {
 		}
 	}
 	
-	naval_manufacturer = {
+	naval_manufacturers = {
 
 		designer = yes
 

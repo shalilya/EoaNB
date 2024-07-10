@@ -110,7 +110,7 @@ focus_tree = {
 		completion_reward = {
 		    add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = land_doctrine }
 		    add_tech_bonus = { bonus = 0.35 uses = 1 category = infantry_weapons }
-		    add_ideas = three_percent
+		    add_ideas = army_spending_level_3
 		}
 	}
 
@@ -495,7 +495,7 @@ focus_tree = {
 		prerequisite = { focus = POL_vic_Establish_The_Military_Infrastructure }
 
 		completion_reward = {
-			add_ideas = inframain_basic_maintenance_infrastructure
+			add_ideas = road_spending_level_2
 			add_tech_bonus = { bonus = 1 uses = 1 category = humanities_tech }
 		}
 	}
@@ -744,7 +744,7 @@ focus_tree = {
 
 		completion_reward = {
 		    add_doctrine_cost_reduction = { cost_reduction = 1.5 uses = 1 category = doctrine_victorian_innovative_tech }
-		    add_ideas = five_percent
+		    add_ideas = army_spending_level_4
 		}
 	}
 
@@ -885,7 +885,7 @@ focus_tree = {
 				add_idea = extensive_conscription
 				remove_idea = limited_conscription
 			}
-			add_ideas = five_percent
+			add_ideas = army_spending_level_4
 		}
 	}
 
@@ -2346,10 +2346,10 @@ focus_tree = {
 		ai_will_do = { factor = 1000 } 
 
 		completion_reward = {
-			swap_ideas = {
-				add_idea = lp_land_purchase
-				remove_idea = lp_serfdom
-			} 
+			#swap_ideas = {
+			#	add_idea = lp_land_purchase
+			#	remove_idea = lp_serfdom
+			#} 
             add_timed_idea = {
                 idea = POL_Refund
                 days = 360
@@ -2794,10 +2794,10 @@ focus_tree = {
             set_politics = {
 	            ruling_party = autocracy
             }
-            swap_ideas = {
-				add_idea = no_heir
-				remove_idea = non_monarchical_system
-			}
+            #swap_ideas = {
+			#	add_idea = no_heir
+			#	remove_idea = non_monarchical_system
+			#}
 			swap_ideas = {
 				add_idea = no_elections
 				remove_idea = free_elections
@@ -2806,10 +2806,10 @@ focus_tree = {
 				add_idea = parliamentary_suffrage
 				remove_idea = universal_male_suffrage
 			}
-			swap_ideas = {
-				add_idea = parliamentary_monarchy
-				remove_idea = parliamentary_republic
-			}
+			#swap_ideas = {
+			#	add_idea = parliamentary_monarchy
+			#	remove_idea = parliamentary_republic
+			#}
             create_country_leader = {
 	            name = "Interregnum"
 	            desc = ""
@@ -4141,13 +4141,13 @@ focus_tree = {
 		available = { 
             has_completed_focus = POL_vic_Abolish_Serfdom
             is_puppet_of = RUS
-            RUS = {
-            	OR = {
-            		has_idea = absolute_monarchy
-            		has_idea = constitutional_monarchy
-            		has_idea = parliamentary_monarchy
-            	}
-            }
+            #RUS = {
+            	#OR = {
+            		#has_idea = absolute_monarchy
+            		#has_idea = constitutional_monarchy
+            		#has_idea = parliamentary_monarchy
+            	#}
+           #}
 		}
 
 		# Allows Poland to access the military part of the tree when they aren't Russia's puppet
@@ -4161,13 +4161,13 @@ focus_tree = {
 					}	
 					AND = {
 						is_puppet_of = RUS
-            			RUS = {
-            				NOT = {
-            					has_idea = absolute_monarchy
-            					has_idea = constitutional_monarchy
-            					has_idea = parliamentary_monarchy
-            				}
-            			}
+            			#RUS = {
+            			#	NOT = {
+            			#		has_idea = absolute_monarchy
+            			#		has_idea = constitutional_monarchy
+            			#		has_idea = parliamentary_monarchy
+            			#	}
+            			#}
 					}
 				}
 			}
@@ -4195,13 +4195,13 @@ focus_tree = {
 
 		available = { 
             is_puppet_of = RUS
-            RUS = {
-            	OR = {
-            		has_idea = absolute_monarchy
-            		has_idea = constitutional_monarchy
-            		has_idea = parliamentary_monarchy
-            	}
-            }
+            #RUS = {
+            #	OR = {
+            #		has_idea = absolute_monarchy
+            #		has_idea = constitutional_monarchy
+            #		has_idea = parliamentary_monarchy
+            #	}
+           # }
 		}
 
 		x = 32
@@ -4227,13 +4227,13 @@ focus_tree = {
 
 		available = { 
             is_puppet_of = RUS
-            RUS = {
-            	OR = {
-            		has_idea = absolute_monarchy
-            		has_idea = constitutional_monarchy
-            		has_idea = parliamentary_monarchy
-            	}
-            }
+            #RUS = {
+            #	OR = {
+            #		has_idea = absolute_monarchy
+            #		has_idea = constitutional_monarchy
+            #		has_idea = parliamentary_monarchy
+            #	}
+            #}
 		}
 
 		x = 32
@@ -4357,10 +4357,10 @@ focus_tree = {
 		prerequisite = { focus = POL_vic_Stabilize_The_Country }
 
 		completion_reward = {
-		    swap_ideas = {
-				add_idea = constitution_adopted
-				remove_idea = no_constitution
-			}
+		   # swap_ideas = {
+			#	add_idea = constitution_adopted
+			#	remove_idea = no_constitution
+			#}
 		}
 	}
 

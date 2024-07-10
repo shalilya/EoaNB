@@ -20,6 +20,19 @@
 	#Foreign Influence
 	set_variable = { influenced_by = BEL.id }
 	set_variable = { influenced_by2 = BEL.id }
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 6 }
+	set_variable = { current_loans_sum = 26 }
 	
 	add_ideas = {
 		#POLITICS
@@ -27,28 +40,28 @@
 		victorian_era
 		law_victorian_army
 		industrializing
-		no_heir
-		parliamentary_monarchy
+		#no_heir
+		#parliamentary_monarchy
 		civilian_economy
 		export_focus
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 		#stagnation_growth
 		border_control
 		volunteer_only
 		limited_equality
 		absolutism
-		no_constitution
+		#no_constitution
 		no_elections
 		privileged_education
 		state_religion
 		#religion_catholic
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_low_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_2
+		research_spending_level_1
 		
 		#NATIONAL SPIRITS
 		BEL_idea_flemish_tensions
@@ -80,6 +93,7 @@
 	}
 	
 	set_technology = {
+		#Army
 		infantry_weapons = 1
 		traditional_mixed_arms = 1
 		tribal_carrier_birds = 1
@@ -104,6 +118,8 @@
 		hand_revolvers = 1
 		vic_army_cloth = 1
 		tech_infantry_breech_loading = 1
+
+		#Navy MTG
 		tech_naval_mtg_simple_corvette_hull = 1
 		tech_naval_mtg_24_pounder_battery = 1
 		tech_naval_mtg_sails = 1
@@ -115,9 +131,21 @@
 		tech_naval_mtg_lineship_hull = 1
 		tech_naval_mtg_1850_gunboat = 1
 		tech_naval_mtg_1857_lineship = 1
-		tech_naval_mtg_paddle_wheels = 1
+
+		#Navy Legacy
+		tech_naval_early_gunboat = 1
+		tech_naval_1850_gunboat = 1
+		tech_naval_corvette = 1
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
+		tech_naval_lineship = 1
+		tech_naval_1857_lineship = 1
+		
+		#Artillery
 		gw_artillery = 1
 		rml_field_gun = 1
+
+		#Engineering
 		mass_transit_early = 1
 		tech_humanities_roadworks = 1
 		tech_humanities_metropolitan = 1

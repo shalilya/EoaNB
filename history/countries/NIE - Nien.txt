@@ -10,20 +10,25 @@
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 500 producer = QNG }
 	add_equipment_to_stockpile = { type = cavalry_equipment_0 amount = 500 producer = NIE }
 
+	declare_war_on = {
+		target = QNG
+		type = wargoal_topple_qing
+	}
+
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 	law_pre_industrial_army_chinese
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -32,18 +37,18 @@
 		slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_confucian
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 	QNG_rebel_uprising
@@ -68,10 +73,7 @@ set_popularities = {
 		fundamentalism = 0
 }
 
-	declare_war_on = {
-	target = QNG
-	type = annex_everything
-}
+
 add_manpower = 100000
 
 	set_technology = {
@@ -123,8 +125,6 @@ add_manpower = 100000
 	# 	planning_skill = 1
 	# 	logistics_skill = 1
 	# }
-
-	recruit_character = NIE_character_lai_wenguang
 
 	# create_corps_commander = {
 	# 	name = "Lai Wenguang"

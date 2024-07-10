@@ -5,60 +5,61 @@
 
 	set_convoys = 0
 
-	set_research_slots = 3
+	set_research_slots = 2
+	
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 2 }
+	set_variable = { current_loans_sum = 4 }
 
 	add_ideas = {
-		#STATE OF COUNTRY
-		HSD_Ludwig_III
-		no_heir
-		agrarian
-		victorian_era
-		law_victorian_army
-		#religion_protestant
-
-		#GOVERNMENTAL POLICIES
-		constitutional_monarchy
-		constitution_adopted
-		no_elections
-		no_separation
-		federal_control
-
-		#CULTURE AND EDUCATION
+		#POLITICAL LIBERTIES
 		open_schools
-		state_religion
 		free_press
 		foa_state_only
+		pp_ban_extremist_parties
 		tu_prohibited
-		quasi_jury_court
-
-		#ECONOMY
-		limited_exports
-		normal_taxes
-		cl_legal
-		fourteen_hour_work_day
-		lp_land_purchase
-		civilian_economy
-
-		#DEMOGRAPHICS
-		#stagnation_growth
+		limited_elections
+		
+		#INDIVIDUAL LIBERTIES
 		border_control
 		limited_equality
 		property_owners_suffrage
 		early_conscription
-		pp_ban_extremist_parties
+		state_religion
+		quasi_jury_court
 
-		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
-
+		#ECONOMIC POLICY
+		mixed_economy
+		limited_exports
+		taxation_level_3
+		civilian_economy
+		cl_legal
+		agrarian
+		
+		#INTERNAL BUDGET
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_3
+		army_spending_level_3
+		research_spending_level_1
+		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		HSD_Ludwig_III
+		victorian_era
+		law_victorian_army
+		GEC_idea_german_confederation_middle_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_weakened_zunftwesen
 		NA_B_early_scale_railways
 	}
@@ -209,9 +210,9 @@
 		agrarian
 		
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		PRS_Zollverein
-		BAD_currency_reform
+		GEC_idea_german_confederation_minor_power
+		GEC_idea_zollverein_1
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_weakened_zunftwesen		#weakened step by step since 1820, abolished in 1866
 		NA_B_early_scale_railways
 	}
@@ -232,8 +233,8 @@
 
 		#NATIONAL SPIRITS
 		GC_idea_schutz_und_trutz
-		PRS_Zollverein_2
-		BAD_currency_reform
+		GEC_idea_zollverein_3
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_gewerbeordnung
 		NA_B_early_scale_railways
 	}

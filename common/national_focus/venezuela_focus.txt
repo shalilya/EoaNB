@@ -1151,10 +1151,10 @@ focus_tree = {
 				remove_idea = high_judge_courtroom
 				add_idea = jury_court
 			}
-			swap_ideas = {
-				remove_idea = no_separation
-				add_idea = balanced_powers
-			}
+			#swap_ideas = {
+			#	remove_idea = no_separation
+			#	add_idea = balanced_powers
+			#}
 			add_stability = 0.1
 			add_popularity = {
 				ideology = centrism
@@ -1639,10 +1639,10 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			add_stability = 0.1
-			swap_ideas = {
-				remove_idea = constitution_adopted
-				add_idea = limited_constitution
-			}
+			#swap_ideas = {
+			#	remove_idea = constitution_adopted
+			#	add_idea = limited_constitution
+			#}
 		}
 	}
 
@@ -1740,8 +1740,8 @@ focus_tree = {
 	
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = two_percent
-				add_idea = three_percent
+				remove_idea = army_spending_level_2
+				add_idea = army_spending_level_3
 			}
 			swap_ideas = {
 				remove_idea = limited_conscription
@@ -1849,8 +1849,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.2
 			swap_ideas = {
-				remove_idea = law_communal_policing
-				add_idea = law_military_police_force
+				remove_idea = law_spending_level_1
+				add_idea = law_spending_level_3
 			}
 		}
 	}
@@ -2336,7 +2336,7 @@ focus_tree = {
 
 	focus = {
 		id = VEN_con_develop_agrarian_economy
-		icon = GFX_Focus_Agriculture
+		icon = GFX_Focus_agricultural_economy
 		relative_position_id = VEN_con_values_of_liberty
 		x = 0
 		y = 1
@@ -2798,8 +2798,8 @@ focus_tree = {
 	
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = inframain_no_subsidies_infrastructure
-				add_idea = inframain_basic_maintenance_infrastructure
+				remove_idea = road_spending_level_1
+				add_idea = road_spending_level_2
 			}
 			add_stability = 0.1
 		}
@@ -2946,8 +2946,8 @@ focus_tree = {
 	
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = hc_no_healthcare
-				add_idea = hc_low_healthcare
+				remove_idea = social_spending_level_1
+				add_idea = social_spending_level_2
 			}
 			remove_ideas = VEN_famine
 			add_stability = 0.15
@@ -3027,13 +3027,13 @@ focus_tree = {
 	
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = normal_taxes
-				add_idea = high_taxes
+				remove_idea = taxation_level_3
+				add_idea = taxation_level_4
 			}
-			swap_ideas = {
-				remove_idea = unlimited_work_day
-				add_idea = ten_hour_work_day
-			}
+			#swap_ideas = {
+			#	remove_idea = unlimited_work_day
+			#	add_idea = ten_hour_work_day
+			#}
 			swap_ideas = {
 				remove_idea = limited_exports
 				add_idea = export_focus

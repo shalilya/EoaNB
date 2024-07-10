@@ -752,7 +752,11 @@ spriteType = {
 ######## Armor
 
 	### Category Icon
-	
+
+	spriteType = {
+		name = "GFX_ship_armor_capital_hardwood_0"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/hardwood_capital.png"
+	}
 	spriteType = {
 		name = "GFX_SMI_ship_cruiser_armor"
 		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/armor_thin_icn.dds"
@@ -829,6 +833,12 @@ spriteType = {
 	spriteType = {
 		name = "GFX_SMI_ship_armor_thin_4"
 		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/armor_thin_icn_4.dds"
+	}
+
+###Victorian Modules
+	spriteType = {
+		name = "GFX_EMI_hardwood_capital"
+		textureFile = "gfx/interface/equipmentdesigner/naval/modules/icons/hardwood_capital.png"
 	}
 
 

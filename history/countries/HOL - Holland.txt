@@ -10,6 +10,20 @@
 	add_to_variable = { prestige_score = 10 }
 			add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = HOL }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = HOL }
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 12 }
+	set_variable = { current_loans_sum = 90 }
+
 	add_ideas = {
 		#POLITICS
 
@@ -17,13 +31,13 @@
 		victorian_era
 	law_victorian_army
 		industrializing
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		civilian_economy
 		free_trade
-		three_percent
-		high_taxes
+		army_spending_level_3
+		taxation_level_4
 	cl_legal
 
 		#stagnation_growth
@@ -32,17 +46,17 @@
 		limited_equality
 		property_owners_suffrage
 
-		limited_constitution
+		#limited_constitution
 		limited_elections
 		#religion_protestant
 		privileged_education
 		secular_state
 
-		 hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		sfund_private_ventures_only
+		 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		research_spending_level_1
 
 				#NATIONAL SPIRITS
 		HOL_the_dutch_emigration
@@ -144,38 +158,19 @@ set_popularities = {
 		train_1855 = 1
 	}
 
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
-		set_autonomy = {
-			target = LUX
-			autonomous_state = autonomy_personal_union
-			freedom_level = 0.5
-		}
+	set_autonomy = {
+		target = LUX
+		autonomous_state = autonomy_personal_union
+		freedom_level = 0.5
 	}
-	if ={
-		limit = {
-			NOT = { OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			} }
-		}
-		puppet = LUX
-	}
-
-diplomatic_relation = {
+	
+	diplomatic_relation = {
 		country = BEL
 		relation = non_aggression_pact
 		active = yes
 	}
 
-add_opinion_modifier = {
+	add_opinion_modifier = {
 		target = BEL
 		modifier = HOL_political_tension
 	}

@@ -199,10 +199,10 @@ focus = {
 
 	completion_reward = {
 		add_political_power = 100
-		swap_ideas = {
-			remove_idea = has_heir
-			add_idea = no_heir
-		}
+		#swap_ideas = {
+		#	remove_idea = has_heir
+		#	add_idea = no_heir
+		#}
 	}
 }
 
@@ -289,10 +289,10 @@ focus = {
 	completion_reward = {
 		remove_ideas = SPR_the_carlist_threat
 		remove_ideas = SPR_pragmatica_sancion
-		swap_ideas = {
-			remove_idea = no_heir
-			add_idea = has_heir
-		}
+		#swap_ideas = {
+		#	remove_idea = no_heir
+		#	add_idea = has_heir
+		#}
 	}	
 }
 
@@ -316,16 +316,16 @@ focus = {
 	completion_reward = {
 		add_political_power = 100
 		add_ideas = SPR_the_carlist_threat
-		swap_ideas = {
-			remove_idea = has_heir
-			add_idea = no_heir
-		}
+		#swap_ideas = {
+		#	remove_idea = has_heir
+		#	add_idea = no_heir
+		#}
 	}
 }
 
 focus = {
 	id = SPR_desperate_fight
-	icon = GFX_goal_focus_fra_republic_defeat
+	icon = GFX_focus_politics_government_chaos
 	relative_position_id = SPR_defend_the_government
 	x = 0
 	y = 1
@@ -396,26 +396,26 @@ focus = {
 			remove_idea = SPR_a_divided_country
 			add_idea = SPR_a_divided_country_iv
 		}
-		SPR = {
-			if = {
-				limit = {
-					has_idea = constitution_adopted
-				}
-				swap_ideas = { remove_idea = constitution_adopted add_idea = no_constitution }
-			}
-			else_if = {
-				limit = {
-					has_idea = human_rights
-				}
-				swap_ideas = { remove_idea = human_rights add_idea = no_constitution }
-			}
-			else_if = {
-				limit = {
-					has_idea = limited_constitution
-				}
-				swap_ideas = { remove_idea = limited_constitution add_idea = no_constitution }
-			}
-		}
+		#SPR = {
+			#if = {
+			#	limit = {
+			#		has_idea = constitution_adopted
+			#	}
+			#	swap_ideas = { remove_idea = constitution_adopted add_idea = no_constitution }
+			#}
+			#else_if = {
+			#	limit = {
+			#		has_idea = human_rights
+			#	}
+			#	swap_ideas = { remove_idea = human_rights add_idea = no_constitution }
+			#}
+			#else_if = {
+			#	limit = {
+			#		has_idea = limited_constitution
+			#	}
+			#	swap_ideas = { remove_idea = limited_constitution add_idea = no_constitution }
+			#}
+		#}
 		SPR = {
 			if = {
 				limit = {
@@ -468,26 +468,26 @@ focus = {
 				swap_ideas = { remove_idea = oligarchism add_idea = absolutism }
 			}
 		}
-		SPR = {
-			if = {
-				limit = {
-					has_idea = parliamentary_monarchy
-				}
-				swap_ideas = { remove_idea = parliamentary_monarchy add_idea = absolute_monarchy }
-			}
-			else_if = {
-				limit = {
-					has_idea = constitutional_monarchy
-				}
-				swap_ideas = { remove_idea = constitutional_monarchy add_idea = absolute_monarchy }
-			}
-			else_if = {
-				limit = {
-					has_idea = totalitarian_dictatorship
-				}
-				swap_ideas = { remove_idea = totalitarian_dictatorship add_idea = absolute_monarchy }
-			}
-		}
+		#SPR = {
+		#	if = {
+		#		limit = {
+		#			has_idea = parliamentary_monarchy
+		#		}
+		#		swap_ideas = { remove_idea = parliamentary_monarchy add_idea = absolute_monarchy }
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			has_idea = constitutional_monarchy
+		#		}
+		#		swap_ideas = { remove_idea = constitutional_monarchy add_idea = absolute_monarchy }
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			has_idea = totalitarian_dictatorship
+		#		}
+		#		swap_ideas = { remove_idea = totalitarian_dictatorship add_idea = absolute_monarchy }
+		#	}
+		#}
 	}
 }
 
@@ -536,10 +536,10 @@ focus = {
 		prerequisite = { focus = SPR_the_queen }
 
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = human_rights
-				add_idea = limited_constitution
-			}
+			#swap_ideas = {
+			#	remove_idea = human_rights
+			#	add_idea = limited_constitution
+			#}
 			remove_ideas = SPR_mayorazgo
 			swap_ideas = {
 				remove_idea = SPR_a_divided_country
@@ -619,10 +619,10 @@ focus = {
 				remove_idea = SPR_a_divided_country_ii
 				add_idea = SPR_a_divided_country_iii
 			}
-			swap_ideas = {
-				remove_idea = has_heir
-				add_idea = no_heir
-			}
+			#swap_ideas = {
+			#	remove_idea = has_heir
+			#	add_idea = no_heir
+			#}
 		}
 	}
 	
@@ -694,26 +694,26 @@ focus = {
 		prerequisite = { focus = SPR_the_queens_will }
 
 		completion_reward = {
-			SPR = {
-				if = {
-					limit = {
-						has_idea = constitution_adopted
-					}
-					swap_ideas = { remove_idea = constitution_adopted add_idea = no_constitution }
-				}
-				else_if = {
-					limit = {
-						has_idea = human_rights
-					}
-					swap_ideas = { remove_idea = human_rights add_idea = no_constitution }
-				}
-				else_if = {
-					limit = {
-						has_idea = limited_constitution
-					}
-					swap_ideas = { remove_idea = limited_constitution add_idea = no_constitution }
-				}
-			}
+			#SPR = {
+			#	if = {
+			#		limit = {
+			#			has_idea = constitution_adopted
+			#		}
+			#		swap_ideas = { remove_idea = constitution_adopted add_idea = no_constitution }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = human_rights
+			#		}
+			#		swap_ideas = { remove_idea = human_rights add_idea = no_constitution }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = limited_constitution
+			#		}
+			#		swap_ideas = { remove_idea = limited_constitution add_idea = no_constitution }
+			#	}
+			#}
 			SPR = {
 				if = {
 					limit = {
@@ -760,26 +760,26 @@ focus = {
 					swap_ideas = { remove_idea = property_owners_suffrage add_idea = oligarchism }
 				}
 			}
-			SPR = {
-				if = {
-					limit = {
-						has_idea = parliamentary_monarchy
-					}
-					swap_ideas = { remove_idea = parliamentary_monarchy add_idea = totalitarian_dictatorship }
-				}
-				else_if = {
-					limit = {
-						has_idea = constitutional_monarchy
-					}
-					swap_ideas = { remove_idea = constitutional_monarchy add_idea = totalitarian_dictatorship }
-				}
-				else_if = {
-					limit = {
-						has_idea = absolute_monarchy
-					}
-					swap_ideas = { remove_idea = absolute_monarchy add_idea = totalitarian_dictatorship }
-				}
-			}
+			#SPR = {
+			#	if = {
+			#		limit = {
+			#			has_idea = parliamentary_monarchy
+			#		}
+			#		swap_ideas = { remove_idea = parliamentary_monarchy add_idea = totalitarian_dictatorship }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = constitutional_monarchy
+			#		}
+			#		swap_ideas = { remove_idea = constitutional_monarchy add_idea = totalitarian_dictatorship }
+			#	}
+			#	else_if = {
+			#		limit = {
+			#			has_idea = absolute_monarchy
+			#		}
+			#		swap_ideas = { remove_idea = absolute_monarchy add_idea = totalitarian_dictatorship }
+			#	}
+			#}
 		}
 	}
 
@@ -983,9 +983,9 @@ focus = {
 			add_tech_bonus = { bonus = 0.25 uses = 1 category = biochemistry_tech }
 			if = {
 				limit = {
-					has_idea = sfund_private_ventures_only
+					has_idea = research_spending_level_1
 				}
-				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_1 add_idea = research_spending_level_2 }
 			}
 			else = {
 				add_political_power = 75
@@ -1010,9 +1010,9 @@ focus = {
 			add_tech_bonus = { bonus = 0.25 uses = 1 category = electronics_devices_tech }
 			if = {
 				limit = {
-					has_idea = sfund_private_ventures_only
+					has_idea = research_spending_level_1
 				}
-				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				swap_ideas = { remove_idea = research_spending_level_1 add_idea = research_spending_level_2 }
 			}
 			else = {
 				add_political_power = 75
@@ -2356,23 +2356,13 @@ focus = {
 					if = {
 						limit = { SPC = { exists = no } }
 						release_puppet = SPC
-						if = {
-							limit = {
-							OR = {
-								  has_dlc = "Together for Victory"
-								  has_dlc = "Waking the Tiger"
-								  has_dlc = "Death or Dishonor"
-								}
-							}
-							set_autonomy = {
-								target = SPC
-								autonomous_state = autonomy_colony
-								freedom_level = 0.5
-							}
+						set_autonomy = {
+							target = SPC
+							autonomous_state = autonomy_colony
+							freedom_level = 0.5
 						}
 					}
 				}
-				else = { DOM = { set_cosmetic_tag = SPC } }
 				if = {
 					limit = {
 						OR = {

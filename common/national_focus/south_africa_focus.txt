@@ -11,11 +11,13 @@ focus_tree = {
 
 	default = no
 
+	#################
 	### Political ###
+	#################
 
 	focus = {
-		id = SAF_south_africa
-		icon = GFX_Focus_Continent_Africa
+		id = SAF_focus_george_gray
+		icon = GFX_goal_george_gray
 		x = 3
 		y = 0
 		cost = 70
@@ -23,159 +25,838 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		ai_will_do = { factor = 100 }
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 25
 		}
 	}
 
 	focus = {
-		id = SAF_european_settlers
-		icon = GFX_focus_eng_global_defense
-		x = 1
+		id = SAF_focus_protect_natives
+		icon = GFX_Focus_defence_plans
+		x = -1
 		y = 1
 		cost = 70
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
 		}
-		prerequisite = { focus = SAF_south_africa  }
-		ai_will_do = { factor = 100 }
+		relative_position_id = SAF_focus_george_gray
 
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_george_gray }
+		
 		completion_reward = {
-			add_manpower = 1500
+			#add_ideas =
 		}
 	}
 
 	focus = {
-		id = SAF_the_boers
-		icon = GFX_focus_spr_masters_of_our_own_fate
-		x = 3
-		y = 1
+		id = SAF_focus_demilitrise_natives
+		icon = GFX_Focus_destroy_native_guard
+		x = -1
+		y = 2
 		cost = 70
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
 		}
-		prerequisite = { focus = SAF_south_africa  }
-		ai_will_do = { factor = 100 }
+		relative_position_id = SAF_focus_george_gray
 
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_protect_natives }
+		
 		completion_reward = {
-			add_stability = -0.1
-			add_opinion_modifier = { 
-				target = TRV
-				modifier = medium_decrease
-			}
-			add_opinion_modifier = { 
-				target = OFS
-				modifier = medium_decrease
-			}
-			OFS = {
-				add_opinion_modifier = { 
-					target = SAF
-					modifier = medium_decrease
-				}
-			}
-			TRV = {
-				add_opinion_modifier = { 
-					target = SAF
-					modifier = medium_decrease
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SAF_afriSAF_tribes
-		icon = GFX_goal_tripartite_pact
-		x = 5
-		y = 1
-		cost = 70
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = SAF_south_africa  }
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
+			add_political_power = 25
 			add_war_support = -0.05
 		}
 	}
 
 	focus = {
-		id = SAF_diamonds
-		icon = GFX_Focus_Resource_Gems
-		x = 3
+		id = SAF_focus_calm_conservatives
+		icon = GFX_Focus_Ideology_Liberal_comprimise
+		x = 1
+		y = 1
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_george_gray }
+		
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_highlight_frontier
+		icon = GFX_Focus_Law_plebicite
+		x = 1
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_calm_conservatives }
+		
+		completion_reward = {
+			country_event = britishafrica.38
+		}
+	}
+
+	focus = {
+		id = SAF_focus_reduce_tensions
+		icon = GFX_Focus_Justice
+		x = 0
+		y = 3
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_highlight_frontier }
+		prerequisite = { focus = SAF_focus_demilitrise_natives }
+		
+		completion_reward = {
+			OFS = {
+				add_opinion_modifier = {
+					target = SAF
+					modifier = small_increase
+				}
+			}
+			SOT = {
+				add_opinion_modifier = {
+					target = SAF
+					modifier = small_increase
+				}
+			}
+			GQW = {
+				add_opinion_modifier = {
+					target = SAF
+					modifier = small_increase
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_need_federation
+		icon = GFX_Focus_Government_populist
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_reduce_tensions }
+		
+		completion_reward = {
+			add_political_power = -100
+		}
+	}
+
+	focus = {
+		id = SAF_focus_OFS_talks
+		icon = GFX_Focus_Diplomatic_Ally_OFS
+		x = -1
+		y = 5
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_need_federation }
+		
+		completion_reward = {
+			unlock_decision_tooltip = SAF_decision_OFS_confed_talks
+		}
+	}
+
+	focus = {
+		id = SAF_focus_TRV_talks
+		icon = GFX_Focus_Diplomatic_Ally_TRV
+		x = 1
+		y = 5
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_need_federation }
+		
+		completion_reward = {
+			unlock_decision_tooltip = SAF_decision_TRV_confed_talks
+		}
+	}
+
+	focus = {
+		id = SAF_focus_send_prop
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 0
+		y = 6
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_george_gray
+
+		available = {
+			has_country_leader = {	
+				character = NZL_george_edward_grey 
+			}
+			has_country_flag = SAF_OFS_confed
+			has_country_flag = SAF_TRV_confed
+		}
+
+		prerequisite = { focus = SAF_focus_OFS_talks }
+		prerequisite = { focus = SAF_focus_TRV_talks }
+		
+		completion_reward = {
+			ENG = {
+				country_event = britishafrica.35
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_philip_wodehouse
+		icon = GFX_goal_philip_wodehouse
+		x = 7
+		y = 0
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 100 }
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = SAF_focus_arbitrate_OFS_SOT
+		icon = GFX_focus_boer_diplo
+		x = 0
+		y = 1
+		cost = 7
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_philip_wodehouse
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+			SOT = {
+				has_war_with = OFS
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_philip_wodehouse }
+		
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_fight_independence
+		icon = GFX_Focus_Ideology_Liberty_purged
+		x = -1
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_philip_wodehouse
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_arbitrate_OFS_SOT }
+		
+		completion_reward = {
+			add_political_power = 25
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_dismantle_parliament
+		icon = GFX_Focus_Government_centralized_authority
+		x = 1
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_philip_wodehouse
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_arbitrate_OFS_SOT }
+		
+		completion_reward = {
+			add_ideas = SAF_idea_governor_power
+		}
+	}
+
+	focus = {
+		id = SAF_focus_remain_cc
+		icon = GFX_ENG_focus_London_Embassies
+		x = 0
+		y = 3
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_philip_wodehouse
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_fight_independence }
+		prerequisite = { focus = SAF_focus_dismantle_parliament }
+		
+		completion_reward = {
+			add_political_power = 25
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_rally_support
+		icon = GFX_ENG_focus_The_Jones_Plan
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 2
+		}
+		relative_position_id = SAF_focus_philip_wodehouse
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Philip_Edmond_Wodehouse
+			}
+		}
+
+		prerequisite = { focus = SAF_focus_remain_cc }
+		
+		completion_reward = {
+			add_political_power = 50
+			country_event = britishafrica.8
+		}
+	}
+
+	focus = {
+		id = SAF_focus_henry_barkley
+		icon = GFX_goal_henry_barkly
+		x = 11
+		y = 0
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+
+		available = {
+			has_country_leader = {	
+				character = SAF_Henry_Barkly
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = SAF_focus_listen_locals
+		icon = GFX_Focus_refugee_management
+		x = 0
+		y = 1
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_henry_barkley
+
+		prerequisite = { focus = SAF_focus_henry_barkley }
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_work_with_locals
+		icon = GFX_Focus_Central_State_Administration
+		x = -1
 		y = 2
 		cost = 70
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = SAF_european_settlers  } prerequisite = { focus = SAF_the_boers  } prerequisite = { focus = SAF_afriSAF_tribes  }
-		ai_will_do = { factor = 100 }
-		available = {
-			has_country_flag = SAF_diamonds_f
+		ai_will_do = { 
+			factor = 100 
 		}
+		relative_position_id = SAF_focus_henry_barkley
+
+		prerequisite = { focus = SAF_focus_listen_locals }
 
 		completion_reward = {
-			add_political_power = 25
-			add_war_support = 0.05
-			add_ideas = SAF_resourse_rich
+			add_stability = 0.05
 		}
 	}
 
 	focus = {
-		id = SAF_push_for_selfgovernance
-		icon = GFX_focus_chi_british_cooperation
-		x = 3
+		id = SAF_focus_guide_locals
+		icon = GFX_Focus_social_freedom
+		x = 1
+		y = 2
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_henry_barkley
+
+		prerequisite = { focus = SAF_focus_listen_locals }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { 
+				ideology = centrism 
+				popularity = 0.1 
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_self_gov
+		icon = GFX_goal_focus_valient_kingdom
+		x = 0
 		y = 3
 		cost = 70
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = SAF_afriSAF_tribes  }
-		ai_will_do = { factor = 100 }
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_henry_barkley
+
+		prerequisite = { focus = SAF_focus_work_with_locals }
+		prerequisite = { focus = SAF_focus_guide_locals }
 
 		completion_reward = {
-			if = {
-				limit = { OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				} }
 			add_political_power = -100
-				add_autonomy_ratio = {
-					value = 0.075
-					localization = afr_colony_generic_focus_strengthen_government
+			add_stability = 0.1
+			ENG = {
+				set_autonomy = {
+					target = SAF
+					autonomous_state = autonomy_british_self_gov
+					freedom_level = 0.2
 				}
 			}
-			else = {
-				add_political_power = -50
-				army_experience = 5
+			country_event = {
+				id = britishafrica.42
+				days = 14
 			}
 		}
 	}
 
 	focus = {
-		id = SAF_volatile_frontier
-		icon = GFX_goal_generic_attack_allies
-		x = 3
+		id = SAF_focus_grow_liberal_tradition
+		icon = GFX_Focus_Ideology_Support_Liberty
+		x = 0
 		y = 4
 		cost = 70
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = SAF_push_for_selfgovernance  }
-		ai_will_do = { factor = 100 }
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_henry_barkley
+
+		prerequisite = { focus = SAF_focus_self_gov }
 
 		completion_reward = {
-			add_stability = -0.05
+			add_stability = 0.05
+			add_popularity = { 
+				ideology = centrism 
+				popularity = 0.05
+			}
 		}
 	}
 
+	focus = {
+		id = SAF_focus_first_pm
+		icon = GFX_goal_john_molteno
+		x = 16
+		y = 0
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+
+		available = {
+			has_country_flag = SAF_first_election
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			hidden_effect = {
+				clr_country_flag = SAF_first_election
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_reorg_state
+		icon = GFX_Focus_Government_Reform
+		x = 0
+		y = 1
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_first_pm }
+
+		completion_reward = {
+			add_ideas = SAF_idea_reorg_state
+			hidden_effect = {
+				country_event = {
+					id = britishafrica.43
+					days = 25
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_abolish_house_tax
+		icon = GFX_Focus_banks2
+		x = -2
+		y = 2
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_reorg_state }
+
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SAF_focus_pay_debt
+		icon = GFX_Focus_economic_crisis
+		x = 0
+		y = 2
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_reorg_state }
+
+		completion_reward = {
+			add_political_power = -250
+		}
+	}
+
+	focus = {
+		id = SAF_focus_invest_infra
+		icon = GFX_Focus_Roads_Canals_Investment
+		x = 2
+		y = 2
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_reorg_state }
+
+		completion_reward = {
+			activate_decision = SAF_mission_invest_infra
+		}
+	}
+
+	focus = {
+		id = SAF_focus_eco_recovers
+		icon = GFX_Focus_Economy_Prosperity
+		x = 0
+		y = 3
+		cost = 140
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_abolish_house_tax }
+		prerequisite = { focus = SAF_focus_pay_debt }
+		prerequisite = { focus = SAF_focus_invest_infra }
+
+		completion_reward = {
+			remove_ideas = SAF_idea_reorg_state
+		}
+	}
+
+	focus = {
+		id = SAF_focus_uni_good_hope
+		icon = GFX_Focus_Elementary_School_0
+		x = -1
+		y = 4
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_eco_recovers }
+
+		completion_reward = {
+			unlock_decision_tooltip = SAF_mission_university_good_hope
+		}
+	}
+
+	focus = {
+		id = SAF_focus_imperial_interference
+		icon = GFX_goal_focus_suspend_house_commons
+		x = 1
+		y = 4
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		prerequisite = { focus = SAF_focus_eco_recovers }
+
+		completion_reward = {
+			add_ideas = SAF_idea_imperial_interference
+		}
+	}
+
+	focus = {
+		id = SAF_focus_pursue_confed
+		icon = GFX_Focus_Law_plebicite
+		x = 0
+		y = 5
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		available = {
+			always = no
+		}
+
+		prerequisite = { focus = SAF_focus_uni_good_hope }
+		prerequisite = { focus = SAF_focus_imperial_interference }
+
+		completion_reward = {
+			add_political_power = -50
+			#country_event = 
+		}
+	}
+
+	focus = {
+		id = SAF_focus_london_plan
+		icon = GFX_idea_ENG_focus_enact_law_uk
+		x = -1
+		y = 6
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		mutually_exclusive = { focus = SAF_focus_molteno_plan }
+
+		prerequisite = { focus = SAF_focus_pursue_confed }
+
+		completion_reward = {
+			add_political_power = 25
+			add_war_support = 0.025
+		}
+	}
+
+	focus = {
+		id = SAF_focus_molteno_plan
+		icon = GFX_Focus_Ideology_Liberal_comprimise
+		x = 1
+		y = 6
+		cost = 70
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { 
+			factor = 100 
+		}
+		relative_position_id = SAF_focus_first_pm
+
+		mutually_exclusive = { focus = SAF_focus_london_plan }
+
+		prerequisite = { focus = SAF_focus_pursue_confed }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = SAF_idea_defy_london
+				days = 745
+			}
+		}
+	}
+
+	############
 	### Army ###
+	############
 
 	focus = {
 		id = SAF_Cape_Defence
 		icon = GFX_focus_generic_little_entente
-		x = 12
+		x = 23
 		y = 0
 		cost = 70
 		available_if_capitulated = no   
@@ -184,7 +865,7 @@ focus_tree = {
 		}
 		
 		available = {
-			has_completed_focus = SAF_push_for_selfgovernance
+			has_completed_focus = SAF_focus_first_pm
 		}
 
 		completion_reward = {
@@ -195,13 +876,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Learn_1812
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 9
+		x = -3
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_Cape_Defence }
 		
@@ -217,13 +899,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Learn_European_Wars
 		icon = GFX_goal_generic_army_doctrines
-		x = 9
+		x = -3
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_Learn_1812 }
 		
@@ -239,13 +922,14 @@ focus_tree = {
 	focus = {
 		id = SAF_New_Regiments
 		icon = GFX_focus_generic_military_mission
-		x = 15
+		x = 3
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_Cape_Defence }
 		
@@ -257,13 +941,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Conscript_Natives
 		icon = GFX_focus_generic_treaty 
-		x = 15
+		x = 3
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_New_Regiments }
 		
@@ -276,7 +961,7 @@ focus_tree = {
 	focus = {
 		id = SAF_New_British_Rifle_Designs
 		icon = GFX_focus_secret_rearmament
-		x = 12
+		x = 0
 		y = 1
 		cost = 70
 		available_if_capitulated = no   
@@ -285,10 +970,11 @@ focus_tree = {
 		}
 		
 		Bypass = {
-		NOT = {
-		is_subject_of = ENG
+			NOT = {
+				is_subject_of = ENG
 			}
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_Cape_Defence }
 		
@@ -304,13 +990,14 @@ focus_tree = {
 	focus = {
 		id = SAF_New_Uniform_Designs
 		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = 13
+		x = 1
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 3
-		}	
+		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_New_British_Rifle_Designs }
 		
@@ -326,13 +1013,14 @@ focus_tree = {
 	focus = {
 		id = SAF_New_Artillery_Designs
 		icon = GFX_goal_generic_army_artillery2
-		x = 11
+		x = -1
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 3
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_New_British_Rifle_Designs }
 		
@@ -348,13 +1036,14 @@ focus_tree = {
 	focus = {
 		id = SAF_British_Equipment
 		icon = GFX_Focus_gun_sales_ENG
-		x = 11
+		x = -1
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Cape_Defence
 		
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		
@@ -384,7 +1073,7 @@ focus_tree = {
 	focus = {
 		id = SAF_Start_Military_Industry
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 13
+		x = 1
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
@@ -395,6 +1084,7 @@ focus_tree = {
 			CAN = { controls_state = 276 }	
 			num_of_available_civilian_factories > 0
 		}
+		relative_position_id = SAF_Cape_Defence
 		
 		prerequisite = { focus = SAF_New_Artillery_Designs }
 		prerequisite = { focus = SAF_New_Uniform_Designs }
@@ -409,13 +1099,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Increasing_Self_Reliance
 		icon = GFX_Focus_Army_Reforms
-		x = 12
+		x = 0
 		y = 4
 		cost = 105
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 10
 		}
+		relative_position_id = SAF_Cape_Defence
 
 		prerequisite = { focus = SAF_British_Equipment focus = SAF_Start_Military_Industry }
 		prerequisite = { focus = SAF_Learn_European_Wars }
@@ -427,12 +1118,14 @@ focus_tree = {
 		}
 	}
 
+	###############
 	### Economy ###
+	###############
 
 	focus = {
 		id = SAF_Matter_Agriculture
-		icon = GFX_Focus_Agriculture
-		x = 23
+		icon = GFX_Focus_Agriculture_field_question
+		x = 32
 		y = 0
 		cost = 35
 		available_if_capitulated = no   
@@ -452,13 +1145,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Lower_Cape
 		icon = GFX_goal_focus_develop_cape_colony
-		x = 20
+		x = -3
 		y = 1
 		cost = 35
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Matter_Agriculture }	
 
@@ -469,14 +1163,15 @@ focus_tree = {
 
 	focus = {
 		id = SAF_Effort_self_sufficient
-		icon = GFX_Focus_Wheat
-		x = 19
+		icon = GFX_Focus_Agriculture_wheat
+		x = -4
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Lower_Cape }
 
@@ -491,13 +1186,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Combat_Poverty_traditional
 		icon = GFX_focus_generic_concessions
-		x = 19
+		x = -4
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Effort_self_sufficient }	
 
@@ -509,13 +1205,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Subsidize_Farms
 		icon = GFX_Focus_banks
-		x = 19
+		x = -4
 		y = 4
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Combat_Poverty_traditional }	
 
@@ -527,13 +1224,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Support_Shift_stock_raising
 		icon = GFX_Focus_agricultural_economy
-		x = 21
+		x = -2
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 
@@ -550,13 +1248,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Educate_Farmers
 		icon = GFX_focus_generic_military_academy
-		x = 21
+		x = -2
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Support_Shift_stock_raising }	
 
@@ -568,13 +1267,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Organise_Agricultural_Press
 		icon = GFX_Focus_Freedom_Press
-		x = 21
+		x = -2
 		y = 4
 		cost = 105
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Educate_Farmers }	
 
@@ -597,13 +1297,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Upper_Cape
 		icon = GFX_goal_focus_develop_cape_colony
-		x = 26
+		x = 3
 		y = 1
 		cost = 35
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Matter_Agriculture }	
 
@@ -615,13 +1316,14 @@ focus_tree = {
 	focus = {
 		id = SAF_New_Industrial_Equipment
 		icon = GFX_goal_generic_production
-		x = 25
+		x = 2
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Upper_Cape }	
 
@@ -637,13 +1339,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Support_Local_Farmers
 		icon = GFX_Focus_Partisans_Fund
-		x = 27
+		x = 4
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 4
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Upper_Cape }	
 
@@ -655,13 +1358,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Support_Shift_Livestook
 		icon = GFX_Focus_agricultural_economy
-		x = 25
+		x = 2
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 		
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 
@@ -679,13 +1383,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Encourage_Cheese_Factories
 		icon = GFX_Focus_Law_Vote_1
-		x = 25
+		x = 2
 		y = 4
 		cost = 105
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Support_Shift_Livestook }	
 
@@ -707,14 +1412,15 @@ focus_tree = {
 
 	focus = {
 		id = SAF_Promote_Wheat
-		icon = GFX_Focus_Agriculture
-		x = 27
+		icon = GFX_Focus_Agriculture_wheat
+		x = 4
 		y = 3
 		cost = 35
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_New_Industrial_Equipment }
 		prerequisite = { focus = SAF_Support_Local_Farmers }
@@ -730,13 +1436,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Subsidize_Wheat_Farms
 		icon = GFX_Focus_banks
-		x = 27
+		x = 4
 		y = 4
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Matter_Agriculture
 
 		prerequisite = { focus = SAF_Promote_Wheat }	
 
@@ -748,7 +1455,7 @@ focus_tree = {
 	focus = {
 		id = SAF_Exports_To_Britain
 		icon = GFX_goal_focus_british_isolationism
-		x = 23
+		x = 0
 		y = 5
 		cost = 70
 		available_if_capitulated = no   
@@ -763,6 +1470,7 @@ focus_tree = {
 			is_subject_of = ENG
 			}
 		}
+		relative_position_id = SAF_Matter_Agriculture
 		
 		prerequisite = { focus = SAF_Subsidize_Wheat_Farms focus = SAF_Encourage_Cheese_Factories }	
 		prerequisite = { focus = SAF_Organise_Agricultural_Press focus = SAF_Subsidize_Farms }
@@ -774,12 +1482,14 @@ focus_tree = {
 		}
 	}
 
+	####################
 	### Industrizing ###
+	####################
 
 	focus = {
 		id = SAF_Modernizing_Infrastructure
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 35
+		x = 41
 		y = 0
 		cost = 105
 		available_if_capitulated = no   
@@ -804,17 +1514,18 @@ focus_tree = {
 	focus = {
 		id = SAF_Industrialising_Industry
 		icon = GFX_Focus_industrial_revolution
-		x = 35
+		x = 0
 		y = 1
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 10
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Modernizing_Infrastructure }
 		available = {
-			has_completed_focus = SAF_diamonds
+			has_completed_focus = SAF_focus_self_gov
 		}	
 
 		completion_reward = {
@@ -839,13 +1550,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Urbanisation
 		icon = GFX_Focus_Urbanization
-		x = 34
+		x = -1
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Industry }		
 
@@ -860,13 +1572,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Growing_Manufactaring
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 32
+		x = -3
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Industry }		
 
@@ -881,13 +1594,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Industrial_Textile_Industry
 		icon = GFX_focus_generic_industry_2
-		x = 36
+		x = 1
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Industry }		
 
@@ -899,13 +1613,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Industrialising_Farms
 		icon = GFX_goal_generic_production
-		x = 38
+		x = 3
 		y = 2
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Industry }		
 
@@ -931,13 +1646,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Industrialising_Society
 		icon = GFX_Focus_industrial_revolution
-		x = 35
+		x = 0
 		y = 3
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 10
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Farms }	
 		prerequisite = { focus = SAF_Industrial_Textile_Industry }	
@@ -956,13 +1672,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Productivity_First
 		icon = GFX_Focus_Elite
-		x = 33
+		x = -2
 		y = 4
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 5
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 		
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 
@@ -974,55 +1691,56 @@ focus_tree = {
 			add_popularity = { ideology = social_egalitarianism popularity = 0.05 }
 			decrease_ps_by_one = yes
 			add_ideas = CAN_idea_Productivity_First
-			if = {
-				limit = {
-					has_idea = fourteen_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = fourteen_hour_work_day
-					add_idea = unlimited_work_day
-				}
-			}	
-			if = {
-				limit = {
-					has_idea = twelve_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = fourteen_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = ten_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = ten_hour_work_day
-					add_idea = twelve_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = eight_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = eight_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = fourteen_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = fourteen_hour_work_day
+			#		add_idea = unlimited_work_day
+			#	}
+			#}	
+			#if = {
+			#	limit = {
+			#		has_idea = twelve_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = fourteen_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = ten_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = ten_hour_work_day
+			#		add_idea = twelve_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = eight_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = eight_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
 		}
 	}
 
 	focus = {
 		id = SAF_Workers_Right
 		icon = GFX_Focus_Worker
-		x = 35
+		x = 0
 		y = 4
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 2
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Industrialising_Society }
 
@@ -1031,46 +1749,47 @@ focus_tree = {
 		completion_reward = {
 		add_popularity = { ideology = centrism popularity = 0.05 }
 		add_popularity = { ideology = traditional_conservatism popularity = 0.05 }
-			if = {
-				limit = {
-					has_idea = unlimited_work_day
-				}
-				swap_ideas = {
-					remove_idea = unlimited_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = fourteen_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = fourteen_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = twelve_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = unlimited_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = unlimited_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = fourteen_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = fourteen_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = twelve_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
 		}
 	}
 
 	focus = {
 		id = SAF_Trade_Union_Act
 		icon = GFX_focus_generic_treaty
-		x = 37
+		x = 2
 		y = 4
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 4
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 		
 		prerequisite = { focus = SAF_Industrialising_Society }
 
@@ -1110,13 +1829,14 @@ focus_tree = {
 	focus = {
 		id = SAF_Industrialising_Nation
 		icon = GFX_focus_generic_industry_3 
-		x = 35
+		x = 0
 		y = 5
 		cost = 70
 		available_if_capitulated = no   
 		ai_will_do = {
 			factor = 10
 		}
+		relative_position_id = SAF_Modernizing_Infrastructure
 
 		prerequisite = { focus = SAF_Trade_Union_Act }
 		prerequisite = { focus = SAF_Productivity_First focus = SAF_Workers_Right }
@@ -1126,6 +1846,312 @@ focus_tree = {
 				remove_idea = agrarian
 				add_idea = industrializing
 			}		
+		}
+	}
+
+	###################
+	### Unification ###
+	###################
+
+	focus = {
+		id = SAF_focus_plan_needed
+		icon = GFX_Focus_maintain_the_status_quo
+		x = 13
+		y = 7
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_completed_focus = SAF_focus_london_plan
+		}
+
+		completion_reward = {
+			retire_character = SAF_Henry_Barkly
+			promote_character = SAF_Henry_Bartle_Frere
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SAF_focus_cape_frontier
+		icon = GFX_Focus_divide_africa
+		x = 0
+		y = 1
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_plan_needed }
+
+		completion_reward = {
+			country_event = britishafrica.64
+		}
+	}
+
+	focus = {
+		id = SAF_focus_shepstone
+		icon = GFX_Focus_social_manipulate_poor
+		x = -2
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_cape_frontier}
+
+		completion_reward = {
+			TRV = {
+				country_event = boer_states.60
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_direct_control
+		icon = GFX_Focus_Government_Struggle
+		x = 0
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_cape_frontier}
+
+		completion_reward = {
+			set_politics = { ruling_party = autocracy elections_allowed = no }
+			add_stability = -0.2
+			add_political_power =50
+			remove_ideas = SAF_idea_confed_forced
+		}
+	}
+
+	focus = {
+		id = SAF_focus_ultimatum_zulu
+		icon = GFX_Focus_Army_Generic_Revanchism
+		x = 2
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_cape_frontier}
+
+		available = {
+			has_completed_focus = SAF_focus_shepstone
+		}
+
+		completion_reward = {
+			ZUL = {
+				country_event = britishafrica.58
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_self_government_boer
+		icon = GFX_ENG_focus_London_Embassies
+		x = 0
+		y = 3
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_ultimatum_zulu }
+		prerequisite = { focus = SAF_focus_direct_control }
+		prerequisite = { focus = SAF_focus_shepstone }
+
+		available = {
+			ZUL = {
+				exists = no
+			}
+			TRV = {
+				is_subject_of = ENG
+			}
+		}
+
+		completion_reward = {
+			ENG = {
+				set_autonomy = {
+					target = TRV
+					autonomy_state = autonomy_british_self_gov
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_focus_invite_OFS_confed
+		icon = GFX_Focus_Diplomatic_Ally_OFS
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_plan_needed
+
+		prerequisite = { focus = SAF_focus_self_government_boer }
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = SAF_focus_local_plan
+		icon = GFX_Focus_Law_plebicite
+		x = 19
+		y = 7
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_completed_focus = SAF_focus_molteno_plan
+		}
+
+		completion_reward = {
+			remove_ideas = SAF_idea_imperial_interference
+			remove_ideas = SAF_idea_confed_forced
+		}
+	}
+
+	focus = {
+		id = SAF_focus_economic_stability
+		icon = GFX_Focus_Commercial_Act
+		x = 0
+		y = 1
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_local_plan }
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = SAF_focus_talks_OFS
+		icon = GFX_Focus_Diplomatic_Ally_OFS
+		x = -2
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_economic_stability }
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = SAF_focus_native_treaties
+		icon = GFX_Focus_Law_Vote_1
+		x = 0
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_economic_stability }
+
+		completion_reward = {
+			set_politics = { ruling_party = autocracy elections_allowed = no }
+			add_stability = -0.2
+			add_political_power =50
+		}
+	}
+
+	focus = {
+		id = SAF_focus_talks_TRV
+		icon = GFX_Focus_Diplomatic_Ally_TRV
+		x = 2
+		y = 2
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_economic_stability }
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = SAF_focus_local_traditions
+		icon = GFX_Focus_Justice_police_force
+		x = 0
+		y = 3
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_talks_OFS }
+		prerequisite = { focus = SAF_focus_native_treaties }
+		prerequisite = { focus = SAF_focus_talks_TRV }
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = SAF_focus_gradual_union
+		icon = GFX_Focus_Ideology_Liberal_comprimise
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no   
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = SAF_focus_local_plan
+
+		prerequisite = { focus = SAF_focus_local_traditions }
+
+		completion_reward = {
+
 		}
 	}
 }

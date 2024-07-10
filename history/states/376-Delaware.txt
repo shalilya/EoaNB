@@ -1,35 +1,53 @@
-
 state = {
-	id =376
+	id = 376
 	name = "STATE_376"
+	manpower = 112216
+	local_supplies = 0.0 
+	state_category = pastoral
 
-	local_supplies=0.0 
-	
 	provinces = {
-		9786
+		9786 14432 14433
 	}
+
 	history = {
 		owner = USA
+		add_core_of = USA
 		set_state_flag = is_USA_state
 		set_state_flag = is_slave_USA_state
-		add_core_of = USA
+
 		buildings = {
 			infrastructure = 1
-
 		}
-		
-		add_to_array = { state_culture_array = 410 }
-		add_to_array = { state_culture_array_num = 0.53 }
-		add_to_array = { state_culture_array = 417 }
-		add_to_array = { state_culture_array_num = 0.24 }
-		add_to_array = { state_culture_array = 413 }
-		add_to_array = { state_culture_array_num = 0.23 }
-		add_to_array = { state_religion_array = 3 }
-		add_to_array = { state_religion_array_num = 0.74 }
-		add_to_array = { state_religion_array = 2 }
-		add_to_array = { state_religion_array_num = 0.26 }
+
+		victory_points = { #Kent: Dover
+			9786 20
+		}
+		victory_points = { #New Castle: Wilmington
+			14432 10
+		}
+		victory_points = { #Sussex: Georgetown
+			14433 1
+		}
+
+		add_to_array = { state_culture_array = 410 } #Dixie
+		add_to_array = { state_culture_array_num = 0.631 }
+		add_to_array = { state_culture_array = 417 } #Afro-American
+		add_to_array = { state_culture_array_num = 0.193 }
+		add_to_array = { state_culture_array = 413 } #Yankee
+		add_to_array = { state_culture_array_num = 0.095 }
+		add_to_array = { state_culture_array = 93 } #Irish
+		add_to_array = { state_culture_array_num = 0.052 }
+		add_to_array = { state_culture_array = 16 } #English
+		add_to_array = { state_culture_array_num = 0.014 }
+		add_to_array = { state_culture_array = 13 } #Branderburg-Prussian
+		add_to_array = { state_culture_array_num = 0.011 }
+		add_to_array = { state_culture_array = 448 } #Midwesterner
+		add_to_array = { state_culture_array_num = 0.002 }
+		add_to_array = { state_culture_array = 94 } #Highland-Scottish
+		add_to_array = { state_culture_array_num = 0.002 }
+		add_to_array = { state_religion_array = 3 } #Protestantism
+		add_to_array = { state_religion_array_num = 0.96 }
+		add_to_array = { state_religion_array = 2 } #Catholicism
+		add_to_array = { state_religion_array_num = 0.04 }
 	}
-	manpower = 24620
-	state_category = pastoral
-	
 }

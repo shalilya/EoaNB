@@ -7,7 +7,7 @@
 		limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "SWE_1857_naval_mtg"
 		else = {
-			set_naval_oob = "SWE_1857_naval_legacy"
+			set_naval_oob = "SWE_1857_legacy"
 		}
 	}
 
@@ -17,21 +17,34 @@
 	
 	add_to_variable = { prestige_score = 10 }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 5 }
+	set_variable = { current_loans_sum = 4 }
+
 	add_ideas = {
 		#POLITICS
 		SWE_Oscar_I
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		parliamentary_monarchy
+		#has_heir
+		#parliamentary_monarchy
 
 		civilian_economy
 		export_focus
-		three_percent
-		normal_taxes
+		army_spending_level_3
+		taxation_level_3
 		cl_restricted
-		twelve_hour_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -39,7 +52,7 @@
 		limited_equality
 		property_owners_suffrage
 
-		constitution_adopted
+		#constitution_adopted
 		free_elections
 
 		privileged_education
@@ -47,11 +60,11 @@
 		#religion_protestant
 		state_controlled_press
 
-		hc_low_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_2
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		SWE_swedish_norwegian_union
@@ -254,17 +267,24 @@
 	recruit_character = SWE_jakob_essen_hamilton
 	
 	#Generals
-	recruit_character = SWE_gustaf_rudolf_abelin
 	recruit_character = SWE_carl_fredrik_akrell
-	recruit_character = SWE_nikolaus_august
 	recruit_character = SWE_johan_af_kleen
 	#Generals for later
 	recruit_character = SWE_carl_herman_leuhusen
+	recruit_character = SWE_carl_bjornstjerna
+	recruit_character = SWE_oscar_bjornstjerna
+	recruit_character = SWE_johan_bjornstjerna
+	recruit_character = SWE_gustaf_rudolf_abelin
+	recruit_character = SWE_prince_august
+	recruit_character = SWE_abraham_leijonhufvud
+	recruit_character = SWE_claes_hugo_raab
 	
 	#Admirals
 	recruit_character = SWE_salomon_mauritz_von_krusenstierna
 	recruit_character = SWE_adolf_von_rosen
 	recruit_character = SWE_axel_adlersparre
+	#Admirals for later
+	recruit_character = SWE_christian_sundin
 	
 	### ADVISORS & THEORISTS ###
 	

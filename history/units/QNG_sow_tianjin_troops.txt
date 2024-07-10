@@ -10,20 +10,20 @@
 
 units = {
 	division = {
-		name = "First Tianjin Garrison"
-		location = 10068
+		name = "1. Tianjin Garrison"
+		location = 6999
 		division_template = "Tianjin Garrison"
 		start_experience_factor = 0.1
 	}
 	division = {
-		name = "Second Tianjin Garrison"
-		location = 10068
+		name = "2. Tianjin Garrison"
+		location = 6999
 		division_template = "Tianjin Garrison"
 		start_experience_factor = 0.1
 	}
 	division = {
-		name = "Second Tianjin Garrison"
-		location = 10068
+		name = "3. Tianjin Garrison"
+		location = 6999
 		division_template = "Tianjin Garrison"
 		start_experience_factor = 0.1
 	}

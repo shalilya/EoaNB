@@ -14,17 +14,17 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_pre_industrial_army
 		agrarian
-		has_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -33,21 +33,22 @@
 		limited_equality
 		absolutism
 
-		limited_constitution
+		#limited_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_orthodox
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 
+		generic_unemployment_idea
 		SER_idea_poor_working_condition
 		SER_idea_knyaz_assembly_tension
 		SER_idea_1838constitution
@@ -65,22 +66,10 @@
 	set_variable = { most_favoured_country = MNT.id }
 
 	OTO = {
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = SER
-				autonomous_state = autonomy_OTT_vassal
-				freedom_level = 0.2
-			}
-		}
-		else = {
-			puppet = SER
+		set_autonomy = {
+			target = SER
+			autonomous_state = autonomy_OTT_vassal
+			freedom_level = 0.2
 		}
 	}
 	

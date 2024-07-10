@@ -9,7 +9,7 @@ technologies = {
 		start_year = 1850
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 0 }
+			position = { x = 8 y = 0 }
 		}
 		
 		dependencies={
@@ -28,7 +28,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
 				num_of_factories > 15
 				factor = 100 #might wanna get on that
@@ -45,7 +45,7 @@ technologies = {
 		start_year = 1855
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 2 }
+			position = { x = 8 y = 2 }
 		}
 		dependencies={
 			steam_locomotive_2 = 1
@@ -56,7 +56,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = armor_train_experiment
+			leads_to_tech = protected_train_1860
 			research_cost_coeff = 1
 		}
 		path = {
@@ -65,7 +65,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 5
 			
 			modifier = {
 				has_war = yes
@@ -73,6 +73,7 @@ technologies = {
 			}
 		}
 	}
+	
 
 	train_1865 = {
 		enable_equipments = {
@@ -83,7 +84,7 @@ technologies = {
 		start_year = 1865
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 6 }
+			position = { x = 8 y = 6 }
 		}
 		dependencies={
 			train_1855 = 1
@@ -94,6 +95,10 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = train_1875
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = protected_train_1875
 			research_cost_coeff = 1
 		}
 		
@@ -116,7 +121,7 @@ technologies = {
 		start_year = 1875
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 10 }
+			position = { x = 8 y = 10 }
 		}
 		dependencies={
 			train_1865 = 1
@@ -124,10 +129,6 @@ technologies = {
 		categories = {
 			armor
 			trains_tech
-		}
-		path = {
-			leads_to_tech = armor_train_2
-			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = train_1885
@@ -153,7 +154,7 @@ technologies = {
 		start_year = 1885
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 14 }
+			position = { x = 8 y = 14 }
 		}
 		dependencies={
 			train_1875 = 1
@@ -163,7 +164,7 @@ technologies = {
 			trains_tech
 		}
 		path = {
-			leads_to_tech = armor_train_3
+			leads_to_tech = protected_train_1890
 			research_cost_coeff = 1
 		}
 		path = {
@@ -182,14 +183,14 @@ technologies = {
 	}
 	train_1890 = {
 		enable_equipments = {
-			train_equipment_4
+			train_equipment_6
 		}
 
 		research_cost = 0.15
 		start_year = 1895
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 16 }
+			position = { x = 8 y = 16 }
 		}
 		dependencies={
 			train_1885 = 1
@@ -197,6 +198,118 @@ technologies = {
 		categories = {
 			armor
 			trains_tech
+		}
+		path = {
+			leads_to_tech = protected_train_1905
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+		}
+	}
+	
+	protected_train_1860 = {
+		enable_equipments = {
+			protected_train_equipment_1
+		}
+
+		research_cost = 0.15
+		start_year = 1860
+		folder = {
+			name = armour_folder
+			position = { x = 4 y = 4 }
+		}
+		dependencies={
+			steam_locomotive_2 = 1
+		}
+		categories = {
+			armor
+			trains_tech
+		}
+		
+		path = {
+			leads_to_tech = protected_train_1875
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = armor_train_experiment
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+		}
+	}
+	protected_train_1875 = {
+		enable_equipments = {
+			protected_train_equipment_2
+		}
+
+		research_cost = 0.15
+		start_year = 1875
+		folder = {
+			name = armour_folder
+			position = { x = 4 y = 10 }
+		}
+		dependencies={
+			steam_locomotive_2 = 1
+		}
+		categories = {
+			armor
+			trains_tech
+		}
+		
+		path = {
+			leads_to_tech = protected_train_1890
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = armor_train_2
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+		}
+	}
+	protected_train_1890 = {
+		enable_equipments = {
+			protected_train_equipment_3
+		}
+
+		research_cost = 0.15
+		start_year = 1890
+		folder = {
+			name = armour_folder
+			position = { x = 4 y = 16 }
+		}
+		dependencies={
+			steam_locomotive_2 = 1
+		}
+		categories = {
+			armor
+			trains_tech
+		}
+		
+		path = {
+			leads_to_tech = protected_train_1905
+			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = armor_train_4
@@ -212,6 +325,72 @@ technologies = {
 			}
 		}
 	}
+	protected_train_1905 = {
+		enable_equipments = {
+			protected_train_equipment_4
+		}
+
+		research_cost = 0.15
+		start_year = 1875
+		folder = {
+			name = armour_folder
+			position = { x = 4 y = 19 }
+		}
+		dependencies={
+			steam_locomotive_2 = 1
+		}
+		categories = {
+			armor
+			trains_tech
+		}
+		
+		path = {
+			leads_to_tech = protected_train_1920
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = armor_train_5
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+		}
+	}
+	protected_train_1920 = {
+		enable_equipments = {
+			protected_train_equipment_5
+		}
+
+		research_cost = 0.15
+		start_year = 1920
+		folder = {
+			name = armour_folder
+			position = { x = 4 y = 24 }
+		}
+		dependencies={
+			steam_locomotive_2 = 1
+		}
+		categories = {
+			armor
+			trains_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+		}
+	}
+	
 	armor_train_experiment = {
 	
 		category_all_armor = {
@@ -227,7 +406,7 @@ technologies = {
 		start_year = 1860
 		folder = {
 			name = armour_folder
-			position = { x = 2 y = 4 }
+			position = { x = -1 y = 4 }
 		}
 		
 		ai_will_do = {  
@@ -289,9 +468,17 @@ technologies = {
 		enable_equipments = {
 			early_armor_train_0
 		}
-		
+		enable_equipment_modules = {
+			train_flat_bed
+			train_open_top
+			train_enclosed_car
+			train_1_wheel_axle
+			train_2_wheel_axle
+			tank_riveted_armor
+		}
 		enable_subunits = {
 			armor_train_company
+			armor_train_aa_company
 		}
 		path = {
 			leads_to_tech = armor_train_2
@@ -300,6 +487,9 @@ technologies = {
 		path = {
 			leads_to_tech = armor_train_battery
 			research_cost_coeff = 1
+		}
+		dependencies={
+			improved_smoothbore = 1
 		}
 		
 		research_cost = 0.2
@@ -350,7 +540,7 @@ technologies = {
 	armor_train_2 = {
 	
 		enable_equipments = {
-			armor_train_1
+			early_armor_train_1
 		}
 		
 		research_cost = 0.2
@@ -405,7 +595,7 @@ technologies = {
 	armor_train_3 = {
 	
 		enable_equipments = {
-			armor_train_2
+			early_armor_train_2
 		}
 		
 		research_cost = 0.2
@@ -464,7 +654,7 @@ technologies = {
 	armor_train_4 = {
 	
 		enable_equipments = {
-			armor_train_3
+			early_armor_train_3
 		}
 		
 		research_cost = 0.2
@@ -519,7 +709,7 @@ technologies = {
 	armor_train_5 = {
 	
 		enable_equipments = {
-			armor_train_4
+			early_armor_train_4
 		}
 		
 		research_cost = 0.2
@@ -574,7 +764,7 @@ technologies = {
 	armor_train_6 = {
 	
 		enable_equipments = {
-			armor_train_5
+			early_armor_train_5
 		}
 		
 		research_cost = 0.2
@@ -3155,53 +3345,53 @@ technologies = {
 			fourwheel_vehicle_tech
 		}
 	}
-	technicals_3 = {
-		
-		research_cost = 0.14
-		start_year = 2010
-		folder = {
-			name = armour_folder
-			position = { x = 32 y = 60 }
-		}
-		enable_equipments = {
-			technical_equipment_5
-		}
-
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 0
-				date < 1930.1.1
-				NOT = { 
-					has_tech_bonus = { category = armor }   
-					has_tech_bonus = { category = motorized_equipment } 
-					has_tech_bonus = { category = fourwheel_vehicle_tech }
-				}
-			}
-			
-			modifier = {
-				factor = 1.5
-				is_major = yes
-			}
-			
-			modifier = {
-				factor = 1.25
-				date > "1920.1.1"
-			}
-			
-			modifier = {
-				factor = 1.25
-				date > "1925.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			motorized_equipment
-			fourwheel_vehicle_tech
-		}
-	}
+#	technicals_3 = {
+#		
+#		research_cost = 0.14
+#		start_year = 2010
+#		folder = {
+#			name = armour_folder
+#			position = { x = 32 y = 60 }
+#		}
+#		enable_equipments = {
+#			technical_equipment_5
+#		}
+#
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 0
+#				date < 1930.1.1
+#				NOT = { 
+#					has_tech_bonus = { category = armor }   
+#					has_tech_bonus = { category = motorized_equipment } 
+#					has_tech_bonus = { category = fourwheel_vehicle_tech }
+#				}
+#			}
+#			
+#			modifier = {
+#				factor = 1.5
+#				is_major = yes
+#			}
+#			
+#			modifier = {
+#				factor = 1.25
+#				date > "1920.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 1.25
+#				date > "1925.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			motorized_equipment
+#			fourwheel_vehicle_tech
+#		}
+#	}
 	armor_tech_motorized_2 = {
 		
 		research_cost = 0.14
@@ -3530,358 +3720,358 @@ technologies = {
 			factor = 1
 		}
 	}
-	ifv1 = {
-
-		enable_equipments = {
-			ifv_equipment_1
-		}
-
-		research_cost = 0.3
-		start_year = 1980
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 52 }
-		}
-		
-		dependencies={
-			industrial_chrome_electroplating = 1
-		}
-		
-		path = {
-			leads_to_tech = ifv2
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	ifv2 = {
-
-		enable_equipments = {
-			ifv_equipment_2
-		}
-
-		research_cost = 0.3
-		start_year = 1990
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 54 }
-		}
-		path = {
-			leads_to_tech = ifv3
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	ifv3 = {
-
-		enable_equipments = {
-			ifv_equipment_3
-		}
-
-		research_cost = 0.3
-		start_year = 2010
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 58 }
-		}
-		path = {
-			leads_to_tech = ifv4
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	ifv4 = {
-
-		enable_equipments = {
-			ifv_equipment_4
-		}
-
-		research_cost = 0.3
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 60 }
-		}
-		path = {
-			leads_to_tech = ifv5
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	ifv5 = {
-
-		enable_equipments = {
-			ifv_equipment_5
-		}
-
-		research_cost = 0.3
-		start_year = 2020
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 62 }
-		}
-		path = {
-			leads_to_tech = apc6
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc1 = {
-
-		enable_equipments = {
-			apc_equipment_1
-		}
-
-		research_cost = 0.3
-		start_year = 1980
-		folder = {
-			name = armour_folder
-			position = { x = 18 y = 52 }
-		}
-		path = {
-			leads_to_tech = apc2
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc2 = {
-
-		enable_equipments = {
-			apc_equipment_2
-		}
-
-		research_cost = 0.3
-		start_year = 1990
-		folder = {
-			name = armour_folder
-			position = { x = 18 y = 54 }
-		}
-		path = {
-			leads_to_tech = apc3
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc3 = {
-
-		enable_equipments = {
-			apc_equipment_3
-		}
-
-		research_cost = 0.3
-		start_year = 2010
-		folder = {
-			name = armour_folder
-			position = { x = 18 y = 58 }
-		}
-		path = {
-			leads_to_tech = apc4
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc4 = {
-
-		enable_equipments = {
-			apc_equipment_4
-		}
-
-		research_cost = 0.3
-		start_year = 2015
-		folder = {
-			name = armour_folder
-			position = { x = 16 y = 60 }
-		}
-		path = {
-			leads_to_tech = apc5
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc5 = {
-
-		enable_equipments = {
-			apc_equipment_5
-		}
-
-		research_cost = 0.3
-		start_year = 2020
-		folder = {
-			name = armour_folder
-			position = { x = 16 y = 62 }
-		}
-		path = {
-			leads_to_tech = apc6
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc6 = {
-
-		enable_equipments = {
-			apc_equipment_6
-		}
-
-		research_cost = 0.3
-		start_year = 2030
-		folder = {
-			name = armour_folder
-			position = { x = 16 y = 66 }
-		}
-		path = {
-			leads_to_tech = apc7
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc7 = {
-
-		enable_equipments = {
-			apc_equipment_7
-		}
-
-		research_cost = 0.3
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = 16 y = 68 }
-		}
-		path = {
-			leads_to_tech = apc8
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
-	apc8 = {
-
-		enable_equipments = {
-			apc_equipment_8
-		}
-
-		research_cost = 0.3
-		start_year = 2045
-		folder = {
-			name = armour_folder
-			position = { x = 16 y = 72 }
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-		}
-	}
+#	ifv1 = {
+#
+#		enable_equipments = {
+#			ifv_equipment_1
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 1980
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 52 }
+#		}
+#		
+#		dependencies={
+#			industrial_chrome_electroplating = 1
+#		}
+#		
+#		path = {
+#			leads_to_tech = ifv2
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	ifv2 = {
+#
+#		enable_equipments = {
+#			ifv_equipment_2
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 1990
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 54 }
+#		}
+#		path = {
+#			leads_to_tech = ifv3
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	ifv3 = {
+#
+#		enable_equipments = {
+#			ifv_equipment_3
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2010
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 58 }
+#		}
+#		path = {
+#			leads_to_tech = ifv4
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	ifv4 = {
+#
+#		enable_equipments = {
+#			ifv_equipment_4
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2015
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 60 }
+#		}
+#		path = {
+#			leads_to_tech = ifv5
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	ifv5 = {
+#
+#		enable_equipments = {
+#			ifv_equipment_5
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2020
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 62 }
+#		}
+#		path = {
+#			leads_to_tech = apc6
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc1 = {
+#
+#		enable_equipments = {
+#			apc_equipment_1
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 1980
+#		folder = {
+#			name = armour_folder
+#			position = { x = 18 y = 52 }
+#		}
+#		path = {
+#			leads_to_tech = apc2
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc2 = {
+#
+#		enable_equipments = {
+#			apc_equipment_2
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 1990
+#		folder = {
+#			name = armour_folder
+#			position = { x = 18 y = 54 }
+#		}
+#		path = {
+#			leads_to_tech = apc3
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc3 = {
+#
+#		enable_equipments = {
+#			apc_equipment_3
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2010
+#		folder = {
+#			name = armour_folder
+#			position = { x = 18 y = 58 }
+#		}
+#		path = {
+#			leads_to_tech = apc4
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc4 = {
+#
+#		enable_equipments = {
+#			apc_equipment_4
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2015
+#		folder = {
+#			name = armour_folder
+#			position = { x = 16 y = 60 }
+#		}
+#		path = {
+#			leads_to_tech = apc5
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc5 = {
+#
+#		enable_equipments = {
+#			apc_equipment_5
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2020
+#		folder = {
+#			name = armour_folder
+#			position = { x = 16 y = 62 }
+#		}
+#		path = {
+#			leads_to_tech = apc6
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc6 = {
+#
+#		enable_equipments = {
+#			apc_equipment_6
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2030
+#		folder = {
+#			name = armour_folder
+#			position = { x = 16 y = 66 }
+#		}
+#		path = {
+#			leads_to_tech = apc7
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc7 = {
+#
+#		enable_equipments = {
+#			apc_equipment_7
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2035
+#		folder = {
+#			name = armour_folder
+#			position = { x = 16 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = apc8
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
+#	apc8 = {
+#
+#		enable_equipments = {
+#			apc_equipment_8
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2045
+#		folder = {
+#			name = armour_folder
+#			position = { x = 16 y = 72 }
+#		}
+#		
+#		categories = {
+#			motorized_equipment
+#			armor
+#			cat_mechanized_equipment
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#		}
+#	}
 	
 	
 	basic_heavy_tank = { #Grosstraktor
@@ -5283,1271 +5473,1271 @@ technologies = {
 		}
 	}
 	
-	early_mtbs = { #
-
-		enable_equipments = {
-			mtb_1
-		}	
-		
-		dependencies={
-			modern_ceramics = 1
-		}
-		
-		research_cost = 0.25
-		start_year = 1960
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 48 }
-		}
-		path = {
-			leads_to_tech = mtb2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = nbc_protections
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	nbc_protections = { #
-		
-		research_cost = 0.25
-		start_year = 1970
-		
-		folder = {
-			name = armour_folder
-			position = { x = 15 y = 50 }
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	mtb2 = { #
-
-		enable_equipments = {
-			mtb_2
-		}	
-		
-		research_cost = 0.25
-		start_year = 1970
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 50 }
-		}
-		path = {
-			leads_to_tech = mtb3
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	mtb3 = { #
-
-		enable_equipments = {
-			mtb_3
-		}	
-		
-		dependencies={
-			integrated_circuits = 1
-		}
-		
-		research_cost = 0.25
-		start_year = 1980
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 52 }
-		}
-		path = {
-			leads_to_tech = mtb4
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	mtb4 = { #
-
-		enable_equipments = {
-			mtb_4
-		}	
-		
-		research_cost = 0.25
-		start_year = 2000
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 56 }
-		}
-		path = {
-			leads_to_tech = mtb5
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	mtb5 = { #
-
-		enable_equipments = {
-			mtb_5
-		}	
-		
-		research_cost = 0.25
-		start_year = 2010
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 58 }
-		}
-		path = {
-			leads_to_tech = mtb6
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	mtb6 = { #
-
-		enable_equipments = {
-			mtb_6
-		}	
-		
-		research_cost = 0.25
-		start_year = 2015
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 60 }
-		}
-		path = {
-			leads_to_tech = future_tanks
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks = { #
-
-		enable_equipments = {
-			future_tank_1
-		}	
-		
-		dependencies={
-			kroll_process = 1
-		}
-		
-		research_cost = 0.25
-		start_year = 2020
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 62 }
-		}
-		path = {
-			leads_to_tech = future_tanks_2
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks_2 = { #
-
-		enable_equipments = {
-			future_tank_2
-		}	
-		
-		research_cost = 0.25
-		start_year = 2025
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 64 }
-		}
-		path = {
-			leads_to_tech = future_tanks_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = effective_walker_prototypes
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks_3 = { #
-
-		enable_equipments = {
-			future_tank_3
-		}	
-		
-		research_cost = 0.25
-		start_year = 2030
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 66 }
-		}
-		path = {
-			leads_to_tech = future_tanks_4
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks_4 = { #
-
-		enable_equipments = {
-			future_tank_4
-		}	
-		
-		research_cost = 0.25
-		start_year = 2035
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 68 }
-		}
-		path = {
-			leads_to_tech = future_tanks_5
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks_5 = { #
-
-		enable_equipments = {
-			future_tank_5
-		}	
-		
-		research_cost = 0.25
-		start_year = 2040
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 70 }
-		}
-		path = {
-			leads_to_tech = future_tanks_6
-			research_cost_coeff = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	future_tanks_6 = { #
-
-		enable_equipments = {
-			future_tank_6
-		}	
-		
-		research_cost = 0.25
-		start_year = 2045
-		
-		folder = {
-			name = armour_folder
-			position = { x = 12 y = 72 }
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			cat_medium_armor
-		}
-	}
-	effective_walker_prototypes = { #
-
-		# enable_equipments = {
-			# future_tank_2
-		# }	
-		
-		research_cost = 0.25
-		start_year = 2030
-		
-		folder = {
-			name = armour_folder
-			position = { x = 8 y = 66 }
-		}
-		path = {
-			leads_to_tech = walking_battle_platform_1
-			research_cost_coeff = 1
-		}
-		dependencies={
-			walking_cycles = 1
-		}
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
-	walking_battle_platform_1 = { #
-
-		enable_equipments = {
-			walking_battle_platform_equipment_1
-		}	
-		enable_subunits={
-			armor_walker
-		}
-		
-		research_cost = 0.25
-		start_year = 2035
-		
-		folder = {
-			name = armour_folder
-			position = { x = 8 y = 68 }
-		}
-		path = {
-			leads_to_tech = walking_battle_platform_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = long_range_walking_battle_platform_1
-			research_cost_coeff = 1
-		}
-		
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
-	walking_battle_platform_2 = { #
-
-		enable_equipments = {
-			walking_battle_platform_equipment_2
-		}	
-		
-		research_cost = 0.25
-		start_year = 2040
-		
-		folder = {
-			name = armour_folder
-			position = { x = 8 y = 70 }
-		}
-		path = {
-			leads_to_tech = walking_battle_platform_3
-			research_cost_coeff = 1
-		}
-		
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
-	walking_battle_platform_3 = { #
-
-		enable_equipments = {
-			walking_battle_platform_equipment_3
-		}	
-		
-		research_cost = 0.25
-		start_year = 2050
-		
-		folder = {
-			name = armour_folder
-			position = { x = 8 y = 74 }
-		}
-		
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
-	long_range_walking_battle_platform_1 = { #
-
-		enable_equipments = {
-			walking_battle_platform_artillery_equipment_1
-		}	
-		
-		research_cost = 0.25
-		start_year = 2040
-		
-		folder = {
-			name = armour_folder
-			position = { x = 2 y = 70 }
-		}
-		path = {
-			leads_to_tech = long_range_walking_battle_platform_2
-			research_cost_coeff = 1
-		}
-		
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
-	long_range_walking_battle_platform_2 = { #
-
-		enable_equipments = {
-			walking_battle_platform_artillery_equipment_2
-		}	
-		
-		research_cost = 0.25
-		start_year = 2050
-		
-		folder = {
-			name = armour_folder
-			position = { x = 2 y = 74 }
-		}		
-		
-		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-			walker_tech
-		}
-	}
+#	early_mtbs = { #
+#
+#		enable_equipments = {
+#			mtb_1
+#		}	
+#		
+#		dependencies={
+#			modern_ceramics = 1
+#		}
+#		
+#		research_cost = 0.25
+#		start_year = 1960
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 48 }
+#		}
+#		path = {
+#			leads_to_tech = mtb2
+#			research_cost_coeff = 1
+#		}
+#		path = {
+#			leads_to_tech = nbc_protections
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	nbc_protections = { #
+#		
+#		research_cost = 0.25
+#		start_year = 1970
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 15 y = 50 }
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	mtb2 = { #
+#
+#		enable_equipments = {
+#			mtb_2
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 1970
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 50 }
+#		}
+#		path = {
+#			leads_to_tech = mtb3
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	mtb3 = { #
+#
+#		enable_equipments = {
+#			mtb_3
+#		}	
+#		
+#		dependencies={
+#			integrated_circuits = 1
+#		}
+#		
+#		research_cost = 0.25
+#		start_year = 1980
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 52 }
+#		}
+#		path = {
+#			leads_to_tech = mtb4
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	mtb4 = { #
+#
+#		enable_equipments = {
+#			mtb_4
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2000
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 56 }
+#		}
+#		path = {
+#			leads_to_tech = mtb5
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	mtb5 = { #
+#
+#		enable_equipments = {
+#			mtb_5
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2010
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 58 }
+#		}
+#		path = {
+#			leads_to_tech = mtb6
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	mtb6 = { #
+#
+#		enable_equipments = {
+#			mtb_6
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2015
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 60 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks = { #
+#
+#		enable_equipments = {
+#			future_tank_1
+#		}	
+#		
+#		dependencies={
+#			kroll_process = 1
+#		}
+#		
+#		research_cost = 0.25
+#		start_year = 2020
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 62 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks_2
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks_2 = { #
+#
+#		enable_equipments = {
+#			future_tank_2
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2025
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 64 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks_3
+#			research_cost_coeff = 1
+#		}
+#		path = {
+#			leads_to_tech = effective_walker_prototypes
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks_3 = { #
+#
+#		enable_equipments = {
+#			future_tank_3
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2030
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 66 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks_4
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks_4 = { #
+#
+#		enable_equipments = {
+#			future_tank_4
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2035
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks_5
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks_5 = { #
+#
+#		enable_equipments = {
+#			future_tank_5
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2040
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = future_tanks_6
+#			research_cost_coeff = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	future_tanks_6 = { #
+#
+#		enable_equipments = {
+#			future_tank_6
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2045
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 12 y = 72 }
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			cat_medium_armor
+#		}
+#	}
+#	effective_walker_prototypes = { #
+#
+#		# enable_equipments = {
+#			# future_tank_2
+#		# }	
+#		
+#		research_cost = 0.25
+#		start_year = 2030
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 8 y = 66 }
+#		}
+#		path = {
+#			leads_to_tech = walking_battle_platform_1
+#			research_cost_coeff = 1
+#		}
+#		dependencies={
+#			walking_cycles = 1
+#		}
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
+#	walking_battle_platform_1 = { #
+#
+#		enable_equipments = {
+#			walking_battle_platform_equipment_1
+#		}	
+#		enable_subunits={
+#			armor_walker
+#		}
+#		
+#		research_cost = 0.25
+#		start_year = 2035
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 8 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = walking_battle_platform_2
+#			research_cost_coeff = 1
+#		}
+#		path = {
+#			leads_to_tech = long_range_walking_battle_platform_1
+#			research_cost_coeff = 1
+#		}
+#		
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
+#	walking_battle_platform_2 = { #
+#
+#		enable_equipments = {
+#			walking_battle_platform_equipment_2
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2040
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 8 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = walking_battle_platform_3
+#			research_cost_coeff = 1
+#		}
+#		
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
+#	walking_battle_platform_3 = { #
+#
+#		enable_equipments = {
+#			walking_battle_platform_equipment_3
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2050
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 8 y = 74 }
+#		}
+#		
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
+#	long_range_walking_battle_platform_1 = { #
+#
+#		enable_equipments = {
+#			walking_battle_platform_artillery_equipment_1
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2040
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 2 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = long_range_walking_battle_platform_2
+#			research_cost_coeff = 1
+#		}
+#		
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
+#	long_range_walking_battle_platform_2 = { #
+#
+#		enable_equipments = {
+#			walking_battle_platform_artillery_equipment_2
+#		}	
+#		
+#		research_cost = 0.25
+#		start_year = 2050
+#		
+#		folder = {
+#			name = armour_folder
+#			position = { x = 2 y = 74 }
+#		}		
+#		
+#		ai_will_do = {  modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = #yes } modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 }
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1946.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1947.1.1"
+#			}
+#			
+#			modifier = {
+#				factor = 2
+#				date > "1948.1.1"
+#			}
+#		}
+#		
+#		categories = {
+#			armor
+#			walker_tech
+#		}
+#	}
 	
-	simple_combat_robots = {
-	
-		show_equipment_icon = yes
-
-		enable_equipments = {
-			l_robot_1
-			h_robot_1
-		}
-		enable_subunits={
-			light_robots
-			heavy_robots
-		}
-		
-		dependencies={
-			robotics = 1
-			portable_high_power_generator = 1
-			kroll_process = 1
-		}
-
-		research_cost = 0.3
-		start_year = 2030
-		folder = {
-			name = armour_folder
-			position = { x = 28 y = 66 }
-		}
-		path = {
-			leads_to_tech = light_combat_robots
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = medium_combat_robots
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = large_combat_robots
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	light_combat_robots = {
-
-		enable_equipments = {
-			l_robot_2
-		}
-
-		research_cost = 0.3
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 68 }
-		}
-		path = {
-			leads_to_tech = light_combat_robots_2
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	light_combat_robots_2 = {
-
-		enable_equipments = {
-			l_robot_3
-		}
-
-		research_cost = 0.3
-		start_year = 2040
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 70 }
-		}
-		path = {
-			leads_to_tech = light_combat_robots_3
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	light_combat_robots_3 = {
-
-		enable_equipments = {
-			l_robot_4
-		}
-
-		research_cost = 0.3
-		start_year = 2050
-		folder = {
-			name = armour_folder
-			position = { x = 24 y = 74 }
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	medium_combat_robots = {
-
-		enable_equipments = {
-			m_robot_1
-		}
-		
-		enable_subunits={
-			medium_robots
-		}
-
-		research_cost = 0.3
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = 28 y = 68 }
-		}
-		path = {
-			leads_to_tech = medium_combat_robots_2
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	medium_combat_robots_2 = {
-
-		enable_equipments = {
-			m_robot_2
-		}
-
-		research_cost = 0.3
-		start_year = 2040
-		folder = {
-			name = armour_folder
-			position = { x = 28 y = 70 }
-		}
-		path = {
-			leads_to_tech = medium_combat_robots_3
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	medium_combat_robots_3 = {
-
-		enable_equipments = {
-			m_robot_3
-		}
-
-		research_cost = 0.3
-		start_year = 2050
-		folder = {
-			name = armour_folder
-			position = { x = 28 y = 74 }
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	large_combat_robots = {
-
-		enable_equipments = {
-			h_robot_2
-		}
-
-		research_cost = 0.3
-		start_year = 2035
-		folder = {
-			name = armour_folder
-			position = { x = 32 y = 68 }
-		}
-		path = {
-			leads_to_tech = large_combat_robots_2
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	large_combat_robots_2 = {
-
-		enable_equipments = {
-			h_robot_3
-		}
-
-		research_cost = 0.3
-		start_year = 2040
-		folder = {
-			name = armour_folder
-			position = { x = 32 y = 70 }
-		}
-		path = {
-			leads_to_tech = large_combat_robots_3
-			research_cost_coeff = 1
-		}
-		
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
-	large_combat_robots_3 = {# MDB
-
-		enable_equipments = {
-			h_robot_4
-		}
-
-		research_cost = 0.3
-		start_year = 2045
-		folder = {
-			name = armour_folder
-			position = { x = 32 y = 72 }
-		}
-		categories = {
-			robot_tech
-			armor
-		}
-		
-		ai_will_do = {  
-			modifier = { 
-				factor = 0.5 
-				is_major = yes 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 0.25 
-				is_major = no 
-				has_war = no 
-			} 
-			modifier = { 
-				factor = 1.5 
-				has_war = yes 
-			} 
-			modifier = { 
-				factor = 0 
-				afr_is_tribal = yes 
-			}
-			factor = 1
-		}
-	}
+#	simple_combat_robots = {
+#	
+#		show_equipment_icon = yes
+#
+#		enable_equipments = {
+#			l_robot_1
+#			h_robot_1
+#		}
+#		enable_subunits={
+#			light_robots
+#			heavy_robots
+#		}
+#		
+#		dependencies={
+#			robotics = 1
+#			portable_high_power_generator = 1
+#			kroll_process = 1
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2030
+#		folder = {
+#			name = armour_folder
+#			position = { x = 28 y = 66 }
+#		}
+#		path = {
+#			leads_to_tech = light_combat_robots
+#			research_cost_coeff = 1
+#		}
+#		path = {
+#			leads_to_tech = medium_combat_robots
+#			research_cost_coeff = 1
+#		}
+#		path = {
+#			leads_to_tech = large_combat_robots
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	light_combat_robots = {
+#
+#		enable_equipments = {
+#			l_robot_2
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2035
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = light_combat_robots_2
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	light_combat_robots_2 = {
+#
+#		enable_equipments = {
+#			l_robot_3
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2040
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = light_combat_robots_3
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	light_combat_robots_3 = {
+#
+#		enable_equipments = {
+#			l_robot_4
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2050
+#		folder = {
+#			name = armour_folder
+#			position = { x = 24 y = 74 }
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	medium_combat_robots = {
+#
+#		enable_equipments = {
+#			m_robot_1
+#		}
+#		
+#		enable_subunits={
+#			medium_robots
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2035
+#		folder = {
+#			name = armour_folder
+#			position = { x = 28 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = medium_combat_robots_2
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	medium_combat_robots_2 = {
+#
+#		enable_equipments = {
+#			m_robot_2
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2040
+#		folder = {
+#			name = armour_folder
+#			position = { x = 28 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = medium_combat_robots_3
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	medium_combat_robots_3 = {
+#
+#		enable_equipments = {
+#			m_robot_3
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2050
+#		folder = {
+#			name = armour_folder
+#			position = { x = 28 y = 74 }
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	large_combat_robots = {
+#
+#		enable_equipments = {
+#			h_robot_2
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2035
+#		folder = {
+#			name = armour_folder
+#			position = { x = 32 y = 68 }
+#		}
+#		path = {
+#			leads_to_tech = large_combat_robots_2
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	large_combat_robots_2 = {
+#
+#		enable_equipments = {
+#			h_robot_3
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2040
+#		folder = {
+#			name = armour_folder
+#			position = { x = 32 y = 70 }
+#		}
+#		path = {
+#			leads_to_tech = large_combat_robots_3
+#			research_cost_coeff = 1
+#		}
+#		
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
+#	large_combat_robots_3 = {# MDB
+#
+#		enable_equipments = {
+#			h_robot_4
+#		}
+#
+#		research_cost = 0.3
+#		start_year = 2045
+#		folder = {
+#			name = armour_folder
+#			position = { x = 32 y = 72 }
+#		}
+#		categories = {
+#			robot_tech
+#			armor
+#		}
+#		
+#		ai_will_do = {  
+#			modifier = { 
+#				factor = 0.5 
+#				is_major = yes 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 0.25 
+#				is_major = no 
+#				has_war = no 
+#			} 
+#			modifier = { 
+#				factor = 1.5 
+#				has_war = yes 
+#			} 
+#			modifier = { 
+#				factor = 0 
+#				afr_is_tribal = yes 
+#			}
+#			factor = 1
+#		}
+#	}
 	
 	attack_heli_1 = {
 		

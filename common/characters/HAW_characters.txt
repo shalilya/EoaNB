@@ -1,0 +1,82 @@
+characters = {
+	HAW_character_kamehameha_iv = {
+		name = "Kamehameha IV"
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_HAW_kamehameha_iv"
+			}
+		}
+    	country_leader = {
+			desc = "POLITICS_GEORGE_V_DESC"
+			ideology = despotism
+			expire = "1863.11.30.1"
+		}
+	}
+	HAW_character_lot_kapuaiwa = {
+		name = "Lot Kapuāiwa"
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_HAW_lot_kapuaiwa"
+			}
+			army = {
+				large = "GFX_Portrait_HAW_lot_kapuaiwa"
+			}
+		}
+		corps_commander = {
+			skill = 2
+			legacy_id = 5000
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	HAW_character_robert_wylie = {
+		name = "Robert Chichton Wylie"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/Robert_Wylie.png"
+			}
+		}
+	}
+	HAW_character_victoria_kamamalu = {
+		name = "Victoria Kamāmalu"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/Victoria_Kamamalu.png"
+			}
+		}
+	}
+	HAW_character_william_lee = {
+		name = "William Little Lee"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/William_Lee.png"
+			}
+		}
+	}
+	HAW_character_kekuanaoa = {
+		name = "Kekūanaō'a"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/Kekuanaoa.png"
+			}
+		}
+	}
+	HAW_character_elisha_allen = {
+		name = "Elisha Hunt Allen"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/Elisha_Allen.png"
+			}
+		}
+	}
+	HAW_character_keoni_ana = {
+		name = "Keoni Ana"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HAW/Keoni_Ana.png"
+			}
+		}
+	}
+}

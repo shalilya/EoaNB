@@ -26,12 +26,18 @@ eoanb_category_second_opium_war = {
 		}
 		
 		cancel_trigger = {
-			NOT = { controls_province = 1171 }
+			NOT = { controls_province = 13741 }
 		}
 
 		complete_effect = {
-			1171 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 13741 } }
+			126 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 13741 } }
+			
 		}
+
+		remove_effect = {
+			set_country_flag = QNG_taku_fortified
+			custom_effect_tooltip = fortified_taku_tooltip
+		}	
 
 		ai_will_do = {
 			base = 1000
@@ -65,12 +71,17 @@ eoanb_category_second_opium_war = {
 		}
 		
 		cancel_trigger = {
-			NOT = { controls_province = 1173 }
+			NOT = { controls_province = 1047 }
 		}
 
 		complete_effect = {
-			1173 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 1047 } }
+			592 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 1047 }}
 		}
+
+		remove_effect = {
+			set_country_flag = QNG_canton_fortified
+			custom_effect_tooltip = fortified_canton_tooltip
+		}	
 
 		ai_will_do = {
 			base = 1000
@@ -85,7 +96,7 @@ eoanb_category_second_opium_war = {
 		allowed = { tag = QNG }
 		
 		available = {
-			has_completed_focus = QNG_focus_prepare_taku_fort_cannons
+			has_completed_focus = QNG_focus_use_local_provincial_armies
 		}
 		
 		visible = {
@@ -95,9 +106,9 @@ eoanb_category_second_opium_war = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 24.9
-			has_army_experience > 24.9
-			command_power > 49.99
+			has_political_power > 24
+			has_army_experience > 24
+			command_power > 49
 		}
 		custom_cost_text = eoanb_political_power_25_army_experience_25_command_power_50
 		
@@ -144,9 +155,9 @@ eoanb_category_second_opium_war = {
 		fire_only_once = yes
 
 		custom_cost_trigger = {
-			has_political_power > 24.9
-			has_army_experience > 24.9
-			command_power > 49.99
+			has_political_power > 24
+			has_army_experience > 24
+			command_power > 49
 		}
 		custom_cost_text = eoanb_political_power_25_army_experience_25_command_power_50
 		
@@ -192,9 +203,15 @@ eoanb_category_second_opium_war = {
 
 		fire_only_once = yes
 
-		cost = 10
+		cost = 0
+
+		custom_cost_trigger = {
+			command_power > 9
+		}
+		custom_cost_text = decision_cost_CP_10
 
 		complete_effect = {
+			add_command_power = -10
 			custom_effect_tooltip = eoanb_tt_decision_ENG_hongkong_troops_sow
 			country_event = secondopiumwarnew.1
 			hidden_effect = {
@@ -230,9 +247,15 @@ eoanb_category_second_opium_war = {
 
 		fire_only_once = yes
 
-		cost = 20
+		cost = 0
+
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		custom_cost_text = decision_cost_CP_15
 
 		complete_effect = {
+			add_command_power = -15
 			QNG = { country_event = { id = secondopiumwarnew.4 days = 1 } }
 		}
 
@@ -268,7 +291,7 @@ eoanb_category_second_opium_war = {
 		allowed = { TAG = ENG }
 
 		fire_only_once = yes
-		days_remove = 3
+		days_remove = 8
 		cost = 0
 
 		remove_effect = {
@@ -309,7 +332,7 @@ eoanb_category_second_opium_war = {
 		allowed = { TAG = ENG }
 
 		fire_only_once = yes
-		days_remove = 150
+		days_remove = 140
 		cost = 0
 
 		remove_effect = {
@@ -317,13 +340,13 @@ eoanb_category_second_opium_war = {
 				ENG = {
 					country_event = {
 						id = secondopiumwarnew.14
-						days = 1
+						hours = 2
 					}
 				}
 				QNG = {
 					country_event = {
 						id = secondopiumwarnew.14
-						days = 1
+						hours = 2
 					}
 				}
 				if = {
@@ -333,7 +356,7 @@ eoanb_category_second_opium_war = {
 					FRA = {
 						country_event = {
 							id = secondopiumwarnew.14
-							days = 1
+							hours = 2
 						}
 					}
 				}
@@ -345,8 +368,8 @@ eoanb_category_second_opium_war = {
 		}
 	}
 
-	#ENG: Assault Taku 2+3
-	eoanb_decision_sow_LEG_assault_taku2_3 = {
+	#ENG: Assault Taku 2
+	eoanb_decision_sow_LEG_assault_taku_2 = {
 
 		icon = generic_prepare_civil_war
 
@@ -363,19 +386,53 @@ eoanb_category_second_opium_war = {
 		allowed = { TAG = ENG }
 
 		fire_only_once = yes
-		days_remove = 7
+		days_remove = 4
 		cost = 0
 
 		remove_effect = {
 			hidden_effect = {
 				QNG = {
-					activate_mission = eoanb_mission_sow_defend_taku2_3
+					country_event = secondopiumwarnew.39
+				}
+				ENG = {
+					country_event = secondopiumwarnew.40
 				}
 			}
 		}
 
 		ai_will_do = {
 			base = 1000
+		}
+	}
+
+	#ENG: Assault Taku 3
+	eoanb_decision_sow_LEG_assault_taku_3 = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { controls_state = 126 }
+			always = no
+		}
+
+		visible = {
+			TAG = ENG
+			has_global_flag = eoanb_flag_sow_ongoing
+			has_global_flag = SOW_taku_forts
+		}
+		allowed = { TAG = ENG }
+
+		fire_only_once = yes
+		days_remove = 413
+		cost = 0
+
+		remove_effect = {
+			hidden_effect = {
+				QNG = {
+					country_event = secondopiumwarnew.12
+					activate_mission = eoanb_mission_sow_defend_taku_3
+				}
+			}
 		}
 	}
 
@@ -425,53 +482,37 @@ eoanb_category_second_opium_war = {
 
 		ai_will_do = {
 			factor = 1000
-			modifier = {
-				add = 200
+		}
+
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				has_political_power > 20
+			}
+			else = {
 				army_manpower_in_state = {
 					type = infantry
 					amount > 2000
 					state = 564
 				}
-			}
-			modifier = {
-				add = 200
-				army_manpower_in_state = {
-					type = infantry
-					amount > 2000
-					state = 563
-				}
-			}
-			modifier = {
-				add = 200
-				army_manpower_in_state = {
-					type = infantry
-					amount > 2000
-					state = 566
-				}
-			}
-		}
-
-		available = {
-			army_manpower_in_state = {
-				type = infantry
-				amount > 2000
-				state = 564
-			}
-			army_manpower_in_state = {
-				type = infantry
-				amount > 2000
-				state = 563
-			}
-			army_manpower_in_state = {
-				type = infantry
-				amount > 2000
-				state = 566
+				#army_manpower_in_state = {
+				#	type = infantry
+				#	amount > 2000
+				#	state = 563
+				#}
+				#army_manpower_in_state = {
+				#	type = infantry
+				#	amount > 2000
+				#	state = 566
+				#}
 			}
 		}
 
 		fire_only_once = yes
 		is_good = no
-		days_mission_timeout = 120
+		days_mission_timeout = 365
 
 		activation = {
 			TAG = RUS
@@ -479,23 +520,13 @@ eoanb_category_second_opium_war = {
 			has_global_flag = SOW_taku_forts
 		}
 
-		#cancel_trigger = {
-		#
-		#}
-
 		highlight_states = {
 			highlight_state_targets = {
 				state = 564
-				state = 563
-				state = 566
+				#state = 563
+				#state = 566
 			}
 		}
-
-		#visible = {
-		#	TAG = RUS
-		#	has_global_flag = eoanb_flag_sow_ongoing
-		#	has_global_flag = SOW_taku_forts
-		#}
 
 		is_good = no
 
@@ -523,7 +554,7 @@ eoanb_category_second_opium_war = {
 				amount > 40000
 				state = 592
 			}
-			# has_completed_focus = QNG_dealing_with_ENG
+			has_country_flag = QNG_canton_fortified
 		}
 		
 		allowed = { 
@@ -541,7 +572,7 @@ eoanb_category_second_opium_war = {
 
 		#cost = 25
 		
-		days_mission_timeout = 5
+		days_mission_timeout = 9
 		
 		highlight_states = {
 			STATE = 592	
@@ -571,6 +602,7 @@ eoanb_category_second_opium_war = {
 			hidden_effect = {
 				ENG = {
 					country_event = secondopiumwarnew.11
+					
 				}
 				if = {
 					limit = {
@@ -584,8 +616,50 @@ eoanb_category_second_opium_war = {
 		}
 	}
 
-	#QNG: Defend taku forts 2+3
-	eoanb_mission_sow_defend_taku2_3 = {
+	#QNG: Defend taku forts 2
+	#eoanb_mission_sow_defend_taku_2 = {
+		#icon = generic_naval
+		#ai_will_do = { factor = 1 }
+		#available = {
+			#QNG = {
+				#controls_state = 126
+			#}
+			#has_completed_focus = QNG_focus_prepare_taku_fort_cannons
+		#}
+		
+		#allowed = { 
+			#TAG = QNG
+		#}
+
+		#activation = {
+		#	always = no
+		#}
+
+		#selectable_mission = yes
+		#is_good = no
+		
+		#fire_only_once = yes
+
+		#cost = 50
+		
+		#days_mission_timeout = 11
+		
+		#highlight_states = {
+		#	STATE = 126
+		#}
+		
+		#timeout_effect = { #Europeans Lose
+		#	QNG = {
+		#		country_event = secondopiumwarnew.39
+		#	}
+		#	ENG = {
+		#		country_event = secondopiumwarnew.40
+		#	}
+		#}
+	#}
+
+	#QNG: Defend taku forts 3
+	eoanb_mission_sow_defend_taku_3 = {
 		icon = generic_naval
 		ai_will_do = { factor = 1 }
 		available = {
@@ -594,10 +668,10 @@ eoanb_category_second_opium_war = {
 			}
 			army_manpower_in_state = {
 				type = infantry
-				amount > 30000
+				amount > 40000
 				state = 126
 			}
-			# has_completed_focus = QNG_fighting_the_opium_war
+			has_country_flag = QNG_taku_fortified
 		}
 		
 		allowed = { 
@@ -615,7 +689,7 @@ eoanb_category_second_opium_war = {
 
 		#cost = 50
 		
-		days_mission_timeout = 7
+		days_mission_timeout = 9
 		
 		highlight_states = {
 			STATE = 126
@@ -671,7 +745,7 @@ eoanb_category_second_opium_war = {
 			}
 			army_manpower_in_state = {
 				type = infantry
-				amount > 5000
+				amount > 10000
 				state = 608
 			}
 			army_manpower_in_state = {
@@ -681,7 +755,7 @@ eoanb_category_second_opium_war = {
 			}
 			army_manpower_in_state = {
 				type = infantry
-				amount > 35000
+				amount > 40000
 				state = 126
 			}
 			# has_completed_focus = QNG_fighting_the_opium_war
@@ -752,12 +826,12 @@ eoanb_category_second_opium_war = {
 		ai_will_do = { factor = 1 }
 		available = {
 			QNG = {
-				controls_state = 126
+				controls_state = 612
 			}
 			army_manpower_in_state = {
 				type = infantry
 				amount > 40000
-				state = 126
+				state = 612
 			}
 		}
 		
@@ -779,7 +853,7 @@ eoanb_category_second_opium_war = {
 		days_mission_timeout = 14
 		
 		highlight_states = {
-			STATE = 126
+			STATE = 612
 		}
 		
 		complete_effect = { #Europeans Lose
@@ -813,9 +887,9 @@ eoanb_category_second_opium_war = {
             tag = QNG
         }
 
-		#available = {
-		#
-		#}
+		available = {
+			has_completed_focus = QNG_focus_defeat_from_the_west_again
+		}
 
 		visible = {
 			has_idea = CHI_idea_army_defeated

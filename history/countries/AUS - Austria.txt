@@ -17,21 +17,34 @@
 
 	add_to_variable = { prestige_score = 90 }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 27 }
+	set_variable = { current_loans_sum = 192 }
+
 	add_ideas = {
 		#POLITICS
 		AUS_Franz_Joseph_I
-		has_heir
+		#has_heir
 		agrarian
 		victorian_era
 		law_victorian_army
 		#religion_catholic
 
 		#GOVERNMENTAL POLICIES
-		absolute_monarchy
-		no_constitution
+		#absolute_monarchy
+		#no_constitution
 		no_elections
-		no_separation
-		federal_control
+		#no_separation
+		#federal_control
 
 		#CULTURE AND EDUCATION
 		open_schools
@@ -43,10 +56,10 @@
 
 		#ECONOMY
 		limited_exports
-		normal_taxes
+		taxation_level_3
 		cl_restricted
-		unlimited_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#DEMOGRAPHICS
@@ -58,16 +71,16 @@
 		pp_underground_parties
 
 		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		five_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		army_spending_level_4
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
-		GER_general_idea_ger_confed
-		BAD_currency_reform
+		GEC_idea_german_confederation_major_power
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_polizeiverein_leader_1
 		egy_vic_debt
 		AUS_idea_klerikalabsolutist
@@ -81,6 +94,8 @@
 		AUS_idea_austrian_trade_union
 		GEC_idea_weakened_zunftwesen		#abolished 1859
 		NA_B_small_scale_railways
+		AUS_arms_export_to_montenegro_2 #in montenegro files
+		AUS_arms_export_to_herzegovina_3 #same
 	}
 
 	set_variable = {
@@ -317,32 +332,11 @@
 	add_equipment_to_stockpile = { type = cannon_equipment_0 amount = 24 producer = AUS }
 	add_equipment_to_stockpile = { type = train_equipment_1 amount = 8 producer = AUS }
 
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
-		LVN = { set_country_flag = is_junior_personal_union_member }
-		set_autonomy = {
-			target = LVN
-			autonomy_state = autonomy_personal_union_2
-			freedom_level = 0.1
-		}
-	}
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-		}
-		puppet = LVN
+	LVN = { set_country_flag = is_junior_personal_union_member }
+	set_autonomy = {
+		target = LVN
+		autonomy_state = autonomy_personal_union_2
+		freedom_level = 0.1
 	}
 
 	#How to set up initial debt_level
@@ -634,18 +628,18 @@
 	add_ideas = {
 		#POLITICS
 		AUS_Franz_Joseph_I
-		has_heir
+		#has_heir
 		agrarian
 		victorian_era
 		law_victorian_army
 		#religion_catholic
 
 		#GOVERNMENTAL POLICIES
-		absolute_monarchy
-		no_constitution
+		#absolute_monarchy
+		#no_constitution
 		no_elections
-		no_separation
-		federal_control
+		#no_separation
+		#federal_control
 
 		#CULTURE AND EDUCATION
 		open_schools
@@ -657,10 +651,10 @@
 
 		#ECONOMY
 		limited_exports
-		normal_taxes
+		taxation_level_3
 		cl_restricted
-		unlimited_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#DEMOGRAPHICS
@@ -672,15 +666,15 @@
 		pp_underground_parties
 
 		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_basic_maintenance_infrastructure
-		navinfra_decent_naval_infrastructure
-		five_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_2
+		navy_spending_level_3
+		army_spending_level_4
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
-		BAD_currency_reform
+		GEC_idea_vienna_monetary_treaty
 		GEC_idea_polizeiverein_leader_1
 		egy_vic_debt
 		AUS_idea_klerikalabsolutist
@@ -1084,32 +1078,11 @@
 	add_equipment_to_stockpile = { type = cannon_equipment_0 amount = 24 producer = AUS }
 	add_equipment_to_stockpile = { type = train_equipment_1 amount = 8 producer = AUS }
 
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Waking the Tiger"
-				has_dlc = "Death or Dishonor"
-			}
-		}
-		LVN = { set_country_flag = is_junior_personal_union_member }
-		set_autonomy = {
-			target = LVN
-			autonomy_state = autonomy_personal_union_2
-			freedom_level = 0.1
-		}
-	}
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-		}
-		puppet = LVN
+	LVN = { set_country_flag = is_junior_personal_union_member }
+	set_autonomy = {
+		target = LVN
+		autonomy_state = autonomy_personal_union_2
+		freedom_level = 0.1
 	}
 
 	#How to set up initial debt_level

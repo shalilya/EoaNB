@@ -1,7 +1,7 @@
 ﻿1857.1.1 = {
-	capital = 545
+	capital = 1391
 
-	oob = "RHO_1857"
+	oob = "Africa_1857"
 
 	set_convoys = 0
 
@@ -9,19 +9,21 @@
 	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = RHO }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = RHO }
 
+	set_cosmetic_tag = RHO_Pondoland
+
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -30,18 +32,18 @@
 		slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_sunni
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 				 #NATIONAL SPIRITS
 

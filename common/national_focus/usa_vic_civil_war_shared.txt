@@ -392,16 +392,11 @@
 		mutually_exclusive = { focus = USA_diplomacy_natives }
 		completion_reward = {
 			custom_effect_tooltip = FNT_raid_likelihood_var_decreased
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = -6 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = -6 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = -6 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = -6 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = -6 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = -6 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = -6 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = -6 }
 			add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = -6 }
-			add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = -6 }
 			#add_to_variable = { var = USA.FNT_raid_likelihood_var@OKL value = -6 }
 		}
 	}
@@ -502,16 +497,12 @@
 			
 			hidden_effect = {
 				custom_effect_tooltip = FNT_raid_likelihood_var_increased
-				add_to_variable = { var = USA.FNT_raid_likelihood_var@SHO value = 4 }
 				add_to_variable = { var = USA.FNT_raid_likelihood_var@NEZ value = 4 }
 				add_to_variable = { var = USA.FNT_raid_likelihood_var@BFT value = 4 }
-				add_to_variable = { var = USA.FNT_raid_likelihood_var@CRW value = 4 }
 				add_to_variable = { var = USA.FNT_raid_likelihood_var@SIX value = 4 }
-				add_to_variable = { var = USA.FNT_raid_likelihood_var@CHY value = 4 }
-				add_to_variable = { var = USA.FNT_raid_likelihood_var@COM value = 4 }
 				add_to_variable = { var = USA.FNT_raid_likelihood_var@APA value = 4 }
 				add_to_variable = { var = USA.FNT_raid_likelihood_var@NAV value = 4 }
-				add_to_variable = { var = USA.FNT_raid_likelihood_var@SEM value = 4 }
+			}
 				if = {
 					limit = {
 						NOT = { country_exists = SIX }
@@ -521,24 +512,10 @@
 				}
 				if = {
 					limit = {
-						NOT = { country_exists = CHY }
-					}
-					unlock_national_focus = USA_diplomacy_cheyenne
-					unlock_national_focus = USA_diplomacy_attack_cheyenne
-				}
-				if = {
-					limit = {
 						NOT = { country_exists = NEZ }
 					}
 					unlock_national_focus = USA_diplomacy_nez
 					unlock_national_focus = USA_diplomacy_attack_nez
-				}
-				if = {
-					limit = {
-						NOT = { country_exists = COM }
-					}
-					unlock_national_focus = USA_diplomacy_com
-					unlock_national_focus = USA_diplomacy_attack_com
 				}
 				if = {
 					limit = {
@@ -556,30 +533,10 @@
 				}
 				if = {
 					limit = {
-						NOT = { country_exists = SHO }
-					}
-					unlock_national_focus = USA_diplomacy_sho
-					unlock_national_focus = USA_diplomacy_attack_sho
-				}
-				if = {
-					limit = {
-						NOT = { country_exists = crw }
-					}
-					unlock_national_focus = USA_diplomacy_crw
-					unlock_national_focus = USA_diplomacy_attack_crw
-				}
-				if = {
-					limit = {
 						NOT = { country_exists = BFT }
 					}
 					unlock_national_focus = USA_diplomacy_bft
 					unlock_national_focus = USA_diplomacy_attack_bft
-				}
-				if = {
-					limit = {
-						NOT = { country_exists = SEM }
-					}
-					unlock_national_focus = USA_diplomacy_attack_seminole
 				}
 				if = {
 					limit = {
@@ -589,7 +546,6 @@
 				}
 			}
 		}
-	}
 	shared_focus = {
 		id = USA_diplomacy_sioux
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
@@ -637,74 +593,6 @@
 			declare_war_on = {
 				target = SIX
 				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = SIX
-					is_owned_by = SIX
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_cheyenne
-		icon = GFX_goal_generic_dangerous_deal
-		cost = 15
-		prerequisite = {
-			focus = USA_diplomacy_natives
-		}
-		# bypass = {
-		# 	CHY = { exists = no }
-		# }
-		relative_position_id = USA_diplomacy_natives
-		x = -2
-		y = 1
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			add_opinion_modifier = {
-				target = CHY
-				modifier = usa_bad_relations
-			}
-			CHY = {
-				add_opinion_modifier = {
-					target = USA
-					modifier = usa_bad_relations
-				}
-			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_attack_cheyenne
-		icon = GFX_goal_generic_military_deal
-		cost = 25
-		prerequisite = {
-			focus = USA_diplomacy_cheyenne
-		}
-		# bypass = {
-		# 	CHY = { exists = no }
-		# }
-		available = { num_divisions > 5 }
-		relative_position_id = USA_diplomacy_natives
-		x = -2
-		y = 2
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			set_country_flag = PS_war_immunity_temp
-			declare_war_on = {
-				target = CHY
-				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = CHY
-					is_owned_by = CHY
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 			}
 		}
 	}
@@ -756,15 +644,6 @@
 				target = NEZ
 				type = annex_everything
 			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = NEZ
-					is_owned_by = NEZ
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
 		}
 	}
 	shared_focus = {
@@ -774,25 +653,10 @@
 		prerequisite = {
 			focus = USA_diplomacy_natives
 		}
-		# bypass = {
-		# 	COM = { exists = no }
-		# }
 		relative_position_id = USA_diplomacy_natives
 		x = 2
 		y = 1
 		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			add_opinion_modifier = {
-				target = COM
-				modifier = usa_bad_relations
-			}
-			COM = {
-				add_opinion_modifier = {
-					target = USA
-					modifier = usa_bad_relations
-				}
-			}
-		}
 	}
 	shared_focus = {
 		id = USA_diplomacy_attack_com
@@ -801,30 +665,11 @@
 		prerequisite = {
 			focus = USA_diplomacy_com
 		}
-		# bypass = {
-		# 	COM = { exists = no }
-		# }
 		available = { num_divisions > 5 }
 		relative_position_id = USA_diplomacy_natives
 		x = 2
 		y = 2
 		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			set_country_flag = PS_war_immunity_temp
-			declare_war_on = {
-				target = COM
-				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = COM
-					is_owned_by = COM
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
-		}
 	}
 	shared_focus = {
 		id = USA_diplomacy_nav
@@ -873,15 +718,6 @@
 			declare_war_on = {
 				target = NAV
 				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = NAV
-					is_owned_by = NAV
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
 			}
 		}
 	}
@@ -933,15 +769,6 @@
 				target = APA
 				type = annex_everything
 			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = APA
-					is_owned_by = APA
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
 		}
 	}
 	shared_focus = {
@@ -951,24 +778,11 @@
 		prerequisite = {
 			focus = USA_diplomacy_natives
 		}
-		# bypass = {
-		# 	SHO = { exists = no }
-		# }
 		relative_position_id = USA_diplomacy_natives
 		x = -3
 		y = 3
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			add_opinion_modifier = {
-				target = SHO
-				modifier = usa_bad_relations
-			}
-			SHO = {
-				add_opinion_modifier = {
-					target = USA
-					modifier = usa_bad_relations
-				}
-			}
 		}
 	}
 	shared_focus = {
@@ -978,9 +792,6 @@
 		prerequisite = {
 			focus = USA_diplomacy_sho
 		}
-		# bypass = {
-		# 	SHO = { exists = no }
-		# }
 		available = { num_divisions > 5 }
 		relative_position_id = USA_diplomacy_natives
 		x = -3
@@ -988,78 +799,6 @@
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			set_country_flag = PS_war_immunity_temp
-			declare_war_on = {
-				target = SHO
-				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = SHO
-					is_owned_by = SHO
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_crw
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 15
-		prerequisite = {
-			focus = USA_diplomacy_natives
-		}
-		# bypass = {
-		# 	CRW = { exists = no }
-		# }
-		relative_position_id = USA_diplomacy_natives
-		x = 3
-		y = 3
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			add_opinion_modifier = {
-				target = CRW
-				modifier = usa_bad_relations
-			}
-			CRW = {
-				add_opinion_modifier = {
-					target = USA
-					modifier = usa_bad_relations
-				}
-			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_attack_crw
-		icon = GFX_goal_generic_army_artillery
-		cost = 25
-		prerequisite = {
-			focus = USA_diplomacy_crw
-		}
-		# bypass = {
-		# 	CRW = { exists = no }
-		# }
-		available = { num_divisions > 5 }
-		relative_position_id = USA_diplomacy_natives
-		x = 3
-		y = 4
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			set_country_flag = PS_war_immunity_temp
-			declare_war_on = {
-				target = CRW
-				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = CRW
-					is_owned_by = CRW
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
 		}
 	}
 	shared_focus = {
@@ -1110,60 +849,6 @@
 				target = BFT
 				type = annex_everything
 			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = BFT
-					is_owned_by = BFT
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_attack_seminole
-		icon = GFX_goal_generic_attack_allies
-		cost = 40
-		prerequisite = {
-			focus = USA_diplomacy_attack_sioux
-			focus = USA_diplomacy_attack_cheyenne
-			focus = USA_diplomacy_attack_nez
-			focus = USA_diplomacy_attack_com
-			focus = USA_diplomacy_attack_bft
-			focus = USA_diplomacy_attack_sho
-			focus = USA_diplomacy_attack_apa
-			focus = USA_diplomacy_attack_nav
-			focus = USA_diplomacy_attack_crw
-		}
-		# bypass = {
-		# 	SEM = { exists = no }
-		# }
-		available = {
-			USA = {
-				is_neighbor_of = SEM
-			}
-		}
-		available = { num_divisions > 10 }
-		relative_position_id = USA_diplomacy_natives
-		x = -3
-		y = 5
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			set_country_flag = PS_war_immunity_temp
-			declare_war_on = {
-				target = SEM
-				type = annex_everything
-			}
-			custom_effect_tooltip = afr_colonial_effect_tooltip
-			every_state = {
-				limit = {
-					is_core_of = SEM
-					is_owned_by = SEM
-				}
-				custom_effect_tooltip = AFR_Racial_Tension_plus_2
-				hidden_effect = { state_event = { id = afr_rrp_racial_tension_increase.2 } }
-			}
 		}
 	}
 	shared_focus = {
@@ -1172,14 +857,12 @@
 		cost = 70
 		prerequisite = {
 			focus = USA_diplomacy_attack_sioux
-			focus = USA_diplomacy_attack_cheyenne
 			focus = USA_diplomacy_attack_nez
 			focus = USA_diplomacy_attack_com
 			focus = USA_diplomacy_attack_bft
 			focus = USA_diplomacy_attack_sho
 			focus = USA_diplomacy_attack_apa
 			focus = USA_diplomacy_attack_nav
-			focus = USA_diplomacy_attack_crw
 		}
 		# bypass = {
 		# 	UTA = { exists = no }
@@ -1203,9 +886,6 @@
 			focus = USA_diplomacy_attack_sioux
 		}
 		prerequisite = {
-			focus = USA_diplomacy_attack_cheyenne
-		}
-		prerequisite = {
 			focus = USA_diplomacy_attack_nez
 		}
 		prerequisite = {
@@ -1223,20 +903,13 @@
 		prerequisite = {
 			focus = USA_diplomacy_attack_nav
 		}
-		prerequisite = {
-			focus = USA_diplomacy_attack_crw
-		}
 		available = {
 			AND = {
 				SIX = { exists = no }
-				CHY = { exists = no }
 				NEZ = { exists = no }
-				COM = { exists = no }
 				BFT = { exists = no }
-				SHO = { exists = no }
 				APA = { exists = no }
 				NAV = { exists = no }
-				CRW = { exists = no }
 			}
 		}
 		available = { num_divisions > 10 }
@@ -1375,30 +1048,6 @@
     				modifier = usa_improved_relations
 				}
 			}
-		}
-	}
-	shared_focus = {
-		id = USA_diplomacy_alaska
-		icon = GFX_goal_focus_us_purchase_alaska
-		cost = 35
-		prerequisite = {
-			focus = USA_diplomacy_russia
-		}
-		bypass = {
-			OR = {
-				owns_state = 463
-				RUS = { NOT = {ALK = {
-					owns_state = 463
-					is_subject_of = RUS
-				} } }
-			}
-		}
-		relative_position_id = USA_diplomacy_europe
-		x = -2
-		y = 2
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-			country_event = { id = usa.40 }
 		}
 	}
 	shared_focus = {
@@ -1683,7 +1332,7 @@
 		icon = GFX_goal_focus_the_great_game
 		cost = 70
 		prerequisite = {
-			focus = USA_diplomacy_alaska
+			focus = USA_diplomacy_russia
 		}
 		mutually_exclusive = {
 			focus = USA_diplomacy_mend
@@ -1705,9 +1354,9 @@
 				}
 			}
 		}
-		relative_position_id = USA_diplomacy_alaska
+		relative_position_id = USA_diplomacy_russia
 		x = 0
-		y = 1
+		y = 2
 		completion_reward = {
 			RUS = { country_event = { id = usa.63 } }
 		}

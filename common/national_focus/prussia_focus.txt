@@ -46,6 +46,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = PRS_Rail_Focus_1
+			unlock_decision_tooltip = PRS_decision_acquire_locomotives
 		}
 	}
 
@@ -84,6 +85,7 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_state_rail }
 
 		completion_reward = {
+			unlock_decision_tooltip = PRS_decision_expand_berlin_anhalt_rail
 			activate_mission_tooltip = PRS_mission_berlin_anhalt_rail
 			hidden_effect = {
 				activate_mission = PRS_mission_berlin_anhalt_rail
@@ -128,7 +130,8 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_berlin_anhalt_rail }
 
 		completion_reward = {
-            activate_mission_tooltip = PRS_mission_silesia_rail
+			unlock_decision_tooltip = PRS_decision_expand_silesia_rail
+			activate_mission_tooltip = PRS_mission_silesia_rail
 			hidden_effect = {
 				activate_mission = PRS_mission_silesia_rail
 			}
@@ -191,7 +194,8 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_silesia_rail }
 
 		completion_reward = {
-            activate_mission_tooltip = PRS_mission_ostbahn_rail
+			unlock_decision_tooltip = PRS_decision_finish_ostbahn_rail
+			activate_mission_tooltip = PRS_mission_ostbahn_rail
 			hidden_effect = {
 				activate_mission = PRS_mission_ostbahn_rail
 			}
@@ -242,7 +246,8 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_ostbahn_rail }
 
 		completion_reward = {
-            activate_mission_tooltip = PRS_mission_rhineland_rail
+			unlock_decision_tooltip = PRS_decision_expand_rhineland_rail
+			activate_mission_tooltip = PRS_mission_rhineland_rail
 			hidden_effect = {
 				activate_mission = PRS_mission_rhineland_rail
 			}
@@ -287,7 +292,7 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_category_tooltip = PRS_decision_category_zollverein
 			hidden_effect = {
-				set_variable = { var = PRS_zollverein_associates value = 0 }
+				set_variable = { var = var_zollverein_associates value = 0 }
 			}
 		}
 	}
@@ -448,8 +453,8 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = { remove_idea = PRS_trade_and_economic_law_3 add_idea = PRS_trade_and_economic_law_4 }
-			unlock_decision_tooltip = PRS_decision_rheinland_steel
-			unlock_decision_tooltip = PRS_decision_silesian_steel
+			unlock_decision_tooltip = PRS_decision_support_rhineland_steel_industry
+			unlock_decision_tooltip = PRS_decision_support_silesian_steel_industry
 		}
 	}
 	
@@ -471,6 +476,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = mechanical_engineering_tech }
+			unlock_decision_tooltip = PRS_decision_stettin_sewerage_system
 		}
 	}
 	
@@ -509,6 +515,7 @@ focus_tree = {
 			}
 			add_tech_bonus = { bonus = 0.25 uses = 1 category = mechanical_engineering_tech }
 			activate_mission_tooltip = PRS_mission_hobrecht_plan
+			unlock_decision_tooltip = PRS_decision_berlin_urbanization
 			hidden_effect = {
 				activate_mission = PRS_mission_hobrecht_plan
 			}
@@ -535,6 +542,7 @@ focus_tree = {
 
 		completion_reward = {
 			activate_mission_tooltip = PRS_mission_ruhr_urbanization
+			unlock_decision_tooltip = PRS_decision_ruhr_urbanization
 			hidden_effect = {
 				activate_mission = PRS_mission_ruhr_urbanization
 			}
@@ -561,6 +569,7 @@ focus_tree = {
 
 		completion_reward = {
 			activate_mission_tooltip = PRS_mission_silesian_urbanization
+			unlock_decision_tooltip = PRS_decision_silesian_urbanization
 			hidden_effect = {
 				activate_mission = PRS_mission_silesian_urbanization
 			}
@@ -583,6 +592,7 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_encourage_silesian_urbanization }
 
 		completion_reward = {
+			unlock_decision_tooltip = PRS_decision_berlin_sewerage_system
 			unlock_decision_tooltip = PRS_decision_establish_sewerage_standards
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = health_tech }
 		}
@@ -629,7 +639,20 @@ focus_tree = {
 
 		completion_reward = {
             activate_mission_tooltip = PRS_mission_borsig_berlin
-			unlock_decision_tooltip = PRS_decision_support_borsig
+			PRS_albert_borsig = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = PRS_advisor_albert_borsig
+						traits = {
+							PRS_trait_Albert_Borsig
+						}
+						ai_will_do = {
+							factor = 5
+						}
+					}
+				}
+			}
 			hidden_effect = {
 				activate_mission = PRS_mission_borsig_berlin
 			}
@@ -637,7 +660,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = PRS_focus_krupp_cooperation
+		id = PRS_focus_krupp
 		icon = GFX_goal_focus_prussian_guns
 		x = 8
 		y = 3
@@ -655,9 +678,21 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_borsig }
 
 		completion_reward = {
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
 			activate_mission_tooltip = PRS_mission_krupp_factories
-			unlock_decision_tooltip = PRS_decision_support_krupp
+			PRS_alfred_krupp = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = PRS_advisor_alfred_krupp
+						traits = {
+							PRS_trait_Alfred_Krupp
+						}
+						ai_will_do = {
+							factor = 8
+						}
+					}
+				}
+			}
 			hidden_effect = {
 				activate_mission = PRS_mission_krupp_factories
 			}
@@ -679,11 +714,24 @@ focus_tree = {
 		}
 		ai_will_do = { base = 80 }
 		
-		prerequisite = { focus = PRS_focus_krupp_cooperation }
+		prerequisite = { focus = PRS_focus_krupp }
 
 		completion_reward = {
 			activate_mission_tooltip = PRS_mission_siemens_halske
-			unlock_decision_tooltip = PRS_decision_support_siemens
+			PRS_werner_von_siemens = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = PRS_advisor_werner_von_siemens
+						traits = {
+							PRS_trait_Werner_Siemens
+						}
+						ai_will_do = {
+							factor = 6
+						}
+					}
+				}
+			}
 			hidden_effect = {
 				activate_mission = PRS_mission_siemens_halske
 			}
@@ -868,7 +916,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_timed_idea = {
-				idea = PRS_idea_well_oiled_economy
+				idea = PRS_idea_gruenderzeit
 				days = 1825
 			}
 			add_timed_idea = {
@@ -984,29 +1032,29 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_parlamentsheer_trigger_tt
-				hidden_trigger = {
-					NOT = {
-						OR = {
-							check_variable = { mhc_sec_value = 12 }
-							check_variable = { mhc_chief_value = 13 }
-						}
-					}
-				}
-			}
+			#custom_trigger_tooltip = {
+			#	tooltip = PRS_focus_parlamentsheer_trigger_tt
+			#	hidden_trigger = {
+			#		NOT = {
+			#			OR = {
+			#				check_variable = { mhc_sec_value = 12 }
+			#				check_variable = { mhc_chief_value = 13 }
+			#			}
+			#		}
+			#	}
+			#}
 			date > 1860.1.1
-			NOT = {
-				OR = {
-					has_country_flag = MHC_military_junta_army
-					has_country_flag = MHC_military_junta_airforce
-					has_country_flag = MHC_military_junta_navy
-				}
-				is_in_array = {
-					array = mhc_powerful_army_officials
-					value = mhc_sec_value
-				}
-			}
+			#NOT = {
+			#	OR = {
+			#		has_country_flag = MHC_military_junta_army
+			#		has_country_flag = MHC_military_junta_airforce
+			#		has_country_flag = MHC_military_junta_navy
+			#	}
+			#	is_in_array = {
+			#		array = mhc_powerful_army_officials
+			#		value = mhc_sec_value
+			#	}
+			#}
 		}
 		ai_will_do = {
 			base = 1
@@ -1043,13 +1091,13 @@ focus_tree = {
 		}
 		available_if_capitulated = no
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_roon_reform_bill_trigger_tt
-				hidden_trigger = {
-					check_variable = { mhc_sec_value = 12 }
-					check_variable = { mhc_chief_value = 13 }
-				}
-			}
+		#	custom_trigger_tooltip = {
+		#		tooltip = PRS_focus_roon_reform_bill_trigger_tt
+		#		hidden_trigger = {
+		#			check_variable = { mhc_sec_value = 12 }
+		#			check_variable = { mhc_chief_value = 13 }
+		#		}
+		#	}
 			date > 1860.1.1
 		}
 		ai_will_do = { base = 200 }
@@ -1405,7 +1453,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			remove_ideas = PRS_army_reform
-			remove_ideas = PRS_legacy_clausewitz
+			remove_ideas = PRS_idea_legacy_clausewitz
 			hidden_effect = {
 				clr_country_flag = PRS_heeresreform_krupp
 				clr_country_flag = PRS_heeresreform_officer
@@ -1457,6 +1505,9 @@ focus_tree = {
 
 		completion_reward = {
 			activate_mission_tooltip = PRS_mission_hagens_expansion_plan
+			unlock_decision_tooltip = PRS_decision_invest_into_jade_bight_port
+			unlock_decision_tooltip = PRS_decision_invest_into_jade_bight_dockyard
+			unlock_decision_tooltip = PRS_decision_invest_into_jade_bight_settlement
 			hidden_effect = {
 				activate_mission = PRS_mission_hagens_expansion_plan
 			}
@@ -1513,15 +1564,13 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 50
 			custom_effect_tooltip = PRS_focus_navy_ministry_effect_tt
-			hidden_effect = {
-				PRS_adalbert_von_preußen = {
-					add_advisor_role = {
-						advisor = {
-							slot = navy_chief
-							idea_token = PRS_navy_commander_adalbert_von_preussen
-							traits = {
-								navy_chief_decisive_battle_1
-							}
+			PRS_adalbert_von_preußen = {
+				add_advisor_role = {
+					advisor = {
+						slot = navy_chief
+						idea_token = PRS_navy_commander_adalbert_von_preussen
+						traits = {
+							navy_chief_decisive_battle_1
 						}
 					}
 				}
@@ -1688,12 +1737,9 @@ focus_tree = {
 		prerequisite = { focus = PRS_focus_royal_dockyards }
 
 		completion_reward = {
-			custom_effect_tooltip = PRS_focus_military_supremacy_effect_tt
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				add_ideas = prussian_military_spendage
+			swap_ideas = {
+				remove_idea = law_victorian_army
+				add_idea = law_victorian_army_prussia
 			}
 		}
 	}
@@ -1912,24 +1958,24 @@ focus_tree = {
 				}
 			}
 			PRS = {
-				if = {
-					limit = {
-						has_idea = no_constitution
-					}
-					swap_ideas = { remove_idea = no_constitution add_idea = constitution_adopted }
-				}
-				else_if = {
-					limit = {
-						has_idea = human_rights
-					}
-					swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
-				}
-				else_if = {
-					limit = {
-						has_idea = limited_constitution
-					}
-					swap_ideas = { remove_idea = limited_constitution add_idea = constitution_adopted }
-				}
+				#if = {
+				#	limit = {
+				#		has_idea = no_constitution
+				#	}
+				#	swap_ideas = { remove_idea = no_constitution add_idea = constitution_adopted }
+				#}
+				#else_if = {
+				#	limit = {
+				#		has_idea = human_rights
+				#	}
+				#	swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
+				#}
+				#else_if = {
+				#	limit = {
+				#		has_idea = limited_constitution
+				#	}
+				#	swap_ideas = { remove_idea = limited_constitution add_idea = constitution_adopted }
+				#}
 			}
 			PRS = {
 				if = {
@@ -1980,21 +2026,21 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							has_idea = normal_taxes
+							has_idea = taxation_level_3
 						}
-						swap_ideas = { remove_idea = normal_taxes add_idea = high_taxes }
+						swap_ideas = { remove_idea = taxation_level_3 add_idea = taxation_level_4 }
 					}
 					else_if = {
 						limit = {
-							has_idea = low_taxes
+							has_idea = taxation_level_2
 						}
-						swap_ideas = { remove_idea = low_taxes add_idea = normal_taxes }
+						swap_ideas = { remove_idea = taxation_level_2 add_idea = taxation_level_3 }
 					}
 					else_if = {
 						limit = {
-							has_idea = very_low_taxes
+							has_idea = taxation_level_1
 						}
-						swap_ideas = { remove_idea = very_low_taxes add_idea = normal_taxes }
+						swap_ideas = { remove_idea = taxation_level_1 add_idea = taxation_level_3 }
 					}
 				}
 			}
@@ -2110,9 +2156,9 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_idea = PRS_Zollverein
+					has_idea = GEC_idea_zollverein_1
 				} 
-				swap_ideas = { remove_idea = PRS_Zollverein add_idea = PRS_Zollverein_1 }
+				swap_ideas = { remove_idea = GEC_idea_zollverein_1 add_idea = GEC_idea_zollverein_2 }
 			}
 			unlock_decision_tooltip = PRS_decision_zollverein_reconstitution
 			if = {
@@ -2163,7 +2209,7 @@ focus_tree = {
 			has_idea = PRS_idea_ngc_industry_3
 			has_idea = PRS_idea_ngc_judiciary_3
 			has_idea = PRS_idea_foreign_ministry_1
-			has_idea = PRS_Zollverein_2
+			has_idea = GEC_idea_zollverein_3
 		}
 		ai_will_do = { base = 1000 }
 		
@@ -2219,7 +2265,7 @@ focus_tree = {
 						is_ai = yes
 					}
 					add_ideas = PRS_hidden_idea_AI_lp_boost
-	            }
+				}
 			}
 		}
 	}
@@ -2244,7 +2290,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PRS_focus_dissolve_parliament_effect_tt
 			decrease_ps_by_one = yes
-			swap_ideas = { remove_idea = constitutional_monarchy add_idea = absolute_monarchy }
+			#swap_ideas = { remove_idea = constitutional_monarchy add_idea = absolute_monarchy }
 			hidden_effect = {
 				country_event = { days = 1 id = prussia.221 }
 				set_variable = { var = PRS_election_campaign_success value = 0 }
@@ -2294,7 +2340,7 @@ focus_tree = {
 			unlock_decision_tooltip = PRS_decision_heeresreform_army_logistics
 			unlock_decision_tooltip = PRS_decision_heeresreform_new_tactics
 			unlock_decision_tooltip = PRS_decision_heeresreform_war_games
-			unlock_decision_tooltip = PRS_decision_heeresreform_no_noble_privilege
+			unlock_decision_tooltip = PRS_decision_heeresreform_end_noble_privileges
 			#set_party_name = { ideology = centrism long_name = PRS_centrism_republic_party_long name = PRS_centrism_republic_party }
 			#set_politics = { ruling_party = centrism elections_allowed = no }
 			#set_cosmetic_tag = PRS_cosmetic_republic
@@ -2968,7 +3014,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						AND = {
-							has_idea = GER_general_idea_ger_confed
+							is_part_of_the_german_confederation = yes
 							NOT = { tag = AUS }
 							NOT = { tag = BAV }
 							NOT = { tag = LIE }
@@ -2988,7 +3034,7 @@ focus_tree = {
 
 	focus = {
 		id = PRS_focus_bismarck
-		icon = GFX_focus_bismark
+		icon = GFX_focus_bismarck
 		x = 41
 		y = 2
 		cost = 140
@@ -2997,16 +3043,16 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		available_if_capitulated = no
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = PRS_focus_bismarck_trigger_tt
-				hidden_trigger = {
-					PRS = {
-						check_variable = { mhc_sec_value = 12 }
-					}
-				}
-			}
-		}
+		#available = {
+		#	custom_trigger_tooltip = {
+		#		tooltip = PRS_focus_bismarck_trigger_tt
+		#		hidden_trigger = {
+		#			PRS = {
+		#				check_variable = { mhc_sec_value = 12 }
+		#			}
+		#		}
+		#	}
+		#}
 		ai_will_do = {
 			base = 500
 			#modifier = {
@@ -3169,7 +3215,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 50
-			add_popularity = { ideology = centrism popularity = -0.05 }
+			add_popularity = { ideology = ideology_social_liberalism popularity = -0.05 }
 		}
 	}
 
@@ -3370,12 +3416,12 @@ focus_tree = {
 			add_political_power = 100
 			remove_ideas = PRS_idea_constitutional_crisis_4
 			add_popularity = { ideology = centrism popularity = -0.1 }
-			if = {
-				limit = {
-					has_idea = absolute_monarchy
-				}
-				swap_ideas = { remove_idea = absolute_monarchy add_idea = constitutional_monarchy }
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = absolute_monarchy
+			#	}
+			#	swap_ideas = { remove_idea = absolute_monarchy add_idea = constitutional_monarchy }
+			#}
 			hidden_effect = {
 				country_event = { days = 7 id = prussia.235 }
 				clear_variable = political_legitimacy_equilibrium_custom
@@ -3925,7 +3971,8 @@ focus_tree = {
 							has_cosmetic_tag = PRS_GER_bismarck_national
 						}
 					}
-					load_focus_tree = german_empire_focus
+					load_focus_tree = german_empire_historical_focus
+					complete_national_focus = GER_focus_historical_gruenderjahre
 				}
 				else_if = {
 					limit = {
@@ -3946,7 +3993,8 @@ focus_tree = {
 					#load_focus_tree = germany_socialist_focus
 				}
 				else = {
-					load_focus_tree = german_empire_focus
+					load_focus_tree = german_empire_historical_focus
+					complete_national_focus = GER_focus_historical_gruenderjahre
 				}
 				PRS = {
 					if = {

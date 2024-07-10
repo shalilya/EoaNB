@@ -9,11 +9,11 @@ sub_units = {
 		
 		type = {
 			infantry
-			anti_tank
+			anti_tank  ## Idk if this should say this??
 			artillery
 		}
 
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -26,7 +26,7 @@ sub_units = {
 		manpower = 500
 		
 		need = {
-			uniform_equipment = 50
+			uniform_equipment = 25
 			infantry_equipment = 25
 			cannon_equipment = 48
 		}
@@ -35,7 +35,7 @@ sub_units = {
 			cannon_equipment
 		}
 		
-		max_strength = 0.6
+		max_strength = 0.5
 		max_organisation = 0
 		default_morale = 0.1
 		training_time = 150
@@ -91,7 +91,7 @@ sub_units = {
 			artillery
 		}
 
-		group = infantry
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -104,7 +104,7 @@ sub_units = {
 		manpower = 500
 		
 		need = {
-			uniform_equipment = 50
+			uniform_equipment = 25
 			infantry_equipment = 25
 			cannon_equipment = 48
 			horse_artillery_equipment = 48
@@ -115,7 +115,7 @@ sub_units = {
 			cannon_equipment
 		}
 		
-		max_strength = 0.6
+		max_strength = 0.5
 		max_organisation = 0
 		default_morale = 0.1
 		training_time = 150
@@ -128,6 +128,7 @@ sub_units = {
 		}
 
 		hills = {
+			defence = 0.1
 			movement = -0.1
 		}
 
@@ -184,7 +185,7 @@ sub_units = {
 		manpower = 500
 		
 		need = {
-			uniform_equipment = 50
+			uniform_equipment = 25
 			infantry_equipment = 25
 			howitzer_equipment = 48
 		}
@@ -201,23 +202,19 @@ sub_units = {
 		supply_consumption = 0.4
 		
 		plains = {
-			attack = -0.1
-			defence = -0.1
-		}
-		
-		desert = {
-			attack = -0.1
-			defence = -0.15
+			attack = -0.05
+			defence = -0.05
 		}
 		
 		forest = {
-			attack = 0.15
+			attack = 0.1
 			defence = 0.05
 			movement = -0.15
 		}
 
 		hills = {
 			attack = 0.15
+			defence = 0.05
 			movement = -0.05
 		}
 
@@ -264,7 +261,7 @@ sub_units = {
 			artillery
 		}
 
-		group = infantry
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -296,29 +293,26 @@ sub_units = {
 		supply_consumption = 0.4
 		
 		plains = {
-			attack = -0.1
-			defence = -0.1
-		}
-		
-		desert = {
-			attack = -0.1
-			defence = -0.15
+			attack = -0.05
+			defence = -0.05
+			movement = 0.05
 		}
 		
 		forest = {
-			attack = 0.15
+			attack = 0.1
 			defence = 0.05
 			movement = -0.15
 		}
 
 		hills = {
 			attack = 0.15
-			movement = -0.05
+			defence = 0.05
+			movement = 0.05
 		}
 
 		mountain = {
 			attack = 0.05
-			movement = -0.15
+			movement = -0.05
 		}
 
 		jungle = {
@@ -372,7 +366,7 @@ sub_units = {
 		manpower = 500
 		
 		need = {
-			uniform_equipment = 50
+			uniform_equipment = 25
 			infantry_equipment = 25
 			siege_gun_equipment = 48
 		}
@@ -381,7 +375,7 @@ sub_units = {
 			siege_gun_equipment
 		}
 		
-		max_strength = 0.6
+		max_strength = 0.5
 		max_organisation = 0
 		default_morale = 0.1
 		training_time = 150
@@ -412,7 +406,7 @@ sub_units = {
 		}
 
 		fort = {
-			attack = 0.25
+			attack = 0.35
 			defence = 0.05
 		}
 
@@ -437,7 +431,7 @@ sub_units = {
 			artillery
 		}
 
-		group = infantry
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -468,13 +462,17 @@ sub_units = {
 		weight = 1
 		supply_consumption = 0.4
 		
+		plains = {
+			movement = 0.05
+		}
+
 		forest = {
 			attack = -0.2
 			movement = -0.2
 		}
 
 		hills = {
-			movement = -0.1
+			movement = 0.05
 		}
 
 		mountain = {
@@ -518,7 +516,7 @@ sub_units = {
 			artillery
 		}
 
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -531,17 +529,17 @@ sub_units = {
 		manpower = 500
 		need = {
 			howitzer_equipment = 36
-			horse_artillery_equipment = 48
+			#horse_artillery_equipment = 48  ## This is a more modern Artillery meant to replicate vanilla 
 		}
 		
-		transport = horse_artillery_equipment
+		#transport = horse_artillery_equipment ##Removed for now?
 		
 		max_strength = 0.6
 		max_organisation = 0
 		default_morale = 0.1
 		training_time = 120
 		weight = 0.5
-		supply_consumption = 0.2
+		supply_consumption = 0.21
 
 		#Line artillery bonuses
 		# soft_attack = 0.25
@@ -595,7 +593,7 @@ sub_units = {
 			artillery
 		}
 
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -608,7 +606,7 @@ sub_units = {
 		manpower = 500
 		need = {
 			howitzer_equipment = 36
-			motorized_equipment = 50
+			motorized_equipment = 36
 		}
 		
 		max_strength = 0.6
@@ -616,7 +614,7 @@ sub_units = {
 		default_morale = 0.1
 		training_time = 120
 		weight = 0.5
-		supply_consumption = 0.3
+		supply_consumption = 0.25
 		
 		forest = {
 			attack = -0.2
@@ -667,7 +665,7 @@ sub_units = {
 			artillery
 		}
 
-		group = infantry
+		group = combat_support
 		
 		categories = {
 			category_army
@@ -687,7 +685,7 @@ sub_units = {
 		training_time = 120
 		weight = 0.5
 
-		supply_consumption = 0.2
+		supply_consumption = 0.22
 		
 		forest = {
 			attack = -0.2
@@ -738,7 +736,7 @@ sub_units = {
 			artillery
 		}
 
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -749,7 +747,7 @@ sub_units = {
 		transport = motorized_equipment
 		need = {
 			rocket_artillery_equipment = 36
-			motorized_equipment = 50
+			motorized_equipment = 36
 		}
 		
 		manpower = 500
@@ -811,7 +809,7 @@ sub_units = {
 			rocket
 		}
 
-		group = mobile
+		group = mobile_combat_support
 		
 		categories = {
 			category_army
@@ -833,7 +831,7 @@ sub_units = {
 		weight = 0.5
 
 		
-		supply_consumption = 0.28
+		supply_consumption = 0.25
 		
 		forest = {
 			attack = -0.1

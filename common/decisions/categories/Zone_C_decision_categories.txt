@@ -195,7 +195,13 @@ FRA_decision_category_political_system = {
 
 FRA_decision_category_industrialization = {
 	icon = generic_economy
+	priority = 100
+	picture = GFX_decision_cat_fra_industry
 	allowed = { tag = FRA }
+	visible = {
+		always = yes
+	}
+	visible_when_empty = yes
 }
 
 FRA_decision_category_latin_monetary_union = {
@@ -226,6 +232,28 @@ FRA_decision_category_luxembourg_crisis = {
 	visible = {
 		has_country_flag = lux_crisis_london_conference_not_ratified_flag
 	}
+}
+
+FRA_decision_category_colonial_actions = {
+	priority = 15
+	icon = generic_political_actions
+	picture = GFX_decision_cat_fra_colonial_empire
+	allowed = {
+		OR = {
+			original_tag = FRA
+			original_tag = KBY
+		}
+	}
+	visible = {
+		always = yes
+	}
+	visible_when_empty = yes
+}
+
+FRA_BOP_category_decisions = {
+	icon = generic_political_actions
+	priority = 10
+	allowed = {	tag = FRA }
 }
 
 ### German Confederation ###
@@ -656,6 +684,12 @@ POR_decision_category_industry = {
 	allowed = { tag = POR }
 }
 
+POR_decisions_category_foreign_policy_and_army = {
+	icon = generic_political_actions
+	allowed = { tag = POR }
+	priority = 80
+}
+
 POR_decision_category_colonies = {
 	icon = generic_political_actions
 	allowed = { tag = POR }
@@ -663,8 +697,8 @@ POR_decision_category_colonies = {
 
 ### Prussia/Germany ###
 PRS_decision_category_zollverein = {
-	icon = PRS_zollverein
-	picture = GFX_decision_cat_PRS_zollverein
+	icon = zollverein
+	picture = GFX_decision_cat_zollverein
 	priority = 80
 	allowed = { tag = PRS }
 	visible = {
@@ -765,6 +799,24 @@ PRS_decision_category_projects = {
 PRS_purchase_brandenburg_colonies_category = {
 	visible = {
 		has_country_flag = PRS_focus_cpb_brandenburg_colonies_flag
+	}
+}
+
+GER_decision_category_economy = {
+	icon = zollverein
+	picture = GFX_decision_cat_zollverein
+	priority = 80
+	allowed = {
+		GER_is_german_nation = yes
+	}
+	visible = {
+		if = {
+			limit = {
+				tag = PRS
+			}
+			has_completed_focus = GER_focus_historical_prosperity_for_all
+		}
+		trigger_is_germany = yes
 	}
 }
 
@@ -889,4 +941,8 @@ WUR_decision_category_shifting_flow = {
 WUR_decision_category_economy = {
 	icon = generic_industry
 	allowed = { tag = WUR }
+}
+### Luxembourg ###
+LUX_the_path_towards_independence = {
+	allowed = { tag = LUX }
 }

@@ -674,7 +674,7 @@ focus_tree = {
 		prerequisite = { focus = HAM_focus_army_drills }
 		
 		completion_reward = {
-			remove_ideas = HAM_LEGION
+			remove_ideas = HAM_idea_legion
 		}
 	}
 	
@@ -765,18 +765,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 40
 		}
-		available = {
-			NOT = { has_idea = constitution_adopted }
-		}
-		bypass = {
-			has_idea = constitution_adopted
-		}
+		#available = {
+		#	NOT = { has_idea = constitution_adopted }
+		#}
+		#bypass = {
+		##	has_idea = constitution_adopted
+		#}
 		
 		completion_reward = {
-			swap_ideas = {
-				add_idea = constitution_adopted
-				remove_idea = no_constitution
-			}
+			#swap_ideas = {
+			#	add_idea = constitution_adopted
+			#	remove_idea = no_constitution
+			#}
 		}
 	}
 	

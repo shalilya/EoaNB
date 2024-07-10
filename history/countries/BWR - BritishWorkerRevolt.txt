@@ -13,21 +13,33 @@
 		#Rivals
 		set_variable = { rival_country = ENG.id }
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		industrializing
-		non_monarchical_system
-		revolutionary_government
+		#non_monarchical_system
+		#revolutionary_government
 
 		civilian_economy
 		closed_economy
-		three_percent
-		normal_taxes
+		army_spending_level_3
+		taxation_level_3
 		cl_illegal
-		ten_hour_work_day
+		
 
 		#stagnation_growth
 		border_control
@@ -35,18 +47,18 @@
 		volunteer_only
 		universal_male_suffrage
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		open_schools
 		secular_state
 		#religion_protestant
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		BWR_disorganised_militas

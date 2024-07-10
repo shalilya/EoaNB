@@ -2566,6 +2566,12 @@ scripted_map_modes = {
 						set_temp_variable = { blue = 0.486 }
 					}
 					else_if = {
+						limit = { check_variable = { FROM.state_culture_array^0 = global.westerner } }
+						set_temp_variable = { red = 0.984 }
+						set_temp_variable = { green = 0.94 }
+						set_temp_variable = { blue = 0.486 }
+					}
+					else_if = {
 						limit = { check_variable = { FROM.state_culture_array^0 = global.newyorker } }
 						set_temp_variable = { red = 0.470 }
 						set_temp_variable = { green = 0.470 }
@@ -2788,7 +2794,7 @@ scripted_map_modes = {
 						set_temp_variable = { blue = 0.43 }
 					}
 					else_if = {
-						limit = { check_variable = { FROM.state_culture_array^0 = global.native_gulf } }
+						limit = { check_variable = { FROM.state_culture_array^0 = global.muskogean } }
 						set_temp_variable = { red = 0.52 }
 						set_temp_variable = { green = 0.40 }
 						set_temp_variable = { blue = 0.32 }
@@ -2812,13 +2818,19 @@ scripted_map_modes = {
 						set_temp_variable = { blue = 0.38 }
 					}
 					else_if = {
-						limit = { check_variable = { FROM.state_culture_array^0 = global.pueblo } }
+						limit = { check_variable = { FROM.state_culture_array^0 = global.tanoan } }
 						set_temp_variable = { red = 0.65 }
 						set_temp_variable = { green = 0.79 }
 						set_temp_variable = { blue = 0.46 }
 					}
 					else_if = {
-						limit = { check_variable = { FROM.state_culture_array^0 = global.basin } }
+						limit = { check_variable = { FROM.state_culture_array^0 = global.caddoan } }
+						set_temp_variable = { red = 0.65 }
+						set_temp_variable = { green = 0.76 }
+						set_temp_variable = { blue = 0.46 }
+					}
+					else_if = {
+						limit = { check_variable = { FROM.state_culture_array^0 = global.numic } }
 						set_temp_variable = { red = 0.65 }
 						set_temp_variable = { green = 0.68 }
 						set_temp_variable = { blue = 0.20 }
@@ -3290,6 +3302,12 @@ scripted_map_modes = {
 						set_temp_variable = { red = 0.47 }
 						set_temp_variable = { green = 0.34 }
 						set_temp_variable = { blue = 0.16 }
+					}
+					else_if = {
+						limit = { check_variable = { FROM.state_culture_array^0 = global.takic } }
+						set_temp_variable = { red = 0.75 }
+						set_temp_variable = { green = 0.61 }
+						set_temp_variable = { blue = 0.32 }
 					}
 					else={
 						set_temp_variable = { red = 1.0 }

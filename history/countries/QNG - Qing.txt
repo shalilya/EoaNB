@@ -3,26 +3,38 @@
   
   set_country_flag = true_china
   set_country_flag = QNG_xianjing_tree
+  set_country_flag = xianfeng_universal_prosperity_flag
+  set_country_flag = summer_palace_flag
+  QNG = {
+	country_event = { id = qing.29 days = 7}
+  }
 
   oob = "QNG_1857"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "QNG_mtg_naval"
+	else = {
+		set_naval_oob = "QNG_naval"
+	}
+}
 
   set_convoys = 30
   
-  set_research_slots = 3
+  set_research_slots = 2
   add_ideas = { 
     #POLITICS 
 		  
-    hos_is_leader
+    #hos_is_leader
     pre_industrial_era
     agrarian
-    no_heir
-    absolute_monarchy
+    #no_heir
+    #absolute_monarchy
 	law_pre_industrial_army_chinese
 
     civilian_economy
     limited_exports
-    two_percent
-    normal_taxes
+    army_spending_level_2
+    taxation_level_3
 	cl_legal
 
     #stagnation_growth
@@ -31,17 +43,17 @@
     slavery
     absolutism
 
-    no_constitution
+    #no_constitution
     no_elections
 	#religion_confucian
     privileged_education
     state_religion
 
-     hc_no_healthcare
-    law_police_force
-    inframain_no_subsidies_infrastructure
-    navinfra_no_naval_infrastructure
-    sfund_private_ventures_only
+     social_spending_level_1
+    law_spending_level_4
+    road_spending_level_1
+    navy_spending_level_1
+    research_spending_level_1
 
          #NATIONAL SPIRITS
 	QNG_idea_arrow_incident
@@ -50,6 +62,7 @@
 	QNG_idea_opium_crissis
 	QNG_idea_han_nationalism
 	QNG_idea_devastation_first_opium_war
+	QNG_idea_corutpion1
   }
   
     #Rivals 
@@ -63,8 +76,29 @@
 	  ruling_party = autocracy
 }
 
+QNG = {
+	if = {
+		limit = {
+			eoanb_enable_autonomy = yes
+		}
+		set_autonomy = {
+			target = PAW
+			autonomous_state = autonomy_protectorate
+			freedom_level = 0.35
+		}
+	}
+	if = {
+		limit = {
+			eoanb_enable_autonomy = no
+		}
+		puppet = PAW
+	}
+}
+
+
+
 QNG = { set_country_flag = Oceania_industrializing }
-activate_mission = QNG_PTH_yunnan_peace
+#activate_mission = QNG_PTH_yunnan_peace
 
 set_popularities = {
     anarchism = 0
@@ -78,6 +112,15 @@ set_popularities = {
     autocracy = 100
     fundamentalism = 0
 }
+
+	#Balance of Power
+	set_power_balance = {
+		id = QNG_Balance_of_Power_Qing_Establishment
+		left_side = QNG_conservative_side
+		right_side = QNG_yangwu_side
+		set_value = 0
+	}
+
   
   add_opinion_modifier = { target = USA modifier = eoanb_om_USA_QNG_opium_neutral }
   add_opinion_modifier = { target = ENG modifier = eoanb_om_ENG_QNG_arrow_incident }
@@ -102,6 +145,8 @@ set_popularities = {
 	tribal_crop_rotation=1
 	tribal_salted_smoked_goods=1
 	tribal_leching=1
+	tech_naval_mtg_early_gunboat = 1
+	tech_naval_mtg_1850_gunboat = 1
 	tech_infantry_napoleonic_uniform = 1
 	tech_naval_mtg_simple_corvette_hull = 1
     tech_naval_mtg_24_pounder_battery = 1
@@ -116,9 +161,12 @@ set_popularities = {
 	tech_naval_mtg_primitive_sailing_boat_mid= 1
 	tech_naval_mtg_primitive_sailing_boat_late= 1
 	tech_naval_mtg_primitive_naval_technology=1
+	tech_naval_early_gunboat = 1
+	tech_naval_1850_gunboat = 1
   }
 	add_equipment_to_stockpile = { type = infantry_equipment_pike_and_shot_0 amount = 120000 producer = QNG }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 120000 producer = QNG }
+	add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 50000 producer = ENG }
 	
 	if = {
 		limit = { has_dlc = "Man the Guns" }
@@ -137,14 +185,27 @@ set_popularities = {
 				}
 			#obsolete = no
 		}
-		load_oob = "QNG_mtg_naval"
+		create_equipment_variant = {
+			name = "Confucius-class"
+			type = ship_hull_gunboat_1
+			name_group = GER_CA_HISTORICAL
+			parent_version = 0
+			modules={
+				fixed_ship_battery_slot=ship_cannon_battery_1
+				fixed_ship_engine_slot=ship_engine_steam_screw_gunboat
+				fixed_ship_fire_control_system_slot=fire_control_system_0
+				mid_1_custom_slot=ship_cannon_battery_1
+				fixed_ship_armor_slot=ship_armor_capital_hardwood_0
+			}
+			#obsolete = no
+		}
 	}
 
 
   # POLITICAL LEADERS
 	recruit_character = QNG_Xianfeng_Emperor
 	recruit_character = QNG_Sengge_Rinchen
-	recruit_character = QNG_Zhang_Guoliang
+	recruit_character = QNG_Feng_Zicai
 	recruit_character = QNG_Zuo_Zongtang
 	recruit_character = QNG_Nie_Shicheng
 	recruit_character = QNG_Song_Qing
@@ -154,16 +215,23 @@ set_popularities = {
 	recruit_character = QNG_Tongzhi_emperor
 	recruit_character = QNG_Guangxu_Emperor
 	recruit_character = QNG_Zeng_Guofan
+	recruit_character = QNG_ronglu
+	recruit_character = QNG_zhu_hongzhang
+	recruit_character = QNG_bao_chao
+	recruit_character = QNG_guanwen
+	recruit_character = QNG_luo_bingzhang
+	recruit_character = QNG_zhang_guoliang
 	
 	#Advisors
 	recruit_character = QNG_weng_tonghe
-	recruit_character = QNG_keying
-	recruit_character = QNG_yixuan_princ_chun
-	recruit_character = QNG_duan
+	recruit_character = QNG_yixuan_princ_chun #yixuan was 17 but eh let's allow him to stay
+	#recruit_character = QNG_duan yixuan was literally 1 year old in 1857
 	recruit_character = QNG_shushun
 	recruit_character = QNG_prince_gong
 	recruit_character = QNG_prosper_giquel
 	recruit_character = QNG_john_fryer
+	recruit_character = QNG_cixi 
+
 	
 	#Theorists
 	recruit_character = QNG_li_hongzhang
@@ -180,21 +248,23 @@ set_popularities = {
 
   set_convoys = 30
   
+  unlock_national_focus = QNG_focus_self_strenthening_movement
+
   set_research_slots = 3
   add_ideas = { 
     #POLITICS 
 		  
-    hos_is_leader
+    #hos_is_leader
     pre_industrial_era
     agrarian
-    no_heir
-    absolute_monarchy
+    #no_heir
+    #absolute_monarchy
 	law_pre_industrial_army_chinese
 
     civilian_economy
     limited_exports
-    two_percent
-    normal_taxes
+    army_spending_level_2
+    taxation_level_3
 	cl_legal
 
     #stagnation_growth
@@ -203,17 +273,17 @@ set_popularities = {
     slavery
     absolutism
 
-    no_constitution
+    #no_constitution
     no_elections
 	#religion_confucian
     privileged_education
     state_religion
 
-    hc_no_healthcare
-    law_police_force
-    inframain_no_subsidies_infrastructure
-    navinfra_no_naval_infrastructure
-    sfund_private_ventures_only
+    social_spending_level_1
+    law_spending_level_4
+    road_spending_level_1
+    navy_spending_level_1
+    research_spending_level_1
 
     #NATIONAL SPIRITS
 	QNG_idea_arrow_incident
@@ -233,7 +303,7 @@ set_popularities = {
 	}
 
 	QNG = { set_country_flag = Oceania_industrializing }
-	activate_mission = QNG_PTH_yunnan_peace
+	#activate_mission = 
 
 	set_popularities = {
 		anarchism = 0
@@ -288,27 +358,6 @@ set_popularities = {
   }
 	add_equipment_to_stockpile = { type = infantry_equipment_pike_and_shot_0 amount = 120000 producer = QNG }
 	add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 120000 producer = QNG }
-	
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		create_equipment_variant = {
-			name = "Chinese Junk class"
-			type = ship_hull_primitive_sailing_boat_2
-			name_group = GER_CA_HISTORICAL
-			parent_version = 0
-				modules = {
-					fixed_ship_battery_slot = ship_cannon_battery_0
-					#fixed_ship_fire_control_system_slot = empty
-					fixed_ship_engine_slot = ship_engine_primitive_sails_0
-					#fixed_ship_armor_slot = empty
-					mid_1_custom_slot = empty
-					#front_1_custom_slot = empty
-				}
-			#obsolete = no
-		}
-		load_oob = "QNG_mtg_naval"
-	}
-
 
   # POLITICAL LEADERS
 	retire_character = QNG_Xianfeng_Emperor

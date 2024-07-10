@@ -12,19 +12,19 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 		law_army_tribal_improved
 
 		civilian_economy
 		closed_economy
-		one_percent
-		very_low_taxes
+		army_spending_level_1
+		taxation_level_2
 		cl_legal
-		lp_land_estates
+		
 
 		#stagnation_growth
 		no_borders
@@ -32,17 +32,17 @@
 		tribal_slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 		#religion_sunni
 		traditional_uluma
 		state_religion
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		AFR_spanish_protectorate
@@ -50,24 +50,12 @@
 	}
 
 	SPR = {
-    	if={
-      		limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-      		}
-			set_autonomy = {
-				target = SUL
-				autonomous_state = autonomy_afr_protectorate
-				freedom_level = 0.8
-			}
-      	}
-		else={
-			puppet = SUL
+    	set_autonomy = {
+			target = SUL
+			autonomous_state = autonomy_afr_protectorate
+			freedom_level = 0.8
 		}
-		SUL = {
+      	SUL = {
 			set_politics = {
 				ruling_party = autocracy
 			}

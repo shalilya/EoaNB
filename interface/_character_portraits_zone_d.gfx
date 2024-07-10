@@ -1335,11 +1335,6 @@ spriteTypes = {
 			name = "GFX_Portrait_JPR_Ram_Singh_II"
 			texturefile = "gfx/leaders/JPR/Portrait_JPR_Ram_Singh_II.png"
 		}
-	# Manipur
-		spriteType = {
-			name = "GFX_Portrait_MPR_Chandrakirti_Singh"
-			texturefile = "gfx/leaders/MPR/Portrait_MPR_Chandrakirti_Singh.png"
-		}
 	# Mysore
 		spriteType = {
 			name = "GFX_Portrait_MYS_Krishnaraja_Wadiyar_III"
@@ -1446,7 +1441,7 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_Portrait_QNG_Guangxu_Emperor"
-			texturefile = "gfx/leaders/QNG/Portrait_QNG_Guangxu_Emperor.dds"
+			texturefile = "gfx/leaders/QNG/Portrait_QNG_Guangxu_Emperor.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_BEI_Yuan_Shikai"
@@ -1519,6 +1514,10 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_Portrait_RAJ_Charles_Canning"
 			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Charles_Canning.dds"
+		}
+		spriteType = {
+			name = "GFX_Portrait_RAJ_Fred_Currie"
+			textureFile = "gfx/leaders/RAJ/Portrait_RAJ_Fred_Currie.png"
 		}
 		spriteType = {
 			name = "GFX_Portrait_RAJ_James_George_Smith_Neill"

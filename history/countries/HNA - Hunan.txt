@@ -8,18 +8,30 @@
 
 	set_research_slots = 1 #Placeholder for 1857
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		export_focus
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 	cl_legal
 
 		#stagnation_growth
@@ -28,25 +40,25 @@
 		limited_equality
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		oral_tradition
 		state_religion
 		#religion_mahayana
 
-	 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+	 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 
 	}
 
 	set_politics = {
-		ruling_party = autocracy
+		ruling_party = radical_democracy
 }
 
 set_popularities = {
@@ -56,9 +68,9 @@ set_popularities = {
 		social_egalitarianism = 0
 		centrism = 0
 		traditional_conservatism = 0
-		radical_democracy = 0
+		radical_democracy = 100
 		chauvinist_populism = 0
-		autocracy = 100
+		autocracy = 0
 		fundamentalism = 0
 }
 
@@ -88,5 +100,41 @@ set_popularities = {
 	}
 
 	# POLITICAL LEADERS
-
+create_country_leader = {
+		name = "Zeng Guofan"
+		desc = "POLITICS_TEMP_DESC"
+		picture = "gfx/leaders/QNG/Portrait_QNG_Zeng_Guofan.dds"
+		expire = 1872.3.12
+		ideology = despotism
+	
+}
+create_field_marshal = {
+	name = "Zeng Guofan"
+	portrait_path = "gfx/leaders/QNG/Portrait_QNG_Zeng_Guofan.dds"
+	traits = { defensive_doctrine }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Zeng Guoquan"
+	#picture = "Portrait_France_Jean_de_Lattre_de_Tassigny.dds"
+	#traits = { trickster brilliant_strategist }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Hu Linyi"
+	#picture = "Portrait_France_Jean_de_Lattre_de_Tassigny.dds"
+	#traits = { trickster brilliant_strategist }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }

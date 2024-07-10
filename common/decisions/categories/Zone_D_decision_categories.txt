@@ -68,7 +68,7 @@ Great_Game_decision_category = {
 		has_global_flag = EDC_great_game_progress
 	}
 	priority = 150
-	scripted_gui = great_game_influence_gui
+	scripted_gui = eoanbr_great_game_decision_category_guis
 }
 
 ### Greece ###
@@ -85,15 +85,6 @@ GRE_decision_category_influence_referendum_republican = {
 	allowed = { tag = GRE }
 	visible = {
 		has_country_flag = GRE_pick_republican_a
-	}
-}
-
-GRE_decision_category_obtain_foreign_equipment = {
-	icon = generic_arms_trade
-	priority = 85
-	allowed = { tag = GRE }
-	visible = {
-		has_completed_focus = GRE_standardize_the_equipment
 	}
 }
 
@@ -124,10 +115,7 @@ GRE_decision_category_debt_management = {
 	icon = generic_political_actions
 	allowed = { tag = GRE }
 	visible = {
-		has_idea = egy_vic_debt
-		check_variable = {
-			debt_level > 0
-		}
+		has_idea = debt_idea
 	}
 }
 
@@ -147,6 +135,24 @@ GRE_decision_category_navy = {
 			has_completed_focus = GRE_expansion_of_aegan_squadron
 			has_completed_focus = GRE_expansion_of_west_squadron
 		}
+	}
+}
+
+GRE_decision_category_political_situation = {
+	icon = power_struggle
+	allowed = { tag = GRE }
+	visible_when_empty = yes
+	visible = {
+		
+	}
+}
+
+GRE_decision_category_land_reform = {
+	icon = power_struggle
+	allowed = { tag = GRE }
+	visible_when_empty = yes
+	visible = {
+		
 	}
 }
 
@@ -201,21 +207,10 @@ MNT_decision_category_army = {
 	}
 }
 
-MNT_decision_category_negotiation_with_ottomans = {
-	icon = generic_economy
-	allowed = {
-		OR = {
-			tag = MNT
-			tag = OTO
-		}
-	}
-	visible = {
-	has_completed_focus = MNT_focus_negotiations_with_the_ottomans
-	}
-}
 
 MNT_decision_category_Herzegovinian_uprising = {
 	icon = generic_economy
+	visible_when_empty = yes
 	allowed = { 
 			tag = MNT
 		} 
@@ -227,27 +222,77 @@ MNT_decision_category_Herzegovinian_uprising = {
 	}
 MNT_decision_category_Herzegovinian_uprising_1857 = {
 	icon = generic_economy
+	scripted_gui = MNT_WAR_1858_gui
+	visible_when_empty = yes
 	allowed = { 
+		OR = {
 			tag = MNT
+			tag = SER
+			tag = OTO
+			tag = AUS
+			tag = RUS
+			tag = FRA
+			}
 		} 
 	visible = {
-		has_completed_focus = MNT_focus_guerrilla_war
-		}
-	}
-
-### Norway ###
-NOR_decision_category_sami_opression = {
-	icon = power_struggle
-	visible_when_empty = yes
-	allowed = { tag = NOR }
-	visible = {
-		hidden_trigger = {
-			144 = {
-				check_variable = {
-					detrimental_colonial_impact_value < 0
+		if = {
+			limit = { 
+				OR = {
+					tag = FRA
+					tag = RUS 
+					tag = AUS
+				}
+			} 
+			OR = {
+				MNT = { has_completed_focus = MNT_focus_outbreak_of_the_pro_Montenegro_revolt }
+				if = {
+					limit = {
+						NOT = { has_completed_focus = MNT_focus_outbreak_of_the_pro_Montenegro_revolt }
+					}
+					MNT = { has_completed_focus = MNT_focus_negotiations_with_the_ottomans_n }
 				}
 			}
 		}
+	}
+}
+	
+	
+MNT_decision_category_gui_visible = {
+	icon = generic_economy
+	scripted_gui = MNT_guide_gui
+	visible_when_empty = yes
+	allowed = { 
+			tag = MNT
+			}
+	visible = {
+
+		}
+	}
+	
+MNT_Balance_of_Power_foregin_interest = {
+	icon = generic_economy
+	visible_when_empty = yes
+	allowed = { 
+			tag = MNT
+			}
+	visible = {
+		has_completed_focus = MNT_focus_Montenegrin_question
+		}
+	}
+	
+### Norway ###
+NOR_decision_category_sami_opression = {
+	icon = power_struggle
+#	visible_when_empty = no
+	allowed = { tag = NOR }
+	visible = {
+		#hidden_trigger = {
+		#	144 = {
+		#		check_variable = {
+		#			detrimental_colonial_impact_value < 0
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -528,7 +573,7 @@ RUS_Industrialisation_decisions = {
 }
 
 RUS_decision_category_milyutin_reforms = {
-	icon = generic
+	icon = GFX_decision_category_RUS_army_reform
 	picture = GFX_decision_RUS_milyutin_army
 	allowed = { tag = RUS }
 	visible = {
@@ -537,7 +582,8 @@ RUS_decision_category_milyutin_reforms = {
 }
 
 RUS_decision_category_navy_reforms = {
-	icon = navy
+	icon = GFX_decision_category_RUS_navy_reform
+	picture = GFX_decision_RUS_russian_fleet
 	allowed = { tag = RUS }
 	visible = {
 		has_completed_focus = RUS_vic_horrors_crimean_war
@@ -549,6 +595,35 @@ RUS_decision_category_fiscal_reform = {
 	allowed = { tag = RUS }
 	visible = {
 		has_idea = egy_vic_debt
+	}
+}
+
+RUS_BOP_category = {
+	icon = generic
+	allowed = { tag = RUS }
+	visible = {
+		always = yes
+	}
+}
+
+#RUS_Poland_Situation_decision_category = {
+#	icon = generic
+#	allowed = { tag = RUS }
+#	priority = 10
+#	visible = {
+#		always = yes
+#	}
+#}
+
+
+### Alyaska ###
+
+ALK_decision_category_alyaskan_economy = {
+	icon = generic_economy
+	#picture = GFX_decision_RUS_russian_fleet
+	allowed = { tag = ALK }
+	visible = {
+		has_completed_focus = ALK_vic_RAC_Economics
 	}
 }
 

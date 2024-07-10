@@ -1,4 +1,7 @@
 characters = {
+
+	### RULERS ###
+
 	MNT_danilo_i = {
 		name = "Danilo I"
 		portraits = {
@@ -13,11 +16,14 @@ characters = {
 			#id = -1
 		}
 	}
+
+	### COMMANDERS ###
+	
 	MNT_mirko_petrovicnjegos = {
 		name = "Mirko Petrović-Njegoš"
 		portraits = {
 			army = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_military_general_1.png"
+				large = "GFX_Portrait_MNT_mirko_petrovic"
 				small = "GFX_idea_europe_generic_1"
 			}
 		}
@@ -36,7 +42,7 @@ characters = {
 		name = "Marko Miljanov"
 		portraits = {
 			army = {
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_military_general_1.png"
+				large = "GFX_Portrait_MNT_marko_miljanov"
 				small = "GFX_idea_europe_generic_1"
 			}
 		}
@@ -75,7 +81,7 @@ characters = {
 		portraits = {
 			army = {
 				small = "GFX_idea_europe_generic_1"
-				large = "gfx/leaders/Europe/Portrait_Europe_generic_military_general_1.png"
+				large = "GFX_Portrait_MNT_petar_vukotic"
 			}
 		}
 		field_marshal = {
@@ -127,7 +133,7 @@ characters = {
 		}
 	}
 	
-	####Advisors
+	### ADVISORS ###
 	
 	MNT_stanislav_radonjic = {
 		name = "Stanislav Radonjić"
@@ -207,7 +213,7 @@ characters = {
 				original_tag = MNT 
 			} 
 			traits = {
-				soldier_and_lawyer
+				MNT_soldier_and_lawyer
 			}
 		}
 	}
@@ -368,7 +374,8 @@ characters = {
 		}
 	}
 	
-	##Theorist
+	### THEORISTS + ARMY COMMAND ###
+
 	MNT_milos_krivokapic = {
 		name = "Miloš Krivokapić"
 		portraits = {
@@ -379,14 +386,14 @@ characters = {
 		}
 		advisor = {
 		cost = 120
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_ardant_Miloš_Krivokapić
 			allowed = {
 				original_tag = MNT 
 			} 
 			
 			traits = {
-				 
+				military_theorist				 
 			}
 		}
 	}
@@ -400,13 +407,14 @@ characters = {
 		}
 		advisor = {
 		cost = 250
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_ardant_Jole_Piletić
 			allowed = {
 				original_tag = MNT 
 			} 
 			traits = {
-				#( national hero_division org + 10 div recovery rate + 10 %) 
+				military_theorist
+					#( national hero_division org + 10 div recovery rate + 10 %) 
 			}
 		}
 	}
@@ -420,13 +428,14 @@ characters = {
 		}
 		advisor = {
 		cost = 300
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_ardant_Božo_Petrović-Njegoš
 			allowed = {
 				original_tag = MNT 
 			}  
 			traits = {
-				#(army_chief_offensive_2) 
+				military_theorist
+					#(army_chief_offensive_2) 
 			}
 		}
 	}
@@ -440,13 +449,13 @@ characters = {
 		}
 		advisor = {
 		cost = 300
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_Ilija_Plamenac
 			allowed = {
 				original_tag = MNT 
 			}
 			traits = {
-				 
+				military_theorist				 
 			}
 		}
 	}
@@ -460,13 +469,14 @@ characters = {
 		}
 		advisor = {
 		cost = 150
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_Luka_Vukalović
 			allowed = {
 				original_tag = MNT 
 			}
 			traits = {
-				#gunsmith and rebel
+				military_theorist
+					#gunsmith and rebel
 			}
 		}
 	}
@@ -480,13 +490,14 @@ characters = {
 		}
 		advisor = {
 		cost = 150
-			slot = military_theorist
+			slot = theorist
 			idea_token = MNT_theorist_Mašo_Vrbica
 			allowed = {
 				original_tag = MNT 
 			}
 			traits = {
-				#artillery general, road builder
+				military_theorist
+					#artillery general, road builder
 			}
 		}
 	}

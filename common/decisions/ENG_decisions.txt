@@ -1,50 +1,3 @@
-political_actions = {
-
-	#Develop the Isle of Man
-	#eoanb_decision_ENG_develop_IOM = {
-	#
-	#	icon = generic_political_discourse
-	#
-	#	available = {
-	#		date > 1860.1.1
-	#	}
-	#
-	#	allowed = { TAG = ENG }
-	#
-	#	visible = {
-	#		OR = {
-	#			ENG = { owns_state = 132 }
-	#			any_country = {
-	#				is_subject_of = ENG
-	#				owns_state = 132
-	#			}
-	#		}
-	#		num_of_civilian_factories_available_for_projects > 5
-	#	}
-	#
-	#	fire_only_once = yes
-	#
-	#	days_remove = 365
-	#
-	#	cost = 50
-	#
-	#	complete_effect = {
-	#	}
-	#
-	#	remove_effect = {
-	#		132 = { add_building_construction = { type = naval_base level = 2 instant_build = yes province = 3311}  }
-	#		132 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes province = 3311}  }
-	#		}
-	#
-	#	modifier = {
-	#		civilian_factory_use = 5
-	#	}
-	#
-	#	ai_will_do = {
-	#		base = 0
-	#	}
-	#}
-}
 eoanb_category_economic = {
 
 	#Clean up Thames after "Great Stink"
@@ -57,10 +10,16 @@ eoanb_category_economic = {
 		}
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			owns_state = 952
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_country_flag = eoanb_flag_ENG_thames_polluted_stink
 		}
 
@@ -71,11 +30,23 @@ eoanb_category_economic = {
 		days_remove = 60
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_expected_value = 0.05
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 4.2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -4.2 }
+			add_money_with_tooltip_effect = yes
 			custom_effect_tooltip = eoanb_tt_ENG_thames_cleaned_decision
+			set_temp_variable = {
+				unemployment_value = -0.005
+			}
 			hidden_effect = {
 				clr_country_flag = eoanb_flag_ENG_thames_polluted_stink
 			}
@@ -97,11 +68,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_invest_in_shipbuilding_industry
 			num_of_civilian_factories_available_for_projects > 2
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			owns_state = 952
 			has_completed_focus = ENG_focus_invest_in_shipbuilding_industry
 		}
@@ -116,7 +93,16 @@ eoanb_category_economic = {
 			civilian_factory_use = 3
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 10
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -10 }
+			add_money_with_tooltip_effect = yes
 			952 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = dockyard level = 1 instant_build = yes }
@@ -139,11 +125,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_invest_in_shipbuilding_industry
 			num_of_civilian_factories_available_for_projects > 2
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			owns_state = 132
 			has_completed_focus = ENG_focus_invest_in_shipbuilding_industry
 		}
@@ -158,7 +150,16 @@ eoanb_category_economic = {
 			civilian_factory_use = 3
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 10
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -10 }
+			add_money_with_tooltip_effect = yes
 			132 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = dockyard level = 1 instant_build = yes }
@@ -180,11 +181,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_sea_cables
 			num_of_civilian_factories_available_for_projects > 0
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			country_exists = USA
 			has_completed_focus = ENG_focus_sea_cables
 		}
@@ -199,7 +206,16 @@ eoanb_category_economic = {
 			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			reverse_add_opinion_modifier = { target = USA modifier = eoanb_om_ENG_sea_cable }
 		}
 
@@ -219,11 +235,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_sea_cables
 			num_of_civilian_factories_available_for_projects > 0
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			country_exists = FRA
 			has_completed_focus = ENG_focus_sea_cables
 		}
@@ -238,7 +260,16 @@ eoanb_category_economic = {
 			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 0.5
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -0.5 }
+			add_money_with_tooltip_effect = yes
 			reverse_add_opinion_modifier = { target = FRA modifier = eoanb_om_ENG_sea_cable }
 		}
 
@@ -258,11 +289,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_sea_cables
 			num_of_civilian_factories_available_for_projects > 0
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			country_exists = RUS
 			has_completed_focus = ENG_focus_sea_cables
 		}
@@ -277,7 +314,16 @@ eoanb_category_economic = {
 			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			reverse_add_opinion_modifier = { target = RUS modifier = eoanb_om_ENG_sea_cable }
 		}
 
@@ -297,11 +343,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_public_works_projects
 			num_of_civilian_factories_available_for_projects > 1
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			owns_state = 952
 			has_completed_focus = ENG_focus_public_works_projects
 		}
@@ -313,11 +365,23 @@ eoanb_category_economic = {
 		days_remove = 180
 
 		modifier = {
-			civilian_factory_use = 2
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 6.5
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -6.5 }
+			add_money_with_tooltip_effect = yes
 			952 = { add_dynamic_modifier = { modifier = dynmod_ENG_london_sewers } }
+			set_temp_variable = {
+				unemployment_value = -0.01
+			}
 		}
 
 		ai_will_do = {
@@ -336,11 +400,17 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_completed_focus = ENG_focus_public_works_projects
 			num_of_civilian_factories_available_for_projects > 2
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			owns_state = 952
 			has_completed_focus = ENG_focus_public_works_projects
 		}
@@ -352,16 +422,28 @@ eoanb_category_economic = {
 		days_remove = 1825
 
 		modifier = {
-			civilian_factory_use = 3
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			952 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
 			}
 			country_event = {
-				id = england_flavor.1
+				id = britain.200
+			}
+			set_temp_variable = {
+				unemployment_value = -0.003
 			}
 		}
 
@@ -380,6 +462,9 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_idea = ENG_idea_tea_shortage
 			RAJ = {
 				is_subject_of = ENG
@@ -387,6 +472,9 @@ eoanb_category_economic = {
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_idea = ENG_idea_tea_shortage
 		}
 
@@ -397,10 +485,19 @@ eoanb_category_economic = {
 		days_remove = 180
 
 		modifier = {
-			civilian_factory_use = 3
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			country_event = britain.128
 		}
 
@@ -419,6 +516,9 @@ eoanb_category_economic = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_idea = ENG_idea_indian_tea1
 			RAJ = {
 				is_subject_of = ENG
@@ -426,6 +526,9 @@ eoanb_category_economic = {
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_idea = ENG_idea_indian_tea1
 		}
 
@@ -436,10 +539,19 @@ eoanb_category_economic = {
 		days_remove = 365
 
 		modifier = {
-			civilian_factory_use = 5
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 5
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -5 }
+			add_money_with_tooltip_effect = yes
 			RAJ = {
 				add_ideas = CAN_idea_Exports_to_Britain
 			}
@@ -550,7 +662,7 @@ ENG_decision_category_worker_unrest = {
 		}
 
 		visible = {
-			NOT = { has_idea = eight_hour_work_day }
+			#NOT = { has_idea = eight_hour_work_day }
 			check_variable = { ENG_worker_unrest > 0 }
 		}
 
@@ -563,42 +675,42 @@ ENG_decision_category_worker_unrest = {
 		complete_effect = {
 			add_popularity = { ideology = social_egalitarianism popularity = 0.03 }
 			custom_effect_tooltip = eoanb_tt_ENG_decision_shorten_workday
-			if = {
-				limit = {
-					has_idea = unlimited_work_day
-				}
-				swap_ideas = {
-					remove_idea = unlimited_work_day
-					add_idea = fourteen_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = fourteen_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = fourteen_hour_work_day
-					add_idea = twelve_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = twelve_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = twelve_hour_work_day
-					add_idea = ten_hour_work_day
-				}
-			}
-			if = {
-				limit = {
-					has_idea = ten_hour_work_day
-				}
-				swap_ideas = {
-					remove_idea = ten_hour_work_day
-					add_idea = eight_hour_work_day
-				}
-			}
+			#if = {
+			#	limit = {
+			#		has_idea = unlimited_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = unlimited_work_day
+			#		add_idea = fourteen_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = fourteen_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = fourteen_hour_work_day
+			#		add_idea = twelve_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = twelve_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = twelve_hour_work_day
+			#		add_idea = ten_hour_work_day
+			#	}
+			#}
+			#if = {
+			#	limit = {
+			#		has_idea = ten_hour_work_day
+			#	}
+			#	swap_ideas = {
+			#		remove_idea = ten_hour_work_day
+			#		add_idea = eight_hour_work_day
+			#	}
+			#}
 			hidden_effect = {
 				subtract_from_variable = { var = ENG_worker_unrest value = 10 }
 			}
@@ -638,6 +750,7 @@ ENG_decision_category_worker_unrest = {
 
 		visible = {
 			NOT = { has_idea = ENG_idea_trade_unions_banned }
+			has_country_flag = ENG_first_TU
 		}
 
 		fire_only_once = no
@@ -1981,7 +2094,7 @@ political_actions = {
 		}
 	}
 
-	ENG_defeat_sepoy_rebellion = {
+	ENG_mission_defeat_sepoy_rebellion = {
 
 		icon= generic_civil_support
 		ai_will_do = {
@@ -2040,10 +2153,132 @@ political_actions = {
 					target = SRS
 					transfer_troops = no
 				}
+				annex_country = {
+					target = OUD
+					transfer_troops = no
+				}
+				annex_country = {
+					target = GWA
+					transfer_troops = no
+				}
 		    }
 			country_event = britishindia.1
 		    add_stability = 0.05
 			add_war_support = 0.05
+        }
+    }
+
+	ENG_mission_abyssinian_epedition = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			OR = {
+				surrender_progress > 0.8
+			}
+		}
+
+		days_mission_timeout = 215
+
+		activation = {
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_war_with = ETH
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 816
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = fenian_rising_dublin
+		#	tag = ENG
+		#}
+
+		is_good = no
+
+		timeout_effect = {
+			ETH = {
+				country_event = id=britishafrica.53
+			}
+			add_stability = -0.2
+			add_political_power = -200
+			add_war_support = -0.2
+			white_peace = ETH
+		}
+
+		complete_effect = {
+			ETH = {
+				country_event = britishafrica.54
+		    }
+		    add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 100
+			white_peace = ETH
+        }
+    }
+
+	ENG_mission_first_boer_war = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			TRV = {
+				surrender_progress > 0.8
+			}
+		}
+
+		days_mission_timeout = 100
+
+		activation = {
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_war_with = TRV
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 275
+				state = 1143
+				state = 1140
+			}
+		}
+
+		is_good = no
+
+		timeout_effect = {
+			add_stability = -0.2
+			add_political_power = -200
+			add_war_support = -0.2
+			white_peace = TRV
+		}
+
+		complete_effect = {
+		    add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 100
+			white_peace = TRV
+			TRV = {
+				set_cosmetic_tag = TRV_ENG_dominated
+				add_ideas = AFR_british_colony
+				add_ideas = TRV_idea_useless_volksraad
+				add_popularity = { ideology = autocracy popularity = 1 }
+				set_politics = { ruling_party = autocracy elections_allowed = no }
+			}
         }
     }
 
@@ -2134,6 +2369,135 @@ political_actions = {
 			base = 0
 		}
 	}
+	
+	ENG_defeat_egyptian_revolt = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			EGY = {
+				surrender_progress > 0.7
+			}
+		}
+
+		days_mission_timeout = 165
+
+		activation = {
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_war_with = EGY
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 446
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = fenian_rising_dublin
+		#	tag = ENG
+		#}
+
+		is_good = no
+
+		timeout_effect = {
+			white_peace = {
+				tag = EGY
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			add_war_support = -0.25
+		}
+
+		complete_effect = {
+			white_peace = {
+				tag = EGY
+			}
+			add_stability = 0.05
+			add_war_support = 0.05
+			EGY = {
+				add_ideas = AFR_british_protectorate
+			}
+			set_autonomy = {
+				target = EGY
+				autonomous_state = autonomy_protectorate
+				freedom_level = 0.1
+			}
+		}
+	}
+
+	ENG_defeat_burmese_war = {
+
+		icon= generic_civil_support
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			BRM = {
+				surrender_progress > 0.7
+			}
+		}
+
+		days_mission_timeout = 65
+
+		activation = {
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_war_with = BRM
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 640
+			}
+		}
+
+		#visible = {
+		#	has_country_flag = fenian_rising_dublin
+		#	tag = ENG
+		#}
+
+		is_good = no
+
+		timeout_effect = {
+			white_peace = {
+				tag = BRM
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			add_war_support = -0.25
+			BRM = {
+				transfer_state = 288
+				transfer_state = 1075
+			}
+		}
+
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			RAJ = {
+				annex_country = {
+					target = BRM
+					transfer_troops = no
+				}
+				annex_country = {
+					target = SHN
+					transfer_troops = no
+				}
+			}
+		}
+	}
 
 }
 
@@ -2149,23 +2513,38 @@ eoanb_category_projects = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			#has_full_control_of_state = 126
 			has_full_control_of_state = 127
 			num_of_civilian_factories_available_for_projects > 3
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_strategic_fortifications
 		}
 
 		fire_only_once = yes
 
-		cost = 20
+		cost = 0
 
 		days_remove = 90
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 5
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
 			custom_effect_tooltip = eoanb_tt_ENG_decision_strategic_fortifications
+			set_temp_variable = { money_to_gain = -5 }
+			add_money_with_tooltip_effect = yes
 			hidden_effect = {
 				#126 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 11374 } }
 				127 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 3501 } }
@@ -2196,23 +2575,38 @@ eoanb_category_projects = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_full_control_of_state = 123
 			has_full_control_of_state = 127
 			num_of_civilian_factories_available_for_projects > 3
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_fortify_coast
 		}
 
 		fire_only_once = yes
 
-		cost = 20
+		cost = 0
 
 		days_remove = 90
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 5
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
 			custom_effect_tooltip = eoanb_tt_ENG_decision_coastal_fortifications
+			set_temp_variable = { money_to_gain = -5 }
+			add_money_with_tooltip_effect = yes
 			hidden_effect = {
 				123 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 540 } }
 				127 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 9458 } }
@@ -2243,23 +2637,38 @@ eoanb_category_projects = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			#has_full_control_of_state = 126
 			has_full_control_of_state = 127
 			num_of_civilian_factories_available_for_projects > 5
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_coastal_batteries_east
 		}
 
 		fire_only_once = yes
 
-		cost = 40
+		cost = 0
 
 		days_remove = 150
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
 			custom_effect_tooltip = eoanb_tt_ENG_decision_coastal_batteries_east
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			hidden_effect = {
 				#126 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes province = 11374 } }
 				127 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes province = 9458 } }
@@ -2291,22 +2700,37 @@ eoanb_category_projects = {
         }
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			has_full_control_of_state = 123
 			num_of_civilian_factories_available_for_projects > 5
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_coastal_batteries_west
 		}
 
 		fire_only_once = yes
 
-		cost = 40
+		cost = 0
 
 		days_remove = 150
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
 			custom_effect_tooltip = eoanb_tt_ENG_decision_coastal_batteries_west
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			hidden_effect = {
 				123 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes province = 3422 } }
 				123 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes province = 3463 } }
@@ -2624,66 +3048,6 @@ ENG_decision_category_irish_unrest = {
         }
     }
 
-	ENG_DCI_irish_incident = {
-		icon = generic_civil_support
-		allowed = {
-			always = yes
-		}
-		activation = {
-				hidden_trigger = {
-				TAG = ENG
-				NOT = { has_country_flag = DCI_irish_incident_mission_stop }
-				custom_trigger_tooltip = {
-					tooltip = any_irish_states_have_over_10_DCI_tooltip
-					any_owned_state = {
-						if = {
-							limit = {
-								is_irish_land = yes
-								check_variable = { var = detrimental_colonial_impact_value value = 10 compare = greater_than_or_equals }
-							}
-							always = yes
-						}
-						else = {
-							always = no
-						}
-					}
-				}
-			}
-        }
-		available = {
-			hidden_trigger = { always = no }
-		}
-        cancel_trigger = {
-            custom_trigger_tooltip = {
-				tooltip = all_irish_states_have_under_10_DCI_tooltip
-				all_owned_state = {
-					if = {
-						limit = { is_irish_land = yes }
-						check_variable = { var = detrimental_colonial_impact_value value = 10 compare = less_than }
-					}
-				}
-			}
-        }
-        days_mission_timeout = 90
-		is_good = no
-		selectable_mission = no
-		fire_only_once = no
-        timeout_effect = {
-			custom_effect_tooltip = DCI_irish_incident_tooltip
-            hidden_effect = {
-				random_owned_state = {
-					limit = {
-						is_irish_land = yes
-						check_variable = { var = detrimental_colonial_impact_value value = 10 compare = greater_than_or_equals }
-					}
-					#state_event = { id = DCI_irish_incident_event.1 random_days = 90 }
-				}
-				set_country_flag = DCI_irish_incident_mission_stop
-				country_event = { id = DCI_irish_incident_mission_event.1 days = 90 }
-			}
-        }
-    }
-
 	ENG_defeat_1867_ireland_rebellion = {
 
 		icon= generic_civil_support
@@ -2808,9 +3172,12 @@ ENG_decision_category_british_industry = {
                 }
                 50 = {
                     add_manpower = 1000
-                     }
-                }
+				}
             }
+			set_temp_variable = {
+				unemployment_value = -0.001
+			}
+        }
 
         ai_will_do = {
 			base = 1000
@@ -2853,6 +3220,9 @@ ENG_decision_category_british_industry = {
                     add_manpower = 1000
                      }
                 }
+				set_temp_variable = {
+				unemployment_value = -0.005
+			}
             }
 
         ai_will_do = {
@@ -2894,9 +3264,12 @@ ENG_decision_category_british_industry = {
                 }
                 50 = {
                     add_manpower = 1000
-                     }
                 }
-            }
+        	}
+			set_temp_variable = {
+				unemployment_value = -0.005
+			}
+        }
 
         ai_will_do = {
 			base = 1000
@@ -2911,15 +3284,19 @@ ENG_decision_category_british_industry = {
 		}
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 		    has_completed_focus = ENG_focus_scottish_iron
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 133
-
 			controls_state = 133
-
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 		    ENG = { has_completed_focus = ENG_focus_scottish_iron }
 		}
 
@@ -2930,15 +3307,27 @@ ENG_decision_category_british_industry = {
 		days_remove = 80
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			133 = {
 				add_resource = {
 					type = iron
 					amount = 15
 				}
+			}
+			set_temp_variable = {
+				unemployment_value = -0.005
 			}
 		}
 
@@ -2955,15 +3344,19 @@ ENG_decision_category_british_industry = {
 		}
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 		    has_completed_focus = ENG_focus_scottish_bauxite
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 120
-
 			controls_state = 120
-
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 		    ENG = { has_completed_focus = ENG_focus_scottish_bauxite }
 		}
 
@@ -2974,15 +3367,27 @@ ENG_decision_category_british_industry = {
 		days_remove = 80
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			120 = {
 				add_resource = {
 					type = aluminium
 					amount = 15
 				}
+			}
+			set_temp_variable = {
+				unemployment_value = -0.005
 			}
 		}
 
@@ -2999,6 +3404,9 @@ ENG_decision_category_british_industry = {
 		}
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 		    has_completed_focus = ENG_focus_mining_efforts
 			num_of_civilian_factories_available_for_projects > 3
 			owns_state = 128
@@ -3010,6 +3418,9 @@ ENG_decision_category_british_industry = {
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 		    ENG = { has_completed_focus = ENG_focus_mining_efforts }
 		}
 
@@ -3020,10 +3431,19 @@ ENG_decision_category_british_industry = {
 		days_remove = 80
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 3
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -3 }
+			add_money_with_tooltip_effect = yes
 			128 = {
 				add_resource = {
 					type = iron
@@ -3035,6 +3455,9 @@ ENG_decision_category_british_industry = {
 					type = iron
 					amount = 15
 				}
+			}
+			set_temp_variable = {
+				unemployment_value = -0.01
 			}
 		}
 
@@ -3077,6 +3500,9 @@ ENG_decision_category_british_industry = {
             133 = { add_extra_state_shared_building_slots = 1 }
             121 = { add_extra_state_shared_building_slots = 1 }
             add_tech_bonus = { bonus = 0.1 uses = 1 category = transport_tech }
+			set_temp_variable = {
+				unemployment_value = -0.001
+			}
         }
 
         ai_will_do = {
@@ -3118,6 +3544,9 @@ ENG_decision_category_british_industry = {
             338 = { add_extra_state_shared_building_slots = 1 }
             129 = { add_extra_state_shared_building_slots = 1 }
             add_tech_bonus = { bonus = 0.1 uses = 1 category = transport_tech }
+			set_temp_variable = {
+				unemployment_value = -0.001
+			}
         }
 
         ai_will_do = {
@@ -3129,11 +3558,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 122
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_build_more_farms}
 		}
 
@@ -3143,13 +3578,25 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			122 = { add_building_construction = { type = farm level = 2 instant_build = yes } }
 			122 = { add_extra_state_shared_building_slots = 2 }
+			set_temp_variable = {
+				unemployment_value = -0.005
+			}
 		}
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3161,11 +3608,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 5
 			controls_state = 130
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_open_steel_foundry}
 		}
 
@@ -3175,13 +3628,25 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			130 = { add_building_construction = { type = steel_mill level = 2 instant_build = yes } }
 			130 = { add_extra_state_shared_building_slots = 2 }
+			set_temp_variable = {
+				unemployment_value = -0.005
+			}
 		}
 
 		modifier = {
-			civilian_factory_use = 6
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3193,11 +3658,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 3
 			RAJ = { controls_state = 428 }
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_cotton_from_india}
 		}
 
@@ -3207,13 +3678,22 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			428 = { add_building_construction = { type = cotton_farm level = 2 instant_build = yes } }
 			428 = { add_extra_state_shared_building_slots = 2 }
 		}
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3229,11 +3709,17 @@ ENG_decision_category_british_industry = {
         }
 
         available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 3
 			NSW = { controls_state = 285 }
         }
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_australian_coal
 		}
 
@@ -3247,7 +3733,16 @@ ENG_decision_category_british_industry = {
 			state = 285
 		}
 
-        remove_effect = {
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
+		remove_effect = {
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			add_resource = {
                 type = coal
                 amount = 12
@@ -3256,7 +3751,7 @@ ENG_decision_category_british_industry = {
 		}
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3272,6 +3767,9 @@ ENG_decision_category_british_industry = {
         }
 
         available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 3
 			CAN = {
                 controls_state = 1310
@@ -3280,6 +3778,9 @@ ENG_decision_category_british_industry = {
         }
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_canadian_wood
 		}
 
@@ -3293,7 +3794,16 @@ ENG_decision_category_british_industry = {
 			state = 285
 		}
 
-        remove_effect = {
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
+		remove_effect = {
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			add_resource = {
                 type = wood
                 amount = 12
@@ -3307,7 +3817,7 @@ ENG_decision_category_british_industry = {
 		}
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3323,11 +3833,17 @@ ENG_decision_category_british_industry = {
         }
 
         available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 4
 			controls_state = 122
         }
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			has_completed_focus = ENG_focus_develop_wales
 		}
 
@@ -3341,7 +3857,16 @@ ENG_decision_category_british_industry = {
 			state = 285
 		}
 
-        remove_effect = {
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 3
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
+		remove_effect = {
+			set_temp_variable = { money_to_gain = -3 }
+			add_money_with_tooltip_effect = yes
 			add_resource = {
                 type = wood
                 amount = 5
@@ -3358,10 +3883,13 @@ ENG_decision_category_british_industry = {
                 state = 122
             }
 			122 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			set_temp_variable = {
+				unemployment_value = -0.01
+			}
 		}
 
 		modifier = {
-			civilian_factory_use = 5
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3373,11 +3901,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 3
 			RAJ = { controls_state = 428 }
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_cotton_autarky}
 		}
 
@@ -3387,13 +3921,25 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			428 = { add_building_construction = { type = cotton_farm level = 2 instant_build = yes } }
 			428 = { add_extra_state_shared_building_slots = 2 }
+			set_temp_variable = {
+				unemployment_value = -0.001
+			}
 		}
 
 		modifier = {
-			civilian_factory_use = 4
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3405,12 +3951,18 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 5
 			controls_state = 134
 			controls_state = 135
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_develop_ireland }
 		}
 
@@ -3420,7 +3972,16 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 10
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -10 }
+			add_money_with_tooltip_effect = yes
 			134 = { add_building_construction = { type = farm level = 1 instant_build = yes } }
 			134 = { add_extra_state_shared_building_slots = 1 }
 			135 = { add_building_construction = { type = farm level = 1 instant_build = yes } }
@@ -3430,10 +3991,13 @@ ENG_decision_category_british_industry = {
 			134 = { add_manpower = 5000 }
 			135 = { add_manpower = 5000 }
 			113 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			set_temp_variable = {
+				unemployment_value = -0.02
+			}
 		}
 
 		modifier = {
-			civilian_factory_use = 6
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3445,11 +4009,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 4
 			controls_state = 338
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_focus_on_civilian_industry }
 		}
 
@@ -3459,13 +4029,22 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 2
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -2 }
+			add_money_with_tooltip_effect = yes
 			338 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			338 = { add_extra_state_shared_building_slots = 1 }
 		}
 
 		modifier = {
-			civilian_factory_use = 5
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -3477,11 +4056,17 @@ ENG_decision_category_british_industry = {
 		icon = generic_construction
 
 		available = {
+			NOT = {
+				has_idea = bankruptcy
+			}
 			num_of_civilian_factories_available_for_projects > 4
 			controls_state = 128
 		}
 
 		visible = {
+			check_variable = {
+				money > 0
+			}
 			ENG = { has_completed_focus = ENG_focus_increase_arms_production }
 		}
 
@@ -3491,13 +4076,22 @@ ENG_decision_category_british_industry = {
 
 		cost = 0
 
+		custom_cost_trigger = {
+			set_temp_variable = {
+				amount_of_money_to_check = 1
+			}
+		}
+		custom_cost_text = CREATE_PUBLIC_WORKS_CUSTOM_COST_TEXT
+
 		remove_effect = {
+			set_temp_variable = { money_to_gain = -1 }
+			add_money_with_tooltip_effect = yes
 			128 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 			128 = { add_extra_state_shared_building_slots = 1 }
 		}
 
 		modifier = {
-			civilian_factory_use = 5
+			civilian_factory_use = 1
 		}
 
 		ai_will_do = {
@@ -4670,31 +5264,241 @@ ENG_decision_category_royal_navy = {
 
 ENG_houses_of_parliament_category_decisions = {
 
-	ENG_decision_dissolved_commons = {
+	#ENG_decision_dissolved_commons = {
+	#	icon = constitution
+	#
+	#	#allowed = { always = no }
+	#
+	#	available = {
+	#	}
+	#
+	#	visible = {
+	#	   power_balance_value = {
+	#			id = ENG_Balance_of_Power_Parliament
+	#			value > 0.95
+	#		}
+	#	}
+	#
+	#	fire_only_once = yes
+	#
+	#	cost = 250
+	#
+	#	complete_effect = {
+	#		country_event = britain.186
+	#	}
+	#
+	#	ai_will_do = {
+	#		base = 1000
+	#	}
+	#}
+
+	ENG_decision_pay_parliamentarians = {
 		icon = constitution
 
-        #allowed = { always = no }
+		#allowed = { always = no }
 
-        available = {
-        }
-
-        visible = {
-		   power_balance_value = {
-				id = ENG_Balance_of_Power_Parliament
-				value > 0.95
-			}
+		available = {
 		}
 
 		fire_only_once = yes
 
-		cost = 250
+		cost = 100
 
 		complete_effect = {
-		    country_event = britain.186
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = -0.05
+				tooltip_side = ENG_BOP_House_of_Commons_Strength
+			}
 		}
 
 		ai_will_do = {
-			base = 1000
+			base = 10
 		}
-    }
+	}
+
+	ENG_decision_end_proxy_voting = {
+		icon = constitution
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = -0.05
+				tooltip_side = ENG_BOP_House_of_Commons_Strength
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_law_lords= {
+		icon = constitution
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = 0.05
+				tooltip_side = ENG_BOP_House_of_Lords_Strength
+			}
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_limit_party_lords= {
+		icon = constitution
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = -0.05
+				tooltip_side = ENG_BOP_House_of_Commons_Strength
+			}
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_increase_lords= {
+		icon = ENG_lords
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = no
+
+		cost = 100
+
+		days_re_enable = 365
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = 0.05
+				tooltip_side = ENG_BOP_House_of_Lords_Strength
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_decrease_commons= {
+		icon = ENG_lords
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = no
+
+		cost = 100
+
+		days_re_enable = 365
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = 0.05
+				tooltip_side = ENG_BOP_House_of_Lords_Strength
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_increase_commons= {
+		icon = ENG_commons
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = no
+
+		cost = 100
+
+		days_re_enable = 365
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = -0.05
+				tooltip_side = ENG_BOP_House_of_Commons_Strength
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	ENG_decision_decrease_lords= {
+		icon = ENG_commons
+
+		#allowed = { always = no }
+
+		available = {
+		}
+
+		fire_only_once = no
+
+		cost = 100
+
+		days_re_enable = 365
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = ENG_Balance_of_Power_Parliament
+				value = -0.05
+				tooltip_side = ENG_BOP_House_of_Commons_Strength
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+	}
 }

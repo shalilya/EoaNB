@@ -65,7 +65,7 @@ ins_indonesia_wars_category = {
 		modifier = {
 			war_support_weekly = -0.02
 			industry_free_repair_factor = 0.25
-			consumer_goods_factor = 0.025
+			consumer_goods_expected_value = 0.025
 		}
 		
 		complete_effect = {
@@ -80,8 +80,7 @@ ins_indonesia_wars_category = {
 					}
 					INS = { transfer_state = 1185 }
 					1185 = {
-						custom_effect_tooltip = afr_colonial_effect_tooltip
-						state_event = { id = afr_rrp_racial_tension_increase.1 }
+						
 					}
 				}
 				if = {
@@ -90,8 +89,7 @@ ins_indonesia_wars_category = {
 					}
 					INS = { transfer_state = 918 }
 					918 = {
-						custom_effect_tooltip = afr_colonial_effect_tooltip
-						state_event = { id = afr_rrp_racial_tension_increase.1 }
+						
 					}
 				}
 				if = {
@@ -101,8 +99,7 @@ ins_indonesia_wars_category = {
 					}
 					INS = { transfer_state = 925 }
 					925 = {
-						custom_effect_tooltip = afr_colonial_effect_tooltip
-						state_event = { id = afr_rrp_racial_tension_increase.1 }
+						
 					}
 				}
 				if = {
@@ -112,8 +109,7 @@ ins_indonesia_wars_category = {
 					}
 					INS = { transfer_state = 926 }
 					926 = {
-						custom_effect_tooltip = afr_colonial_effect_tooltip
-						state_event = { id = afr_rrp_racial_tension_increase.1 }
+						
 					}
 				}
 				if = {
@@ -186,8 +182,7 @@ ins_indonesia_wars_category = {
 				}
 				INS = { transfer_state = 1185 }
 				1185 = {
-					custom_effect_tooltip = afr_colonial_effect_tooltip
-					state_event = { id = afr_rrp_racial_tension_increase.1 }
+					
 				}
 			}
 			if = {
@@ -196,8 +191,7 @@ ins_indonesia_wars_category = {
 				}
 				INS = { transfer_state = 918 }
 				918 = {
-					custom_effect_tooltip = afr_colonial_effect_tooltip
-					state_event = { id = afr_rrp_racial_tension_increase.1 }
+					
 				}
 			}
 			if = {
@@ -207,8 +201,7 @@ ins_indonesia_wars_category = {
 				}
 				INS = { transfer_state = 925 }
 				925 = {
-					custom_effect_tooltip = afr_colonial_effect_tooltip
-					state_event = { id = afr_rrp_racial_tension_increase.1 }
+					
 				}
 			}
 			if = {
@@ -218,8 +211,7 @@ ins_indonesia_wars_category = {
 				}
 				INS = { transfer_state = 926 }
 				926 = {
-					custom_effect_tooltip = afr_colonial_effect_tooltip
-					state_event = { id = afr_rrp_racial_tension_increase.1 }
+					
 				}
 			}
 			hidden_effect = {
@@ -249,20 +241,6 @@ ins_indonesia_wars_category = {
 					INS = { is_subject_of = HOL }
 				}
 				#hidden_effect = { HOL = { country_event = { id = INS_ACE_indonesia_colonial_expansion_war_won.1 } } }
-			}
-			if = {
-				limit = {
-					TAG = INS
-				}
-				custom_effect_tooltip = afr_indonesia_war_phase_one_holdout_ins_tooltip
-				set_country_flag = afr_senegal_war_phase_one_failure_sng
-			}
-			if = {
-				limit = {
-					TAG = var:INS_ACE_temp_country_id
-				}
-				custom_effect_tooltip = afr_indonesia_war_phase_one_holdout_other_tooltip
-				set_country_flag = afr_senegal_war_phase_one_success_ftt
 			}
 			clr_country_flag = INS_ACE_indonesia_colonial_expansion_war_flag
 		}

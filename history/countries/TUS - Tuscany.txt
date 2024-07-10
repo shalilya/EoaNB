@@ -1,5 +1,6 @@
 ﻿1857.1.1 = {
 	capital = 162
+	set_convoys = 100
 	oob = "TUS_1857"
 	if = {
 		limit = {
@@ -11,36 +12,53 @@
 		}
 	}
 	set_convoys = 0
-	set_research_slots = 3
+	set_research_slots = 2
+	add_manpower = 1000
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 8 }
+	set_variable = { current_loans_sum = 2 }
+	lock_slider_social_spending = yes
+	lock_slider_research_spending = yes
+	lock_slider_army_spending = yes
+
 	add_ideas = {
 		#POLITICS
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_victorian_army
 		agrarian
-		has_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 		civilian_economy
 		export_focus
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
-		lp_land_estates
+		
 		#stagnation_growth
 		border_control
 		early_conscription
 		limited_equality
 		absolutism
-		human_rights
+		#human_rights
 		no_elections
 		privileged_education
 		state_religion
 		#religion_catholic
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 		#NATIONAL SPIRITS
 		TUS_Incompetent_Ruling_Class
 		TUS_malaria
@@ -92,6 +110,8 @@
 		tech_naval_mtg_sails = 1
 		tech_naval_mtg_crows_nest = 1
 		tech_naval_mtg_early_frigate = 1
+		tech_naval_corvette = 1
+		tech_naval_early_frigate = 1
 		gw_artillery = 1
 		iron_railways = 1
 		steam_engine = 1

@@ -27,24 +27,10 @@ country_event = {
 		name = afr_EGY_vic.1.b
 		ai_chance = { factor = 25 }
 		add_political_power = -15
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			FROM = {
-				add_autonomy_score = {
-					value = 100
-					localization = OTO_allows_EGY_army_expansion
-				}
-			}
-		}
-		else = {
-			FROM = {
-				add_political_power = 20
+		FROM = {
+			add_autonomy_score = {
+				value = 100
+				localization = OTO_allows_EGY_army_expansion
 			}
 		}
 	}
@@ -66,19 +52,10 @@ country_event = {
 		FROM = {
 			add_political_power = 200
 		}
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			FROM = {
-				add_autonomy_ratio = {
-					value = 0.100
-					localization = EGY_bends_under_pressure
-				}
+		FROM = {
+			add_autonomy_ratio = {
+				value = 0.100
+				localization = EGY_bends_under_pressure
 			}
 		}
 	}
@@ -365,11 +342,11 @@ country_event = {
 	option = { #Praise Ismail
 		name = afr_EGY_vic.6.a
 		trigger= {
-			OR = {
-				has_idea = weak_heir
-				has_idea = has_heir
-				has_idea = dethroned_heir
-			}
+			#OR = {
+			#	has_idea = weak_heir
+			#	has_idea = has_heir
+			#	has_idea = dethroned_heir
+			#}
 			has_country_flag = heir_ismail
 		}
 		add_country_leader_role = {
@@ -400,22 +377,22 @@ country_event = {
 			# 	}
 			# }
 		}
-		if ={
-			limit = {
-				has_idea = weak_heir
-			}
-			add_stability = -0.05
-		}
+		#if ={
+		#	limit = {
+		#		has_idea = weak_heir
+		#	}
+		#	add_stability = -0.05
+		#}
 
 	}
 	option = { #Praise Ahmad, not historical, but if he survived he would be crowned
 		name = afr_EGY_vic.6.b
 		trigger= {
-			OR = {
-				has_idea = weak_heir
-				has_idea = has_heir
-				has_idea = dethroned_heir
-			}
+			#OR = {
+			#	has_idea = weak_heir
+			#	has_idea = has_heir
+			#	has_idea = dethroned_heir
+			#}
 			has_country_flag = heir_ahmad
 		}
 		add_country_leader_role = {
@@ -430,29 +407,29 @@ country_event = {
 			promote_leader = yes
 		}
 		clr_country_flag = heir_ahmad
-		if ={
-			limit = {
-				has_idea = weak_heir
-			}
-			add_stability = -0.05
-		}
+		#if ={
+		#	limit = {
+		#		has_idea = weak_heir
+		#	}
+		#	add_stability = -0.05
+		#}
 
 	}
 	option = { #We have no heir
 		name = afr_EGY_vic.6.c
 		trigger= {
-			OR = {
-				has_idea = no_heir
-				has_idea = nonfamily_heir
-			}
+			#OR = {
+			#	has_idea = no_heir
+			#	has_idea = nonfamily_heir
+			#}
 		}
 		OTO = {
 			country_event = {id= afr_EGY_vic.7 days = 70}
 		}
 		hidden_effect={
-			add_ideas={
-				hos_regency
-			}
+			#add_ideas={
+			#	hos_regency
+			#}
 		}
 
 	}
@@ -483,21 +460,9 @@ country_event = {
 			}
 			add_stability = -0.15#well he is not egyptian
 		}
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {#the loyal leader is, well loyal
-				target = FROM
-				autonomy_state = autonomy_eyalet
-			}
-		}
-		else = {
-			puppet = FROM
+		set_autonomy = {#the loyal leader is, well loyal
+			target = FROM
+			autonomy_state = autonomy_eyalet
 		}
 	}
 	option = { #install a war hero
@@ -516,21 +481,9 @@ country_event = {
 			}
 			add_stability = -0.15#well he is not egyptian
 		}
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {#the loyal leader is, well loyal
-				target = FROM
-				autonomy_state = autonomy_eyalet
-			}
-		}
-		else = {
-			puppet = FROM
+		set_autonomy = {#the loyal leader is, well loyal
+			target = FROM
+			autonomy_state = autonomy_eyalet
 		}
 	}
 	option = { #scour for a offical heir (just using Isma'il as a place holder here)
@@ -883,21 +836,9 @@ country_event = { #OTO - due to EGY independance, lose hold on AWS and HRR
 					is_subject_of = OTO
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = HRR
-					autonomous_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = HRR
+			set_autonomy = {
+				target = HRR
+				autonomous_state = autonomy_free
 			}
 		}
 		if={
@@ -906,21 +847,9 @@ country_event = { #OTO - due to EGY independance, lose hold on AWS and HRR
 					is_subject_of = OTO
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-						has_dlc = "Death or Dishonor"
-					}
-				}
-				set_autonomy = {
-					target = AWS
-					autonomous_state = autonomy_free
-				}
-			}
-			else = {
-				end_puppet = AWS
+			set_autonomy = {
+				target = AWS
+				autonomous_state = autonomy_free
 			}
 		}
 	}
@@ -1286,5 +1215,125 @@ country_event = {#colony of equatoria
 		}
 		add_state_core = 845
 
+	}
+}
+
+country_event = {#Britain Sends fleet - Sparking Anti-Christian riots
+	id = afr_EGY_vic.28
+	title = afr_EGY_vic.28.t
+	desc = afr_EGY_vic.28.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = afr_EGY_vic.28.a
+		add_stability = -0.05
+		add_war_support = 0.1
+		add_political_power = -50
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = britain.208
+					days = 28
+				}
+			}
+		}
+	}
+}
+
+country_event = {#Britain bombards Alexandria
+	id = afr_EGY_vic.29
+	title = afr_EGY_vic.29.t
+	desc = afr_EGY_vic.29.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = afr_EGY_vic.29.a
+		add_stability = -0.1
+		add_war_support = 0.15
+		add_political_power = -50
+		hidden_effect = {
+			country_event = {
+				id = afr_EGY_vic.30
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = {#Revolts spread across country
+	id = afr_EGY_vic.30
+	title = afr_EGY_vic.30.t
+	desc = afr_EGY_vic.30.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = afr_EGY_vic.30.a
+		add_stability = -0.15
+		add_political_power = -150
+		hidden_effect = {
+			ENG = {
+				country_event = britain.209
+			}
+		}
+	}
+}
+
+country_event = {#Britain intervenes in revolts
+	id = afr_EGY_vic.31
+	title = afr_EGY_vic.31.t
+	desc = afr_EGY_vic.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = afr_EGY_vic.31.a
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_political_power = -50
+	}
+}
+
+country_event = {#Urabi Revolt
+	id = afr_EGY_vic.32
+	title = afr_EGY_vic.32.t
+	desc = afr_EGY_vic.32.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#Let him take power
+		name = afr_EGY_vic.32.a
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = -0.05
+		add_war_support = 0.05
+		ENG = {
+			country_event = {
+				id = britain.207
+				days = 65
+			}
+		}
+	}
+
+	option = {#Crack down
+		name = afr_EGY_vic.32.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_stability = -0.25
+		add_war_support = -0.1
+		add_political_power = -250
 	}
 }

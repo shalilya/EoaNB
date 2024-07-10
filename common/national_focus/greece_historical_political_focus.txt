@@ -9,11 +9,10 @@ focus_tree = {
 		}
 	}
 	
-	shared_focus = GRE_control_the_national_debt
 	shared_focus = GRE_agrarian_nation
 	shared_focus = GRE_hellenic_army
 	shared_focus = GRE_hellenic_navy
-	shared_focus = GRE_culture_revival
+	shared_focus = GRE_encourage_the_growth_of_basileiades
 	
 	#Start - Politics
 
@@ -122,7 +121,7 @@ focus_tree = {
                     add_idea = GRE_idea_certain_succession			    
 			    }
 				hidden_effect = {
-					add_ideas = has_heir
+					#add_ideas = has_heir
 				}
 				
             }			
@@ -219,7 +218,7 @@ focus_tree = {
 			GRE = {
 				add_stability = 0.05
 				hidden_effect = {
-					add_ideas = weak_heir
+					#add_ideas = weak_heir
 				}
 			}
 	    }	
@@ -547,12 +546,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			GRE = { 
-			    swap_ideas = {
-					remove_idea = constitutional_monarchy 
-					add_idea = parliamentary_monarchy 
-				}
-			}	
+			#GRE = { 
+			   #swap_ideas = {
+				#	remove_idea = constitutional_monarchy 
+				#	add_idea = parliamentary_monarchy 
+				#}
+			#}	
 	    }	
 	}
 	
@@ -575,10 +574,10 @@ focus_tree = {
 		
 		completion_reward = {
 			GRE = { 
-			    swap_ideas = {
-					remove_idea = constitutional_monarchy 
-					add_idea = parliamentary_monarchy 	
-				}
+			    #swap_ideas = {
+				#	remove_idea = constitutional_monarchy 
+				#	add_idea = parliamentary_monarchy 	
+				#}
 				swap_ideas = {
 					remove_idea = limited_elections
 					add_idea = free_elections

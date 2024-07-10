@@ -55,10 +55,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -85,10 +85,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -115,10 +115,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -145,10 +145,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -302,10 +302,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -332,10 +332,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -362,10 +362,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -392,10 +392,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -564,10 +564,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -594,10 +594,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -624,10 +624,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -750,10 +750,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -780,10 +780,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -810,10 +810,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -840,10 +840,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -870,10 +870,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1042,10 +1042,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1072,10 +1072,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1102,10 +1102,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1132,10 +1132,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1162,10 +1162,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1334,10 +1334,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1364,10 +1364,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1394,10 +1394,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1424,10 +1424,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1454,10 +1454,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1626,10 +1626,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1656,10 +1656,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1686,10 +1686,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1716,10 +1716,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1864,10 +1864,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1875,7 +1875,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = very_high_taxes
+				add_ideas = taxation_level_5
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_high_taxes_check_click = {
@@ -1894,10 +1894,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1905,7 +1905,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = high_taxes
+				add_ideas = taxation_level_4
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_normal_taxes_check_click = {
@@ -1924,10 +1924,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1935,7 +1935,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = normal_taxes
+				add_ideas = taxation_level_3
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_low_taxes_check_click = {
@@ -1954,10 +1954,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1965,7 +1965,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = low_taxes
+				add_ideas = taxation_level_2
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_very_low_taxes_check_click = {
@@ -1984,10 +1984,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -1995,50 +1995,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = very_low_taxes
+				add_ideas = taxation_level_1
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_eco_tax_rates_screen_very_high_taxes_check_visible = {
-				NOT = { has_idea = very_high_taxes }
+				NOT = { has_idea = taxation_level_5 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_high_taxes_check_visible = {
-				NOT = { has_idea = high_taxes }
+				NOT = { has_idea = taxation_level_4 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_normal_taxes_check_visible = {
-				NOT = { has_idea = normal_taxes }
+				NOT = { has_idea = taxation_level_3 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_low_taxes_check_visible = {
-				NOT = { has_idea = low_taxes }
+				NOT = { has_idea = taxation_level_2 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_very_low_taxes_check_visible = {
-				NOT = { has_idea = very_low_taxes }
+				NOT = { has_idea = taxation_level_1 }
 			}
 
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_very_high_taxes_executive_check_visible = {
-				NOT = { has_idea = very_high_taxes }
+				NOT = { has_idea = taxation_level_5 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_high_taxes_executive_check_visible = {
-				NOT = { has_idea = high_taxes }
+				NOT = { has_idea = taxation_level_4 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_normal_taxes_executive_check_visible = {
-				NOT = { has_idea = normal_taxes }
+				NOT = { has_idea = taxation_level_3 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_low_taxes_executive_check_visible = {
-				NOT = { has_idea = low_taxes }
+				NOT = { has_idea = taxation_level_2 }
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_screen_very_low_taxes_executive_check_visible = {
-				NOT = { has_idea = very_low_taxes }
+				NOT = { has_idea = taxation_level_1 }
 			}
 
 
@@ -2156,10 +2156,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -2186,10 +2186,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -2216,10 +2216,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -2329,636 +2329,6 @@ scripted_gui = {
 		}
 	}
 
-	internal_politics_reform_eco_maximum_workhours_screen = {
-		context_type = player_context
-
-		window_name = "eoanb_internal_politics_reform_eco_maximum_workhours_screen"
-
-		visible = {
-			has_country_flag = reform_eco_maximum_workhours
-		}
-
-		effects = {
-			close_reform_eco_maximum_workhours_screen_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-
-				country_event = { id = parliament_vote.1010 }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = unlimited_work_day
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-
-				country_event = { id = parliament_vote.1020 }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = fourteen_hour_work_day
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-
-				country_event = { id = parliament_vote.1030 }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = twelve_hour_work_day
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-
-				country_event = { id = parliament_vote.1040 }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = ten_hour_work_day
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-
-				country_event = { id = parliament_vote.1050 }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_maximum_workhours
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = eight_hour_work_day
-			}
-		}
-
-		triggers = {
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_check_visible = {
-				NOT = { has_idea = unlimited_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_check_visible = {
-				NOT = { has_idea = fourteen_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_check_visible = {
-				NOT = { has_idea = twelve_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_check_visible = {
-				NOT = { has_idea = ten_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_check_visible = {
-				NOT = { has_idea = eight_hour_work_day }
-			}
-
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_executive_check_visible = {
-				NOT = { has_idea = unlimited_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_executive_check_visible = {
-				NOT = { has_idea = fourteen_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_executive_check_visible = {
-				NOT = { has_idea = twelve_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_executive_check_visible = {
-				NOT = { has_idea = ten_hour_work_day }
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_executive_check_visible = {
-				NOT = { has_idea = eight_hour_work_day }
-			}
-
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_unlimited_work_day_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_fourteen_hour_work_day_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_twelve_hour_work_day_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_ten_hour_work_day_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_eco_maximum_workhours_screen_eight_hour_work_day_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 99
-			}
-		}
-	}
-
-	internal_politics_reform_eco_land_property_screen = {
-		context_type = player_context
-
-		window_name = "eoanb_internal_politics_reform_eco_land_property_screen"
-
-		visible = {
-			has_country_flag = reform_eco_land_property
-		}
-
-		effects = {
-			close_reform_eco_land_property_screen_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-
-				country_event = { id = parliament_vote.1110 }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = lp_serfdom
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-
-				country_event = { id = parliament_vote.1120 }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-				add_political_power = -1000
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = lp_land_estates
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-
-				country_event = { id = parliament_vote.1130 }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-				add_political_power = -1000
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = lp_land_purchase
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-
-				country_event = { id = parliament_vote.1140 }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-				add_political_power = -1000
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = lp_peasant_holdings
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-
-				country_event = { id = parliament_vote.1150 }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_land_property
-				add_political_power = -1000
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = lp_collectivization
-			}
-		}
-
-		triggers = {
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_check_visible = {
-				NOT = { has_idea = lp_serfdom }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_check_visible = {
-				NOT = { has_idea = lp_land_estates }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_check_visible = {
-				NOT = { has_idea = lp_land_purchase }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_check_visible = {
-				NOT = { has_idea = lp_peasant_holdings }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_check_visible = {
-				NOT = { has_idea = lp_collectivization }
-			}
-
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_executive_check_visible = {
-				NOT = { has_idea = lp_serfdom }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_executive_check_visible = {
-				NOT = { has_idea = lp_land_estates }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_executive_check_visible = {
-				NOT = { has_idea = lp_land_purchase }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_executive_check_visible = {
-				NOT = { has_idea = lp_peasant_holdings }
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_executive_check_visible = {
-				NOT = { has_idea = lp_collectivization }
-			}
-
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				NOT = {
-					has_idea = universal_suffrage
-					has_idea = free_elections
-					has_idea = constitution_adopted
-					has_idea = full_equality
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				NOT = {
-					has_idea = universal_suffrage
-					has_idea = free_elections
-					has_idea = constitution_adopted
-					has_idea = full_equality
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR = {
-					has_government = ideology_radical_socialism
-					has_government = social_egalitarianism
-				}
-				NOT = {
-					OR = {
-						has_idea = tribal_slavery
-						has_idea = slavery
-						has_idea = racial_laws
-						has_idea = segregation
-					}
-				}
-			}
-
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_serfdom_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR = {
-					has_idea = agrarian
-					has_idea = industrializing
-				}
-				has_political_power > 999
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_estates_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				NOT = {
-					has_idea = universal_suffrage
-					has_idea = free_elections
-					has_idea = constitution_adopted
-					has_idea = full_equality
-				}
-				has_political_power > 999
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_land_purchase_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 999
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_peasant_holdings_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_political_power > 999
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_screen_lp_collectivization_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR = {
-					has_government = ideology_radical_socialism
-					has_government = social_egalitarianism
-				}
-				NOT = {
-					OR = {
-						has_idea = tribal_slavery
-						has_idea = slavery
-						has_idea = racial_laws
-						has_idea = segregation
-					}
-				}
-				has_political_power > 999
-			}
-		}
-	}
-
 	internal_politics_reform_eco_military_spendage_screen = {
 		context_type = player_context
 
@@ -2990,10 +2360,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3001,7 +2371,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = ten_percent
+				add_ideas = army_spending_level_5
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_five_percent_check_click = {
@@ -3020,10 +2390,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3031,7 +2401,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = five_percent
+				add_ideas = army_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_three_percent_check_click = {
@@ -3050,10 +2420,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3061,7 +2431,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = three_percent
+				add_ideas = army_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_two_percent_check_click = {
@@ -3080,10 +2450,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3091,7 +2461,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = two_percent
+				add_ideas = army_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_one_percent_check_click = {
@@ -3110,10 +2480,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3121,50 +2491,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = one_percent
+				add_ideas = army_spending_level_1
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_eco_military_spendage_screen_ten_percent_check_visible = {
-				NOT = { has_idea = ten_percent }
+				NOT = { has_idea = army_spending_level_5 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_five_percent_check_visible = {
-				NOT = { has_idea = five_percent }
+				NOT = { has_idea = army_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_three_percent_check_visible = {
-				NOT = { has_idea = three_percent }
+				NOT = { has_idea = army_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_two_percent_check_visible = {
-				NOT = { has_idea = two_percent }
+				NOT = { has_idea = army_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_one_percent_check_visible = {
-				NOT = { has_idea = one_percent }
+				NOT = { has_idea = army_spending_level_1 }
 			}
 
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_ten_percent_executive_check_visible = {
-				NOT = { has_idea = ten_percent }
+				NOT = { has_idea = army_spending_level_5 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_five_percent_executive_check_visible = {
-				NOT = { has_idea = five_percent }
+				NOT = { has_idea = army_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_three_percent_executive_check_visible = {
-				NOT = { has_idea = three_percent }
+				NOT = { has_idea = army_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_two_percent_executive_check_visible = {
-				NOT = { has_idea = two_percent }
+				NOT = { has_idea = army_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_screen_one_percent_executive_check_visible = {
-				NOT = { has_idea = one_percent }
+				NOT = { has_idea = army_spending_level_1 }
 			}
 
 
@@ -3282,10 +2652,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3312,10 +2682,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3342,10 +2712,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3372,10 +2742,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3812,10 +3182,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3842,10 +3212,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3872,10 +3242,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3902,10 +3272,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3932,10 +3302,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3962,10 +3332,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -3992,10 +3362,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4230,451 +3600,6 @@ scripted_gui = {
 		}
 	}
 
-	internal_politics_reform_pop_mobilization_laws_screen = {
-		context_type = player_context
-
-		window_name = "eoanb_internal_politics_reform_pop_mobilization_laws_screen"
-
-		visible = {
-			has_country_flag = reform_pop_mobilization_laws
-		}
-
-		effects = {
-			close_reform_pop_mobilization_laws_screen_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-
-				country_event = { id = parliament_vote.1610 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = disarmed_nation
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-
-				country_event = { id = parliament_vote.1620 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = volunteer_only
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-
-				country_event = { id = parliament_vote.1630 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = limited_conscription
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-
-				country_event = { id = parliament_vote.1640 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_pop_mobilization_laws
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = extensive_conscription
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-
-				country_event = { id = parliament_vote.1650 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = service_by_requirement
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-
-				country_event = { id = parliament_vote.1660 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = all_adults_serve
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-
-				country_event = { id = parliament_vote.1670 }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_executive_check_click = {
-				clr_country_flag = reform_screen_subcat_open
-				clr_country_flag = reform_eco_military_spendage
-				add_political_power = -100
-				set_executive_cooldown = yes
-				if = {
-					limit = {
-						NOT = {
-							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
-								mhc_has_military_junta = yes
-							} 
-						}
-					}
-					decrease_ps_by_one = yes
-				}
-
-				add_ideas = scraping_the_barrel
-			}
-		}
-
-		triggers = {
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_check_visible = {
-				NOT = { has_idea = disarmed_nation }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_check_visible = {
-				NOT = { has_idea = volunteer_only }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_check_visible = {
-				NOT = { has_idea = limited_conscription }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_check_visible = {
-				NOT = { has_idea = extensive_conscription }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_check_visible = {
-				NOT = { has_idea = service_by_requirement }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_check_visible = {
-				NOT = { has_idea = all_adults_serve }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_check_visible = {
-				NOT = { has_idea = scraping_the_barrel }
-			}
-
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_executive_check_visible = {
-				NOT = { has_idea = disarmed_nation }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_executive_check_visible = {
-				NOT = { has_idea = volunteer_only }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_executive_check_visible = {
-				NOT = { has_idea = limited_conscription }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_executive_check_visible = {
-				NOT = { has_idea = extensive_conscription }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_executive_check_visible = {
-				NOT = { has_idea = service_by_requirement }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_executive_check_visible = {
-				NOT = { has_idea = all_adults_serve }
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_executive_check_visible = {
-				NOT = { has_idea = scraping_the_barrel }
-			}
-
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				has_idea = volunteer_only
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR={
-					has_idea = disarmed_nation
-					has_idea = limited_conscription
-				}
-				
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR={
-					has_idea = volunteer_only
-					has_idea = extensive_conscription
-				}
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR={
-					has_idea = service_by_requirement
-					has_idea = limited_conscription
-				}
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR={
-					has_idea = all_adults_serve
-					has_idea = extensive_conscription
-				}
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				OR={
-					has_idea = service_by_requirement
-					has_idea = scraping_the_barrel
-				}
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				can_call_idea_votes = yes
-				NOT={
-					has_country_flag = Elections_suspended
-				}
-				has_idea = all_adults_serve
-			}
-
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_disarmed_nation_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_idea = volunteer_only
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_volunteer_only_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR={
-					has_idea = disarmed_nation
-					has_idea = limited_conscription
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_limited_conscription_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR={
-					has_idea = volunteer_only
-					has_idea = extensive_conscription
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_extensive_conscription_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR={
-					has_idea = service_by_requirement
-					has_idea = limited_conscription
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_service_by_requirement_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR={
-					has_idea = all_adults_serve
-					has_idea = extensive_conscription
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_all_adults_serve_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				OR={
-					has_idea = service_by_requirement
-					has_idea = scraping_the_barrel
-				}
-				has_political_power > 99
-			}
-
-			eoanb_internal_politics_reform_pop_mobilization_laws_screen_scraping_the_barrel_executive_check_click_enabled = {
-				check_variable = { current_reform_id = 0 }
-				NOT = {
-					has_country_flag = parl_executive_order_flag
-				}
-				has_idea = all_adults_serve
-				has_political_power > 99
-			}
-		}
-	}
-
 	internal_politics_reform_pop_suffrage_screen = {
 		context_type = player_context
 
@@ -4706,10 +3631,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4736,10 +3661,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4766,10 +3691,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4796,10 +3721,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4826,10 +3751,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -4998,10 +3923,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5028,10 +3953,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5058,10 +3983,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5088,10 +4013,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5236,10 +4161,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5247,7 +4172,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = hc_no_healthcare
+				add_ideas = social_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_low_healthcare_check_click = {
@@ -5266,10 +4191,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5277,7 +4202,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = hc_low_healthcare
+				add_ideas = social_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_decent_healthcare_check_click = {
@@ -5296,10 +4221,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5307,7 +4232,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = hc_decent_healthcare
+				add_ideas = social_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_good_healthcare_check_click = {
@@ -5326,10 +4251,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5337,7 +4262,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = hc_good_healthcare
+				add_ideas = social_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_excellent_healthcare_check_click = {
@@ -5356,10 +4281,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5367,50 +4292,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = hc_excellent_healthcare
+				add_ideas = social_spending_level_5
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_no_healthcare_check_visible = {
-				NOT = { has_idea = hc_no_healthcare }
+				NOT = { has_idea = social_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_low_healthcare_check_visible = {
-				NOT = { has_idea = hc_low_healthcare }
+				NOT = { has_idea = social_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_decent_healthcare_check_visible = {
-				NOT = { has_idea = hc_decent_healthcare }
+				NOT = { has_idea = social_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_good_healthcare_check_visible = {
-				NOT = { has_idea = hc_good_healthcare }
+				NOT = { has_idea = social_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_excellent_healthcare_check_visible = {
-				NOT = { has_idea = hc_excellent_healthcare }
+				NOT = { has_idea = social_spending_level_5 }
 			}
 
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_no_healthcare_executive_check_visible = {
-				NOT = { has_idea = hc_no_healthcare }
+				NOT = { has_idea = social_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_low_healthcare_executive_check_visible = {
-				NOT = { has_idea = hc_low_healthcare }
+				NOT = { has_idea = social_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_decent_healthcare_executive_check_visible = {
-				NOT = { has_idea = hc_decent_healthcare }
+				NOT = { has_idea = social_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_good_healthcare_executive_check_visible = {
-				NOT = { has_idea = hc_good_healthcare }
+				NOT = { has_idea = social_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_healthcare_screen_hc_excellent_healthcare_executive_check_visible = {
-				NOT = { has_idea = hc_excellent_healthcare }
+				NOT = { has_idea = social_spending_level_5 }
 			}
 
 
@@ -5528,10 +4453,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5539,7 +4464,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = law_no_organized_force
+				add_ideas = law_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_mercenary_groups_check_click = {
@@ -5558,10 +4483,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5569,7 +4494,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = law_mercenary_groups
+				add_ideas = law_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_military_police_force_check_click = {
@@ -5588,10 +4513,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5599,7 +4524,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = law_military_police_force
+				add_ideas = law_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_paramilitary_police_force_check_click = {
@@ -5618,10 +4543,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5629,7 +4554,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = law_paramilitary_police_force
+				add_ideas = law_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_police_force_check_click = {
@@ -5648,10 +4573,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5659,50 +4584,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = law_police_force
+				add_ideas = law_spending_level_5
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_no_organized_force_check_visible = {
-				NOT = { has_idea = law_no_organized_force }
+				NOT = { has_idea = law_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_mercenary_groups_check_visible = {
-				NOT = { has_idea = law_mercenary_groups }
+				NOT = { has_idea = law_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_military_police_force_check_visible = {
-				NOT = { has_idea = law_military_police_force }
+				NOT = { has_idea = law_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_paramilitary_police_force_check_visible = {
-				NOT = { has_idea = law_paramilitary_police_force }
+				NOT = { has_idea = law_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_police_force_check_visible = {
-				NOT = { has_idea = law_police_force }
+				NOT = { has_idea = law_spending_level_5 }
 			}
 
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_no_organized_force_executive_check_visible = {
-				NOT = { has_idea = law_no_organized_force }
+				NOT = { has_idea = law_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_mercenary_groups_executive_check_visible = {
-				NOT = { has_idea = law_mercenary_groups }
+				NOT = { has_idea = law_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_military_police_force_executive_check_visible = {
-				NOT = { has_idea = law_military_police_force }
+				NOT = { has_idea = law_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_paramilitary_police_force_executive_check_visible = {
-				NOT = { has_idea = law_paramilitary_police_force }
+				NOT = { has_idea = law_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_and_order_screen_law_police_force_executive_check_visible = {
-				NOT = { has_idea = law_police_force }
+				NOT = { has_idea = law_spending_level_5 }
 			}
 
 
@@ -5820,10 +4745,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5831,7 +4756,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = inframain_no_subsidies_infrastructure
+				add_ideas = road_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_basic_maintenance_infrastructure_check_click = {
@@ -5850,10 +4775,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5861,7 +4786,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = inframain_basic_maintenance_infrastructure
+				add_ideas = road_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_well_maintaned_infrastructure_check_click = {
@@ -5880,10 +4805,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5891,7 +4816,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = inframain_well_maintaned_infrastructure
+				add_ideas = road_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_steady_network_expansion_check_click = {
@@ -5910,10 +4835,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5921,7 +4846,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = inframain_steady_network_expansion
+				add_ideas = road_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_rapid_network_expansion_check_click = {
@@ -5940,10 +4865,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -5951,50 +4876,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = inframain_rapid_network_expansion
+				add_ideas = road_spending_level_5
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_no_subsidies_infrastructure_check_visible = {
-				NOT = { has_idea = inframain_no_subsidies_infrastructure }
+				NOT = { has_idea = road_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_basic_maintenance_infrastructure_check_visible = {
-				NOT = { has_idea = inframain_basic_maintenance_infrastructure }
+				NOT = { has_idea = road_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_well_maintaned_infrastructure_check_visible = {
-				NOT = { has_idea = inframain_well_maintaned_infrastructure }
+				NOT = { has_idea = road_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_steady_network_expansion_check_visible = {
-				NOT = { has_idea = inframain_steady_network_expansion }
+				NOT = { has_idea = road_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_rapid_network_expansion_check_visible = {
-				NOT = { has_idea = inframain_rapid_network_expansion }
+				NOT = { has_idea = road_spending_level_5 }
 			}
 
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_no_subsidies_infrastructure_executive_check_visible = {
-				NOT = { has_idea = inframain_no_subsidies_infrastructure }
+				NOT = { has_idea = road_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_basic_maintenance_infrastructure_executive_check_visible = {
-				NOT = { has_idea = inframain_basic_maintenance_infrastructure }
+				NOT = { has_idea = road_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_well_maintaned_infrastructure_executive_check_visible = {
-				NOT = { has_idea = inframain_well_maintaned_infrastructure }
+				NOT = { has_idea = road_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_steady_network_expansion_executive_check_visible = {
-				NOT = { has_idea = inframain_steady_network_expansion }
+				NOT = { has_idea = road_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_road_maintenance_screen_inframain_rapid_network_expansion_executive_check_visible = {
-				NOT = { has_idea = inframain_rapid_network_expansion }
+				NOT = { has_idea = road_spending_level_5 }
 			}
 
 
@@ -6112,10 +5037,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6123,7 +5048,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = navinfra_no_naval_infrastructure
+				add_ideas = navy_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_low_naval_infrastructure_check_click = {
@@ -6142,10 +5067,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6153,7 +5078,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = navinfra_low_naval_infrastructure
+				add_ideas = navy_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_decent_naval_infrastructure_check_click = {
@@ -6172,10 +5097,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6183,7 +5108,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = navinfra_decent_naval_infrastructure
+				add_ideas = navy_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_good_naval_infrastructure_check_click = {
@@ -6202,10 +5127,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6213,7 +5138,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = navinfra_good_naval_infrastructure
+				add_ideas = navy_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_excellent_naval_infrastructure_check_click = {
@@ -6232,10 +5157,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6243,50 +5168,50 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = navinfra_excellent_naval_infrastructure
+				add_ideas = navy_spending_level_5
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_no_naval_infrastructure_check_visible = {
-				NOT = { has_idea = navinfra_no_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_low_naval_infrastructure_check_visible = {
-				NOT = { has_idea = navinfra_low_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_decent_naval_infrastructure_check_visible = {
-				NOT = { has_idea = navinfra_decent_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_good_naval_infrastructure_check_visible = {
-				NOT = { has_idea = navinfra_good_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_excellent_naval_infrastructure_check_visible = {
-				NOT = { has_idea = navinfra_excellent_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_5 }
 			}
 
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_no_naval_infrastructure_executive_check_visible = {
-				NOT = { has_idea = navinfra_no_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_low_naval_infrastructure_executive_check_visible = {
-				NOT = { has_idea = navinfra_low_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_decent_naval_infrastructure_executive_check_visible = {
-				NOT = { has_idea = navinfra_decent_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_good_naval_infrastructure_executive_check_visible = {
-				NOT = { has_idea = navinfra_good_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_4 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_naval_infrastructure_screen_navinfra_excellent_naval_infrastructure_executive_check_visible = {
-				NOT = { has_idea = navinfra_excellent_naval_infrastructure }
+				NOT = { has_idea = navy_spending_level_5 }
 			}
 
 
@@ -6404,10 +5329,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6434,10 +5359,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6464,10 +5389,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6494,10 +5419,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6524,10 +5449,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6554,10 +5479,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6584,10 +5509,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6804,10 +5729,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6815,7 +5740,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = sfund_private_ventures_only
+				add_ideas = research_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_limited_state_sponsorship_check_click = {
@@ -6834,10 +5759,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6845,7 +5770,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = sfund_limited_state_sponsorship
+				add_ideas = research_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_regular_state_sponsorship_check_click = {
@@ -6864,10 +5789,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6875,7 +5800,7 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = sfund_regular_state_sponsorship
+				add_ideas = research_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_excellent_state_sponsorship_check_click = {
@@ -6894,10 +5819,10 @@ scripted_gui = {
 					limit = {
 						NOT = {
 							OR = {
-								has_idea = absolute_monarchy
-								has_idea = revolutionary_government
-								has_idea = totalitarian_dictatorship
-								has_idea = socialist_state
+								#has_idea = absolute_monarchy
+								#has_idea = revolutionary_government
+								#has_idea = totalitarian_dictatorship
+								#has_idea = socialist_state
 								mhc_has_military_junta = yes
 							} 
 						}
@@ -6905,42 +5830,42 @@ scripted_gui = {
 					decrease_ps_by_one = yes
 				}
 
-				add_ideas = sfund_excellent_state_sponsorship
+				add_ideas = research_spending_level_4
 			}
 		}
 
 		triggers = {
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_private_ventures_only_check_visible = {
-				NOT = { has_idea = sfund_private_ventures_only }
+				NOT = { has_idea = research_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_limited_state_sponsorship_check_visible = {
-				NOT = { has_idea = sfund_limited_state_sponsorship }
+				NOT = { has_idea = research_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_regular_state_sponsorship_check_visible = {
-				NOT = { has_idea = sfund_regular_state_sponsorship }
+				NOT = { has_idea = research_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_excellent_state_sponsorship_check_visible = {
-				NOT = { has_idea = sfund_excellent_state_sponsorship }
+				NOT = { has_idea = research_spending_level_4 }
 			}
 
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_private_ventures_only_executive_check_visible = {
-				NOT = { has_idea = sfund_private_ventures_only }
+				NOT = { has_idea = research_spending_level_1 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_limited_state_sponsorship_executive_check_visible = {
-				NOT = { has_idea = sfund_limited_state_sponsorship }
+				NOT = { has_idea = research_spending_level_2 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_regular_state_sponsorship_executive_check_visible = {
-				NOT = { has_idea = sfund_regular_state_sponsorship }
+				NOT = { has_idea = research_spending_level_3 }
 			}
 
 			eoanb_internal_politics_reform_int_bud_scientific_funding_screen_sfund_excellent_state_sponsorship_executive_check_visible = {
-				NOT = { has_idea = sfund_excellent_state_sponsorship }
+				NOT = { has_idea = research_spending_level_4 }
 			}
 
 
@@ -7109,13 +6034,13 @@ scripted_gui = {
 				}
 			}
 
-			open_eco_maximum_workhours_click = {
-				if = {
-					limit = { NOT = { has_country_flag = reform_screen_subcat_open } }
-					set_country_flag = reform_screen_subcat_open
-					set_country_flag = reform_eco_maximum_workhours
-				}
-			}
+			#open_eco_maximum_workhours_click = {
+			#	if = {
+			#		limit = { NOT = { has_country_flag = reform_screen_subcat_open } }
+			#		set_country_flag = reform_screen_subcat_open
+			#		set_country_flag = reform_eco_maximum_workhours
+			#	}
+			#}
 
 			open_eco_land_property_click = {
 				if = {
@@ -7372,23 +6297,23 @@ scripted_gui = {
 
 
 			eoanb_internal_politics_reform_eco_tax_rates_button_very_high_taxes_icon_visible = {
-				has_idea = very_high_taxes
+				has_idea = taxation_level_5
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_button_high_taxes_icon_visible = {
-				has_idea = high_taxes
+				has_idea = taxation_level_4
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_button_normal_taxes_icon_visible = {
-				has_idea = normal_taxes
+				has_idea = taxation_level_3
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_button_low_taxes_icon_visible = {
-				has_idea = low_taxes
+				has_idea = taxation_level_2
 			}
 
 			eoanb_internal_politics_reform_eco_tax_rates_button_very_low_taxes_icon_visible = {
-				has_idea = very_low_taxes
+				has_idea = taxation_level_1
 			}
 
 
@@ -7425,72 +6350,72 @@ scripted_gui = {
 
 
 
-			eoanb_internal_politics_reform_eco_maximum_workhours_button_unlimited_work_day_icon_visible = {
-				has_idea = unlimited_work_day
-			}
+			#eoanb_internal_politics_reform_eco_maximum_workhours_button_unlimited_work_day_icon_visible = {
+			#	has_idea = unlimited_work_day
+			#}
 
-			eoanb_internal_politics_reform_eco_maximum_workhours_button_fourteen_hour_work_day_icon_visible = {
-				has_idea = fourteen_hour_work_day
-			}
+			#eoanb_internal_politics_reform_eco_maximum_workhours_button_fourteen_hour_work_day_icon_visible = {
+			#	has_idea = fourteen_hour_work_day
+			#}
 
-			eoanb_internal_politics_reform_eco_maximum_workhours_button_twelve_hour_work_day_icon_visible = {
-				has_idea = twelve_hour_work_day
-			}
+			#eoanb_internal_politics_reform_eco_maximum_workhours_button_twelve_hour_work_day_icon_visible = {
+			#	has_idea = twelve_hour_work_day
+			#}
 
-			eoanb_internal_politics_reform_eco_maximum_workhours_button_ten_hour_work_day_icon_visible = {
-				has_idea = ten_hour_work_day
-			}
+			#eoanb_internal_politics_reform_eco_maximum_workhours_button_ten_hour_work_day_icon_visible = {
+			#	has_idea = ten_hour_work_day
+			#}
 
-			eoanb_internal_politics_reform_eco_maximum_workhours_button_eight_hour_work_day_icon_visible = {
-				has_idea = eight_hour_work_day
-			}
-
-
-
-			eoanb_internal_politics_reform_eco_land_property_button_lp_serfdom_icon_visible = {
-				has_idea = lp_serfdom
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_button_lp_land_estates_day_icon_visible = {
-				has_idea = lp_land_estates
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_button_lp_land_purchase_icon_visible = {
-				has_idea = lp_land_purchase
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_button_lp_peasant_holdings_icon_visible = {
-				has_idea = lp_peasant_holdings
-			}
-
-			eoanb_internal_politics_reform_eco_land_property_button_lp_collectivization_icon_visible = {
-				has_idea = lp_collectivization
-			}
+			#eoanb_internal_politics_reform_eco_maximum_workhours_button_eight_hour_work_day_icon_visible = {
+			#	has_idea = eight_hour_work_day
+			#}
 
 
 
-			eoanb_internal_politics_reform_eco_military_spendage_button_prussian_military_spendage_icon_visible = {
-				has_idea = prussian_military_spendage
-			}
+			#eoanb_internal_politics_reform_eco_land_property_button_lp_serfdom_icon_visible = {
+			#	has_idea = lp_serfdom
+			#}
+
+			#eoanb_internal_politics_reform_eco_land_property_button_lp_land_estates_day_icon_visible = {
+			#	has_idea = lp_land_estates
+			#}
+
+			#eoanb_internal_politics_reform_eco_land_property_button_lp_land_purchase_icon_visible = {
+			#	has_idea = lp_land_purchase
+			#}
+
+			#eoanb_internal_politics_reform_eco_land_property_button_lp_peasant_holdings_icon_visible = {
+			#	has_idea = lp_peasant_holdings
+			#}
+
+			#eoanb_internal_politics_reform_eco_land_property_button_lp_collectivization_icon_visible = {
+			#	has_idea = lp_collectivization
+			#}
+
+
+
+			#eoanb_internal_politics_reform_eco_military_spendage_button_prussian_military_spendage_icon_visible = {
+			#	has_idea = prussian_military_spendage
+			#}
 
 			eoanb_internal_politics_reform_eco_military_spendage_button_ten_percent_icon_visible = {
-				has_idea = ten_percent
+				has_idea = army_spending_level_5
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_button_five_percent_icon_visible = {
-				has_idea = five_percent
+				has_idea = army_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_button_three_percent_icon_visible = {
-				has_idea = three_percent
+				has_idea = army_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_button_two_percent_icon_visible = {
-				has_idea = two_percent
+				has_idea = army_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_eco_military_spendage_button_one_percent_icon_visible = {
-				has_idea = one_percent
+				has_idea = army_spending_level_1
 			}
 
 			##################################################
@@ -7656,89 +6581,89 @@ scripted_gui = {
 			##################################################
 
 			eoanb_internal_politics_reform_int_bud_hc_button_hc_no_healthcare_icon_visible = {
-				has_idea = hc_no_healthcare
+				has_idea = social_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_hc_button_hc_low_healthcare_icon_visible = {
-				has_idea = hc_low_healthcare
+				has_idea = social_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_hc_button_hc_decent_healthcare_icon_visible = {
-				has_idea = hc_decent_healthcare
+				has_idea = social_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_hc_button_hc_good_healthcare_icon_visible = {
-				has_idea = hc_good_healthcare
+				has_idea = social_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_hc_button_hc_excellent_healthcare_icon_visible = {
-				has_idea = hc_excellent_healthcare
+				has_idea = social_spending_level_5
 			}
 
 
 
 			eoanb_internal_politics_reform_int_bud_law_button_law_no_organized_force_icon_visible = {
-				has_idea = law_no_organized_force
+				has_idea = law_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_button_law_mercenary_groups_icon_visible = {
-				has_idea = law_mercenary_groups
+				has_idea = law_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_button_law_military_police_force_icon_visible = {
-				has_idea = law_military_police_force
+				has_idea = law_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_law_button_law_paramilitary_police_force_icon_visible = {
-				has_idea = law_paramilitary_police_force
+				has_idea = law_spending_level_4
 			}
 
-			eoanb_internal_politics_reform_int_bud_law_button_law_police_force_icon_visible = {
-				has_idea = law_police_force
+		eoanb_internal_politics_reform_int_bud_law_button_law_police_force_icon_visible = {
+				has_idea = law_spending_level_5
 			}
 
 
 
 			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_no_subsidies_infrastructure_icon_visible = {
-				has_idea = inframain_no_subsidies_infrastructure
+				has_idea = road_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_basic_maintenance_infrastructure_icon_visible = {
-				has_idea = inframain_basic_maintenance_infrastructure
+				has_idea = road_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_well_maintaned_infrastructure_icon_visible = {
-				has_idea = inframain_well_maintaned_infrastructure
+				has_idea = road_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_steady_network_expansion_icon_visible = {
-				has_idea = inframain_steady_network_expansion
+				has_idea = road_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_rapid_network_expansion_icon_visible = {
-				has_idea = inframain_rapid_network_expansion
+				has_idea = road_spending_level_5
 			}
 
 
 
 			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_no_naval_infrastructure_icon_visible = {
-				has_idea = navinfra_no_naval_infrastructure
+				has_idea = navy_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_low_naval_infrastructure_icon_visible = {
-				has_idea = navinfra_low_naval_infrastructure
+				has_idea = navy_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_decent_naval_infrastructure_icon_visible = {
-				has_idea = navinfra_decent_naval_infrastructure
+				has_idea = navy_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_good_naval_infrastructure_icon_visible = {
-				has_idea = navinfra_good_naval_infrastructure
+				has_idea = navy_spending_level_4
 			}
 
 			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_excellent_naval_infrastructure_icon_visible = {
-				has_idea = navinfra_excellent_naval_infrastructure
+				has_idea = navy_spending_level_5
 			}
 
 
@@ -7774,19 +6699,19 @@ scripted_gui = {
 
 
 			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_private_ventures_only_icon_visible = {
-				has_idea = sfund_private_ventures_only
+				has_idea = research_spending_level_1
 			}
 
 			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_limited_state_sponsorship_icon_visible = {
-				has_idea = sfund_limited_state_sponsorship
+				has_idea = research_spending_level_2
 			}
 
 			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_regular_state_sponsorship_icon_visible = {
-				has_idea = sfund_regular_state_sponsorship
+				has_idea = research_spending_level_3
 			}
 
 			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_excellent_state_sponsorship_icon_visible = {
-				has_idea = sfund_excellent_state_sponsorship
+				has_idea = research_spending_level_4
 			}
 		}
 	}

@@ -2,55 +2,37 @@
 GRE_debt_effect = {
 	if = {
 		limit = {
-			AND = {
-				check_variable = {
-					var = debt_level
-					value = 30
-					compare = greater_than_or_equals
-				}
-				check_variable = {
-					var = debt_level
-					value = 35
-					compare = less_than
-				}
-			}
+			set_temp_variable = { loan_size_to_check = 200 }
+            has_less_than_specific_loan_size = yes
 		}
 		add_stability = -0.025
+        set_temp_variable = {
+				inflation_to_gain = 0.05
+			}
+		add_inflation_with_tooltip_effect = yes
 	}
 	else_if = {
 		limit = {
-			AND = {
-				check_variable = {
-					var = debt_level
-					value = 35
-					compare = greater_than_or_equals
-				}
-				check_variable = {
-					var = debt_level
-					value = 40
-					compare = less_than
-				}
-			}
+			set_temp_variable = { loan_size_to_check = 400 }
+            has_less_than_specific_loan_size = yes
 		}
 		add_stability = -0.05
+        set_temp_variable = {
+				inflation_to_gain = 0.1
+			}
+		add_inflation_with_tooltip_effect = yes
 	}
 	else_if = {
 		limit = {
-			AND = {
-				check_variable = {
-					var = debt_level
-					value = 40
-					compare = greater_than_or_equals
-				}
-				check_variable = {
-					var = debt_level
-					value = 45
-					compare = less_than
-				}
-			}
+			set_temp_variable = { loan_size_to_check = 600 }
+            has_less_than_specific_loan_size = yes
 		}
 		decrease_ps_by_one = yes
 		add_stability = -0.05
+        set_temp_variable = {
+				inflation_to_gain = 0.2
+			}
+		add_inflation_with_tooltip_effect = yes
 	}
 }
 
@@ -99,41 +81,41 @@ GRE_raise_taxes_effect = {
         decrease_ps_by_one = yes
         if = {
             limit = {
-                has_idea = very_low_taxes
+                has_idea = taxation_level_1
             }
             swap_ideas = {
-                remove_idea = very_low_taxes
-                add_idea = low_taxes
+                remove_idea = taxation_level_1
+                add_idea = taxation_level_2
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = low_taxes
+                has_idea = taxation_level_2
             }
             swap_ideas = {
-                remove_idea = low_taxes
-                add_idea = normal_taxes
+                remove_idea = taxation_level_2
+                add_idea = taxation_level_3
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = normal_taxes
+                has_idea = taxation_level_3
             }
             swap_ideas = {
-                remove_idea = normal_taxes
-                add_idea = high_taxes
+                remove_idea = taxation_level_3
+                add_idea = taxation_level_4
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = high_taxes
+                has_idea = taxation_level_4
             }
             swap_ideas = {
-                remove_idea = high_taxes
-                add_idea = very_high_taxes
+                remove_idea = taxation_level_4
+                add_idea = taxation_level_5
             }
             debt_level_decrease_by_2 = yes
         }
@@ -141,236 +123,84 @@ GRE_raise_taxes_effect = {
     else = {
         if = {
             limit = {
-                has_idea = very_low_taxes
+                has_idea = taxation_level_1
             }
             swap_ideas = {
-                remove_idea = very_low_taxes
-                add_idea = low_taxes
+                remove_idea = taxation_level_1
+                add_idea = taxation_level_2
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = low_taxes
+                has_idea = taxation_level_2
             }
             swap_ideas = {
-                remove_idea = low_taxes
-                add_idea = normal_taxes
+                remove_idea = taxation_level_2
+                add_idea = taxation_level_3
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = normal_taxes
+                has_idea = taxation_level_3
             }
             swap_ideas = {
-                remove_idea = normal_taxes
-                add_idea = high_taxes
+                remove_idea = taxation_level_3
+                add_idea = taxation_level_4
             }
             debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = high_taxes
+                has_idea = taxation_level_4
             }
             swap_ideas = {
-                remove_idea = high_taxes
-                add_idea = very_high_taxes
+                remove_idea = taxation_level_4
+                add_idea = taxation_level_5
             }
             debt_level_decrease_by_2 = yes
         }
     }
 }
 
-GRE_reduce_military_budget_effect = {
-    if = {
-        limit = {
-            NOT = {
-                OR = {
-                    has_government = autocracy
-                    mhc_has_military_junta = yes
-                }
-            }
-        }
-        decrease_ps_by_one = yes    
+GRE_combat_debt_control = {
         if = {
             limit = {
-                has_idea = ten_percent
+                has_idea = GRE_idea_control_debt_1
             }
             swap_ideas = {
-                remove_idea = ten_percent
-                add_idea = five_percent
+                remove_idea = GRE_idea_control_debt_1
+                add_idea = GRE_idea_control_debt_2
             }
-            debt_level_decrease_by_2 = yes
         }
         else_if = {
             limit = {
-                has_idea = five_percent
+                has_idea = GRE_idea_control_debt_2
             }
             swap_ideas = {
-                remove_idea = five_percent
-                add_idea = three_percent
+                remove_idea = GRE_idea_control_debt_2
+                add_idea = GRE_idea_control_debt_3
             }
-            debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = three_percent
+                has_idea = GRE_idea_control_debt_3
             }
             swap_ideas = {
-                remove_idea = three_percent
-                add_idea = two_percent
+                remove_idea = GRE_idea_control_debt_3
+                add_idea = GRE_idea_control_debt_4
             }
-            debt_level_decrease_by_1 = yes
         }
         else_if = {
             limit = {
-                has_idea = two_percent
+                has_idea = GRE_idea_control_debt_4
             }
-            swap_ideas = {
-                remove_idea = two_percent
-                add_idea = one_percent
-            }
-            debt_level_decrease_by_1 = yes
+			custom_effect_tooltip = GRE_tt_repay_debt
+			remove_ideas = GRE_idea_control_debt_4
+			debt_level_decrease_by_5 = yes
+			add_stability = 0.1
+			add_political_power = 100
+			remove_ideas = GRE_idea_national_debt
         }
-    }
-    else = {
-        if = {
-            limit = {
-                has_idea = ten_percent
-            }
-            swap_ideas = {
-                remove_idea = ten_percent
-                add_idea = five_percent
-            }
-            debt_level_decrease_by_2 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = five_percent
-            }
-            swap_ideas = {
-                remove_idea = five_percent
-                add_idea = three_percent
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = three_percent
-            }
-            swap_ideas = {
-                remove_idea = three_percent
-                add_idea = two_percent
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = two_percent
-            }
-            swap_ideas = {
-                remove_idea = two_percent
-                add_idea = one_percent
-            }
-            debt_level_decrease_by_1 = yes
-        }
-    }
-}
-
-GRE_reduce_healthcare_budget_effect = {
-    if = {
-        limit = {
-            NOT = {
-                OR = {
-                    has_government = autocracy
-                    mhc_has_military_junta = yes
-                    
-                }
-            }
-        }
-        decrease_ps_by_one = yes
-        if = {
-            limit = {
-                has_idea = hc_excellent_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_excellent_healthcare
-                add_idea = hc_good_healthcare
-            }
-            debt_level_decrease_by_2 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_good_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_good_healthcare
-                add_idea = hc_decent_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_decent_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_decent_healthcare
-                add_idea = hc_low_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_low_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_low_healthcare
-                add_idea = hc_no_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        }
-    }
-    else = {
-       if = {
-            limit = {
-                has_idea = hc_excellent_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_excellent_healthcare
-                add_idea = hc_good_healthcare
-            }
-            debt_level_decrease_by_2 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_good_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_good_healthcare
-                add_idea = hc_decent_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_decent_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_decent_healthcare
-                add_idea = hc_low_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        }
-        else_if = {
-            limit = {
-                has_idea = hc_low_healthcare
-            }
-            swap_ideas = {
-                remove_idea = hc_low_healthcare
-                add_idea = hc_no_healthcare
-            }
-            debt_level_decrease_by_1 = yes
-        } 
-    }
-}
+   }

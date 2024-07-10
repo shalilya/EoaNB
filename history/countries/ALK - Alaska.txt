@@ -12,29 +12,41 @@
 	set_cosmetic_tag = ALK_autonomy_afr_colonial_company
 	set_country_flag = AFR_is_a_colonial_company_flag
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
 		#POLITICS
 			RUS_Alexander_II
 			victorian_era
 			law_victorian_army
 			agrarian
-			no_heir
-			absolute_monarchy
+			#no_heir
+			#absolute_monarchy
 
 		#Economics
 			civilian_economy
 			limited_exports
-			two_percent
-			normal_taxes
+			army_spending_level_2
+			taxation_level_3
 			cl_legal
-			lp_land_purchase
+			
 
 		#Population
 			border_control
 			limited_conscription
 			limited_equality
 			absolutism
-			no_constitution
+			#no_constitution
 			no_elections
 
 		#Culture
@@ -44,6 +56,7 @@
 
 		#NATIONAL SPIRITS
 			AFR_russian_colony
+			ALK_idea_ice_treaty
 	}
 
 	#Rivals
@@ -112,9 +125,9 @@
 	}
 
 	# POLITICAL LEADERS
-	recruit_character = ALK_grand_duke_konstantin
-	recruit_character = ALK_aloys_ii
-	recruit_character = ALK_johann_ii
+	recruit_character = ALK_stepan_voevodskiy
+	recruit_character = ALK_johan_furujhelm
+	recruit_character = ALK_dmitry_maksutov
 	
 
 	if = {

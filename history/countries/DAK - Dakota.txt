@@ -9,20 +9,32 @@
 
 	set_cosmetic_tag = DAK_US
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.05 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 1 }
+
 	add_ideas = {
-			hos_is_leader
+			#hos_is_leader
 			victorian_era
 			law_victorian_army
 			agrarian
-			non_monarchical_system
-			presidential_republic
+			#non_monarchical_system
+			#presidential_republic
 
 			civilian_economy
 			export_focus
-			two_percent
-			normal_taxes
+			army_spending_level_2
+			taxation_level_3
 			cl_legal
-		unlimited_work_day
+		
 
 			#stagnation_growth
 			border_control
@@ -30,18 +42,18 @@
 			racial_laws
 			universal_male_suffrage
 
-			constitution_adopted
+			#constitution_adopted
 			free_elections
 
 			open_schools
 		secular_state
 		#religion_protestant
 
-		 hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		 social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 			#NATIONAL SPIRITS
 			NA_B_no_scale_railways
@@ -49,9 +61,7 @@
 		}
 
 		set_politics = {
-			ruling_party = centrism
-			election_frequency = 48
-			elections_allowed = yes
+			ruling_party = traditional_conservatism
 	}
 
 set_popularities = {
@@ -104,6 +114,6 @@ set_popularities = {
 
 	# POLITICAL LEADERS
 
-	recruit_character = DAK_wilmot_w_brookings
-	recruit_character = DAK_john_blair_smith_todd
+	recruit_character = DAK_mark_izard
+	#recruit_character = DAK_john_blair_smith_todd
 }

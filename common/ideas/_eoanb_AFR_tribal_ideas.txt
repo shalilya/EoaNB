@@ -3,7 +3,7 @@ ideas = {
 		afr_ofs_invest_in_resource_discovery = {
 			picture = generic_democratic_drift_bonus
 			modifier = {
-				consumer_goods_factor = 0.01
+				consumer_goods_expected_value = 0.01
 			}
 		}
 		afr_ofs_gold_mines_1 = {
@@ -14,7 +14,7 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				political_power_factor = 0.05
 			}
 		}
@@ -26,7 +26,7 @@ ideas = {
 			picture = FRA_profits_gold_rush
 			
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_expected_value = -0.1
 				political_power_factor = 0.1
 			}
 		}
@@ -61,7 +61,7 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.02
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 			}
 		}
 		ofs_nationised_jobs_scheme = {
@@ -73,7 +73,7 @@ ideas = {
 
 			modifier = {
 				industrial_capacity_factory = 0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 		}
 		ofs_SAR_partisans = {
@@ -98,7 +98,7 @@ ideas = {
 			picture = ofs_campbell_diamonds #get a diamonds gfx
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 		}
 		ofs_national_campbell_diamonds = {
@@ -112,28 +112,29 @@ ideas = {
 			picture = ofs_campbell_diamonds #get a diamonds gfx
 
 			modifier = {
-				consumer_goods_factor = -0.10
+				consumer_goods_expected_value = -0.10
 			}
 		}
 		ofs_campbell_recompence = {
 			picture = ofs_campbell_diamonds #get a diamonds gfx
 
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 			}
 		}
 		ofs_bluebacks = {
 			picture = ofs_bluebacks #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = -0.025
+				consumer_goods_expected_value = -0.015
+				tax_efficiency_factor = 0.05
 			}
 		}
 		ofs_bluebacks_devalued = {
 			picture = ofs_bluebacks_devalued #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 				trade_opinion_factor = -0.25
 			}
 		}
@@ -141,7 +142,7 @@ ideas = {
 			picture = ofs_bluebacks_very_devalued #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				trade_opinion_factor = -0.50
 			}
 		}
@@ -149,7 +150,7 @@ ideas = {
 			picture = ofs_bluebacks_valued #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				trade_opinion_factor = 0.1
 			}
 		}
@@ -157,22 +158,29 @@ ideas = {
 			picture = ofs_bluebacks_very_valued #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_expected_value = -0.1
 				trade_opinion_factor = 0.2
 			}
 		}	
+		ofs_idea_efficient_taxing = {
+			picture = ofs_bluebacks #get a blueback gfx
+
+			modifier = {
+				tax_efficiency_factor = 0.1
+			}
+		}
 		ofs_funding_rhodesian_industrialisation = {
 			picture = ofs_bluebacks #get a blueback gfx
 
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 			}
 		}
 		ofs_recovering_economy = {##attempt to justify "free" fac
 			picture = generic_purge
 
 			modifier = {
-				consumer_goods_factor = 0.25
+				consumer_goods_expected_value = 0.25
 			}
 		}
 		egy_sudan_slave_raids = {
@@ -184,7 +192,7 @@ ideas = {
 
 			modifier = {
 				political_power_factor = -0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				local_non_core_manpower = 0.15
 				stability_factor = -0.05
 			}
@@ -225,7 +233,7 @@ ideas = {
 			
 			modifier = {
 				political_power_cost = 0.15
-				consumer_goods_factor = 0.10
+				consumer_goods_expected_value = 0.10
 			}
 			targeted_modifier = {
 				tag = ENG
@@ -322,7 +330,7 @@ ideas = {
 			
 			modifier = {
 				#war_support_weekly = 0.01
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
 				industrial_capacity_factory = -0.05
 			}
 
@@ -410,7 +418,7 @@ ideas = {
 			picture = generic_purge
 			
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 				production_factory_max_efficiency_factor = -0.05
 			}
 		}
@@ -422,7 +430,7 @@ ideas = {
 			picture = generic_purge
 			
 			modifier = {
-				consumer_goods_factor = 0.5
+				consumer_goods_expected_value = 0.5
 				production_factory_max_efficiency_factor = -0.5
 				production_speed_buildings_factor = -0.5
 				min_export = -0.05
@@ -449,7 +457,7 @@ ideas = {
 			picture = generic_purge
 			
 			modifier = {
-				consumer_goods_factor = 0.25
+				consumer_goods_expected_value = 0.25
 				production_factory_max_efficiency_factor = -0.25
 				production_speed_buildings_factor = -0.25
 				min_export = -0.025
@@ -466,53 +474,6 @@ ideas = {
 				max_planning = -0.25
 				navy_max_range_factor = -0.475
 				army_org_Factor = -0.25
-			}
-		}
-		trv_idea_annoyed_church={
-			allowed_civil_war = {
-				always = yes
-			}
-
-			picture = generic_purge
-			
-			modifier = {
-				stability_weekly = -0.002
-			}
-		}
-		trv_idea_god_fairing_people={
-			allowed_civil_war = {
-				always = yes
-			}
-
-			picture = generic_purge
-			
-			modifier = {
-				defensive_war_stability_factor = 0.20
-				offensive_war_stability_factor = 0.15
-			}
-		}
-		trv_idea_disjointed_government={
-			allowed_civil_war = {
-				always = yes
-			}
-
-			picture = FRA_unstable_government
-			
-			modifier = {
-				stability_factor = -0.15
-				political_power_gain = -0.02
-			}
-		}
-		trv_idea_occupied_swazi_territory={
-			allowed_civil_war = {
-				always = yes
-			}
-
-			#picture = generic_purge
-			
-			modifier = {
-				conscription_factor = -0.05
-				political_power_gain = -0.02
 			}
 		}
 		SWZ_idea_bigger_than_it_looks={
@@ -791,7 +752,7 @@ ideas = {
 			picture = ofs_campbell_diamonds #get a diamonds gfx
 
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 		}
 	}
@@ -820,7 +781,7 @@ ideas = {
 				training_time_factor = 999
 				production_factory_max_efficiency_factor = -999
 				production_speed_buildings_factor = -999
-				consumer_goods_factor = 999
+				consumer_goods_expected_value = 999
 				local_resources_factor = -999
 				global_building_slots_factor = -999
 				foreign_subversive_activites = -999

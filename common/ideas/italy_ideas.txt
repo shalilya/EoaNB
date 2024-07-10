@@ -96,9 +96,14 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				trade_opinion_factor = 0.05
 				faction_trade_opinion_factor = 0.05
 				min_export = 0.05
+				money_income_factor = 0.05
+				hidden_modifier = {
+					money_income_factor_from_ideas = 0.05
+				}
 			}
 		}
 		ITA_minor_MNC_rebels = {
+			picture = SWE_Toxic_Politics
 			modifier = {
 				stability_factor = -0.1
 				war_support_factor = -0.15
@@ -148,7 +153,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			modifier = {
 				stability_factor = -0.05
 				political_power_gain = -0.05
-			}
+			} 
 		}
 		PIE_Sardinian_Question_worse = {
 			picture = SWE_government_intervention_judicial
@@ -162,6 +167,18 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			modifier = {
 				army_attack_factor = 0.1
 				army_defence_factor = 0.1
+				army_spending_cost_factor = 0.025
+				hidden_modifier = {
+				army_spending_cost_factor_from_ideas = 0.025
+				}
+			}
+		}
+		PIE_Bersaglieri_Tradition = {
+			picture = SWE_Toxic_Politics
+			modifier = {
+				army_attack_factor = 0.05
+				army_speed_factor = 0.05
+				recon_factor = 0.05
 			}
 		}
 		PIE_Dependency_On_Artisan_Industry = {
@@ -170,20 +187,32 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				has_idea = machine_era
 			}
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_expected_value = 0.15
 				stability_factor = 0.1
+				money_income_factor = 0.05
+				hidden_modifier = {
+					money_income_factor_from_ideas = 0.05
+				}
+				consumer_goods_income_factor = 0.1
+				hidden_modifier = {
+					consumer_goods_income_factor_from_ideas = 0.1
+				}
 			}
 		}
 		PIE_large_scaled_Exports = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 		}
 		PIE_Baby_Boom = {
 			picture = ITA_Baby_Boom
 			modifier = {
 				monthly_population = 0.15
+				social_spending_cost_factor = 0.05
+				hidden_modifier = {
+					social_spending_cost_factor_from_ideas = 0.05
+				}
 			}
 		}
 		PIE_CBI_Clergy_Support = {
@@ -197,7 +226,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		PIE_Sound_Toll_Payment = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 			}
 			targeted_modifier = {
 				tag = DEN
@@ -207,7 +236,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		PIE_DEN_Sound_Toll_Payment = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.025
+				consumer_goods_expected_value = -0.025
 			}
 			targeted_modifier = {
 				tag = PIE
@@ -310,7 +339,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			removal_cost = -1
 			modifier = {
 				production_speed_arms_factory_factor = 0.15
-				consumer_goods_factor = 0.03
+				consumer_goods_expected_value = 0.03
 			}
 		}
 		NSC_vic_idea_Increased_Military_Production = {
@@ -466,7 +495,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			modifier = {
 				industrial_capacity_factory = 0.03
 				trade_opinion_factor = 0.2
-				consumer_goods_factor = -0.02
+				consumer_goods_expected_value = -0.02
 			}
 		}
 		NSC_vic_idea_Sulphur_UK = {
@@ -557,7 +586,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		ITA_Reliance_on_Farming = {
 			picture = generic_agrarian_society
 			modifier = {
-				consumer_goods_factor = -0.04
+				consumer_goods_expected_value = -0.04
 				production_speed_buildings_factor = -0.3
 				conscription_factor = -0.1
 				training_time_factor = 0.1
@@ -591,14 +620,14 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		ITA_Manipulate_Southern_Economy_idea = {
 			picture = FRA_army_of_aggression_focus
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 			}
 		}
 		ITA_Factor_regional_economies_idea = {
 			picture = BAD_rise_of_industry
 			modifier = {
 				production_speed_buildings_factor = 0.2
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		}
 		ITA_Southern_Strikes = {
@@ -608,14 +637,14 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				war_support_factor = -0.05
 				conscription_factor = -0.025
 				production_speed_buildings_factor = -0.1
-				consumer_goods_factor = 0.1
+				consumer_goods_expected_value = 0.1
 			}
 		}
 		ITA_Florence_Revival = {
 			picture = chi_war_of_resistance2
 			modifier = {
 				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 		}
 		 
@@ -629,7 +658,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		ITA_Papal_Army_Payments = {
 			picture = generic_manpower_bonus
 			modifier = {
-				consumer_goods_factor = 0.05
+				consumer_goods_expected_value = 0.05
 			}
 			cancel = {
 				NOT = {
@@ -651,7 +680,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		ITA_Custom_Barriers_Lifted = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 			}
 		}
 		ITA_Planning_For_Invasion = {
@@ -711,13 +740,13 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		ITA_Trade_Bonus_Temp = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 			}
 		}
 		ITA_International_Trade_Sardinia = {
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.01
+				consumer_goods_expected_value = -0.01
 			}
 		}
 		ITA_Southern_Revolt_Defeat = {
@@ -770,7 +799,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 		}
 		ITA_CBI_garibaldi_idea = {
 			allowed = {
-				always = Yes
+				always = yes
 			}
 			allowed_civil_war = {
 				always = yes
@@ -808,10 +837,11 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				always = yes
 			}
 			picture = farmer_wheat_law_treaty_chain
-			modifier = {
+			modifier = { 
 				stability_factor = -0.05
 				war_support_factor = -0.05
 				political_power_gain = -0.1
+				tax_efficiency_factor = -0.3
 			}
 		}
 		TUS_memories_of_1848_idea = {
@@ -853,6 +883,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				stability_factor = 0.1
 				political_power_gain = -0.2
 				production_speed_rail_way_factor = 0.05
+				monthly_unemployment_change = -0.01
 			}
 		}
 		TUS_curtailed_innovation = {
@@ -867,6 +898,10 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
 				research_speed_Factor = -0.05
+				research_spending_cost_factor = -0.1
+				hidden_modifier = {
+					research_spending_cost_factor_from_ideas = -0.1
+				}
 			}
 		}
 		TUS_large_scaled_Exports = {
@@ -878,7 +913,8 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			}
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
+				money_income = 0.5
 			}
 		}
 		TUS_revolutionary_spirit = {
@@ -904,7 +940,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			}
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = -0.05
+				consumer_goods_expected_value = -0.05
 				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
@@ -917,7 +953,7 @@ ideas = {      #### FILE NEEDS ORGANIZED AND OPTIMIZED
 			}
 			picture = FRA_international_inflow
 			modifier = {
-				consumer_goods_factor = 0.025
+				consumer_goods_expected_value = 0.025
 			}
 		}
 		PAP_vic_idea_Cholera = {

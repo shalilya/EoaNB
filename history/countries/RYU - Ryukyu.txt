@@ -5,16 +5,16 @@
 
 	# Laws & Ideas
 	add_ideas = {
-		hos_is_leader
+		#hos_is_leader
 		pre_industrial_era
 		agrarian
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		closed_economy
 		isolation
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -23,21 +23,20 @@
 		slavery
 		absolutism
 
-		no_constitution
+		#no_constitution
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_shinto
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 
-		afr_total_detrimental_colonial_impact_idea
 		RYU_the_veil_of_independance
 		RYU_major_maritime_commerce_hub
 	}
@@ -85,7 +84,6 @@
 	RYU = {
 		set_politics = { ruling_party = autocracy }
 		set_country_flag = Oceania_industrializing
-		add_to_variable = { var = total_detrimental_colonial_impact_value value = 6 }
 		add_to_variable = { var = ryu_prosperity_mechanic value = 15 }
 
 		#Favored

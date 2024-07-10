@@ -2178,15 +2178,15 @@ USAROD_Reconstruction_Zone_Setup = {
 		if = {
 			limit = {
 				AND = {
-					1385 = {
+					360 = {
 						has_state_flag = ACW_free_state_flag
 					}
 					USA = {
-						controls_state = 1385
+						controls_state = 360
 					}
 				}
 			}
-			transfer_state = 1385
+			transfer_state = 360
 		}
 		USAROD_Reconstruction_Zone_Setup1 = yes
 	}
@@ -2375,21 +2375,9 @@ USAROD_Reconstruction_Zone_Setup = {
 USAROD_Reconstruction_Zone_Setup1 = {
 	# National Setup
 	USA = {
-		if = {
-			limit = { 
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				} 
-			}
-			set_autonomy = {
-				target = PREV
-				autonomous_state = autonomy_unintegrated_seceded_state
-			}
-		}
-		else = { 
-			puppet = PREV
+		set_autonomy = {
+			target = PREV
+			autonomous_state = autonomy_unintegrated_seceded_state
 		}
 	}
 	set_country_flag = USA_unintegrated_seceded_state_country_flag
@@ -2694,11 +2682,11 @@ USAROD_Reconstruction_Zone_Setup1 = {
 	}
 	if = {
 		limit = {
-			has_idea = two_percent
+			has_idea = army_spending_level_2
 		}
 		swap_ideas = {
-			remove_idea = two_percent
-			add_idea = five_percent
+			remove_idea = army_spending_level_2
+			add_idea = army_spending_level_4
 		}
 	}
 	if = {

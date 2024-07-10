@@ -260,6 +260,18 @@ spriteTypes = {
 	### EOANB ########
 	##################
 
+	### Brazil
+
+	spriteType = {
+		name = "GFX_BRA_bop_government"
+		texturefile = "gfx/interface/bop/BRA_Focus_Electorate_unity.dds"
+	}
+
+	spriteType = {
+		name = "GFX_BRA_bop_opposition"
+		texturefile = "gfx/interface/bop/BRA_goal_secure_vote.dds"
+	}
+
 	### Italy
 
 	spriteType = {
@@ -306,5 +318,39 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ENG_bop_Lords"
 		texturefile = "gfx/interface/bop/ENG_bop_Lords.png"
+	}
+	
+	### Montenegro ###
+	
+	spriteType = {
+		name = "GFX_idea_BOP_MNT_france_way"
+		texturefile = "gfx/interface/bop/MNT_bop_france_way.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_BOP_MNT_russia_way"
+		texturefile = "gfx/interface/bop/MNT_bop_russia_way.dds"
+	}
+
+	### Qing ###
+
+	spriteType = {
+		name = "GFX_idea_BoP_QNG_cons"
+		textureFile = "gfx/interface/bop/BoP_QNG_cons.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BoP_QNG_ref"
+		textureFile = "gfx/interface/bop/BoP_QNG_ref.png"
+	}
+
+	### Russia ###
+
+	spriteType = {
+		name = "GFX_RUS_BOP_Conservatives"
+		textureFile = "gfx/interface/bop/RUS_BOP_Conservatives.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_BOP_Reformist"
+		textureFile = "gfx/interface/bop/RUS_BOP_Reformist.png"
 	}
 }

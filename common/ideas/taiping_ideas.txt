@@ -1,0 +1,157 @@
+ideas = {
+	country = {
+		TAI_idea_proarmy = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_army_spending_cuts
+
+			modifier = {
+				defence = 0.05
+				max_planning = 0.05
+			}
+		}
+		TAI_idea_poparmy = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_army_corruption
+
+			modifier = {
+				offence = 0.05
+				planning_speed = 0.05
+			}
+		}
+		TAI_idea_failedshanghai = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_epidemic
+
+			targeted_modifier = { 
+				tag = QNG
+				defense_bonus_against = -0.5
+				attack_bonus_against = -0.3
+			}
+		}
+		TAI_idea_gotshanghai = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_mandatory_conscription
+
+			targeted_modifier = { 
+				tag = QNG
+				defense_bonus_against = 0.25
+				attack_bonus_against = 0.25
+			}
+		}
+		TAI_idea_shanghaicampaignidea = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_army_investment
+
+			targeted_modifier = { 
+				tag = QNG
+				attack_bonus_against = 0.05
+			}
+		}
+		TAI_idea_defence = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_unrest
+
+			targeted_modifier = { 
+				tag = QNG
+				defense_bonus_against = 0.05
+			}
+		}
+		TAI_idea_total_war = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_mandatory_conscription
+
+			targeted_modifier = { 
+				tag = QNG
+				defense_bonus_against = 0.05
+				attack_bonus_against = -0.05
+			}
+			modifier = {
+			monthly_population = -0.15
+			political_power_factor = -0.25
+			weekly_casualties_war_support = 0.006
+			}
+		}
+		TAI_idea_north = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_idea_generic_mandatory_conscription
+
+			targeted_modifier = { 
+				tag = QNG
+				defense_bonus_against = 0.05
+				attack_bonus_against = 0.15
+			}
+		}
+	}
+}

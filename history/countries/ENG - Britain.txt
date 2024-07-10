@@ -3,82 +3,86 @@
 
 	oob = "ENG_1857"
 
+	add_ideas = { 
+		sphere_leader
+	}
+	set_variable = { sphere_overlord = ENG.id }
+
 	set_convoys = 200
 
 	add_political_power = 5
 
 	unlock_national_focus = ENG_focus_1857_elections
 
-	set_research_slots = 4
+	set_research_slots = 3
 	
 	starting_train_buffer = 4
 
 	add_to_variable = { prestige_score = 110 }
 	set_cosmetic_tag = ENG_British_Empire
 
-	#set_power_balance = {
-	#	id = ENG_Balance_of_Power_Parliament
-	#	left_side = ENG_BOP_House_of_Commons_Strength
-	#	right_side = ENG_BOP_House_of_Lords_Strength
-	#
-	#	set_value = 0.4
-	#}
+	set_power_balance = {
+		id = ENG_Balance_of_Power_Parliament
+		left_side = ENG_BOP_House_of_Commons_Strength
+		right_side = ENG_BOP_House_of_Lords_Strength
+	
+		set_value = 0.65
+	}
+
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.04 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 65 }
+	set_variable = { current_loans_sum = 770 }
 
 	add_ideas = {
-		#STATE OF COUNTRY
-	 	ENG_Victoria
-		has_heir
-		industrializing
-		victorian_era
-		law_victorian_army
-		#religion_protestant
-
-		#GOVERNMENTAL POLICIES
-		parliamentary_monarchy
-		constitution_adopted
-		limited_elections
-		limited_independence
-		federal_control
-
-		#CULTURE AND EDUCATION
+		#POLITICAL LIBERTIES
 		open_schools
-	 	state_religion
 		free_press
 		foa_non_socialist
 		tu_non_political
-		high_judge_courtroom
+		free_elections
 
-		#ECONOMY
-		export_focus
-		normal_taxes
-		cl_restricted
-		twelve_hour_work_day
-		lp_land_purchase
-		civilian_economy
-
-		#DEMOGRAPHICS
-		#stagnation_growth
+		#INDIVIDUAL LIBERTIES
 		border_control
 		limited_equality
 		parliamentary_suffrage
 		volunteer_only
-		pp_ban_extremist_parties
+	 	state_religion
+		high_judge_courtroom
+
+		#ECONOMY
+		mixed_economy
+		export_focus
+		taxation_level_1
+		civilian_economy
+		cl_legal
+		industrializing
 
 		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_well_maintaned_infrastructure
-		navinfra_good_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
+		social_spending_level_2
+		law_spending_level_2
+		road_spending_level_3
+		navy_spending_level_4
+		army_spending_level_3
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
-		egy_vic_debt
+		ENG_Victoria
 		ENG_idea_sun_never_sets
 		ENG_idea_european_isolationism
 		ENG_idea_british_industrial_revolution
 		ENG_idea_working_class_exploitation
 		ENG_unrest_in_ireland
+		victorian_era
+		law_victorian_army
 	}
 
 	#How to set up initial debt_level
@@ -231,6 +235,14 @@
 		#Transport Ships
 		tech_naval_mtg_capital_ship_naval_transportation = 1 #Capital Ship Naval Transportation
 		
+		###Navy Legacy 
+		tech_naval_lineship = 1
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
+		tech_naval_corvette = 1
+		tech_naval_corvette_1 = 1
+		tech_naval_early_gunboat = 1
+
 		###Flight Technology
 		
 		###Mechanical Engineering
@@ -405,6 +417,16 @@
 			autonomous_state = autonomy_afr_colonial_company
 			freedom_level = 0.1
 		}
+		set_autonomy = {
+			target = BCO
+			autonomous_state = autonomy_british_crown_colony
+			freedom_level = 0.1
+		}
+		set_autonomy = {
+			target = MSQ
+			autonomous_state = autonomy_british_crown_colony
+			freedom_level = 0.1
+		}
 	}
 	if = {
 		limit = {
@@ -424,11 +446,13 @@
 		puppet = SAS
 		puppet = TCS
 		puppet = HBC
+		puppet = BCO
 		puppet = NVS
 		puppet = SRC
 		puppet = NAT
 		puppet = SAF
 		puppet = MDV
+		puppet = VIC
 	}
 
 	# Trade
@@ -809,14 +833,14 @@
 	unlock_national_focus = ENG_focus_fortify_coast
 	unlock_national_focus = ENG_focus_coastal_batteries_east
 	unlock_national_focus = ENG_focus_coastal_batteries_west
-	unlock_national_focus = ENG_focus_viceroy_india_investigate
-	unlock_national_focus = ENG_focus_peel_commission
-	unlock_national_focus = ENG_focus_india_european_recruitment
-	unlock_national_focus = ENG_focus_homogenous_regiments
-	unlock_national_focus = ENG_focus_india_european_law
-	unlock_national_focus = ENG_focus_european_army_traditions_india
+	#unlock_national_focus = ENG_focus_viceroy_india_investigate
+	#unlock_national_focus = ENG_focus_peel_commission
+	#unlock_national_focus = ENG_focus_india_european_recruitment
+	#unlock_national_focus = ENG_focus_homogenous_regiments
+	#unlock_national_focus = ENG_focus_india_european_law
+	#unlock_national_focus = ENG_focus_european_army_traditions_india
 	unlock_national_focus = ENG_focus_the_RAJ_compromise
-	unlock_national_focus = ENG_focus_oriental_uniforms_india
+	#unlock_national_focus = ENG_focus_oriental_uniforms_india
 	unlock_national_focus = ENG_focus_industrial_revolution
 	unlock_national_focus = ENG_focus_new_technological_developments
 	unlock_national_focus = ENG_focus_new_farming_equipment
@@ -875,18 +899,18 @@
 	add_ideas = {
 		#STATE OF COUNTRY
 	 	ENG_Victoria
-		has_heir
+		#has_heir
 		industrialized
 		victorian_era
 		law_victorian_army
 		#religion_protestant
 
 		#GOVERNMENTAL POLICIES
-		parliamentary_monarchy
-		constitution_adopted
+		#parliamentary_monarchy
+		#constitution_adopted
 		limited_elections
-		limited_independence
-		federal_control
+		#limited_independence
+		#federal_control
 
 		#CULTURE AND EDUCATION
 		open_schools
@@ -898,10 +922,10 @@
 
 		#ECONOMY
 		export_focus
-		normal_taxes
+		taxation_level_3
 		cl_illegal
-		twelve_hour_work_day
-		lp_land_purchase
+		
+		
 		civilian_economy
 
 		#DEMOGRAPHICS
@@ -913,12 +937,12 @@
 		pp_ban_extremist_parties
 
 		#BUDGET
-		hc_no_healthcare
-		law_police_force
-		inframain_well_maintaned_infrastructure
-		navinfra_good_naval_infrastructure
-		three_percent
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_3
+		navy_spending_level_4
+		army_spending_level_3
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		egy_vic_debt
@@ -1118,6 +1142,14 @@
 		#Transport Ships
 		tech_naval_mtg_capital_ship_naval_transportation = 1 #Capital Ship Naval Transportation
 		tech_naval_mtg_merchant_ship_requisitioning = 1 #Merchant Requisitioning
+
+		###Navy Legacy 
+		tech_naval_lineship = 1
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
+		tech_naval_corvette = 1
+		tech_naval_corvette_1 = 1
+		tech_naval_early_gunboat = 1
 
 		###Flight Technology
 		early_balloon = 1 #Early Recon Balloon
@@ -1370,7 +1402,8 @@
 		puppet = SRC
 		puppet = NAT
 		puppet = SAF
-		puppet = MDV
+		puppet = VIC
+		puppet = BCO
 	}
 
 	# Trade

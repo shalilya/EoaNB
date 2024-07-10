@@ -12,20 +12,21 @@ state = {
 	provinces = {
 		13717 13718
 	}
-	manpower =4174
+	manpower =1024
 	
 	
 	history = {
-		owner = GQE ## 
+		owner = RHO 
 		buildings = {
 			infrastructure = 1
 		}
+		add_core_of = RHO
 		add_core_of = NAT
-		add_core_of = GQE
-		add_claim_by = SAF
+		add_core_of = SAF
 		
 		1870.1.1= {
-			owner = NAT
+			owner = GQE
+			add_core_of = GQE
 		}
 		afr_state_setup_scripted_effect = yes
 		

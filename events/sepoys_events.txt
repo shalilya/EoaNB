@@ -166,26 +166,13 @@ country_event = {
 		ai_chance = { factor = 50 }
 		add_political_power = -150
 		add_stability = -0.35
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = OUD
-				autonomy_state = autonomy_princely_state
-			}
-			set_autonomy = {
-				target = GWA
-				autonomy_state = autonomy_princely_state
-			}
+		set_autonomy = {
+			target = OUD
+			autonomy_state = autonomy_princely_state
 		}
-		else = {
-			puppet = OUD
-			puppet = GWA
+		set_autonomy = {
+			target = GWA
+			autonomy_state = autonomy_princely_state
 		}
 		country_event = sepoy.8
 	}
@@ -195,26 +182,13 @@ country_event = {
 		name = sepoy.7.b
 		ai_chance = { factor = 50 }
 		add_political_power = -500
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = OUD
-				autonomy_state = autonomy_confederation_member
-			}
-			set_autonomy = {
-				target = GWA
-				autonomy_state = autonomy_confederation_member
-			}
+		set_autonomy = {
+			target = OUD
+			autonomy_state = autonomy_confederation_member
 		}
-		else = {
-			puppet = OUD
-			puppet = GWA
+		set_autonomy = {
+			target = GWA
+			autonomy_state = autonomy_confederation_member
 		}
 		country_event = sepoy.8
 	}
@@ -234,21 +208,9 @@ country_event = {
 		ai_chance = { factor = 25 }
 		add_political_power = -200
 		add_stability = -0.20
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = HYD
-				autonomy_state = autonomy_princely_state
-			}
-		}
-		else = {
-			puppet = HYD
+		set_autonomy = {
+			target = HYD
+			autonomy_state = autonomy_princely_state
 		}
 	}
 
@@ -257,21 +219,9 @@ country_event = {
 		name = sepoy.8.b
 		ai_chance = { factor = 50 }
 		add_political_power = -400
-		if = {
-			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-					has_dlc = "Death or Dishonor"
-				}
-			}
-			set_autonomy = {
-				target = HYD
-				autonomy_state = autonomy_confederation_member
-			}
-		}
-		else = {
-			puppet = HYD
+		set_autonomy = {
+			target = HYD
+			autonomy_state = autonomy_confederation_member
 		}
 	}
 
@@ -685,13 +635,13 @@ country_event = { #SRS Receives Recognition from ENG
 			remove_state_core = 431
 			remove_state_core = 1289
 			remove_state_core = 1315
-			remove_state_core = 1397
+			remove_state_core = 1169
 			remove_state_core = 430
 			remove_state_core = 1316
 			remove_state_core = 1075
-			remove_state_core = 1390
-			remove_state_core = 1392
-			remove_state_core = 1391
+			remove_state_core = 780
+			remove_state_core = 777
+			remove_state_core = 778
 			remove_state_core = 288
 			remove_state_core = 432
 			remove_state_core = 434
@@ -1154,7 +1104,7 @@ country_event = { #Honour Promise - BRM
 		name = sepoy.30.a
 		ai_chance = { factor = 100 }
 		BRM = {
-			transfer_state = 1392
+			transfer_state = 777
 			transfer_state = 288
 			transfer_state = 1075
 		}
@@ -1187,7 +1137,7 @@ country_event = { #Honour Promise - SIA
 		name = sepoy.32.a
 		ai_chance = { factor = 100 }
 		SIA = {
-			transfer_state = 1391
+			transfer_state = 778
 		}
 		hidden_effect = {
 			SIA = {

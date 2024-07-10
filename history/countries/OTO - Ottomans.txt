@@ -2,8 +2,11 @@
 	capital = 957
 
 	oob = "OTO_1857"
-	set_variable = { debt_level = 5 } #The Ottoman Empire's National Debt amounts to roughly 38.7m Pound Sterling as of 1857; income per year 790m Piasters (= 6.65m Pound Sterling) = 5.82 GDP of debt
+	#set_variable = { debt_level = 5 } #The Ottoman Empire's National Debt amounts to roughly 38.7m Pound Sterling as of 1857; income per year 790m Piasters (= 6.65m Pound Sterling) = 5.82 GDP of debt
 	set_convoys = 150
+
+	set_variable = { loans_amount = 5 }
+	take_loan_effect = yes
 
 	set_research_slots = 3
 
@@ -21,21 +24,33 @@
 		}
 	}
 
+	### Economy
+    add_ideas = generic_unemployment_idea
+    set_variable = { unemployment_value_modifier = 0.1 }
+    set_variable = { current_unemployment = 0.07 }
+    clamp_variable = {
+        var = current_unemployment
+        min = 0
+        max = 1
+    }
+    update_unemployment_modifier = yes
+    add_to_variable = { money = 7 }
+	set_variable = { current_loans_sum = 39 }
 
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_pre_industrial_army
 		industrializing
-		no_heir
-		absolute_monarchy
+		#has_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -44,23 +59,23 @@
 		limited_equality
 		absolutism
 
-		human_rights
+		#human_rights
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_sunni
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		OTO_sick_man
 		OTO_crimean_war_debt
-		egy_vic_debt
+		debt_idea
 		OTO_tanzimat_reform_start
 		ENG_british_protection
 	}
@@ -138,6 +153,11 @@
 		tech_naval_mtg_early_frigate = 1
 		tech_naval_mtg_1850_frigate = 1
 		tech_naval_mtg_1857_corvette_hull = 1
+		tech_naval_corvette = 1
+		tech_naval_lineship = 1
+		tech_naval_1857_lineship = 1
+		tech_naval_early_frigate = 1
+		tech_naval_1850_frigate = 1
 		mass_transit_early = 1
 		iron_railways = 1
 	}
@@ -483,17 +503,17 @@
 	add_ideas = {
 		#POLITICS
 
-		hos_is_leader
+		#hos_is_leader
 		victorian_era
 		law_pre_industrial_army
 		industrializing
-		no_heir
-		absolute_monarchy
+		#no_heir
+		#absolute_monarchy
 
 		civilian_economy
 		limited_exports
-		two_percent
-		normal_taxes
+		army_spending_level_2
+		taxation_level_3
 		cl_legal
 
 		#stagnation_growth
@@ -502,18 +522,18 @@
 		limited_equality
 		absolutism
 
-		human_rights
+		#human_rights
 		no_elections
 
 		privileged_education
 		state_religion
 		#religion_sunni
 
-		hc_no_healthcare
-		law_police_force
-		inframain_no_subsidies_infrastructure
-		navinfra_no_naval_infrastructure
-		sfund_private_ventures_only
+		social_spending_level_1
+		law_spending_level_4
+		road_spending_level_1
+		navy_spending_level_1
+		research_spending_level_1
 
 		#NATIONAL SPIRITS
 		OTO_sick_man

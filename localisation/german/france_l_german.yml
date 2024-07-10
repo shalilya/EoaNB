@@ -1,4 +1,4 @@
-﻿l_german:
+﻿l_english:
 
 ##################################################
 #                    SPECIAL
@@ -35,7 +35,7 @@ FRA_minister_republican_text: "Republican\n£FRA_republican_text_icon §O[?FRA_r
 FRA_minister_authoritarian_text: "Authoritarian\n£FRA_authoritarian_text_icon §O[?FRA_authoritarian_ministers]§!"
 FRA_minister_liberal_text: "Liberal\n£FRA_liberal_text_icon §G[?FRA_liberal_ministers]§!"
 FRA_minister_monarchist_text: "Monarchist\n£FRA_monarchist_text_icon §C[?FRA_monarchist_ministers]§!"
-FRA_minister_neutral_text: "Neutral\n£FRA_neutral_text_icon [?FRA_neutral_ministers]"
+FRA_minister_neutral_text: "Neutral\n [?FRA_neutral_ministers]"
 
 FRA_SE_portrait_1_title_text: "Minister of Justice"
 FRA_SE_portrait_1_desc_text: "Ernest de Royer\n Authoritarian Bonapartist"
@@ -325,16 +325,19 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  FRA_french_colonial_empire: "Chasseloup-Laubat's Colonial Plans"
  FRA_french_colonial_empire_desc: "France needs to expand our colonial ambitions."
  # Algeria and Middle East
- FRA_stabilize_algeria: "Stabilize the Algerian conquests"
+ FRA_the_kabylia_campaign: "Stabilize the Algerian conquests"
  FRA_stabilize_algeria_desc: ""
+ FRA_the_regime_du_sabre: "Expand in Algeria"
+ FRA_expand_algeria_desc: ""
+ FRA_new_colonial_ministries: "Assimilation in Algeria"
+ FRA_assimilation_colonial_model_algeria_desc: "Our Algerian colony is close to our shores, and therefore it is easier to influence their culture and language. The end goal in Algeria is assimilation, slowly transforming the natives into french citizens, a policy that has seen resistance among the Algerians, but is seen in Europe as a very liberal decision."
+ FRA_ALG_administration_of_the_colony: "Encourage French Citizenship"
+ FRA_encourage_french_citizenship_desc: "Native Algerians are deemed French, so the rules and laws of France apply to them as well. We need to encourage the Algerians to apply for French citizenship, assimilating further their people into France."
  FRA_intervention_lebanon: "Intervention in Lebanon"
  FRA_intervention_lebanon_desc: ""
- FRA_expand_algeria: "Expand in Algeria"
- FRA_expand_algeria_desc: ""
- FRA_assimilation_colonial_model_algeria: "Assimilation in Algeria"
- FRA_assimilation_colonial_model_algeria_desc: "Our Algerian colony is close to our shores, and therefore it is easier to influence their culture and language. The end goal in Algeria is assimilation, slowly transforming the natives into french citizens, a policy that has seen resistance among the Algerians, but is seen in Europe as a very liberal decision."
- FRA_encourage_french_citizenship: "Encourage French Citizenship"
- FRA_encourage_french_citizenship_desc: "Native Algerians are deemed French, so the rules and laws of France apply to them as well. We need to encourage the Algerians to apply for French citizenship, assimilating further their people into France."
+ FRA_interests_in_syria: "Interests in Syria"
+ FRA_interests_in_syria_desc: ""
+
  # Africa
  FRA_french_senegal_developments: "Faidherbe's Developments of French Senegal"
  FRA_french_senegal_developments_desc: ""
@@ -342,18 +345,14 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  FRA_forts_along_senegal_river_desc: ""
  FRA_develop_port_dakar: "Develop the Port of Dakar"
  FRA_develop_port_dakar_desc: ""
- FRA_convert_mali: "Catholic Missions to Mali"
- FRA_convert_mali_desc: ""
  FRA_infrastructure_developments: "Infrastructure Developments in the Interior"
  FRA_infrastructure_developments_desc: ""
  FRA_railways_and_telegraphs: "Install Railways and Telegraph Lines"
  FRA_railways_and_telegraphs_desc: ""
- FRA_the_model_colony: "The Model Colony in Western Africa"
- FRA_the_model_colony_desc: ""
  FRA_french_colonial_company_of_gabon: "Found the French Gabonese Establishment"
  FRA_french_colonial_company_of_gabon_desc: ""
- FRA_establish_senegal_navy: "Transfer Auguste Bosse to Senegal"
- FRA_establish_senegal_navy_desc: ""
+ FRA_colonial_madagascar_consulate: "Madagascar Consulate"
+ FRA_colonial_madagascar_consulate_desc: ""
  # Asia
  FRA_french_indochina: "Colonize Indochina"
  FRA_french_indochina_desc: "The Vietnamese Emperor has approved the execution of two Spanish Catholic missionaries. It was not the first incident of this type but this time France has an army in China to protect our interests during the Second Opium War. It is an occasion for French and Spanish armies to do a punitive expedition."
@@ -517,16 +516,18 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  FRA_vic_La_Gloire_Class_tt: "The ironclad La Gloire will finish construction in Toulon"
  FRA_mission_tolouse_cette_rail_trigger_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §YToulouse§! and §YCette§!\n"
  FRA_mission_tolouse_cette_rail: "Toulouse-Cette Railway"
- FRA_mission_narbonne_perpignan_rail_trigger_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §Narbonne§! and §Perpignan§!\n"
- FRA_mission_narbonne_perpignan_rail: "Narbonne-Perpignan Railway"
- FRA_mission_saint_dizier_belfort_rail_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §Stain-Dizier§! and §Belfort§!\n"
+ FRA_mission_narbonne_perpignan_rail_trigger_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §YCettee§! and §YPerpignan§!\n"
+ FRA_mission_narbonne_perpignan_rail: "Cette-Perpignan Railway"
+ FRA_mission_saint_dizier_belfort_rail_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §YStain-Dizier§! and §YBelfort§!\n"
  FRA_mission_saint_dizier_belfort_rail: "Saint-Dizier-Belfort Railway"
- FRA_mission_carmaux_albi_rail_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §Carmaux§! and §Albi§!\n"
+ FRA_mission_carmaux_albi_rail_tt_1: "£railroad_connection_texticon Has Railway connection of level 2 between §YCarmaux§! and §YAlbi§!\n"
  FRA_mission_carmaux_albi_rail: "Carmaux-Albi Railway"
- FRA_mission_caen_cherbourg_rail_tt: "£railroad_connection_texticon Has Railway connection of level 2 between §Caen§! and §Cherbourg§!\n"
+ FRA_mission_caen_cherbourg_rail_trigger_tt: "£railroad_connection_texticon Has Railway connection of level 2 between §YCaen§! and §YCherbourg§!\n"
  FRA_mission_caen_cherbourg_rail: "Caen-Cherbourg Railway"
- FRA_mission_caen_argentan_rail_tt: "£railroad_connection_texticon Has Railway connection of level 2 between §Caen§! and §Argentan§!\n"
+ FRA_mission_caen_argentan_rail_trigger_tt: "£railroad_connection_texticon Has Railway connection of level 2 between §YCaen§! and §YArgentan§!\n"
  FRA_mission_caen_argentan_rail: "Caen-Argentan Railway"
+ FRA_strengthen_the_ports_of_bordeaux_in_progress: "§GBordeaux Expansion in Progress.§!"
+ FRA_strengthen_the_ports_of_marsailles_in_progress: "§GMarseille Expansion in Progress.§!"
  
 ##################################################
 #                     DECISIONS
@@ -584,19 +585,85 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  FRA_garde_mobile_normandie: "Regiments from Normandie"
  FRA_garde_mobile_midi: "Regiments from Midi"
 
+ FRA_decision_strengthen_the_ports_of_bordeaux: "Invest into Bordeaux Port Infrastructure"
+ FRA_decision_invest_into_bordeaux_dockyard: "Invest into Bordeaux Dockyard Infrastructure"
+ FRA_mission_new_mines: "Open New Mines"
+ FRA_decision_support_french_steel_industry: "Support French Steel Industry"
+ FRA_decision_credit_lyonnais: "Crédit lyonnais"
+ FRA_decision_category_industrialization: "French Industry"
+ FRA_decision_category_industrialization_desc: "Napoleon III, benevolent Emperor of the French, continues to do his best to advance the work of the tricolor. With his advisors and many workers, His Majesty works tirelessly to deliver to the nation successes. While some are military and others political, these ones are economical. Our people need work, pay and living quarters. And all of this will be granted unto them by the expansion of French industry. With these most grand decrees, you Monsieur or Madame, shall help our noble Emperor push the Empire further into greatness and prosperity. From our foundries will be made the best artillery, and from our factories, the best pots, wires, beds, whatever! So onwards, to glory and prosperity!"
+ FRA_decision_invest_lyon_silk: "Invest into Lyon Silk"
+ FRA_decision_strengthen_the_ports_of_marseille: "Invest into Marseille Port Infrastructure"
+ FRA_decision_invest_into_marseille_dockyard: "Invest into Marseille Dockyard Infrastructure"
+ FRA_decision_narbonne_perpignan_rail: "Bau der Narbonne-Perpigan Bahnline"
+ FRA_decision_tolouse_cette_rail: "Bau der Toulouse-Cette Railway Bahnlinie"
+ FRA_decision_saint_dizier_belfort_rail: "Bau der St Dizier-Belfort Baulinie"
+ FRA_decision_carmaux_albi_rail: "Bau der Carmoux-Albi Railway Bahnlinie"
+ FRA_decision_caen_cherbourg_rail: "Bau der Caen-Cherbourg Bahnlinie"
+ FRA_decision_caen_argentan_rail: "Bau der Caen-Argentan Bahnnlinie"
+ FRA_decision_acquire_locomotives: "Kauf von Lokomotiven"
+ FRA_decision_limited_land_redistribution: "Eingeschränkte Land distribution"
+ FRA_decision_break_the_hold_of_artisans: "Ende den Handwerker einfluss"
+ FRA_decision_redistribution_of_orleans_properties: "Verteile die Orleaner Grundstücke"
+ FRA_decision_french_farmlands: "Ausbau der Französischen Farmen"
+ FRA_mission_rebuilding_vendee: "Wiederaufbauung von Vendee"
+ FRA_mission_continued_industrial_advancement: "Weitere Industrielle fortschritte"
+ FRA_mission_a_new_manufactural_line: "Neue Fabrik linie"
+ FRA_decision_reaffirming_imperial_ports_and_docks: "Bestärkung Imperialer Häfen und Docks"
+ FRA_mission_foulds_begrudging_subsidies: "Foulds widerwillige Subventionen"
+ FRA_decisions_vichy_baths: "Bau der Vichy Bäder"
+ FRA_decision_expand_tourism: "Erhöhe Tourismus"
+ FRA_decision_enlarged_festivities_of_empire: "Expansion der Reichsfeste"
+ FRA_decision_expand_the_louvre: "Weitere erweiterung vom Louvre"
+ FRA_mission_economic_growth: "Französischer Wirtschaftlicher Wachstum"
+ FRA_decision_help_pereire_brothers: "Hilf den Pereire Brüdern"
+ FRA_decision_support_banking: "Unterstütze die Banken"
+
+##################################################
+#            BALANCE Of POWER (BOP)
+##################################################
+
+ FRA_Balance_of_Power_Napoleon: "Napoleons Politische Ansichten"
+ FRA_BOP_Napoleon_the_Emporer: "Napoleon der Kaiser"
+ FRA_BOP_Proggresive_Emporer: "Autoritäre Napoleon"
+ FRA_BOP_Authoritarian_Emporer: "Der Autoritäre Kaiser"
+ FRA_BOP_Proggresive_Emporer_Revolutionary: "Der Progressive Kaiser"
+ FRA_BOP_Proggresive_Emporer_Revolutionary: "Napoleon der Revolutionär"
+ FRA_BOP_Authoritarian_Emporer_graceful: "Der Würdevolle Kaiser"
+ FRA_BOP_Authoritarian_Emporer_ST_Napoleon: "Sankt Napoleon von Frankreich"
+ 
+ FRA_BOP_category_decisions: "Balance of Power Entscheidungen"
+ FRA_BOP_appease_the_left: "Konzessionen für Arbeiter"
+ FRA_BOP_appease_the_right: "Konzessionen für Konservative"
+ FRA_BOP_progressive_laws: "Einführung von Proggresiven Gesetzen"
+ FRA_BOP_conservative_laws: "Einführung von Konservativen Gesetzen"
+
+ FRA_idea_BOP_oppsition: "Opposition gegen Napoleons Politik"
+ FRA_idea_BOP_oppsition_desc: "Napoleon III. ist die einigende Figur des französischen Volkes. Dieses Mal konnte er jedoch die beiden Seiten nicht in Schach halten, was in Zukunft weitere Konsequenzen nach sich ziehen wird, falls nichts unternommen wird."
+
+ #Left is angry
+ nap_france.402.t: "Politische Opposition Formt"
+ nap_france.402.d: "WIP"
+ nap_france.402.a: "Wir werden eigene Konzessionen machen"
+ nap_france.402.b: "Wir werden warten bis die Situation sich beruhigt"
+ nap_france.402.c: "Sie werden uns nicht stopen, las uns stattdessen extremer gehen"
+
+ #Right is angry
+ nap_france.403.t: "Politische Opposition Formt"
+ nap_france.403.d: "WIP"
+ nap_france.403.a: "Wir werden eigene Konzessionen machen"
+ nap_france.403.b: "Wir werden warten bis die Situation sich beruhigt"
+ nap_france.403.c: "Sie werden uns nicht stopen, las uns stattdessen extremer gehen"
+
 ##################################################
 #          NATIONAL SPIRITS AND ADVISORS
 ##################################################
 
  # National spirits
- FRA_idea_authoritarian_empire: "The Authoritarian Empire"
- FRA_idea_authoritarian_empire_desc: "The politics of the Second Empire are marked by an authoritarian regime characterized by the complete control of both the social life and the political spheres."
  FRA_idea_republican_spirit: "Republican Spirit"
  FRA_idea_republican_spirit_desc: "In 1852, Louis Napoléon Bonaparte, at the time President of the Second Republic, couped the republican government set in place after the July Monarchy to build his own empire, harkening back to his uncle, Napoléon Bonaparte. Republicanism isn't dead though, as politicians and people alike still fight for its return."
  FRA_idea_republican_spirit_2: "Republican Spirit"
  FRA_idea_republican_spirit_2_desc: "In 1852, Louis Napoléon Bonaparte, at the time president of the Second Republic, couped the republican government set in place after the July Monarchy to build his own empire, legacy of his uncle Napoléon Bonaparte. Republicanism isn't dead though, as politicians and people alike still fight for its return."
- FRA_idea_official_candidates_majority: "Official Candidates Majority"
- FRA_idea_official_candidates_majority_desc: "The Legislative Election has given a majority of the seats to the official candidates, loyal to the Emperor and supportive of the Empire."
  FRA_idea_opposition_candidates_majority: "Opposition Candidates Majority"
  FRA_idea_opposition_candidates_majority_desc: "The Legislative Election has given a majority of the seats to the opposition candidates, opposed to the Emperor stances but loyal to the Empire."
  FRA_idea_republican_candidates_majority: "Republican Candidates Majority"
@@ -632,15 +699,18 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  FRA_idea_jerome_mercantile_reforms_2: "Jérôme-Napoléon's Mercantile Reforms"
  FRA_idea_jerome_mercantile_reforms_3: "Jérôme-Napoléon's Mercantile Reforms"
  FRA_idea_assemblee_generale: "Assemblée Générale"
- FRA_french_navy: "Marine Nationale"
  FRA_special_assembly: "Special Assembly"
+ FRA_idea_french_agriculture: "Französische Landwirtschaft"
+ FRA_idea_french_agriculture2: "Französische Landwirtschaft"
+ FRA_idea_french_agriculture3: "Französische Landwirtschaft"
+ FRA_idea_french_agriculture4: "Französische Landwirtschaft"
+ FRA_idea_french_agriculture_trade: "Agrar handel"
+ 
 
  FRA_ALG_french_colonial_rule: "French Colonial Rule"
  FRA_ALG_assimilation_colonial_model: "The Assimilation Colonial Model"
  FRA_ALG_assimilation_colonial_model_desc: "A good way to transform a colony into an integral part of our nation, is to transform their natives into true French citizens. Both by creating schools and by pushing for the use of French, we are hoping to transform Algeria deeply enough to one day call it France."
  FRA_ALG_french_citizenship: "French Citizenship for the Algerians"
- FRA_SNG_the_model_colony: "The Model Colony of France"
- FRA_SNG_the_model_colony_desc: "Thanks to Faidherbe's development of French Senegal, we have been called the model colony of France. We take this with pride and as a testimony of our achievements."
 
  FRA_CBI_idea_temporary_government_garibaldi: "Garibaldi's Temporary Government"
  FRA_CBI_idea_french_monarch_in_power: "French Monarch in Power"
@@ -941,11 +1011,11 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  nap_france.9.a: "A Franco-Prussian friendship is on the way !"
 
  nap_france.10.t: "The Biarritz Meeting"
- nap_france.10.d: "The Empress Eugénie likes Biarritz and has built a palace on the beach to take holidays with her husband. Some members of the European royalty have also come to Biarritz like Queen Victoria. This year, the invited is Bismark to talk with the Emperor about Prussian ambitions. Napoleon III thinks Prussia and Austria will go to war and weaken eachother. It could be an occasion for Italy to get Venetia and Napoleon III to become the mediator who once again redraws Europe, but without a fight. If it comes down to choosing between the 2 German powers, Prussia is a better choice because of the inefficient Austrian alliance during the time of Napoleon I. Bismark wants to give Venetia to Italy and some territories to France in return for no alliance with Austria."
+ nap_france.10.d: "The Empress Eugénie likes Biarritz and has built a palace on the beach to take holidays with her husband. Some members of the European royalty have also come to Biarritz like Queen Victoria. This year, the invited is Bismarck to talk with the Emperor about Prussian ambitions. Napoleon III thinks Prussia and Austria will go to war and weaken eachother. It could be an occasion for Italy to get Venetia and Napoleon III to become the mediator who once again redraws Europe, but without a fight. If it comes down to choosing between the 2 German powers, Prussia is a better choice because of the inefficient Austrian alliance during the time of Napoleon I. Bismarck wants to give Venetia to Italy and some territories to France in return for no alliance with Austria."
  nap_france.10.a: "Merveilleux !"
 
  nap_france.11.t: "The Biarritz Meeting"
- nap_france.11.d: "The Empress Eugénie likes Biarritz and has built a palace on the beach to take holidays with her husband. Some members of the European royalty have also come to Biarritz like Queen Victoria. This year, the invited is Bismark to talk with the Emperor about Prussian ambitions. Even if France agrees on the resolution on the Denmark conflict with Austria, it stays a threat to go further in a German union under Prussia. Austria will be totally isolated if we ensure France will not help it and if Italy is with us. Napoleon III said it is possible if Venetia is given to Italian. But what he wants for him? Luxembourg? Belgium? Mayence? Vague promises of something should have convinced him."
+ nap_france.11.d: "The Empress Eugénie likes Biarritz and has built a palace on the beach to take holidays with her husband. Some members of the European royalty have also come to Biarritz like Queen Victoria. This year, the invited is Bismarck to talk with the Emperor about Prussian ambitions. Even if France agrees on the resolution on the Denmark conflict with Austria, it stays a threat to go further in a German union under Prussia. Austria will be totally isolated if we ensure France will not help it and if Italy is with us. Napoleon III said it is possible if Venetia is given to Italian. But what he wants for him? Luxembourg? Belgium? Mayence? Vague promises of something should have convinced him."
  nap_france.11.a: "Wunderbar!"
 #note to self: try to decipher this and make it actually make sense -Esti
 
@@ -1140,43 +1210,9 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  nap_france.135.d: "Aimable Pélissier, Duke of Malakoff after his exploits in the Crimean War, is dead. Another marshal and Duke will replace him, Patrice Mac-Mahon, Duke of Magenta after his exploits in the Italian Campaign. "
  nap_france.135.a: "We welcome our new governor"
 
- nap_france.136.t: "A New Governor for Our Colony"
- nap_france.136.d: "Louis Faidherbe is ill and has asked to come back to France to be treated. Jean Bernard Jauréguiberry, a navy officer, will replace him."
- nap_france.136.a: "We welcome our new governor"
-
- nap_france.137.t: "A New Governor for our Colony"
- nap_france.137.d: "Louis Faidherbe has returned."
- nap_france.137.a: "It is not in our authority to deny the return of the Governor, steward!"
-
- nap_france.138.t: "A New Governor for our Colony"
- nap_france.138.d: "Émile Pinet-Laprade who had been governor of Senegal for two months in 1863, before Louis Faidherbe went back, is the new governor."
- nap_france.138.a: "We welcome our new governor."
-
- nap_france.139.t: "The [FRA.GetName] invites us to the Continental System"
- nap_france.139.d: "The [FRA.GetName] invites us to join their faction, the Continental System, in order to protect each other from an expanding Prussia."
- nap_france.139.a: "Accept"
- nap_france.139.b: "Refuse"
-
- nap_france.140.t: "[From.GetName] accepts our invitation"
- nap_france.140.d: "[From.GetName] accepts our invitation to join the Continental System."
- nap_france.140.a: "Wonderful."
-
- nap_france.141.t: "[From.GetName] refuses our invitation"
- nap_france.141.d: "[From.GetName] refuses our invitation to join the Continental System."
- nap_france.141.a: "Damn!"
-
- nap_france.142.t: "The French Empire reforms us into a Constitutional Monarchy"
- nap_france.142.d: "The French Empire has been reformed us into a Constitutional Monarchy following the model of the British Monarchy."
- nap_france.142.a: "Well, alright."
-
- nap_france.143.t: "Algerian natives are discontent with their situation."
- nap_france.143.d: "Our recent pushes to create and integrate the local population into our territory has it seems not been a popular moves for certain groups in Algeria. The natives have stated that our recent actions against their culture and religion needs to stop, and the French government needs to recognize local sovereignty and culture. Of course, we won't let that happen in one of the most precious colony we have. The local Governors are weary of the situation though, as the local forces are ill prepared if an uprising starts."
- nap_france.143.a: "We must react properly."
- nap_france.143.b: "We don't care about the natives."
-
- nap_france.144.t: "Algerian natives are discontent with their situation."
- nap_france.144.d: "Our recent pushes to create and integrate the local population into our territory has it seems not been a popular moves for certain groups in Algeria. The natives have stated that our recent actions against their culture and religion needs to stop, and the French government needs to recognize local sovereignty and culture. Of course, we won't let that happen in one of the most precious colony we have. We, however, are very weary of the situation, the local forces are ill prepared for an uprising."
- nap_france.144.a: "We are waiting for the government's input"
+ nap_france.136.t: "The Siege of Fort Medina"
+ nap_france.136.d: "News reached us today from our colony in Senegal of a siege of one of our forts. According to reports, Fort Medina on the bank of the Senegal River was besieged by Toucouleur forces starting in late April of this year. The fort's commander Paul Holle and a short garrison managed to hold off the attacks of the tribal armies. The siege finally broke when governor Louis Faidherbe arrived on a gunboat with reinforcements from the colonial capital. The governor is supposed to be signing an agreement with the leader of the Toucouleur army which should give our colony more breathing room along the Niger River. Many have noted that the bulk of our forces were composed of native soldiers who have proved themselves quite well in battle. Governor Faidherbe has already requested the expansion of the colonial forces in Senegal."
+ nap_france.136.a: "We May Need to Focus our Attention on this Colony"
 
  nap_france.145.t: "Skirmishes in Northwestern Algeria"
  nap_france.145.d: "The city of Constantine has been the subject of multiple small scale attacks recently. While few in numbers, they still managed to make a great deal of damage, and the local troops were barely able to keep them from entering the city itself. While the situation is under control, the governor and the French Algerian high command has called the Empire for reinforcement. However, the French government was unable to find the budget for such a thing. This risks spiraling out of control, and the French government doesn't want to hear anything."
@@ -1211,13 +1247,21 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  nap_france.152.d: "After weeks of tireless figths against the colonizer, they have abandoned our lands. It seems that we have now total control over the lands of Algeria, and that we have finally won our freedom from the oppressive French!"
  nap_france.152.a: "Ya hla!"
 
- nap_france.153.t: "The integration of Southern Algeria into our colony"
- nap_france.153.d: "After our recent expansions, we have set out eyes on the southernmost parts of Algeria. Occupied once again by unorganized native kingdoms and tuaregs, it still will be very important as the age of African colonialism is upon us. It is mostly desertic, and without any interesting resources whatsoever, but taking it will allow us to gain a better footing on the continent than the British."
- nap_france.153.a: "As it should be."
+ nap_france.153.t: "General Randon Invades Kabylia"
+ nap_france.153.d: "A fortified force of around 5,000 Kabyles have been holding out in the Kabylia region of our Algerian colony for some time now. We were informed today that General Randon, who took over the command of the troops in Algeria in May, had completed his preparations to finish off the last pocket of resistance in Algeria. General Mac Mahon's troops took an elevated position and began an artillery attack against the fortified position as the other divisions in Randon's forces moved to fully surround the Kabyles. This final conquest in Algeria is not expected to last long and the resistance in Kabylia should be cleared out shortly."
+ nap_france.153.a: "A Swift Conquest, Hopefully."
 
- nap_france.154.t: "The revolting territories comes back to our colony"
- nap_france.154.d: "Order has finally been restored in French Algeria, has French troops secures control over the city of Constantine. The Kabyles have been beaten, and we can finally proudly say that Algeria will stay French for the forseeable future. It's a glorious day for many of us French, and a lesson for all natives that has the terrible idea of revolting against the might of the French army."
- nap_france.154.a: "As it should be."
+ nap_france.154.t: "The French Invade"
+ nap_france.154.d: "The time has finally come. The French have managed to organize their forces for an attack on our fortified position in Kabylia. Our forces are small, outmaned, and outgunned. It will take a miracle to hold out against the French, but it is a miracle we will hope for."
+ nap_france.154.a: "We Must Defend Our Homes!"
+
+ nap_france.155.t: "The Kabyles Hold"
+ nap_france.155.d: "In what can only be described as a miraculous turn of circumstances, the Kabylia region of Algeria has managed to hold off against the French forces under General Randon. Many wonder if General Randon is passed his prime as a scapegoat is sought for this defeat. This has certainly slowed the French plans for the development of the Algerian Colony."
+ nap_france.155.a: "So there is Peace... for Now"
+
+ nap_france.156.t: "Victory in Kabylia"
+ nap_france.156.d: "General Randon's campaign in Kabylia, the last region in Algeria to holdout against our growing colony, has succeeded. An agreement is being worked out with the Kableys to bring their region under the colonial government in Algeria. With this campaign over we can now begin larger projects in the development of the colony."
+ nap_france.156.a: "The Work Has Just Begun"
 
  nap_france.160.t: "Continue the Cochinchina Campaign"
  nap_france.160.d: "The punitive expedition is not as easy as predicted. Should we continue the war and ask later for more reparations or should we give-up instead of wasting more of our soldiers."
@@ -1759,6 +1803,19 @@ FRA_SE_portrait_9_desc_text: "Jean-Baptiste Philibert\n Neutral Bonapartist"
  fra_renew_relations_france: "Renewed relations between France and Austria"
  fra_accept_romanian_unification: "Has supported Romanian unification"
  fra_diplomatic_incident_1870: "Diplomatic Incident"
+ fra_abolished_kowtow_for_us: "Abolished Kowtow for Us"
+ fra_xenophobic_monarch: "Xenophobic Monarch"
+
+
+###################TRAITS######################
+FRA_trait_empress_eugenie: "Empress Consort of The French"
+FRA_trait_jules_baroche: "French Empire Minister of Justice"
+FRA_trait_gustave_rouland: "French Empire Minister of Education and Cults"
+FRA_trait_prosper_laubat: "French Empire Minister of Marine and the Colonies"
+FRA_trait_claude_delangle: "An Imperial Magistrate"
+FRA_trait_pereire_brothers_1: "Frühe Bänker"
+FRA_trait_pereire_brothers_2: "Erfolgreiche Bankers"
+
 
 
 #################################################
@@ -2143,6 +2200,8 @@ FRA_army_of_revanche:0 "Army of Revanche"
 
 FRA_decision_category_republican_army_reorganization:0 "Republican Army Reorganization"
 FRA_decision_category_luxembourg_crisis:0 "Luxembourg Crisis"
+FRA_decision_category_colonial_actions: "The French Colonial Empire"
+FRA_decision_category_colonial_actions_desc: "The French Colonial Empire extends, or shall if it doesn't already, across every continent and every sea. Though France has an interesting history when it comes to colonies, her time as a colonial empire has not yet come to pass. Through wars of conquest, intrigue, diplomacy, and any means made available the colonial possessions of France shall be expanded."
 
 ##################################################
 #                     DECISIONS
@@ -2156,6 +2215,11 @@ republican_army_reorganization_1:0 "Army Reorganization"
 FRA_decision_escalate_luxembourg_crisis:0 "Escalate the Luxembourg Crisis"
 FRA_mission_luxembourg_crisis:0 "Enforce Demands in Luxembourg"
 FRA_mission_luxembourg_crisis_continued:0 "Push for a Decisive Victory"
+
+FRA_war_mission_KBY: "The Invasion of Kabylia"
+FRA_KBY_victory_conditions_FRA_tt: "§Y[FRA.GetFlag]French Empire Victory Conditions(One of the following):§!\n\n - §gKabylia Has Reached 70% Capitulation Progress\n - The French Empire Controls Kabylia\n§!"
+FRA_KBY_victory_conditions_KBY_tt: "§Y[KBY.GetFlag]Kabylia Victory Conditions(One of the following):§!\n\n - §gKabylia Has Held Out Until August\n - Kabylia Has Captured All French Ports While Holding Kabylia\n§!"
+FRA_kabilya_victory_event_TT: "§YWe will have to do some reorganizing before attempting a new campaign against in Kabylia...!"
 
 ##################################################
 #                     IDEAS
